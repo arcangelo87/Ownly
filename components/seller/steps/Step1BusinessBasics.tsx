@@ -82,7 +82,8 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
 
       if (error) throw error;
       onComplete(row.id);
-    } catch {
+    } catch (err) {
+      console.error('[Step1] Supabase insert failed:', err);
       setErrors({ sector: 'Something went wrong. Please try again.' });
     } finally {
       setSaving(false);
