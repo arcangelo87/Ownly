@@ -1,3 +1,53 @@
 {
-  "common": {}
+  "common": {},
+  "seller": {
+    "steps": {
+      "step1": "Business basics",
+      "step2": "Size & team",
+      "step3": "The deal",
+      "step4": "Your story"
+    },
+    "step1": {
+      "title": "Tell us about your business",
+      "subtitle": "You can stay anonymous for now — your name and company won't appear publicly.",
+      "businessName": {
+        "label": "Business name (optional)",
+        "placeholder": "Leave blank to list anonymously",
+        "helper": "For our records only — not shown publicly."
+      },
+      "country": {
+        "label": "Country",
+        "placeholder": "Select country",
+        "helper": "We list businesses in Italy and Portugal."
+      },
+      "region": {
+        "label": "Region",
+        "placeholder": "Select region",
+        "helper": "Appears on your listing and helps buyers filter by location."
+      },
+      "sector": {
+        "label": "Sector",
+        "placeholder": "Select sector",
+        "helper": "Choose the sector that best describes your primary activity."
+      },
+      "yearFounded": {
+        "label": "Year founded",
+        "placeholder": "e.g. 1998",
+        "helper": "Helps buyers understand the maturity of the business."
+      },
+      "photos": {
+        "label": "Photos (optional)",
+        "helper": "Listings with photos receive significantly more buyer interest. Up to 10 photos, 5 MB each.",
+        "dragText": "Drag photos here, or click to browse",
+        "dragLimit": "Up to 10 photos · 5 MB each · JPG, PNG, WebP"
+      },
+      "continue": "Save and continue",
+      "errors": {
+        "countryRequired": "Please select a country.",
+        "regionRequired": "Please select a region.",
+        "sectorRequired": "Please select a sector.",
+        "yearRequired": "Please enter a valid year (e.g. 1998)."
+      }
+    }
+  }
 }
