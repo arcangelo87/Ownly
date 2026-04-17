@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ownly — Sell your business (Step 1 mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ── CSS variables ── */
+  :root {
+    --bg:        #F7F2E9;
+    --text:      #1A1A18;
+    --accent:    #1C4A2A;
+    --muted:     #6B6860;
+    --border:    #E4E1DA;
+    --surface:   #EDE8DE;
+    --white:     #FFFFFF;
+    --error:     #B83A1A;
+    --accent-light: #EBF1ED;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans:  'DM Sans', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ── Layout ── */
+  .shell {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--border);
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+
+  .sidebar-logo {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 52px;
+  }
+
+  .step-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 0;
+    position: relative;
+  }
+
+  /* connector line between steps */
+  .step-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 36px;
+    width: 1px;
+    height: calc(100% - 12px);
+    background: var(--border);
+  }
+
+  .step-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    transition: all 0.2s;
+  }
+
+  .step-item.active .step-dot {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .step-item.done .step-dot {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .step-dot-inner {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--white);
+    opacity: 0;
+  }
+
+  .step-item.active .step-dot-inner {
+    opacity: 1;
+  }
+
+  .step-dot-check {
+    display: none;
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  .step-item.done .step-dot-check { display: block; }
+  .step-item.done .step-dot-inner { display: none; }
+
+  .step-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .step-number {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+  }
+
+  .step-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .step-item.active .step-name {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* ── Main content ── */
+  .main {
+    flex: 1;
+    padding: 56px 64px;
+    max-width: 680px;
+  }
+
+  .step-header {
+    margin-bottom: 40px;
+  }
+
+  .step-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .step-title {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .step-subtitle {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── Form ── */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 32px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-field.full { grid-column: 1 / -1; }
+
+  label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  label .optional {
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 4px;
+  }
+
+  input, select {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--text);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  input::placeholder, select.placeholder {
+    color: var(--muted);
+  }
+
+  input:focus, select:focus {
+    border-color: var(--text);
+  }
+
+  input.error, select.error {
+    border-color: var(--error);
+  }
+
+  .select-wrapper {
+    position: relative;
+  }
+
+  .select-wrapper::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--muted);
+  }
+
+  .field-helper {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .field-error {
+    font-size: 12px;
+    color: var(--error);
+    display: none;
+  }
+
+  .field-error.visible { display: block; }
+
+  /* ── Divider ── */
+  .section-divider {
+    margin: 40px 0 32px;
+    border: none;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  /* ── Photo upload ── */
+  .upload-zone {
+    border: 1.5px dashed var(--border);
+    border-radius: 8px;
+    padding: 32px 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    background: var(--white);
+  }
+
+  .upload-zone:hover,
+  .upload-zone.drag-over {
+    border-color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  .upload-icon {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto 12px;
+    color: var(--muted);
+  }
+
+  .upload-text {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .upload-text strong {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .upload-limit {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  /* ── Photo preview grid ── */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .photo-thumb {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .photo-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .photo-remove {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(26,26,24,0.7);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  /* ── Footer nav ── */
+  .form-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+
+  .btn-primary {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent);
+    border: none;
+    border-radius: 6px;
+    padding: 12px 28px;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+    transition: opacity 0.15s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  /* ── Mobile progress bar (hidden on desktop) ── */
+  .mobile-header {
+    display: none;
+    flex-direction: column;
+    padding: 16px 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .progress-bar-track {
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    width: 25%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  .mobile-step-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .mobile-step-label strong {
+    color: var(--text);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .shell { flex-direction: column; }
+    .sidebar { display: none; }
+    .mobile-header { display: flex; }
+    .main { padding: 28px 20px 48px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-field.full { grid-column: 1; }
+    .step-title { font-size: 22px; }
+    .photo-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- Mobile progress bar (visible only on small screens) -->
+<div class="mobile-header">
+  <div class="progress-bar-track">
+    <div class="progress-bar-fill"></div>
+  </div>
+  <div class="mobile-step-label">Step <strong>1 of 4</strong> — Business basics</div>
+</div>
+
+<div class="shell">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">Ownly</div>
+    <ul class="step-list">
+      <li class="step-item active">
+        <div class="step-dot"><div class="step-dot-inner"></div><span class="step-dot-check">✓</span></div>
+        <div class="step-meta">
+          <span class="step-number">Step 1</span>
+          <span class="step-name">Business basics</span>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-dot"><div class="step-dot-inner"></div><span class="step-dot-check">✓</span></div>
+        <div class="step-meta">
+          <span class="step-number">Step 2</span>
+          <span class="step-name">Size &amp; team</span>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-dot"><div class="step-dot-inner"></div><span class="step-dot-check">✓</span></div>
+        <div class="step-meta">
+          <span class="step-number">Step 3</span>
+          <span class="step-name">The deal</span>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-dot"><div class="step-dot-inner"></div><span class="step-dot-check">✓</span></div>
+        <div class="step-meta">
+          <span class="step-number">Step 4</span>
+          <span class="step-name">Your story</span>
+        </div>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Main form -->
+  <main class="main">
+    <div class="step-header">
+      <div class="step-eyebrow">Step 1 of 4</div>
+      <h1 class="step-title">Tell us about your business</h1>
+      <p class="step-subtitle">You can stay anonymous for now — your name and company won't appear publicly.</p>
+    </div>
+
+    <form id="step1" novalidate>
+      <div class="form-grid">
+
+        <!-- Business name -->
+        <div class="form-field full">
+          <label for="businessName">Business name <span class="optional">(optional)</span></label>
+          <input type="text" id="businessName" name="businessName" placeholder="Leave blank to list anonymously">
+          <p class="field-helper">For our records only — not shown publicly.</p>
+        </div>
+
+        <!-- Country -->
+        <div class="form-field">
+          <label for="country">Country</label>
+          <div class="select-wrapper">
+            <select id="country" name="country" class="placeholder" onchange="handleCountryChange(this)">
+              <option value="" disabled selected>Select country</option>
+              <option value="IT">Italy</option>
+              <option value="PT">Portugal</option>
+            </select>
+          </div>
+          <p class="field-helper">We list businesses in Italy and Portugal.</p>
+          <p class="field-error" id="countryError">Please select a country.</p>
+        </div>
+
+        <!-- Region -->
+        <div class="form-field">
+          <label for="region">Region</label>
+          <div class="select-wrapper">
+            <select id="region" name="region" class="placeholder" disabled>
+              <option value="" disabled selected>Select region</option>
+            </select>
+          </div>
+          <p class="field-helper">Appears on your listing and helps buyers filter by location.</p>
+          <p class="field-error" id="regionError">Please select a region.</p>
+        </div>
+
+        <!-- Sector -->
+        <div class="form-field full">
+          <label for="sector">Sector</label>
+          <div class="select-wrapper">
+            <select id="sector" name="sector" class="placeholder">
+              <option value="" disabled selected>Select sector</option>
+              <option value="manufacturing">Manufacturing</option>
+              <option value="food_beverage">Food &amp; Beverage</option>
+              <option value="professional_services">Professional Services</option>
+              <option value="wholesale">Wholesale &amp; Distribution</option>
+              <option value="construction">Construction &amp; Engineering</option>
+              <option value="technology">Technology</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <p class="field-helper">Choose the sector that best describes your primary activity.</p>
+          <p class="field-error" id="sectorError">Please select a sector.</p>
+        </div>
+
+        <!-- Year founded -->
+        <div class="form-field">
+          <label for="yearFounded">Year founded</label>
+          <input type="text" id="yearFounded" name="yearFounded" placeholder="e.g. 1998" inputmode="numeric" maxlength="4">
+          <p class="field-helper">Helps buyers understand the maturity of the business.</p>
+          <p class="field-error" id="yearError">Please enter a valid year (e.g. 1998).</p>
+        </div>
+
+      </div>
+
+      <!-- Photos section -->
+      <hr class="section-divider">
+      <p class="section-label">Photos</p>
+
+      <div
+        class="upload-zone"
+        id="uploadZone"
+        ondragover="handleDragOver(event)"
+        ondragleave="handleDragLeave(event)"
+        ondrop="handleDrop(event)"
+        onclick="document.getElementById('fileInput').click()"
+      >
+        <svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"/>
+        </svg>
+        <p class="upload-text">Drag photos here, or <strong>click to browse</strong></p>
+        <p class="upload-limit">Up to 10 photos · 5 MB each · JPG, PNG, WebP</p>
+        <input type="file" id="fileInput" accept="image/*" multiple style="display:none" onchange="handleFileSelect(event)">
+      </div>
+
+      <div class="photo-grid" id="photoGrid"></div>
+
+      <div class="form-footer">
+        <button type="submit" class="btn-primary">Save and continue →</button>
+      </div>
+    </form>
+  </main>
+</div>
+
+<script>
+  const ITALY_REGIONS = [
+    'Abruzzo','Basilicata','Calabria','Campania','Emilia-Romagna',
+    'Friuli-Venezia Giulia','Lazio','Liguria','Lombardia','Marche',
+    'Molise','Piemonte','Puglia','Sardegna','Sicilia','Toscana',
+    'Trentino-Alto Adige','Umbria','Valle d\'Aosta','Veneto'
+  ];
+
+  const PORTUGAL_REGIONS = [
+    'Alentejo','Algarve','Centro','Lisboa','Norte',
+    'Região Autónoma da Madeira','Região Autónoma dos Açores'
+  ];
+
+  let photoFiles = [];
+
+  function handleCountryChange(sel) {
+    sel.classList.remove('placeholder');
+    const regionSel = document.getElementById('region');
+    const regions = sel.value === 'IT' ? ITALY_REGIONS : PORTUGAL_REGIONS;
+    regionSel.innerHTML = '<option value="" disabled selected>Select region</option>';
+    regions.forEach(r => {
+      const opt = document.createElement('option');
+      opt.value = r.toLowerCase().replace(/\s+/g, '_');
+      opt.textContent = r;
+      regionSel.appendChild(opt);
+    });
+    regionSel.disabled = false;
+    regionSel.classList.add('placeholder');
+    clearError('country', 'countryError');
+  }
+
+  function handleDragOver(e) {
+    e.preventDefault();
+    document.getElementById('uploadZone').classList.add('drag-over');
+  }
+
+  function handleDragLeave(e) {
+    document.getElementById('uploadZone').classList.remove('drag-over');
+  }
+
+  function handleDrop(e) {
+    e.preventDefault();
+    document.getElementById('uploadZone').classList.remove('drag-over');
+    addFiles(Array.from(e.dataTransfer.files));
+  }
+
+  function handleFileSelect(e) {
+    addFiles(Array.from(e.target.files));
+    e.target.value = '';
+  }
+
+  function addFiles(files) {
+    const valid = files.filter(f => f.type.startsWith('image/') && f.size <= 5 * 1024 * 1024);
+    const remaining = 10 - photoFiles.length;
+    photoFiles = [...photoFiles, ...valid.slice(0, remaining)];
+    renderPhotoGrid();
+  }
+
+  function removePhoto(idx) {
+    photoFiles.splice(idx, 1);
+    renderPhotoGrid();
+  }
+
+  function renderPhotoGrid() {
+    const grid = document.getElementById('photoGrid');
+    grid.innerHTML = '';
+    photoFiles.forEach((file, idx) => {
+      const url = URL.createObjectURL(file);
+      const thumb = document.createElement('div');
+      thumb.className = 'photo-thumb';
+      thumb.innerHTML = `<img src="${url}" alt=""><button class="photo-remove" onclick="removePhoto(${idx})">✕</button>`;
+      grid.appendChild(thumb);
+    });
+  }
+
+  function clearError(fieldId, errorId) {
+    document.getElementById(fieldId).classList.remove('error');
+    document.getElementById(errorId).classList.remove('visible');
+  }
+
+  document.getElementById('step1').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let valid = true;
+
+    const country = document.getElementById('country');
+    const region = document.getElementById('region');
+    const sector = document.getElementById('sector');
+    const year = document.getElementById('yearFounded');
+
+    if (!country.value) {
+      country.classList.add('error');
+      document.getElementById('countryError').classList.add('visible');
+      valid = false;
+    }
+
+    if (country.value && !region.value) {
+      region.classList.add('error');
+      document.getElementById('regionError').classList.add('visible');
+      valid = false;
+    }
+
+    if (!sector.value) {
+      sector.classList.add('error');
+      document.getElementById('sectorError').classList.add('visible');
+      valid = false;
+    }
+
+    const yearVal = parseInt(year.value);
+    if (!year.value || isNaN(yearVal) || yearVal < 1800 || yearVal > new Date().getFullYear()) {
+      year.classList.add('error');
+      document.getElementById('yearError').classList.add('visible');
+      valid = false;
+    }
+
+    if (valid) {
+      // Simulate success — advance to placeholder Step 2
+      document.querySelector('.main').innerHTML = `
+        <div style="padding: 48px 0; text-align: center;">
+          <div style="font-size: 40px; margin-bottom: 16px;">✓</div>
+          <h2 style="font-family: var(--font-serif); font-size: 24px; margin-bottom: 8px;">Step 1 saved</h2>
+          <p style="color: var(--muted);">In the real app, this would advance to Step 2 — Size &amp; team.</p>
+        </div>
+      `;
+      document.querySelector('.step-item.active').classList.remove('active');
+      document.querySelector('.step-item.active') &&
+        document.querySelector('.step-item.active').classList.remove('active');
+      const items = document.querySelectorAll('.step-item');
+      items[0].classList.add('done');
+      items[1].classList.add('active');
+      document.querySelector('.progress-bar-fill').style.width = '50%';
+      document.querySelector('.mobile-step-label').innerHTML =
+        'Step <strong>2 of 4</strong> — Size &amp; team';
+    }
+  });
+
+  // Clear errors on input
+  ['country','region','sector'].forEach(id => {
+    document.getElementById(id).addEventListener('change', function() {
+      this.classList.remove('placeholder','error');
+      const errId = id + 'Error';
+      if (document.getElementById(errId))
+        document.getElementById(errId).classList.remove('visible');
+    });
+  });
+
+  document.getElementById('yearFounded').addEventListener('input', function() {
+    this.classList.remove('error');
+    document.getElementById('yearError').classList.remove('visible');
+  });
+</script>
+</body>
+</html>
