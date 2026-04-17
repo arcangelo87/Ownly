@@ -8,13 +8,13 @@ import '@/app/globals.css';
 const playfair = Playfair_Display({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
-  variable: '--font-serif',
+  variable: '--font-playfair',
 });
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600'],
-  variable: '--font-sans',
+  variable: '--font-dm-sans',
 });
 
 export default async function LocaleLayout({
