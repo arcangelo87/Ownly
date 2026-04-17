@@ -19,7 +19,7 @@ export function SellerForm() {
     <div className="flex min-h-screen flex-col md:flex-row">
       <StepIndicator currentStep={currentStep} />
 
-      <main className="flex-1 px-5 py-10 md:px-16 md:py-14 max-w-[680px]">
+      <main className="flex-1 px-5 py-10 md:px-16 md:py-14" style={{ maxWidth: '680px' }}>
         <header className="mb-10">
           {currentStep === 1 && (
             <>

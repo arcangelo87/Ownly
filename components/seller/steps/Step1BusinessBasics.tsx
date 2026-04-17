@@ -207,7 +207,7 @@ function Field({
       <Label>
         {label}
         {optional && (
-          <span className="ml-1 font-normal text-[var(--color-muted)]">(optional)</span>
+          <span className="font-normal text-[var(--color-muted)]"> (optional)</span>
         )}
       </Label>
       {children}
