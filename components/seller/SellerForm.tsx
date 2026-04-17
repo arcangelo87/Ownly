@@ -19,17 +19,17 @@ export function SellerForm() {
     <div className="flex min-h-screen flex-col md:flex-row">
       <StepIndicator currentStep={currentStep} />
 
-      <main className="flex-1 px-5 py-10 md:px-16 md:py-14 max-w-2xl">
+      <main className="flex-1 px-5 py-10 md:px-16 md:py-14 max-w-[680px]">
         <header className="mb-10">
           {currentStep === 1 && (
             <>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[var(--color-accent)]">
+              <p className="mb-[10px] text-[12px] font-semibold uppercase tracking-[0.08em] text-[var(--color-accent)]">
                 Step 1 of {TOTAL_STEPS}
               </p>
-              <h1 className="font-serif text-3xl font-medium tracking-tight leading-tight mb-2">
+              <h1 className="font-serif text-[28px] font-medium tracking-[-0.02em] leading-[1.2] mb-[10px]">
                 Tell us about your business
               </h1>
-              <p className="text-sm text-[var(--color-muted)] leading-relaxed">
+              <p className="text-sm text-[var(--color-muted)] leading-[1.6]">
                 You can stay anonymous for now — your name and company won&apos;t appear publicly.
               </p>
             </>

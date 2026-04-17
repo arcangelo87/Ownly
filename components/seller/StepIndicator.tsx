@@ -13,8 +13,8 @@ export function StepIndicator({ currentStep }: StepIndicatorProps) {
   return (
     <>
       {/* Desktop sidebar */}
-      <aside className="hidden md:flex w-56 flex-shrink-0 flex-col border-r border-[var(--color-border)] px-8 py-12 sticky top-0 h-screen">
-        <span className="font-serif text-lg font-semibold tracking-tight mb-12">
+      <aside className="hidden md:flex w-60 flex-shrink-0 flex-col border-r border-[var(--color-border)] px-8 py-12 sticky top-0 h-screen">
+        <span className="font-serif text-[20px] font-semibold tracking-[-0.02em] mb-[52px]">
           Ownly
         </span>
         <ol className="flex flex-col">
@@ -23,15 +23,15 @@ export function StepIndicator({ currentStep }: StepIndicatorProps) {
             const isDone = step < currentStep;
             const isActive = step === currentStep;
             return (
-              <li key={key} className="relative flex items-start gap-3 py-3">
+              <li key={key} className="relative flex items-start gap-[14px] py-3">
                 {/* connector line */}
                 {i < STEPS.length - 1 && (
-                  <div className="absolute left-[9px] top-9 w-px h-full bg-[var(--color-border)]" />
+                  <div className="absolute left-[10px] top-9 w-px h-full bg-[var(--color-border)]" />
                 )}
                 {/* dot */}
                 <div
                   className={[
-                    'mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border transition-colors',
+                    'mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border-[1.5px] transition-colors',
                     isDone || isActive
                       ? 'border-[var(--color-accent)] bg-[var(--color-accent)]'
                       : 'border-[var(--color-border)] bg-white',
@@ -45,12 +45,12 @@ export function StepIndicator({ currentStep }: StepIndicatorProps) {
                 </div>
                 {/* labels */}
                 <div className="flex flex-col gap-0.5">
-                  <span className="text-[11px] font-medium uppercase tracking-widest text-[var(--color-muted)]">
+                  <span className="text-[11px] font-medium uppercase tracking-[0.06em] text-[var(--color-muted)]">
                     Step {step}
                   </span>
                   <span
                     className={[
-                      'text-[13px]',
+                      'text-[13px] font-medium',
                       isActive
                         ? 'font-semibold text-[var(--color-text)]'
                         : 'text-[var(--color-muted)]',

@@ -11,7 +11,7 @@
       "title": "Tell us about your business",
       "subtitle": "You can stay anonymous for now — your name and company won't appear publicly.",
       "businessName": {
-        "label": "Business name (optional)",
+        "label": "Business name",
         "placeholder": "Leave blank to list anonymously",
         "helper": "For our records only — not shown publicly."
       },
@@ -36,12 +36,12 @@
         "helper": "Helps buyers understand the maturity of the business."
       },
       "photos": {
-        "label": "Photos (optional)",
+        "label": "Photos",
         "helper": "Listings with photos receive significantly more buyer interest. Up to 10 photos, 5 MB each.",
         "dragText": "Drag photos here, or click to browse",
         "dragLimit": "Up to 10 photos · 5 MB each · JPG, PNG, WebP"
       },
-      "continue": "Save and continue",
+      "continue": "Save and continue →",
       "errors": {
         "countryRequired": "Please select a country.",
         "regionRequired": "Please select a region.",
