@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { StepIndicator } from './StepIndicator';
 import { Step1BusinessBasics } from './steps/Step1BusinessBasics';
 import { Step2SizeTeam } from './steps/Step2SizeTeam';
+import { Step3TheDeal } from './steps/Step3TheDeal';
 
 const TOTAL_STEPS = 4;
 
@@ -18,6 +19,10 @@ export function SellerForm() {
 
   function handleStep2Complete() {
     setCurrentStep(3);
+  }
+
+  function handleStep3Complete() {
+    setCurrentStep(4);
   }
 
   return (
@@ -52,12 +57,23 @@ export function SellerForm() {
               </p>
             </>
           )}
-          {currentStep > 2 && (
+          {currentStep === 3 && (
             <>
               <p className="mb-[10px] text-[12px] font-semibold uppercase tracking-[0.08em] text-[var(--color-accent)]">
-                Step {currentStep} of {TOTAL_STEPS}
+                Step 3 of {TOTAL_STEPS}
+              </p>
+              <h1 className="font-serif text-[28px] font-medium tracking-[-0.02em] leading-[1.2] mb-[10px]">
+                The deal
+              </h1>
+              <p className="text-sm text-[var(--color-muted)] leading-[1.6]">
+                These details help buyers quickly assess fit. Everything stays confidential until you choose to share.
               </p>
             </>
+          )}
+          {currentStep === 4 && (
+            <p className="mb-[10px] text-[12px] font-semibold uppercase tracking-[0.08em] text-[var(--color-accent)]">
+              Step 4 of {TOTAL_STEPS}
+            </p>
           )}
         </header>
 
@@ -68,8 +84,8 @@ export function SellerForm() {
         {currentStep === 2 && listingId && (
           <Step2SizeTeam listingId={listingId} onComplete={handleStep2Complete} />
         )}
-        {currentStep === 3 && (
-          <Placeholder stepNumber={3} stepName="The deal" />
+        {currentStep === 3 && listingId && (
+          <Step3TheDeal listingId={listingId} onComplete={handleStep3Complete} />
         )}
         {currentStep === 4 && (
           <Placeholder stepNumber={4} stepName="Your story" />

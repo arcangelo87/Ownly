@@ -75,6 +75,33 @@
         "employeesRequired": "Please select a headcount range.",
         "saveFailed": "Something went wrong. Please try again."
       }
+    },
+    "step3": {
+      "title": "The deal",
+      "subtitle": "These details help buyers quickly assess fit. Everything stays confidential until you choose to share.",
+      "price": {
+        "label": "Asking price",
+        "placeholder": "Select range",
+        "helper": "Indicative range. You can refine this later."
+      },
+      "partialSale": {
+        "label": "Open to partial sale?",
+        "helper": "Let buyers know if you'd consider keeping a stake.",
+        "openToMinority": "Yes, open to minority / partial stake",
+        "fullSaleOnly": "Full sale only"
+      },
+      "timeline": {
+        "label": "Timeline",
+        "placeholder": "Select timeline",
+        "helper": "How soon are you looking to complete a transaction?"
+      },
+      "continue": "Save and continue →",
+      "errors": {
+        "priceRequired": "Please select a price range.",
+        "partialRequired": "Please select an option.",
+        "timelineRequired": "Please select a timeline.",
+        "saveFailed": "Something went wrong. Please try again."
+      }
     }
   }
 }
