@@ -102,6 +102,41 @@
         "timelineRequired": "Please select a timeline.",
         "saveFailed": "Something went wrong. Please try again."
       }
+    },
+    "step4": {
+      "title": "Your story",
+      "subtitle": "Help buyers understand what makes this business worth looking at.",
+      "reasons": {
+        "label": "Why are you considering a sale?",
+        "helper": "Select all that apply.",
+        "retirement": "Retirement",
+        "growthCapital": "Need growth capital",
+        "noSuccession": "No succession plan",
+        "healthPersonal": "Health or personal reasons",
+        "marketOpportunity": "Right market opportunity",
+        "other": "Other"
+      },
+      "description": {
+        "label": "Describe your business in your own words",
+        "placeholder": "e.g. We run a 20-year-old manufacturing business in Tuscany making custom metal parts for mid-size machinery companies. About 60% of revenue is repeat orders from 8 long-standing clients.",
+        "helper": "What you do, who your clients are, what makes it work."
+      },
+      "strongestPoint": {
+        "label": "What's the strongest thing about this business?",
+        "placeholder": "e.g. We have a 12-year exclusive supply agreement with our largest client, which accounts for 40% of revenue.",
+        "helper": "What would you tell a serious buyer in 30 seconds?"
+      },
+      "buyerDisclosure": {
+        "label": "Anything a buyer should know upfront?",
+        "placeholder": "e.g. The current owner is involved in day-to-day operations and a transition period of 6–12 months would be needed.",
+        "helper": "Risks, dependencies, or anything better disclosed early. Buyers appreciate honesty."
+      },
+      "submit": "Submit listing →",
+      "errors": {
+        "reasonsRequired": "Please select at least one reason.",
+        "descriptionRequired": "Please describe your business.",
+        "saveFailed": "Something went wrong. Please try again."
+      }
     }
   }
 }

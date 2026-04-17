@@ -21,7 +21,7 @@ const SECTORS = [
 ];
 
 interface Step1BusinessBasicsProps {
-  onComplete: (listingId: string) => void;
+  onComplete: (listingId: string, photos: File[]) => void;
 }
 
 export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
@@ -81,7 +81,7 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
         .single();
 
       if (error) throw error;
-      onComplete(row.id);
+      onComplete(row.id, data.photos);
     } catch (err) {
       console.error('[Step1] Supabase insert failed:', err);
       setErrors({ sector: 'Something went wrong. Please try again.' });
