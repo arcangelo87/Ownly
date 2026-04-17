@@ -48,6 +48,33 @@
         "sectorRequired": "Please select a sector.",
         "yearRequired": "Please enter a valid year (e.g. 1998)."
       }
+    },
+    "step2": {
+      "title": "Size & team",
+      "subtitle": "Approximate figures are fine — exact numbers are shared under NDA.",
+      "helper": "Last full fiscal year. Exact figures shared under NDA.",
+      "revenue": {
+        "label": "Annual revenue",
+        "placeholder": "Select range",
+        "helper": "Approximate range for the last full fiscal year."
+      },
+      "ebitda": {
+        "label": "EBITDA margin",
+        "placeholder": "Select range",
+        "helper": "Earnings before interest, taxes, depreciation, and amortisation."
+      },
+      "employees": {
+        "label": "Number of employees (FTE)",
+        "placeholder": "Select range",
+        "helper": "Full-time equivalents, including yourself."
+      },
+      "continue": "Save and continue →",
+      "errors": {
+        "revenueRequired": "Please select a revenue range.",
+        "ebitdaRequired": "Please select an EBITDA margin.",
+        "employeesRequired": "Please select a headcount range.",
+        "saveFailed": "Something went wrong. Please try again."
+      }
     }
   }
 }

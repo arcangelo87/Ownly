@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { StepIndicator } from './StepIndicator';
 import { Step1BusinessBasics } from './steps/Step1BusinessBasics';
+import { Step2SizeTeam } from './steps/Step2SizeTeam';
 
 const TOTAL_STEPS = 4;
 
@@ -13,6 +14,10 @@ export function SellerForm() {
   function handleStep1Complete(id: string) {
     setListingId(id);
     setCurrentStep(2);
+  }
+
+  function handleStep2Complete() {
+    setCurrentStep(3);
   }
 
   return (
@@ -34,10 +39,25 @@ export function SellerForm() {
               </p>
             </>
           )}
-          {currentStep > 1 && (
-            <p className="text-sm text-[var(--color-muted)]">
-              Listing saved · ID: <code className="font-mono text-xs">{listingId}</code>
-            </p>
+          {currentStep === 2 && (
+            <>
+              <p className="mb-[10px] text-[12px] font-semibold uppercase tracking-[0.08em] text-[var(--color-accent)]">
+                Step 2 of {TOTAL_STEPS}
+              </p>
+              <h1 className="font-serif text-[28px] font-medium tracking-[-0.02em] leading-[1.2] mb-[10px]">
+                Size &amp; team
+              </h1>
+              <p className="text-sm text-[var(--color-muted)] leading-[1.6]">
+                Approximate figures are fine — exact numbers are shared under NDA.
+              </p>
+            </>
+          )}
+          {currentStep > 2 && (
+            <>
+              <p className="mb-[10px] text-[12px] font-semibold uppercase tracking-[0.08em] text-[var(--color-accent)]">
+                Step {currentStep} of {TOTAL_STEPS}
+              </p>
+            </>
           )}
         </header>
 
@@ -45,8 +65,8 @@ export function SellerForm() {
           <Step1BusinessBasics onComplete={handleStep1Complete} />
         )}
 
-        {currentStep === 2 && (
-          <Placeholder stepNumber={2} stepName="Size & team" />
+        {currentStep === 2 && listingId && (
+          <Step2SizeTeam listingId={listingId} onComplete={handleStep2Complete} />
         )}
         {currentStep === 3 && (
           <Placeholder stepNumber={3} stepName="The deal" />
