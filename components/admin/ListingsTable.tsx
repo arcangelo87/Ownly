@@ -100,7 +100,7 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-[var(--color-border)] bg-[var(--color-surface)]">
-            {['Business', 'Contact', 'Location', 'Sector', 'Revenue', 'FTE', 'Status', 'Submitted'].map((h) => (
+            {['Business', 'Contact', 'Location', 'Sector', 'Revenue', 'FTE', 'Status', 'Submitted', 'Preview'].map((h) => (
               <th key={h} className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-[0.06em] text-[var(--color-muted)]">
                 {h}
               </th>
@@ -173,6 +173,20 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
                       day: 'numeric', month: 'short', year: 'numeric',
                     })}
                   </td>
+                  <td className="px-4 py-3" onClick={(e) => e.stopPropagation()}>
+                    {listing.slug ? (
+                      <a
+                        href={`/en/deals/${listing.slug}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[12px] font-medium text-[var(--color-accent)] underline underline-offset-2 hover:opacity-70"
+                      >
+                        View →
+                      </a>
+                    ) : (
+                      <span className="text-[var(--color-muted)]">—</span>
+                    )}
+                  </td>
                   <td className="px-4 py-3 text-[var(--color-muted)]">
                     <svg
                       width="12" height="12" viewBox="0 0 12 12" fill="none"
@@ -185,7 +199,7 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
 
                 {isExpanded && (
                   <tr key={`${listing.id}-detail`} className="bg-[var(--color-bg)]">
-                    <td colSpan={9} className="px-6 py-5">
+                    <td colSpan={10} className="px-6 py-5">
                       <div className="grid grid-cols-2 gap-x-10 gap-y-4 md:grid-cols-3 lg:grid-cols-4">
                         <DetailField label="Year Founded" value={listing.year_founded?.toString()} />
                         <DetailField label="Email" value={listing.seller_email} link={listing.seller_email ? `mailto:${listing.seller_email}` : undefined} />
