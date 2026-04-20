@@ -29,7 +29,7 @@ export default async function DealDetailPage({
   const t = await getTranslations('deals');
 
   const admin = createAdminClient();
-  const { data: listing } = await admin
+  const { data: listing, error } = await admin
     .from('listings')
     .select(
       'id, slug, title, about, highlights, sector, region, country, year_founded, revenue_range, ebitda_margin, employee_count, asking_price, partial_sale, timeline, reasons_for_sale, created_at',
@@ -39,6 +39,7 @@ export default async function DealDetailPage({
     .is('deleted_at', null)
     .single();
 
+  if (error) console.error('[deal-page] supabase error:', JSON.stringify(error));
   if (!listing) notFound();
 
   const { data: storageFiles } = await admin.storage
