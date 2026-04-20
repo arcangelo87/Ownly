@@ -100,9 +100,11 @@ Fields:
 - Region (dropdown, changes based on country)
 - Sector (Manufacturing / Food & Beverage / Professional Services / Wholesale & Distribution / Construction & Engineering / Technology / Other)
 - Year founded
+- Email address (required — for operator contact only, never shown publicly)
+- Phone number (optional — for operator contact only, never shown publicly)
 - Photo upload (optional — premises, equipment, team — up to 10 files, 5MB each)
 
-Design notes: Photo upload at the bottom of step 1, below a divider. Upload zone with drag target. Live preview grid (4 columns) after upload. Note that listings with photos get significantly more buyer interest.
+Design notes: Email and phone sit below year founded, above the photos divider. Email is required. Photo upload at the bottom of step 1, below a divider. Upload zone with drag target. Live preview grid (4 columns) after upload. Note that listings with photos get significantly more buyer interest.
 
 Removed from this step: "Revenue from top client" — too intrusive at first contact.
 
@@ -283,6 +285,14 @@ Multi-step form (4 steps as defined above). One concept per step. Step indicator
 - Operator notified by email (Resend)
 - Listing status: Draft (operator reviews, writes copy, then publishes)
 - Operator dashboard: list of submitted listings with status (Draft / In Review / Live / Rejected)
+
+**Operator dashboard columns (all form fields visible):**
+- Business name, Country, Region, Sector, Year founded
+- Email (contact — for operator use only), Phone (contact — optional)
+- Revenue range, EBITDA margin, Employees (FTE)
+- Asking price, Partial sale, Timeline
+- Reasons for sale, Business description, Strongest point, Buyer disclosure
+- Status (editable inline), Submitted date
 
 **Listing goes live when:** Operator has written the listing copy and is satisfied with quality. No call required — that is an operational choice, not a platform gate.
 

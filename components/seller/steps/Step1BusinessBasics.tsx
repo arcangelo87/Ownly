@@ -21,7 +21,7 @@ const SECTORS = [
 ];
 
 interface Step1BusinessBasicsProps {
-  onComplete: (listingId: string) => void;
+  onComplete: (listingId: string, photos: File[]) => void;
 }
 
 export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
@@ -33,6 +33,8 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
     region: '',
     sector: '',
     year_founded: '',
+    seller_email: '',
+    seller_phone: '',
     photos: [],
   });
 
@@ -40,12 +42,12 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
   const [saving, setSaving] = useState(false);
 
   function set<K extends keyof Step1Data>(key: K, value: Step1Data[K]) {
-    setData((prev) => ({ ...prev, [key]: value }));
-    if (errors[key]) setErrors((prev) => ({ ...prev, [key]: undefined }));
-    // Reset region when country changes
     if (key === 'country') {
       setData((prev) => ({ ...prev, country: value as string, region: '' }));
+    } else {
+      setData((prev) => ({ ...prev, [key]: value }));
     }
+    if (errors[key]) setErrors((prev) => ({ ...prev, [key]: undefined }));
   }
 
   function validate(): boolean {
@@ -56,6 +58,11 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
     const year = parseInt(data.year_founded);
     if (!data.year_founded || isNaN(year) || year < 1800 || year > new Date().getFullYear()) {
       next.year_founded = t('errors.yearRequired');
+    }
+    if (!data.seller_email.trim()) {
+      next.seller_email = t('errors.emailRequired');
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.seller_email.trim())) {
+      next.seller_email = t('errors.emailInvalid');
     }
     setErrors(next);
     return Object.keys(next).length === 0;
@@ -76,14 +83,16 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
           region: data.region,
           sector: data.sector,
           year_founded: parseInt(data.year_founded),
+          seller_email: data.seller_email.trim(),
+          seller_phone: data.seller_phone.trim() || null,
         })
         .select('id')
         .single();
 
       if (error) throw error;
-      onComplete(row.id);
-    } catch {
-      // Surface a generic error — Supabase errors are not user-facing detail
+      onComplete(row.id, data.photos);
+    } catch (err) {
+      console.error('[Step1] Supabase insert failed:', err);
       setErrors({ sector: 'Something went wrong. Please try again.' });
     } finally {
       setSaving(false);
@@ -93,27 +102,23 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
   const regions = data.country ? REGIONS[data.country] ?? [] : [];
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="space-y-6">
-      {/* Business name */}
-      <Field
-        label={t('businessName.label')}
-        helper={t('businessName.helper')}
-      >
-        <Input
-          id="businessName"
-          value={data.business_name}
-          onChange={(e) => set('business_name', e.target.value)}
-          placeholder={t('businessName.placeholder')}
-        />
-      </Field>
+    <form onSubmit={handleSubmit} noValidate>
+      <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        {/* Business name — full width */}
+        <div className="sm:col-span-2">
+          <Field label={t('businessName.label')} helper={t('businessName.helper')} optional>
+            <Input
+              id="businessName"
+              value={data.business_name}
+              onChange={(e) => set('business_name', e.target.value)}
+              placeholder={t('businessName.placeholder')}
+            />
+          </Field>
+        </div>
+
         {/* Country */}
-        <Field
-          label={t('country.label')}
-          helper={t('country.helper')}
-          error={errors.country}
-        >
+        <Field label={t('country.label')} helper={t('country.helper')} error={errors.country}>
           <NativeSelect
             id="country"
             value={data.country}
@@ -128,11 +133,7 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
         </Field>
 
         {/* Region */}
-        <Field
-          label={t('region.label')}
-          helper={t('region.helper')}
-          error={errors.region}
-        >
+        <Field label={t('region.label')} helper={t('region.helper')} error={errors.region}>
           <NativeSelect
             id="region"
             value={data.region}
@@ -143,26 +144,22 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
             options={regions.map((r) => ({ value: r, label: r }))}
           />
         </Field>
-      </div>
 
-      {/* Sector */}
-      <Field
-        label={t('sector.label')}
-        helper={t('sector.helper')}
-        error={errors.sector}
-      >
-        <NativeSelect
-          id="sector"
-          value={data.sector}
-          onChange={(v) => set('sector', v)}
-          placeholder={t('sector.placeholder')}
-          hasError={!!errors.sector}
-          options={SECTORS}
-        />
-      </Field>
+        {/* Sector — full width */}
+        <div className="sm:col-span-2">
+          <Field label={t('sector.label')} helper={t('sector.helper')} error={errors.sector}>
+            <NativeSelect
+              id="sector"
+              value={data.sector}
+              onChange={(v) => set('sector', v)}
+              placeholder={t('sector.placeholder')}
+              hasError={!!errors.sector}
+              options={SECTORS}
+            />
+          </Field>
+        </div>
 
-      {/* Year founded */}
-      <div className="max-w-[200px]">
+        {/* Year founded — half width */}
         <Field
           label={t('yearFounded.label')}
           helper={t('yearFounded.helper')}
@@ -178,11 +175,38 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
             className={errors.year_founded ? 'border-red-600' : ''}
           />
         </Field>
+
+        {/* Email — full width */}
+        <div className="sm:col-span-2">
+          <Field label={t('email.label')} helper={t('email.helper')} error={errors.seller_email}>
+            <Input
+              id="sellerEmail"
+              type="email"
+              inputMode="email"
+              value={data.seller_email}
+              onChange={(e) => set('seller_email', e.target.value)}
+              placeholder={t('email.placeholder')}
+              className={errors.seller_email ? 'border-red-600' : ''}
+            />
+          </Field>
+        </div>
+
+        {/* Phone — half width */}
+        <Field label={t('phone.label')} helper={t('phone.helper')} optional>
+          <Input
+            id="sellerPhone"
+            type="tel"
+            inputMode="tel"
+            value={data.seller_phone}
+            onChange={(e) => set('seller_phone', e.target.value)}
+            placeholder={t('phone.placeholder')}
+          />
+        </Field>
       </div>
 
       {/* Photos */}
-      <div className="border-t border-[var(--color-border)] pt-6">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--color-muted)]">
+      <div className="mt-10 border-t border-[var(--color-border)] pt-8">
+        <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.07em] text-[var(--color-muted)]">
           {t('photos.label')}
         </p>
         <p className="mb-4 text-sm text-[var(--color-muted)]">{t('photos.helper')}</p>
@@ -192,7 +216,7 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
         />
       </div>
 
-      <div className="flex justify-end border-t border-[var(--color-border)] pt-6">
+      <div className="mt-10 flex justify-end border-t border-[var(--color-border)] pt-8">
         <Button type="submit" disabled={saving}>
           {saving ? 'Saving…' : t('continue')}
         </Button>
@@ -207,21 +231,28 @@ function Field({
   label,
   helper,
   error,
+  optional,
   children,
 }: {
   label: string;
   helper: string;
   error?: string;
+  optional?: boolean;
   children: React.ReactNode;
 }) {
   return (
     <div className="flex flex-col gap-1.5">
-      <Label>{label}</Label>
+      <Label>
+        {label}
+        {optional && (
+          <span className="font-normal text-[var(--color-muted)]"> (optional)</span>
+        )}
+      </Label>
       {children}
       {error ? (
         <p className="text-xs text-red-600">{error}</p>
       ) : (
-        <p className="text-xs text-[var(--color-muted)]">{helper}</p>
+        <p className="text-xs leading-[1.5] text-[var(--color-muted)]">{helper}</p>
       )}
     </div>
   );
@@ -252,7 +283,7 @@ function NativeSelect({
         onChange={(e) => onChange(e.target.value)}
         disabled={disabled}
         className={[
-          'h-10 w-full appearance-none rounded-md border bg-white pl-3 pr-8 text-sm outline-none transition-colors',
+          'w-full appearance-none rounded-md border bg-white pl-3 pr-8 py-[10px] text-sm outline-none transition-colors',
           'disabled:cursor-not-allowed disabled:opacity-50',
           hasError
             ? 'border-red-600'
@@ -269,7 +300,6 @@ function NativeSelect({
           </option>
         ))}
       </select>
-      {/* chevron */}
       <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2">
         <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
           <path d="M1 1L5 5L9 1" stroke="var(--color-muted)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

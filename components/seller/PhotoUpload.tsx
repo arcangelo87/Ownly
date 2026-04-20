@@ -58,7 +58,7 @@ export function PhotoUpload({ files, onChange }: PhotoUploadProps) {
             : 'border-[var(--color-border)] bg-white hover:border-[var(--color-accent)] hover:bg-[#EBF1ED]',
         ].join(' ')}
       >
-        <UploadCloud className="h-7 w-7 text-[var(--color-muted)]" />
+        <UploadCloud className="h-9 w-9 text-[var(--color-muted)]" />
         <p className="text-sm text-[var(--color-muted)]">
           {t('dragText').split(', or ')[0]}, or{' '}
           <span className="font-medium text-[var(--color-accent)]">
