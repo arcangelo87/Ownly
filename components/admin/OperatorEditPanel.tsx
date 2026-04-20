@@ -47,9 +47,19 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
       </p>
 
       {listing.slug && (
-        <div className="flex items-center gap-2 rounded-md bg-[#EBF1ED] px-3 py-2">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.06em] text-[var(--color-accent)]">Slug</span>
-          <span className="font-mono text-[12px] text-[var(--color-accent)]">{listing.slug}</span>
+        <div className="flex items-center justify-between rounded-md bg-[#EBF1ED] px-3 py-2">
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.06em] text-[var(--color-accent)]">Slug</span>
+            <span className="font-mono text-[12px] text-[var(--color-accent)]">{listing.slug}</span>
+          </div>
+          <a
+            href={`/en/deals/${listing.slug}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[12px] font-medium text-[var(--color-accent)] underline underline-offset-2 hover:opacity-70"
+          >
+            View live →
+          </a>
         </div>
       )}
 
