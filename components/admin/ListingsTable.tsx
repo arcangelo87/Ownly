@@ -3,6 +3,18 @@
 import { useEffect, useState, useTransition } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import { updateListingStatus } from '@/app/actions/admin';
+import { publishListing } from '@/app/actions/deals';
+import { OperatorEditPanel } from '@/components/admin/OperatorEditPanel';
+import {
+  SECTOR_LABELS,
+  formatRevenue,
+  formatEmployees,
+  formatEbitda,
+  formatPrice,
+  formatPartialSale,
+  formatTimeline,
+  formatReasons,
+} from '@/lib/format';
 import type { Listing } from '@/types';
 
 const STATUS_LABELS: Record<string, string> = {
@@ -19,15 +31,6 @@ const STATUS_COLORS: Record<string, string> = {
   rejected:  'bg-red-50 text-red-700',
 };
 
-const SECTOR_LABELS: Record<string, string> = {
-  manufacturing: 'Manufacturing',
-  food_beverage: 'Food & Beverage',
-  professional_services: 'Professional Services',
-  wholesale: 'Wholesale & Distribution',
-  construction: 'Construction & Engineering',
-  technology: 'Technology',
-  other: 'Other',
-};
 
 export function ListingsTable({ initialListings }: { initialListings: Listing[] }) {
   const [listings, setListings] = useState<Listing[]>(initialListings);
@@ -60,7 +63,12 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
     const typed = status as Listing['status'];
     setListings((prev) => prev.map((l) => (l.id === id ? { ...l, status: typed } : l)));
     startTransition(async () => {
-      await updateListingStatus(id, typed);
+      if (typed === 'live') {
+        const slug = await publishListing(id);
+        setListings((prev) => prev.map((l) => (l.id === id ? { ...l, slug } : l)));
+      } else {
+        await updateListingStatus(id, typed);
+      }
     });
   }
 
@@ -188,6 +196,14 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
                           )}
                         </div>
                       )}
+                      <OperatorEditPanel
+                        listing={listing}
+                        onSave={(updated) =>
+                          setListings((prev) =>
+                            prev.map((l) => (l.id === listing.id ? { ...l, ...updated } : l)),
+                          )
+                        }
+                      />
                     </td>
                   </tr>
                 )}
@@ -222,54 +238,3 @@ function DetailBlock({ label, value }: { label: string; value: string }) {
   );
 }
 
-function formatRevenue(val: string | null): string {
-  const map: Record<string, string> = {
-    under_500k: '<€500k', '500k_1m': '€500k–1M', '1m_2_5m': '€1–2.5M',
-    '2_5m_5m': '€2.5–5M', over_5m: '>€5M',
-  };
-  return val ? (map[val] ?? val) : '—';
-}
-
-function formatEmployees(val: string | null): string {
-  const map: Record<string, string> = {
-    just_me: 'Just me', '2_5': '2–5', '6_15': '6–15', '16_30': '16–30', '30_plus': '30+',
-  };
-  return val ? (map[val] ?? val) : '—';
-}
-
-function formatEbitda(val: string | null): string {
-  const map: Record<string, string> = {
-    below_10: '<10%', '10_20': '10–20%', '20_35': '20–35%', above_35: '>35%', not_sure: 'Not sure',
-  };
-  return val ? (map[val] ?? val) : '—';
-}
-
-function formatPrice(val: string | null): string {
-  const map: Record<string, string> = {
-    under_500k: '<€500k', '500k_1m': '€500k–1M', '1m_2m': '€1–2M',
-    '2m_4m': '€2–4M', over_4m: '>€4M', not_sure: 'Not sure',
-  };
-  return val ? (map[val] ?? val) : '—';
-}
-
-function formatPartialSale(val: string | null): string {
-  if (!val) return '—';
-  return val === 'open_to_minority' ? 'Open to partial' : 'Full sale only';
-}
-
-function formatTimeline(val: string | null): string {
-  const map: Record<string, string> = {
-    ready_now: 'Ready now (<6 mo)', '6_12_months': '6–12 months',
-    '1_2_years': '1–2 years', just_exploring: 'Just exploring',
-  };
-  return val ? (map[val] ?? val) : '—';
-}
-
-function formatReasons(val: string[] | null): string {
-  if (!val || val.length === 0) return '—';
-  const map: Record<string, string> = {
-    retirement: 'Retirement', growth_capital: 'Growth capital', no_succession: 'No succession',
-    health_personal: 'Health/personal', market_opportunity: 'Market opportunity', other: 'Other',
-  };
-  return val.map((r) => map[r] ?? r).join(', ');
-}

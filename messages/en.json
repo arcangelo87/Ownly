@@ -1,5 +1,57 @@
 {
   "common": {},
+  "deals": {
+    "metrics": {
+      "revenue": "Annual revenue",
+      "ebitda": "EBITDA margin",
+      "askingPrice": "Asking price",
+      "employees": "Employees",
+      "timeline": "Timeline"
+    },
+    "sections": {
+      "about": "About the business",
+      "highlights": "Highlights",
+      "financials": "Full financials",
+      "financialsLocked": "Available on request",
+      "financialsLockedDetail": "Detailed financials are shared directly with serious buyers after an initial conversation."
+    },
+    "dealBasics": {
+      "title": "Deal basics",
+      "country": "Country",
+      "region": "Region",
+      "yearFounded": "Founded",
+      "saleStructure": "Sale structure",
+      "reasonsForSale": "Reason for sale"
+    },
+    "enquiry": {
+      "title": "Get in touch",
+      "name": "Your name",
+      "namePlaceholder": "Full name",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Phone number",
+      "phonePlaceholder": "Optional",
+      "message": "Message",
+      "messagePlaceholder": "Tell us a little about your background and what interests you about this deal.",
+      "submit": "Send enquiry →",
+      "submitting": "Sending…",
+      "successTitle": "Enquiry sent",
+      "successBody": "We've received your message and will be in touch shortly.",
+      "reassurance": "Your details are shared only with the seller. No spam.",
+      "errors": {
+        "nameRequired": "Please enter your name.",
+        "emailRequired": "Please enter your email address.",
+        "emailInvalid": "Please enter a valid email address.",
+        "submitFailed": "Something went wrong. Please try again."
+      }
+    },
+    "photoAlt": "Business photo",
+    "notFound": {
+      "title": "Listing not found",
+      "body": "This deal may have been removed or is no longer available.",
+      "cta": "Browse all deals →"
+    }
+  },
   "seller": {
     "steps": {
       "step1": "Business basics",
