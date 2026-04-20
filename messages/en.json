@@ -35,6 +35,16 @@
         "placeholder": "e.g. 1998",
         "helper": "Helps buyers understand the maturity of the business."
       },
+      "email": {
+        "label": "Your email address",
+        "placeholder": "you@example.com",
+        "helper": "For our records only — never shown publicly. We'll use this to follow up on your listing."
+      },
+      "phone": {
+        "label": "Phone number",
+        "placeholder": "e.g. +39 02 1234 5678",
+        "helper": "Optional. Makes it easier for us to reach you quickly if needed."
+      },
       "photos": {
         "label": "Photos",
         "helper": "Listings with photos receive significantly more buyer interest. Up to 10 photos, 5 MB each.",
@@ -46,7 +56,9 @@
         "countryRequired": "Please select a country.",
         "regionRequired": "Please select a region.",
         "sectorRequired": "Please select a sector.",
-        "yearRequired": "Please enter a valid year (e.g. 1998)."
+        "yearRequired": "Please enter a valid year (e.g. 1998).",
+        "emailRequired": "Please enter your email address.",
+        "emailInvalid": "Please enter a valid email address."
       }
     },
     "step2": {

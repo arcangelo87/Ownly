@@ -33,6 +33,8 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
     region: '',
     sector: '',
     year_founded: '',
+    seller_email: '',
+    seller_phone: '',
     photos: [],
   });
 
@@ -57,6 +59,11 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
     if (!data.year_founded || isNaN(year) || year < 1800 || year > new Date().getFullYear()) {
       next.year_founded = t('errors.yearRequired');
     }
+    if (!data.seller_email.trim()) {
+      next.seller_email = t('errors.emailRequired');
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.seller_email.trim())) {
+      next.seller_email = t('errors.emailInvalid');
+    }
     setErrors(next);
     return Object.keys(next).length === 0;
   }
@@ -76,6 +83,8 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
           region: data.region,
           sector: data.sector,
           year_founded: parseInt(data.year_founded),
+          seller_email: data.seller_email.trim(),
+          seller_phone: data.seller_phone.trim() || null,
         })
         .select('id')
         .single();
@@ -164,6 +173,33 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
             onChange={(e) => set('year_founded', e.target.value.replace(/\D/g, ''))}
             placeholder={t('yearFounded.placeholder')}
             className={errors.year_founded ? 'border-red-600' : ''}
+          />
+        </Field>
+
+        {/* Email — full width */}
+        <div className="sm:col-span-2">
+          <Field label={t('email.label')} helper={t('email.helper')} error={errors.seller_email}>
+            <Input
+              id="sellerEmail"
+              type="email"
+              inputMode="email"
+              value={data.seller_email}
+              onChange={(e) => set('seller_email', e.target.value)}
+              placeholder={t('email.placeholder')}
+              className={errors.seller_email ? 'border-red-600' : ''}
+            />
+          </Field>
+        </div>
+
+        {/* Phone — half width */}
+        <Field label={t('phone.label')} helper={t('phone.helper')} optional>
+          <Input
+            id="sellerPhone"
+            type="tel"
+            inputMode="tel"
+            value={data.seller_phone}
+            onChange={(e) => set('seller_phone', e.target.value)}
+            placeholder={t('phone.placeholder')}
           />
         </Field>
       </div>

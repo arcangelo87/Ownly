@@ -13,6 +13,8 @@ export interface Listing {
   region: string | null;
   sector: string | null;
   year_founded: number | null;
+  seller_email: string | null;
+  seller_phone: string | null;
 
   // Step 2
   revenue_range: string | null;
@@ -37,5 +39,7 @@ export interface Step1Data {
   region: string;
   sector: string;
   year_founded: string;
+  seller_email: string;
+  seller_phone: string;
   photos: File[];
 }

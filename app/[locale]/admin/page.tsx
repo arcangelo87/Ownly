@@ -3,6 +3,7 @@ import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { ListingsTable } from '@/components/admin/ListingsTable';
 import { SignOutButton } from '@/components/admin/SignOutButton';
+import type { Listing } from '@/types';
 
 export default async function AdminPage({
   params,
@@ -19,7 +20,7 @@ export default async function AdminPage({
   const admin = createAdminClient();
   const { data: listings } = await admin
     .from('listings')
-    .select('id, created_at, status, business_name, country, region, sector, revenue_range, employee_count')
+    .select('id, created_at, updated_at, deleted_at, status, business_name, country, region, sector, year_founded, seller_email, seller_phone, revenue_range, ebitda_margin, employee_count, asking_price, partial_sale, timeline, reasons_for_sale, business_description, strongest_point, buyer_disclosure')
     .is('deleted_at', null)
     .order('created_at', { ascending: false });
 
@@ -42,7 +43,7 @@ export default async function AdminPage({
             {listings?.length ?? 0} total
           </span>
         </div>
-        <ListingsTable initialListings={listings ?? []} />
+        <ListingsTable initialListings={(listings ?? []) as Listing[]} />
       </main>
     </div>
   );
