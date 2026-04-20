@@ -81,7 +81,7 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
   }
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-[var(--color-border)]">
+    <div className="rounded-lg border border-[var(--color-border)]">
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-[var(--color-border)] bg-[var(--color-surface)]">
