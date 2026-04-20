@@ -173,6 +173,7 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
         <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.07em] text-[var(--color-muted)]">
           {t('photos.label')}
         </p>
+        <p className="mb-4 text-sm text-[var(--color-muted)]">{t('photos.helper')}</p>
         <PhotoUpload
           files={data.photos}
           onChange={(photos) => set('photos', photos)}

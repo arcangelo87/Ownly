@@ -52,7 +52,7 @@ Never use Inter, Roboto, or system fonts. They are fine — they are also invisi
 
 ## Colour
 
-**Background:** Warm off-white — not pure white (#FFFFFF), something like #FAF9F6 or #F7F5F0. Feels considered, not sterile.
+**Background:** Pale linen — #F7F2E9. Warm without being loud. Feels considered, not sterile.
 
 **Text:** Near-black — #1A1A18 or similar. Not pure black.
 
