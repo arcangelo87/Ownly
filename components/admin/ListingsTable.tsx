@@ -80,8 +80,11 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
     );
   }
 
+  const expandedListing = listings.find((l) => l.id === expandedId) ?? null;
+
   return (
-    <div className="rounded-lg border border-[var(--color-border)]">
+    <div>
+      <div className={`border border-[var(--color-border)] ${expandedListing ? 'rounded-t-lg' : 'rounded-lg'}`}>
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-[var(--color-border)] bg-[var(--color-surface)]">
@@ -196,14 +199,6 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
                           )}
                         </div>
                       )}
-                      <OperatorEditPanel
-                        listing={listing}
-                        onSave={(updated) =>
-                          setListings((prev) =>
-                            prev.map((l) => (l.id === listing.id ? { ...l, ...updated } : l)),
-                          )
-                        }
-                      />
                     </td>
                   </tr>
                 )}
@@ -212,6 +207,20 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
           })}
         </tbody>
       </table>
+      </div>
+
+      {expandedListing && (
+        <div className="rounded-b-lg border border-t-0 border-[var(--color-border)] bg-[var(--color-bg)] px-6 py-6">
+          <OperatorEditPanel
+            listing={expandedListing}
+            onSave={(updated) =>
+              setListings((prev) =>
+                prev.map((l) => (l.id === expandedListing.id ? { ...l, ...updated } : l)),
+              )
+            }
+          />
+        </div>
+      )}
     </div>
   );
 }
