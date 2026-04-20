@@ -57,9 +57,10 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
   }, []);
 
   function handleStatusChange(id: string, status: string) {
-    setListings((prev) => prev.map((l) => (l.id === id ? { ...l, status } : l)));
+    const typed = status as Listing['status'];
+    setListings((prev) => prev.map((l) => (l.id === id ? { ...l, status: typed } : l)));
     startTransition(async () => {
-      await updateListingStatus(id, status as 'draft' | 'in_review' | 'live' | 'rejected');
+      await updateListingStatus(id, typed);
     });
   }
 
