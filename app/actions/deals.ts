@@ -22,21 +22,17 @@ export async function submitEnquiry(data: {
   if (error) throw error;
 }
 
-export async function uploadListingPhoto(
+export async function createPhotoUploadUrl(
   listingId: string,
   index: number,
   filename: string,
-  mimeType: string,
-  buffer: ArrayBuffer,
-): Promise<void> {
+): Promise<string> {
   const admin = createAdminClient();
-  const { error } = await admin.storage
+  const { data, error } = await admin.storage
     .from('listing-photos')
-    .upload(`${listingId}/${index}-${filename}`, buffer, {
-      contentType: mimeType,
-      upsert: true,
-    });
+    .createSignedUploadUrl(`${listingId}/${index}-${filename}`);
   if (error) throw new Error(error.message);
+  return data.signedUrl;
 }
 
 export async function publishListing(listingId: string) {

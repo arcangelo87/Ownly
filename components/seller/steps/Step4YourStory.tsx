@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { createClient } from '@/lib/supabase/client';
-import { uploadListingPhoto } from '@/app/actions/deals';
+import { createPhotoUploadUrl } from '@/app/actions/deals';
 
 const REASONS = [
   { value: 'retirement', labelKey: 'reasons.retirement' },
@@ -69,8 +69,12 @@ export function Step4YourStory({ listingId, photos, onComplete }: Step4YourStory
     if (photos.length === 0) return;
     await Promise.all(
       photos.map(async (file, i) => {
-        const buffer = await file.arrayBuffer();
-        await uploadListingPhoto(listingId, i, file.name, file.type, buffer);
+        const signedUrl = await createPhotoUploadUrl(listingId, i, file.name);
+        await fetch(signedUrl, {
+          method: 'PUT',
+          body: file,
+          headers: { 'Content-Type': file.type },
+        });
       }),
     );
   }
