@@ -7,8 +7,6 @@ import {
   formatRevenue,
   formatEbitda,
   formatPrice,
-  formatEmployees,
-  formatTimeline,
 } from '@/lib/format';
 import type { ListingCard } from '@/app/[locale]/deals/page';
 
@@ -84,11 +82,7 @@ export function DealCard({ listing }: DealCardProps) {
         </div>
 
         {/* Footer */}
-        <div className="mt-auto flex items-center justify-between border-t border-[var(--color-border)] pt-3">
-          <span className="text-[12px] text-[var(--color-muted)]">
-            {formatEmployees(listing.employee_count)}
-            {listing.timeline ? ` · ${formatTimeline(listing.timeline)}` : ''}
-          </span>
+        <div className="mt-auto border-t border-[var(--color-border)] pt-3">
           <span className="text-[13px] font-medium text-[var(--color-accent)]">
             {tCard('viewDeal')}
           </span>
