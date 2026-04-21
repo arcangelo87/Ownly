@@ -66,13 +66,20 @@ export function Step4YourStory({ listingId, photos, onComplete }: Step4YourStory
 
   async function uploadPhotos(supabase: ReturnType<typeof createClient>): Promise<void> {
     if (photos.length === 0) return;
-    await Promise.allSettled(
+    const results = await Promise.allSettled(
       photos.map((file, i) =>
         supabase.storage
           .from('listing-photos')
           .upload(`${listingId}/${i}-${file.name}`, file, { upsert: true }),
       ),
     );
+    results.forEach((result, i) => {
+      if (result.status === 'rejected') {
+        console.error(`[Step4] photo ${i} upload rejected:`, result.reason);
+      } else if (result.value.error) {
+        console.error(`[Step4] photo ${i} upload error:`, result.value.error);
+      }
+    });
   }
 
   async function handleSubmit(e: React.FormEvent) {
