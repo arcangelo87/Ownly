@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { createClient } from '@/lib/supabase/client';
+import { uploadListingPhotos } from '@/app/actions/deals';
 
 const REASONS = [
   { value: 'retirement', labelKey: 'reasons.retirement' },
@@ -64,22 +65,11 @@ export function Step4YourStory({ listingId, photos, onComplete }: Step4YourStory
     return Object.keys(next).length === 0;
   }
 
-  async function uploadPhotos(supabase: ReturnType<typeof createClient>): Promise<void> {
+  async function uploadPhotos(): Promise<void> {
     if (photos.length === 0) return;
-    const results = await Promise.allSettled(
-      photos.map((file, i) =>
-        supabase.storage
-          .from('listing-photos')
-          .upload(`${listingId}/${i}-${file.name}`, file, { upsert: true }),
-      ),
-    );
-    results.forEach((result, i) => {
-      if (result.status === 'rejected') {
-        console.error(`[Step4] photo ${i} upload rejected:`, result.reason);
-      } else if (result.value.error) {
-        console.error(`[Step4] photo ${i} upload error:`, result.value.error);
-      }
-    });
+    const formData = new FormData();
+    photos.forEach((file) => formData.append('photos', file));
+    await uploadListingPhotos(listingId, formData);
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -90,7 +80,7 @@ export function Step4YourStory({ listingId, photos, onComplete }: Step4YourStory
     try {
       const supabase = createClient();
 
-      await uploadPhotos(supabase);
+      await uploadPhotos();
 
       const { error } = await supabase
         .from('listings')

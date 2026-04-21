@@ -22,7 +22,19 @@ export async function submitEnquiry(data: {
   if (error) throw error;
 }
 
-export async function publishListing(listingId: string) {
+export async function uploadListingPhotos(listingId: string, formData: FormData): Promise<void> {
+  const admin = createAdminClient();
+  const files = formData.getAll('photos') as File[];
+  await Promise.all(
+    files.map((file, i) =>
+      admin.storage
+        .from('listing-photos')
+        .upload(`${listingId}/${i}-${file.name}`, file, { upsert: true }),
+    ),
+  );
+}
+
+
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) throw new Error('Unauthorized');
