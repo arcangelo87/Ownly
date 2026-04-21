@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { createClient } from '@/lib/supabase/client';
-import { uploadListingPhotos } from '@/app/actions/deals';
+import { uploadListingPhoto } from '@/app/actions/deals';
 
 const REASONS = [
   { value: 'retirement', labelKey: 'reasons.retirement' },
@@ -67,9 +67,12 @@ export function Step4YourStory({ listingId, photos, onComplete }: Step4YourStory
 
   async function uploadPhotos(): Promise<void> {
     if (photos.length === 0) return;
-    const formData = new FormData();
-    photos.forEach((file) => formData.append('photos', file));
-    await uploadListingPhotos(listingId, formData);
+    await Promise.all(
+      photos.map(async (file, i) => {
+        const buffer = await file.arrayBuffer();
+        await uploadListingPhoto(listingId, i, file.name, file.type, buffer);
+      }),
+    );
   }
 
   async function handleSubmit(e: React.FormEvent) {

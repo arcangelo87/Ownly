@@ -22,16 +22,21 @@ export async function submitEnquiry(data: {
   if (error) throw error;
 }
 
-export async function uploadListingPhotos(listingId: string, formData: FormData): Promise<void> {
+export async function uploadListingPhoto(
+  listingId: string,
+  index: number,
+  filename: string,
+  mimeType: string,
+  buffer: ArrayBuffer,
+): Promise<void> {
   const admin = createAdminClient();
-  const files = formData.getAll('photos') as File[];
-  await Promise.all(
-    files.map((file, i) =>
-      admin.storage
-        .from('listing-photos')
-        .upload(`${listingId}/${i}-${file.name}`, file, { upsert: true }),
-    ),
-  );
+  const { error } = await admin.storage
+    .from('listing-photos')
+    .upload(`${listingId}/${index}-${filename}`, buffer, {
+      contentType: mimeType,
+      upsert: true,
+    });
+  if (error) throw new Error(error.message);
 }
 
 
