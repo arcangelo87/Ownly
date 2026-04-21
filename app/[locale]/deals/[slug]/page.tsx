@@ -32,7 +32,7 @@ export default async function DealDetailPage({
   const { data: listing, error } = await admin
     .from('listings')
     .select(
-      'id, slug, title, about, highlights, sector, region, country, year_founded, revenue_range, ebitda_margin, employee_count, asking_price, partial_sale, timeline, reasons_for_sale, created_at',
+      'id, slug, title, about, highlights, business_name, business_description, strongest_point, sector, region, country, year_founded, revenue_range, ebitda_margin, employee_count, asking_price, partial_sale, timeline, reasons_for_sale, created_at',
     )
     .eq('slug', slug)
     .eq('status', 'live')
@@ -95,7 +95,7 @@ export default async function DealDetailPage({
             </div>
 
             <h1 className="mt-3 font-serif text-[28px] font-medium leading-[1.2] tracking-[-0.02em]">
-              {listing.title ?? (SECTOR_LABELS[listing.sector ?? ''] ?? listing.sector)}
+              {listing.title ?? listing.business_name ?? (SECTOR_LABELS[listing.sector ?? ''] ?? listing.sector)}
             </h1>
 
             <div className="mt-6 grid grid-cols-3 gap-2.5 sm:grid-cols-5">
@@ -106,21 +106,21 @@ export default async function DealDetailPage({
               <MetricChip label={t('metrics.timeline')} value={formatTimeline(listing.timeline)} />
             </div>
 
-            {listing.about && (
+            {(listing.about ?? listing.business_description) && (
               <section className="mt-10">
                 <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)]">
                   {t('sections.about')}
                 </p>
-                <p className="text-[14px] leading-[1.75] text-[var(--color-text)]">{listing.about}</p>
+                <p className="text-[14px] leading-[1.75] text-[var(--color-text)]">{listing.about ?? listing.business_description}</p>
               </section>
             )}
 
-            {listing.highlights && listing.highlights.length > 0 && (
+            {(listing.highlights?.length || listing.strongest_point) && (
               <section className="mt-8">
                 <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)]">
                   {t('sections.highlights')}
                 </p>
-                <HighlightsList items={listing.highlights} />
+                <HighlightsList items={listing.highlights?.length ? listing.highlights : [listing.strongest_point!]} />
               </section>
             )}
 
