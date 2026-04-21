@@ -6,16 +6,17 @@ import { useState } from 'react';
 interface PhotoStripProps {
   urls: string[];
   alt: string;
+  emptyLabel: string;
 }
 
-export function PhotoStrip({ urls, alt }: PhotoStripProps) {
+export function PhotoStrip({ urls, alt, emptyLabel }: PhotoStripProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   if (urls.length === 0) {
     return (
       <div className="flex h-[240px] items-center justify-center rounded-md bg-[var(--color-surface)]">
         <span className="text-[11px] uppercase tracking-[0.08em] text-[var(--color-muted)]">
-          No photos
+          {emptyLabel}
         </span>
       </div>
     );

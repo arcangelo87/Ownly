@@ -32,8 +32,8 @@ export function formatEbitda(val: string | null): string {
 
 export function formatPrice(val: string | null): string {
   const map: Record<string, string> = {
-    under_500k: '<€500k', '500k_1m': '€500k–1M', '1m_2m': '€1–2M',
-    '2m_4m': '€2–4M', over_4m: '>€4M', not_sure: 'Not sure',
+    under_500k: '<€500k', '500k_1m': '€500k–€1M', '1m_2_5m': '€1M–€2.5M',
+    '2_5m_5m': '€2.5M–€5M', '5m_10m': '€5M–€10M', over_10m: '>€10M',
   };
   return val ? (map[val] ?? val) : '—';
 }
@@ -46,7 +46,7 @@ export function formatPartialSale(val: string | null): string {
 export function formatTimeline(val: string | null): string {
   const map: Record<string, string> = {
     ready_now: 'Ready now (<6 mo)', '6_12_months': '6–12 months',
-    '1_2_years': '1–2 years', just_exploring: 'Just exploring',
+    '1_2_years': '1–2 years', exploring: 'Just exploring',
   };
   return val ? (map[val] ?? val) : '—';
 }

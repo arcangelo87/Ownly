@@ -75,7 +75,7 @@ export default async function DealDetailPage({
             Ownly
           </Link>
           <Link href={`/${locale}/deals`} className="text-[13px] text-[var(--color-muted)] hover:text-[var(--color-text)]">
-            ← Browse deals
+            {t('browseDeals')}
           </Link>
         </div>
       </header>
@@ -85,7 +85,7 @@ export default async function DealDetailPage({
 
           {/* ── Main content ── */}
           <article className="min-w-0 flex-1">
-            <PhotoStrip urls={photoUrls} alt={t('photoAlt')} />
+            <PhotoStrip urls={photoUrls} alt={t('photoAlt')} emptyLabel={t('noPhotos')} />
 
             <div className="mt-5 flex items-center justify-between">
               <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--color-accent)]">

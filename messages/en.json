@@ -45,6 +45,8 @@
         "submitFailed": "Something went wrong. Please try again."
       }
     },
+    "browseDeals": "← Browse deals",
+    "noPhotos": "No photos",
     "photoAlt": "Business photo",
     "notFound": {
       "title": "Listing not found",
