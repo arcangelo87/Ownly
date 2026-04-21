@@ -1,6 +1,45 @@
 {
   "common": {},
   "deals": {
+    "browse": {
+      "pageTitle": "Browse deals",
+      "pageSubtitle": "Curated acquisition opportunities in Italy and Portugal.",
+      "resultCount": "{count} deals",
+      "noResults": "No deals match your filters.",
+      "noResultsHint": "Try removing some filters to see more listings.",
+      "clearFilters": "Clear filters",
+      "showFilters": "Filters",
+      "filters": {
+        "heading": "Filters",
+        "country": "Country",
+        "sector": "Sector",
+        "askingPrice": "Asking price",
+        "timeline": "Timeline",
+        "any": "Any",
+        "italy": "Italy",
+        "portugal": "Portugal",
+        "priceUnder1m": "Under €1M",
+        "price1to2m": "€1M – €2M",
+        "price2to4m": "€2M – €4M",
+        "priceOver4m": "Over €4M",
+        "timelineReadyNow": "Ready now",
+        "timeline6to12": "6–12 months",
+        "timeline1to2": "1–2 years",
+        "timelineExploring": "Just exploring"
+      },
+      "sort": {
+        "label": "Sort by",
+        "recent": "Most recent",
+        "priceAsc": "Price: low – high",
+        "revenueDesc": "Revenue: high – low",
+        "ebitdaDesc": "EBITDA: high – low"
+      },
+      "card": {
+        "viewDeal": "View deal →",
+        "photosBadge": "{count} photos",
+        "noPhoto": "No photos"
+      }
+    },
     "metrics": {
       "revenue": "Annual revenue",
       "ebitda": "EBITDA margin",
