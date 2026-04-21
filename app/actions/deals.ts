@@ -39,7 +39,7 @@ export async function uploadListingPhoto(
   if (error) throw new Error(error.message);
 }
 
-
+export async function publishListing(listingId: string) {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) throw new Error('Unauthorized');
