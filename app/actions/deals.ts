@@ -11,7 +11,7 @@ export async function submitEnquiry(data: {
   phone?: string;
   message?: string;
 }) {
-  const supabase = await createClient();
+  const supabase = createAdminClient();
   const { error } = await supabase.from('enquiries').insert({
     listing_id: data.listing_id,
     name: data.name.trim(),
