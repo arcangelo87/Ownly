@@ -1,0 +1,548 @@
+# Ownly — Landing Page Requirements & Copy Brief
+
+**Purpose:** Feed this document to Claude Code to build the landing pages (Epic A).  
+**Build order:** Build landing pages last — after Epics B, C, D are live and real deals exist.  
+**Pages:** `/` (Homepage), `/sellers`, `/brokers`, `/buyers`
+
+---
+
+**Design:** Follow the existing DESIGN.md in the project repository. Do not introduce any new design decisions.
+
+---
+
+## Page Architecture
+
+```
+/ (Homepage)
+├── /sellers     — ICP page: business owners
+├── /brokers     — ICP page: M&A advisors / deal brokers
+└── /buyers      — ICP page: individual investors / acquirers
+```
+
+All pages share the same header and footer.
+
+**Header nav:** Logo (left) | Sell your business · For brokers · Browse deals (center) | [Get started →] (right, accent button)
+
+**Footer:** Logo + tagline | Links: Sell, Brokers, Browse deals, About, Contact | Legal: Privacy Policy, Terms | `© 2026 Ownly`
+
+---
+
+## Page 1 — Homepage (`/`)
+
+### Messaging Strategy
+
+The homepage speaks to all three ICPs but leads with sellers — they are the supply that makes the platform work. Brokers are secondary. Buyers are tertiary (they self-discover via the deal listings).
+
+The headline should position Ownly as the platform that takes deals in Southern Europe seriously — not a classifieds site, not a broker replacement. The tone is confident and warm, not salesy.
+
+One primary CTA above the fold: **sellers**. Secondary CTA: **brokers**. Buyers are served by "Browse deals" in the nav.
+
+### Sections
+
+#### 1. Hero
+**Headline (H1):**
+> Where Southern European businesses find serious buyers.
+
+**Subheadline:**
+> Ownly turns your business information into a structured deal — and puts it in front of buyers actively looking in Italy and Portugal.
+
+**Primary CTA:** `List your business →` → `/sellers`  
+**Secondary CTA (text link):** `Are you a broker? →` → `/brokers`
+
+**Visual:** Deal card mockup (or real deal screenshot once live). Shows a card with sector badge, location, revenue chip, EBITDA chip, asking price chip. Clean, structured — communicates product quality immediately.
+
+---
+
+#### 2. The Problem (no heading — visual statement)
+
+Three columns, each one a pain point, one per ICP. Sparse, typographic.
+
+| Column 1 (Sellers) | Column 2 (Brokers) | Column 3 (Buyers) |
+|---|---|---|
+| *"I built something real. But I don't know how to sell it."* | *"My deals deserve better presentation than a PDF and a cold email."* | *"I spent three months on a deal that wasn't worth buying. Chasing documents. Starting from zero."* |
+
+Small label above each quote: `Sellers` · `Brokers` · `Buyers`  
+Below the three columns, a single line: **Ownly is built for this.**
+
+---
+
+#### 3. How it works (for sellers — primary audience)
+
+**Section heading:** How it works
+
+Three steps, horizontal layout:
+
+| Step | Label | Description |
+|---|---|---|
+| 1 | Submit your details | Tell us about your business in 4 short steps. No jargon. No accountant required. |
+| 2 | We structure it | Ownly writes your deal page — clear, professional, buyer-ready. |
+| 3 | Buyers reach out | Serious enquiries come through Ownly. You decide who to engage. |
+
+**Below steps:** `Free to start. No commitment until you're ready.`  
+**CTA:** `List your business →`
+
+---
+
+#### 4. Why Ownly
+
+**Section heading:** Not a classifieds site. Not a broker.
+
+Two-column layout, generous whitespace.
+
+Left column (paragraph):
+> Most platforms list deals the way you'd list a second-hand car. Raw numbers, no context, no story. Buyers scroll past. Good businesses go unsold.
+>
+> Ownly is different. We structure every deal — turning founder-provided information into a clear, credible presentation. We write the copy. We frame the financials. We make it easy for a buyer to say yes to taking the first step.
+
+Right column (4 proof points, serif large numerals):
+
+| Stat | Label |
+|---|---|
+| Italy & Portugal | The only platform focused here |
+| NDA-first | Sensitive financials protected |
+| Curated | Every listing reviewed before going live |
+| Human-assisted | We write your deal page for you |
+
+*(Replace with real numbers once platform is live: e.g. "47 deals listed", "€62M in combined asking value")*
+
+---
+
+#### 5. For Brokers (brief section)
+
+**Section heading:** For brokers and M&A advisors
+
+Short, direct. Links to `/brokers` for the full pitch.
+
+> If you represent sellers, Ownly gives your deals a better home. Structured pages. Buyer enquiry routing. Up to 5 deals free.
+
+**CTA:** `Learn more →` → `/brokers`
+
+---
+
+#### 6. Footer CTA (full-width, accent background)
+
+Background: `#1C4A2A` (forest green). White text.
+
+**Headline:** Ready to list your business?  
+**Subheadline:** Free to start. No broker fees. No exclusivity.  
+**CTA button (white):** `Get started →` → `/sellers`
+
+---
+
+---
+
+## Page 2 — Sellers (`/sellers`)
+
+### Messaging Strategy
+
+**Primary emotion to address:** Uncertainty. Sellers have built something real but feel lost when it comes to selling. They don't know how to package it, they don't know what it's worth, and they don't want to waste time with tyre-kickers.
+
+**Ownly's promise to sellers:** We do the hard work of packaging and presenting your business. You provide the raw material — we make it buyer-ready. And nothing sensitive goes out without your consent.
+
+**Tone:** Respectful, warm, plain-spoken. This is a big life decision. Never pushy. Acknowledge the emotional weight.
+
+**Avoid:** M&A jargon, corporate language, pressure tactics.
+
+### Sections
+
+#### 1. Hero
+
+**H1:**
+> You built it. We'll help you sell it.
+
+**Subheadline:**
+> Ownly turns your business information into a structured deal page — and puts it in front of buyers actively looking in Italy and Portugal. Free to start, no broker fees.
+
+**CTA:** `List your business →` → seller form (Epic B)  
+**Supporting text:** `Takes 10 minutes. No commitment until you're ready.`
+
+---
+
+#### 2. We understand the problem
+
+**Section heading:** Selling a business is hard when you've never done it before.
+
+Three cards, each naming a real seller pain:
+
+**Card 1 — Packaging**
+> You know your business inside out. But explaining it to an outside buyer — its financials, its strengths, its potential — is a different skill entirely.
+
+**Card 2 — Access**
+> Serious buyers exist. But they don't browse classifieds. They rely on curated sources, trusted advisors, and platforms that do the screening for them.
+
+**Card 3 — Trust**
+> You don't want your competitors knowing you're selling. You don't want tyre-kickers calling your staff. You want control.
+
+---
+
+#### 3. What Ownly does for you
+
+**Section heading:** Here's what you get.
+
+**Free tier:**
+- Your business listed on Ownly — Italy and Portugal's only curated SME deal platform
+- A structured deal page (we write the copy based on your inputs)
+- A public teaser — sector, location, headline metrics — to attract serious interest
+- Full financials stay private until a buyer signs a confidentiality agreement
+- Up to 10 inbound enquiries routed through Ownly
+
+**Assisted tier (€399/year — launch price €199/year):**
+Everything in Free, plus:
+- A professional deal teaser document (PDF) — yours to use anywhere, not just on Ownly
+- NDA support — we handle the paperwork
+- Outreach materials you can use in your own network, with your own contacts, independently of Ownly
+- Business valuation guidance
+- Strategic insights — we identify the buyer profiles most likely to see value in your business, the angles to lead with, and what to address upfront to move faster to close
+- Active buyer matching — we reach out to relevant buyers in our network
+- Unlimited enquiries
+
+**White Glove (custom pricing):**
+Full advisory support from positioning to close. For owners who want a hands-off experience and complete guidance through the process.
+
+**CTA (Free):** `List your business for free →`  
+**CTA (Assisted):** `Talk to us about the Assisted plan →`
+
+---
+
+#### 4. Your privacy is protected
+
+**Section heading:** Nothing goes out without your say-so.
+
+This matters to sellers. Address it directly.
+
+> Your deal page shows buyers enough to assess whether to take the conversation further — sector, location, headline metrics, and a description of your business. That's it.
+>
+> Your financials, your business name, your contact details — none of this is shared until a buyer signs a confidentiality agreement and you've decided to proceed. You're in control of every step.
+
+Two-column table (public vs. protected):
+
+| Visible to anyone | Protected (NDA required) |
+|---|---|
+| Sector and location | Detailed financials |
+| Headline revenue range | Business name (unless you choose to show it) |
+| EBITDA range | Your contact details |
+| Business description | Any uploaded documents |
+| Asking price (or "on request") | |
+
+---
+
+#### 5. How it works
+
+**Section heading:** From form to live listing in days, not months.
+
+Four steps, clean vertical or horizontal timeline:
+
+1. **Fill in your details** — A 4-step guided form. No jargon. Takes about 10 minutes.
+2. **We review and write your listing** — Ownly writes the deal description based on your inputs. We may follow up with a short call to fill gaps.
+3. **Your listing goes live** — Published on Ownly, visible to buyers browsing Italy and Portugal.
+4. **Enquiries come through us** — Buyers reach out via Ownly. We review and route to you. You decide who to engage.
+
+**Below steps:**
+> No brokers. No exclusivity. No upfront costs on the free plan. You can withdraw your listing at any time.
+
+---
+
+#### 6. Pricing
+
+**Section heading:** Simple, transparent pricing.
+
+Two cards side by side (Free and Assisted). White Glove as a text row below.
+
+**Free**
+€0 / no commitment
+- Structured deal listing
+- Deal page written by Ownly
+- Up to 10 enquiries
+- NDA-gated financials
+`[List your business →]`
+
+**Assisted** *(most popular)*
+~~€399~~ **€199 / year** *(launch price)*
+- Everything in Free
+- Deal teaser PDF — yours to use anywhere
+- NDA support
+- Outreach materials — use with your own contacts, not just Ownly
+- Business valuation guidance
+- Strategic buyer insights — who to target, how to position, what to address upfront
+- Active buyer matching via Ownly's network
+- Unlimited enquiries
+`[Get started →]`
+
+**White Glove**
+Custom pricing — talk to us.
+Full advisory from positioning to close.
+`[Contact us →]`
+
+---
+
+#### 7. Footer CTA
+
+**Headline:** Ready to find out what your business is worth to the right buyer?  
+**CTA:** `List your business for free →`  
+**Supporting text:** Free to start. No exclusivity. Cancel anytime.
+
+---
+
+---
+
+## Page 3 — Brokers (`/brokers`)
+
+### Messaging Strategy
+
+**Primary emotion to address:** Respect for their time and expertise. Brokers are professionals. They don't want a pitch — they want to understand quickly whether Ownly fits their workflow.
+
+**Critical message:** Ownly is not competing with brokers. Ownly is a presentation and distribution tool that makes their listings better. The platform does not take a success fee from broker-submitted deals.
+
+**Tone:** Peer-to-peer. Direct. No fluff. Assume they know M&A.
+
+**Key anxiety to address:** "Is this going to compete with me for clients?" Answer: No.
+
+### Sections
+
+#### 1. Hero
+
+**H1:**
+> Better listings. More qualified enquiries.
+
+**Subheadline:**
+> Ownly gives your deals a structured home — a professional deal page that buyers can evaluate properly. You keep the client relationship. We handle presentation and inbound.
+
+**CTA:** `List your first deal free →`  
+**Secondary CTA:** `Talk to us →` (email link or contact form)
+
+---
+
+#### 2. The problem with how deals are presented today
+
+**Section heading:** Most deal presentations don't do justice to the business.
+
+> A PDF sent cold. A Dropbox link with unstructured financials. A listing on a classifieds site with three lines of description. Buyers scroll past. Conversations never start.
+>
+> You've done the work to represent the seller. Ownly makes sure buyers can see it.
+
+---
+
+#### 3. What Ownly does for your deals
+
+**Section heading:** A deal page your clients will be proud of.
+
+Four feature rows (icon + label + short description):
+
+**Structured deal pages**
+Every listing gets a clean, professional page — sector, location, headline metrics, description, highlights. Buyers get enough to self-qualify before requesting more.
+
+**NDA-gated financials**
+Full financial detail stays protected. Buyers who want to go further submit an enquiry — you're notified and in control of what gets shared.
+
+**Buyer enquiry routing**
+Enquiries from interested buyers come through Ownly and route directly to you. No cold calls to your client. No broker bypassing.
+
+**Shareable deal link**
+Each deal gets a clean URL you can share in your own outreach. Works as your deal summary, not a replacement for your process.
+
+---
+
+#### 4. Ownly is not a broker
+
+**Section heading:** We present deals. We don't compete for them.
+
+> Ownly doesn't take success fees on broker-submitted deals. We're not a competing advisor. We're presentation infrastructure — the professional front-end your listings deserve.
+>
+> You own the client relationship. You manage the process. We make your listing look like it deserves serious attention.
+
+---
+
+#### 5. Pricing
+
+**Section heading:** Free to start. No setup required.
+
+Two cards:
+
+**Free**
+€0 — no commitment
+- Up to 5 active listings
+- Full deal page per listing written by Ownly
+- Buyer enquiry routing to you
+- Shareable deal link per listing
+`[Post your first deal →]`
+
+**Pro** *(coming soon)*
+Launch price TBC / month
+- Unlimited listings
+- Branded listing pages (your logo and firm name)
+- Buyer matching tools *(coming soon)*
+- Deal room access *(coming soon)*
+- Priority placement *(coming soon)*
+- Analytics per listing *(coming soon)*
+`[Join the waitlist →]`
+
+**Below pricing:**
+> Free tier covers everything you need to get started. No credit card. No calls to book. Just post your deal.
+
+---
+
+#### 6. Founding Broker Programme
+
+**Section heading:** Helping shape what Ownly builds for advisors.
+
+> We're working with a small group of brokers in Italy and Portugal to understand what actually matters — before we build it. If you work deals in this market, we'd like to talk.
+
+**Short enquiry form:**
+- Name
+- Email
+- Phone *(optional)*
+- Message *(optional)*
+
+`[Send →]`
+
+**Below form (small text):** We'll respond within 48 hours.
+
+---
+
+---
+
+## Page 4 — Buyers (`/buyers`)
+
+### Messaging Strategy
+
+**Primary emotion to address:** Wasted time and money. Buyers in Southern Europe spend months on deals that go nowhere — chasing documents, assembling professionals, only to find the business wasn't worth it. The lead-in to discovery is already expensive before due diligence even starts.
+
+**Secondary pain:** Deal flow quality. What's publicly listed is poorly presented, financially opaque, or handled by brokers who don't respond.
+
+**Ownly's promise for now:** Curated, structured deal pages — so you can self-qualify before investing time. And a conversation with us to understand what else you need.
+
+**Access model:** Fully free. No paywall at this stage.
+
+**Tone:** Confident, efficient. Respect their time. They're evaluating, not being sold to.
+
+**Note for build:** Buyer ICP is still early in discovery. The page should be honest about what exists today and invite serious buyers into a founding conversation. Paid features and due diligence tools are coming — but don't overpromise.
+
+### Sections
+
+#### 1. Hero
+
+**H1:**
+> Serious SME deals in Italy and Portugal. Actually structured.
+
+**Subheadline:**
+> Ownly lists curated acquisition opportunities — manufacturing, professional services, food & beverage, specialty businesses. Every deal reviewed. Every listing written to help you evaluate quickly.
+
+**CTA:** `Browse deals →` → `/deals`  
+**Secondary CTA (text):** `Talk to us about what you're looking for →` → scrolls to founding buyer form
+
+---
+
+#### 2. The problem
+
+**Section heading:** Buying a small business takes longer than it should.
+
+> Finding a quality deal is hard enough. When you do find one, you spend weeks chasing the seller for documentation. Then more weeks finding the right lawyer, the right accountant — professionals who actually know SME transactions in this market.
+>
+> And sometimes, after months of effort and real money spent, the business simply wasn't worth buying.
+>
+> That's the reality most buyers face in Southern Europe. Ownly is built to change it.
+
+Three pain points, typographic, minimal:
+
+**"Three months and nothing to show for it."**
+Time lost chasing documentation, assembling professionals, running due diligence — only to walk away.
+
+**"The listing had three lines and a phone number."**
+Most publicly listed deals in Italy and Portugal are poorly presented. Revenue figures with no context. Brokers who don't respond.
+
+**"I didn't even know what I didn't know."**
+Finding the right legal and financial professionals for an SME acquisition in a foreign market is its own project.
+
+---
+
+#### 3. What Ownly does differently
+
+**Section heading:** Deals you can evaluate before you commit your time.
+
+Four feature points:
+
+**Structured deal pages**
+Every listing has a written description, headline financial metrics, and clear context — authored by Ownly, not copy-pasted from the seller. You can self-qualify in minutes, not weeks.
+
+**NDA-first financials**
+Full financial detail is available after an initial conversation. We protect sellers — which means the numbers you eventually see are real, not sanitised.
+
+**Simple enquiry process**
+Express interest through the platform. No cold calls, no broker gatekeeping. Ownly routes your enquiry and follows up directly.
+
+**Italy and Portugal focus**
+We source deals directly from founders — manufacturing clusters in northern Italy, service businesses in Lisbon and Porto, food producers across both countries. Markets most platforms underserve.
+
+---
+
+#### 4. Access model
+
+**Section heading:** Free to browse. Free to enquire.
+
+> No paywalls. No account required to browse. Register with your name and email when you're ready to enquire — that's it.
+
+| | Available now |
+|---|---|
+| Browse all listings | ✓ Free |
+| View full deal pages | ✓ Free |
+| Submit enquiries | ✓ Free |
+| Due diligence assistance | *(coming soon)* |
+| Saved deal alerts | *(coming soon)* |
+| AI deal matching | *(coming soon)* |
+
+---
+
+#### 5. Founding Buyer Programme
+
+**Section heading:** Helping us build what buyers actually need.
+
+> We're at an early stage, and know better sellers and brokers — and we'd rather talk to serious buyers than guess what to build. If you're actively looking for acquisition opportunities in Italy or Portugal, we'd like to understand your process, your pain, and what would actually help.
+>
+> In exchange, you'll shape what Ownly builds for buyers — and get early access to features as they launch.
+
+**Short enquiry form:**
+- Name
+- Email
+- Phone *(optional)*
+- Message *(optional — what are you looking for?)*
+
+`[Send →]`
+
+**Below form (small text):** We'll respond within 48 hours.
+
+---
+
+#### 6. Footer CTA
+
+**Headline:** Start browsing — no account needed.  
+**CTA:** `Explore deals →` → `/deals`  
+**Supporting text:** Register only when you're ready to enquire.
+
+---
+
+---
+
+## Claude Code Implementation Notes
+
+### Routes
+- `/` → Homepage
+- `/sellers` → Seller ICP page
+- `/brokers` → Broker ICP page  
+- `/buyers` → Buyer ICP page
+
+All routes need `en` locale prefix via next-intl: `/en`, `/en/sellers`, `/en/brokers`, `/en/buyers`.
+
+### Shared components needed
+- `<PageHero>` — H1, subheadline, CTA(s), optional visual
+- `<PricingCard>` — tier name, price, feature list, CTA
+- `<FeatureRow>` — icon, label, description (for brokers and buyers pages)
+- `<StepList>` — numbered steps (horizontal or vertical)
+- `<CtaBanner>` — full-width footer CTA section with accent background
+- `<TwoColumnTable>` — for public vs. protected info (sellers page)
+
+### Design
+Follow DESIGN.md. No new design decisions in this document.
+
+### i18n
+- All copy in this document is English only. Italian and Portuguese strings are placeholders for V2.
+- Mark copy strings with i18n keys for future translation. Don't hardcode strings.
