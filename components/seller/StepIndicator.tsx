@@ -17,7 +17,7 @@ export function StepIndicator({ currentStep }: StepIndicatorProps) {
       {/* Desktop sidebar */}
       <aside className="hidden md:flex w-60 flex-shrink-0 flex-col border-r border-[var(--color-border)] px-8 py-12 sticky top-0 h-screen">
         <span className="font-serif text-[20px] font-semibold tracking-[-0.02em] mb-[52px]">
-          Ownly
+          Bottega
         </span>
         <ol className="flex flex-col">
           {STEPS.map((key, i) => {

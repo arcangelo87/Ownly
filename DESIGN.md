@@ -1,4 +1,4 @@
-# DESIGN.md — Ownly
+# DESIGN.md — Bottega
 
 Read this before writing any component. These decisions are final unless explicitly overridden.
 
@@ -6,7 +6,7 @@ Read this before writing any component. These decisions are final unless explici
 
 ## The brief in one sentence
 
-Ownly should feel **professional and fresh** — trustworthy enough for a serious financial transaction, but alive enough that it doesn't feel like a government portal or a legacy broker website.
+Bottega should feel **professional and fresh** — trustworthy enough for a serious financial transaction, but alive enough that it doesn't feel like a government portal or a legacy broker website.
 
 ## The single most important rule
 
@@ -46,7 +46,7 @@ Think: a well-designed boutique investment firm that also happens to feel contem
 
 **Monospace** (for financial figures only): IBM Plex Mono — numbers align vertically, signals precision.
 
-Never use Inter, Roboto, or system fonts. They are fine — they are also invisible. Ownly needs to be remembered.
+Never use Inter, Roboto, or system fonts. They are fine — they are also invisible. Bottega needs to be remembered.
 
 ---
 
