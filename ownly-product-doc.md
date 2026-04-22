@@ -66,14 +66,13 @@ Deal brokers and M&A advisors who want to list client deals on Ownly and access 
 | Tier | Who | Price | What's included |
 |------|-----|-------|-----------------|
 | Free | Sellers | €0 | Listing page, up to 10 inbound enquiries |
-| Assisted | Sellers | €299–350/year | Listing + teaser + NDA support + outreach materials + valuation + unlimited enquiries |
+| Assisted | Sellers | €399/year (launch price €199/year) | Listing + teaser doc (portable, not Ownly-exclusive) + NDA support + outreach materials + valuation guidance + strategic buyer insights + active buyer matching + unlimited enquiries
 | White Glove | Sellers | Custom | Full advisory to close |
-| Free | Brokers | €0 | Up to 5 deal listings |
-| Pro | Brokers | €49/month | Unlimited listings + buyer matching + deal room |
-| Free | Buyers | €0 | Browse + up to 10 enquiries |
-| Paid | Buyers | €199 one-off | Unlimited enquiries + saved deal alerts |
+| Free | Brokers | €0 | Up to 5 deal listings, full deal page per listing, buyer enquiry routing, shareable deal link
+| Pro | Brokers | €99/month | Unlimited listings + branded listing pages + buyer matching tools + deal room access + priority placement + analytics (last four coming soon)
+| Free | Buyers | €0 | Browse + unlimited enquiries + full deal page access
 
-Note: The buyer paywall at enquiry #11 is not yet relevant until the platform has real scale. Deprioritise building it.
+Note: Buyer paywall removed until further discovery. Paid buyer tier (due diligence assistance, deal alerts, AI matching) is a future hypothesis — validate before building.
 
 ---
 
