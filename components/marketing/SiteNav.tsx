@@ -1,63 +1,91 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Logo } from '@/components/ui/Logo';
 
 export function SiteNav() {
   const t = useTranslations('nav');
   const locale = useLocale();
+  const [open, setOpen] = useState(false);
+
+  const links = [
+    { href: `/${locale}/sellers`, label: t('sell') },
+    { href: `/${locale}/brokers`, label: t('brokers') },
+    { href: `/${locale}/buyers`, label: t('buyers') },
+    { href: `/${locale}/deals`, label: t('browse') },
+  ];
 
   return (
-    <nav className="border-b border-[var(--color-border)] bg-[var(--color-bg)]">
+    <nav className="border-b border-[var(--color-border)] bg-[var(--color-bg)] relative z-50">
       <div className="mx-auto max-w-6xl px-6 py-4 flex items-center gap-8">
-        <Link href={`/${locale}`} className="shrink-0">
+        <Link href={`/${locale}`} className="shrink-0" onClick={() => setOpen(false)}>
           <Logo width={108} />
         </Link>
 
+        {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-7 flex-1 justify-center list-none">
-          <li>
-            <Link
-              href={`/${locale}/sellers`}
-              className="text-[14px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors"
-            >
-              {t('sell')}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={`/${locale}/brokers`}
-              className="text-[14px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors"
-            >
-              {t('brokers')}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={`/${locale}/buyers`}
-              className="text-[14px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors"
-            >
-              {t('buyers')}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={`/${locale}/deals`}
-              className="text-[14px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors"
-            >
-              {t('browse')}
-            </Link>
-          </li>
+          {links.map(({ href, label }) => (
+            <li key={href}>
+              <Link
+                href={href}
+                className="text-[14px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors"
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
         </ul>
 
         <Link
           href={`/${locale}/sell`}
-          className="ml-auto shrink-0 inline-flex items-center px-4 py-2 bg-[var(--color-accent)] text-white text-[13px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
+          className="hidden md:inline-flex ml-auto shrink-0 items-center px-4 py-2 bg-[var(--color-accent)] text-white text-[13px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
         >
           {t('getStarted')}
         </Link>
+
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden ml-auto p-2 -mr-2 text-[var(--color-text)]"
+          onClick={() => setOpen((v) => !v)}
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+        >
+          {open ? (
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 4L16 16M16 4L4 16" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round"/>
+            </svg>
+          ) : (
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round"/>
+            </svg>
+          )}
+        </button>
       </div>
+
+      {/* Mobile dropdown */}
+      {open && (
+        <div className="md:hidden border-t border-[var(--color-border)] bg-[var(--color-bg)] px-6 pb-6 pt-4 flex flex-col gap-1">
+          {links.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={() => setOpen(false)}
+              className="py-3 text-[16px] text-[var(--color-text)] border-b border-[var(--color-border)] last:border-b-0"
+            >
+              {label}
+            </Link>
+          ))}
+          <Link
+            href={`/${locale}/sell`}
+            onClick={() => setOpen(false)}
+            className="mt-4 inline-flex justify-center items-center px-4 py-3 bg-[var(--color-accent)] text-white text-[15px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
+          >
+            {t('getStarted')}
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }

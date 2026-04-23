@@ -26,6 +26,9 @@ export function SiteFooter() {
             <Link href={`/${locale}/brokers`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
               {t('brokers')}
             </Link>
+            <Link href={`/${locale}/buyers`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
+              {t('buyers')}
+            </Link>
             <Link href={`/${locale}/deals`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
               {t('browse')}
             </Link>
