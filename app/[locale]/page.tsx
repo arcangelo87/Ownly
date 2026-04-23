@@ -7,7 +7,7 @@ export default async function HomePage({
 
   return (
     <main>
-      <h1>Ownly — {locale}</h1>
+      <h1>Bottega — {locale}</h1>
     </main>
   );
 }

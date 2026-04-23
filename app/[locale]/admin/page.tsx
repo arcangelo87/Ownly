@@ -3,6 +3,7 @@ import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { ListingsTable } from '@/components/admin/ListingsTable';
 import { SignOutButton } from '@/components/admin/SignOutButton';
+import { Logo } from '@/components/ui/Logo';
 import type { Listing } from '@/types';
 
 export default async function AdminPage({
@@ -28,7 +29,7 @@ export default async function AdminPage({
     <div className="min-h-screen bg-[var(--color-bg)]">
       <header className="sticky top-0 z-10 border-b border-[var(--color-border)] bg-[var(--color-bg)] px-8 py-4">
         <div className="flex items-center justify-between" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <span className="font-serif text-[20px] font-semibold tracking-[-0.02em]">Ownly</span>
+          <Logo width={96} />
           <div className="flex items-center gap-6">
             <span className="text-xs text-[var(--color-muted)]">{user.email}</span>
             <SignOutButton locale={locale} />
