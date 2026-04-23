@@ -35,6 +35,14 @@ export function SiteNav() {
           </li>
           <li>
             <Link
+              href={`/${locale}/buyers`}
+              className="text-[14px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors"
+            >
+              {t('buyers')}
+            </Link>
+          </li>
+          <li>
+            <Link
               href={`/${locale}/deals`}
               className="text-[14px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors"
             >
