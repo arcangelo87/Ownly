@@ -5,8 +5,7 @@ interface MockDealCardProps {
   revenue: string;
   ebitda: string;
   asking: string;
-  employees: number;
-  timeline: string;
+  buyerTags: readonly [string] | readonly [string, string];
 }
 
 export function MockDealCard({
@@ -16,15 +15,14 @@ export function MockDealCard({
   revenue,
   ebitda,
   asking,
-  employees,
-  timeline,
+  buyerTags,
 }: MockDealCardProps) {
   const initial = sector.charAt(0);
 
   return (
     <div className="bg-white border border-[var(--color-border)] rounded-[8px] overflow-hidden shadow-[0_2px_16px_rgba(26,26,24,0.07)] w-full">
       {/* Photo block */}
-      <div className="h-[168px] bg-[var(--color-surface)] flex items-center justify-center relative">
+      <div className="h-[168px] bg-[var(--color-surface)] flex items-center justify-center">
         <span
           className="font-[family-name:var(--font-serif)] text-[48px] font-normal text-[var(--color-border)] select-none"
           aria-hidden="true"
@@ -73,11 +71,22 @@ export function MockDealCard({
           </div>
         </div>
 
-        <div className="flex justify-between items-center">
-          <span className="text-[12px] text-[var(--color-muted)]">
-            {employees} employees · {timeline}
-          </span>
-          <span className="text-[13px] font-medium text-[var(--color-terracotta)] tracking-[-0.01em]">
+        {/* Footer: buyer tags left, View deal right */}
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="text-[10px] font-bold tracking-[0.08em] uppercase text-[var(--color-muted)] shrink-0">
+              Best for
+            </span>
+            {buyerTags.map((tag) => (
+              <span
+                key={tag}
+                className="text-[11px] font-medium text-[var(--color-text)] bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[3px] px-2 py-[3px] whitespace-nowrap"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <span className="text-[13px] font-medium text-[var(--color-terracotta)] tracking-[-0.01em] shrink-0">
             View deal →
           </span>
         </div>

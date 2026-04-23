@@ -11,8 +11,7 @@ const CARDS = [
     revenue: '€1–2.5M',
     ebitda: '20–35%',
     asking: '€1–2M',
-    employees: 8,
-    timeline: 'Ready in 6–12 mo',
+    buyerTags: ['Lifestyle buyer', 'Strategic buyer'] as const,
   },
   {
     sector: 'Manufacturing',
@@ -21,8 +20,7 @@ const CARDS = [
     revenue: '€2.5–5M',
     ebitda: '35%+',
     asking: '€2–4M',
-    employees: 32,
-    timeline: 'Ready now',
+    buyerTags: ['Financial buyer', 'Strategic buyer'] as const,
   },
   {
     sector: 'Professional Services',
@@ -31,8 +29,7 @@ const CARDS = [
     revenue: '€500k–1M',
     ebitda: '10–20%',
     asking: '<€1M',
-    employees: 5,
-    timeline: '12+ mo horizon',
+    buyerTags: ['Lifestyle buyer', 'Owner-operator'] as const,
   },
   {
     sector: 'Wholesale & Distribution',
@@ -41,8 +38,7 @@ const CARDS = [
     revenue: '€1–2.5M',
     ebitda: '20–35%',
     asking: '€1–2M',
-    employees: 12,
-    timeline: 'Ready in 6–12 mo',
+    buyerTags: ['Financial buyer', 'Strategic buyer'] as const,
   },
 ] as const;
 
