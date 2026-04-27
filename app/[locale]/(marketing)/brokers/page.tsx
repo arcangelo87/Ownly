@@ -78,7 +78,7 @@ export default function BrokersPage() {
       </section>
 
       {/* ── Founding Programme ── */}
-      <section id="founding" className="py-20 px-6 bg-[var(--color-surface)]">
+      <section id="founding" className="py-20 px-6 bg-[var(--color-bg)]">
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
             <div>
