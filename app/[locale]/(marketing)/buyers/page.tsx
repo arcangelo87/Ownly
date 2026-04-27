@@ -165,7 +165,6 @@ export default function BuyersPage() {
       {/* ── Footer CTA ── */}
       <CtaBanner
         heading={t('cta.heading')}
-        subheading={t('cta.supporting')}
         ctaLabel={t('cta.button')}
         ctaHref={`/${locale}/deals`}
       />
