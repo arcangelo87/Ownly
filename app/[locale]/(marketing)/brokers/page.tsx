@@ -1,28 +1,11 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { FeatureRow } from '@/components/marketing/FeatureRow';
-import { PricingCard } from '@/components/marketing/PricingCard';
 import { FoundingForm } from '@/components/marketing/FoundingForm';
 
 export default function BrokersPage() {
   const t = useTranslations('brokers');
   const locale = useLocale();
-
-  const freeFeatures = [
-    t('pricing.free1'),
-    t('pricing.free2'),
-    t('pricing.free3'),
-    t('pricing.free4'),
-  ];
-
-  const proFeatures = [
-    t('pricing.pro1'),
-    t('pricing.pro2'),
-    t('pricing.pro3'),
-    t('pricing.pro4'),
-    t('pricing.pro5'),
-    t('pricing.pro6'),
-  ];
 
   return (
     <>
@@ -90,36 +73,6 @@ export default function BrokersPage() {
           </p>
           <p className="text-[16px] text-[var(--color-muted)] leading-[1.7]">
             {t('notABroker.prose2')}
-          </p>
-        </div>
-      </section>
-
-      {/* ── Pricing ── */}
-      <section className="py-20 md:py-24 px-6 bg-[var(--color-bg)]">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
-            {t('pricing.heading')}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <PricingCard
-              heading={t('pricing.freeHeading')}
-              price={t('pricing.freePrice')}
-              features={freeFeatures}
-              ctaLabel={t('pricing.freeCta')}
-              ctaHref={`/${locale}/sell`}
-            />
-            <PricingCard
-              heading={t('pricing.proHeading')}
-              badge={t('pricing.proBadge')}
-              price={t('pricing.proPrice')}
-              features={proFeatures}
-              ctaLabel={t('pricing.proCta')}
-              ctaHref="#founding"
-              muted
-            />
-          </div>
-          <p className="text-[13px] text-[var(--color-muted)] leading-[1.6]">
-            {t('pricing.reassurance')}
           </p>
         </div>
       </section>
