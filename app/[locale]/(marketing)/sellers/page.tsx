@@ -179,35 +179,6 @@ export default function SellersPage() {
         </div>
       </section>
 
-      {/* ── Pricing ── */}
-      <section className="py-20 px-6 bg-[var(--color-surface)]">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
-            {t('pricing.heading')}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <PricingCard
-              heading={t('whatYouGet.freeHeading')}
-              price={t('whatYouGet.freePrice')}
-              features={freeFeatures}
-              ctaLabel={t('whatYouGet.freeCta')}
-              ctaHref={`/${locale}/sell`}
-            />
-            <PricingCard
-              heading={t('whatYouGet.assistedHeading')}
-              badge={t('whatYouGet.assistedBadge')}
-              price={t('whatYouGet.assistedPrice')}
-              priceStrike={t('whatYouGet.assistedPriceStrike')}
-              priceNote={t('whatYouGet.assistedNote')}
-              features={assistedFeatures}
-              ctaLabel={t('whatYouGet.assistedCta')}
-              ctaHref={`/${locale}/contact`}
-              highlight
-            />
-          </div>
-        </div>
-      </section>
-
       {/* ── Footer CTA ── */}
       <CtaBanner
         heading={t('cta.heading')}
