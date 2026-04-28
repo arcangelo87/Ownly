@@ -21,14 +21,15 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
-              <span className="inline-block text-[11px] font-bold tracking-[0.12em] uppercase text-[var(--color-muted)] mb-5">
+              <span className="inline-block text-[11px] font-bold tracking-[0.12em] uppercase text-[var(--color-accent)] mb-5">
                 {t('hero.eyebrow')}
               </span>
               <h1 className="font-[family-name:var(--font-serif)] text-[40px] md:text-[52px] font-semibold leading-[1.15] tracking-[-0.02em] text-[var(--color-text)] mb-5">
                 {t('hero.h1')}
               </h1>
-              <p className="text-[17px] text-[var(--color-muted)] leading-[1.65] mb-8 max-w-[480px]">
-                {t('hero.sub')}
+              <p className="text-[17px] text-[var(--color-muted)] leading-[1.65] mb-8 max-w-[520px]">
+                <strong className="text-[var(--color-text)] font-normal">{t('hero.subBold')}</strong>{' '}
+                {t('hero.subRest')}
               </p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <Link
@@ -56,36 +57,31 @@ export default function HomePage() {
       {/* ── The Problem ── */}
       <section className="py-20 px-6 bg-[var(--color-surface)]">
         <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-            <div className="flex flex-col gap-4">
-              <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-[var(--color-muted)]">
-                {t('problem.sellersLabel')}
-              </span>
-              <blockquote className="font-[family-name:var(--font-serif)] text-[19px] font-normal italic leading-[1.5] text-[var(--color-text)]">
-                &ldquo;{t('problem.sellersQuote')}&rdquo;
-              </blockquote>
-            </div>
-            <div className="flex flex-col gap-4">
-              <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-[var(--color-muted)]">
+          <blockquote className="font-[family-name:var(--font-serif)] text-[clamp(22px,3vw,34px)] font-normal italic leading-[1.45] text-[var(--color-text)] max-w-[780px] mb-8">
+            &ldquo;{t('problem.sellersQuote')}&rdquo;
+          </blockquote>
+          <p className="text-[15px] text-[var(--color-muted)] leading-[1.7] max-w-[520px] mb-14 pl-5 border-l-2 border-[var(--color-accent)]">
+            {t('problem.response1')}<br />
+            {t('problem.response2')}<br />
+            {t('problem.response3')}
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[600px]">
+            <div className="flex flex-col gap-3">
+              <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-[var(--color-accent)]">
                 {t('problem.brokersLabel')}
               </span>
-              <blockquote className="font-[family-name:var(--font-serif)] text-[19px] font-normal italic leading-[1.5] text-[var(--color-text)]">
+              <p className="text-[14px] text-[var(--color-muted)] italic leading-[1.6]">
                 &ldquo;{t('problem.brokersQuote')}&rdquo;
-              </blockquote>
+              </p>
             </div>
-            <div className="flex flex-col gap-4">
-              <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-[var(--color-muted)]">
+            <div className="flex flex-col gap-3">
+              <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-[var(--color-accent)]">
                 {t('problem.buyersLabel')}
               </span>
-              <blockquote className="font-[family-name:var(--font-serif)] text-[19px] font-normal italic leading-[1.5] text-[var(--color-text)]">
+              <p className="text-[14px] text-[var(--color-muted)] italic leading-[1.6]">
                 &ldquo;{t('problem.buyersQuote')}&rdquo;
-              </blockquote>
+              </p>
             </div>
-          </div>
-          <div className="pt-10 border-t border-[var(--color-border)] text-center">
-            <p className="font-[family-name:var(--font-serif)] text-[22px] font-semibold text-[var(--color-accent)] tracking-[-0.01em]">
-              {t('problem.closer')}
-            </p>
           </div>
         </div>
       </section>

@@ -21,19 +21,23 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Italy & Portugal · SME Acquisitions",
-      "h1": "Where Southern European businesses find serious buyers.",
-      "sub": "Bottega turns your business information into a structured deal. We put it in front of buyers actively looking in Italy and Portugal.",
+      "eyebrow": "Italy & Portugal",
+      "h1": "The deal platform for real businesses.",
+      "subBold": "Bakeries, manufacturers, service companies.",
+      "subRest": "Not startups, not crypto. Cash-flowing businesses built with hands, not AI. Bottega turns your business information into a structured deal and puts it in front of buyers actively looking in Italy and Portugal.",
       "cta": "List your business →",
       "ctaSecondary": "Are you a broker? →"
     },
     "problem": {
       "sellersLabel": "Sellers",
-      "sellersQuote": "I built something real. But I don't know how to sell it.",
+      "sellersQuote": "I've been running this place for twenty-two years. Built every client relationship myself. I just don't know how to hand it over to someone who'll take care of it.",
+      "response1": "The businesses Bottega lists aren't speculative.",
+      "response2": "They're profitable, proven, and founder-run.",
+      "response3": "Their challenge isn't viability: it's transition.",
       "brokersLabel": "Brokers",
-      "brokersQuote": "My deals deserve better presentation than a PDF and a cold email.",
+      "brokersQuote": "My deals deserve better presentation than a PDF.",
       "buyersLabel": "Buyers",
-      "buyersQuote": "I spent three months on a deal that wasn't worth buying. Chasing documents. Starting from zero.",
+      "buyersQuote": "Three months chasing documents on a deal that wasn't worth buying.",
       "closer": "Bottega is built for this."
     },
     "how": {
@@ -48,17 +52,17 @@
       "cta": "List your business →"
     },
     "why": {
-      "heading": "Not a classifieds site. Not a broker.",
-      "prose1": "Most platforms list deals the way you'd list a second-hand car. Raw numbers, no context, no story. Buyers scroll past. Good businesses go unsold.",
-      "prose2": "Bottega is different. We structure every deal, turning founder-provided information into a clear, credible presentation. We write the copy. We frame the financials. We make it easy for a buyer to say yes to taking the first step.",
+      "heading": "Built for businesses that don't need a pitch deck.",
+      "prose1": "Most deal platforms are designed for startups: high-growth companies raising money, burning cash, betting on a future. Bottega is built for the opposite: businesses that have been profitable for a decade, that serve real clients, that run themselves.",
+      "prose2": "These businesses don't need hype. They need a clear presentation: financials framed properly, story told well, so the right buyer can recognise what they're looking at. That's what Bottega does.",
       "stat1Value": "Italy & Portugal",
-      "stat1Label": "The only platform focused here",
-      "stat2Value": "NDA-first",
-      "stat2Label": "Sensitive financials protected",
-      "stat3Value": "Curated",
-      "stat3Label": "Every listing reviewed before going live",
-      "stat4Value": "Human-assisted",
-      "stat4Label": "We write your deal page for you"
+      "stat1Label": "The only platform focused on these two markets",
+      "stat2Value": "Human-written",
+      "stat2Label": "We write every deal page, not an algorithm",
+      "stat3Value": "NDA-first",
+      "stat3Label": "Financials protected until you choose to share",
+      "stat4Value": "Reviewed",
+      "stat4Label": "Every listing checked before going live"
     },
     "brokers": {
       "heading": "For brokers and M&A advisors",
@@ -66,7 +70,7 @@
       "cta": "Learn more →"
     },
     "cta": {
-      "heading": "Ready to list your business?",
+      "heading": "Whether you make it, serve it, or ship it. If you've built a real business in Italy or Portugal, Bottega is built for you.",
       "sub": "Free to start. No broker fees. No exclusivity.",
       "button": "Get started →"
     }
