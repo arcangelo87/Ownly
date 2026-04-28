@@ -79,7 +79,7 @@ export function StepIndicator({ currentStep }: StepIndicatorProps) {
           <span className="font-semibold text-[var(--color-text)]">
             {currentStep} of {STEPS.length}
           </span>{' '}
-          — {t(STEPS[currentStep - 1])}
+          : {t(STEPS[currentStep - 1])}
         </p>
       </div>
     </>

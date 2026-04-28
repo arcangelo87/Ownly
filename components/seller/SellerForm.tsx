@@ -12,11 +12,11 @@ const TOTAL_STEPS = 4;
 const STEP_HEADERS: Record<number, { title: string; subtitle: string }> = {
   1: {
     title: 'Tell us about your business',
-    subtitle: "You can stay anonymous for now — your name and company won't appear publicly.",
+    subtitle: "You can stay anonymous for now. Your name and company won't appear publicly.",
   },
   2: {
     title: 'Size & team',
-    subtitle: 'Approximate figures are fine — exact numbers are shared under NDA.',
+    subtitle: 'Approximate figures are fine. Exact numbers are shared under NDA.',
   },
   3: {
     title: 'The deal',
