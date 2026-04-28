@@ -62,6 +62,14 @@ Full requirements for each epic are in bottega-product-doc.md.
 
 ---
 
+## Writing & Copy
+
+- Never use em dashes (—), en dashes (–), or hyphens as punctuation in UI copy or marketing text
+- Use commas, colons, periods, or restructure the sentence instead
+- Numeric ranges are the only exception: €1–2.5M, 20–35%, 6–12 months
+
+---
+
 ## i18n
 
 Use `useTranslations('namespace')` in every component. Locale files in `/messages/`. Only `en.json` populated — `pt.json` and `it.json` are empty placeholders.
