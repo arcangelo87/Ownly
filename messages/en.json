@@ -1,5 +1,102 @@
 {
   "common": {},
+  "homepage": {
+    "nav": {
+      "forSellers": "For sellers",
+      "forBrokers": "For brokers",
+      "browseDeals": "Browse deals",
+      "listYourBusiness": "List your business →"
+    },
+    "hero": {
+      "eyebrow": "Italy · Portugal",
+      "h1": "The deal platform for real businesses.",
+      "subHeadlineBold": "Bakeries, manufacturers, service companies.",
+      "subHeadlineRest": "Not startups, not crypto — cash-flowing businesses built with hands, not AI. Ownly turns your business information into a structured deal and puts it in front of buyers actively looking in Italy and Portugal.",
+      "cta": "List your business →",
+      "ctaSecondary": "Browse deals",
+      "reassurance1": "Free to start",
+      "reassurance2": "No broker fees",
+      "reassurance3": "No exclusivity"
+    },
+    "problem": {
+      "quote": "I've been running this place for twenty-two years. Built every client relationship myself. I just don't know how to hand it over to someone who'll take care of it.",
+      "response1": "The businesses Ownly lists aren't speculative.",
+      "response2": "They're profitable, proven, and founder-run.",
+      "response3": "Their challenge isn't viability — it's transition.",
+      "brokersLabel": "Brokers",
+      "brokersQuote": "\"My deals deserve better presentation than a PDF.\"",
+      "buyersLabel": "Buyers",
+      "buyersQuote": "\"Three months chasing documents on a deal that wasn't worth buying.\""
+    },
+    "howItWorks": {
+      "label": "How it works",
+      "step1Num": "01",
+      "step1Title": "Tell us about your business",
+      "step1Body": "Answer ten questions about your sector, size, and deal terms. Takes about ten minutes. You can stay anonymous — your name and company won't appear publicly until you choose.",
+      "step2Num": "02",
+      "step2Title": "We write your deal page",
+      "step2Body": "Every listing is human-written and reviewed before going live. No AI copy, no templates — a structured page that gives buyers what they actually need to make a decision.",
+      "step3Num": "03",
+      "step3Title": "Buyers come to you",
+      "step3Body": "Buyers in Italy and Portugal find your listing and request an introduction under NDA. You decide who sees the financials. No cold calls, no unsolicited enquiries."
+    },
+    "why": {
+      "heading": "Built for businesses that don't need a pitch deck.",
+      "body1": "Most deal platforms are designed for startups — high-growth companies raising money, burning cash, betting on a future. Ownly is built for the opposite: businesses that have been profitable for a decade, that serve real clients, that run themselves.",
+      "body2": "These businesses don't need hype. They need to be presented clearly — financials framed properly, story told well — so the right buyer can recognise what they're looking at. That's what Ownly does.",
+      "proof1Stat": "Italy & Portugal",
+      "proof1Label": "The only platform focused on these two markets",
+      "proof2Stat": "Human-written",
+      "proof2Label": "We write every deal page — not an algorithm",
+      "proof3Stat": "NDA-first",
+      "proof3Label": "Financials protected until you choose to share",
+      "proof4Stat": "Reviewed",
+      "proof4Label": "Every listing checked before going live"
+    },
+    "pricing": {
+      "label": "Plans",
+      "plan1Name": "Standard",
+      "plan1Price": "Free",
+      "plan1PriceNote": "No listing fees. No broker commission.",
+      "plan1Desc": "You complete the seller form and we review, write, and publish your deal page. Buyers find you through Ownly's directory. You handle introductions directly.",
+      "plan1Feature1": "Full deal page, human-written",
+      "plan1Feature2": "Listed in the Italy & Portugal deal directory",
+      "plan1Feature3": "NDA-protected buyer introductions",
+      "plan1Feature4": "Basic listing analytics",
+      "plan1Cta": "Get started →",
+      "plan2Name": "Assisted",
+      "plan2Price": "€490",
+      "plan2PriceNote": "One-time fee. No ongoing charges.",
+      "plan2Desc": "We work with you to complete the seller form, sharpen the deal narrative, and identify which buyers are most likely to see value in your business.",
+      "plan2Feature1": "Everything in Standard",
+      "plan2Feature2": "1:1 onboarding call to complete the form together",
+      "plan2Feature3": "We identify likely buyers and help you lead with the right message",
+      "plan2Feature4": "Inquiry qualification — we pre-screen buyer interest on your behalf",
+      "plan2Feature5": "Priority review and faster publication",
+      "plan2Cta": "Talk to us first →"
+    },
+    "buyer": {
+      "tag": "For buyers",
+      "heading": "If you're looking at Italy or Portugal, you're already ahead of most.",
+      "body1": "Institutional capital hasn't found this market yet. The businesses are real, the prices are rational, and the sellers are motivated. Most buyers who reach out to us have already tried brokers — and found the process slow, opaque, and expensive.",
+      "body2": "We're building the infrastructure that makes acquiring here easier. If you're serious about this market, we'd like to talk.",
+      "cta": "Join the founding buyer list →"
+    },
+    "footerCta": {
+      "heading": "Whether you make it, serve it, or ship it — if you've built a real business in Italy or Portugal, Ownly is built for you.",
+      "cta": "List your business →",
+      "reassurance1": "Free to start",
+      "reassurance2": "No broker fees",
+      "reassurance3": "No exclusivity"
+    },
+    "footer": {
+      "forSellers": "For sellers",
+      "forBrokers": "For brokers",
+      "forBuyers": "For buyers",
+      "privacy": "Privacy",
+      "copyright": "© 2026 Ownly"
+    }
+  },
   "seller": {
     "steps": {
       "step1": "Business basics",
