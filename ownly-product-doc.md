@@ -49,7 +49,9 @@ The platform targets businesses in the €500k–€5M revenue range, typically 
 **Access model:**
 - Browse listings: public, no login required
 - View deal detail page: public, no login required
-- Submit an enquiry: requires registration (name + email minimum)
+- Submit an enquiry: public, no login required (name + email collected in the form)
+
+Note: Buyer registration before enquiry is deprioritised. Decided April 2026. Will reconsider when the platform has real scale and needs to gate access.
 
 ---
 
@@ -82,7 +84,7 @@ Three distinct stages:
 
 1. **Browse** — public, no login. Deal listing page with cards showing sector, location, revenue, EBITDA, asking price.
 2. **View deal** — public, no login. Full deal detail page with description, highlights, key metrics. Financials shown as locked — "available on request."
-3. **Enquire** — requires registration. Simple form: name, email, phone, message (optional). Enquiry goes to Ownly operator, who routes to seller manually.
+3. **Enquire** — public, no login required. Simple form: name, email, phone, message (optional). Enquiry goes to Ownly operator, who routes to seller manually.
 
 **NDA process:** Manual and offline for now. Not captured in platform flow. The deal detail page references that detailed financials are shared after an initial conversation — no hard gate to build yet.
 

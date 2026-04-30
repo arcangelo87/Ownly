@@ -20,7 +20,7 @@ export default async function AdminPage({
   const admin = createAdminClient();
   const { data: listings } = await admin
     .from('listings')
-    .select('id, created_at, updated_at, deleted_at, status, business_name, country, region, sector, year_founded, seller_email, seller_phone, revenue_range, ebitda_margin, employee_count, asking_price, partial_sale, timeline, reasons_for_sale, business_description, strongest_point, buyer_disclosure')
+    .select('id, created_at, updated_at, deleted_at, status, business_name, country, region, sector, year_founded, seller_email, seller_phone, revenue_range, ebitda_margin, employee_count, asking_price, partial_sale, timeline, reasons_for_sale, business_description, strongest_point, buyer_disclosure, slug, title, about, highlights')
     .is('deleted_at', null)
     .order('created_at', { ascending: false });
 

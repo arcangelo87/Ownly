@@ -1,5 +1,98 @@
 {
   "common": {},
+  "deals": {
+    "browse": {
+      "pageTitle": "Browse deals",
+      "pageSubtitle": "Curated acquisition opportunities in Italy and Portugal.",
+      "resultCount": "{count} deals",
+      "noResults": "No deals match your filters.",
+      "noResultsHint": "Try removing some filters to see more listings.",
+      "clearFilters": "Clear filters",
+      "showFilters": "Filters",
+      "filters": {
+        "heading": "Filters",
+        "country": "Country",
+        "sector": "Sector",
+        "askingPrice": "Asking price",
+        "timeline": "Timeline",
+        "any": "Any",
+        "italy": "Italy",
+        "portugal": "Portugal",
+        "priceUnder1m": "Under €1M",
+        "price1to2m": "€1M – €2M",
+        "price2to4m": "€2M – €4M",
+        "priceOver4m": "Over €4M",
+        "timelineReadyNow": "Ready now",
+        "timeline6to12": "6–12 months",
+        "timeline1to2": "1–2 years",
+        "timelineExploring": "Just exploring"
+      },
+      "sort": {
+        "label": "Sort by",
+        "recent": "Most recent",
+        "priceAsc": "Price: low – high",
+        "revenueDesc": "Revenue: high – low",
+        "ebitdaDesc": "EBITDA: high – low"
+      },
+      "card": {
+        "viewDeal": "View deal →",
+        "photosBadge": "{count} photos",
+        "noPhoto": "No photos"
+      }
+    },
+    "metrics": {
+      "revenue": "Annual revenue",
+      "ebitda": "EBITDA margin",
+      "askingPrice": "Asking price",
+      "employees": "Employees",
+      "timeline": "Timeline"
+    },
+    "sections": {
+      "about": "About the business",
+      "highlights": "Highlights",
+      "financials": "Full financials",
+      "financialsLocked": "Available on request",
+      "financialsLockedDetail": "Detailed financials are shared directly with serious buyers after an initial conversation."
+    },
+    "dealBasics": {
+      "title": "Deal basics",
+      "country": "Country",
+      "region": "Region",
+      "yearFounded": "Founded",
+      "saleStructure": "Sale structure",
+      "reasonsForSale": "Reason for sale"
+    },
+    "enquiry": {
+      "title": "Get in touch",
+      "name": "Your name",
+      "namePlaceholder": "Full name",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Phone number",
+      "phonePlaceholder": "Optional",
+      "message": "Message",
+      "messagePlaceholder": "Tell us a little about your background and what interests you about this deal.",
+      "submit": "Send enquiry →",
+      "submitting": "Sending…",
+      "successTitle": "Enquiry sent",
+      "successBody": "We've received your message and will be in touch shortly.",
+      "reassurance": "Your details are shared only with the seller. No spam.",
+      "errors": {
+        "nameRequired": "Please enter your name.",
+        "emailRequired": "Please enter your email address.",
+        "emailInvalid": "Please enter a valid email address.",
+        "submitFailed": "Something went wrong. Please try again."
+      }
+    },
+    "browseDeals": "← Browse deals",
+    "noPhotos": "No photos",
+    "photoAlt": "Business photo",
+    "notFound": {
+      "title": "Listing not found",
+      "body": "This deal may have been removed or is no longer available.",
+      "cta": "Browse all deals →"
+    }
+  },
   "seller": {
     "steps": {
       "step1": "Business basics",

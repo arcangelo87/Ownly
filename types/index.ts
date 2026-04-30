@@ -31,6 +31,25 @@ export interface Listing {
   business_description: string | null;
   strongest_point: string | null;
   buyer_disclosure: string | null;
+
+  // Operator-authored (Epic C)
+  slug: string | null;
+  title: string | null;
+  about: string | null;
+  highlights: string[] | null;
+}
+
+export type EnquiryStatus = 'new' | 'reviewed' | 'forwarded' | 'closed';
+
+export interface Enquiry {
+  id: string;
+  created_at: string;
+  listing_id: string;
+  name: string;
+  email: string;
+  phone: string | null;
+  message: string | null;
+  status: EnquiryStatus;
 }
 
 export interface Step1Data {
