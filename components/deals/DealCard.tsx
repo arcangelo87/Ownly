@@ -7,6 +7,7 @@ import {
   formatRevenue,
   formatEbitda,
   formatPrice,
+  formatOwnerInvolvement,
 } from '@/lib/format';
 import type { ListingCard } from '@/app/[locale]/deals/page';
 
@@ -80,6 +81,18 @@ export function DealCard({ listing }: DealCardProps) {
           <MetricChip label={tMetrics('ebitda')} value={formatEbitda(listing.ebitda_margin)} />
           <MetricChip label={tMetrics('askingPrice')} value={formatPrice(listing.asking_price)} />
         </div>
+
+        {/* Owner involvement */}
+        {listing.owner_involvement && (
+          <div className="flex items-center gap-1.5">
+            <span className="text-[11px] uppercase tracking-[0.08em] text-[var(--color-muted)]">
+              {tMetrics('ownerInvolvement')}:
+            </span>
+            <span className="rounded bg-[var(--color-surface)] px-1.5 py-0.5 text-[11px] text-[var(--color-text)]">
+              {formatOwnerInvolvement(listing.owner_involvement)}
+            </span>
+          </div>
+        )}
 
         {/* Footer */}
         <div className="mt-auto flex items-start justify-between gap-3 border-t border-[var(--color-border)] pt-3">

@@ -16,6 +16,16 @@ export function formatRevenue(val: string | null): string {
   return val ? (map[val] ?? val) : '—';
 }
 
+export function formatOwnerInvolvement(val: string | null): string {
+  const map: Record<string, string> = {
+    full_time: 'Full-time (40+ hrs/wk)',
+    part_time: 'Part-time (20–40 hrs/wk)',
+    advisory: 'Advisory (5–20 hrs/wk)',
+    minimal: 'Minimal (<5 hrs/wk)',
+  };
+  return val ? (map[val] ?? val) : '—';
+}
+
 export function formatEmployees(val: string | null): string {
   const map: Record<string, string> = {
     just_me: 'Just me', '2_5': '2–5', '6_15': '6–15', '16_30': '16–30', '30_plus': '30+',

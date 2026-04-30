@@ -14,13 +14,14 @@ const CARDS: ListingCard[] = [
     country: 'IT',
     revenue_range: '1m_2_5m',
     ebitda_margin: '20_35',
-    asking_price: '1m_2m',
+    asking_price: '1m_2_5m',
     employee_count: null,
     timeline: null,
     created_at: '2026-01-01T00:00:00Z',
     coverPhotoUrl: null,
     photoCount: 0,
     buyer_tags: ['Lifestyle buyer', 'Strategic buyer'],
+    owner_involvement: 'part_time',
   },
   {
     id: 'mock-2',
@@ -38,6 +39,7 @@ const CARDS: ListingCard[] = [
     coverPhotoUrl: null,
     photoCount: 0,
     buyer_tags: ['Financial buyer', 'Strategic buyer'],
+    owner_involvement: 'advisory',
   },
   {
     id: 'mock-3',
@@ -55,6 +57,7 @@ const CARDS: ListingCard[] = [
     coverPhotoUrl: null,
     photoCount: 0,
     buyer_tags: ['Lifestyle buyer', 'Owner-operator'],
+    owner_involvement: 'full_time',
   },
   {
     id: 'mock-4',
@@ -72,6 +75,7 @@ const CARDS: ListingCard[] = [
     coverPhotoUrl: null,
     photoCount: 0,
     buyer_tags: ['Financial buyer', 'Strategic buyer'],
+    owner_involvement: 'minimal',
   },
 ];
 

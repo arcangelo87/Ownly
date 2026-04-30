@@ -46,7 +46,8 @@
       "ebitda": "EBITDA margin",
       "askingPrice": "Asking price",
       "employees": "Employees",
-      "timeline": "Timeline"
+      "timeline": "Timeline",
+      "ownerInvolvement": "Owner involvement"
     },
     "sections": {
       "about": "About the business",
@@ -467,11 +468,17 @@
         "placeholder": "Select range",
         "helper": "Full-time equivalents, including yourself."
       },
+      "ownerInvolvement": {
+        "label": "Owner involvement",
+        "placeholder": "Select involvement level",
+        "helper": "How many hours per week do you work in the business?"
+      },
       "continue": "Save and continue →",
       "errors": {
         "revenueRequired": "Please select a revenue range.",
         "ebitdaRequired": "Please select an EBITDA margin.",
         "employeesRequired": "Please select a headcount range.",
+        "involvementRequired": "Please select your involvement level.",
         "saveFailed": "Something went wrong. Please try again."
       }
     },

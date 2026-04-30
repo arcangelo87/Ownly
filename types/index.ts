@@ -20,6 +20,7 @@ export interface Listing {
   revenue_range: string | null;
   ebitda_margin: string | null;
   employee_count: string | null;
+  owner_involvement: string | null;
 
   // Step 3
   asking_price: string | null;
