@@ -121,12 +121,11 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-3 gap-8">
               {([
                 [t('why.stat1Value'), t('why.stat1Label')],
                 [t('why.stat2Value'), t('why.stat2Label')],
                 [t('why.stat3Value'), t('why.stat3Label')],
-                [t('why.stat4Value'), t('why.stat4Label')],
               ] as [string, string][]).map(([value, label]) => (
                 <div key={value} className="flex flex-col gap-2">
                   <span className="font-[family-name:var(--font-serif)] text-[22px] font-semibold text-[var(--color-text)] tracking-[-0.01em]">

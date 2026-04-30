@@ -22,22 +22,22 @@
   "home": {
     "hero": {
       "eyebrow": "Italy & Portugal",
-      "h1": "The deal platform for real businesses.",
-      "subBold": "Bakeries, manufacturers, service companies.",
-      "subRest": "Not startups, not crypto. Cash-flowing businesses built with hands, not AI. Bottega turns your business information into a structured deal and puts it in front of buyers actively looking in Italy and Portugal.",
+      "h1": "Where real businesses find continuity.",
+      "subBold": "Manufacturers, workshops, service companies.",
+      "subRest": "Not startups, not crypto. We give your business the presentation it needs to find the right buyer.",
       "cta": "List your business →",
       "ctaSecondary": "Are you a broker? →"
     },
     "problem": {
       "sellersLabel": "Sellers",
-      "sellersQuote": "I've been running this place for twenty-two years. Built every client relationship myself. I just don't know how to hand it over to someone who'll take care of it.",
+      "sellersQuote": "I know every corner of this business. I just don't know where to start when it comes to selling it.",
       "response1": "The businesses Bottega lists aren't speculative.",
-      "response2": "They're profitable, proven, and founder-run.",
+      "response2": "They have cash flow, they're proven, and they're founder-run.",
       "response3": "Their challenge isn't viability: it's transition.",
       "brokersLabel": "Brokers",
-      "brokersQuote": "My deals deserve better presentation than a PDF.",
+      "brokersQuote": "I spend more time explaining the business than selling it.",
       "buyersLabel": "Buyers",
-      "buyersQuote": "Three months chasing documents on a deal that wasn't worth buying.",
+      "buyersQuote": "Half the listings I look at don't have enough information to take a first step.",
       "closer": "Bottega is built for this."
     },
     "how": {
@@ -53,24 +53,22 @@
     },
     "why": {
       "heading": "Built for businesses that don't need a pitch deck.",
-      "prose1": "Most deal platforms are designed for startups: high-growth companies raising money, burning cash, betting on a future. Bottega is built for the opposite: businesses that have been profitable for a decade, that serve real clients, that run themselves.",
+      "prose1": "Most deal platforms are designed for startups: high-growth companies raising money, burning cash, betting on a future. Bottega is built for the opposite: businesses with cash flow, real clients, and years behind them.",
       "prose2": "These businesses don't need hype. They need a clear presentation: financials framed properly, story told well, so the right buyer can recognise what they're looking at. That's what Bottega does.",
       "stat1Value": "Italy & Portugal",
       "stat1Label": "The only platform focused on these two markets",
-      "stat2Value": "Human-written",
-      "stat2Label": "We write every deal page, not an algorithm",
-      "stat3Value": "NDA-first",
-      "stat3Label": "Financials protected until you choose to share",
-      "stat4Value": "Reviewed",
-      "stat4Label": "Every listing checked before going live"
+      "stat2Value": "Selective",
+      "stat2Label": "We curate and review every deal page, not an algorithm",
+      "stat3Value": "Seller privacy first",
+      "stat3Label": "Financials and sensitive info protected until you decide to share"
     },
     "brokers": {
       "heading": "For brokers and M&A advisors",
-      "body": "If you represent sellers, Bottega gives your deals a better home. Structured pages. Buyer enquiry routing. Up to 5 deals free.",
+      "body": "If you represent sellers, Bottega gives your deals a better home.",
       "cta": "Learn more →"
     },
     "cta": {
-      "heading": "Whether you make it, serve it, or ship it. If you've built a real business in Italy or Portugal, Bottega is built for you.",
+      "heading": "Your business deserves a proper presentation. Start here.",
       "sub": "Free to start. No broker fees. No exclusivity.",
       "button": "Get started →"
     }
