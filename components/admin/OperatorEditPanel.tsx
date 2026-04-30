@@ -15,11 +15,18 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
   const [highlightsText, setHighlightsText] = useState(
     (listing.highlights ?? []).join('\n'),
   );
+  const [buyerTagsText, setBuyerTagsText] = useState(
+    (listing.buyer_tags ?? []).join('\n'),
+  );
   const [pending, startTransition] = useTransition();
   const [saved, setSaved] = useState(false);
 
   function handleSave() {
     const highlights = highlightsText
+      .split('\n')
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const buyer_tags = buyerTagsText
       .split('\n')
       .map((s) => s.trim())
       .filter(Boolean);
@@ -29,11 +36,13 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
         title: title.trim() || null,
         about: about.trim() || null,
         highlights: highlights.length > 0 ? highlights : null,
+        buyer_tags: buyer_tags.length > 0 ? buyer_tags : null,
       });
       onSave({
         title: title.trim() || null,
         about: about.trim() || null,
         highlights: highlights.length > 0 ? highlights : null,
+        buyer_tags: buyer_tags.length > 0 ? buyer_tags : null,
       });
       setSaved(true);
       setTimeout(() => setSaved(false), 2000);
@@ -93,6 +102,19 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
           onChange={(e) => setHighlightsText(e.target.value)}
           placeholder={'20-year operating history\nExclusive supplier agreement\nStrong repeat revenue base'}
           rows={5}
+          className="w-full resize-none rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-text)] placeholder:text-[var(--color-muted)]"
+        />
+      </div>
+
+      <div>
+        <label className="mb-1 block text-[11px] font-semibold text-[var(--color-muted)]">
+          Best for <span className="font-normal">(one tag per line, e.g. Financial buyer)</span>
+        </label>
+        <textarea
+          value={buyerTagsText}
+          onChange={(e) => setBuyerTagsText(e.target.value)}
+          placeholder={'Financial buyer\nStrategic buyer'}
+          rows={3}
           className="w-full resize-none rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-text)] placeholder:text-[var(--color-muted)]"
         />
       </div>
