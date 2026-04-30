@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ownly — Sell your business (mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:          #F7F2E9;
+    --text:        #1A1A18;
+    --accent:      #1C4A2A;
+    --terracotta:  #C1440E;
+    --muted:       #6B6860;
+    --border:      #E4E1DA;
+    --surface:     #EDE8DE;
+    --white:       #FFFFFF;
+    --font-serif:  'Playfair Display', Georgia, serif;
+    --font-sans:   'DM Sans', system-ui, sans-serif;
+    --font-mono:   'IBM Plex Mono', monospace;
+    --max-w:       1140px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ── Nav ── */
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-logo {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-right: auto;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 36px;
+    margin-right: 36px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    transition: color 0.15s;
+  }
+
+  .nav-links a.active { color: var(--text); }
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--accent);
+    border-radius: 6px;
+    padding: 9px 18px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+
+  .nav-cta:hover { opacity: 0.88; }
+
+  /* ── Container ── */
+  .container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--accent);
+    border-radius: 6px;
+    padding: 13px 28px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  .btn-outline {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 24px;
+    text-decoration: none;
+    transition: border-color 0.15s;
+  }
+
+  .btn-outline:hover { border-color: var(--muted); }
+
+  /* ── Section labels ── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  .section-heading {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 96px 0 88px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: 56px;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    max-width: 640px;
+    margin-bottom: 20px;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--muted);
+    line-height: 1.65;
+    max-width: 520px;
+    margin-bottom: 36px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-supporting {
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ── Problem cards ── */
+  .problem {
+    padding: 80px 0;
+    background: var(--surface);
+  }
+
+  .problem-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .problem-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 28px 32px;
+  }
+
+  .problem-card-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(28,74,42,0.1);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    font-size: 18px;
+  }
+
+  .problem-card h3 {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+
+  .problem-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ── What you get ── */
+  .what-you-get {
+    padding: 96px 0;
+  }
+
+  .tiers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 24px;
+  }
+
+  .tier {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px;
+  }
+
+  .tier.featured {
+    border-color: var(--accent);
+    position: relative;
+  }
+
+  .tier-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 3px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .tier-name {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .tier-price {
+    font-family: var(--font-serif);
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .tier-price del {
+    font-size: 22px;
+    color: var(--muted);
+    text-decoration: line-through;
+    margin-right: 6px;
+  }
+
+  .tier-price-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  .tier-divider {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 24px;
+  }
+
+  .tier-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .tier-features li {
+    font-size: 14px;
+    color: var(--muted);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .tier-features li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .tier.featured .tier-features li {
+    color: var(--text);
+  }
+
+  .tier-cta {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+
+  .tier-cta-primary {
+    background: var(--accent);
+    color: var(--white);
+  }
+
+  .tier-cta-primary:hover { opacity: 0.88; }
+
+  .tier-cta-outline {
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  .tier-cta-outline:hover { border-color: var(--muted); }
+
+  .tier-white-glove {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .tier-white-glove p {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .tier-white-glove strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  /* ── Privacy ── */
+  .privacy {
+    padding: 80px 0;
+    background: var(--surface);
+  }
+
+  .privacy-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: start;
+  }
+
+  .privacy-prose p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .privacy-table {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bg);
+  }
+
+  .privacy-table-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--text);
+    padding: 12px 20px;
+  }
+
+  .privacy-table-head span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .privacy-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 12px 20px;
+    border-top: 1px solid var(--border);
+    gap: 16px;
+  }
+
+  .privacy-row:first-of-type { border-top: none; }
+
+  .privacy-row span {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .privacy-row .public {
+    color: var(--text);
+  }
+
+  .privacy-row .protected {
+    color: var(--muted);
+  }
+
+  /* ── How it works ── */
+  .how {
+    padding: 96px 0;
+  }
+
+  .how-steps-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 48px;
+    position: relative;
+  }
+
+  .how-steps-vertical::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 27px;
+    bottom: 28px;
+    width: 1px;
+    background: var(--border);
+    z-index: 0;
+  }
+
+  .how-step-h {
+    display: flex;
+    gap: 28px;
+    align-items: start;
+    padding: 0 0 40px;
+    position: relative;
+  }
+
+  .how-step-h:last-child { padding-bottom: 0; }
+
+  .how-step-num {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text);
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+  }
+
+  .how-step-content {
+    padding-top: 12px;
+  }
+
+  .how-step-content h4 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+
+  .how-step-content p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+    max-width: 540px;
+  }
+
+  .how-reassurance {
+    background: var(--surface);
+    border-radius: 8px;
+    padding: 24px 32px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+    font-style: italic;
+  }
+
+  /* ── Footer CTA ── */
+  .footer-cta {
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .footer-cta h2 {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+
+  .footer-cta p {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 32px;
+  }
+
+  /* ── Footer ── */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 48px 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 64px;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand-logo {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .footer-tagline {
+    font-size: 13px;
+    color: var(--muted);
+    max-width: 240px;
+    line-height: 1.6;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 48px;
+  }
+
+  .footer-links-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links-col-heading {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .footer-links-col a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .footer-links-col a:hover { color: var(--text); }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy { font-size: 12px; color: var(--muted); }
+
+  .footer-legal { display: flex; gap: 20px; }
+
+  .footer-legal a { font-size: 12px; color: var(--muted); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="mockup-homepage.html">Ownly</a>
+    <ul class="nav-links">
+      <li><a href="mockup-sellers.html" class="active">Sell your business</a></li>
+      <li><a href="mockup-brokers.html">For brokers</a></li>
+      <li><a href="#">Browse deals</a></li>
+    </ul>
+    <a class="nav-cta" href="#">Get started →</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>You built it.<br>We'll help you sell it.</h1>
+    <p class="hero-sub">Ownly turns your business information into a structured deal page — and puts it in front of buyers actively looking in Italy and Portugal. Free to start, no broker fees.</p>
+    <div class="hero-ctas">
+      <a href="#" class="btn-primary">List your business →</a>
+      <span class="hero-supporting">Takes 10 minutes. No commitment until you're ready.</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem -->
+<section class="problem">
+  <div class="container">
+    <p class="section-label">What you're up against</p>
+    <h2 class="section-heading">Selling a business is hard when you've never done it before.</h2>
+    <div class="problem-cards">
+      <div class="problem-card">
+        <div class="problem-card-icon">📦</div>
+        <h3>Packaging</h3>
+        <p>You know your business inside out. But explaining it to an outside buyer — its financials, its strengths, its potential — is a different skill entirely.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">🔍</div>
+        <h3>Access</h3>
+        <p>Serious buyers exist. But they don't browse classifieds. They rely on curated sources, trusted advisors, and platforms that do the screening for them.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">🔒</div>
+        <h3>Trust</h3>
+        <p>You don't want your competitors knowing you're selling. You don't want tyre-kickers calling your staff. You want control.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What you get -->
+<section class="what-you-get">
+  <div class="container">
+    <p class="section-label">What's included</p>
+    <h2 class="section-heading">Here's what you get.</h2>
+    <div class="tiers">
+      <!-- Free -->
+      <div class="tier">
+        <div class="tier-name">Free</div>
+        <div class="tier-price">€0</div>
+        <div class="tier-price-note">No commitment</div>
+        <div class="tier-divider"></div>
+        <ul class="tier-features">
+          <li>Your business listed on Ownly — Italy and Portugal's only curated SME deal platform</li>
+          <li>A structured deal page (we write the copy based on your inputs)</li>
+          <li>A public teaser — sector, location, headline metrics — to attract serious interest</li>
+          <li>Full financials stay private until a buyer signs a confidentiality agreement</li>
+          <li>Up to 10 inbound enquiries routed through Ownly</li>
+        </ul>
+        <a href="#" class="tier-cta tier-cta-outline">List your business for free →</a>
+      </div>
+
+      <!-- Assisted -->
+      <div class="tier featured">
+        <div class="tier-badge">Most popular</div>
+        <div class="tier-name">Assisted</div>
+        <div class="tier-price"><del>€399</del> €199</div>
+        <div class="tier-price-note">per year · launch price</div>
+        <div class="tier-divider"></div>
+        <ul class="tier-features">
+          <li>Everything in Free</li>
+          <li>A professional deal teaser document (PDF) — yours to use anywhere, not just on Ownly</li>
+          <li>NDA support — we handle the paperwork</li>
+          <li>Outreach materials for your own network and contacts</li>
+          <li>Business valuation guidance</li>
+          <li>Strategic insights — buyer profiles, positioning angles, what to address upfront</li>
+          <li>Active buyer matching — we reach out to relevant buyers in our network</li>
+          <li>Unlimited enquiries</li>
+        </ul>
+        <a href="#" class="tier-cta tier-cta-primary">Get started →</a>
+      </div>
+    </div>
+
+    <!-- White Glove -->
+    <div class="tier-white-glove">
+      <div>
+        <strong>White Glove</strong>
+        <p>Full advisory support from positioning to close. For owners who want a hands-off experience and complete guidance through the process.</p>
+      </div>
+      <a href="#" class="btn-outline" style="white-space:nowrap;">Talk to us →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Privacy -->
+<section class="privacy">
+  <div class="container">
+    <div class="privacy-inner">
+      <div>
+        <p class="section-label">Your privacy is protected</p>
+        <h2 class="section-heading">Nothing goes out without your say-so.</h2>
+        <div class="privacy-prose">
+          <p>Your deal page shows buyers enough to assess whether to take the conversation further — sector, location, headline metrics, and a description of your business. That's it.</p>
+          <p>Your financials, your business name, your contact details — none of this is shared until a buyer signs a confidentiality agreement and you've decided to proceed. You're in control of every step.</p>
+        </div>
+      </div>
+      <div>
+        <div class="privacy-table">
+          <div class="privacy-table-head">
+            <span>Visible to anyone</span>
+            <span>Protected (NDA required)</span>
+          </div>
+          <div class="privacy-row">
+            <span class="public">Sector and location</span>
+            <span class="protected">Detailed financials</span>
+          </div>
+          <div class="privacy-row">
+            <span class="public">Headline revenue range</span>
+            <span class="protected">Business name (unless you choose to show it)</span>
+          </div>
+          <div class="privacy-row">
+            <span class="public">EBITDA range</span>
+            <span class="protected">Your contact details</span>
+          </div>
+          <div class="privacy-row">
+            <span class="public">Business description</span>
+            <span class="protected">Any uploaded documents</span>
+          </div>
+          <div class="privacy-row">
+            <span class="public">Asking price (or "on request")</span>
+            <span class="protected"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="how">
+  <div class="container">
+    <p class="section-label">The process</p>
+    <h2 class="section-heading">From form to live listing in days, not months.</h2>
+    <div class="how-steps-vertical">
+      <div class="how-step-h">
+        <div class="how-step-num">1</div>
+        <div class="how-step-content">
+          <h4>Fill in your details</h4>
+          <p>A 4-step guided form. No jargon. Takes about 10 minutes.</p>
+        </div>
+      </div>
+      <div class="how-step-h">
+        <div class="how-step-num">2</div>
+        <div class="how-step-content">
+          <h4>We review and write your listing</h4>
+          <p>Ownly writes the deal description based on your inputs. We may follow up with a short call to fill gaps.</p>
+        </div>
+      </div>
+      <div class="how-step-h">
+        <div class="how-step-num">3</div>
+        <div class="how-step-content">
+          <h4>Your listing goes live</h4>
+          <p>Published on Ownly, visible to buyers browsing Italy and Portugal.</p>
+        </div>
+      </div>
+      <div class="how-step-h">
+        <div class="how-step-num">4</div>
+        <div class="how-step-content">
+          <h4>Enquiries come through us</h4>
+          <p>Buyers reach out via Ownly. We review and route to you. You decide who to engage.</p>
+        </div>
+      </div>
+    </div>
+    <div class="how-reassurance">
+      No brokers. No exclusivity. No upfront costs on the free plan. You can withdraw your listing at any time.
+    </div>
+  </div>
+</section>
+
+<!-- Footer CTA -->
+<section class="footer-cta" style="background:var(--accent);">
+  <div class="container">
+    <h2 style="color:var(--white);">Ready to find out what your business is worth to the right buyer?</h2>
+    <p style="color:rgba(255,255,255,0.72);">Free to start. No exclusivity. Cancel anytime.</p>
+    <a href="#" style="display:inline-block;font-size:15px;font-weight:600;color:var(--accent);background:var(--white);border-radius:6px;padding:14px 32px;text-decoration:none;transition:opacity 0.15s;">List your business for free →</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-logo">Ownly</div>
+        <p class="footer-tagline">The curated deal platform for Southern European SMEs.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-links-col">
+          <div class="footer-links-col-heading">Platform</div>
+          <a href="mockup-sellers.html">Sell your business</a>
+          <a href="mockup-brokers.html">For brokers</a>
+          <a href="#">Browse deals</a>
+        </div>
+        <div class="footer-links-col">
+          <div class="footer-links-col-heading">Company</div>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-links-col">
+          <div class="footer-links-col-heading">Legal</div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Ownly</span>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

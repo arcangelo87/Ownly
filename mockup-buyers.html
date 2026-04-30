@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ownly — For buyers (mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:          #F7F2E9;
+    --text:        #1A1A18;
+    --accent:      #1C4A2A;
+    --terracotta:  #C1440E;
+    --muted:       #6B6860;
+    --border:      #E4E1DA;
+    --surface:     #EDE8DE;
+    --white:       #FFFFFF;
+    --font-serif:  'Playfair Display', Georgia, serif;
+    --font-sans:   'DM Sans', system-ui, sans-serif;
+    --font-mono:   'IBM Plex Mono', monospace;
+    --max-w:       1140px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ── Nav ── */
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-logo {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-right: auto;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 36px;
+    margin-right: 36px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    transition: color 0.15s;
+  }
+
+  .nav-links a.active { color: var(--text); }
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--accent);
+    border-radius: 6px;
+    padding: 9px 18px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+
+  .nav-cta:hover { opacity: 0.88; }
+
+  /* ── Container ── */
+  .container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--accent);
+    border-radius: 6px;
+    padding: 13px 28px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  /* ── Labels / headings ── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  .section-heading {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 96px 0 88px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: 54px;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    max-width: 680px;
+    margin-bottom: 20px;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--muted);
+    line-height: 1.65;
+    max-width: 580px;
+    margin-bottom: 36px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .hero-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .hero-link:hover { color: var(--text); }
+
+  /* ── Problem ── */
+  .problem {
+    padding: 96px 0;
+  }
+
+  .problem-prose {
+    max-width: 720px;
+    margin-bottom: 56px;
+  }
+
+  .problem-prose p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  .problem-points {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  .problem-point {
+    padding: 28px 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .problem-point:last-child { border-bottom: none; }
+
+  .problem-point-quote {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .problem-point-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* ── Features ── */
+  .features {
+    padding: 80px 0;
+    background: var(--surface);
+  }
+
+  .feature-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bg);
+  }
+
+  .feature-row {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 32px;
+    padding: 32px 36px;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .feature-row:last-child { border-bottom: none; }
+
+  .feature-label {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    padding-top: 2px;
+  }
+
+  .feature-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ── Access model ── */
+  .access {
+    padding: 96px 0;
+  }
+
+  .access-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: start;
+  }
+
+  .access-prose p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .access-table {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  .access-table-head {
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    background: var(--text);
+    padding: 12px 20px;
+  }
+
+  .access-table-head span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.72);
+  }
+
+  .access-row {
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    padding: 13px 20px;
+    border-top: 1px solid var(--border);
+    align-items: center;
+  }
+
+  .access-row-label {
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  .access-row-val {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .access-row-val.soon {
+    color: var(--muted);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  /* ── Founding form ── */
+  .founding {
+    padding: 80px 0;
+    background: var(--surface);
+  }
+
+  .founding-inner {
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .founding-prose p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  .founding-prose p:last-child { margin-bottom: 0; }
+
+  .contact-form {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .optional {
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 4px;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--text);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.15s;
+    resize: vertical;
+  }
+
+  .form-field input::placeholder,
+  .form-field textarea::placeholder {
+    color: var(--muted);
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-color: var(--text);
+  }
+
+  .form-submit {
+    display: block;
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--accent);
+    border: none;
+    border-radius: 6px;
+    padding: 13px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+
+  .form-submit:hover { opacity: 0.88; }
+
+  .form-note {
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: -8px;
+  }
+
+  /* ── Footer CTA ── */
+  .footer-cta {
+    background: var(--accent);
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .footer-cta h2 {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .footer-cta p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 36px;
+  }
+
+  .btn-white {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--white);
+    border-radius: 6px;
+    padding: 14px 32px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+
+  .btn-white:hover { opacity: 0.92; }
+
+  /* ── Footer ── */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 48px 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 64px;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand-logo {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .footer-tagline {
+    font-size: 13px;
+    color: var(--muted);
+    max-width: 240px;
+    line-height: 1.6;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 48px;
+  }
+
+  .footer-links-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links-col-heading {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .footer-links-col a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .footer-links-col a:hover { color: var(--text); }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy { font-size: 12px; color: var(--muted); }
+  .footer-legal { display: flex; gap: 20px; }
+  .footer-legal a { font-size: 12px; color: var(--muted); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="mockup-homepage.html">Ownly</a>
+    <ul class="nav-links">
+      <li><a href="mockup-sellers.html">Sell your business</a></li>
+      <li><a href="mockup-brokers.html">For brokers</a></li>
+      <li><a href="#" class="active">Browse deals</a></li>
+    </ul>
+    <a class="nav-cta" href="mockup-sellers.html">Get started →</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <p class="section-label">For individual investors &amp; acquirers</p>
+    <h1>Serious SME deals in Italy and Portugal. Actually structured.</h1>
+    <p class="hero-sub">Ownly lists curated acquisition opportunities — manufacturing, professional services, food &amp; beverage, specialty businesses. Every deal reviewed. Every listing written to help you evaluate quickly.</p>
+    <div class="hero-ctas">
+      <a href="#" class="btn-primary">Browse deals →</a>
+      <a href="#founding" class="hero-link">Talk to us about what you're looking for →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Problem -->
+<section class="problem">
+  <div class="container">
+    <p class="section-label">The problem</p>
+    <h2 class="section-heading">Buying a small business takes longer than it should.</h2>
+    <div class="problem-prose">
+      <p>Finding a quality deal is hard enough. When you do find one, you spend weeks chasing the seller for documentation. Then more weeks finding the right lawyer, the right accountant — professionals who actually know SME transactions in this market.</p>
+      <p>And sometimes, after months of effort and real money spent, the business simply wasn't worth buying.</p>
+      <p>That's the reality most buyers face in Southern Europe. Ownly is built to change it.</p>
+    </div>
+    <div class="problem-points">
+      <div class="problem-point">
+        <div class="problem-point-quote">"Three months and nothing to show for it."</div>
+        <p class="problem-point-desc">Time lost chasing documentation, assembling professionals, running due diligence — only to walk away.</p>
+      </div>
+      <div class="problem-point">
+        <div class="problem-point-quote">"The listing had three lines and a phone number."</div>
+        <p class="problem-point-desc">Most publicly listed deals in Italy and Portugal are poorly presented. Revenue figures with no context. Brokers who don't respond.</p>
+      </div>
+      <div class="problem-point">
+        <div class="problem-point-quote">"I didn't even know what I didn't know."</div>
+        <p class="problem-point-desc">Finding the right legal and financial professionals for an SME acquisition in a foreign market is its own project.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+  <div class="container">
+    <p class="section-label">What makes Ownly different</p>
+    <h2 class="section-heading">Deals you can evaluate before you commit your time.</h2>
+    <div class="feature-rows">
+      <div class="feature-row">
+        <div class="feature-label">Structured deal pages</div>
+        <div class="feature-desc">Every listing has a written description, headline financial metrics, and clear context — authored by Ownly, not copy-pasted from the seller. You can self-qualify in minutes, not weeks.</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-label">NDA-first financials</div>
+        <div class="feature-desc">Full financial detail is available after an initial conversation. We protect sellers — which means the numbers you eventually see are real, not sanitised.</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-label">Simple enquiry process</div>
+        <div class="feature-desc">Express interest through the platform. No cold calls, no broker gatekeeping. Ownly routes your enquiry and follows up directly.</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-label">Italy &amp; Portugal focus</div>
+        <div class="feature-desc">We source deals directly from founders — manufacturing clusters in northern Italy, service businesses in Lisbon and Porto, food producers across both countries. Markets most platforms underserve.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Access model -->
+<section class="access">
+  <div class="container">
+    <div class="access-inner">
+      <div>
+        <p class="section-label">Access model</p>
+        <h2 class="section-heading">Free to browse. Free to enquire.</h2>
+        <div class="access-prose">
+          <p>No paywalls. No account required to browse. Register with your name and email when you're ready to enquire — that's it.</p>
+        </div>
+      </div>
+      <div>
+        <div class="access-table">
+          <div class="access-table-head">
+            <span>Feature</span>
+            <span>Available now</span>
+          </div>
+          <div class="access-row">
+            <span class="access-row-label">Browse all listings</span>
+            <span class="access-row-val">✓ Free</span>
+          </div>
+          <div class="access-row">
+            <span class="access-row-label">View full deal pages</span>
+            <span class="access-row-val">✓ Free</span>
+          </div>
+          <div class="access-row">
+            <span class="access-row-label">Submit enquiries</span>
+            <span class="access-row-val">✓ Free</span>
+          </div>
+          <div class="access-row">
+            <span class="access-row-label">Due diligence assistance</span>
+            <span class="access-row-val soon">coming soon</span>
+          </div>
+          <div class="access-row">
+            <span class="access-row-label">Saved deal alerts</span>
+            <span class="access-row-val soon">coming soon</span>
+          </div>
+          <div class="access-row">
+            <span class="access-row-label">AI deal matching</span>
+            <span class="access-row-val soon">coming soon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Founding Buyer Programme -->
+<section class="founding" id="founding">
+  <div class="container">
+    <div class="founding-inner">
+      <div>
+        <p class="section-label">Founding Buyer Programme</p>
+        <h2 class="section-heading">Helping us build what buyers actually need.</h2>
+        <div class="founding-prose">
+          <p>We're at an early stage, and we'd rather talk to serious buyers than guess what to build. If you're actively looking for acquisition opportunities in Italy or Portugal, we'd like to understand your process, your pain, and what would actually help.</p>
+          <p>In exchange, you'll shape what Ownly builds for buyers — and get early access to features as they launch.</p>
+        </div>
+      </div>
+      <div>
+        <div class="contact-form">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your name">
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="you@example.com">
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone <span class="optional">(optional)</span></label>
+            <input type="tel" id="phone" placeholder="+44 7700 900000">
+          </div>
+          <div class="form-field">
+            <label for="message">What are you looking for? <span class="optional">(optional)</span></label>
+            <textarea id="message" rows="3" placeholder="e.g. Manufacturing businesses in northern Italy, €1–3M revenue, profitable, open to partial acquisition."></textarea>
+          </div>
+          <button class="form-submit">Send →</button>
+          <p class="form-note">We'll respond within 48 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer CTA -->
+<section class="footer-cta">
+  <div class="container">
+    <h2>Start browsing — no account needed.</h2>
+    <p>Register only when you're ready to enquire.</p>
+    <a href="#" class="btn-white">Explore deals →</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-logo">Ownly</div>
+        <p class="footer-tagline">The curated deal platform for Southern European SMEs.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-links-col">
+          <div class="footer-links-col-heading">Platform</div>
+          <a href="mockup-sellers.html">Sell your business</a>
+          <a href="mockup-brokers.html">For brokers</a>
+          <a href="#">Browse deals</a>
+        </div>
+        <div class="footer-links-col">
+          <div class="footer-links-col-heading">Company</div>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-links-col">
+          <div class="footer-links-col-heading">Legal</div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Ownly</span>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

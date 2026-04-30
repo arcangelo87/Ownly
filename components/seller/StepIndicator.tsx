@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { Check } from 'lucide-react';
+import { Logo } from '@/components/ui/Logo';
 
 const STEPS = ['step1', 'step2', 'step3', 'step4'] as const;
 
@@ -16,9 +17,7 @@ export function StepIndicator({ currentStep }: StepIndicatorProps) {
     <>
       {/* Desktop sidebar */}
       <aside className="hidden md:flex w-60 flex-shrink-0 flex-col border-r border-[var(--color-border)] px-8 py-12 sticky top-0 h-screen">
-        <span className="font-serif text-[20px] font-semibold tracking-[-0.02em] mb-[52px]">
-          Ownly
-        </span>
+        <Logo width={96} className="mb-[52px]" />
         <ol className="flex flex-col">
           {STEPS.map((key, i) => {
             const step = i + 1;
@@ -80,7 +79,7 @@ export function StepIndicator({ currentStep }: StepIndicatorProps) {
           <span className="font-semibold text-[var(--color-text)]">
             {currentStep} of {STEPS.length}
           </span>{' '}
-          — {t(STEPS[currentStep - 1])}
+          : {t(STEPS[currentStep - 1])}
         </p>
       </div>
     </>

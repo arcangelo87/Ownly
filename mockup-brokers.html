@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ownly — For brokers (mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:          #F7F2E9;
+    --text:        #1A1A18;
+    --accent:      #1C4A2A;
+    --terracotta:  #C1440E;
+    --muted:       #6B6860;
+    --border:      #E4E1DA;
+    --surface:     #EDE8DE;
+    --white:       #FFFFFF;
+    --font-serif:  'Playfair Display', Georgia, serif;
+    --font-sans:   'DM Sans', system-ui, sans-serif;
+    --font-mono:   'IBM Plex Mono', monospace;
+    --max-w:       1140px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ── Nav ── */
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-logo {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-right: auto;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 36px;
+    margin-right: 36px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    transition: color 0.15s;
+  }
+
+  .nav-links a.active { color: var(--text); }
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--accent);
+    border-radius: 6px;
+    padding: 9px 18px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+
+  .nav-cta:hover { opacity: 0.88; }
+
+  /* ── Container ── */
+  .container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--accent);
+    border-radius: 6px;
+    padding: 13px 28px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  .btn-outline {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 24px;
+    text-decoration: none;
+    transition: border-color 0.15s;
+  }
+
+  .btn-outline:hover { border-color: var(--muted); }
+
+  /* ── Labels / headings ── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  .section-heading {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 96px 0 88px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: 56px;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--muted);
+    line-height: 1.65;
+    max-width: 540px;
+    margin-bottom: 36px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .hero-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .hero-link:hover { color: var(--text); }
+
+  /* ── Problem ── */
+  .problem {
+    padding: 80px 0;
+    background: var(--surface);
+  }
+
+  .problem-prose {
+    max-width: 680px;
+  }
+
+  .problem-prose p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  /* ── Features ── */
+  .features {
+    padding: 96px 0;
+  }
+
+  .feature-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  .feature-row {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 32px;
+    padding: 32px 36px;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .feature-row:last-child { border-bottom: none; }
+
+  .feature-label {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    padding-top: 2px;
+  }
+
+  .feature-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ── Not a broker ── */
+  .not-broker {
+    padding: 80px 0;
+    background: var(--surface);
+  }
+
+  .not-broker-inner {
+    max-width: 720px;
+  }
+
+  .not-broker-inner p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  .not-broker-inner p:last-child { margin-bottom: 0; }
+
+  /* ── Pricing ── */
+  .pricing {
+    padding: 96px 0;
+  }
+
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .pricing-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px;
+  }
+
+  .pricing-card.coming-soon {
+    opacity: 0.65;
+  }
+
+  .pricing-card-name {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .pricing-card-price {
+    font-family: var(--font-serif);
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+
+  .pricing-card-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  .pricing-divider {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 24px;
+  }
+
+  .pricing-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .pricing-features li {
+    font-size: 14px;
+    color: var(--muted);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .pricing-features li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .coming-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--surface);
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .pricing-cta {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.15s;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  .pricing-cta:hover { border-color: var(--muted); }
+
+  .pricing-cta.primary {
+    background: var(--accent);
+    color: var(--white);
+    border-color: var(--accent);
+  }
+
+  .pricing-cta.primary:hover { opacity: 0.88; }
+
+  .pricing-reassurance {
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  /* ── Founding form ── */
+  .founding {
+    padding: 80px 0;
+    background: var(--surface);
+  }
+
+  .founding-inner {
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .founding-prose p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  .founding-prose p:last-child { margin-bottom: 0; }
+
+  .contact-form {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .form-field .optional {
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 4px;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--text);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.15s;
+    resize: vertical;
+  }
+
+  .form-field input::placeholder,
+  .form-field textarea::placeholder {
+    color: var(--muted);
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-color: var(--text);
+  }
+
+  .form-submit {
+    display: block;
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--accent);
+    border: none;
+    border-radius: 6px;
+    padding: 13px;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+    transition: opacity 0.15s;
+    text-align: center;
+  }
+
+  .form-submit:hover { opacity: 0.88; }
+
+  .form-note {
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: -8px;
+  }
+
+  /* ── Footer ── */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 48px 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 64px;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand-logo {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .footer-tagline {
+    font-size: 13px;
+    color: var(--muted);
+    max-width: 240px;
+    line-height: 1.6;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 48px;
+  }
+
+  .footer-links-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links-col-heading {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .footer-links-col a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .footer-links-col a:hover { color: var(--text); }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy { font-size: 12px; color: var(--muted); }
+  .footer-legal { display: flex; gap: 20px; }
+  .footer-legal a { font-size: 12px; color: var(--muted); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="mockup-homepage.html">Ownly</a>
+    <ul class="nav-links">
+      <li><a href="mockup-sellers.html">Sell your business</a></li>
+      <li><a href="mockup-brokers.html" class="active">For brokers</a></li>
+      <li><a href="#">Browse deals</a></li>
+    </ul>
+    <a class="nav-cta" href="#">Get started →</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <p class="section-label">For M&amp;A advisors &amp; deal brokers</p>
+    <h1>Better listings.<br>More qualified enquiries.</h1>
+    <p class="hero-sub">Ownly gives your deals a structured home — a professional deal page that buyers can evaluate properly. You keep the client relationship. We handle presentation and inbound.</p>
+    <div class="hero-ctas">
+      <a href="#" class="btn-primary">List your first deal free →</a>
+      <a href="#founding" class="hero-link">Talk to us →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Problem -->
+<section class="problem">
+  <div class="container">
+    <p class="section-label">The problem</p>
+    <h2 class="section-heading">Most deal presentations don't do justice to the business.</h2>
+    <div class="problem-prose">
+      <p>A PDF sent cold. A Dropbox link with unstructured financials. A listing on a classifieds site with three lines of description. Buyers scroll past. Conversations never start.</p>
+      <p>You've done the work to represent the seller. Ownly makes sure buyers can see it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+  <div class="container">
+    <p class="section-label">What you get</p>
+    <h2 class="section-heading">A deal page your clients will be proud of.</h2>
+    <div class="feature-rows">
+      <div class="feature-row">
+        <div class="feature-label">Structured deal pages</div>
+        <div class="feature-desc">Every listing gets a clean, professional page — sector, location, headline metrics, description, highlights. Buyers get enough to self-qualify before requesting more.</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-label">NDA-gated financials</div>
+        <div class="feature-desc">Full financial detail stays protected. Buyers who want to go further submit an enquiry — you're notified and in control of what gets shared.</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-label">Buyer enquiry routing</div>
+        <div class="feature-desc">Enquiries from interested buyers come through Ownly and route directly to you. No cold calls to your client. No broker bypassing.</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-label">Shareable deal link</div>
+        <div class="feature-desc">Each deal gets a clean URL you can share in your own outreach. Works as your deal summary, not a replacement for your process.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Not a broker -->
+<section class="not-broker">
+  <div class="container">
+    <p class="section-label">Important</p>
+    <h2 class="section-heading">We present deals. We don't compete for them.</h2>
+    <div class="not-broker-inner">
+      <p>Ownly doesn't take success fees on broker-submitted deals. We're not a competing advisor. We're presentation infrastructure — the professional front-end your listings deserve.</p>
+      <p>You own the client relationship. You manage the process. We make your listing look like it deserves serious attention.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing">
+  <div class="container">
+    <p class="section-label">Pricing</p>
+    <h2 class="section-heading">Free to start. No setup required.</h2>
+    <div class="pricing-cards">
+      <!-- Free -->
+      <div class="pricing-card">
+        <div class="pricing-card-name">Free</div>
+        <div class="pricing-card-price">€0</div>
+        <div class="pricing-card-note">No commitment</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Up to 5 active listings</li>
+          <li>Full deal page per listing written by Ownly</li>
+          <li>Buyer enquiry routing to you</li>
+          <li>Shareable deal link per listing</li>
+        </ul>
+        <a href="#" class="pricing-cta primary">Post your first deal →</a>
+      </div>
+
+      <!-- Pro (coming soon) -->
+      <div class="pricing-card coming-soon">
+        <div class="pricing-card-name">Pro <span class="coming-tag">Coming soon</span></div>
+        <div class="pricing-card-price">TBC / month</div>
+        <div class="pricing-card-note">Launch price TBC</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Unlimited listings</li>
+          <li>Branded listing pages (your logo and firm name) <span class="coming-tag">soon</span></li>
+          <li>Buyer matching tools <span class="coming-tag">soon</span></li>
+          <li>Deal room access <span class="coming-tag">soon</span></li>
+          <li>Priority placement <span class="coming-tag">soon</span></li>
+          <li>Analytics per listing <span class="coming-tag">soon</span></li>
+        </ul>
+        <a href="#founding" class="pricing-cta">Join the waitlist →</a>
+      </div>
+    </div>
+    <p class="pricing-reassurance">Free tier covers everything you need to get started. No credit card. No calls to book. Just post your deal.</p>
+  </div>
+</section>
+
+<!-- Founding Broker Programme -->
+<section class="founding" id="founding">
+  <div class="container">
+    <div class="founding-inner">
+      <div>
+        <p class="section-label">Founding Broker Programme</p>
+        <h2 class="section-heading">Helping shape what Ownly builds for advisors.</h2>
+        <div class="founding-prose">
+          <p>We're working with a small group of brokers in Italy and Portugal to understand what actually matters — before we build it. If you work deals in this market, we'd like to talk.</p>
+        </div>
+      </div>
+      <div>
+        <div class="contact-form">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your name">
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="you@example.com">
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone <span class="optional">(optional)</span></label>
+            <input type="tel" id="phone" placeholder="+39 02 1234 5678">
+          </div>
+          <div class="form-field">
+            <label for="message">Message <span class="optional">(optional)</span></label>
+            <textarea id="message" rows="3" placeholder="Tell us about your work and what you'd find useful."></textarea>
+          </div>
+          <button class="form-submit">Send →</button>
+          <p class="form-note">We'll respond within 48 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-logo">Ownly</div>
+        <p class="footer-tagline">The curated deal platform for Southern European SMEs.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-links-col">
+          <div class="footer-links-col-heading">Platform</div>
+          <a href="mockup-sellers.html">Sell your business</a>
+          <a href="mockup-brokers.html">For brokers</a>
+          <a href="#">Browse deals</a>
+        </div>
+        <div class="footer-links-col">
+          <div class="footer-links-col-heading">Company</div>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-links-col">
+          <div class="footer-links-col-heading">Legal</div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Ownly</span>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

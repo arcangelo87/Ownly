@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -23,6 +24,19 @@ const ibmPlexMono = IBM_Plex_Mono({
   variable: '--font-ibm-plex-mono',
 });
 
+export const metadata: Metadata = {
+  title: {
+    default: 'Ownly',
+    template: '%s — Ownly',
+  },
+  description:
+    'Curated SME deals in Italy and Portugal. Browse structured deal pages, review financials, and connect with business owners looking to sell.',
+  openGraph: {
+    siteName: 'Ownly',
+    type: 'website',
+  },
+};
+
 export default async function LocaleLayout({
   children,
   params,
@@ -39,7 +53,10 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${playfair.variable} ${dmSans.variable} ${ibmPlexMono.variable}`}>
+    <html
+      lang={locale}
+      className={`${playfair.variable} ${dmSans.variable} ${ibmPlexMono.variable}`}
+    >
       <body>
         <NextIntlClientProvider messages={messages}>
           {children}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bottega — Logo Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-bg:      #F7F2E9;
+      --color-text:    #1A1A18;
+      --color-accent:  #1C4A2A;
+      --color-muted:   #6B6860;
+      --color-border:  #E4E1DA;
+      --color-surface: #EDE8DE;
+      --font-serif:    'Playfair Display', Georgia, serif;
+      --font-sans:     'DM Sans', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-bg);
+      color: var(--color-text);
+      -webkit-font-smoothing: antialiased;
+      padding: 48px 40px;
+      min-height: 100vh;
+    }
+
+    header {
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    header p {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
+
+    header h1 {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text);
+      margin-top: 6px;
+    }
+
+    .section {
+      margin-bottom: 56px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 24px;
+    }
+
+    .swatch {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 48px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .swatch--light {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+    }
+
+    .swatch--surface {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+    }
+
+    .swatch--dark {
+      background: var(--color-text);
+    }
+
+    .swatch--accent {
+      background: var(--color-accent);
+    }
+
+    .swatch-meta {
+      font-size: 11px;
+      color: var(--color-muted);
+      min-width: 80px;
+    }
+
+    .swatch--dark .swatch-meta,
+    .swatch--accent .swatch-meta {
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* The SVG wordmark — mirrors Logo.tsx exactly */
+    .wordmark {
+      display: block;
+      color: var(--color-text);
+    }
+
+    .wordmark--on-dark { color: var(--color-bg); }
+    .wordmark--on-accent { color: var(--color-bg); }
+
+    /* Sizes row */
+    .sizes-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 40px;
+      padding: 40px 48px;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .size-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .size-label {
+      font-size: 11px;
+      color: var(--color-muted);
+    }
+
+    /* Context strip */
+    .context-strip {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 24px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .context-strip--nav {
+      background: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      justify-content: space-between;
+    }
+
+    .context-strip--nav .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 13px;
+      color: var(--color-muted);
+    }
+
+    .context-strip--sidebar {
+      background: var(--color-bg);
+      border-right: 1px solid var(--color-border);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 24px;
+      width: 200px;
+      gap: 20px;
+    }
+
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--color-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <p>Bottega · Brand</p>
+    <h1>Logo preview — wordmark</h1>
+  </header>
+
+  <!-- Sizes -->
+  <div class="section">
+    <p class="section-label">Sizes</p>
+    <div class="sizes-row">
+      <div class="size-item">
+        <svg viewBox="0 0 108 28" width="72" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Bottega" class="wordmark">
+          <text x="0" y="22" font-size="24" font-family="'Playfair Display', Georgia, serif" font-weight="600" letter-spacing="-0.5" fill="currentColor">Bottega</text>
+        </svg>
+        <span class="size-label">72px — favicon / tab</span>
+      </div>
+      <div class="size-item">
+        <svg viewBox="0 0 108 28" width="96" height="25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Bottega" class="wordmark">
+          <text x="0" y="22" font-size="24" font-family="'Playfair Display', Georgia, serif" font-weight="600" letter-spacing="-0.5" fill="currentColor">Bottega</text>
+        </svg>
+        <span class="size-label">96px — nav / sidebar</span>
+      </div>
+      <div class="size-item">
+        <svg viewBox="0 0 108 28" width="108" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Bottega" class="wordmark">
+          <text x="0" y="22" font-size="24" font-family="'Playfair Display', Georgia, serif" font-weight="600" letter-spacing="-0.5" fill="currentColor">Bottega</text>
+        </svg>
+        <span class="size-label">108px — default</span>
+      </div>
+      <div class="size-item">
+        <svg viewBox="0 0 108 28" width="160" height="41" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Bottega" class="wordmark">
+          <text x="0" y="22" font-size="24" font-family="'Playfair Display', Georgia, serif" font-weight="600" letter-spacing="-0.5" fill="currentColor">Bottega</text>
+        </svg>
+        <span class="size-label">160px — hero / marketing</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Colour contexts -->
+  <div class="section">
+    <p class="section-label">Colour contexts</p>
+
+    <div class="swatch swatch--light">
+      <svg viewBox="0 0 108 28" width="108" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Bottega" class="wordmark">
+        <text x="0" y="22" font-size="24" font-family="'Playfair Display', Georgia, serif" font-weight="600" letter-spacing="-0.5" fill="currentColor">Bottega</text>
+      </svg>
+      <span class="swatch-meta">On linen #F7F2E9</span>
+    </div>
+
+    <div class="swatch swatch--surface">
+      <svg viewBox="0 0 108 28" width="108" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Bottega" class="wordmark">
+        <text x="0" y="22" font-size="24" font-family="'Playfair Display', Georgia, serif" font-weight="600" letter-spacing="-0.5" fill="currentColor">Bottega</text>
+      </svg>
+      <span class="swatch-meta">On surface #EDE8DE</span>
+    </div>
+
+    <div class="swatch swatch--dark">
+      <svg viewBox="0 0 108 28" width="108" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Bottega" class="wordmark wordmark--on-dark">
+        <text x="0" y="22" font-size="24" font-family="'Playfair Display', Georgia, serif" font-weight="600" letter-spacing="-0.5" fill="currentColor">Bottega</text>
+      </svg>
+      <span class="swatch-meta">On dark #1A1A18</span>
+    </div>
+
+    <div class="swatch swatch--accent">
+      <svg viewBox="0 0 108 28" width="108" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Bottega" class="wordmark wordmark--on-accent">
+        <text x="0" y="22" font-size="24" font-family="'Playfair Display', Georgia, serif" font-weight="600" letter-spacing="-0.5" fill="currentColor">Bottega</text>
+      </svg>
+      <span class="swatch-meta">On accent #1C4A2A</span>
+    </div>
+  </div>
+
+  <!-- In context: nav bar -->
+  <div class="section">
+    <p class="section-label">In context — nav bar</p>
+    <div class="context-strip context-strip--nav">
+      <svg viewBox="0 0 108 28" width="96" height="25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Bottega" class="wordmark">
+        <text x="0" y="22" font-size="24" font-family="'Playfair Display', Georgia, serif" font-weight="600" letter-spacing="-0.5" fill="currentColor">Bottega</text>
+      </svg>
+      <div class="nav-links">
+        <span>Deals</span>
+        <span>For sellers</span>
+        <span>For buyers</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- In context: sidebar -->
+  <div class="section">
+    <p class="section-label">In context — seller form sidebar</p>
+    <div style="display:flex; border: 1px solid var(--color-border); border-radius: 4px; overflow: hidden; width: fit-content;">
+      <div class="context-strip context-strip--sidebar">
+        <svg viewBox="0 0 108 28" width="96" height="25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Bottega" class="wordmark">
+          <text x="0" y="22" font-size="24" font-family="'Playfair Display', Georgia, serif" font-weight="600" letter-spacing="-0.5" fill="currentColor">Bottega</text>
+        </svg>
+        <div class="sidebar-links">
+          <span style="color: var(--color-accent); font-weight: 500;">① Business basics</span>
+          <span>② Size &amp; team</span>
+          <span>③ The deal</span>
+          <span>④ Your story</span>
+        </div>
+      </div>
+      <div style="padding: 24px 32px; width: 360px;">
+        <p style="font-size: 13px; color: var(--color-muted);">Form content area</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
