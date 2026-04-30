@@ -82,8 +82,25 @@ export function DealCard({ listing }: DealCardProps) {
         </div>
 
         {/* Footer */}
-        <div className="mt-auto border-t border-[var(--color-border)] pt-3">
-          <span className="text-[13px] font-medium text-[var(--color-accent)]">
+        <div className="mt-auto flex items-start justify-between gap-3 border-t border-[var(--color-border)] pt-3">
+          {listing.buyer_tags && listing.buyer_tags.length > 0 ? (
+            <div className="flex flex-wrap gap-1">
+              <span className="text-[11px] uppercase tracking-[0.08em] text-[var(--color-muted)]">
+                {tCard('bestFor')}:
+              </span>
+              {listing.buyer_tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded bg-[var(--color-surface)] px-1.5 py-0.5 text-[11px] text-[var(--color-text)]"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          ) : (
+            <span />
+          )}
+          <span className="shrink-0 text-[13px] font-medium text-[var(--color-accent)]">
             {tCard('viewDeal')}
           </span>
         </div>

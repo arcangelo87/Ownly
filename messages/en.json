@@ -37,7 +37,8 @@
       "card": {
         "viewDeal": "View deal →",
         "photosBadge": "{count} photos",
-        "noPhoto": "No photos"
+        "noPhoto": "No photos",
+        "bestFor": "Best for"
       }
     },
     "metrics": {

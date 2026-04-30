@@ -32,7 +32,7 @@ export default async function DealDetailPage({
   const { data: listing, error } = await admin
     .from('listings')
     .select(
-      'id, slug, title, about, highlights, business_name, business_description, strongest_point, sector, region, country, year_founded, revenue_range, ebitda_margin, employee_count, asking_price, partial_sale, timeline, reasons_for_sale, created_at',
+      'id, slug, title, about, highlights, buyer_tags, business_name, business_description, strongest_point, sector, region, country, year_founded, revenue_range, ebitda_margin, employee_count, asking_price, partial_sale, timeline, reasons_for_sale, created_at',
     )
     .eq('slug', slug)
     .eq('status', 'live')
@@ -121,6 +121,24 @@ export default async function DealDetailPage({
                   {t('sections.highlights')}
                 </p>
                 <HighlightsList items={listing.highlights?.length ? listing.highlights : [listing.strongest_point!]} />
+              </section>
+            )}
+
+            {listing.buyer_tags && listing.buyer_tags.length > 0 && (
+              <section className="mt-8">
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)]">
+                  {t('browse.card.bestFor')}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {listing.buyer_tags.map((tag: string) => (
+                    <span
+                      key={tag}
+                      className="rounded bg-[var(--color-surface)] px-2.5 py-1 text-[13px] text-[var(--color-text)]"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </section>
             )}
 

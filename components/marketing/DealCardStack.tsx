@@ -1,46 +1,79 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { MockDealCard } from './MockDealCard';
+import { DealCard } from '@/components/deals/DealCard';
+import type { ListingCard } from '@/app/[locale]/deals/page';
 
-const CARDS = [
+const CARDS: ListingCard[] = [
   {
-    sector: 'Food & Beverage',
-    location: 'Tuscany, Italy',
+    id: 'mock-1',
+    slug: null,
     title: 'Established artisan food producer with long-term wholesale contracts across northern Italy.',
-    revenue: '€1–2.5M',
-    ebitda: '20–35%',
-    asking: '€1–2M',
-    buyerTags: ['Lifestyle buyer', 'Strategic buyer'] as const,
+    sector: 'food_beverage',
+    region: 'Tuscany',
+    country: 'IT',
+    revenue_range: '1m_2_5m',
+    ebitda_margin: '20_35',
+    asking_price: '1m_2m',
+    employee_count: null,
+    timeline: null,
+    created_at: '2026-01-01T00:00:00Z',
+    coverPhotoUrl: null,
+    photoCount: 0,
+    buyer_tags: ['Lifestyle buyer', 'Strategic buyer'],
   },
   {
-    sector: 'Manufacturing',
-    location: 'Porto, Portugal',
+    id: 'mock-2',
+    slug: null,
     title: 'Precision metalwork manufacturer serving automotive and industrial clients across the Iberian Peninsula.',
-    revenue: '€2.5–5M',
-    ebitda: '35%+',
-    asking: '€2–4M',
-    buyerTags: ['Financial buyer', 'Strategic buyer'] as const,
+    sector: 'manufacturing',
+    region: 'Porto',
+    country: 'PT',
+    revenue_range: '2_5m_5m',
+    ebitda_margin: 'above_35',
+    asking_price: '2_5m_5m',
+    employee_count: null,
+    timeline: null,
+    created_at: '2026-01-01T00:00:00Z',
+    coverPhotoUrl: null,
+    photoCount: 0,
+    buyer_tags: ['Financial buyer', 'Strategic buyer'],
   },
   {
-    sector: 'Professional Services',
-    location: 'Milan, Italy',
+    id: 'mock-3',
+    slug: null,
     title: 'Specialist accounting and compliance firm with a loyal SME client base built over 15 years.',
-    revenue: '€500k–1M',
-    ebitda: '10–20%',
-    asking: '<€1M',
-    buyerTags: ['Lifestyle buyer', 'Owner-operator'] as const,
+    sector: 'professional_services',
+    region: 'Milan',
+    country: 'IT',
+    revenue_range: '500k_1m',
+    ebitda_margin: '10_20',
+    asking_price: '500k_1m',
+    employee_count: null,
+    timeline: null,
+    created_at: '2026-01-01T00:00:00Z',
+    coverPhotoUrl: null,
+    photoCount: 0,
+    buyer_tags: ['Lifestyle buyer', 'Owner-operator'],
   },
   {
-    sector: 'Wholesale & Distribution',
-    location: 'Algarve, Portugal',
+    id: 'mock-4',
+    slug: null,
     title: 'Regional wholesale distributor of specialty food & beverage products with exclusive supplier agreements.',
-    revenue: '€1–2.5M',
-    ebitda: '20–35%',
-    asking: '€1–2M',
-    buyerTags: ['Financial buyer', 'Strategic buyer'] as const,
+    sector: 'wholesale',
+    region: 'Algarve',
+    country: 'PT',
+    revenue_range: '1m_2_5m',
+    ebitda_margin: '20_35',
+    asking_price: '1m_2_5m',
+    employee_count: null,
+    timeline: null,
+    created_at: '2026-01-01T00:00:00Z',
+    coverPhotoUrl: null,
+    photoCount: 0,
+    buyer_tags: ['Financial buyer', 'Strategic buyer'],
   },
-] as const;
+];
 
 export function DealCardStack() {
   const [active, setActive] = useState(0);
@@ -69,7 +102,7 @@ export function DealCardStack() {
             }}
             aria-hidden="true"
           >
-            <MockDealCard {...CARDS[index]} />
+            <DealCard listing={CARDS[index]} />
           </div>
         );
       })}
@@ -79,7 +112,7 @@ export function DealCardStack() {
         className="relative transition-all duration-500 ease-in-out"
         style={{ zIndex: 10 }}
       >
-        <MockDealCard {...CARDS[active]} />
+        <DealCard listing={CARDS[active]} />
       </div>
 
       {/* Dot indicators */}

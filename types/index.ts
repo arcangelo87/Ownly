@@ -37,6 +37,7 @@ export interface Listing {
   title: string | null;
   about: string | null;
   highlights: string[] | null;
+  buyer_tags: string[] | null;
 }
 
 export type EnquiryStatus = 'new' | 'reviewed' | 'forwarded' | 'closed';
