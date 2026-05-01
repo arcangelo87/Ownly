@@ -9,9 +9,9 @@
     },
     "hero": {
       "eyebrow": "Italy · Portugal",
-      "h1": "The deal platform for real businesses.",
-      "subHeadlineBold": "Bakeries, manufacturers, service companies.",
-      "subHeadlineRest": "Not startups, not crypto — cash-flowing businesses built with hands, not AI. Ownly turns your business information into a structured deal and puts it in front of buyers actively looking in Italy and Portugal.",
+      "h1": "Where real businesses find new owners.",
+      "subHeadlineBold": "Manufacturers, workshops, service companies.",
+      "subHeadlineRest": "Not startups, not crypto. We give your business the presentation it needs to find the right buyer.",
       "cta": "List your business →",
       "ctaSecondary": "Browse deals",
       "reassurance1": "Free to start",
@@ -19,14 +19,14 @@
       "reassurance3": "No exclusivity"
     },
     "problem": {
-      "quote": "I've been running this place for twenty-two years. Built every client relationship myself. I just don't know how to hand it over to someone who'll take care of it.",
-      "response1": "The businesses Ownly lists aren't speculative.",
-      "response2": "They're profitable, proven, and founder-run.",
-      "response3": "Their challenge isn't viability — it's transition.",
+      "quote": "I know every corner of this business. I just don't know where to start when it comes to selling it.",
+      "response1": "The businesses Bottega lists aren't speculative.",
+      "response2": "They have cash flow, they're proven, and they're founder-run.",
+      "response3": "Their challenge isn't viability: it's transition.",
       "brokersLabel": "Brokers",
-      "brokersQuote": "\"My deals deserve better presentation than a PDF.\"",
+      "brokersQuote": "\"I spend more time explaining the business than selling it.\"",
       "buyersLabel": "Buyers",
-      "buyersQuote": "\"Three months chasing documents on a deal that wasn't worth buying.\""
+      "buyersQuote": "\"Half the listings I look at don't have enough information to take a first step.\""
     },
     "howItWorks": {
       "label": "How it works",
@@ -42,16 +42,14 @@
     },
     "why": {
       "heading": "Built for businesses that don't need a pitch deck.",
-      "body1": "Most deal platforms are designed for startups — high-growth companies raising money, burning cash, betting on a future. Ownly is built for the opposite: businesses that have been profitable for a decade, that serve real clients, that run themselves.",
-      "body2": "These businesses don't need hype. They need to be presented clearly — financials framed properly, story told well — so the right buyer can recognise what they're looking at. That's what Ownly does.",
+      "body1": "Most deal platforms are designed for startups: high-growth companies raising money, burning cash, betting on a future. Bottega is built for the opposite: businesses with cash flow, real clients, and years behind them.",
+      "body2": "These businesses don't need hype. They need a clear presentation: financials framed properly, story told well, so the right buyer can recognise what they're looking at. That's what Bottega does.",
       "proof1Stat": "Italy & Portugal",
       "proof1Label": "The only platform focused on these two markets",
-      "proof2Stat": "Human-written",
-      "proof2Label": "We write every deal page — not an algorithm",
-      "proof3Stat": "NDA-first",
-      "proof3Label": "Financials protected until you choose to share",
-      "proof4Stat": "Reviewed",
-      "proof4Label": "Every listing checked before going live"
+      "proof2Stat": "Selective",
+      "proof2Label": "We curate and review every deal page, not an algorithm",
+      "proof3Stat": "Seller privacy first",
+      "proof3Label": "Financials and sensitive info protected until you decide to share"
     },
     "pricing": {
       "label": "Plans",
@@ -83,7 +81,7 @@
       "cta": "Join the founding buyer list →"
     },
     "footerCta": {
-      "heading": "Whether you make it, serve it, or ship it — if you've built a real business in Italy or Portugal, Ownly is built for you.",
+      "heading": "Your business deserves a proper presentation. Start here.",
       "cta": "List your business →",
       "reassurance1": "Free to start",
       "reassurance2": "No broker fees",
@@ -94,7 +92,7 @@
       "forBrokers": "For brokers",
       "forBuyers": "For buyers",
       "privacy": "Privacy",
-      "copyright": "© 2026 Ownly"
+      "copyright": "© 2026 Bottega"
     }
   },
   "seller": {

@@ -1,4 +1,4 @@
-# Ownly — Landing Page Requirements & Copy Brief
+# Bottega — Landing Page Requirements & Copy Brief
 
 **Purpose:** Feed this document to Claude Code to build the landing pages (Epic A).  
 **Build order:** Build landing pages last — after Epics B, C, D are live and real deals exist.  
@@ -23,7 +23,7 @@ All pages share the same header and footer.
 
 **Header nav:** Logo (left) | Sell your business · For brokers · Browse deals (center) | [Get started →] (right, accent button)
 
-**Footer:** Logo + tagline | Links: Sell, Brokers, Browse deals, About, Contact | Legal: Privacy Policy, Terms | `© 2026 Ownly`
+**Footer:** Logo + tagline | Links: Sell, Brokers, Browse deals, About, Contact | Legal: Privacy Policy, Terms | `© 2026 Bottega`
 
 ---
 
@@ -33,18 +33,24 @@ All pages share the same header and footer.
 
 The homepage speaks to all three ICPs but leads with sellers — they are the supply that makes the platform work. Brokers are secondary. Buyers are tertiary (they self-discover via the deal listings).
 
-The headline should position Ownly as the platform that takes deals in Southern Europe seriously — not a classifieds site, not a broker replacement. The tone is confident and warm, not salesy.
+The headline should position Bottega as the platform that takes deals in Southern Europe seriously: not a classifieds site, not a broker replacement. The tone is confident and warm, not salesy.
 
 One primary CTA above the fold: **sellers**. Secondary CTA: **brokers**. Buyers are served by "Browse deals" in the nav.
+
+**Narrative direction (approved April 2026):** The homepage runs a single thread anchored in "real businesses": manufacturers, workshops, service companies. Not startups, not crypto. This framing differentiates from the startup/VC ecosystem, validates the seller's pride in building something durable, and speaks to buyer confidence (cash flow, not speculation). The thread appears at three moments: hero, problem section, and Why Bottega. It closes in the footer CTA.
+
+The original messaging was generic and defensive. "Where Southern European businesses find serious buyers" is a classifieds-platform formula, and "serious buyers" is a cliche every broker uses. The decision was to lead with what Bottega is for, not what it isn't, and to anchor that claim in something specific: the kinds of businesses that get listed.
 
 ### Sections
 
 #### 1. Hero
 **Headline (H1):**
-> Where Southern European businesses find serious buyers.
+> Where real businesses find new owners.
+
+**Why this headline:** Several alternatives were tested, including "the deal platform for real businesses" and "where real businesses find continuity". "New owners" was chosen over "continuity" as more direct and concrete: it names what actually happens, which is plain-spoken and honest. It also implicitly respects the business: it is not being sold off, it is being handed to someone who will run it.
 
 **Subheadline:**
-> Ownly turns your business information into a structured deal — and puts it in front of buyers actively looking in Italy and Portugal.
+> Manufacturers, workshops, service companies. Not startups, not crypto. We give your business the presentation it needs to find the right buyer.
 
 **Primary CTA:** `List your business →` → `/sellers`  
 **Secondary CTA (text link):** `Are you a broker? →` → `/brokers`
@@ -55,14 +61,25 @@ One primary CTA above the fold: **sellers**. Secondary CTA: **brokers**. Buyers 
 
 #### 2. The Problem (no heading — visual statement)
 
-Three columns, each one a pain point, one per ICP. Sparse, typographic.
+Seller quote full-width at large serif size, Bottega response as a callout paragraph beneath, then broker and buyer quotes in a smaller two-column row.
 
-| Column 1 (Sellers) | Column 2 (Brokers) | Column 3 (Buyers) |
-|---|---|---|
-| *"I built something real. But I don't know how to sell it."* | *"My deals deserve better presentation than a PDF and a cold email."* | *"I spent three months on a deal that wasn't worth buying. Chasing documents. Starting from zero."* |
+**Why this structure:** The original three-column layout gave equal visual weight to all three ICPs. Sellers are the primary audience — they are the supply that makes the platform work — so their quote should dominate. Putting it full-width and at large size reflects that priority. Broker and buyer quotes exist to confirm all sides of the market are underserved, not to compete for attention.
 
-Small label above each quote: `Sellers` · `Brokers` · `Buyers`  
-Below the three columns, a single line: **Ownly is built for this.**
+**Seller quote (full-width, large serif):**
+> "I know every corner of this business. I just don't know where to start when it comes to selling it."
+
+**Why this quote:** More specific and practical than "I built something real. But I don't know how to sell it." A founder who has been running a business for years knows it deeply. The problem is not confidence in the business: it is not knowing how the sale process works. That is what Bottega addresses.
+
+**Bottega response (callout paragraph below):**
+> The businesses Bottega lists aren't speculative. They have cash flow, they're proven, and they're founder-run. Their challenge isn't viability: it's transition.
+
+**Two-column row below (broker and buyer, smaller):**
+
+| Brokers | Buyers |
+|---|---|
+| *"I spend more time explaining the business than selling it."* | *"Half the listings I look at don't have enough information to take a first step."* |
+
+**Why these quotes:** The broker quote shifted from presentation-quality ("better than a PDF") to workload ("more time explaining than selling"), which is the real problem Bottega solves with structured deal pages. The buyer quote shifted from wasted time to missing information, which is an earlier-stage pain that structured listings directly address.
 
 ---
 
@@ -75,35 +92,38 @@ Three steps, horizontal layout:
 | Step | Label | Description |
 |---|---|---|
 | 1 | Submit your details | Tell us about your business in 4 short steps. No jargon. No accountant required. |
-| 2 | We structure it | Ownly writes your deal page — clear, professional, buyer-ready. |
-| 3 | Buyers reach out | Serious enquiries come through Ownly. You decide who to engage. |
+| 2 | We structure it | Bottega writes your deal page — clear, professional, buyer-ready. |
+| 3 | Buyers reach out | Serious enquiries come through Bottega. You decide who to engage. |
 
 **Below steps:** `Free to start. No commitment until you're ready.`  
 **CTA:** `List your business →`
 
 ---
 
-#### 4. Why Ownly
+#### 4. Why Bottega
 
-**Section heading:** Not a classifieds site. Not a broker.
+**Section heading:** Built for businesses that don't need a pitch deck.
+
+**Why this heading:** The original "Not a classifieds site. Not a broker." is defensive: it lets competitors define Bottega by naming what it isn't. The new heading leads with a positive claim that names the ICP (founder-built, profitable, no growth equity needed) and implies the differentiator without naming competitors.
 
 Two-column layout, generous whitespace.
 
 Left column (paragraph):
-> Most platforms list deals the way you'd list a second-hand car. Raw numbers, no context, no story. Buyers scroll past. Good businesses go unsold.
+> Most deal platforms are designed for startups: high-growth companies raising money, burning cash, betting on a future. Bottega is built for the opposite: businesses with cash flow, real clients, and years behind them.
 >
-> Ownly is different. We structure every deal — turning founder-provided information into a clear, credible presentation. We write the copy. We frame the financials. We make it easy for a buyer to say yes to taking the first step.
+> These businesses don't need hype. They need a clear presentation: financials framed properly, story told well, so the right buyer can recognise what they're looking at. That's what Bottega does.
 
-Right column (4 proof points, serif large numerals):
+**Why this prose:** The original contrast was classifieds vs. quality. The revised contrast is startup world vs. real businesses, which is stronger because it is ideological, not just aesthetic. "Profitable for a decade" was replaced with "businesses with cash flow, real clients, and years behind them" to avoid a claim that is hard to verify at launch with thin inventory.
+
+Right column (3 proof points, 3-column single row):
 
 | Stat | Label |
 |---|---|
-| Italy & Portugal | The only platform focused here |
-| NDA-first | Sensitive financials protected |
-| Curated | Every listing reviewed before going live |
-| Human-assisted | We write your deal page for you |
+| Italy & Portugal | The only platform focused on these two markets |
+| Selective | We curate and review every deal page, not an algorithm |
+| Seller privacy first | Financials and sensitive info protected until you decide to share |
 
-*(Replace with real numbers once platform is live: e.g. "47 deals listed", "€62M in combined asking value")*
+**Why 3 instead of 4:** "Human-written" and "Reviewed" were redundant: both say the same thing (a person checks the listing) from different angles. "Selective" merges them honestly. "NDA-first" was absorbed into "Seller privacy first" with clearer plain-language explanation. All three claims are true at zero inventory, so no placeholder copy is needed.
 
 ---
 
@@ -113,7 +133,9 @@ Right column (4 proof points, serif large numerals):
 
 Short, direct. Links to `/brokers` for the full pitch.
 
-> If you represent sellers, Ownly gives your deals a better home. Structured pages. Buyer enquiry routing. Up to 5 deals free.
+> If you represent sellers, Bottega gives your deals a better home.
+
+**Why shorter:** The homepage is not the place to list broker features. The Brokers page covers those in full. A brief pointer is enough to signal that brokers are welcome and direct them to learn more.
 
 **CTA:** `Learn more →` → `/brokers`
 
@@ -123,9 +145,11 @@ Short, direct. Links to `/brokers` for the full pitch.
 
 Background: `#1C4A2A` (forest green). White text.
 
-**Headline:** Ready to list your business?  
-**Subheadline:** Free to start. No broker fees. No exclusivity.  
+**Headline:** Your business deserves a proper presentation. Start here.
+**Subheadline:** Free to start. No broker fees. No exclusivity.
 **CTA button (white):** `Get started →` → `/sellers`
+
+**Why this headline:** "Ready to list your business?" is a generic conversion prompt any classifieds site would use. It puts the burden on the visitor. The new headline closes the "real businesses deserve proper treatment" narrative thread that runs through the page. "Start here" is quieter and more confident than "Get started" or "Ready to?".
 
 ---
 
@@ -137,7 +161,7 @@ Background: `#1C4A2A` (forest green). White text.
 
 **Primary emotion to address:** Uncertainty. Sellers have built something real but feel lost when it comes to selling. They don't know how to package it, they don't know what it's worth, and they don't want to waste time with tyre-kickers.
 
-**Ownly's promise to sellers:** We do the hard work of packaging and presenting your business. You provide the raw material — we make it buyer-ready. And nothing sensitive goes out without your consent.
+**Bottega's promise to sellers:** We do the hard work of packaging and presenting your business. You provide the raw material — we make it buyer-ready. And nothing sensitive goes out without your consent.
 
 **Tone:** Respectful, warm, plain-spoken. This is a big life decision. Never pushy. Acknowledge the emotional weight.
 
@@ -151,7 +175,7 @@ Background: `#1C4A2A` (forest green). White text.
 > You built it. We'll help you sell it.
 
 **Subheadline:**
-> Ownly turns your business information into a structured deal page — and puts it in front of buyers actively looking in Italy and Portugal. Free to start, no broker fees.
+> Bottega turns your business information into a structured deal page — and puts it in front of buyers actively looking in Italy and Portugal. Free to start, no broker fees.
 
 **CTA:** `List your business →` → seller form (Epic B)  
 **Supporting text:** `Takes 10 minutes. No commitment until you're ready.`
@@ -175,22 +199,22 @@ Three cards, each naming a real seller pain:
 
 ---
 
-#### 3. What Ownly does for you
+#### 3. What Bottega does for you
 
 **Section heading:** Here's what you get.
 
 **Free tier:**
-- Your business listed on Ownly — Italy and Portugal's only curated SME deal platform
+- Your business listed on Bottega — Italy and Portugal's only curated SME deal platform
 - A structured deal page (we write the copy based on your inputs)
 - A public teaser — sector, location, headline metrics — to attract serious interest
 - Full financials stay private until a buyer signs a confidentiality agreement
-- Up to 10 inbound enquiries routed through Ownly
+- Up to 10 inbound enquiries routed through Bottega
 
 **Assisted tier (€399/year — launch price €199/year):**
 Everything in Free, plus:
-- A professional deal teaser document (PDF) — yours to use anywhere, not just on Ownly
+- A professional deal teaser document (PDF) — yours to use anywhere, not just on Bottega
 - NDA support — we handle the paperwork
-- Outreach materials you can use in your own network, with your own contacts, independently of Ownly
+- Outreach materials you can use in your own network, with your own contacts, independently of Bottega
 - Business valuation guidance
 - Strategic insights — we identify the buyer profiles most likely to see value in your business, the angles to lead with, and what to address upfront to move faster to close
 - Active buyer matching — we reach out to relevant buyers in our network
@@ -233,9 +257,9 @@ Two-column table (public vs. protected):
 Four steps, clean vertical or horizontal timeline:
 
 1. **Fill in your details** — A 4-step guided form. No jargon. Takes about 10 minutes.
-2. **We review and write your listing** — Ownly writes the deal description based on your inputs. We may follow up with a short call to fill gaps.
-3. **Your listing goes live** — Published on Ownly, visible to buyers browsing Italy and Portugal.
-4. **Enquiries come through us** — Buyers reach out via Ownly. We review and route to you. You decide who to engage.
+2. **We review and write your listing** — Bottega writes the deal description based on your inputs. We may follow up with a short call to fill gaps.
+3. **Your listing goes live** — Published on Bottega, visible to buyers browsing Italy and Portugal.
+4. **Enquiries come through us** — Buyers reach out via Bottega. We review and route to you. You decide who to engage.
 
 **Below steps:**
 > No brokers. No exclusivity. No upfront costs on the free plan. You can withdraw your listing at any time.
@@ -251,7 +275,7 @@ Two cards side by side (Free and Assisted). White Glove as a text row below.
 **Free**
 €0 / no commitment
 - Structured deal listing
-- Deal page written by Ownly
+- Deal page written by Bottega
 - Up to 10 enquiries
 - NDA-gated financials
 `[List your business →]`
@@ -261,10 +285,10 @@ Two cards side by side (Free and Assisted). White Glove as a text row below.
 - Everything in Free
 - Deal teaser PDF — yours to use anywhere
 - NDA support
-- Outreach materials — use with your own contacts, not just Ownly
+- Outreach materials — use with your own contacts, not just Bottega
 - Business valuation guidance
 - Strategic buyer insights — who to target, how to position, what to address upfront
-- Active buyer matching via Ownly's network
+- Active buyer matching via Bottega's network
 - Unlimited enquiries
 `[Get started →]`
 
@@ -289,9 +313,9 @@ Full advisory from positioning to close.
 
 ### Messaging Strategy
 
-**Primary emotion to address:** Respect for their time and expertise. Brokers are professionals. They don't want a pitch — they want to understand quickly whether Ownly fits their workflow.
+**Primary emotion to address:** Respect for their time and expertise. Brokers are professionals. They don't want a pitch — they want to understand quickly whether Bottega fits their workflow.
 
-**Critical message:** Ownly is not competing with brokers. Ownly is a presentation and distribution tool that makes their listings better. The platform does not take a success fee from broker-submitted deals.
+**Critical message:** Bottega is not competing with brokers. Bottega is a presentation and distribution tool that makes their listings better. The platform does not take a success fee from broker-submitted deals.
 
 **Tone:** Peer-to-peer. Direct. No fluff. Assume they know M&A.
 
@@ -305,7 +329,7 @@ Full advisory from positioning to close.
 > Better listings. More qualified enquiries.
 
 **Subheadline:**
-> Ownly gives your deals a structured home — a professional deal page that buyers can evaluate properly. You keep the client relationship. We handle presentation and inbound.
+> Bottega gives your deals a structured home — a professional deal page that buyers can evaluate properly. You keep the client relationship. We handle presentation and inbound.
 
 **CTA:** `List your first deal free →`  
 **Secondary CTA:** `Talk to us →` (email link or contact form)
@@ -318,11 +342,11 @@ Full advisory from positioning to close.
 
 > A PDF sent cold. A Dropbox link with unstructured financials. A listing on a classifieds site with three lines of description. Buyers scroll past. Conversations never start.
 >
-> You've done the work to represent the seller. Ownly makes sure buyers can see it.
+> You've done the work to represent the seller. Bottega makes sure buyers can see it.
 
 ---
 
-#### 3. What Ownly does for your deals
+#### 3. What Bottega does for your deals
 
 **Section heading:** A deal page your clients will be proud of.
 
@@ -335,18 +359,18 @@ Every listing gets a clean, professional page — sector, location, headline met
 Full financial detail stays protected. Buyers who want to go further submit an enquiry — you're notified and in control of what gets shared.
 
 **Buyer enquiry routing**
-Enquiries from interested buyers come through Ownly and route directly to you. No cold calls to your client. No broker bypassing.
+Enquiries from interested buyers come through Bottega and route directly to you. No cold calls to your client. No broker bypassing.
 
 **Shareable deal link**
 Each deal gets a clean URL you can share in your own outreach. Works as your deal summary, not a replacement for your process.
 
 ---
 
-#### 4. Ownly is not a broker
+#### 4. Bottega is not a broker
 
 **Section heading:** We present deals. We don't compete for them.
 
-> Ownly doesn't take success fees on broker-submitted deals. We're not a competing advisor. We're presentation infrastructure — the professional front-end your listings deserve.
+> Bottega doesn't take success fees on broker-submitted deals. We're not a competing advisor. We're presentation infrastructure — the professional front-end your listings deserve.
 >
 > You own the client relationship. You manage the process. We make your listing look like it deserves serious attention.
 
@@ -361,7 +385,7 @@ Two cards:
 **Free**
 €0 — no commitment
 - Up to 5 active listings
-- Full deal page per listing written by Ownly
+- Full deal page per listing written by Bottega
 - Buyer enquiry routing to you
 - Shareable deal link per listing
 `[Post your first deal →]`
@@ -383,7 +407,7 @@ Launch price TBC / month
 
 #### 6. Founding Broker Programme
 
-**Section heading:** Helping shape what Ownly builds for advisors.
+**Section heading:** Helping shape what Bottega builds for advisors.
 
 > We're working with a small group of brokers in Italy and Portugal to understand what actually matters — before we build it. If you work deals in this market, we'd like to talk.
 
@@ -409,7 +433,7 @@ Launch price TBC / month
 
 **Secondary pain:** Deal flow quality. What's publicly listed is poorly presented, financially opaque, or handled by brokers who don't respond.
 
-**Ownly's promise for now:** Curated, structured deal pages — so you can self-qualify before investing time. And a conversation with us to understand what else you need.
+**Bottega's promise for now:** Curated, structured deal pages — so you can self-qualify before investing time. And a conversation with us to understand what else you need.
 
 **Access model:** Fully free. No paywall at this stage.
 
@@ -425,7 +449,7 @@ Launch price TBC / month
 > Serious SME deals in Italy and Portugal. Actually structured.
 
 **Subheadline:**
-> Ownly lists curated acquisition opportunities — manufacturing, professional services, food & beverage, specialty businesses. Every deal reviewed. Every listing written to help you evaluate quickly.
+> Bottega lists curated acquisition opportunities — manufacturing, professional services, food & beverage, specialty businesses. Every deal reviewed. Every listing written to help you evaluate quickly.
 
 **CTA:** `Browse deals →` → `/deals`  
 **Secondary CTA (text):** `Talk to us about what you're looking for →` → scrolls to founding buyer form
@@ -440,7 +464,7 @@ Launch price TBC / month
 >
 > And sometimes, after months of effort and real money spent, the business simply wasn't worth buying.
 >
-> That's the reality most buyers face in Southern Europe. Ownly is built to change it.
+> That's the reality most buyers face in Southern Europe. Bottega is built to change it.
 
 Three pain points, typographic, minimal:
 
@@ -455,20 +479,20 @@ Finding the right legal and financial professionals for an SME acquisition in a 
 
 ---
 
-#### 3. What Ownly does differently
+#### 3. What Bottega does differently
 
 **Section heading:** Deals you can evaluate before you commit your time.
 
 Four feature points:
 
 **Structured deal pages**
-Every listing has a written description, headline financial metrics, and clear context — authored by Ownly, not copy-pasted from the seller. You can self-qualify in minutes, not weeks.
+Every listing has a written description, headline financial metrics, and clear context — authored by Bottega, not copy-pasted from the seller. You can self-qualify in minutes, not weeks.
 
 **NDA-first financials**
 Full financial detail is available after an initial conversation. We protect sellers — which means the numbers you eventually see are real, not sanitised.
 
 **Simple enquiry process**
-Express interest through the platform. No cold calls, no broker gatekeeping. Ownly routes your enquiry and follows up directly.
+Express interest through the platform. No cold calls, no broker gatekeeping. Bottega routes your enquiry and follows up directly.
 
 **Italy and Portugal focus**
 We source deals directly from founders — manufacturing clusters in northern Italy, service businesses in Lisbon and Porto, food producers across both countries. Markets most platforms underserve.
@@ -498,7 +522,7 @@ We source deals directly from founders — manufacturing clusters in northern It
 
 > We're at an early stage, and know better sellers and brokers — and we'd rather talk to serious buyers than guess what to build. If you're actively looking for acquisition opportunities in Italy or Portugal, we'd like to understand your process, your pain, and what would actually help.
 >
-> In exchange, you'll shape what Ownly builds for buyers — and get early access to features as they launch.
+> In exchange, you'll shape what Bottega builds for buyers — and get early access to features as they launch.
 
 **Short enquiry form:**
 - Name

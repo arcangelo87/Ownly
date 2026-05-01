@@ -16,7 +16,7 @@ export default async function HomePage({
       {/* ── NAV ── */}
       <nav className="sticky top-0 z-50 bg-[var(--color-bg)] border-b border-[var(--color-border)] flex items-center justify-between px-12 h-16">
         <Link href={`/${locale}`} className="font-serif text-[22px] font-bold tracking-[-0.02em]">
-          Ownly
+          Bottega
         </Link>
         <div className="flex items-center gap-8">
           <Link href={sellHref} className="text-sm text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
@@ -145,13 +145,12 @@ export default async function HomePage({
               <p className="text-[15px] text-[var(--color-muted)] leading-[1.8] mb-4">{t('why.body1')}</p>
               <p className="text-[15px] text-[var(--color-muted)] leading-[1.8]">{t('why.body2')}</p>
             </div>
-            <div className="grid grid-cols-2 gap-px bg-[var(--color-border)] border border-[var(--color-border)] rounded-md overflow-hidden">
+            <div className="grid grid-cols-3 gap-px bg-[var(--color-border)] border border-[var(--color-border)] rounded-md overflow-hidden">
               {(
                 [
                   { stat: t('why.proof1Stat'), label: t('why.proof1Label') },
                   { stat: t('why.proof2Stat'), label: t('why.proof2Label') },
                   { stat: t('why.proof3Stat'), label: t('why.proof3Label') },
-                  { stat: t('why.proof4Stat'), label: t('why.proof4Label') },
                 ] as const
               ).map((item) => (
                 <div key={item.stat} className="bg-[var(--color-bg)] p-6">
@@ -273,7 +272,7 @@ export default async function HomePage({
       {/* ── FOOTER ── */}
       <footer className="border-t border-[var(--color-border)] py-8">
         <div className="max-w-[1100px] mx-auto px-12 flex items-center justify-between">
-          <div className="font-serif text-lg font-bold">Ownly</div>
+          <div className="font-serif text-lg font-bold">Bottega</div>
           <div className="flex gap-6">
             {[
               { label: t('footer.forSellers'), href: sellHref },
