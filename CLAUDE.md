@@ -82,3 +82,9 @@ Use `useTranslations('namespace')` in every component. Locale files in `/message
 2. Read relevant existing files in the codebase
 3. Write a plan — wait for approval before implementing
 4. Build one step at a time — never jump ahead
+
+---
+
+## Working style
+
+Suggest the fastest path to the goal, regardless of how direct it is. If a quick fix exists (SQL editor, dashboard action, config change), lead with that. Mention the cleaner long-term solution briefly after, only if it's worth doing.
