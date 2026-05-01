@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ownly — Homepage (mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:          #F7F2E9;
+    --text:        #1A1A18;
+    --accent:      #1C4A2A;
+    --terracotta:  #C1440E;
+    --muted:       #6B6860;
+    --border:      #E4E1DA;
+    --surface:     #EDE8DE;
+    --white:       #FFFFFF;
+    --font-serif:  'Playfair Display', Georgia, serif;
+    --font-sans:   'DM Sans', system-ui, sans-serif;
+    --font-mono:   'IBM Plex Mono', monospace;
+    --max-w:       1140px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ── Nav ── */
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .nav-logo {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-right: auto;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 36px;
+    margin-right: 36px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    transition: color 0.15s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--accent);
+    border: none;
+    border-radius: 6px;
+    padding: 9px 18px;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+    transition: opacity 0.15s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .nav-cta:hover { opacity: 0.88; }
+
+  /* ── Container ── */
+  .container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--accent);
+    border: none;
+    border-radius: 6px;
+    padding: 13px 28px;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+    transition: opacity 0.15s;
+    text-decoration: none;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  .btn-outline {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 13px 28px;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+    transition: border-color 0.15s;
+    text-decoration: none;
+  }
+
+  .btn-outline:hover { border-color: var(--muted); }
+
+  /* ── Section heading ── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  .section-heading {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 88px 0 96px;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(28,74,42,0.08);
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 24px;
+  }
+
+  .hero-h1 {
+    font-family: var(--font-serif);
+    font-size: 54px;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.12;
+    margin-bottom: 24px;
+    color: var(--text);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 36px;
+    max-width: 480px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .hero-link-secondary {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .hero-link-secondary:hover { color: var(--text); }
+
+  /* ── Deal card (hero visual) ── */
+  .deal-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(26,26,24,0.07);
+  }
+
+  .deal-card-photo {
+    height: 168px;
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .deal-card-photo-initial {
+    font-family: var(--font-serif);
+    font-size: 48px;
+    font-weight: 400;
+    color: var(--border);
+    user-select: none;
+  }
+
+  .deal-card-photo-count {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(26,26,24,0.6);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+
+  .deal-card-body {
+    padding: 16px 18px 20px;
+  }
+
+  .deal-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+
+  .deal-card-sector {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .deal-card-location {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .deal-card-title {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+
+  .deal-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .metric-chip {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .metric-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .metric-value {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .deal-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .deal-card-detail {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .deal-card-cta {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--terracotta);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .deal-card-cta:hover { opacity: 0.8; }
+
+  /* ── Problem section ── */
+  .problem {
+    background: var(--surface);
+    padding: 80px 0;
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .problem-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .problem-icp {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .problem-quote {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text);
+  }
+
+  .problem-closer {
+    text-align: center;
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── How it works ── */
+  .how {
+    padding: 96px 0;
+  }
+
+  .how-header {
+    margin-bottom: 56px;
+  }
+
+  .how-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  .how-steps::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: calc(33.33% / 2 + 28px);
+    right: calc(33.33% / 2 + 28px);
+    height: 1px;
+    background: var(--border);
+    z-index: 0;
+  }
+
+  .how-step {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 32px 0 0;
+  }
+
+  .how-step:last-child { padding-right: 0; }
+
+  .how-step-num {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text);
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+  }
+
+  .how-step-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .how-step-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .how-footer {
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .how-tagline {
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ── Why Ownly ── */
+  .why {
+    padding: 80px 0 96px;
+    background: var(--surface);
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .why-prose p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .why-prose p:last-child { margin-bottom: 0; }
+
+  .why-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .why-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 24px;
+    background: var(--bg);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+  }
+
+  .why-stat-val {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .why-stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ── Brokers teaser ── */
+  .brokers-teaser {
+    padding: 72px 0;
+  }
+
+  .brokers-teaser-inner {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 48px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+    background: var(--white);
+  }
+
+  .brokers-teaser-content {
+    max-width: 560px;
+  }
+
+  .brokers-teaser-content h2 {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .brokers-teaser-content p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .link-arrow {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+  }
+
+  .link-arrow:hover { opacity: 0.75; }
+
+  /* ── Footer CTA ── */
+  .footer-cta {
+    background: var(--accent);
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .footer-cta h2 {
+    font-family: var(--font-serif);
+    font-size: 38px;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .footer-cta p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 36px;
+  }
+
+  .btn-white {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--white);
+    border: none;
+    border-radius: 6px;
+    padding: 14px 32px;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+    transition: opacity 0.15s;
+    text-decoration: none;
+  }
+
+  .btn-white:hover { opacity: 0.92; }
+
+  /* ── Footer ── */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 48px 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 64px;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand-logo {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .footer-tagline {
+    font-size: 13px;
+    color: var(--muted);
+    max-width: 240px;
+    line-height: 1.6;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 48px;
+  }
+
+  .footer-links-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links-col-heading {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .footer-links-col a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .footer-links-col a:hover { color: var(--text); }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .footer-legal {
+    display: flex;
+    gap: 20px;
+  }
+
+  .footer-legal a {
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="site-nav">
+  <div class="nav-inner container">
+    <a class="nav-logo" href="mockup-homepage.html">Ownly</a>
+    <ul class="nav-links">
+      <li><a href="mockup-sellers.html">Sell your business</a></li>
+      <li><a href="mockup-brokers.html">For brokers</a></li>
+      <li><a href="#">Browse deals</a></li>
+    </ul>
+    <a class="nav-cta" href="mockup-sellers.html">Get started →</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <span class="hero-eyebrow">Italy &amp; Portugal · SME Acquisitions</span>
+        <h1 class="hero-h1">Where Southern European businesses find serious buyers.</h1>
+        <p class="hero-sub">Ownly turns your business information into a structured deal — and puts it in front of buyers actively looking in Italy and Portugal.</p>
+        <div class="hero-ctas">
+          <a href="mockup-sellers.html" class="btn-primary">List your business →</a>
+          <a href="mockup-brokers.html" class="hero-link-secondary">Are you a broker? →</a>
+        </div>
+      </div>
+
+      <!-- Mock deal card -->
+      <div class="deal-card">
+        <div class="deal-card-photo">
+          <span class="deal-card-photo-initial">F</span>
+          <span class="deal-card-photo-count">📷 6</span>
+        </div>
+        <div class="deal-card-body">
+          <div class="deal-card-meta">
+            <span class="deal-card-sector">Food &amp; Beverage</span>
+            <span class="deal-card-location">Tuscany, Italy</span>
+          </div>
+          <p class="deal-card-title">Established artisan food producer with long-term wholesale contracts across northern Italy.</p>
+          <div class="deal-metrics">
+            <div class="metric-chip">
+              <span class="metric-label">Revenue</span>
+              <span class="metric-value">€1–2.5M</span>
+            </div>
+            <div class="metric-chip">
+              <span class="metric-label">EBITDA</span>
+              <span class="metric-value">20–35%</span>
+            </div>
+            <div class="metric-chip">
+              <span class="metric-label">Asking</span>
+              <span class="metric-value">€1–2M</span>
+            </div>
+          </div>
+          <div class="deal-card-footer">
+            <span class="deal-card-detail">8 employees · Ready in 6–12 mo</span>
+            <a href="#" class="deal-card-cta">View deal →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The Problem -->
+<section class="problem">
+  <div class="container">
+    <div class="problem-grid">
+      <div class="problem-col">
+        <span class="problem-icp">Sellers</span>
+        <blockquote class="problem-quote">"I built something real. But I don't know how to sell it."</blockquote>
+      </div>
+      <div class="problem-col">
+        <span class="problem-icp">Brokers</span>
+        <blockquote class="problem-quote">"My deals deserve better presentation than a PDF and a cold email."</blockquote>
+      </div>
+      <div class="problem-col">
+        <span class="problem-icp">Buyers</span>
+        <blockquote class="problem-quote">"I spent three months on a deal that wasn't worth buying. Chasing documents. Starting from zero."</blockquote>
+      </div>
+    </div>
+    <p class="problem-closer">Ownly is built for this.</p>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="how">
+  <div class="container">
+    <div class="how-header">
+      <p class="section-label">For sellers</p>
+      <h2 class="section-heading">How it works</h2>
+    </div>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-step-num">1</div>
+        <div class="how-step-label">Submit your details</div>
+        <p class="how-step-desc">Tell us about your business in 4 short steps. No jargon. No accountant required.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">2</div>
+        <div class="how-step-label">We structure it</div>
+        <p class="how-step-desc">Ownly writes your deal page — clear, professional, buyer-ready.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">3</div>
+        <div class="how-step-label">Buyers reach out</div>
+        <p class="how-step-desc">Serious enquiries come through Ownly. You decide who to engage.</p>
+      </div>
+    </div>
+    <div class="how-footer">
+      <p class="how-tagline">Free to start. No commitment until you're ready.</p>
+      <a href="mockup-sellers.html" class="btn-primary">List your business →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Why Ownly -->
+<section class="why">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <p class="section-label">Why Ownly</p>
+        <h2 class="section-heading">Not a classifieds site. Not a broker.</h2>
+        <div class="why-prose">
+          <p>Most platforms list deals the way you'd list a second-hand car. Raw numbers, no context, no story. Buyers scroll past. Good businesses go unsold.</p>
+          <p>Ownly is different. We structure every deal — turning founder-provided information into a clear, credible presentation. We write the copy. We frame the financials. We make it easy for a buyer to say yes to taking the first step.</p>
+        </div>
+      </div>
+      <div>
+        <div class="why-stats">
+          <div class="why-stat">
+            <div class="why-stat-val">Italy &amp; Portugal</div>
+            <div class="why-stat-label">The only platform focused here</div>
+          </div>
+          <div class="why-stat">
+            <div class="why-stat-val">NDA-first</div>
+            <div class="why-stat-label">Sensitive financials protected</div>
+          </div>
+          <div class="why-stat">
+            <div class="why-stat-val">Curated</div>
+            <div class="why-stat-label">Every listing reviewed before going live</div>
+          </div>
+          <div class="why-stat">
+            <div class="why-stat-val">Human&#8209;assisted</div>
+            <div class="why-stat-label">We write your deal page for you</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Brokers teaser -->
+<section class="brokers-teaser">
+  <div class="container">
+    <div class="brokers-teaser-inner">
+      <div class="brokers-teaser-content">
+        <p class="section-label">For brokers and M&amp;A advisors</p>
+        <h2 style="font-family:var(--font-serif);font-size:22px;font-weight:500;letter-spacing:-0.02em;margin-bottom:10px;">Your deals deserve a better home.</h2>
+        <p>If you represent sellers, Ownly gives your deals a better home. Structured pages. Buyer enquiry routing. Up to 5 deals free.</p>
+      </div>
+      <a href="mockup-brokers.html" class="link-arrow">Learn more →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer CTA -->
+<section class="footer-cta">
+  <div class="container">
+    <h2>Ready to list your business?</h2>
+    <p>Free to start. No broker fees. No exclusivity.</p>
+    <a href="mockup-sellers.html" class="btn-white">Get started →</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-logo">Ownly</div>
+        <p class="footer-tagline">The curated deal platform for Southern European SMEs.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-links-col">
+          <div class="footer-links-col-heading">Platform</div>
+          <a href="mockup-sellers.html">Sell your business</a>
+          <a href="mockup-brokers.html">For brokers</a>
+          <a href="#">Browse deals</a>
+        </div>
+        <div class="footer-links-col">
+          <div class="footer-links-col-heading">Company</div>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-links-col">
+          <div class="footer-links-col-heading">Legal</div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Ownly</span>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

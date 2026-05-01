@@ -1,13 +1,13 @@
-# Ownly — Product Document
+# Bottega — Product Document
 
 Last updated: April 2026
 Source of truth for all product and strategic decisions. Update after every session where decisions are made.
 
 ---
 
-## What is Ownly
+## What is Bottega
 
-Ownly is a curated SME deal platform for Southern Europe, starting with Italy and Portugal. It connects business owners who want to sell with buyers who want to acquire. Deals are structured, presented professionally, and financials are shared under NDA after an initial conversation.
+Bottega is a curated SME deal platform for Southern Europe, starting with Italy and Portugal. It connects business owners who want to sell with buyers who want to acquire. Deals are structured, presented professionally, and financials are shared under NDA after an initial conversation.
 
 The platform targets businesses in the €500k–€5M revenue range, typically founder-run, sub-15 employees, B2B, profitable.
 
@@ -49,13 +49,15 @@ The platform targets businesses in the €500k–€5M revenue range, typically 
 **Access model:**
 - Browse listings: public, no login required
 - View deal detail page: public, no login required
-- Submit an enquiry: requires registration (name + email minimum)
+- Submit an enquiry: public, no login required (name + email collected in the form)
+
+Note: Buyer registration before enquiry is deprioritised. Decided April 2026. Will reconsider when the platform has real scale and needs to gate access.
 
 ---
 
 ## ICP — Brokers
 
-Deal brokers and M&A advisors who want to list client deals on Ownly and access the buyer network.
+Deal brokers and M&A advisors who want to list client deals on Bottega and access the buyer network.
 
 **Pricing:** Free up to 5 listings, Pro plan €49/month for unlimited listings + buyer matching tools + deal room access.
 
@@ -66,7 +68,7 @@ Deal brokers and M&A advisors who want to list client deals on Ownly and access 
 | Tier | Who | Price | What's included |
 |------|-----|-------|-----------------|
 | Free | Sellers | €0 | Listing page, up to 10 inbound enquiries |
-| Assisted | Sellers | €399/year (launch price €199/year) | Listing + teaser doc (portable, not Ownly-exclusive) + NDA support + outreach materials + valuation guidance + strategic buyer insights + active buyer matching + unlimited enquiries
+| Assisted | Sellers | €399/year (launch price €199/year) | Listing + teaser doc (portable, not Bottega-exclusive) + NDA support + outreach materials + valuation guidance + strategic buyer insights + active buyer matching + unlimited enquiries
 | White Glove | Sellers | Custom | Full advisory to close |
 | Free | Brokers | €0 | Up to 5 deal listings, full deal page per listing, buyer enquiry routing, shareable deal link
 | Pro | Brokers | €99/month | Unlimited listings + branded listing pages + buyer matching tools + deal room access + priority placement + analytics (last four coming soon)
@@ -82,7 +84,7 @@ Three distinct stages:
 
 1. **Browse** — public, no login. Deal listing page with cards showing sector, location, revenue, EBITDA, asking price.
 2. **View deal** — public, no login. Full deal detail page with description, highlights, key metrics. Financials shown as locked — "available on request."
-3. **Enquire** — requires registration. Simple form: name, email, phone, message (optional). Enquiry goes to Ownly operator, who routes to seller manually.
+3. **Enquire** — public, no login required. Simple form: name, email, phone, message (optional). Enquiry goes to Ownly operator, who routes to seller manually.
 
 **NDA process:** Manual and offline for now. Not captured in platform flow. The deal detail page references that detailed financials are shared after an initial conversation — no hard gate to build yet.
 
@@ -139,16 +141,16 @@ Each field has a concrete placeholder example showing the founder what good look
 
 **Decided April 2026.**
 
-Listing descriptions ("About the business" and "Highlights" on the deal detail page) are written by Ownly — not auto-generated from the form alone.
+Listing descriptions ("About the business" and "Highlights" on the deal detail page) are written by Bottega — not auto-generated from the form alone.
 
 Process:
 1. Seller submits the 4-step form
 2. Listing status defaults to Draft
-3. Ownly reviews the guided text fields from Step 4 and writes the listing copy
+3. Bottega reviews the guided text fields from Step 4 and writes the listing copy
 4. Operator publishes the listing when copy is ready
-5. Optionally, Ownly may conduct a follow-up call (20–30 min) to fill gaps — but this is an operational practice, not a platform requirement. Sellers can publish without a call.
+5. Optionally, Bottega may conduct a follow-up call (20–30 min) to fill gaps — but this is an operational practice, not a platform requirement. Sellers can publish without a call.
 
-Retiring founders in Italy and Portugal will not write compelling deal descriptions. Ownly does it for them based on the Step 4 inputs. The follow-up call improves quality but is not a gate.
+Retiring founders in Italy and Portugal will not write compelling deal descriptions. Bottega does it for them based on the Step 4 inputs. The follow-up call improves quality but is not a gate.
 
 ---
 
@@ -191,8 +193,8 @@ Layout: Two-column — main content (left, wider) + sidebar (right, 300px, stick
 2. Sector badge + date listed
 3. Business title (serif, 28px)
 4. 5 metric chips: Revenue, EBITDA, Asking price, Employees, Timeline
-5. About the business (written by Ownly after seller call)
-6. Highlights (bullet list, 3–5 points — written by Ownly)
+5. About the business (written by Bottega after seller call)
+6. Highlights (bullet list, 3–5 points — written by Bottega)
 7. Full financials (soft-locked section — "available on request" message, not a hard gate)
 
 **Sidebar:**
@@ -202,7 +204,7 @@ Layout: Two-column — main content (left, wider) + sidebar (right, 300px, stick
 
 **Seller motivation (reason for sale):** Shown publicly in the sidebar deal basics. Decision to show this was made — worth revisiting once real sellers are live.
 
-**Enquiry handling:** Manual. Enquiries stored in Supabase, Ownly operator notified, routed to seller manually. No automated NDA flow.
+**Enquiry handling:** Manual. Enquiries stored in Supabase, Bottega operator notified, routed to seller manually. No automated NDA flow.
 
 ---
 
@@ -232,7 +234,7 @@ Decided April 2026. Updates the original "boutique financial advisory" direction
 
 Key learnings from seller call March 2025:
 
-- Sellers self-diagnose better than expected. Iris said "il problema sono io" unprompted. Ownly's job is translation and structuring — not diagnosis.
+- Sellers self-diagnose better than expected. Iris said "il problema sono io" unprompted. Bottega's job is translation and structuring — not diagnosis.
 - Readiness signal is subtle. Age, succession language, growth frustration — soft signals. A seller ready in 6 months looks identical to one ready in 3 years on paper.
 - Capacity gap is the strongest buyer value signal. 50% spare production capacity — mentioned in passing, worth millions in buyer framing. Should be a headline output on the listing.
 - Operational documentation varies wildly. Iris had machine-by-machine maintenance logs — exceptional. Most won't. The form needs to work for both.

@@ -21,3 +21,20 @@ export async function updateListingStatus(listingId: string, status: ListingStat
 
   if (error) throw error;
 }
+
+export async function updateListingContent(
+  listingId: string,
+  content: { title: string | null; about: string | null; highlights: string[] | null; buyer_tags: string[] | null },
+) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) throw new Error('Unauthorized');
+
+  const admin = createAdminClient();
+  const { error } = await admin
+    .from('listings')
+    .update({ title: content.title, about: content.about, highlights: content.highlights, buyer_tags: content.buyer_tags })
+    .eq('id', listingId);
+
+  if (error) throw error;
+}

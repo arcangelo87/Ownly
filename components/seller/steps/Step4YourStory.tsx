@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { createClient } from '@/lib/supabase/client';
+import { createPhotoUploadUrl } from '@/app/actions/deals';
 
 const REASONS = [
   { value: 'retirement', labelKey: 'reasons.retirement' },
@@ -64,14 +65,17 @@ export function Step4YourStory({ listingId, photos, onComplete }: Step4YourStory
     return Object.keys(next).length === 0;
   }
 
-  async function uploadPhotos(supabase: ReturnType<typeof createClient>): Promise<void> {
+  async function uploadPhotos(): Promise<void> {
     if (photos.length === 0) return;
-    await Promise.allSettled(
-      photos.map((file, i) =>
-        supabase.storage
-          .from('listing-photos')
-          .upload(`${listingId}/${i}-${file.name}`, file, { upsert: true }),
-      ),
+    await Promise.all(
+      photos.map(async (file, i) => {
+        const signedUrl = await createPhotoUploadUrl(listingId, i, file.name);
+        await fetch(signedUrl, {
+          method: 'PUT',
+          body: file,
+          headers: { 'Content-Type': file.type },
+        });
+      }),
     );
   }
 
@@ -83,7 +87,7 @@ export function Step4YourStory({ listingId, photos, onComplete }: Step4YourStory
     try {
       const supabase = createClient();
 
-      await uploadPhotos(supabase);
+      await uploadPhotos();
 
       const { error } = await supabase
         .from('listings')

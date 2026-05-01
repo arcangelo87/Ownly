@@ -30,10 +30,18 @@ const EMPLOYEE_OPTIONS = [
   { value: '30_plus', label: '30+' },
 ];
 
+const INVOLVEMENT_OPTIONS = [
+  { value: 'full_time', label: 'Full-time (40+ hrs/wk)' },
+  { value: 'part_time', label: 'Part-time (20–40 hrs/wk)' },
+  { value: 'advisory', label: 'Advisory (5–20 hrs/wk)' },
+  { value: 'minimal', label: 'Minimal (<5 hrs/wk)' },
+];
+
 interface Step2Data {
   revenue_range: string;
   ebitda_margin: string;
   employee_count: string;
+  owner_involvement: string;
 }
 
 interface Step2SizeTeamProps {
@@ -48,6 +56,7 @@ export function Step2SizeTeam({ listingId, onComplete }: Step2SizeTeamProps) {
     revenue_range: '',
     ebitda_margin: '',
     employee_count: '',
+    owner_involvement: '',
   });
 
   const [errors, setErrors] = useState<Partial<Record<keyof Step2Data, string>>>({});
@@ -63,6 +72,7 @@ export function Step2SizeTeam({ listingId, onComplete }: Step2SizeTeamProps) {
     if (!data.revenue_range) next.revenue_range = t('errors.revenueRequired');
     if (!data.ebitda_margin) next.ebitda_margin = t('errors.ebitdaRequired');
     if (!data.employee_count) next.employee_count = t('errors.employeesRequired');
+    if (!data.owner_involvement) next.owner_involvement = t('errors.involvementRequired');
     setErrors(next);
     return Object.keys(next).length === 0;
   }
@@ -80,6 +90,7 @@ export function Step2SizeTeam({ listingId, onComplete }: Step2SizeTeamProps) {
           revenue_range: data.revenue_range,
           ebitda_margin: data.ebitda_margin,
           employee_count: data.employee_count,
+          owner_involvement: data.owner_involvement,
         })
         .eq('id', listingId);
 
@@ -127,6 +138,17 @@ export function Step2SizeTeam({ listingId, onComplete }: Step2SizeTeamProps) {
           placeholder={t('employees.placeholder')}
           hasError={!!errors.employee_count}
           options={EMPLOYEE_OPTIONS}
+        />
+      </Field>
+
+      <Field label={t('ownerInvolvement.label')} helper={t('ownerInvolvement.helper')} error={errors.owner_involvement}>
+        <NativeSelect
+          id="owner_involvement"
+          value={data.owner_involvement}
+          onChange={(v) => set('owner_involvement', v)}
+          placeholder={t('ownerInvolvement.placeholder')}
+          hasError={!!errors.owner_involvement}
+          options={INVOLVEMENT_OPTIONS}
         />
       </Field>
 

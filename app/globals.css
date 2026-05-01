@@ -7,8 +7,10 @@
   --color-muted:   #6B6860;
   --color-border:  #E4E1DA;
   --color-surface: #EDE8DE;
+  --color-terracotta: #C1440E;
   --font-serif:    var(--font-playfair);
   --font-sans:     var(--font-dm-sans);
+  --font-mono:     var(--font-ibm-plex-mono);
 }
 
 @layer base {
@@ -20,7 +22,7 @@
 
   html, body {
     max-width: 100vw;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   body {

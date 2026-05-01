@@ -3,6 +3,18 @@
 import { useEffect, useState, useTransition } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import { updateListingStatus } from '@/app/actions/admin';
+import { publishListing } from '@/app/actions/deals';
+import { OperatorEditPanel } from '@/components/admin/OperatorEditPanel';
+import {
+  SECTOR_LABELS,
+  formatRevenue,
+  formatEmployees,
+  formatEbitda,
+  formatPrice,
+  formatPartialSale,
+  formatTimeline,
+  formatReasons,
+} from '@/lib/format';
 import type { Listing } from '@/types';
 
 const STATUS_LABELS: Record<string, string> = {
@@ -19,15 +31,6 @@ const STATUS_COLORS: Record<string, string> = {
   rejected:  'bg-red-50 text-red-700',
 };
 
-const SECTOR_LABELS: Record<string, string> = {
-  manufacturing: 'Manufacturing',
-  food_beverage: 'Food & Beverage',
-  professional_services: 'Professional Services',
-  wholesale: 'Wholesale & Distribution',
-  construction: 'Construction & Engineering',
-  technology: 'Technology',
-  other: 'Other',
-};
 
 export function ListingsTable({ initialListings }: { initialListings: Listing[] }) {
   const [listings, setListings] = useState<Listing[]>(initialListings);
@@ -60,7 +63,12 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
     const typed = status as Listing['status'];
     setListings((prev) => prev.map((l) => (l.id === id ? { ...l, status: typed } : l)));
     startTransition(async () => {
-      await updateListingStatus(id, typed);
+      if (typed === 'live') {
+        const slug = await publishListing(id);
+        setListings((prev) => prev.map((l) => (l.id === id ? { ...l, slug } : l)));
+      } else {
+        await updateListingStatus(id, typed);
+      }
     });
   }
 
@@ -72,12 +80,27 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
     );
   }
 
+  const expandedListing = listings.find((l) => l.id === expandedId) ?? null;
+
   return (
-    <div className="overflow-x-auto rounded-lg border border-[var(--color-border)]">
+    <div className="flex flex-col gap-4">
+      {expandedListing && (
+        <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] px-6 py-6">
+          <OperatorEditPanel
+            listing={expandedListing}
+            onSave={(updated) =>
+              setListings((prev) =>
+                prev.map((l) => (l.id === expandedListing.id ? { ...l, ...updated } : l)),
+              )
+            }
+          />
+        </div>
+      )}
+      <div className="rounded-lg border border-[var(--color-border)]">
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-[var(--color-border)] bg-[var(--color-surface)]">
-            {['Business', 'Contact', 'Location', 'Sector', 'Revenue', 'FTE', 'Status', 'Submitted'].map((h) => (
+            {['Business', 'Contact', 'Location', 'Sector', 'Revenue', 'FTE', 'Status', 'Submitted', 'Preview'].map((h) => (
               <th key={h} className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-[0.06em] text-[var(--color-muted)]">
                 {h}
               </th>
@@ -150,6 +173,20 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
                       day: 'numeric', month: 'short', year: 'numeric',
                     })}
                   </td>
+                  <td className="px-4 py-3" onClick={(e) => e.stopPropagation()}>
+                    {listing.slug ? (
+                      <a
+                        href={`/en/deals/${listing.slug}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[12px] font-medium text-[var(--color-accent)] underline underline-offset-2 hover:opacity-70"
+                      >
+                        View →
+                      </a>
+                    ) : (
+                      <span className="text-[var(--color-muted)]">—</span>
+                    )}
+                  </td>
                   <td className="px-4 py-3 text-[var(--color-muted)]">
                     <svg
                       width="12" height="12" viewBox="0 0 12 12" fill="none"
@@ -162,7 +199,7 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
 
                 {isExpanded && (
                   <tr key={`${listing.id}-detail`} className="bg-[var(--color-bg)]">
-                    <td colSpan={9} className="px-6 py-5">
+                    <td colSpan={10} className="px-6 py-5">
                       <div className="grid grid-cols-2 gap-x-10 gap-y-4 md:grid-cols-3 lg:grid-cols-4">
                         <DetailField label="Year Founded" value={listing.year_founded?.toString()} />
                         <DetailField label="Email" value={listing.seller_email} link={listing.seller_email ? `mailto:${listing.seller_email}` : undefined} />
@@ -196,6 +233,7 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
           })}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }
@@ -222,54 +260,3 @@ function DetailBlock({ label, value }: { label: string; value: string }) {
   );
 }
 
-function formatRevenue(val: string | null): string {
-  const map: Record<string, string> = {
-    under_500k: '<€500k', '500k_1m': '€500k–1M', '1m_2_5m': '€1–2.5M',
-    '2_5m_5m': '€2.5–5M', over_5m: '>€5M',
-  };
-  return val ? (map[val] ?? val) : '—';
-}
-
-function formatEmployees(val: string | null): string {
-  const map: Record<string, string> = {
-    just_me: 'Just me', '2_5': '2–5', '6_15': '6–15', '16_30': '16–30', '30_plus': '30+',
-  };
-  return val ? (map[val] ?? val) : '—';
-}
-
-function formatEbitda(val: string | null): string {
-  const map: Record<string, string> = {
-    below_10: '<10%', '10_20': '10–20%', '20_35': '20–35%', above_35: '>35%', not_sure: 'Not sure',
-  };
-  return val ? (map[val] ?? val) : '—';
-}
-
-function formatPrice(val: string | null): string {
-  const map: Record<string, string> = {
-    under_500k: '<€500k', '500k_1m': '€500k–1M', '1m_2m': '€1–2M',
-    '2m_4m': '€2–4M', over_4m: '>€4M', not_sure: 'Not sure',
-  };
-  return val ? (map[val] ?? val) : '—';
-}
-
-function formatPartialSale(val: string | null): string {
-  if (!val) return '—';
-  return val === 'open_to_minority' ? 'Open to partial' : 'Full sale only';
-}
-
-function formatTimeline(val: string | null): string {
-  const map: Record<string, string> = {
-    ready_now: 'Ready now (<6 mo)', '6_12_months': '6–12 months',
-    '1_2_years': '1–2 years', just_exploring: 'Just exploring',
-  };
-  return val ? (map[val] ?? val) : '—';
-}
-
-function formatReasons(val: string[] | null): string {
-  if (!val || val.length === 0) return '—';
-  const map: Record<string, string> = {
-    retirement: 'Retirement', growth_capital: 'Growth capital', no_succession: 'No succession',
-    health_personal: 'Health/personal', market_opportunity: 'Market opportunity', other: 'Other',
-  };
-  return val.map((r) => map[r] ?? r).join(', ');
-}

@@ -1,5 +1,393 @@
 {
   "common": {},
+  "deals": {
+    "browse": {
+      "pageTitle": "Browse deals",
+      "pageSubtitle": "Curated acquisition opportunities in Italy and Portugal.",
+      "resultCount": "{count} deals",
+      "noResults": "No deals match your filters.",
+      "noResultsHint": "Try removing some filters to see more listings.",
+      "clearFilters": "Clear filters",
+      "showFilters": "Filters",
+      "filters": {
+        "heading": "Filters",
+        "country": "Country",
+        "sector": "Sector",
+        "askingPrice": "Asking price",
+        "timeline": "Timeline",
+        "any": "Any",
+        "italy": "Italy",
+        "portugal": "Portugal",
+        "priceUnder1m": "Under €1M",
+        "price1to2m": "€1M – €2M",
+        "price2to4m": "€2M – €4M",
+        "priceOver4m": "Over €4M",
+        "timelineReadyNow": "Ready now",
+        "timeline6to12": "6–12 months",
+        "timeline1to2": "1–2 years",
+        "timelineExploring": "Just exploring"
+      },
+      "sort": {
+        "label": "Sort by",
+        "recent": "Most recent",
+        "priceAsc": "Price: low – high",
+        "revenueDesc": "Revenue: high – low",
+        "ebitdaDesc": "EBITDA: high – low"
+      },
+      "card": {
+        "viewDeal": "View deal →",
+        "photosBadge": "{count} photos",
+        "noPhoto": "No photos",
+        "bestFor": "Best for"
+      }
+    },
+    "metrics": {
+      "revenue": "Annual revenue",
+      "ebitda": "EBITDA margin",
+      "askingPrice": "Asking price",
+      "employees": "Employees",
+      "timeline": "Timeline",
+      "ownerInvolvement": "Owner involvement"
+    },
+    "sections": {
+      "about": "About the business",
+      "highlights": "Highlights",
+      "financials": "Full financials",
+      "financialsLocked": "Available on request",
+      "financialsLockedDetail": "Detailed financials are shared directly with serious buyers after an initial conversation."
+    },
+    "dealBasics": {
+      "title": "Deal basics",
+      "country": "Country",
+      "region": "Region",
+      "yearFounded": "Founded",
+      "saleStructure": "Sale structure",
+      "reasonsForSale": "Reason for sale"
+    },
+    "enquiry": {
+      "title": "Get in touch",
+      "name": "Your name",
+      "namePlaceholder": "Full name",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Phone number",
+      "phonePlaceholder": "Optional",
+      "message": "Message",
+      "messagePlaceholder": "Tell us a little about your background and what interests you about this deal.",
+      "submit": "Send enquiry →",
+      "submitting": "Sending…",
+      "successTitle": "Enquiry sent",
+      "successBody": "We've received your message and will be in touch shortly.",
+      "reassurance": "Your details are shared only with the seller. No spam.",
+      "errors": {
+        "nameRequired": "Please enter your name.",
+        "emailRequired": "Please enter your email address.",
+        "emailInvalid": "Please enter a valid email address.",
+        "submitFailed": "Something went wrong. Please try again."
+      }
+    },
+    "browseDeals": "← Browse deals",
+    "noPhotos": "No photos",
+    "photoAlt": "Business photo",
+    "notFound": {
+      "title": "Listing not found",
+      "body": "This deal may have been removed or is no longer available.",
+      "cta": "Browse all deals →"
+    }
+  },
+  "nav": {
+    "sell": "Sell your business",
+    "brokers": "For brokers",
+    "buyers": "For buyers",
+    "browse": "Browse deals",
+    "getStarted": "Get started →"
+  },
+  "footer": {
+    "tagline": "Curated SME deals in Italy and Portugal.",
+    "sell": "Sell your business",
+    "brokers": "For brokers",
+    "buyers": "For buyers",
+    "browse": "Browse deals",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms",
+    "copyright": "© 2026 Bottega"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Italy & Portugal",
+      "h1": "Where real businesses find continuity.",
+      "subBold": "Manufacturers, workshops, service companies.",
+      "subRest": "Not startups, not crypto. We give your business the presentation it needs to find the right buyer.",
+      "cta": "List your business →",
+      "ctaSecondary": "Are you a broker? →"
+    },
+    "problem": {
+      "sellersLabel": "Sellers",
+      "sellersQuote": "I know every corner of this business. I just don't know where to start when it comes to selling it.",
+      "response1": "The businesses Bottega lists aren't speculative.",
+      "response2": "They have cash flow, they're proven, and they're founder-run.",
+      "response3": "Their challenge isn't viability: it's transition.",
+      "brokersLabel": "Brokers",
+      "brokersQuote": "I spend more time explaining the business than selling it.",
+      "buyersLabel": "Buyers",
+      "buyersQuote": "Half the listings I look at don't have enough information to take a first step.",
+      "closer": "Bottega is built for this."
+    },
+    "how": {
+      "heading": "How it works",
+      "step1Label": "Submit your details",
+      "step1Desc": "Tell us about your business in 4 short steps. No jargon. No accountant required.",
+      "step2Label": "We structure it",
+      "step2Desc": "Bottega writes your deal page: clear, professional, buyer-ready.",
+      "step3Label": "Buyers reach out",
+      "step3Desc": "Serious enquiries come through Bottega. You decide who to engage.",
+      "reassurance": "Free to start. No commitment until you're ready.",
+      "cta": "List your business →"
+    },
+    "why": {
+      "heading": "Built for businesses that don't need a pitch deck.",
+      "prose1": "Most deal platforms are designed for startups: high-growth companies raising money, burning cash, betting on a future. Bottega is built for the opposite: businesses with cash flow, real clients, and years behind them.",
+      "prose2": "These businesses don't need hype. They need a clear presentation: financials framed properly, story told well, so the right buyer can recognise what they're looking at. That's what Bottega does.",
+      "stat1Value": "Italy & Portugal",
+      "stat1Label": "The only platform focused on these two markets",
+      "stat2Value": "Selective",
+      "stat2Label": "We curate and review every deal page, not an algorithm",
+      "stat3Value": "Seller privacy first",
+      "stat3Label": "Financials and sensitive info protected until you decide to share"
+    },
+    "brokers": {
+      "heading": "For brokers and M&A advisors",
+      "body": "If you represent sellers, Bottega gives your deals a better home.",
+      "cta": "Learn more →"
+    },
+    "cta": {
+      "heading": "Your business deserves a proper presentation. Start here.",
+      "sub": "Free to start. No broker fees. No exclusivity.",
+      "button": "Get started →"
+    }
+  },
+  "sellers": {
+    "hero": {
+      "h1": "You built it. We'll help you sell it.",
+      "sub": "Bottega turns your business information into a structured deal page and puts it in front of buyers actively looking in Italy and Portugal. Free to start, no broker fees.",
+      "cta": "List your business →",
+      "supporting": "Takes 10 minutes. No commitment until you're ready."
+    },
+    "problem": {
+      "heading": "Selling a business is hard when you've never done it before.",
+      "card1Title": "Packaging",
+      "card1Body": "You know your business inside out. But explaining it to an outside buyer (its financials, its strengths, its potential) is a different skill entirely.",
+      "card2Title": "Access",
+      "card2Body": "Serious buyers exist. But they don't browse classifieds. They rely on curated sources, trusted advisors, and platforms that do the screening for them.",
+      "card3Title": "Trust",
+      "card3Body": "You don't want your competitors knowing you're selling. You don't want tyre-kickers calling your staff. You want control."
+    },
+    "whatYouGet": {
+      "heading": "Here's what you get.",
+      "freeHeading": "Free",
+      "freePrice": "€0. No commitment.",
+      "free1": "Your business listed on Bottega, Italy and Portugal's only curated SME deal platform",
+      "free2": "A structured deal page (we write the copy based on your inputs)",
+      "free3": "A public teaser to attract serious interest",
+      "free4": "Full financials stay private until a buyer signs a confidentiality agreement",
+      "free5": "Up to 10 inbound enquiries routed through Bottega marketplace",
+      "freeCta": "List your business for free →",
+      "assistedHeading": "Assisted",
+      "assistedBadge": "Most popular",
+      "assistedPriceStrike": "€399",
+      "assistedPrice": "€199 / year",
+      "assistedNote": "launch price",
+      "assisted1": "Everything in Free",
+      "assisted2": "A professional deal teaser document, yours to use anywhere, not just on Bottega",
+      "assisted3": "NDA support, we handle the paperwork",
+      "assisted4": "Outreach materials you can use in your own network, independently of Bottega",
+      "assisted5": "Business valuation guidance",
+      "assisted6": "Strategic insights, buyer profiles, angles to lead with, what to address upfront with buyers",
+      "assisted7": "Curated, one-off buyer matching, we reach out to relevant buyers in our network",
+      "assisted8": "Unlimited inbound enquiries through Bottega marketplace",
+      "assistedCta": "Talk to us about the Assisted plan →",
+      "whiteGloveHeading": "White Glove",
+      "whiteGlovePrice": "Custom pricing. Talk to us.",
+      "whiteGloveBody": "Full advisory support from positioning to close. For owners who want a hands-off experience and complete guidance through the process.",
+      "whiteGloveCta": "Contact us →"
+    },
+    "privacy": {
+      "heading": "Nothing goes out without your say-so.",
+      "prose1": "Your deal page shows buyers enough to assess whether to take the conversation further: sector, location, headline metrics, and a description of your business. That's it.",
+      "prose2": "Your financials, your business name, your contact details: none of this is shared until a buyer signs a confidentiality agreement and you've decided to proceed. You're in control of every step.",
+      "publicHeading": "Visible to anyone",
+      "protectedHeading": "Protected (NDA required)",
+      "public1": "Sector and location",
+      "public2": "Headline revenue range",
+      "public3": "EBITDA range",
+      "public4": "Business description",
+      "public5": "Asking price (or \"on request\")",
+      "protected1": "Detailed financials",
+      "protected2": "Business name (unless you choose to show it)",
+      "protected3": "Your contact details",
+      "protected4": "Any uploaded documents"
+    },
+    "howItWorks": {
+      "heading": "From form to live listing in days, not months.",
+      "step1Label": "Fill in your details",
+      "step1Desc": "A 4-step guided form. No jargon. Takes about 10 minutes.",
+      "step2Label": "We review and write your listing",
+      "step2Desc": "Bottega writes the deal description based on your inputs. We may follow up with a short call to fill gaps.",
+      "step3Label": "Your listing goes live",
+      "step3Desc": "Published on Bottega, visible to buyers browsing Italy and Portugal.",
+      "step4Label": "Enquiries come through us",
+      "step4Desc": "Buyers reach out via Bottega. We review and route to you. You decide who to engage.",
+      "reassurance": "No brokers. No exclusivity. No upfront costs on the free plan. You can withdraw your listing at any time."
+    },
+    "pricing": {
+      "heading": "Simple, transparent pricing."
+    },
+    "cta": {
+      "heading": "Ready to find out what your business is worth to the right buyer?",
+      "button": "List your business for free →",
+      "supporting": "Free to start. No exclusivity. Cancel anytime."
+    }
+  },
+  "brokers": {
+    "hero": {
+      "h1": "Better listings. More qualified enquiries.",
+      "sub": "Bottega gives your deals a structured home: a professional deal page that buyers can evaluate properly. You keep the client relationship. We handle presentation and inbound.",
+      "cta": "List your first deal free →",
+      "ctaSecondary": "Talk to us →"
+    },
+    "problem": {
+      "heading": "Most deal presentations don't do justice to the business.",
+      "prose": "A PDF sent cold. A Dropbox link with unstructured financials. A listing on a classifieds site with three lines of description. Buyers scroll past. Conversations never start.\n\nYou've done the work to represent the seller. Bottega makes sure buyers can see it."
+    },
+    "features": {
+      "heading": "A deal page your clients will be proud of.",
+      "feat1Label": "Structured deal pages",
+      "feat1Desc": "Every listing gets a clean, professional page: sector, location, headline metrics, description, highlights. Buyers get enough to self-qualify before requesting more.",
+      "feat2Label": "NDA-gated financials",
+      "feat2Desc": "Full financial detail stays protected. Buyers who want to go further submit an enquiry. You're notified and in control of what gets shared.",
+      "feat3Label": "Buyer enquiry routing",
+      "feat3Desc": "Enquiries from interested buyers come through Bottega and route directly to you. No cold calls to your client. No broker bypassing.",
+      "feat4Label": "Shareable deal link",
+      "feat4Desc": "Each deal gets a clean URL you can share in your own outreach. Works as your deal summary, not a replacement for your process."
+    },
+    "notABroker": {
+      "heading": "We present deals. We don't compete for them.",
+      "prose1": "Bottega doesn't take success fees on broker-submitted deals. We're not a competing advisor. We're presentation infrastructure: the professional front-end your listings deserve.",
+      "prose2": "You own the client relationship. You manage the process. We make your listing look like it deserves serious attention."
+    },
+    "pricing": {
+      "heading": "Free to start. No setup required.",
+      "freeHeading": "Free",
+      "freePrice": "€0. No commitment.",
+      "free1": "Up to 5 active listings",
+      "free2": "Full deal page per listing written by Bottega",
+      "free3": "Buyer enquiry routing to you",
+      "free4": "Shareable deal link per listing",
+      "freeCta": "Post your first deal →",
+      "proHeading": "Pro",
+      "proBadge": "Coming soon",
+      "proPrice": "Launch price TBC",
+      "pro1": "Unlimited listings",
+      "pro2": "Branded listing pages (your logo and firm name)",
+      "pro3": "Buyer matching tools (coming soon)",
+      "pro4": "Deal room access (coming soon)",
+      "pro5": "Priority placement (coming soon)",
+      "pro6": "Analytics per listing (coming soon)",
+      "proCta": "Join the waitlist →",
+      "reassurance": "Free tier covers everything you need to get started. No credit card. No calls to book. Just post your deal."
+    },
+    "founding": {
+      "heading": "Helping shape what Bottega builds for advisors.",
+      "prose": "We're working with a small group of brokers in Italy and Portugal to understand what actually matters, before we build it. If you work deals in this market, we'd like to talk.",
+      "namePlaceholder": "Name",
+      "emailPlaceholder": "Email",
+      "phonePlaceholder": "Phone (optional)",
+      "messagePlaceholder": "Message (optional)",
+      "submit": "Send →",
+      "after": "We'll respond within 48 hours."
+    }
+  },
+  "buyers": {
+    "hero": {
+      "h1": "Curated SME deals in Italy and Portugal.",
+      "sub": "Bottega lists curated acquisition opportunities: manufacturing, professional services, food & beverage, specialty businesses. Every deal reviewed. Every listing curated to help you evaluate quickly.",
+      "cta": "Browse deals →",
+      "ctaSecondary": "Talk to us about what you're looking for →"
+    },
+    "problem": {
+      "heading": "Buying a small business takes longer than it should.",
+      "prose1": "Finding a quality deal is hard enough. When you do find one, you spend weeks chasing the seller for documentation. Then more weeks finding the right lawyer, the right accountant. Professionals who actually know SME transactions in this market.",
+      "prose2": "And sometimes, after months of effort and real money spent, the business simply wasn't worth buying.",
+      "prose3": "That's the reality most buyers face in Southern Europe. Bottega is built to change it.",
+      "pain1Quote": "Three months and nothing to show for it.",
+      "pain1Desc": "Time lost chasing documentation, assembling professionals, running due diligence, only to walk away.",
+      "pain2Quote": "The listing had three lines and a phone number.",
+      "pain2Desc": "Most publicly listed deals in Italy and Portugal are poorly presented. Revenue figures with no context. Brokers who don't respond.",
+      "pain3Quote": "I didn't even know what I didn't know.",
+      "pain3Desc": "Finding the right legal and financial professionals for an SME acquisition in a foreign market is its own project."
+    },
+    "features": {
+      "heading": "Deals you can evaluate quickly, before you commit your time.",
+      "feat1Label": "Structured deal pages",
+      "feat1Desc": "Every listing has a written description, headline financial metrics, and clear context, authored by Bottega, not copy-pasted from the seller. You can self-qualify in minutes, not weeks.",
+      "feat2Label": "NDA-first financials",
+      "feat2Desc": "Full financial detail is available after an initial conversation. We protect sellers, which means the numbers you eventually see are real, not sanitised.",
+      "feat3Label": "Simple enquiry process",
+      "feat3Desc": "Express interest through the platform. No cold calls, no broker gatekeeping. Bottega routes your enquiry and follows up directly.",
+      "feat4Label": "Italy and Portugal focus",
+      "feat4Desc": "We source deals directly from founders: manufacturing clusters in northern Italy, service businesses in Lisbon and Porto, food producers across both countries. Markets most platforms underserve."
+    },
+    "access": {
+      "heading": "Free to browse. Free to enquire.",
+      "prose": "No paywalls. No account required to browse. Register with your name and email when you're ready to enquire. That's it.",
+      "col1": "Feature",
+      "col2": "Available now",
+      "row1Feature": "Browse all listings",
+      "row1Value": "✓ Free",
+      "row2Feature": "View full deal pages",
+      "row2Value": "✓ Free",
+      "row3Feature": "Submit enquiries",
+      "row3Value": "✓ Free",
+      "row4Feature": "Saved deal alerts",
+      "row4Value": "Coming soon",
+      "row5Feature": "Due diligence tools",
+      "row5Value": "Coming soon",
+      "row6Feature": "AI deal matching",
+      "row6Value": "Coming soon"
+    },
+    "founding": {
+      "heading": "Helping us build what buyers actually need.",
+      "prose1": "We're at an early stage, and we'd rather talk to serious buyers than guess what to build. If you're actively looking for acquisition opportunities in Italy or Portugal, we'd like to understand your process, your pain, and what would actually help.",
+      "prose2": "In exchange, you'll shape what Bottega builds for buyers and get early access to features as they launch.",
+      "namePlaceholder": "Name",
+      "emailPlaceholder": "Email",
+      "phonePlaceholder": "Phone (optional)",
+      "messagePlaceholder": "What are you looking for? (optional)",
+      "submit": "Send →",
+      "after": "We'll respond within 48 hours."
+    },
+    "cta": {
+      "heading": "Start browsing. No account needed.",
+      "button": "Explore deals →",
+      "supporting": "Register only when you're ready to enquire."
+    }
+  },
+  "founding": {
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "messageLabel": "Message",
+    "successHeading": "Thanks. We'll be in touch.",
+    "successBody": "We'll respond within 48 hours.",
+    "errors": {
+      "nameRequired": "Please enter your name.",
+      "emailRequired": "Please enter your email address.",
+      "emailInvalid": "Please enter a valid email address.",
+      "submitFailed": "Something went wrong. Please try again."
+    }
+  },
   "seller": {
     "steps": {
       "step1": "Business basics",
@@ -9,11 +397,11 @@
     },
     "step1": {
       "title": "Tell us about your business",
-      "subtitle": "You can stay anonymous for now — your name and company won't appear publicly.",
+      "subtitle": "You can stay anonymous for now. Your name and company won't appear publicly.",
       "businessName": {
         "label": "Business name",
         "placeholder": "Leave blank to list anonymously",
-        "helper": "For our records only — not shown publicly."
+        "helper": "For our records only. Not shown publicly."
       },
       "country": {
         "label": "Country",
@@ -38,7 +426,7 @@
       "email": {
         "label": "Your email address",
         "placeholder": "you@example.com",
-        "helper": "For our records only — never shown publicly. We'll use this to follow up on your listing."
+        "helper": "For our records only, never shown publicly. We'll use this to follow up on your listing."
       },
       "phone": {
         "label": "Phone number",
@@ -63,7 +451,7 @@
     },
     "step2": {
       "title": "Size & team",
-      "subtitle": "Approximate figures are fine — exact numbers are shared under NDA.",
+      "subtitle": "Approximate figures are fine. Exact numbers are shared under NDA.",
       "helper": "Last full fiscal year. Exact figures shared under NDA.",
       "revenue": {
         "label": "Annual revenue",
@@ -80,11 +468,17 @@
         "placeholder": "Select range",
         "helper": "Full-time equivalents, including yourself."
       },
+      "ownerInvolvement": {
+        "label": "Owner involvement",
+        "placeholder": "Select involvement level",
+        "helper": "How many hours per week do you work in the business?"
+      },
       "continue": "Save and continue →",
       "errors": {
         "revenueRequired": "Please select a revenue range.",
         "ebitdaRequired": "Please select an EBITDA margin.",
         "employeesRequired": "Please select a headcount range.",
+        "involvementRequired": "Please select your involvement level.",
         "saveFailed": "Something went wrong. Please try again."
       }
     },
