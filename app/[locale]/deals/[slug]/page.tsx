@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
+import { SiteNav } from '@/components/marketing/SiteNav';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { MetricChip } from '@/components/deals/MetricChip';
 import { HighlightsList } from '@/components/deals/HighlightsList';
@@ -70,16 +71,7 @@ export default async function DealDetailPage({
 
   return (
     <div className="min-h-screen bg-[var(--color-bg)]">
-      <header className="border-b border-[var(--color-border)] px-6 py-4">
-        <div style={{ maxWidth: '1080px', margin: '0 auto' }} className="flex items-center justify-between">
-          <Link href={`/${locale}`} className="font-serif text-[20px] font-semibold tracking-[-0.02em]">
-            Ownly
-          </Link>
-          <Link href={`/${locale}/deals`} className="text-[13px] text-[var(--color-muted)] hover:text-[var(--color-text)]">
-            {t('browseDeals')}
-          </Link>
-        </div>
-      </header>
+      <SiteNav />
 
       <main style={{ maxWidth: '1080px', margin: '0 auto' }} className="px-6 py-10">
         <div className="flex flex-col gap-8 lg:flex-row lg:gap-12">

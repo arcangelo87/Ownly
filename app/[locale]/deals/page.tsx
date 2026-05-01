@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { DealListingPage } from '@/components/deals/DealListingPage';
+import { SiteNav } from '@/components/marketing/SiteNav';
 
 export const dynamic = 'force-dynamic';
 
@@ -64,13 +64,7 @@ export default async function DealsPage({
 
   return (
     <div className="min-h-screen bg-[var(--color-bg)]">
-      <header className="border-b border-[var(--color-border)] px-6 py-4">
-        <div style={{ maxWidth: '1080px', margin: '0 auto' }} className="flex items-center justify-between">
-          <Link href={`/${locale}`} className="font-serif text-[20px] font-semibold tracking-[-0.02em]">
-            Ownly
-          </Link>
-        </div>
-      </header>
+      <SiteNav />
 
       <main style={{ maxWidth: '1080px', margin: '0 auto' }} className="px-6 py-10">
         <div className="mb-10">
