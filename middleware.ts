@@ -33,8 +33,9 @@ export async function middleware(request: NextRequest) {
   // Guard admin routes
   const isAdmin = /^\/[a-z]{2}\/admin(\/|$)/.test(pathname);
   const isLogin = /^\/[a-z]{2}\/admin\/login(\/|$)/.test(pathname);
+  const isResetPassword = /^\/[a-z]{2}\/admin\/reset-password(\/|$)/.test(pathname);
 
-  if (isAdmin && !isLogin && !user) {
+  if (isAdmin && !isLogin && !isResetPassword && !user) {
     const locale = pathname.split('/')[1];
     return NextResponse.redirect(new URL(`/${locale}/admin/login`, request.url));
   }
