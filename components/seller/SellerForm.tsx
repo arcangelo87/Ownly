@@ -10,6 +10,13 @@ import { Step4YourStory } from './steps/Step4YourStory';
 
 const TOTAL_STEPS = 4;
 
+const STEP_HEADERS = [
+  { titleKey: 'step1.title', subtitleKey: 'step1.subtitle' },
+  { titleKey: 'step2.title', subtitleKey: 'step2.subtitle' },
+  { titleKey: 'step3.title', subtitleKey: 'step3.subtitle' },
+  { titleKey: 'step4.title', subtitleKey: 'step4.subtitle' },
+] as const;
+
 export function SellerForm() {
   const t = useTranslations('seller');
   const [currentStep, setCurrentStep] = useState(1);
@@ -31,6 +38,8 @@ export function SellerForm() {
     return <SuccessScreen />;
   }
 
+  const { titleKey, subtitleKey } = STEP_HEADERS[currentStep - 1];
+
   return (
     <div className="flex min-h-screen flex-col md:flex-row">
       <StepIndicator currentStep={currentStep} />
@@ -41,10 +50,10 @@ export function SellerForm() {
             {t('steps.stepPrefix')} {currentStep} {t('steps.stepOf')} {TOTAL_STEPS}
           </p>
           <h1 className="font-serif text-[28px] font-medium tracking-[-0.02em] leading-[1.2] mb-[10px]">
-            {t(`step${currentStep}.title` as Parameters<typeof t>[0])}
+            {t(titleKey)}
           </h1>
           <p className="text-sm text-[var(--color-muted)] leading-[1.6]">
-            {t(`step${currentStep}.subtitle` as Parameters<typeof t>[0])}
+            {t(subtitleKey)}
           </p>
         </header>
 
