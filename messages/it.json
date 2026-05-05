@@ -1,0 +1,554 @@
+{
+  "common": {},
+  "deals": {
+    "browse": {
+      "pageTitle": "Sfoglia annunci",
+      "pageSubtitle": "Opportunità di acquisizione selezionate in Italia e Portogallo.",
+      "resultCount": "{count} annunci",
+      "noResults": "Nessun annuncio corrisponde ai tuoi filtri.",
+      "noResultsHint": "Prova a rimuovere alcuni filtri per vedere più annunci.",
+      "clearFilters": "Rimuovi filtri",
+      "showFilters": "Filtri",
+      "filters": {
+        "heading": "Filtri",
+        "country": "Paese",
+        "sector": "Settore",
+        "askingPrice": "Prezzo richiesto",
+        "timeline": "Tempistica",
+        "any": "Qualsiasi",
+        "italy": "Italia",
+        "portugal": "Portogallo",
+        "priceUnder1m": "Sotto €1M",
+        "price1to2m": "€1M – €2M",
+        "price2to4m": "€2M – €4M",
+        "priceOver4m": "Oltre €4M",
+        "timelineReadyNow": "Pronto subito",
+        "timeline6to12": "6–12 mesi",
+        "timeline1to2": "1–2 anni",
+        "timelineExploring": "Solo esplorando"
+      },
+      "sort": {
+        "label": "Ordina per",
+        "recent": "Più recenti",
+        "priceAsc": "Prezzo: basso – alto",
+        "revenueDesc": "Fatturato: alto – basso",
+        "ebitdaDesc": "EBITDA: alto – basso"
+      },
+      "card": {
+        "viewDeal": "Vedi annuncio →",
+        "photosBadge": "{count} foto",
+        "noPhoto": "Nessuna foto",
+        "bestFor": "Ideale per"
+      }
+    },
+    "metrics": {
+      "revenue": "Fatturato annuo",
+      "ebitda": "Margine EBITDA",
+      "askingPrice": "Prezzo richiesto",
+      "employees": "Dipendenti",
+      "timeline": "Tempistica",
+      "ownerInvolvement": "Coinvolgimento del proprietario"
+    },
+    "sections": {
+      "about": "Informazioni sull'azienda",
+      "highlights": "Punti di forza",
+      "financials": "Dati finanziari completi",
+      "financialsLocked": "Disponibile su richiesta",
+      "financialsLockedDetail": "I dati finanziari dettagliati vengono condivisi direttamente con gli acquirenti seri dopo una conversazione iniziale."
+    },
+    "dealBasics": {
+      "title": "Dettagli dell'annuncio",
+      "country": "Paese",
+      "region": "Regione",
+      "yearFounded": "Fondata nel",
+      "saleStructure": "Struttura della vendita",
+      "reasonsForSale": "Motivo della vendita"
+    },
+    "enquiry": {
+      "title": "Mettiti in contatto",
+      "name": "Il tuo nome",
+      "namePlaceholder": "Nome completo",
+      "email": "Indirizzo email",
+      "emailPlaceholder": "tu@esempio.com",
+      "phone": "Numero di telefono",
+      "phonePlaceholder": "Opzionale",
+      "message": "Messaggio",
+      "messagePlaceholder": "Raccontaci un po' del tuo background e cosa ti interessa di questo annuncio.",
+      "submit": "Invia richiesta →",
+      "submitting": "Invio in corso…",
+      "successTitle": "Richiesta inviata",
+      "successBody": "Abbiamo ricevuto il tuo messaggio e ti risponderemo a breve.",
+      "reassurance": "I tuoi dati vengono condivisi solo con il venditore. Nessuno spam.",
+      "errors": {
+        "nameRequired": "Inserisci il tuo nome.",
+        "emailRequired": "Inserisci il tuo indirizzo email.",
+        "emailInvalid": "Inserisci un indirizzo email valido.",
+        "submitFailed": "Qualcosa è andato storto. Riprova."
+      }
+    },
+    "browseDeals": "← Sfoglia annunci",
+    "noPhotos": "Nessuna foto",
+    "photoAlt": "Foto dell'azienda",
+    "notFound": {
+      "title": "Annuncio non trovato",
+      "body": "Questo annuncio potrebbe essere stato rimosso o non è più disponibile.",
+      "cta": "Sfoglia tutti gli annunci →"
+    }
+  },
+  "nav": {
+    "sell": "Vendi la tua azienda",
+    "brokers": "Per i mediatori",
+    "buyers": "Per gli acquirenti",
+    "browse": "Sfoglia annunci",
+    "getStarted": "Inizia ora →"
+  },
+  "footer": {
+    "tagline": "Aziende PMI selezionate in Italia e Portogallo.",
+    "sell": "Vendi la tua azienda",
+    "brokers": "Per i mediatori",
+    "buyers": "Per gli acquirenti",
+    "browse": "Sfoglia annunci",
+    "about": "Chi siamo",
+    "contact": "Contatti",
+    "privacy": "Privacy Policy",
+    "terms": "Termini",
+    "copyright": "© 2026 Bottega"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Italia e Portogallo",
+      "h1": "Dove le aziende reali trovano nuovi proprietari.",
+      "subBold": "Aziende di servizi, piccola manifattura, turismo e ospitalità.",
+      "subRest": "Non startup, non crypto. Diamo alla tua azienda la presentazione che merita per trovare l'acquirente giusto.",
+      "cta": "Metti in vendita la tua azienda →",
+      "ctaSecondary": "Sei un mediatore? →"
+    },
+    "problem": {
+      "sellersLabel": "Venditori",
+      "sellersQuote": "Conosco ogni angolo di questa azienda. Non so da dove cominciare per venderla.",
+      "response1": "Le aziende che Bottega presenta non sono speculative.",
+      "response2": "Hanno flusso di cassa, sono consolidate e gestite dai fondatori.",
+      "response3": "La loro sfida non è la fattibilità: è la transizione.",
+      "brokersLabel": "Mediatori",
+      "brokersQuote": "Passo più tempo a spiegare l'azienda che a venderla.",
+      "buyersLabel": "Acquirenti",
+      "buyersQuote": "Metà degli annunci che guardo non hanno abbastanza informazioni per fare un primo passo.",
+      "closer": "Bottega è costruita per questo."
+    },
+    "how": {
+      "heading": "Come funziona",
+      "step1Label": "Invia i tuoi dati",
+      "step1Desc": "Raccontaci la tua azienda in 4 brevi passaggi. Nessun gergo. Nessun commercialista richiesto.",
+      "step2Label": "Noi la strutturiamo",
+      "step2Desc": "Bottega scrive la tua pagina di annuncio: chiara, professionale, pronta per gli acquirenti.",
+      "step3Label": "Gli acquirenti ti contattano",
+      "step3Desc": "Le richieste serie arrivano tramite Bottega. Sei tu a decidere con chi impegnarti.",
+      "reassurance": "Gratuito per iniziare. Nessun impegno finché non sei pronto.",
+      "cta": "Metti in vendita la tua azienda →"
+    },
+    "why": {
+      "heading": "Costruita per aziende che non hanno bisogno di un pitch deck.",
+      "prose1": "La maggior parte delle piattaforme di deal è progettata per le startup: aziende ad alta crescita che raccolgono capitali, bruciano liquidità, scommettendo su un futuro. Bottega è costruita per l'opposto: aziende con flusso di cassa, clienti reali e anni di storia.",
+      "prose2": "Queste aziende non hanno bisogno di hype. Hanno bisogno di una presentazione chiara: i bilanci inquadrati correttamente, la storia raccontata bene, così l'acquirente giusto può capire cosa sta guardando. Questo fa Bottega.",
+      "stat1Value": "Italia e Portogallo",
+      "stat1Label": "L'unica piattaforma focalizzata su questi due mercati",
+      "stat2Value": "Selettiva",
+      "stat2Label": "Curiamo e revisioniamo ogni pagina di annuncio, non un algoritmo",
+      "stat3Value": "Privacy del venditore al primo posto",
+      "stat3Label": "Dati finanziari e informazioni sensibili protetti finché non decidi di condividerli"
+    },
+    "brokers": {
+      "heading": "Per mediatori e advisor M&A",
+      "body": "Se rappresenti venditori, Bottega offre ai tuoi annunci una casa migliore.",
+      "cta": "Scopri di più →"
+    },
+    "cta": {
+      "heading": "La tua azienda merita una presentazione adeguata. Inizia qui.",
+      "sub": "Gratuito per iniziare. Nessuna commissione di mediazione. Nessuna esclusiva.",
+      "button": "Inizia ora →"
+    }
+  },
+  "sellers": {
+    "hero": {
+      "h1": "L'hai costruita tu. Ti aiutiamo a trovare chi la continui.",
+      "sub": "Bottega trasforma le informazioni sulla tua azienda in una pagina di annuncio strutturata e la presenta agli acquirenti che cercano attivamente in Italia e Portogallo. Gratuito per iniziare, nessuna commissione di mediazione.",
+      "cta": "Metti in vendita la tua azienda →",
+      "supporting": "Richiede 10 minuti. Nessun impegno finché non sei pronto."
+    },
+    "problem": {
+      "heading": "Vendere un'azienda è difficile se non l'hai mai fatto prima.",
+      "card1Title": "Presentazione",
+      "card1Body": "Conosci la tua azienda a fondo. Ma spiegarla a un acquirente esterno (i suoi bilanci, i suoi punti di forza, il suo potenziale) è una competenza diversa.",
+      "card2Title": "Accesso",
+      "card2Body": "Gli acquirenti seri esistono. Ma non sfogliano gli annunci. Si affidano a fonti selezionate, consulenti fidati e piattaforme che fanno lo screening per loro.",
+      "card3Title": "Fiducia",
+      "card3Body": "Non vuoi che i tuoi concorrenti sappiano che stai vendendo. Non vuoi che i curiosi chiamino il tuo staff. Vuoi il controllo."
+    },
+    "whatYouGet": {
+      "heading": "Ecco cosa ottieni.",
+      "freeHeading": "Gratuito",
+      "freePrice": "€0. Nessun impegno.",
+      "free1": "La tua azienda elencata su Bottega, l'unica piattaforma curata di PMI in Italia e Portogallo",
+      "free2": "Una pagina di annuncio strutturata (scriviamo il testo sulla base dei tuoi input)",
+      "free3": "Un teaser pubblico per attirare interesse qualificato",
+      "free4": "I dati finanziari completi restano privati finché un acquirente firma un accordo di riservatezza",
+      "free5": "Fino a 10 richieste in entrata instradate attraverso il marketplace Bottega",
+      "freeCta": "Metti in vendita la tua azienda gratis →",
+      "assistedHeading": "Assistito",
+      "assistedBadge": "Più richiesto",
+      "assistedPriceStrike": "€399",
+      "assistedPrice": "€199 / anno",
+      "assistedNote": "prezzo di lancio",
+      "assisted1": "Tutto incluso nel piano Gratuito",
+      "assisted2": "Un documento professionale di teaser, tuo da usare ovunque, non solo su Bottega",
+      "assisted3": "Supporto NDA, gestiamo la burocrazia",
+      "assisted4": "Materiali di outreach da usare nella tua rete, indipendentemente da Bottega",
+      "assisted5": "Guida alla valutazione aziendale",
+      "assisted6": "Approfondimenti strategici, profili degli acquirenti, angolazioni da cui partire, cosa affrontare subito con gli acquirenti",
+      "assisted7": "Matching personalizzato con acquirenti, contattando i buyer più rilevanti nella nostra rete",
+      "assisted8": "Richieste in entrata illimitate attraverso il marketplace Bottega",
+      "assistedCta": "Parliamo del piano Assistito →",
+      "whiteGloveHeading": "White Glove",
+      "whiteGlovePrice": "Prezzo personalizzato. Contattaci.",
+      "whiteGloveBody": "Supporto consulenziale completo dal posizionamento alla chiusura. Per i proprietari che vogliono un'esperienza senza pensieri e una guida completa nel processo.",
+      "whiteGloveCta": "Contattaci →"
+    },
+    "privacy": {
+      "heading": "Nulla esce senza il tuo consenso.",
+      "prose1": "La tua pagina di annuncio mostra agli acquirenti quanto basta per valutare se proseguire la conversazione: settore, posizione, metriche principali e una descrizione della tua azienda. Nient'altro.",
+      "prose2": "I tuoi dati finanziari, il nome della tua azienda, i tuoi contatti: nulla viene condiviso finché un acquirente firma un accordo di riservatezza e tu hai deciso di procedere. Sei in controllo di ogni passaggio.",
+      "publicHeading": "Visibile a tutti",
+      "protectedHeading": "Protetto (richiede NDA)",
+      "public1": "Settore e posizione",
+      "public2": "Fascia di fatturato indicativa",
+      "public3": "Fascia EBITDA",
+      "public4": "Descrizione dell'azienda",
+      "public5": "Prezzo richiesto (o \"su richiesta\")",
+      "protected1": "Dati finanziari dettagliati",
+      "protected2": "Nome dell'azienda (a meno che tu non scelga di mostrarlo)",
+      "protected3": "I tuoi contatti",
+      "protected4": "Eventuali documenti caricati"
+    },
+    "howItWorks": {
+      "heading": "Dal modulo all'annuncio attivo in giorni, non mesi.",
+      "step1Label": "Compila i tuoi dati",
+      "step1Desc": "Un modulo guidato in 4 passaggi. Nessun gergo. Richiede circa 10 minuti.",
+      "step2Label": "Noi revisioniamo e scriviamo il tuo annuncio",
+      "step2Desc": "Bottega scrive la descrizione dell'annuncio sulla base dei tuoi input. Potremmo contattarti con una breve chiamata per colmare le lacune.",
+      "step3Label": "Il tuo annuncio va online",
+      "step3Desc": "Pubblicato su Bottega, visibile agli acquirenti che cercano in Italia e Portogallo.",
+      "step4Label": "Le richieste arrivano tramite noi",
+      "step4Desc": "Gli acquirenti contattano Bottega. Noi revisioniamo e inoltriamo a te. Sei tu a decidere con chi impegnarti.",
+      "reassurance": "Nessun mediatore. Nessuna esclusiva. Nessun costo iniziale sul piano gratuito. Puoi ritirare il tuo annuncio in qualsiasi momento."
+    },
+    "pricing": {
+      "heading": "Prezzi semplici e trasparenti."
+    },
+    "cta": {
+      "heading": "Pronto a scoprire quanto vale la tua azienda per l'acquirente giusto?",
+      "button": "Metti in vendita la tua azienda gratuitamente →",
+      "supporting": "Gratuito per iniziare. Nessuna esclusiva. Cancella in qualsiasi momento."
+    }
+  },
+  "brokers": {
+    "hero": {
+      "h1": "Annunci migliori. Richieste più qualificate.",
+      "sub": "Bottega offre ai tuoi deal una casa strutturata: una pagina professionale che gli acquirenti possono valutare correttamente. Mantieni il rapporto con il cliente. Noi gestiamo la presentazione e le richieste in entrata.",
+      "cta": "Pubblica il tuo primo deal gratis →",
+      "ctaSecondary": "Contattaci →"
+    },
+    "problem": {
+      "heading": "La maggior parte delle presentazioni di deal non rende giustizia all'azienda.",
+      "prose": "Un PDF inviato a freddo. Un link Dropbox con dati finanziari non strutturati. Un annuncio su un sito di classificati con tre righe di descrizione. Gli acquirenti scorrono oltre. Le conversazioni non iniziano mai.\n\nHai fatto il lavoro per rappresentare il venditore. Bottega fa in modo che gli acquirenti possano vederlo."
+    },
+    "features": {
+      "heading": "Una pagina di deal di cui i tuoi clienti saranno orgogliosi.",
+      "feat1Label": "Pagine di deal strutturate",
+      "feat1Desc": "Ogni annuncio ottiene una pagina pulita e professionale: settore, posizione, metriche principali, descrizione, punti di forza. Gli acquirenti hanno abbastanza per auto-qualificarsi prima di richiedere ulteriori informazioni.",
+      "feat2Label": "Dati finanziari protetti da NDA",
+      "feat2Desc": "I dettagli finanziari completi restano protetti. Gli acquirenti che vogliono andare avanti inviano una richiesta. Tu ricevi notifica e hai il controllo su ciò che viene condiviso.",
+      "feat3Label": "Instradamento delle richieste degli acquirenti",
+      "feat3Desc": "Le richieste degli acquirenti interessati arrivano tramite Bottega e vengono instradate direttamente a te. Nessuna chiamata a freddo al tuo cliente. Nessun bypass del mediatore.",
+      "feat4Label": "Link condivisibile del deal",
+      "feat4Desc": "Ogni deal ottiene un URL pulito che puoi condividere nel tuo outreach. Funziona come riepilogo del tuo deal, non come sostituto del tuo processo."
+    },
+    "notABroker": {
+      "heading": "Presentiamo i deal. Non facciamo concorrenza per essi.",
+      "prose1": "Bottega non prende commissioni di successo sui deal presentati dai mediatori. Non siamo un advisor concorrente. Siamo infrastruttura di presentazione: il front-end professionale che i tuoi annunci meritano.",
+      "prose2": "Tu gestisci il rapporto con il cliente. Tu gestisci il processo. Noi facciamo sì che il tuo annuncio sembri meritare seria attenzione."
+    },
+    "pricing": {
+      "heading": "Gratuito per iniziare. Nessuna configurazione richiesta.",
+      "freeHeading": "Gratuito",
+      "freePrice": "€0. Nessun impegno.",
+      "free1": "Fino a 5 annunci attivi",
+      "free2": "Pagina completa del deal per annuncio, scritta da Bottega",
+      "free3": "Instradamento delle richieste degli acquirenti a te",
+      "free4": "Link condivisibile del deal per annuncio",
+      "freeCta": "Pubblica il tuo primo deal →",
+      "proHeading": "Pro",
+      "proBadge": "Prossimamente",
+      "proPrice": "Prezzo di lancio da definire",
+      "pro1": "Annunci illimitati",
+      "pro2": "Pagine con il tuo brand (logo e nome dello studio)",
+      "pro3": "Strumenti di matching con acquirenti (prossimamente)",
+      "pro4": "Accesso alla deal room (prossimamente)",
+      "pro5": "Posizionamento prioritario (prossimamente)",
+      "pro6": "Analisi per annuncio (prossimamente)",
+      "proCta": "Entra in lista d'attesa →",
+      "reassurance": "Il piano gratuito copre tutto ciò di cui hai bisogno per iniziare. Nessuna carta di credito. Nessuna chiamata da prenotare. Pubblica il tuo deal."
+    },
+    "founding": {
+      "heading": "Aiuta a definire ciò che Bottega costruisce per i consulenti.",
+      "prose": "Stiamo collaborando con un piccolo gruppo di mediatori in Italia e Portogallo per capire cosa conta davvero, prima di costruirlo. Se lavori su deal in questo mercato, vorremmo parlare con te.",
+      "namePlaceholder": "Nome",
+      "emailPlaceholder": "Email",
+      "phonePlaceholder": "Telefono (opzionale)",
+      "messagePlaceholder": "Messaggio (opzionale)",
+      "submit": "Invia →",
+      "after": "Risponderemo entro 48 ore."
+    }
+  },
+  "buyers": {
+    "hero": {
+      "h1": "Deal PMI selezionati in Italia e Portogallo.",
+      "sub": "Bottega elenca opportunità di acquisizione curate: manifattura, servizi professionali, food & beverage, aziende specializzate. Ogni deal revisionato. Ogni annuncio curato per aiutarti a valutare rapidamente.",
+      "cta": "Sfoglia annunci →",
+      "ctaSecondary": "Parlaci di cosa stai cercando →"
+    },
+    "problem": {
+      "heading": "Comprare una piccola azienda richiede più tempo del dovuto.",
+      "prose1": "Trovare un deal di qualità è già difficile. Quando lo trovi, passi settimane a inseguire il venditore per la documentazione. Poi altre settimane a trovare il giusto avvocato, il giusto commercialista. Professionisti che conoscano davvero le transazioni PMI in questo mercato.",
+      "prose2": "E a volte, dopo mesi di sforzi e soldi veri spesi, l'azienda semplicemente non valeva l'acquisto.",
+      "prose3": "Questa è la realtà che la maggior parte degli acquirenti affronta nell'Europa meridionale. Bottega è costruita per cambiarla.",
+      "pain1Quote": "Tre mesi e niente da mostrare.",
+      "pain1Desc": "Tempo perso a inseguire documentazione, assemblare professionisti, condurre due diligence, solo per poi ritirarsi.",
+      "pain2Quote": "L'annuncio aveva tre righe e un numero di telefono.",
+      "pain2Desc": "La maggior parte degli annunci pubblici in Italia e Portogallo sono mal presentati. Cifre di fatturato senza contesto. Mediatori che non rispondono.",
+      "pain3Quote": "Non sapevo nemmeno cosa non sapevo.",
+      "pain3Desc": "Trovare i giusti professionisti legali e finanziari per un'acquisizione PMI in un mercato straniero è di per sé un progetto."
+    },
+    "features": {
+      "heading": "Deal che puoi valutare rapidamente, prima di impegnare il tuo tempo.",
+      "feat1Label": "Pagine di deal strutturate",
+      "feat1Desc": "Ogni annuncio ha una descrizione scritta, metriche finanziarie principali e contesto chiaro, redatti da Bottega, non copiati dal venditore. Puoi auto-qualificarti in minuti, non settimane.",
+      "feat2Label": "Dati finanziari NDA-first",
+      "feat2Desc": "I dettagli finanziari completi sono disponibili dopo una conversazione iniziale. Proteggiamo i venditori, il che significa che i numeri che alla fine vedi sono reali, non sanificati.",
+      "feat3Label": "Processo di richiesta semplice",
+      "feat3Desc": "Esprimi interesse attraverso la piattaforma. Nessuna chiamata a freddo, nessun gatekeeper del mediatore. Bottega instrada la tua richiesta e segue direttamente.",
+      "feat4Label": "Focus su Italia e Portogallo",
+      "feat4Desc": "Acquistiamo deal direttamente dai fondatori: cluster manifatturieri nel nord Italia, aziende di servizi a Lisbona e Porto, produttori alimentari in entrambi i paesi. Mercati che la maggior parte delle piattaforme serve poco."
+    },
+    "access": {
+      "heading": "Gratuito per sfogliare. Gratuito per chiedere.",
+      "prose": "Nessun paywall. Nessun account richiesto per sfogliare. Registrati con nome ed email quando sei pronto per chiedere. Tutto qui.",
+      "col1": "Funzionalità",
+      "col2": "Disponibile ora",
+      "row1Feature": "Sfoglia tutti gli annunci",
+      "row1Value": "✓ Gratuito",
+      "row2Feature": "Visualizza le pagine complete dei deal",
+      "row2Value": "✓ Gratuito",
+      "row3Feature": "Invia richieste",
+      "row3Value": "✓ Gratuito",
+      "row4Feature": "Avvisi per deal salvati",
+      "row4Value": "Prossimamente",
+      "row5Feature": "Strumenti di due diligence",
+      "row5Value": "Prossimamente",
+      "row6Feature": "Matching AI dei deal",
+      "row6Value": "Prossimamente"
+    },
+    "founding": {
+      "heading": "Aiutaci a costruire ciò di cui gli acquirenti hanno davvero bisogno.",
+      "prose1": "Siamo in una fase iniziale, e preferiamo parlare con acquirenti seri piuttosto che indovinare cosa costruire. Se stai cercando attivamente opportunità di acquisizione in Italia o Portogallo, vorremmo capire il tuo processo, le tue difficoltà e cosa ti aiuterebbe davvero.",
+      "prose2": "In cambio, plasmerai ciò che Bottega costruisce per gli acquirenti e avrai accesso anticipato alle funzionalità man mano che vengono lanciate.",
+      "namePlaceholder": "Nome",
+      "emailPlaceholder": "Email",
+      "phonePlaceholder": "Telefono (opzionale)",
+      "messagePlaceholder": "Cosa stai cercando? (opzionale)",
+      "submit": "Invia →",
+      "after": "Risponderemo entro 48 ore."
+    },
+    "cta": {
+      "heading": "Inizia a sfogliare. Nessun account necessario.",
+      "button": "Esplora deal →",
+      "supporting": "Registrati solo quando sei pronto per chiedere."
+    }
+  },
+  "founding": {
+    "nameLabel": "Nome",
+    "emailLabel": "Email",
+    "phoneLabel": "Telefono",
+    "messageLabel": "Messaggio",
+    "successHeading": "Grazie. Ti contatteremo presto.",
+    "successBody": "Risponderemo entro 48 ore.",
+    "errors": {
+      "nameRequired": "Inserisci il tuo nome.",
+      "emailRequired": "Inserisci il tuo indirizzo email.",
+      "emailInvalid": "Inserisci un indirizzo email valido.",
+      "submitFailed": "Qualcosa è andato storto. Riprova."
+    }
+  },
+  "seller": {
+    "steps": {
+      "step1": "Informazioni di base",
+      "step2": "Dimensioni e team",
+      "step3": "Il deal",
+      "step4": "La tua storia",
+      "stepPrefix": "Fase",
+      "stepOf": "di"
+    },
+    "success": {
+      "heading": "Annuncio inviato",
+      "body": "Grazie. Revisioneremo il tuo annuncio e ti contatteremo a breve. Nel frattempo, non esitare a contattarci per qualsiasi domanda."
+    },
+    "step1": {
+      "title": "Parlaci della tua azienda",
+      "subtitle": "Puoi restare anonimo per ora. Il tuo nome e l'azienda non appariranno pubblicamente.",
+      "businessName": {
+        "label": "Nome dell'azienda",
+        "placeholder": "Lascia vuoto per restare anonimo",
+        "helper": "Solo per i nostri archivi. Non mostrato pubblicamente."
+      },
+      "country": {
+        "label": "Paese",
+        "placeholder": "Seleziona paese",
+        "helper": "Listia aziende in Italia e Portogallo."
+      },
+      "region": {
+        "label": "Regione",
+        "placeholder": "Seleziona regione",
+        "helper": "Appare nel tuo annuncio e aiuta gli acquirenti a filtrare per posizione."
+      },
+      "sector": {
+        "label": "Settore",
+        "placeholder": "Seleziona settore",
+        "helper": "Scegli il settore che descrive meglio la tua attività principale."
+      },
+      "yearFounded": {
+        "label": "Anno di fondazione",
+        "placeholder": "es. 1998",
+        "helper": "Aiuta gli acquirenti a capire la maturità dell'azienda."
+      },
+      "email": {
+        "label": "Il tuo indirizzo email",
+        "placeholder": "tu@esempio.com",
+        "helper": "Solo per i nostri archivi, mai mostrato pubblicamente. Lo utilizzeremo per seguire il tuo annuncio."
+      },
+      "phone": {
+        "label": "Numero di telefono",
+        "placeholder": "es. +39 02 1234 5678",
+        "helper": "Opzionale. Ci facilita il contattarti rapidamente se necessario."
+      },
+      "photos": {
+        "label": "Foto",
+        "helper": "Gli annunci con foto ricevono molto più interesse dagli acquirenti. Fino a 10 foto, 5 MB ciascuna.",
+        "dragText": "Trascina le foto qui, o clicca per sfogliare",
+        "dragLimit": "Fino a 10 foto · 5 MB ciascuna · JPG, PNG, WebP"
+      },
+      "continue": "Salva e continua →",
+      "errors": {
+        "countryRequired": "Seleziona un paese.",
+        "regionRequired": "Seleziona una regione.",
+        "sectorRequired": "Seleziona un settore.",
+        "yearRequired": "Inserisci un anno valido (es. 1998).",
+        "emailRequired": "Inserisci il tuo indirizzo email.",
+        "emailInvalid": "Inserisci un indirizzo email valido."
+      }
+    },
+    "step2": {
+      "title": "Dimensioni e team",
+      "subtitle": "Le cifre approssimative vanno bene. I dati esatti vengono condivisi sotto NDA.",
+      "helper": "Ultimo anno fiscale completo. Dati esatti condivisi sotto NDA.",
+      "revenue": {
+        "label": "Fatturato annuo",
+        "placeholder": "Seleziona fascia",
+        "helper": "Fascia approssimativa per l'ultimo anno fiscale completo."
+      },
+      "ebitda": {
+        "label": "Margine EBITDA",
+        "placeholder": "Seleziona fascia",
+        "helper": "Utili prima di interessi, imposte, svalutazioni e ammortamenti."
+      },
+      "employees": {
+        "label": "Numero di dipendenti (FTE)",
+        "placeholder": "Seleziona fascia",
+        "helper": "Equivalenti a tempo pieno, incluso te stesso."
+      },
+      "ownerInvolvement": {
+        "label": "Coinvolgimento del proprietario",
+        "placeholder": "Seleziona livello di coinvolgimento",
+        "helper": "Quante ore alla settimana lavori nell'azienda?"
+      },
+      "continue": "Salva e continua →",
+      "errors": {
+        "revenueRequired": "Seleziona una fascia di fatturato.",
+        "ebitdaRequired": "Seleziona un margine EBITDA.",
+        "employeesRequired": "Seleziona una fascia di dipendenti.",
+        "involvementRequired": "Seleziona il tuo livello di coinvolgimento.",
+        "saveFailed": "Qualcosa è andato storto. Riprova."
+      }
+    },
+    "step3": {
+      "title": "Il deal",
+      "subtitle": "Questi dettagli aiutano gli acquirenti a valutare rapidamente la compatibilità. Tutto resta riservato finché non scegli di condividere.",
+      "price": {
+        "label": "Prezzo richiesto",
+        "placeholder": "Seleziona fascia",
+        "helper": "Fascia indicativa. Puoi affinare questo dato in seguito."
+      },
+      "partialSale": {
+        "label": "Aperto a una vendita parziale?",
+        "helper": "Fai sapere agli acquirenti se considereresti di mantenere una quota.",
+        "openToMinority": "Sì, aperto a una quota di minoranza / parziale",
+        "fullSaleOnly": "Solo vendita completa"
+      },
+      "timeline": {
+        "label": "Tempistica",
+        "placeholder": "Seleziona tempistica",
+        "helper": "Entro quanto tempo desideri completare una transazione?"
+      },
+      "continue": "Salva e continua →",
+      "errors": {
+        "priceRequired": "Seleziona una fascia di prezzo.",
+        "partialRequired": "Seleziona un'opzione.",
+        "timelineRequired": "Seleziona una tempistica.",
+        "saveFailed": "Qualcosa è andato storto. Riprova."
+      }
+    },
+    "step4": {
+      "title": "La tua storia",
+      "subtitle": "Aiuta gli acquirenti a capire cosa rende questa azienda degna di attenzione.",
+      "reasons": {
+        "label": "Perché stai considerando una vendita?",
+        "helper": "Seleziona tutte le opzioni applicabili.",
+        "retirement": "Pensionamento",
+        "growthCapital": "Necessità di capitale per la crescita",
+        "noSuccession": "Nessun piano di successione",
+        "healthPersonal": "Motivi di salute o personali",
+        "marketOpportunity": "Giusta opportunità di mercato",
+        "other": "Altro"
+      },
+      "description": {
+        "label": "Descrivi la tua azienda con parole tue",
+        "placeholder": "es. Gestisco un'azienda manifatturiera di 20 anni in Toscana che produce parti metalliche personalizzate per aziende di macchinari di medie dimensioni. Circa il 60% del fatturato è costituito da ordini ripetuti di 8 clienti di lunga data.",
+        "helper": "Cosa fai, chi sono i tuoi clienti, cosa la fa funzionare."
+      },
+      "strongestPoint": {
+        "label": "Qual è il punto di forza di questa azienda?",
+        "placeholder": "es. Abbiamo un accordo di fornitura esclusiva di 12 anni con il nostro cliente principale, che rappresenta il 40% del fatturato.",
+        "helper": "Cosa diresti a un acquirente serio in 30 secondi?"
+      },
+      "buyerDisclosure": {
+        "label": "C'è qualcosa che un acquirente dovrebbe sapere subito?",
+        "placeholder": "es. Il proprietario attuale è coinvolto nelle operazioni quotidiane e sarebbe necessario un periodo di transizione di 6–12 mesi.",
+        "helper": "Rischi, dipendenze, o qualsiasi cosa meglio divulgare presto. Gli acquirenti apprezzano l'onestà."
+      },
+      "submit": "Invia annuncio →",
+      "errors": {
+        "reasonsRequired": "Seleziona almeno un motivo.",
+        "descriptionRequired": "Descrivi la tua azienda.",
+        "saveFailed": "Qualcosa è andato storto. Riprova."
+      }
+    }
+  }
+}

@@ -47,7 +47,7 @@ export function StepIndicator({ currentStep }: StepIndicatorProps) {
                 {/* labels */}
                 <div className="flex flex-col gap-0.5">
                   <span className="text-[11px] font-medium uppercase tracking-[0.06em] text-[var(--color-muted)]">
-                    Step {step}
+                    {t('stepPrefix')} {step}
                   </span>
                   <span
                     className={[
@@ -75,9 +75,9 @@ export function StepIndicator({ currentStep }: StepIndicatorProps) {
           />
         </div>
         <p className="mt-2 text-xs text-[var(--color-muted)]">
-          Step{' '}
+          {t('stepPrefix')}{' '}
           <span className="font-semibold text-[var(--color-text)]">
-            {currentStep} of {STEPS.length}
+            {currentStep} {t('stepOf')} {STEPS.length}
           </span>{' '}
           : {t(STEPS[currentStep - 1])}
         </p>

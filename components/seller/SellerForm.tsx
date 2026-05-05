@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { StepIndicator } from './StepIndicator';
 import { Step1BusinessBasics } from './steps/Step1BusinessBasics';
 import { Step2SizeTeam } from './steps/Step2SizeTeam';
@@ -9,26 +10,8 @@ import { Step4YourStory } from './steps/Step4YourStory';
 
 const TOTAL_STEPS = 4;
 
-const STEP_HEADERS: Record<number, { title: string; subtitle: string }> = {
-  1: {
-    title: 'Tell us about your business',
-    subtitle: "You can stay anonymous for now. Your name and company won't appear publicly.",
-  },
-  2: {
-    title: 'Size & team',
-    subtitle: 'Approximate figures are fine. Exact numbers are shared under NDA.',
-  },
-  3: {
-    title: 'The deal',
-    subtitle: 'These details help buyers quickly assess fit. Everything stays confidential until you choose to share.',
-  },
-  4: {
-    title: 'Your story',
-    subtitle: 'Help buyers understand what makes this business worth looking at.',
-  },
-};
-
 export function SellerForm() {
+  const t = useTranslations('seller');
   const [currentStep, setCurrentStep] = useState(1);
   const [listingId, setListingId] = useState<string | null>(null);
   const [photos, setPhotos] = useState<File[]>([]);
@@ -48,8 +31,6 @@ export function SellerForm() {
     return <SuccessScreen />;
   }
 
-  const header = STEP_HEADERS[currentStep];
-
   return (
     <div className="flex min-h-screen flex-col md:flex-row">
       <StepIndicator currentStep={currentStep} />
@@ -57,13 +38,13 @@ export function SellerForm() {
       <main className="flex-1 px-5 py-10 md:px-16 md:py-14" style={{ maxWidth: '680px' }}>
         <header className="mb-10">
           <p className="mb-[10px] text-[12px] font-semibold uppercase tracking-[0.08em] text-[var(--color-accent)]">
-            Step {currentStep} of {TOTAL_STEPS}
+            {t('steps.stepPrefix')} {currentStep} {t('steps.stepOf')} {TOTAL_STEPS}
           </p>
           <h1 className="font-serif text-[28px] font-medium tracking-[-0.02em] leading-[1.2] mb-[10px]">
-            {header.title}
+            {t(`step${currentStep}.title` as Parameters<typeof t>[0])}
           </h1>
           <p className="text-sm text-[var(--color-muted)] leading-[1.6]">
-            {header.subtitle}
+            {t(`step${currentStep}.subtitle` as Parameters<typeof t>[0])}
           </p>
         </header>
 
@@ -85,6 +66,7 @@ export function SellerForm() {
 }
 
 function SuccessScreen() {
+  const t = useTranslations('seller.success');
   return (
     <div className="flex min-h-screen items-center justify-center bg-[var(--color-bg)] px-5">
       <div className="max-w-md text-center">
@@ -94,10 +76,10 @@ function SuccessScreen() {
           </svg>
         </div>
         <h1 className="font-serif text-[28px] font-medium tracking-[-0.02em] leading-[1.2] mb-3">
-          Listing submitted
+          {t('heading')}
         </h1>
         <p className="text-sm text-[var(--color-muted)] leading-[1.6]">
-          Thank you. We&apos;ll review your listing and be in touch shortly. In the meantime, feel free to reach out if you have any questions.
+          {t('body')}
         </p>
       </div>
     </div>

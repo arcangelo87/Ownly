@@ -393,7 +393,13 @@
       "step1": "Business basics",
       "step2": "Size & team",
       "step3": "The deal",
-      "step4": "Your story"
+      "step4": "Your story",
+      "stepPrefix": "Step",
+      "stepOf": "of"
+    },
+    "success": {
+      "heading": "Listing submitted",
+      "body": "Thank you. We'll review your listing and be in touch shortly. In the meantime, feel free to reach out if you have any questions."
     },
     "step1": {
       "title": "Tell us about your business",

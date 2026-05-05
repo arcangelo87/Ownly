@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Logo } from '@/components/ui/Logo';
+import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher';
 
 export function SiteNav() {
   const t = useTranslations('nav');
@@ -38,12 +39,15 @@ export function SiteNav() {
           ))}
         </ul>
 
-        <Link
-          href={`/${locale}/sell`}
-          className="hidden md:inline-flex ml-auto shrink-0 items-center px-4 py-2 bg-[var(--color-accent)] text-white text-[13px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
-        >
-          {t('getStarted')}
-        </Link>
+        <div className="hidden md:flex items-center gap-4 ml-auto shrink-0">
+          <LocaleSwitcher />
+          <Link
+            href={`/${locale}/sell`}
+            className="inline-flex items-center px-4 py-2 bg-[var(--color-accent)] text-white text-[13px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
+          >
+            {t('getStarted')}
+          </Link>
+        </div>
 
         {/* Mobile hamburger */}
         <button
@@ -84,6 +88,9 @@ export function SiteNav() {
           >
             {t('getStarted')}
           </Link>
+          <div className="mt-4 flex justify-center">
+            <LocaleSwitcher />
+          </div>
         </div>
       )}
     </nav>
