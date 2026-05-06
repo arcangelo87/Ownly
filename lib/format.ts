@@ -1,9 +1,15 @@
 export const SECTOR_LABELS: Record<string, string> = {
   manufacturing: 'Manufacturing',
   food_beverage: 'Food & Beverage',
-  professional_services: 'Professional Services',
-  wholesale: 'Wholesale & Distribution',
+  hospitality_tourism: 'Hospitality & Tourism',
+  leisure_entertainment: 'Leisure & Entertainment',
+  retail_artisan: 'Retail & Artisan',
+  health_wellness: 'Health & Wellness',
+  automotive_transport: 'Automotive & Transport',
   construction: 'Construction & Engineering',
+  professional_services: 'Professional Services',
+  agriculture_land: 'Agriculture & Land',
+  wholesale: 'Wholesale & Distribution',
   technology: 'Technology',
   other: 'Other',
 };

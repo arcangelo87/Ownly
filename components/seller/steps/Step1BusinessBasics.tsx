@@ -13,9 +13,15 @@ import type { Step1Data } from '@/types';
 const SECTORS = [
   { value: 'manufacturing', label: 'Manufacturing' },
   { value: 'food_beverage', label: 'Food & Beverage' },
-  { value: 'professional_services', label: 'Professional Services' },
-  { value: 'wholesale', label: 'Wholesale & Distribution' },
+  { value: 'hospitality_tourism', label: 'Hospitality & Tourism' },
+  { value: 'leisure_entertainment', label: 'Leisure & Entertainment' },
+  { value: 'retail_artisan', label: 'Retail & Artisan' },
+  { value: 'health_wellness', label: 'Health & Wellness' },
+  { value: 'automotive_transport', label: 'Automotive & Transport' },
   { value: 'construction', label: 'Construction & Engineering' },
+  { value: 'professional_services', label: 'Professional Services' },
+  { value: 'agriculture_land', label: 'Agriculture & Land' },
+  { value: 'wholesale', label: 'Wholesale & Distribution' },
   { value: 'technology', label: 'Technology' },
   { value: 'other', label: 'Other' },
 ];
