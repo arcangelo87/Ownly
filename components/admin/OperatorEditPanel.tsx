@@ -1,7 +1,9 @@
 'use client';
 
-import { useState, useTransition } from 'react';
-import { updateListingContent } from '@/app/actions/admin';
+import { useState, useTransition, useEffect, useRef } from 'react';
+import { updateListingContent, deleteListingPhoto } from '@/app/actions/admin';
+import { createPhotoUploadUrl } from '@/app/actions/deals';
+import { createClient } from '@/lib/supabase/client';
 import type { Listing } from '@/types';
 
 interface Props {
@@ -20,6 +22,66 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
   );
   const [pending, startTransition] = useTransition();
   const [saved, setSaved] = useState(false);
+
+  const [photos, setPhotos] = useState<{ name: string; url: string }[]>([]);
+  const [photosLoading, setPhotosLoading] = useState(true);
+  const [uploading, setUploading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.storage
+      .from('listing-photos')
+      .list(listing.id, { sortBy: { column: 'name', order: 'asc' } })
+      .then(({ data }) => {
+        if (data) {
+          setPhotos(
+            data
+              .filter((f) => f.name !== '.emptyFolderPlaceholder')
+              .map((f) => ({
+                name: f.name,
+                url: supabase.storage
+                  .from('listing-photos')
+                  .getPublicUrl(`${listing.id}/${f.name}`).data.publicUrl,
+              })),
+          );
+        }
+        setPhotosLoading(false);
+      });
+  }, [listing.id]);
+
+  async function handlePhotoUpload(files: FileList) {
+    if (!files.length) return;
+    setUploading(true);
+    const supabase = createClient();
+    try {
+      const added: { name: string; url: string }[] = [];
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const index = Date.now() + i;
+        const signedUrl = await createPhotoUploadUrl(listing.id, index, file.name);
+        await fetch(signedUrl, {
+          method: 'PUT',
+          body: file,
+          headers: { 'Content-Type': file.type },
+        });
+        const path = `${index}-${file.name}`;
+        const { data: { publicUrl } } = supabase.storage
+          .from('listing-photos')
+          .getPublicUrl(`${listing.id}/${path}`);
+        added.push({ name: path, url: publicUrl });
+      }
+      setPhotos((prev) => [...prev, ...added]);
+    } finally {
+      setUploading(false);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+    }
+  }
+
+  async function handleDeletePhoto(name: string) {
+    await deleteListingPhoto(listing.id, name);
+    setPhotos((prev) => prev.filter((p) => p.name !== name));
+  }
 
   function handleSave() {
     const highlights = highlightsText
@@ -71,6 +133,45 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
           </a>
         </div>
       )}
+
+      <div>
+        <label className="mb-2 block text-[11px] font-semibold text-[var(--color-muted)]">Photos</label>
+        {photosLoading ? (
+          <p className="text-[12px] text-[var(--color-muted)]">Loading…</p>
+        ) : (
+          <div className="flex flex-wrap gap-2">
+            {photos.map((photo) => (
+              <div
+                key={photo.name}
+                className="group relative h-20 w-20 shrink-0 overflow-hidden rounded-md border border-[var(--color-border)]"
+              >
+                <img src={photo.url} alt="" className="h-full w-full object-cover" />
+                <button
+                  onClick={() => handleDeletePhoto(photo.name)}
+                  className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100"
+                >
+                  <span className="text-[11px] font-semibold text-white">Remove</span>
+                </button>
+              </div>
+            ))}
+            <button
+              onClick={() => fileInputRef.current?.click()}
+              disabled={uploading}
+              className="flex h-20 w-20 shrink-0 items-center justify-center rounded-md border border-dashed border-[var(--color-border)] text-[11px] font-medium text-[var(--color-muted)] transition-colors hover:border-[var(--color-text)] hover:text-[var(--color-text)] disabled:opacity-50"
+            >
+              {uploading ? '…' : '+ Add'}
+            </button>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              multiple
+              className="hidden"
+              onChange={(e) => e.target.files && handlePhotoUpload(e.target.files)}
+            />
+          </div>
+        )}
+      </div>
 
       <div>
         <label className="mb-1 block text-[11px] font-semibold text-[var(--color-muted)]">Title</label>
