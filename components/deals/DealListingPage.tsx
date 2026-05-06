@@ -9,13 +9,13 @@ import type { ListingCard } from '@/app/[locale]/deals/page';
 
 const PRICE_FILTER_MAP: Record<string, string[]> = {
   under_1m: ['under_500k', '500k_1m'],
-  '1m_2m': ['1m_2m'],
-  '2m_4m': ['2m_4m'],
-  over_4m: ['over_4m'],
+  '1m_2m': ['1m_2_5m'],
+  '2m_4m': ['2_5m_5m'],
+  over_4m: ['5m_10m', 'over_10m'],
 };
 
 const PRICE_ORDER: Record<string, number> = {
-  under_500k: 0, '500k_1m': 1, '1m_2m': 2, '2m_4m': 3, over_4m: 4, not_sure: 5,
+  under_500k: 0, '500k_1m': 1, '1m_2_5m': 2, '2_5m_5m': 3, '5m_10m': 4, over_10m: 5,
 };
 const REVENUE_ORDER: Record<string, number> = {
   under_500k: 0, '500k_1m': 1, '1m_2_5m': 2, '2_5m_5m': 3, over_5m: 4,
