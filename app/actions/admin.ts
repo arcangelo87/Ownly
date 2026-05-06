@@ -39,6 +39,20 @@ export async function updateListingContent(
   if (error) throw error;
 }
 
+export async function updateListingSector(listingId: string, sector: string) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) throw new Error('Unauthorized');
+
+  const admin = createAdminClient();
+  const { error } = await admin
+    .from('listings')
+    .update({ sector })
+    .eq('id', listingId);
+
+  if (error) throw error;
+}
+
 export async function getListingPhotos(listingId: string): Promise<{ name: string; url: string }[]> {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();

@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useTransition, useEffect, useRef } from 'react';
-import { updateListingContent, deleteListingPhoto, getListingPhotos } from '@/app/actions/admin';
+import { updateListingContent, deleteListingPhoto, getListingPhotos, updateListingSector } from '@/app/actions/admin';
 import { createPhotoUploadUrl } from '@/app/actions/deals';
 import { createClient } from '@/lib/supabase/client';
+import { SECTOR_LABELS } from '@/lib/format';
 import type { Listing } from '@/types';
 
 interface Props {
@@ -23,6 +24,9 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
   const [pending, startTransition] = useTransition();
   const [saved, setSaved] = useState(false);
 
+  const [sector, setSector] = useState(listing.sector ?? '');
+  const [sectorSaving, setSectorSaving] = useState(false);
+
   const [photos, setPhotos] = useState<{ name: string; url: string }[]>([]);
   const [photosLoading, setPhotosLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
@@ -34,6 +38,17 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
       setPhotosLoading(false);
     });
   }, [listing.id]);
+
+  async function handleSectorChange(value: string) {
+    setSector(value);
+    setSectorSaving(true);
+    try {
+      await updateListingSector(listing.id, value);
+      onSave({ sector: value });
+    } finally {
+      setSectorSaving(false);
+    }
+  }
 
   async function handlePhotoUpload(files: FileList) {
     if (!files.length) return;
@@ -118,6 +133,23 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
           </a>
         </div>
       )}
+
+      <div>
+        <label className="mb-1 block text-[11px] font-semibold text-[var(--color-muted)]">
+          Sector {sectorSaving && <span className="font-normal normal-case tracking-normal">Saving…</span>}
+        </label>
+        <select
+          value={sector}
+          onChange={(e) => handleSectorChange(e.target.value)}
+          disabled={sectorSaving}
+          className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-text)] disabled:opacity-50"
+        >
+          <option value="" disabled>Select sector</option>
+          {Object.entries(SECTOR_LABELS).map(([value, label]) => (
+            <option key={value} value={value}>{label}</option>
+          ))}
+        </select>
+      </div>
 
       <div>
         <label className="mb-2 block text-[11px] font-semibold text-[var(--color-muted)]">Photos</label>
