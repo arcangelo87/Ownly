@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useTransition, useEffect, useRef } from 'react';
-import { updateListingContent, deleteListingPhoto } from '@/app/actions/admin';
+import { updateListingContent, deleteListingPhoto, getListingPhotos } from '@/app/actions/admin';
 import { createPhotoUploadUrl } from '@/app/actions/deals';
 import { createClient } from '@/lib/supabase/client';
 import type { Listing } from '@/types';
@@ -29,25 +29,10 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    const supabase = createClient();
-    supabase.storage
-      .from('listing-photos')
-      .list(listing.id, { sortBy: { column: 'name', order: 'asc' } })
-      .then(({ data }) => {
-        if (data) {
-          setPhotos(
-            data
-              .filter((f) => f.name !== '.emptyFolderPlaceholder')
-              .map((f) => ({
-                name: f.name,
-                url: supabase.storage
-                  .from('listing-photos')
-                  .getPublicUrl(`${listing.id}/${f.name}`).data.publicUrl,
-              })),
-          );
-        }
-        setPhotosLoading(false);
-      });
+    getListingPhotos(listing.id).then((data) => {
+      setPhotos(data);
+      setPhotosLoading(false);
+    });
   }, [listing.id]);
 
   async function handlePhotoUpload(files: FileList) {

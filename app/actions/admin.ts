@@ -39,6 +39,28 @@ export async function updateListingContent(
   if (error) throw error;
 }
 
+export async function getListingPhotos(listingId: string): Promise<{ name: string; url: string }[]> {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) throw new Error('Unauthorized');
+
+  const admin = createAdminClient();
+  const { data } = await admin.storage
+    .from('listing-photos')
+    .list(listingId, { sortBy: { column: 'name', order: 'asc' } });
+
+  if (!data) return [];
+
+  return data
+    .filter((f) => f.name !== '.emptyFolderPlaceholder')
+    .map((f) => ({
+      name: f.name,
+      url: admin.storage
+        .from('listing-photos')
+        .getPublicUrl(`${listingId}/${f.name}`).data.publicUrl,
+    }));
+}
+
 export async function deleteListingPhoto(listingId: string, filename: string) {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
