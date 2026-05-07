@@ -625,5 +625,94 @@
       "body": "For questions about these Terms, contact:",
       "email": "info@bottegaventures.com"
     }
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy Policy",
+      "description": "How Bottega collects, uses, and protects your personal data."
+    },
+    "company": "Bottega Ventures Ltd",
+    "address": "85 Great Portland Street, London, England, W1W 7LT",
+    "registration": "Company registered in England and Wales",
+    "lastUpdated": "Last updated: May 2026",
+    "s1": {
+      "heading": "1. Who we are",
+      "body": "Bottega Ventures Ltd (\"Bottega\", \"we\", \"us\") operates the Bottega platform at bottega.com, a curated marketplace connecting SME owners with prospective buyers and brokers across Southern Europe. We are the data controller for personal data collected through this platform.",
+      "contactIntro": "For privacy matters, contact us at:",
+      "email": "info@bottegaventures.com"
+    },
+    "s2": {
+      "heading": "2. Who this policy applies to",
+      "intro": "This policy covers all users of the Bottega platform, including:",
+      "item1": "Sellers: business owners submitting their business for listing consideration",
+      "item2": "Buyers: individuals or entities browsing and enquiring about listed businesses",
+      "item3": "Brokers: intermediaries accessing the platform to source or present deals"
+    },
+    "s3": {
+      "heading": "3. What data we collect",
+      "sellersLabel": "Sellers:",
+      "sellersBody": "Name, contact details, business name and location, financial information about your business (revenue, EBITDA, asking price), and any additional information you provide via the submission form.",
+      "buyersLabel": "Buyers:",
+      "buyersBody": "Name, contact details, professional background, acquisition criteria, and any communications with Bottega or sellers.",
+      "brokersLabel": "Brokers:",
+      "brokersBody": "Name, contact details, firm name, and deal interests.",
+      "allLabel": "All users:",
+      "allBody": "Device and usage data (IP address, browser type, pages visited) collected automatically via cookies and analytics tools."
+    },
+    "s4": {
+      "heading": "4. Legal basis for processing",
+      "intro": "We process your personal data under the following legal bases (EU GDPR, Regulation 2016/679):",
+      "item1": "Contract performance: to provide the platform service you have requested",
+      "item2": "Legitimate interests: to operate and improve the platform, prevent fraud, and facilitate deal introductions",
+      "item3": "Consent: where you have opted in, such as for marketing communications"
+    },
+    "s5": {
+      "heading": "5. How we use your data",
+      "item1": "To review and list submitted businesses (sellers)",
+      "item2": "To match buyers and brokers with relevant opportunities",
+      "item3": "To communicate with you about the platform and your enquiries",
+      "item4": "To improve our services and platform performance",
+      "item5": "To comply with legal obligations",
+      "noSell": "We do not sell your personal data to third parties."
+    },
+    "s6": {
+      "heading": "6. Who we share data with",
+      "intro": "We may share data with:",
+      "item1": "Counterparties: limited deal information may be shared with prospective buyers or brokers once a seller has consented to an introduction",
+      "item2": "Service providers: third-party tools we use to operate the platform (such as hosting, analytics, and email), under data processing agreements",
+      "item3": "Legal authorities: where required by law"
+    },
+    "s7": {
+      "heading": "7. International transfers",
+      "body": "Our platform infrastructure may involve data transfers outside the EU/EEA. Where this occurs, we ensure appropriate safeguards are in place (such as Standard Contractual Clauses or adequacy decisions)."
+    },
+    "s8": {
+      "heading": "8. How long we keep your data",
+      "item1": "Seller submissions: retained for 24 months from submission, or until you request deletion",
+      "item2": "Buyer and broker profiles: retained while your account is active, plus 12 months",
+      "item3": "Usage data: retained for up to 12 months"
+    },
+    "s9": {
+      "heading": "9. Your rights",
+      "intro": "Under EU GDPR, you have the right to:",
+      "right1": "Access the personal data we hold about you",
+      "right2": "Correct inaccurate data",
+      "right3": "Request deletion of your data",
+      "right4": "Object to or restrict processing",
+      "right5": "Data portability",
+      "right6": "Withdraw consent at any time (where processing is consent-based)",
+      "exercise": "To exercise any right, email",
+      "email": "privacy@bottegaventures.com",
+      "exerciseEnd": "We will respond within 30 days.",
+      "complaint": "You also have the right to lodge a complaint with the data protection supervisory authority in your country of residence within the EU."
+    },
+    "s10": {
+      "heading": "10. Cookies",
+      "body": "We use essential cookies to operate the platform and analytics cookies to understand usage. You can manage cookie preferences via our cookie banner. Disabling non-essential cookies will not affect core platform functionality."
+    },
+    "s11": {
+      "heading": "11. Changes to this policy",
+      "body": "We may update this policy from time to time. Material changes will be communicated by email or notice on the platform. Continued use after changes constitutes acceptance."
+    }
   }
 }
