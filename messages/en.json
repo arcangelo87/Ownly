@@ -550,5 +550,80 @@
         "saveFailed": "Something went wrong. Please try again."
       }
     }
+  },
+  "terms": {
+    "meta": {
+      "title": "Terms & Conditions",
+      "description": "Terms and conditions for using the Bottega platform."
+    },
+    "company": "Bottega Ventures Ltd",
+    "address": "85 Great Portland Street, London, England, W1W 7LT",
+    "registration": "Company registered in England and Wales",
+    "lastUpdated": "Last updated: May 2026",
+    "s1": {
+      "heading": "1. About Bottega",
+      "body": "Bottega Ventures Ltd (\"Bottega\", \"we\", \"us\") operates a curated deal platform connecting SME owners (\"Sellers\") with prospective acquirers (\"Buyers\") and deal intermediaries (\"Brokers\"). By accessing or using the Bottega platform, you agree to these Terms."
+    },
+    "s2": {
+      "heading": "2. Not a broker or financial adviser",
+      "body": "Bottega is a platform operator, not a licensed business broker, financial adviser, or legal adviser. We do not represent either party in any transaction. Nothing on this platform constitutes financial, legal, or investment advice. All parties should seek independent professional advice before entering any transaction."
+    },
+    "s3": {
+      "heading": "3. Eligibility",
+      "body": "You must be at least 18 years old and legally capable of entering binding agreements to use this platform. By using Bottega, you confirm this."
+    },
+    "s4": {
+      "heading": "4. Seller terms",
+      "intro": "By submitting your business to Bottega, you confirm that:",
+      "item1": "You are authorised to represent and sell the business in question",
+      "item2": "All information provided is accurate, complete, and not misleading to the best of your knowledge",
+      "item3": "You will notify us promptly of any material changes to the information submitted",
+      "item4": "You consent to your anonymised deal information being shared with vetted buyers and brokers on the platform",
+      "discretion": "Bottega reserves the right to decline, remove, or unpublish any listing at its sole discretion."
+    },
+    "s5": {
+      "heading": "5. Buyer terms",
+      "intro": "By accessing deal information on Bottega, you agree to:",
+      "item1": "Use deal information solely for the purpose of evaluating a potential acquisition",
+      "item2": "Treat all non-public business information as confidential",
+      "item3": "Not contact sellers or third parties connected to a listing outside of the Bottega-facilitated process without our consent",
+      "item4": "Not share deal materials with third parties without our prior written consent"
+    },
+    "s6": {
+      "heading": "6. Broker terms",
+      "intro": "Brokers accessing the platform agree to the Buyer Terms above, and additionally:",
+      "item1": "Represent only parties whose interests do not conflict with those of Bottega users"
+    },
+    "s7": {
+      "heading": "7. Accuracy of information",
+      "body": "Bottega does not verify the accuracy of information submitted by Sellers. Buyers and Brokers are responsible for conducting their own due diligence. Bottega accepts no liability for decisions made based on platform content."
+    },
+    "s8": {
+      "heading": "8. Intellectual property",
+      "body": "All platform content, branding, and materials produced by Bottega remain the intellectual property of Bottega Ventures Ltd. User-submitted content remains the property of the submitting party, but you grant Bottega a licence to use it for platform operations."
+    },
+    "s9": {
+      "heading": "9. Limitation of liability",
+      "intro": "To the maximum extent permitted by law:",
+      "item1": "Bottega is not liable for the failure of any transaction introduced through the platform",
+      "item2": "Bottega is not liable for any loss arising from reliance on information provided by Sellers, Buyers, or Brokers"
+    },
+    "s10": {
+      "heading": "10. Termination",
+      "body": "Bottega may suspend or terminate your access at any time for breach of these Terms, misuse of the platform, or at our sole discretion. You may stop using the platform at any time."
+    },
+    "s11": {
+      "heading": "11. Governing law",
+      "body": "These Terms are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales."
+    },
+    "s12": {
+      "heading": "12. Changes to these terms",
+      "body": "We may update these Terms from time to time. Continued use of the platform after changes are posted constitutes acceptance. Material changes will be communicated by email where possible."
+    },
+    "s13": {
+      "heading": "13. Contact",
+      "body": "For questions about these Terms, contact:",
+      "email": "info@bottegaventures.com"
+    }
   }
 }
