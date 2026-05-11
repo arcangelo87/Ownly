@@ -16,11 +16,13 @@ export default function SellersPage() {
     { label: t('howItWorks.step4Label'), description: t('howItWorks.step4Desc') },
   ];
 
-  const freeFeatures = [
+  const freeHeroFeatures = [
     t('whatYouGet.free1'),
     t('whatYouGet.free2'),
+  ];
+
+  const freeFeatures = [
     t('whatYouGet.free3'),
-    t('whatYouGet.free4'),
     t('whatYouGet.free5'),
   ];
 
@@ -35,13 +37,16 @@ export default function SellersPage() {
     t('whatYouGet.assisted2'),
     t('whatYouGet.assisted3'),
     t('whatYouGet.assisted4'),
-    t('whatYouGet.assisted5'),
+  ];
+
+  const whiteGloveHeroFeatures = [
+    t('whatYouGet.whiteGloveHero1'),
+    t('whatYouGet.whiteGloveHero2'),
   ];
 
   const whiteGloveFeatures = [
     t('whatYouGet.whiteGlove1'),
     t('whatYouGet.whiteGlove2'),
-    t('whatYouGet.whiteGlove3'),
   ];
 
   return (
@@ -102,6 +107,7 @@ export default function SellersPage() {
               heading={t('whatYouGet.freeHeading')}
               tagline={t('whatYouGet.freeTagline')}
               price={t('whatYouGet.freePrice')}
+              heroFeatures={freeHeroFeatures}
               features={freeFeatures}
               ctaLabel={t('whatYouGet.freeCta')}
               ctaHref={`/${locale}/sell`}
@@ -123,6 +129,7 @@ export default function SellersPage() {
               heading={t('whatYouGet.whiteGloveHeading')}
               tagline={t('whatYouGet.whiteGloveTagline')}
               price={t('whatYouGet.whiteGlovePrice')}
+              heroFeatures={whiteGloveHeroFeatures}
               features={whiteGloveFeatures}
               ctaLabel={t('whatYouGet.whiteGloveCta')}
               ctaHref={`/${locale}/contact`}
