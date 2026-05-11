@@ -51,7 +51,7 @@ export function PricingCard({
       </div>
 
       {tagline && (
-        <p className="text-[13px] text-[var(--color-muted)] leading-[1.5] mb-4">{tagline}</p>
+        <p className="text-[14px] font-medium text-[var(--color-text)] leading-[1.5] mb-4">{tagline}</p>
       )}
 
       <div className="mb-6">
