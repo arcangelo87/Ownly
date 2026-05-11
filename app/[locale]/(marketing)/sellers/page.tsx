@@ -24,15 +24,24 @@ export default function SellersPage() {
     t('whatYouGet.free5'),
   ];
 
+  const assistedHeroFeatures = [
+    t('whatYouGet.assistedHero1'),
+    t('whatYouGet.assistedHero2'),
+    t('whatYouGet.assistedHero3'),
+  ];
+
   const assistedFeatures = [
     t('whatYouGet.assisted1'),
     t('whatYouGet.assisted2'),
     t('whatYouGet.assisted3'),
     t('whatYouGet.assisted4'),
     t('whatYouGet.assisted5'),
-    t('whatYouGet.assisted6'),
-    t('whatYouGet.assisted7'),
-    t('whatYouGet.assisted8'),
+  ];
+
+  const whiteGloveFeatures = [
+    t('whatYouGet.whiteGlove1'),
+    t('whatYouGet.whiteGlove2'),
+    t('whatYouGet.whiteGlove3'),
   ];
 
   return (
@@ -88,9 +97,10 @@ export default function SellersPage() {
           <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
             {t('whatYouGet.heading')}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <PricingCard
               heading={t('whatYouGet.freeHeading')}
+              tagline={t('whatYouGet.freeTagline')}
               price={t('whatYouGet.freePrice')}
               features={freeFeatures}
               ctaLabel={t('whatYouGet.freeCta')}
@@ -98,34 +108,26 @@ export default function SellersPage() {
             />
             <PricingCard
               heading={t('whatYouGet.assistedHeading')}
+              tagline={t('whatYouGet.assistedTagline')}
               badge={t('whatYouGet.assistedBadge')}
               price={t('whatYouGet.assistedPrice')}
               priceStrike={t('whatYouGet.assistedPriceStrike')}
               priceNote={t('whatYouGet.assistedNote')}
+              heroFeatures={assistedHeroFeatures}
               features={assistedFeatures}
               ctaLabel={t('whatYouGet.assistedCta')}
               ctaHref={`/${locale}/contact`}
               highlight
             />
-          </div>
-          <div className="border border-[var(--color-border)] rounded-[8px] p-6 bg-[var(--color-surface)]">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <div>
-                <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)] mb-1">
-                  {t('whatYouGet.whiteGloveHeading')}
-                </h3>
-                <p className="text-[14px] text-[var(--color-muted)]">{t('whatYouGet.whiteGlovePrice')}</p>
-                <p className="text-[14px] text-[var(--color-muted)] mt-1 leading-[1.5]">
-                  {t('whatYouGet.whiteGloveBody')}
-                </p>
-              </div>
-              <Link
-                href={`/${locale}/contact`}
-                className="shrink-0 text-[14px] font-medium text-[var(--color-accent)] hover:opacity-80 transition-opacity"
-              >
-                {t('whatYouGet.whiteGloveCta')}
-              </Link>
-            </div>
+            <PricingCard
+              heading={t('whatYouGet.whiteGloveHeading')}
+              tagline={t('whatYouGet.whiteGloveTagline')}
+              price={t('whatYouGet.whiteGlovePrice')}
+              features={whiteGloveFeatures}
+              ctaLabel={t('whatYouGet.whiteGloveCta')}
+              ctaHref={`/${locale}/contact`}
+              muted
+            />
           </div>
         </div>
       </section>
