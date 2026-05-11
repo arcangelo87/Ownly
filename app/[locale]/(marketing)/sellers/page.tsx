@@ -22,7 +22,6 @@ export default function SellersPage() {
   ];
 
   const freeFeatures = [
-    t('whatYouGet.free3'),
     t('whatYouGet.free5'),
   ];
 
@@ -36,7 +35,6 @@ export default function SellersPage() {
     t('whatYouGet.assisted1'),
     t('whatYouGet.assisted2'),
     t('whatYouGet.assisted3'),
-    t('whatYouGet.assisted4'),
   ];
 
   const whiteGloveHeroFeatures = [
