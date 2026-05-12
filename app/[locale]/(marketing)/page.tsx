@@ -1,6 +1,5 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
-import { StepList } from '@/components/marketing/StepList';
 import { PricingCard } from '@/components/marketing/PricingCard';
 import { TwoColumnTable } from '@/components/marketing/TwoColumnTable';
 import { CtaBanner } from '@/components/marketing/CtaBanner';
@@ -9,13 +8,6 @@ export default function HomePage() {
   const t = useTranslations('sellers');
   const tHome = useTranslations('home');
   const locale = useLocale();
-
-  const howSteps = [
-    { label: t('howItWorks.step1Label'), description: t('howItWorks.step1Desc') },
-    { label: t('howItWorks.step2Label'), description: t('howItWorks.step2Desc') },
-    { label: t('howItWorks.step3Label'), description: t('howItWorks.step3Desc') },
-    { label: t('howItWorks.step4Label'), description: t('howItWorks.step4Desc') },
-  ];
 
   const freeHeroFeatures = [
     t('whatYouGet.free1'),
@@ -184,19 +176,6 @@ export default function HomePage() {
               ]}
             />
           </div>
-        </div>
-      </section>
-
-      {/* ── How it works ── */}
-      <section className="py-20 md:py-24 px-6 bg-[var(--color-surface)]">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
-            {t('howItWorks.heading')}
-          </h2>
-          <StepList steps={howSteps} />
-          <p className="mt-10 text-[14px] text-[var(--color-muted)] leading-[1.6] max-w-[560px]">
-            {t('howItWorks.reassurance')}
-          </p>
         </div>
       </section>
 
