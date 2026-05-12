@@ -593,5 +593,31 @@
         "saveFailed": "Something went wrong. Please try again."
       }
     }
+  },
+  "contact": {
+    "heading": "Get in touch",
+    "subheading": "Tell us a little about yourself and we will follow up within one business day.",
+    "planLabel": {
+      "assisted": "Interested in: Assisted Listing",
+      "bespoke": "Interested in: Bespoke Listing"
+    },
+    "name": "Your name",
+    "namePlaceholder": "Full name",
+    "email": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "phone": "Phone number",
+    "phonePlaceholder": "optional",
+    "message": "Message",
+    "messagePlaceholder": "Anything you'd like us to know upfront.",
+    "submit": "Send message",
+    "submitting": "Sending...",
+    "successTitle": "Message received",
+    "successBody": "We'll be in touch within one business day.",
+    "errors": {
+      "nameRequired": "Please enter your name.",
+      "emailRequired": "Please enter your email address.",
+      "emailInvalid": "Please enter a valid email address.",
+      "submitFailed": "Something went wrong. Please try again."
+    }
   }
 }
