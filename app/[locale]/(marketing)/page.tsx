@@ -68,17 +68,18 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {([
-              t('problem.card1Title'),
-              t('problem.card2Title'),
-              t('problem.card3Title'),
-            ]).map((title) => (
+              [t('problem.card1Title'), t('problem.card1Body')],
+              [t('problem.card2Title'), t('problem.card2Body')],
+              [t('problem.card3Title'), t('problem.card3Body')],
+            ] as [string, string][]).map(([title, body]) => (
               <div
                 key={title}
                 className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-[8px] p-6"
               >
-                <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)]">
+                <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)] mb-3">
                   {title}
                 </h3>
+                <p className="text-[14px] text-[var(--color-muted)] leading-[1.65]">{body}</p>
               </div>
             ))}
           </div>
@@ -86,7 +87,7 @@ export default function HomePage() {
       </section>
 
       {/* ── What you get / Pricing ── */}
-      <section className="py-20 md:py-24 px-6 bg-[var(--color-surface)]">
+      <section className="py-20 md:py-24 px-6 bg-[var(--color-bg)]">
         <div className="mx-auto max-w-6xl">
           <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
             {t('whatYouGet.heading')}
@@ -129,7 +130,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Privacy ── */}
-      <section className="py-20 px-6 bg-[var(--color-bg)]">
+      <section className="py-20 px-6 bg-[var(--color-surface)]">
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
             <div>
@@ -167,6 +168,9 @@ export default function HomePage() {
       {/* ── Customer quotes ── */}
       <section className="py-20 md:py-24 px-6 bg-[var(--color-bg)]">
         <div className="mx-auto max-w-6xl">
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
+            {t('quotes.heading')}
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {([
               /* REPLACE WITH REAL QUOTE */
