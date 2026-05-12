@@ -77,18 +77,17 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {([
-              [t('problem.card1Title'), t('problem.card1Body')],
-              [t('problem.card2Title'), t('problem.card2Body')],
-              [t('problem.card3Title'), t('problem.card3Body')],
-            ] as [string, string][]).map(([title, body]) => (
+              t('problem.card1Title'),
+              t('problem.card2Title'),
+              t('problem.card3Title'),
+            ]).map((title) => (
               <div
                 key={title}
                 className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-[8px] p-6"
               >
-                <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)] mb-3">
+                <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)]">
                   {title}
                 </h3>
-                <p className="text-[14px] text-[var(--color-muted)] leading-[1.65]">{body}</p>
               </div>
             ))}
           </div>
