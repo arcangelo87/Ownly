@@ -40,7 +40,7 @@ export default function HomePage() {
     <>
       {/* ── Hero ── */}
       <section className="py-20 md:py-28 px-6 bg-[var(--color-bg)]">
-        <div className="mx-auto max-w-6xl max-w-2xl">
+        <div className="mx-auto max-w-6xl">
           <h1 className="font-[family-name:var(--font-serif)] text-[44px] md:text-[56px] font-semibold leading-[1.15] tracking-[-0.02em] text-[var(--color-text)] mb-5">
             {t('hero.h1')}
           </h1>
