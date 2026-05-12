@@ -1,168 +1,203 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
-import { DealCardStack } from '@/components/marketing/DealCardStack';
 import { StepList } from '@/components/marketing/StepList';
+import { PricingCard } from '@/components/marketing/PricingCard';
+import { TwoColumnTable } from '@/components/marketing/TwoColumnTable';
 import { CtaBanner } from '@/components/marketing/CtaBanner';
 
 export default function HomePage() {
-  const t = useTranslations('home');
+  const t = useTranslations('sellers');
+  const tHome = useTranslations('home');
   const locale = useLocale();
 
   const howSteps = [
-    { label: t('how.step1Label'), description: t('how.step1Desc') },
-    { label: t('how.step2Label'), description: t('how.step2Desc') },
-    { label: t('how.step3Label'), description: t('how.step3Desc') },
+    { label: t('howItWorks.step1Label'), description: t('howItWorks.step1Desc') },
+    { label: t('howItWorks.step2Label'), description: t('howItWorks.step2Desc') },
+    { label: t('howItWorks.step3Label'), description: t('howItWorks.step3Desc') },
+    { label: t('howItWorks.step4Label'), description: t('howItWorks.step4Desc') },
+  ];
+
+  const freeFeatures = [
+    t('whatYouGet.free1'),
+    t('whatYouGet.free2'),
+    t('whatYouGet.free3'),
+    t('whatYouGet.free4'),
+    t('whatYouGet.free5'),
+  ];
+
+  const assistedFeatures = [
+    t('whatYouGet.assisted1'),
+    t('whatYouGet.assisted2'),
+    t('whatYouGet.assisted3'),
+    t('whatYouGet.assisted4'),
+    t('whatYouGet.assisted5'),
+    t('whatYouGet.assisted6'),
+    t('whatYouGet.assisted7'),
+    t('whatYouGet.assisted8'),
   ];
 
   return (
     <>
       {/* ── Hero ── */}
       <section className="py-20 md:py-28 px-6 bg-[var(--color-bg)]">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <div>
-              <span className="inline-block text-[11px] font-bold tracking-[0.12em] uppercase text-[var(--color-accent)] mb-5">
-                {t('hero.eyebrow')}
-              </span>
-              <h1 className="font-[family-name:var(--font-serif)] text-[40px] md:text-[52px] font-semibold leading-[1.15] tracking-[-0.02em] text-[var(--color-text)] mb-5">
-                {t('hero.h1')}
-              </h1>
-              <p className="text-[17px] text-[var(--color-muted)] leading-[1.65] mb-8 max-w-[520px]">
-                <strong className="text-[var(--color-text)] font-normal">{t('hero.subBold')}</strong>{' '}
-                {t('hero.subRest')}
-              </p>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <Link
-                  href={`/${locale}/sell`}
-                  className="inline-flex items-center px-6 py-3 bg-[var(--color-accent)] text-white text-[15px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
-                >
-                  {t('hero.cta')}
-                </Link>
-                <Link
-                  href={`/${locale}/brokers`}
-                  className="text-[14px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors"
-                >
-                  {t('hero.ctaSecondary')}
-                </Link>
-              </div>
-            </div>
+        <div className="mx-auto max-w-6xl max-w-2xl">
+          <h1 className="font-[family-name:var(--font-serif)] text-[44px] md:text-[56px] font-semibold leading-[1.15] tracking-[-0.02em] text-[var(--color-text)] mb-5">
+            {t('hero.h1')}
+          </h1>
+          <p className="text-[18px] text-[var(--color-muted)] leading-[1.65] mb-3 max-w-[560px]">
+            {t('hero.sub')}
+          </p>
+          <p className="text-[14px] text-[var(--color-muted)] mb-8">{t('hero.supporting')}</p>
+          <Link
+            href={`/${locale}/sell`}
+            className="inline-flex items-center px-7 py-3.5 bg-[var(--color-accent)] text-white text-[15px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
+          >
+            {t('hero.cta')}
+          </Link>
+        </div>
+      </section>
 
-            <div className="flex justify-center md:justify-end">
-              <DealCardStack />
+      {/* ── Problem cards ── */}
+      <section className="py-20 px-6 bg-[var(--color-surface)]">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
+            {t('problem.heading')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {([
+              [t('problem.card1Title'), t('problem.card1Body')],
+              [t('problem.card2Title'), t('problem.card2Body')],
+              [t('problem.card3Title'), t('problem.card3Body')],
+            ] as [string, string][]).map(([title, body]) => (
+              <div
+                key={title}
+                className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-[8px] p-6"
+              >
+                <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)] mb-3">
+                  {title}
+                </h3>
+                <p className="text-[14px] text-[var(--color-muted)] leading-[1.65]">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Seller quote ── */}
+      <section className="py-20 px-6 bg-[var(--color-bg)]">
+        <div className="mx-auto max-w-6xl">
+          <blockquote className="font-[family-name:var(--font-serif)] text-[clamp(22px,3vw,34px)] font-normal italic leading-[1.45] text-[var(--color-text)] max-w-[780px] mb-8">
+            &ldquo;{tHome('problem.sellersQuote')}&rdquo;
+          </blockquote>
+          <p className="text-[15px] text-[var(--color-muted)] leading-[1.7] max-w-[520px] pl-5 border-l-2 border-[var(--color-accent)]">
+            {tHome('problem.response1')}<br />
+            {tHome('problem.response2')}<br />
+            {tHome('problem.response3')}
+          </p>
+        </div>
+      </section>
+
+      {/* ── What you get / Pricing ── */}
+      <section className="py-20 md:py-24 px-6 bg-[var(--color-surface)]">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
+            {t('whatYouGet.heading')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <PricingCard
+              heading={t('whatYouGet.freeHeading')}
+              price={t('whatYouGet.freePrice')}
+              features={freeFeatures}
+              ctaLabel={t('whatYouGet.freeCta')}
+              ctaHref={`/${locale}/sell`}
+            />
+            <PricingCard
+              heading={t('whatYouGet.assistedHeading')}
+              badge={t('whatYouGet.assistedBadge')}
+              price={t('whatYouGet.assistedPrice')}
+              priceStrike={t('whatYouGet.assistedPriceStrike')}
+              priceNote={t('whatYouGet.assistedNote')}
+              features={assistedFeatures}
+              ctaLabel={t('whatYouGet.assistedCta')}
+              ctaHref={`/${locale}/contact`}
+              highlight
+            />
+          </div>
+          <div className="border border-[var(--color-border)] rounded-[8px] p-6 bg-[var(--color-bg)]">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)] mb-1">
+                  {t('whatYouGet.whiteGloveHeading')}
+                </h3>
+                <p className="text-[14px] text-[var(--color-muted)]">{t('whatYouGet.whiteGlovePrice')}</p>
+                <p className="text-[14px] text-[var(--color-muted)] mt-1 leading-[1.5]">
+                  {t('whatYouGet.whiteGloveBody')}
+                </p>
+              </div>
+              <Link
+                href={`/${locale}/contact`}
+                className="shrink-0 text-[14px] font-medium text-[var(--color-accent)] hover:opacity-80 transition-opacity"
+              >
+                {t('whatYouGet.whiteGloveCta')}
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── The Problem ── */}
-      <section className="py-20 px-6 bg-[var(--color-surface)]">
+      {/* ── Privacy ── */}
+      <section className="py-20 px-6 bg-[var(--color-bg)]">
         <div className="mx-auto max-w-6xl">
-          <blockquote className="font-[family-name:var(--font-serif)] text-[clamp(22px,3vw,34px)] font-normal italic leading-[1.45] text-[var(--color-text)] max-w-[780px] mb-8">
-            &ldquo;{t('problem.sellersQuote')}&rdquo;
-          </blockquote>
-          <p className="text-[15px] text-[var(--color-muted)] leading-[1.7] max-w-[520px] mb-14 pl-5 border-l-2 border-[var(--color-accent)]">
-            {t('problem.response1')}<br />
-            {t('problem.response2')}<br />
-            {t('problem.response3')}
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[600px]">
-            <div className="flex flex-col gap-3">
-              <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-[var(--color-accent)]">
-                {t('problem.brokersLabel')}
-              </span>
-              <p className="text-[14px] text-[var(--color-muted)] italic leading-[1.6]">
-                &ldquo;{t('problem.brokersQuote')}&rdquo;
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
+            <div>
+              <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-6">
+                {t('privacy.heading')}
+              </h2>
+              <p className="text-[15px] text-[var(--color-muted)] leading-[1.7] mb-4">
+                {t('privacy.prose1')}
+              </p>
+              <p className="text-[15px] text-[var(--color-muted)] leading-[1.7]">
+                {t('privacy.prose2')}
               </p>
             </div>
-            <div className="flex flex-col gap-3">
-              <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-[var(--color-accent)]">
-                {t('problem.buyersLabel')}
-              </span>
-              <p className="text-[14px] text-[var(--color-muted)] italic leading-[1.6]">
-                &ldquo;{t('problem.buyersQuote')}&rdquo;
-              </p>
-            </div>
+            <TwoColumnTable
+              col1Heading={t('privacy.publicHeading')}
+              col2Heading={t('privacy.protectedHeading')}
+              col1Items={[
+                t('privacy.public1'),
+                t('privacy.public2'),
+                t('privacy.public3'),
+                t('privacy.public4'),
+                t('privacy.public5'),
+              ]}
+              col2Items={[
+                t('privacy.protected1'),
+                t('privacy.protected2'),
+                t('privacy.protected3'),
+                t('privacy.protected4'),
+              ]}
+            />
           </div>
         </div>
       </section>
 
       {/* ── How it works ── */}
-      <section className="py-20 md:py-24 px-6 bg-[var(--color-bg)]">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="font-[family-name:var(--font-serif)] text-[32px] md:text-[36px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-14">
-            {t('how.heading')}
-          </h2>
-          <StepList steps={howSteps} />
-          <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-5">
-            <p className="text-[14px] text-[var(--color-muted)]">{t('how.reassurance')}</p>
-            <Link
-              href={`/${locale}/sell`}
-              className="shrink-0 text-[14px] font-medium text-[var(--color-accent)] hover:opacity-80 transition-opacity"
-            >
-              {t('how.cta')}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Why Bottega ── */}
       <section className="py-20 md:py-24 px-6 bg-[var(--color-surface)]">
         <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
-            <div>
-              <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-6">
-                {t('why.heading')}
-              </h2>
-              <p className="text-[15px] text-[var(--color-muted)] leading-[1.7] mb-4">
-                {t('why.prose1')}
-              </p>
-              <p className="text-[15px] text-[var(--color-muted)] leading-[1.7]">
-                {t('why.prose2')}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-3 gap-8">
-              {([
-                [t('why.stat1Value'), t('why.stat1Label')],
-                [t('why.stat2Value'), t('why.stat2Label')],
-                [t('why.stat3Value'), t('why.stat3Label')],
-              ] as [string, string][]).map(([value, label]) => (
-                <div key={value} className="flex flex-col gap-2">
-                  <span className="font-[family-name:var(--font-serif)] text-[22px] font-semibold text-[var(--color-text)] tracking-[-0.01em]">
-                    {value}
-                  </span>
-                  <span className="text-[13px] text-[var(--color-muted)] leading-[1.4]">{label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── For Brokers ── */}
-      <section className="py-16 px-6 bg-[var(--color-bg)]">
-        <div className="mx-auto max-w-6xl">
-          <div className="max-w-xl">
-            <h2 className="font-[family-name:var(--font-serif)] text-[24px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-3">
-              {t('brokers.heading')}
-            </h2>
-            <p className="text-[15px] text-[var(--color-muted)] leading-[1.65] mb-5">
-              {t('brokers.body')}
-            </p>
-            <Link
-              href={`/${locale}/brokers`}
-              className="text-[14px] font-medium text-[var(--color-accent)] hover:opacity-80 transition-opacity"
-            >
-              {t('brokers.cta')}
-            </Link>
-          </div>
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
+            {t('howItWorks.heading')}
+          </h2>
+          <StepList steps={howSteps} />
+          <p className="mt-10 text-[14px] text-[var(--color-muted)] leading-[1.6] max-w-[560px]">
+            {t('howItWorks.reassurance')}
+          </p>
         </div>
       </section>
 
       {/* ── Footer CTA ── */}
       <CtaBanner
         heading={t('cta.heading')}
-        subheading={t('cta.sub')}
+        subheading={t('cta.supporting')}
         ctaLabel={t('cta.button')}
         ctaHref={`/${locale}/sell`}
       />

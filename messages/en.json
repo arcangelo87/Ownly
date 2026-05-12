@@ -100,7 +100,8 @@
     "brokers": "For brokers",
     "buyers": "For buyers",
     "browse": "Browse deals",
-    "getStarted": "Get started →"
+    "getStarted": "Get started →",
+    "about": "About"
   },
   "footer": {
     "tagline": "Curated SME deals in Italy and Portugal.",
