@@ -1,6 +1,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { PricingCard } from '@/components/marketing/PricingCard';
+import { DealCardStack } from '@/components/marketing/DealCardStack';
 import { TwoColumnTable } from '@/components/marketing/TwoColumnTable';
 import { CtaBanner } from '@/components/marketing/CtaBanner';
 
@@ -43,20 +44,25 @@ export default function HomePage() {
     <>
       {/* ── Hero ── */}
       <section className="py-20 md:py-28 px-6 bg-[var(--color-bg)]">
-        <div className="mx-auto max-w-6xl">
-          <h1 className="font-[family-name:var(--font-serif)] text-[44px] md:text-[56px] font-semibold leading-[1.15] tracking-[-0.02em] text-[var(--color-text)] mb-5">
-            {t('hero.h1')}
-          </h1>
-          <p className="text-[18px] text-[var(--color-muted)] leading-[1.65] mb-3 max-w-[560px]">
-            {t('hero.sub')}
-          </p>
-          <p className="text-[14px] text-[var(--color-muted)] mb-8">{t('hero.supporting')}</p>
-          <Link
-            href={`/${locale}/sell`}
-            className="inline-flex items-center px-7 py-3.5 bg-[var(--color-accent)] text-white text-[15px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
-          >
-            {t('hero.cta')}
-          </Link>
+        <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 className="font-[family-name:var(--font-serif)] text-[44px] md:text-[56px] font-semibold leading-[1.15] tracking-[-0.02em] text-[var(--color-text)] mb-5">
+              {t('hero.h1')}
+            </h1>
+            <p className="text-[18px] text-[var(--color-muted)] leading-[1.65] mb-3">
+              {t('hero.sub')}
+            </p>
+            <p className="text-[14px] text-[var(--color-muted)] mb-8">{t('hero.supporting')}</p>
+            <Link
+              href={`/${locale}/sell`}
+              className="inline-flex items-center px-7 py-3.5 bg-[var(--color-accent)] text-white text-[15px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
+            >
+              {t('hero.cta')}
+            </Link>
+          </div>
+          <div className="flex justify-center">
+            <DealCardStack />
+          </div>
         </div>
       </section>
 

@@ -15,9 +15,10 @@ import type { ListingCard } from '@/app/[locale]/deals/page';
 
 interface DealCardProps {
   listing: ListingCard;
+  photoHeight?: string;
 }
 
-export function DealCard({ listing }: DealCardProps) {
+export function DealCard({ listing, photoHeight = 'h-40' }: DealCardProps) {
   const tCard = useTranslations('deals.browse.card');
   const tMetrics = useTranslations('deals.metrics');
 
@@ -37,7 +38,7 @@ export function DealCard({ listing }: DealCardProps) {
       className="group flex flex-col overflow-hidden rounded-md border border-[var(--color-border)] bg-white transition-colors hover:border-[var(--color-accent)]"
     >
       {/* Photo area */}
-      <div className="relative h-40 w-full flex-shrink-0 overflow-hidden bg-[var(--color-surface)]">
+      <div className={`relative ${photoHeight} w-full flex-shrink-0 overflow-hidden bg-[var(--color-surface)]`}>
         {listing.coverPhotoUrl ? (
           <Image
             src={listing.coverPhotoUrl}

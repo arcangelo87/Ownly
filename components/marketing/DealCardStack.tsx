@@ -90,7 +90,7 @@ export function DealCardStack() {
   }, []);
 
   return (
-    <div className="relative w-[340px] shrink-0" style={{ height: 'auto' }}>
+    <div className="relative w-[420px] shrink-0" style={{ height: 'auto' }}>
       {/* Peek cards behind */}
       {[2, 1].map((offset) => {
         const index = (active + offset) % CARDS.length;
@@ -100,13 +100,13 @@ export function DealCardStack() {
             key={`behind-${depth}`}
             className="absolute inset-0 transition-all duration-500 ease-in-out pointer-events-none"
             style={{
-              transform: `translateY(${depth * 10}px) translateX(${depth * 8}px) scale(${1 - depth * 0.04})`,
+              transform: `translateY(${depth * 10}px) translateX(${depth * 10}px) scale(${1 - depth * 0.04})`,
               zIndex: 10 - depth,
               opacity: 1 - depth * 0.15,
             }}
             aria-hidden="true"
           >
-            <DealCard listing={CARDS[index]} />
+            <DealCard listing={CARDS[index]} photoHeight="h-56" />
           </div>
         );
       })}
@@ -116,7 +116,7 @@ export function DealCardStack() {
         className="relative transition-all duration-500 ease-in-out"
         style={{ zIndex: 10 }}
       >
-        <DealCard listing={CARDS[active]} />
+        <DealCard listing={CARDS[active]} photoHeight="h-56" />
       </div>
 
       {/* Dot indicators */}
