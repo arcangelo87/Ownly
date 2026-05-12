@@ -49,6 +49,31 @@
       "timeline": "Timeline",
       "ownerInvolvement": "Owner involvement"
     },
+    "sectors": {
+      "manufacturing": "Manufacturing",
+      "food_beverage": "Food & Beverage",
+      "hospitality_tourism": "Hospitality & Tourism",
+      "leisure_entertainment": "Leisure & Entertainment",
+      "retail_artisan": "Retail & Artisan",
+      "health_wellness": "Health & Wellness",
+      "automotive_transport": "Automotive & Transport",
+      "construction": "Construction & Engineering",
+      "professional_services": "Professional Services",
+      "agriculture_land": "Agriculture & Land",
+      "wholesale": "Wholesale & Distribution",
+      "technology": "Technology",
+      "other": "Other"
+    },
+    "ownerInvolvementValues": {
+      "full_time": "Full-time (40+ hrs/wk)",
+      "part_time": "Part-time (20–40 hrs/wk)",
+      "advisory": "Advisory (5–20 hrs/wk)",
+      "minimal": "Minimal (<5 hrs/wk)"
+    },
+    "countries": {
+      "IT": "Italy",
+      "PT": "Portugal"
+    },
     "sections": {
       "about": "About the business",
       "highlights": "Highlights",
@@ -100,7 +125,8 @@
     "brokers": "For brokers",
     "buyers": "For buyers",
     "browse": "Browse deals",
-    "getStarted": "Get started →"
+    "getStarted": "Get started →",
+    "about": "About"
   },
   "footer": {
     "tagline": "Curated SME deals in Italy and Portugal.",
@@ -170,53 +196,55 @@
   },
   "sellers": {
     "hero": {
-      "h1": "You built it. We'll help you find continuity.",
+      "h1": "Your business deserves a serious buyer. We'll help you find one.",
       "sub": "Bottega turns your business information into a structured deal page and puts it in front of buyers actively looking in Italy and Portugal. Free to start, no broker fees.",
       "cta": "List your business →",
       "supporting": "Takes 10 minutes. No commitment until you're ready."
     },
     "problem": {
       "heading": "Selling a business is hard when you've never done it before.",
-      "card1Title": "Packaging",
+      "card1Title": "How do I explain my business to a stranger?",
       "card1Body": "You know your business inside out. But explaining it to an outside buyer (its financials, its strengths, its potential) is a different skill entirely.",
-      "card2Title": "Access",
+      "card2Title": "Where do serious buyers actually look?",
       "card2Body": "Serious buyers exist. But they don't browse classifieds. They rely on curated sources, trusted advisors, and platforms that do the screening for them.",
-      "card3Title": "Trust",
+      "card3Title": "What if my staff find out before I'm ready?",
       "card3Body": "You don't want your competitors knowing you're selling. You don't want tyre-kickers calling your staff. You want control."
     },
     "whatYouGet": {
       "heading": "Here's what you get.",
       "freeHeading": "Free",
+      "freeTagline": "Get listed and start receiving enquiries.",
       "freePrice": "€0. No commitment.",
-      "free1": "Your business listed on Bottega, Italy and Portugal's only curated SME deal platform",
-      "free2": "A structured deal page (we write the copy based on your inputs)",
-      "free3": "A public teaser to attract serious interest",
-      "free4": "Full financials stay private until a buyer signs a confidentiality agreement",
-      "free5": "Up to 10 inbound enquiries routed through Bottega marketplace",
+      "free1": "Listed on Bottega",
+      "free2": "Public deal page",
+      "free5": "Up to 10 inbound enquiries",
       "freeCta": "List your business for free →",
       "assistedHeading": "Assisted",
+      "assistedTagline": "Everything you need to present your business professionally",
       "assistedBadge": "Most popular",
       "assistedPriceStrike": "€399",
       "assistedPrice": "€199 / year",
       "assistedNote": "launch price",
+      "assistedHero1": "Professional deal teaser doc",
+      "assistedHero2": "NDA support",
+      "assistedHero3": "Strategic insights and valuation guidance",
       "assisted1": "Everything in Free",
-      "assisted2": "A professional deal teaser document, yours to use anywhere, not just on Bottega",
-      "assisted3": "NDA support, we handle the paperwork",
-      "assisted4": "Outreach materials you can use in your own network, independently of Bottega",
-      "assisted5": "Business valuation guidance",
-      "assisted6": "Strategic insights, buyer profiles, angles to lead with, what to address upfront with buyers",
-      "assisted7": "Curated, one-off buyer matching, we reach out to relevant buyers in our network",
-      "assisted8": "Unlimited inbound enquiries through Bottega marketplace",
+      "assisted2": "Outreach materials for your own network",
+      "assisted3": "Unlimited inbound enquiries",
       "assistedCta": "Talk to us about the Assisted plan →",
-      "whiteGloveHeading": "White Glove",
-      "whiteGlovePrice": "Custom pricing. Talk to us.",
-      "whiteGloveBody": "Full advisory support from positioning to close. For owners who want a hands-off experience and complete guidance through the process.",
+      "whiteGloveHeading": "Bespoke",
+      "whiteGloveTagline": "We find the buyer and guide you to close",
+      "whiteGlovePrice": "Custom pricing",
+      "whiteGloveHero1": "Curated Buyer Search",
+      "whiteGloveHero2": "Dedicated advisor, start to close",
+      "whiteGlove1": "End-to-end process management",
+      "whiteGlove2": "Everything in Assisted",
       "whiteGloveCta": "Contact us →"
     },
     "privacy": {
-      "heading": "Nothing goes out without your say-so.",
-      "prose1": "Your deal page shows buyers enough to assess whether to take the conversation further: sector, location, headline metrics, and a description of your business. That's it.",
-      "prose2": "Your financials, your business name, your contact details: none of this is shared until a buyer signs a confidentiality agreement and you've decided to proceed. You're in control of every step.",
+      "heading": "Your information stays private until you decide otherwise.",
+      "prose1": "Your public deal page shows buyers enough to decide if they're interested.",
+      "prose2": "Sensitive information stays private until a confidentiality agreement is signed.",
       "publicHeading": "Visible to anyone",
       "protectedHeading": "Protected (NDA required)",
       "public1": "Sector and location",
@@ -243,6 +271,21 @@
     },
     "pricing": {
       "heading": "Simple, transparent pricing."
+    },
+    "quotes": {
+      "heading": "What sellers say",
+      "quote1Text": "I was worried about who would see my financials. Bottega gave me full control over what was shared and when.",
+      "quote1Name": "Francesca",
+      "quote1Meta": "Manufacturing, Italy",
+      "quote2Text": "I expected a long process. The form took me less than 20 minutes and the listing was live within days.",
+      "quote2Name": "João",
+      "quote2Meta": "Professional Services, Portugal",
+      "quote3Text": "For the first time I understood exactly how a buyer would look at my business. That clarity alone was worth it.",
+      "quote3Name": "Luca",
+      "quote3Meta": "Food & Beverage, Italy",
+      "quote4Text": "Within two weeks of listing, I had my first conversation with a buyer who had actually read the numbers. That had never happened before.",
+      "quote4Name": "Sofia",
+      "quote4Meta": "Hospitality, Portugal"
     },
     "cta": {
       "heading": "Ready to find out what your business is worth to the right buyer?",

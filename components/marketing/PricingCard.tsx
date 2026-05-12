@@ -2,10 +2,12 @@ import Link from 'next/link';
 
 interface PricingCardProps {
   heading: string;
+  tagline?: string;
   badge?: string;
   price: string;
   priceStrike?: string;
   priceNote?: string;
+  heroFeatures?: string[];
   features: string[];
   ctaLabel: string;
   ctaHref: string;
@@ -15,10 +17,12 @@ interface PricingCardProps {
 
 export function PricingCard({
   heading,
+  tagline,
   badge,
   price,
   priceStrike,
   priceNote,
+  heroFeatures,
   features,
   ctaLabel,
   ctaHref,
@@ -35,7 +39,7 @@ export function PricingCard({
         muted ? 'opacity-70' : '',
       ].join(' ')}
     >
-      <div className="flex items-center gap-3 mb-2">
+      <div className="flex items-center gap-3 mb-1">
         <h3 className="font-[family-name:var(--font-serif)] text-[20px] font-semibold text-[var(--color-text)]">
           {heading}
         </h3>
@@ -45,6 +49,10 @@ export function PricingCard({
           </span>
         )}
       </div>
+
+      {tagline && (
+        <p className="text-[14px] font-medium text-[var(--color-text)] leading-[1.5] mb-4">{tagline}</p>
+      )}
 
       <div className="mb-6">
         {priceStrike && (
@@ -60,14 +68,35 @@ export function PricingCard({
         )}
       </div>
 
-      <ul className="flex flex-col gap-3 mb-8 flex-1">
-        {features.map((f, i) => (
-          <li key={i} className="flex items-start gap-2 text-[14px] text-[var(--color-text)] leading-[1.5]">
-            <span className="mt-[3px] shrink-0 w-[6px] h-[6px] rounded-full bg-[var(--color-accent)]" aria-hidden="true" />
-            {f}
-          </li>
-        ))}
-      </ul>
+      <div className="flex flex-col flex-1 mb-8">
+        {heroFeatures && heroFeatures.length > 0 && (
+          <>
+            <ul className="flex flex-col gap-3 mb-4">
+              {heroFeatures.map((f, i) => (
+                <li key={i} className="flex items-start gap-2 text-[14px] font-medium text-[var(--color-text)] leading-[1.5]">
+                  <span className="mt-[3px] shrink-0 w-[6px] h-[6px] rounded-full bg-[var(--color-accent)]" aria-hidden="true" />
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <hr className="border-[var(--color-border)] mb-4" />
+          </>
+        )}
+        <ul className="flex flex-col gap-3">
+          {features.map((f, i) => (
+            <li
+              key={i}
+              className={[
+                'flex items-start gap-2 leading-[1.5]',
+                heroFeatures ? 'text-[13px] text-[var(--color-muted)]' : 'text-[14px] text-[var(--color-text)]',
+              ].join(' ')}
+            >
+              <span className="mt-[3px] shrink-0 w-[5px] h-[5px] rounded-full bg-[var(--color-border)]" aria-hidden="true" />
+              {f}
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <Link
         href={ctaHref}
