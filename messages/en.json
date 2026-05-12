@@ -217,9 +217,9 @@
       "whiteGloveCta": "Contact us →"
     },
     "privacy": {
-      "heading": "Nothing goes out without your say-so.",
-      "prose1": "Your deal page shows buyers enough to assess whether to take the conversation further: sector, location, headline metrics, and a description of your business. That's it.",
-      "prose2": "Your financials, your business name, your contact details: none of this is shared until a buyer signs a confidentiality agreement and you've decided to proceed. You're in control of every step.",
+      "heading": "Your information stays private until you decide otherwise.",
+      "prose1": "Your public deal page shows buyers enough to decide if they're interested.",
+      "prose2": "Sensitive information stays private until a confidentiality agreement is signed.",
       "publicHeading": "Visible to anyone",
       "protectedHeading": "Protected (NDA required)",
       "public1": "Sector and location",

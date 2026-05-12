@@ -217,9 +217,9 @@
       "whiteGloveCta": "Contacte-nos →"
     },
     "privacy": {
-      "heading": "Nada sai sem a sua autorização.",
-      "prose1": "A sua página de anúncio mostra aos compradores o suficiente para avaliar se querem continuar a conversa: setor, localização, métricas principais e uma descrição do seu negócio. Só isso.",
-      "prose2": "As suas finanças, o nome do seu negócio, os seus dados de contacto: nada disto é partilhado até um comprador assinar um acordo de confidencialidade e você ter decidido avançar. Tem controlo sobre cada passo.",
+      "heading": "Your information stays private until you decide otherwise.",
+      "prose1": "Your public deal page shows buyers enough to decide if they're interested.",
+      "prose2": "Sensitive information stays private until a confidentiality agreement is signed.",
       "publicHeading": "Visível a todos",
       "protectedHeading": "Protegido (requer NDA)",
       "public1": "Setor e localização",
