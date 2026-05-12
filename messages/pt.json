@@ -247,6 +247,20 @@
     "pricing": {
       "heading": "Preços simples e transparentes."
     },
+    "quotes": {
+      "quote1Text": "I was worried about who would see my financials. Bottega gave me full control over what was shared and when.",
+      "quote1Name": "Marco",
+      "quote1Meta": "Manufacturing, Italy",
+      "quote2Text": "I expected a long process. The form took me less than 20 minutes and the listing was live within days.",
+      "quote2Name": "João",
+      "quote2Meta": "Professional Services, Portugal",
+      "quote3Text": "For the first time I understood exactly how a buyer would look at my business. That clarity alone was worth it.",
+      "quote3Name": "Luca",
+      "quote3Meta": "Food & Beverage, Italy",
+      "quote4Text": "Within two weeks of listing, I had my first conversation with a buyer who had actually read the numbers. That had never happened before.",
+      "quote4Name": "Antonio",
+      "quote4Meta": "Hospitality, Portugal"
+    },
     "cta": {
       "heading": "Pronto para descobrir quanto vale o seu negócio para o comprador certo?",
       "button": "Anunciar o seu negócio gratuitamente →",

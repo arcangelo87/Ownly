@@ -171,7 +171,7 @@
   },
   "sellers": {
     "hero": {
-      "h1": "You built it. We'll help you find continuity.",
+      "h1": "Your business deserves a serious buyer. We'll help you find one.",
       "sub": "Bottega turns your business information into a structured deal page and puts it in front of buyers actively looking in Italy and Portugal. Free to start, no broker fees.",
       "cta": "List your business →",
       "supporting": "Takes 10 minutes. No commitment until you're ready."
@@ -246,6 +246,20 @@
     },
     "pricing": {
       "heading": "Simple, transparent pricing."
+    },
+    "quotes": {
+      "quote1Text": "I was worried about who would see my financials. Bottega gave me full control over what was shared and when.",
+      "quote1Name": "Marco",
+      "quote1Meta": "Manufacturing, Italy",
+      "quote2Text": "I expected a long process. The form took me less than 20 minutes and the listing was live within days.",
+      "quote2Name": "João",
+      "quote2Meta": "Professional Services, Portugal",
+      "quote3Text": "For the first time I understood exactly how a buyer would look at my business. That clarity alone was worth it.",
+      "quote3Name": "Luca",
+      "quote3Meta": "Food & Beverage, Italy",
+      "quote4Text": "Within two weeks of listing, I had my first conversation with a buyer who had actually read the numbers. That had never happened before.",
+      "quote4Name": "Antonio",
+      "quote4Meta": "Hospitality, Portugal"
     },
     "cta": {
       "heading": "Ready to find out what your business is worth to the right buyer?",

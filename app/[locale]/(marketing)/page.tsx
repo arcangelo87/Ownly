@@ -201,6 +201,37 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Customer quotes ── */}
+      <section className="py-20 md:py-24 px-6 bg-[var(--color-bg)]">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {([
+              /* REPLACE WITH REAL QUOTE */
+              [t('quotes.quote1Text'), t('quotes.quote1Name'), t('quotes.quote1Meta')],
+              /* REPLACE WITH REAL QUOTE */
+              [t('quotes.quote2Text'), t('quotes.quote2Name'), t('quotes.quote2Meta')],
+              /* REPLACE WITH REAL QUOTE */
+              [t('quotes.quote3Text'), t('quotes.quote3Name'), t('quotes.quote3Meta')],
+              /* REPLACE WITH REAL QUOTE */
+              [t('quotes.quote4Text'), t('quotes.quote4Name'), t('quotes.quote4Meta')],
+            ] as [string, string, string][]).map(([quote, name, meta]) => (
+              <div
+                key={name}
+                className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[8px] p-8 flex flex-col gap-6"
+              >
+                <p className="font-[family-name:var(--font-serif)] text-[18px] italic leading-[1.6] text-[var(--color-text)]">
+                  &ldquo;{quote}&rdquo;
+                </p>
+                <div>
+                  <p className="text-[14px] font-medium text-[var(--color-text)]">{name}</p>
+                  <p className="text-[13px] text-[var(--color-muted)]">{meta}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Footer CTA ── */}
       <CtaBanner
         heading={t('cta.heading')}
