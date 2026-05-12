@@ -44,6 +44,27 @@ export default function HomePage() {
     t('whatYouGet.whiteGlove2'),
   ];
 
+  const problemIcons = [
+    /* "How do I explain my business to a stranger?" — document/presentation */
+    <svg key="explain" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="6" y="3" width="20" height="26" rx="2" />
+      <line x1="11" y1="10" x2="21" y2="10" />
+      <line x1="11" y1="15" x2="21" y2="15" />
+      <line x1="11" y1="20" x2="17" y2="20" />
+    </svg>,
+    /* "Where do serious buyers actually look?" — magnifying glass */
+    <svg key="buyers" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="14" cy="14" r="8" />
+      <line x1="20" y1="20" x2="27" y2="27" />
+    </svg>,
+    /* "What if my staff find out before I'm ready?" — shield */
+    <svg key="privacy" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M16 3L5 8v9c0 7 5.5 13.5 11 15 5.5-1.5 11-8 11-15V8L16 3z" />
+      <line x1="16" y1="13" x2="16" y2="19" />
+      <circle cx="16" cy="22" r="1" fill="currentColor" stroke="none" />
+    </svg>,
+  ];
+
   return (
     <>
       {/* ── Hero ── */}
@@ -83,11 +104,12 @@ export default function HomePage() {
               [t('problem.card1Title'), t('problem.card1Body')],
               [t('problem.card2Title'), t('problem.card2Body')],
               [t('problem.card3Title'), t('problem.card3Body')],
-            ] as [string, string][]).map(([title, body]) => (
+            ] as [string, string][]).map(([title, body], i) => (
               <div
                 key={title}
                 className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-[8px] p-6"
               >
+                <div className="text-[var(--color-accent)] mb-4">{problemIcons[i]}</div>
                 <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)] mb-3">
                   {title}
                 </h3>
@@ -159,6 +181,19 @@ export default function HomePage() {
             <TwoColumnTable
               col1Heading={t('privacy.publicHeading')}
               col2Heading={t('privacy.protectedHeading')}
+              col1Icon={
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <ellipse cx="11" cy="11" rx="9" ry="5.5" />
+                  <circle cx="11" cy="11" r="2.5" />
+                </svg>
+              }
+              col2Icon={
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="5" y="10" width="12" height="9" rx="2" />
+                  <path d="M8 10V7a3 3 0 0 1 6 0v3" />
+                  <circle cx="11" cy="14.5" r="1" fill="currentColor" stroke="none" />
+                </svg>
+              }
               col1Items={[
                 t('privacy.public1'),
                 t('privacy.public2'),
