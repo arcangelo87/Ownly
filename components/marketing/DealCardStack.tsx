@@ -18,8 +18,8 @@ const CARDS: ListingCard[] = [
     employee_count: null,
     timeline: null,
     created_at: '2026-01-01T00:00:00Z',
-    coverPhotoUrl: null,
-    photoCount: 0,
+    coverPhotoUrl: 'https://picsum.photos/seed/bottega-food/840/480',
+    photoCount: 1,
     buyer_tags: ['Lifestyle buyer', 'Strategic buyer'],
     owner_involvement: 'part_time',
   },
@@ -36,8 +36,8 @@ const CARDS: ListingCard[] = [
     employee_count: null,
     timeline: null,
     created_at: '2026-01-01T00:00:00Z',
-    coverPhotoUrl: null,
-    photoCount: 0,
+    coverPhotoUrl: 'https://picsum.photos/seed/bottega-metal/840/480',
+    photoCount: 1,
     buyer_tags: ['Financial buyer', 'Strategic buyer'],
     owner_involvement: 'advisory',
   },
@@ -54,8 +54,8 @@ const CARDS: ListingCard[] = [
     employee_count: null,
     timeline: null,
     created_at: '2026-01-01T00:00:00Z',
-    coverPhotoUrl: null,
-    photoCount: 0,
+    coverPhotoUrl: 'https://picsum.photos/seed/bottega-office/840/480',
+    photoCount: 1,
     buyer_tags: ['Lifestyle buyer', 'Owner-operator'],
     owner_involvement: 'full_time',
   },
@@ -72,41 +72,46 @@ const CARDS: ListingCard[] = [
     employee_count: null,
     timeline: null,
     created_at: '2026-01-01T00:00:00Z',
-    coverPhotoUrl: null,
-    photoCount: 0,
+    coverPhotoUrl: 'https://picsum.photos/seed/bottega-warehouse/840/480',
+    photoCount: 1,
     buyer_tags: ['Financial buyer', 'Strategic buyer'],
     owner_involvement: 'minimal',
   },
 ];
 
-export function DealCardStack() {
+interface DealCardStackProps {
+  listings?: ListingCard[];
+}
+
+export function DealCardStack({ listings }: DealCardStackProps = {}) {
+  const cards = listings && listings.length > 0 ? listings : CARDS;
   const [active, setActive] = useState(0);
 
   useEffect(() => {
     const id = setInterval(() => {
-      setActive((i) => (i + 1) % CARDS.length);
+      setActive((i) => (i + 1) % cards.length);
     }, 4000);
     return () => clearInterval(id);
   }, []);
 
   return (
-    <div className="relative w-[340px] shrink-0" style={{ height: 'auto' }}>
+    <div className="relative w-[420px] shrink-0" style={{ height: 'auto' }}>
       {/* Peek cards behind */}
       {[2, 1].map((offset) => {
-        const index = (active + offset) % CARDS.length;
+        const index = (active + offset) % cards.length;
         const depth = offset === 2 ? 2 : 1;
         return (
           <div
             key={`behind-${depth}`}
             className="absolute inset-0 transition-all duration-500 ease-in-out pointer-events-none"
             style={{
-              transform: `translateY(${depth * 10}px) translateX(${depth * 8}px) scale(${1 - depth * 0.04})`,
+              transform: `translateY(${depth * 10}px) translateX(${depth * 10}px) scale(${1 - depth * 0.04})`,
               zIndex: 10 - depth,
               opacity: 1 - depth * 0.15,
             }}
             aria-hidden="true"
           >
-            <DealCard listing={CARDS[index]} />
+            <DealCard listing={cards[index]} photoHeight="h-56" />
           </div>
         );
       })}
@@ -116,12 +121,12 @@ export function DealCardStack() {
         className="relative transition-all duration-500 ease-in-out"
         style={{ zIndex: 10 }}
       >
-        <DealCard listing={CARDS[active]} />
+        <DealCard listing={cards[active]} photoHeight="h-56" />
       </div>
 
       {/* Dot indicators */}
       <div className="flex justify-center gap-[6px] mt-4">
-        {CARDS.map((_, i) => (
+        {cards.map((_, i) => (
           <button
             key={i}
             onClick={() => setActive(i)}
