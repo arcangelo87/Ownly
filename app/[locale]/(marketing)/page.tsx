@@ -6,7 +6,6 @@ import { CtaBanner } from '@/components/marketing/CtaBanner';
 
 export default function HomePage() {
   const t = useTranslations('sellers');
-  const tHome = useTranslations('home');
   const locale = useLocale();
 
   const freeHeroFeatures = [
@@ -83,20 +82,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── Seller quote ── */}
-      <section className="py-20 px-6 bg-[var(--color-bg)]">
-        <div className="mx-auto max-w-6xl">
-          <blockquote className="font-[family-name:var(--font-serif)] text-[clamp(22px,3vw,34px)] font-normal italic leading-[1.45] text-[var(--color-text)] max-w-[780px] mb-8">
-            &ldquo;{tHome('problem.sellersQuote')}&rdquo;
-          </blockquote>
-          <p className="text-[15px] text-[var(--color-muted)] leading-[1.7] max-w-[520px] pl-5 border-l-2 border-[var(--color-accent)]">
-            {tHome('problem.response1')}<br />
-            {tHome('problem.response2')}<br />
-            {tHome('problem.response3')}
-          </p>
         </div>
       </section>
 
