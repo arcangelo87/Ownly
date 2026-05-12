@@ -1,9 +1,13 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { PricingCard } from '@/components/marketing/PricingCard';
 import { DealCardStack } from '@/components/marketing/DealCardStack';
+import { DealCardStackLoader } from '@/components/marketing/DealCardStackLoader';
 import { TwoColumnTable } from '@/components/marketing/TwoColumnTable';
 import { CtaBanner } from '@/components/marketing/CtaBanner';
+
+export const dynamic = 'force-dynamic';
 
 export default function HomePage() {
   const t = useTranslations('sellers');
@@ -61,7 +65,9 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="flex justify-center">
-            <DealCardStack />
+            <Suspense fallback={<DealCardStack />}>
+              <DealCardStackLoader />
+            </Suspense>
           </div>
         </div>
       </section>

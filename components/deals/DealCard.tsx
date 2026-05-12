@@ -5,11 +5,9 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { MetricChip } from '@/components/deals/MetricChip';
 import {
-  SECTOR_LABELS,
   formatRevenue,
   formatEbitda,
   formatPrice,
-  formatOwnerInvolvement,
 } from '@/lib/format';
 import type { ListingCard } from '@/app/[locale]/deals/page';
 
@@ -21,15 +19,12 @@ interface DealCardProps {
 export function DealCard({ listing, photoHeight = 'h-40' }: DealCardProps) {
   const tCard = useTranslations('deals.browse.card');
   const tMetrics = useTranslations('deals.metrics');
+  const tDeals = useTranslations('deals');
 
-  const sectorLabel = SECTOR_LABELS[listing.sector ?? ''] ?? listing.sector ?? '';
+  const sectorLabel = listing.sector ? tDeals(`sectors.${listing.sector}`) : '';
   const title = listing.title ?? sectorLabel;
-  const location = [
-    listing.region,
-    listing.country === 'IT' ? 'Italy' : listing.country === 'PT' ? 'Portugal' : listing.country,
-  ]
-    .filter(Boolean)
-    .join(', ');
+  const countryLabel = listing.country ? tDeals(`countries.${listing.country}`) : listing.country;
+  const location = [listing.region, countryLabel].filter(Boolean).join(', ');
   const href = `/deals/${listing.slug ?? listing.id}`;
 
   return (
@@ -92,7 +87,7 @@ export function DealCard({ listing, photoHeight = 'h-40' }: DealCardProps) {
               {tMetrics('ownerInvolvement')}:
             </span>
             <span className="rounded bg-[var(--color-surface)] px-1.5 py-0.5 text-[11px] text-[var(--color-text)]">
-              {formatOwnerInvolvement(listing.owner_involvement)}
+              {listing.owner_involvement ? tDeals(`ownerInvolvementValues.${listing.owner_involvement}`) : '—'}
             </span>
           </div>
         )}

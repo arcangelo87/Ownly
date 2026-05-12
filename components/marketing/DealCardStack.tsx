@@ -79,12 +79,17 @@ const CARDS: ListingCard[] = [
   },
 ];
 
-export function DealCardStack() {
+interface DealCardStackProps {
+  listings?: ListingCard[];
+}
+
+export function DealCardStack({ listings }: DealCardStackProps = {}) {
+  const cards = listings && listings.length > 0 ? listings : CARDS;
   const [active, setActive] = useState(0);
 
   useEffect(() => {
     const id = setInterval(() => {
-      setActive((i) => (i + 1) % CARDS.length);
+      setActive((i) => (i + 1) % cards.length);
     }, 4000);
     return () => clearInterval(id);
   }, []);
@@ -93,7 +98,7 @@ export function DealCardStack() {
     <div className="relative w-[420px] shrink-0" style={{ height: 'auto' }}>
       {/* Peek cards behind */}
       {[2, 1].map((offset) => {
-        const index = (active + offset) % CARDS.length;
+        const index = (active + offset) % cards.length;
         const depth = offset === 2 ? 2 : 1;
         return (
           <div
@@ -106,7 +111,7 @@ export function DealCardStack() {
             }}
             aria-hidden="true"
           >
-            <DealCard listing={CARDS[index]} photoHeight="h-56" />
+            <DealCard listing={cards[index]} photoHeight="h-56" />
           </div>
         );
       })}
@@ -116,12 +121,12 @@ export function DealCardStack() {
         className="relative transition-all duration-500 ease-in-out"
         style={{ zIndex: 10 }}
       >
-        <DealCard listing={CARDS[active]} photoHeight="h-56" />
+        <DealCard listing={cards[active]} photoHeight="h-56" />
       </div>
 
       {/* Dot indicators */}
       <div className="flex justify-center gap-[6px] mt-4">
-        {CARDS.map((_, i) => (
+        {cards.map((_, i) => (
           <button
             key={i}
             onClick={() => setActive(i)}
