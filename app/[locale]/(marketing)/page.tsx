@@ -124,7 +124,7 @@ export default function HomePage() {
               heroFeatures={assistedHeroFeatures}
               features={assistedFeatures}
               ctaLabel={t('whatYouGet.assistedCta')}
-              ctaHref={`/${locale}/contact`}
+              ctaHref={`/${locale}/sell`}
               highlight
             />
             <PricingCard
@@ -134,7 +134,7 @@ export default function HomePage() {
               heroFeatures={bespokeheroFeatures}
               features={bespokeFeatures}
               ctaLabel={t('whatYouGet.whiteGloveCta')}
-              ctaHref={`/${locale}/contact`}
+              ctaHref={`/${locale}/sell`}
               muted
             />
           </div>
