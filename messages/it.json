@@ -122,6 +122,7 @@
       "emailPlaceholder": "tu@esempio.com",
       "phone": "Numero di telefono",
       "phonePlaceholder": "Opzionale",
+      "phoneExample": "+39 o +351…",
       "message": "Messaggio",
       "messagePlaceholder": "Raccontaci un po' del tuo background e cosa ti interessa di questo annuncio.",
       "submit": "Invia richiesta →",
@@ -135,6 +136,12 @@
         "emailInvalid": "Inserisci un indirizzo email valido.",
         "submitFailed": "Qualcosa è andato storto. Riprova."
       }
+    },
+    "financialRows": {
+      "revenue": "Fatturato (ultimo anno)",
+      "ebitda": "EBITDA (€)",
+      "netProfit": "Margine di profitto netto",
+      "revenueGrowth": "Crescita del fatturato (CAGR 3 anni)"
     },
     "browseDeals": "← Sfoglia annunci",
     "noPhotos": "Nessuna foto",

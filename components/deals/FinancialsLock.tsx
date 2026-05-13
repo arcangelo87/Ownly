@@ -1,20 +1,14 @@
 interface FinancialsLockProps {
   lockedLabel: string;
   lockedDetail: string;
+  ghostRows: string[];
 }
 
-const GHOST_ROWS = [
-  'Revenue (last FY)',
-  'EBITDA (€)',
-  'Net profit margin',
-  'Revenue growth (3yr CAGR)',
-];
-
-export function FinancialsLock({ lockedLabel, lockedDetail }: FinancialsLockProps) {
+export function FinancialsLock({ lockedLabel, lockedDetail, ghostRows }: FinancialsLockProps) {
   return (
     <div className="rounded-md border border-[var(--color-border)] bg-white">
       <div className="divide-y divide-[var(--color-border)] px-5" aria-hidden="true">
-        {GHOST_ROWS.map((label) => (
+        {ghostRows.map((label) => (
           <div key={label} className="flex items-center justify-between py-3">
             <span className="text-[13px] text-[var(--color-muted)] opacity-40 select-none">{label}</span>
             <span className="h-[13px] w-20 rounded bg-[var(--color-border)] opacity-50" />

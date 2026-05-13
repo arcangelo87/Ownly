@@ -122,6 +122,7 @@
       "emailPlaceholder": "you@example.com",
       "phone": "Phone number",
       "phonePlaceholder": "Optional",
+      "phoneExample": "+39 or +351…",
       "message": "Message",
       "messagePlaceholder": "Tell us a little about your background and what interests you about this deal.",
       "submit": "Send enquiry →",
@@ -135,6 +136,12 @@
         "emailInvalid": "Please enter a valid email address.",
         "submitFailed": "Something went wrong. Please try again."
       }
+    },
+    "financialRows": {
+      "revenue": "Revenue (last FY)",
+      "ebitda": "EBITDA (€)",
+      "netProfit": "Net profit margin",
+      "revenueGrowth": "Revenue growth (3yr CAGR)"
     },
     "browseDeals": "← Browse deals",
     "noPhotos": "No photos",

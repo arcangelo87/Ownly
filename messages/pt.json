@@ -122,6 +122,7 @@
       "emailPlaceholder": "voce@exemplo.com",
       "phone": "Número de telefone",
       "phonePlaceholder": "Opcional",
+      "phoneExample": "+39 ou +351…",
       "message": "Mensagem",
       "messagePlaceholder": "Conte-nos um pouco sobre o seu perfil e o que lhe interessa neste anúncio.",
       "submit": "Enviar consulta →",
@@ -135,6 +136,12 @@
         "emailInvalid": "Introduza um endereço de email válido.",
         "submitFailed": "Algo correu mal. Tente novamente."
       }
+    },
+    "financialRows": {
+      "revenue": "Faturação (último ano)",
+      "ebitda": "EBITDA (€)",
+      "netProfit": "Margem de lucro líquido",
+      "revenueGrowth": "Crescimento da faturação (CAGR 3 anos)"
     },
     "browseDeals": "← Ver anúncios",
     "noPhotos": "Sem fotos",

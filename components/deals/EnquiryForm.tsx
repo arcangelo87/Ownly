@@ -91,7 +91,7 @@ export function EnquiryForm({ listingId }: EnquiryFormProps) {
         <FieldRow label={`${t('phone')} (${t('phonePlaceholder').toLowerCase()})`}>
           <Input
             type="tel"
-            placeholder="+39 or +351…"
+            placeholder={t('phoneExample')}
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />

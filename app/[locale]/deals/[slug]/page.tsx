@@ -144,6 +144,12 @@ export default async function DealDetailPage({
               <FinancialsLock
                 lockedLabel={t('sections.financialsLocked')}
                 lockedDetail={t('sections.financialsLockedDetail')}
+                ghostRows={[
+                  t('financialRows.revenue'),
+                  t('financialRows.ebitda'),
+                  t('financialRows.netProfit'),
+                  t('financialRows.revenueGrowth'),
+                ]}
               />
             </section>
 
