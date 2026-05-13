@@ -25,20 +25,6 @@ export function SiteNav() {
           <Logo width={108} />
         </Link>
 
-        {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-7 flex-1 justify-center list-none">
-          {links.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                className="text-[14px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors"
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
         <div className="hidden md:flex items-center gap-4 ml-auto shrink-0">
           <LocaleSwitcher />
           <Link
@@ -71,7 +57,7 @@ export function SiteNav() {
       {/* Mobile dropdown */}
       {open && (
         <div className="md:hidden border-t border-[var(--color-border)] bg-[var(--color-bg)] px-6 pb-6 pt-4 flex flex-col gap-1">
-          {links.map(({ href, label }) => (
+          {links.filter(l => !l.href.endsWith('/about')).map(({ href, label }) => (
             <Link
               key={href}
               href={href}

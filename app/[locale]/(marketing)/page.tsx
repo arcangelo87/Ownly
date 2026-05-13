@@ -57,12 +57,20 @@ export default function HomePage() {
               {t('hero.sub')}
             </p>
             <p className="text-[14px] text-[var(--color-muted)] mb-8">{t('hero.supporting')}</p>
-            <Link
-              href={`/${locale}/sell`}
-              className="inline-flex items-center px-7 py-3.5 bg-[var(--color-accent)] text-white text-[15px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
-            >
-              {t('hero.cta')}
-            </Link>
+            <div className="flex items-center gap-5 flex-wrap">
+              <Link
+                href={`/${locale}/sell`}
+                className="inline-flex items-center px-7 py-3.5 bg-[var(--color-accent)] text-white text-[15px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
+              >
+                {t('hero.cta')}
+              </Link>
+              <Link
+                href={`/${locale}/deals`}
+                className="text-[15px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors underline underline-offset-4"
+              >
+                {t('hero.browseCta')}
+              </Link>
+            </div>
           </div>
           <div className="flex justify-center">
             <Suspense fallback={<DealCardStack />}>
