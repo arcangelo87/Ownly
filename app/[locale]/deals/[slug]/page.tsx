@@ -30,7 +30,7 @@ export default async function DealDetailPage({
   const { data: listing, error } = await admin
     .from('listings')
     .select(
-      'id, slug, title, about, highlights, buyer_tags, owner_involvement, business_name, business_description, strongest_point, sector, region, country, year_founded, revenue_range, ebitda_margin, employee_count, asking_price, partial_sale, timeline, reasons_for_sale, created_at',
+      'id, slug, title, about, highlights, buyer_tags, owner_involvement, business_name, business_description, strongest_point, sector, region, country, year_founded, revenue_range, ebitda_margin, employee_count, asking_price, partial_sale, timeline, reasons_for_sale, created_at, title_it, title_pt, about_it, about_pt, highlights_it, highlights_pt, buyer_tags_it, buyer_tags_pt, strongest_point_it, strongest_point_pt',
     )
     .eq('slug', slug)
     .eq('status', 'live')
@@ -50,6 +50,13 @@ export default async function DealDetailPage({
       .getPublicUrl(`${listing.id}/${file.name}`);
     return data.publicUrl;
   });
+
+  const l = locale as 'en' | 'it' | 'pt';
+  const localTitle = (l === 'it' ? listing.title_it : l === 'pt' ? listing.title_pt : null) ?? listing.title;
+  const localAbout = (l === 'it' ? listing.about_it : l === 'pt' ? listing.about_pt : null) ?? listing.about ?? listing.business_description;
+  const localHighlights = (l === 'it' ? listing.highlights_it : l === 'pt' ? listing.highlights_pt : null) ?? listing.highlights;
+  const localStrongestPoint = (l === 'it' ? listing.strongest_point_it : l === 'pt' ? listing.strongest_point_pt : null) ?? listing.strongest_point;
+  const localBuyerTags = (l === 'it' ? listing.buyer_tags_it : l === 'pt' ? listing.buyer_tags_pt : null) ?? listing.buyer_tags;
 
   const dateLabel = new Date(listing.created_at).toLocaleDateString(
     locale === 'en' ? 'en-GB' : locale,
@@ -89,7 +96,7 @@ export default async function DealDetailPage({
             </div>
 
             <h1 className="mt-3 font-serif text-[28px] font-medium leading-[1.2] tracking-[-0.02em]">
-              {listing.title ?? listing.business_name ?? (listing.sector ? t(`sectors.${listing.sector}`) : '')}
+              {localTitle ?? listing.business_name ?? (listing.sector ? t(`sectors.${listing.sector}`) : '')}
             </h1>
 
             <div className="mt-6 grid grid-cols-3 gap-2.5 sm:grid-cols-6">
@@ -101,31 +108,31 @@ export default async function DealDetailPage({
               <MetricChip label={t('metrics.ownerInvolvement')} value={listing.owner_involvement ? t(`ownerInvolvementValues.${listing.owner_involvement}`) : '—'} />
             </div>
 
-            {(listing.about ?? listing.business_description) && (
+            {localAbout && (
               <section className="mt-10">
                 <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)]">
                   {t('sections.about')}
                 </p>
-                <p className="text-[14px] leading-[1.75] text-[var(--color-text)]">{listing.about ?? listing.business_description}</p>
+                <p className="text-[14px] leading-[1.75] text-[var(--color-text)]">{localAbout}</p>
               </section>
             )}
 
-            {(listing.highlights?.length || listing.strongest_point) && (
+            {(localHighlights?.length || localStrongestPoint) && (
               <section className="mt-8">
                 <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)]">
                   {t('sections.highlights')}
                 </p>
-                <HighlightsList items={listing.highlights?.length ? listing.highlights : [listing.strongest_point!]} />
+                <HighlightsList items={localHighlights?.length ? localHighlights : [localStrongestPoint!]} />
               </section>
             )}
 
-            {listing.buyer_tags && listing.buyer_tags.length > 0 && (
+            {localBuyerTags && localBuyerTags.length > 0 && (
               <section className="mt-8">
                 <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)]">
                   {t('browse.card.bestFor')}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {listing.buyer_tags.map((tag: string) => (
+                  {localBuyerTags.map((tag: string) => (
                     <span
                       key={tag}
                       className="rounded bg-[var(--color-surface)] px-2.5 py-1 text-[13px] text-[var(--color-text)]"

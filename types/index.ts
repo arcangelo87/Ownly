@@ -39,6 +39,18 @@ export interface Listing {
   about: string | null;
   highlights: string[] | null;
   buyer_tags: string[] | null;
+
+  // Translations
+  title_it: string | null;
+  title_pt: string | null;
+  about_it: string | null;
+  about_pt: string | null;
+  highlights_it: string[] | null;
+  highlights_pt: string[] | null;
+  buyer_tags_it: string[] | null;
+  buyer_tags_pt: string[] | null;
+  strongest_point_it: string | null;
+  strongest_point_pt: string | null;
 }
 
 export type EnquiryStatus = 'new' | 'reviewed' | 'forwarded' | 'closed';
