@@ -1,160 +1,255 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
+import { Suspense } from 'react';
+import { PricingCard } from '@/components/marketing/PricingCard';
 import { DealCardStack } from '@/components/marketing/DealCardStack';
-import { StepList } from '@/components/marketing/StepList';
+import { DealCardStackLoader } from '@/components/marketing/DealCardStackLoader';
+import { TwoColumnTable } from '@/components/marketing/TwoColumnTable';
 import { CtaBanner } from '@/components/marketing/CtaBanner';
 
+export const dynamic = 'force-dynamic';
+
 export default function HomePage() {
-  const t = useTranslations('home');
+  const t = useTranslations('sellers');
   const locale = useLocale();
 
-  const howSteps = [
-    { label: t('how.step1Label'), description: t('how.step1Desc') },
-    { label: t('how.step2Label'), description: t('how.step2Desc') },
-    { label: t('how.step3Label'), description: t('how.step3Desc') },
+  const freeHeroFeatures = [
+    t('whatYouGet.free1'),
+    t('whatYouGet.free2'),
+  ];
+
+  const freeFeatures = [
+    t('whatYouGet.free5'),
+  ];
+
+  const assistedHeroFeatures = [
+    t('whatYouGet.assistedHero1'),
+    t('whatYouGet.assistedHero2'),
+    t('whatYouGet.assistedHero3'),
+  ];
+
+  const assistedFeatures = [
+    t('whatYouGet.assisted1'),
+    t('whatYouGet.assisted2'),
+    t('whatYouGet.assisted3'),
+  ];
+
+  const bespokeheroFeatures = [
+    t('whatYouGet.whiteGloveHero1'),
+    t('whatYouGet.whiteGloveHero2'),
+  ];
+
+  const bespokeFeatures = [
+    t('whatYouGet.whiteGlove1'),
+    t('whatYouGet.whiteGlove2'),
+  ];
+
+  const problemIcons = [
+    /* "How do I explain my business to a stranger?" — document/presentation */
+    <svg key="explain" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="6" y="3" width="20" height="26" rx="2" />
+      <line x1="11" y1="10" x2="21" y2="10" />
+      <line x1="11" y1="15" x2="21" y2="15" />
+      <line x1="11" y1="20" x2="17" y2="20" />
+    </svg>,
+    /* "Where do serious buyers actually look?" — magnifying glass */
+    <svg key="buyers" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="14" cy="14" r="8" />
+      <line x1="20" y1="20" x2="27" y2="27" />
+    </svg>,
+    /* "What if my staff find out before I'm ready?" — shield */
+    <svg key="privacy" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M16 3L5 8v9c0 7 5.5 13.5 11 15 5.5-1.5 11-8 11-15V8L16 3z" />
+      <line x1="16" y1="13" x2="16" y2="19" />
+      <circle cx="16" cy="22" r="1" fill="currentColor" stroke="none" />
+    </svg>,
   ];
 
   return (
     <>
       {/* ── Hero ── */}
       <section className="py-20 md:py-28 px-6 bg-[var(--color-bg)]">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <div>
-              <span className="inline-block text-[11px] font-bold tracking-[0.12em] uppercase text-[var(--color-accent)] mb-5">
-                {t('hero.eyebrow')}
-              </span>
-              <h1 className="font-[family-name:var(--font-serif)] text-[40px] md:text-[52px] font-semibold leading-[1.15] tracking-[-0.02em] text-[var(--color-text)] mb-5">
-                {t('hero.h1')}
-              </h1>
-              <p className="text-[17px] text-[var(--color-muted)] leading-[1.65] mb-8 max-w-[520px]">
-                <strong className="text-[var(--color-text)] font-normal">{t('hero.subBold')}</strong>{' '}
-                {t('hero.subRest')}
-              </p>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <Link
-                  href={`/${locale}/sell`}
-                  className="inline-flex items-center px-6 py-3 bg-[var(--color-accent)] text-white text-[15px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
-                >
-                  {t('hero.cta')}
-                </Link>
-                <Link
-                  href={`/${locale}/brokers`}
-                  className="text-[14px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors"
-                >
-                  {t('hero.ctaSecondary')}
-                </Link>
-              </div>
+        <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 className="font-[family-name:var(--font-serif)] text-[44px] md:text-[56px] font-semibold leading-[1.15] tracking-[-0.02em] text-[var(--color-text)] mb-5">
+              {t('hero.h1')}
+            </h1>
+            <p className="text-[18px] text-[var(--color-muted)] leading-[1.65] mb-3">
+              {t('hero.sub')}
+            </p>
+            <p className="text-[14px] text-[var(--color-muted)] mb-8">{t('hero.supporting')}</p>
+            <div className="flex items-center gap-5 flex-wrap">
+              <Link
+                href={`/${locale}/sell`}
+                className="inline-flex items-center px-7 py-3.5 bg-[var(--color-accent)] text-white text-[15px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
+              >
+                {t('hero.cta')}
+              </Link>
+              <Link
+                href={`/${locale}/deals`}
+                className="text-[15px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors underline underline-offset-4"
+              >
+                {t('hero.browseCta')}
+              </Link>
             </div>
-
-            <div className="flex justify-center md:justify-end">
-              <DealCardStack />
-            </div>
+          </div>
+          <div className="flex justify-center">
+            <Suspense fallback={<DealCardStack />}>
+              <DealCardStackLoader />
+            </Suspense>
           </div>
         </div>
       </section>
 
-      {/* ── The Problem ── */}
+      {/* ── Problem cards ── */}
       <section className="py-20 px-6 bg-[var(--color-surface)]">
         <div className="mx-auto max-w-6xl">
-          <blockquote className="font-[family-name:var(--font-serif)] text-[clamp(22px,3vw,34px)] font-normal italic leading-[1.45] text-[var(--color-text)] max-w-[780px] mb-8">
-            &ldquo;{t('problem.sellersQuote')}&rdquo;
-          </blockquote>
-          <p className="text-[15px] text-[var(--color-muted)] leading-[1.7] max-w-[520px] mb-14 pl-5 border-l-2 border-[var(--color-accent)]">
-            {t('problem.response1')}<br />
-            {t('problem.response2')}<br />
-            {t('problem.response3')}
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[600px]">
-            <div className="flex flex-col gap-3">
-              <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-[var(--color-accent)]">
-                {t('problem.brokersLabel')}
-              </span>
-              <p className="text-[14px] text-[var(--color-muted)] italic leading-[1.6]">
-                &ldquo;{t('problem.brokersQuote')}&rdquo;
-              </p>
-            </div>
-            <div className="flex flex-col gap-3">
-              <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-[var(--color-accent)]">
-                {t('problem.buyersLabel')}
-              </span>
-              <p className="text-[14px] text-[var(--color-muted)] italic leading-[1.6]">
-                &ldquo;{t('problem.buyersQuote')}&rdquo;
-              </p>
-            </div>
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
+            {t('problem.heading')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {([
+              [t('problem.card1Title'), t('problem.card1Body')],
+              [t('problem.card2Title'), t('problem.card2Body')],
+              [t('problem.card3Title'), t('problem.card3Body')],
+            ] as [string, string][]).map(([title, body], i) => (
+              <div
+                key={title}
+                className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-[8px] p-6"
+              >
+                <div className="text-[var(--color-accent)] mb-4">{problemIcons[i]}</div>
+                <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)] mb-3">
+                  {title}
+                </h3>
+                <p className="text-[14px] text-[var(--color-muted)] leading-[1.65]">{body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── How it works ── */}
+      {/* ── What you get / Pricing ── */}
       <section className="py-20 md:py-24 px-6 bg-[var(--color-bg)]">
         <div className="mx-auto max-w-6xl">
-          <h2 className="font-[family-name:var(--font-serif)] text-[32px] md:text-[36px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-14">
-            {t('how.heading')}
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
+            {t('whatYouGet.heading')}
           </h2>
-          <StepList steps={howSteps} />
-          <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-5">
-            <p className="text-[14px] text-[var(--color-muted)]">{t('how.reassurance')}</p>
-            <Link
-              href={`/${locale}/sell`}
-              className="shrink-0 text-[14px] font-medium text-[var(--color-accent)] hover:opacity-80 transition-opacity"
-            >
-              {t('how.cta')}
-            </Link>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <PricingCard
+              heading={t('whatYouGet.freeHeading')}
+              tagline={t('whatYouGet.freeTagline')}
+              price={t('whatYouGet.freePrice')}
+              heroFeatures={freeHeroFeatures}
+              features={freeFeatures}
+              ctaLabel={t('whatYouGet.freeCta')}
+              ctaHref={`/${locale}/sell`}
+            />
+            <PricingCard
+              heading={t('whatYouGet.assistedHeading')}
+              tagline={t('whatYouGet.assistedTagline')}
+              badge={t('whatYouGet.assistedBadge')}
+              price={t('whatYouGet.assistedPrice')}
+              priceStrike={t('whatYouGet.assistedPriceStrike')}
+              priceNote={t('whatYouGet.assistedNote')}
+              heroFeatures={assistedHeroFeatures}
+              features={assistedFeatures}
+              ctaLabel={t('whatYouGet.assistedCta')}
+              ctaHref={`/${locale}/contact`}
+              highlight
+            />
+            <PricingCard
+              heading={t('whatYouGet.whiteGloveHeading')}
+              tagline={t('whatYouGet.whiteGloveTagline')}
+              price={t('whatYouGet.whiteGlovePrice')}
+              heroFeatures={bespokeheroFeatures}
+              features={bespokeFeatures}
+              ctaLabel={t('whatYouGet.whiteGloveCta')}
+              ctaHref={`/${locale}/contact`}
+              muted
+            />
           </div>
         </div>
       </section>
 
-      {/* ── Why Bottega ── */}
-      <section className="py-20 md:py-24 px-6 bg-[var(--color-surface)]">
+      {/* ── Privacy ── */}
+      <section className="py-20 px-6 bg-[var(--color-surface)]">
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
             <div>
               <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-6">
-                {t('why.heading')}
+                {t('privacy.heading')}
               </h2>
               <p className="text-[15px] text-[var(--color-muted)] leading-[1.7] mb-4">
-                {t('why.prose1')}
+                {t('privacy.prose1')}
               </p>
               <p className="text-[15px] text-[var(--color-muted)] leading-[1.7]">
-                {t('why.prose2')}
+                {t('privacy.prose2')}
               </p>
             </div>
-
-            <div className="grid grid-cols-3 gap-8">
-              {([
-                [t('why.stat1Value'), t('why.stat1Label')],
-                [t('why.stat2Value'), t('why.stat2Label')],
-                [t('why.stat3Value'), t('why.stat3Label')],
-              ] as [string, string][]).map(([value, label]) => (
-                <div key={value} className="flex flex-col gap-2">
-                  <span className="font-[family-name:var(--font-serif)] text-[22px] font-semibold text-[var(--color-text)] tracking-[-0.01em]">
-                    {value}
-                  </span>
-                  <span className="text-[13px] text-[var(--color-muted)] leading-[1.4]">{label}</span>
-                </div>
-              ))}
-            </div>
+            <TwoColumnTable
+              col1Heading={t('privacy.publicHeading')}
+              col2Heading={t('privacy.protectedHeading')}
+              col1Icon={
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <ellipse cx="11" cy="11" rx="9" ry="5.5" />
+                  <circle cx="11" cy="11" r="2.5" />
+                </svg>
+              }
+              col2Icon={
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="5" y="10" width="12" height="9" rx="2" />
+                  <path d="M8 10V7a3 3 0 0 1 6 0v3" />
+                  <circle cx="11" cy="14.5" r="1" fill="currentColor" stroke="none" />
+                </svg>
+              }
+              col1Items={[
+                t('privacy.public1'),
+                t('privacy.public2'),
+                t('privacy.public3'),
+                t('privacy.public4'),
+                t('privacy.public5'),
+              ]}
+              col2Items={[
+                t('privacy.protected1'),
+                t('privacy.protected2'),
+                t('privacy.protected3'),
+                t('privacy.protected4'),
+              ]}
+            />
           </div>
         </div>
       </section>
 
-      {/* ── For Brokers ── */}
-      <section className="py-16 px-6 bg-[var(--color-bg)]">
+      {/* ── Customer quotes ── */}
+      <section className="py-20 md:py-24 px-6 bg-[var(--color-bg)]">
         <div className="mx-auto max-w-6xl">
-          <div className="max-w-xl">
-            <h2 className="font-[family-name:var(--font-serif)] text-[24px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-3">
-              {t('brokers.heading')}
-            </h2>
-            <p className="text-[15px] text-[var(--color-muted)] leading-[1.65] mb-5">
-              {t('brokers.body')}
-            </p>
-            <Link
-              href={`/${locale}/brokers`}
-              className="text-[14px] font-medium text-[var(--color-accent)] hover:opacity-80 transition-opacity"
-            >
-              {t('brokers.cta')}
-            </Link>
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
+            {t('quotes.heading')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {([
+              /* REPLACE WITH REAL QUOTE */
+              [t('quotes.quote1Text'), t('quotes.quote1Name'), t('quotes.quote1Meta')],
+              /* REPLACE WITH REAL QUOTE */
+              [t('quotes.quote2Text'), t('quotes.quote2Name'), t('quotes.quote2Meta')],
+              /* REPLACE WITH REAL QUOTE */
+              [t('quotes.quote3Text'), t('quotes.quote3Name'), t('quotes.quote3Meta')],
+              /* REPLACE WITH REAL QUOTE */
+              [t('quotes.quote4Text'), t('quotes.quote4Name'), t('quotes.quote4Meta')],
+            ] as [string, string, string][]).map(([quote, name, meta]) => (
+              <div
+                key={name}
+                className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[8px] p-8 flex flex-col gap-6"
+              >
+                <p className="font-[family-name:var(--font-serif)] text-[18px] italic leading-[1.6] text-[var(--color-text)]">
+                  &ldquo;{quote}&rdquo;
+                </p>
+                <div>
+                  <p className="text-[14px] font-medium text-[var(--color-text)]">{name}</p>
+                  <p className="text-[13px] text-[var(--color-muted)]">{meta}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -162,7 +257,7 @@ export default function HomePage() {
       {/* ── Footer CTA ── */}
       <CtaBanner
         heading={t('cta.heading')}
-        subheading={t('cta.sub')}
+        subheading={t('cta.supporting')}
         ctaLabel={t('cta.button')}
         ctaHref={`/${locale}/sell`}
       />
