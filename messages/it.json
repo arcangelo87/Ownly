@@ -432,7 +432,42 @@
       "submitFailed": "Qualcosa è andato storto. Riprova."
     }
   },
-  "seller": {
+  "privacyPage": {
+    "title": "Informativa sulla Privacy",
+    "lastUpdated": "Ultimo aggiornamento: maggio 2026",
+    "s1Heading": "Chi siamo",
+    "s1Body": "Bottega Ventures Lda è il gestore di questa piattaforma. Mettiamo in contatto imprenditori in Italia e Portogallo con acquirenti qualificati. Il nostro indirizzo registrato e i recapiti sono disponibili su richiesta a privacy@bottegaventures.com.",
+    "s2Heading": "Cosa raccogliamo",
+    "s2Body": "Per i venditori: nome dell'azienda (opzionale), paese, regione, settore, anno di fondazione, indirizzo email, numero di telefono e descrizione dell'azienda. Per gli acquirenti: nome, indirizzo email, numero di telefono (opzionale) e messaggio di richiesta. Raccogliamo anche dati di utilizzo di base (visualizzazioni di pagina, tipo di browser) tramite analytics.",
+    "s3Heading": "Come utilizziamo le tue informazioni",
+    "s3Body": "Le informazioni dei venditori sono utilizzate per creare e pubblicare il tuo annuncio su Bottega e per contattarti riguardo al tuo annuncio. Le informazioni degli acquirenti sono utilizzate per instradare la tua richiesta al venditore pertinente e per seguire la pratica per tuo conto. Non utilizziamo le tue informazioni per pubblicità e non le vendiamo a terzi.",
+    "s4Heading": "Con chi le condividiamo",
+    "s4Body": "I dati di contatto dei venditori e le informazioni sensibili vengono condivisi solo con acquirenti che hanno firmato un accordo di riservatezza. Le informazioni della richiesta dell'acquirente (nome, email, messaggio) vengono condivise con il venditore pertinente. Utilizziamo Supabase (ospitato nell'UE) per l'archiviazione dei dati e potremmo utilizzare Resend per le email transazionali.",
+    "s5Heading": "Conservazione dei dati",
+    "s5Body": "I dati degli annunci vengono conservati per tutta la durata dell'annuncio, più 12 mesi dopo il ritiro. I dati delle richieste vengono conservati per 24 mesi. Puoi richiedere la cancellazione in qualsiasi momento inviando un'email a privacy@bottegaventures.com.",
+    "s6Heading": "I tuoi diritti",
+    "s6Body": "Ai sensi del GDPR, hai il diritto di accedere, correggere o cancellare i tuoi dati personali. Puoi anche opporti al trattamento o richiedere una copia dei tuoi dati in formato portabile. Per esercitare questi diritti, contatta privacy@bottegaventures.com. Hai anche il diritto di presentare un reclamo alla tua autorità nazionale per la protezione dei dati.",
+    "s7Heading": "Cookie",
+    "s7Body": "Utilizziamo cookie di sessione necessari per il funzionamento della piattaforma. Non utilizziamo cookie di tracciamento o cookie pubblicitari di terze parti. I dati di analytics sono aggregati e non collegati a singoli utenti."
+  },
+  "termsPage": {
+    "title": "Termini di Servizio",
+    "lastUpdated": "Ultimo aggiornamento: maggio 2026",
+    "s1Heading": "Informazioni su Bottega",
+    "s1Body": "Bottega è una piattaforma di presentazione di deal. Aiutiamo gli imprenditori a creare pagine di annuncio strutturate e a metterle di fronte ad acquirenti qualificati. Non siamo un mediatore, agente o consulente finanziario. Non percepiamo commissioni di successo, non gestiamo fondi dei clienti e non rappresentiamo nessuna delle parti in una transazione.",
+    "s2Heading": "Responsabilità del venditore",
+    "s2Body": "Inviando un annuncio, confermi che le informazioni fornite sono accurate e non fuorvianti. Sei responsabile del contenuto del tuo annuncio. Bottega può modificare gli annunci per chiarezza e presentazione, ma i fatti sottostanti rimangono di tua responsabilità. Non includere informazioni riservate, diffamatorie o legalmente limitate.",
+    "s3Heading": "Responsabilità dell'acquirente",
+    "s3Body": "Inviando una richiesta, confermi di essere un potenziale acquirente genuino con la capacità finanziaria per completare un'acquisizione. Accetti di non contattare i venditori al di fuori della piattaforma Bottega e di non condividere le informazioni degli annunci con terzi senza previo consenso scritto.",
+    "s4Heading": "Nessuna garanzia di transazione",
+    "s4Body": "Bottega non garantisce che un annuncio si traduca in una transazione completata. Non verifichiamo l'accuratezza dei dati finanziari forniti dai venditori. Si consiglia a tutti gli acquirenti di condurre una due diligence indipendente prima di prendere qualsiasi decisione di acquisizione.",
+    "s5Heading": "Rimozione degli annunci",
+    "s5Body": "Bottega si riserva il diritto di rimuovere qualsiasi annuncio che contenga contenuti inaccurati, fuorvianti o inappropriati, o che violi questi termini. I venditori possono ritirare il proprio annuncio in qualsiasi momento contattandoci.",
+    "s6Heading": "Limitazione di responsabilità",
+    "s6Body": "Nella misura massima consentita dalla legge, Bottega non è responsabile per perdite o danni derivanti dall'uso di questa piattaforma, dall'affidamento sul contenuto degli annunci o dall'esito di qualsiasi transazione. La nostra responsabilità totale nei confronti di qualsiasi utente non supererà le commissioni pagate da tale utente nei 12 mesi precedenti la richiesta.",
+    "s7Heading": "Legge applicabile",
+    "s7Body": "Questi termini sono regolati dalle leggi del Portogallo. Qualsiasi controversia sarà soggetta alla giurisdizione esclusiva dei tribunali di Lisbona, Portogallo."
+  },
     "steps": {
       "step1": "Informazioni di base",
       "step2": "Dimensioni e team",

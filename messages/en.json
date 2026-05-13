@@ -432,7 +432,42 @@
       "submitFailed": "Something went wrong. Please try again."
     }
   },
-  "seller": {
+  "privacyPage": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: May 2026",
+    "s1Heading": "Who we are",
+    "s1Body": "Bottega Ventures Lda is the operator of this platform. We connect business owners in Italy and Portugal with qualified buyers. Our registered address and contact details are available on request at privacy@bottegaventures.com.",
+    "s2Heading": "What we collect",
+    "s2Body": "For sellers: business name (optional), country, region, sector, year founded, email address, phone number, and business description. For buyers: name, email address, phone number (optional), and enquiry message. We also collect basic usage data (page views, browser type) via analytics.",
+    "s3Heading": "How we use your information",
+    "s3Body": "Seller information is used to create and publish your listing on Bottega and to contact you about your listing. Buyer information is used to route your enquiry to the relevant seller and to follow up on your behalf. We do not use your information for advertising or sell it to third parties.",
+    "s4Heading": "Who we share it with",
+    "s4Body": "Seller contact details and sensitive information are shared only with buyers who have signed a confidentiality agreement. Buyer enquiry information (name, email, message) is shared with the relevant seller. We use Supabase (EU-hosted) for data storage and may use Resend for transactional email.",
+    "s5Heading": "Data retention",
+    "s5Body": "Listing data is retained for as long as your listing is active, plus 12 months after withdrawal. Enquiry data is retained for 24 months. You may request deletion at any time by emailing privacy@bottegaventures.com.",
+    "s6Heading": "Your rights",
+    "s6Body": "Under GDPR, you have the right to access, correct, or delete your personal data. You may also object to processing or request a copy of your data in a portable format. To exercise these rights, contact privacy@bottegaventures.com. You also have the right to lodge a complaint with your national data protection authority.",
+    "s7Heading": "Cookies",
+    "s7Body": "We use session cookies required for the platform to function. We do not use tracking cookies or third-party advertising cookies. Analytics data is aggregated and not linked to individual users."
+  },
+  "termsPage": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: May 2026",
+    "s1Heading": "About Bottega",
+    "s1Body": "Bottega is a deal presentation platform. We help business owners create structured listing pages and put them in front of qualified buyers. We are not a broker, agent, or financial advisor. We do not take success fees, hold client funds, or represent either party in a transaction.",
+    "s2Heading": "Seller responsibilities",
+    "s2Body": "By submitting a listing, you confirm that the information provided is accurate and not misleading. You are responsible for the content of your listing. Bottega may edit listings for clarity and presentation, but the underlying facts remain your responsibility. Do not include information that is confidential, defamatory, or legally restricted.",
+    "s3Heading": "Buyer responsibilities",
+    "s3Body": "By submitting an enquiry, you confirm that you are a genuine prospective buyer with the financial capacity to complete an acquisition. You agree not to contact sellers outside the Bottega platform or to share listing information with third parties without prior written consent.",
+    "s4Heading": "No transaction guarantee",
+    "s4Body": "Bottega does not guarantee that any listing will result in a completed transaction. We do not verify the accuracy of seller-provided financials. All buyers are advised to conduct independent due diligence before making any acquisition decision.",
+    "s5Heading": "Listing removal",
+    "s5Body": "Bottega reserves the right to remove any listing that contains inaccurate, misleading, or inappropriate content, or that violates these terms. Sellers may withdraw their listing at any time by contacting us.",
+    "s6Heading": "Limitation of liability",
+    "s6Body": "To the fullest extent permitted by law, Bottega is not liable for any loss or damage arising from the use of this platform, reliance on listing content, or the outcome of any transaction. Our total liability to any user shall not exceed the fees paid by that user in the 12 months preceding the claim.",
+    "s7Heading": "Governing law",
+    "s7Body": "These terms are governed by the laws of Portugal. Any disputes shall be subject to the exclusive jurisdiction of the courts of Lisbon, Portugal."
+  },
     "steps": {
       "step1": "Business basics",
       "step2": "Size & team",
