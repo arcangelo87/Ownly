@@ -70,6 +70,31 @@
       "advisory": "Consulenziale (5–20 ore/sett.)",
       "minimal": "Minimo (<5 ore/sett.)"
     },
+    "timelineValues": {
+      "ready_now": "Pronto subito",
+      "6_12_months": "6–12 mesi",
+      "1_2_years": "1–2 anni",
+      "exploring": "Solo esplorando"
+    },
+    "employeeValues": {
+      "just_me": "Solo io",
+      "2_5": "2–5",
+      "6_15": "6–15",
+      "16_30": "16–30",
+      "30_plus": "30+"
+    },
+    "partialSaleValues": {
+      "open_to_minority": "Aperto a vendita parziale",
+      "full_sale_only": "Solo vendita completa"
+    },
+    "reasonValues": {
+      "retirement": "Pensionamento",
+      "growth_capital": "Capitale di crescita",
+      "no_succession": "Nessun piano di successione",
+      "health_personal": "Salute / personale",
+      "market_opportunity": "Opportunità di mercato",
+      "other": "Altro"
+    },
     "countries": {
       "IT": "Italia",
       "PT": "Portogallo"

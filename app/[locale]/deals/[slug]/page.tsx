@@ -10,13 +10,9 @@ import { DealBasicsCard } from '@/components/deals/DealBasicsCard';
 import { EnquiryForm } from '@/components/deals/EnquiryForm';
 import { PhotoStrip } from '@/components/deals/PhotoStrip';
 import {
-  SECTOR_LABELS,
   formatRevenue,
   formatEbitda,
   formatPrice,
-  formatEmployees,
-  formatTimeline,
-  formatOwnerInvolvement,
 } from '@/lib/format';
 import type { Listing } from '@/types';
 
@@ -67,6 +63,11 @@ export default async function DealDetailPage({
     yearFounded: t('dealBasics.yearFounded'),
     saleStructure: t('dealBasics.saleStructure'),
     reasonsForSale: t('dealBasics.reasonsForSale'),
+    countryName: listing.country ? t(`countries.${listing.country}`) : '—',
+    saleStructureValue: listing.partial_sale ? t(`partialSaleValues.${listing.partial_sale}`) : '—',
+    reasonsForSaleValue: listing.reasons_for_sale?.length
+      ? (listing.reasons_for_sale as string[]).map((r) => t(`reasonValues.${r}`)).join(', ')
+      : '—',
   };
 
   return (
@@ -82,22 +83,22 @@ export default async function DealDetailPage({
 
             <div className="mt-5 flex items-center justify-between">
               <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--color-accent)]">
-                {SECTOR_LABELS[listing.sector ?? ''] ?? listing.sector}
+                {listing.sector ? t(`sectors.${listing.sector}`) : ''}
               </span>
               <span className="text-[12px] text-[var(--color-muted)]">{dateLabel}</span>
             </div>
 
             <h1 className="mt-3 font-serif text-[28px] font-medium leading-[1.2] tracking-[-0.02em]">
-              {listing.title ?? listing.business_name ?? (SECTOR_LABELS[listing.sector ?? ''] ?? listing.sector)}
+              {listing.title ?? listing.business_name ?? (listing.sector ? t(`sectors.${listing.sector}`) : '')}
             </h1>
 
             <div className="mt-6 grid grid-cols-3 gap-2.5 sm:grid-cols-6">
               <MetricChip label={t('metrics.revenue')} value={formatRevenue(listing.revenue_range)} />
               <MetricChip label={t('metrics.ebitda')} value={formatEbitda(listing.ebitda_margin)} />
               <MetricChip label={t('metrics.askingPrice')} value={formatPrice(listing.asking_price)} />
-              <MetricChip label={t('metrics.employees')} value={formatEmployees(listing.employee_count)} />
-              <MetricChip label={t('metrics.timeline')} value={formatTimeline(listing.timeline)} />
-              <MetricChip label={t('metrics.ownerInvolvement')} value={formatOwnerInvolvement(listing.owner_involvement)} />
+              <MetricChip label={t('metrics.employees')} value={listing.employee_count ? t(`employeeValues.${listing.employee_count}`) : '—'} />
+              <MetricChip label={t('metrics.timeline')} value={listing.timeline ? t(`timelineValues.${listing.timeline}`) : '—'} />
+              <MetricChip label={t('metrics.ownerInvolvement')} value={listing.owner_involvement ? t(`ownerInvolvementValues.${listing.owner_involvement}`) : '—'} />
             </div>
 
             {(listing.about ?? listing.business_description) && (

@@ -70,6 +70,31 @@
       "advisory": "Advisory (5–20 hrs/wk)",
       "minimal": "Minimal (<5 hrs/wk)"
     },
+    "timelineValues": {
+      "ready_now": "Ready now",
+      "6_12_months": "6–12 months",
+      "1_2_years": "1–2 years",
+      "exploring": "Just exploring"
+    },
+    "employeeValues": {
+      "just_me": "Just me",
+      "2_5": "2–5",
+      "6_15": "6–15",
+      "16_30": "16–30",
+      "30_plus": "30+"
+    },
+    "partialSaleValues": {
+      "open_to_minority": "Open to partial sale",
+      "full_sale_only": "Full sale only"
+    },
+    "reasonValues": {
+      "retirement": "Retirement",
+      "growth_capital": "Growth capital",
+      "no_succession": "No succession",
+      "health_personal": "Health / personal",
+      "market_opportunity": "Market opportunity",
+      "other": "Other"
+    },
     "countries": {
       "IT": "Italy",
       "PT": "Portugal"

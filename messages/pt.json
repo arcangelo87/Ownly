@@ -70,6 +70,31 @@
       "advisory": "Consultivo (5–20 h/sem)",
       "minimal": "Mínimo (<5 h/sem)"
     },
+    "timelineValues": {
+      "ready_now": "Pronto agora",
+      "6_12_months": "6–12 meses",
+      "1_2_years": "1–2 anos",
+      "exploring": "Apenas a explorar"
+    },
+    "employeeValues": {
+      "just_me": "Apenas eu",
+      "2_5": "2–5",
+      "6_15": "6–15",
+      "16_30": "16–30",
+      "30_plus": "30+"
+    },
+    "partialSaleValues": {
+      "open_to_minority": "Aberto a venda parcial",
+      "full_sale_only": "Apenas venda total"
+    },
+    "reasonValues": {
+      "retirement": "Reforma",
+      "growth_capital": "Capital de crescimento",
+      "no_succession": "Sem plano de sucessão",
+      "health_personal": "Saúde / pessoal",
+      "market_opportunity": "Oportunidade de mercado",
+      "other": "Outro"
+    },
     "countries": {
       "IT": "Itália",
       "PT": "Portugal"
