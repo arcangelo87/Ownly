@@ -128,49 +128,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── What you get / Pricing ── */}
-      <section className="py-20 md:py-24 px-6 bg-[var(--color-bg)]">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
-            {t('whatYouGet.heading')}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <PricingCard
-              heading={t('whatYouGet.freeHeading')}
-              tagline={t('whatYouGet.freeTagline')}
-              price={t('whatYouGet.freePrice')}
-              heroFeatures={freeHeroFeatures}
-              features={freeFeatures}
-              ctaLabel={t('whatYouGet.freeCta')}
-              ctaHref={`/${locale}/sell`}
-            />
-            <PricingCard
-              heading={t('whatYouGet.assistedHeading')}
-              tagline={t('whatYouGet.assistedTagline')}
-              badge={t('whatYouGet.assistedBadge')}
-              price={t('whatYouGet.assistedPrice')}
-              priceStrike={t('whatYouGet.assistedPriceStrike')}
-              priceNote={t('whatYouGet.assistedNote')}
-              heroFeatures={assistedHeroFeatures}
-              features={assistedFeatures}
-              ctaLabel={t('whatYouGet.assistedCta')}
-              ctaHref={`/${locale}/contact`}
-              highlight
-            />
-            <PricingCard
-              heading={t('whatYouGet.whiteGloveHeading')}
-              tagline={t('whatYouGet.whiteGloveTagline')}
-              price={t('whatYouGet.whiteGlovePrice')}
-              heroFeatures={bespokeheroFeatures}
-              features={bespokeFeatures}
-              ctaLabel={t('whatYouGet.whiteGloveCta')}
-              ctaHref={`/${locale}/contact`}
-              muted
-            />
-          </div>
-        </div>
-      </section>
-
       {/* ── Privacy ── */}
       <section className="py-20 px-6 bg-[var(--color-surface)]">
         <div className="mx-auto max-w-6xl">
@@ -250,6 +207,49 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── What you get / Pricing ── */}
+      <section className="py-20 md:py-24 px-6 bg-[var(--color-surface)]">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
+            {t('whatYouGet.heading')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <PricingCard
+              heading={t('whatYouGet.freeHeading')}
+              tagline={t('whatYouGet.freeTagline')}
+              price={t('whatYouGet.freePrice')}
+              heroFeatures={freeHeroFeatures}
+              features={freeFeatures}
+              ctaLabel={t('whatYouGet.freeCta')}
+              ctaHref={`/${locale}/sell`}
+            />
+            <PricingCard
+              heading={t('whatYouGet.assistedHeading')}
+              tagline={t('whatYouGet.assistedTagline')}
+              badge={t('whatYouGet.assistedBadge')}
+              price={t('whatYouGet.assistedPrice')}
+              priceStrike={t('whatYouGet.assistedPriceStrike')}
+              priceNote={t('whatYouGet.assistedNote')}
+              heroFeatures={assistedHeroFeatures}
+              features={assistedFeatures}
+              ctaLabel={t('whatYouGet.assistedCta')}
+              ctaHref={`/${locale}/contact`}
+              highlight
+            />
+            <PricingCard
+              heading={t('whatYouGet.whiteGloveHeading')}
+              tagline={t('whatYouGet.whiteGloveTagline')}
+              price={t('whatYouGet.whiteGlovePrice')}
+              heroFeatures={bespokeheroFeatures}
+              features={bespokeFeatures}
+              ctaLabel={t('whatYouGet.whiteGloveCta')}
+              ctaHref={`/${locale}/contact`}
+              muted
+            />
           </div>
         </div>
       </section>
