@@ -9,15 +9,6 @@ import { FinancialsLock } from '@/components/deals/FinancialsLock';
 import { DealBasicsCard } from '@/components/deals/DealBasicsCard';
 import { EnquiryForm } from '@/components/deals/EnquiryForm';
 import { PhotoStrip } from '@/components/deals/PhotoStrip';
-import {
-  SECTOR_LABELS,
-  formatRevenue,
-  formatEbitda,
-  formatPrice,
-  formatEmployees,
-  formatTimeline,
-  formatOwnerInvolvement,
-} from '@/lib/format';
 import type { Listing } from '@/types';
 
 export const dynamic = 'force-dynamic';
@@ -69,6 +60,14 @@ export default async function DealDetailPage({
     reasonsForSale: t('dealBasics.reasonsForSale'),
   };
 
+  const dealBasicsValues = {
+    country: listing.country ? t(`countries.${listing.country}`) : '—',
+    saleStructure: listing.partial_sale ? t(`partialSaleValues.${listing.partial_sale}`) : '—',
+    reasonsForSale: listing.reasons_for_sale?.length
+      ? listing.reasons_for_sale.map((r: string) => t(`reasonValues.${r}`)).join(', ')
+      : '—',
+  };
+
   return (
     <div className="min-h-screen bg-[var(--color-bg)]">
       <SiteNav />
@@ -82,22 +81,22 @@ export default async function DealDetailPage({
 
             <div className="mt-5 flex items-center justify-between">
               <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--color-accent)]">
-                {SECTOR_LABELS[listing.sector ?? ''] ?? listing.sector}
+                {listing.sector ? t(`sectors.${listing.sector}`) : listing.sector}
               </span>
               <span className="text-[12px] text-[var(--color-muted)]">{dateLabel}</span>
             </div>
 
             <h1 className="mt-3 font-serif text-[28px] font-medium leading-[1.2] tracking-[-0.02em]">
-              {listing.title ?? listing.business_name ?? (SECTOR_LABELS[listing.sector ?? ''] ?? listing.sector)}
+              {listing.title ?? listing.business_name ?? (listing.sector ? t(`sectors.${listing.sector}`) : listing.sector)}
             </h1>
 
             <div className="mt-6 grid grid-cols-3 gap-2.5 sm:grid-cols-6">
-              <MetricChip label={t('metrics.revenue')} value={formatRevenue(listing.revenue_range)} />
-              <MetricChip label={t('metrics.ebitda')} value={formatEbitda(listing.ebitda_margin)} />
-              <MetricChip label={t('metrics.askingPrice')} value={formatPrice(listing.asking_price)} />
-              <MetricChip label={t('metrics.employees')} value={formatEmployees(listing.employee_count)} />
-              <MetricChip label={t('metrics.timeline')} value={formatTimeline(listing.timeline)} />
-              <MetricChip label={t('metrics.ownerInvolvement')} value={formatOwnerInvolvement(listing.owner_involvement)} />
+              <MetricChip label={t('metrics.revenue')} value={listing.revenue_range ? t(`revenueValues.${listing.revenue_range}`) : '—'} />
+              <MetricChip label={t('metrics.ebitda')} value={listing.ebitda_margin ? t(`ebitdaValues.${listing.ebitda_margin}`) : '—'} />
+              <MetricChip label={t('metrics.askingPrice')} value={listing.asking_price ? t(`priceValues.${listing.asking_price}`) : '—'} />
+              <MetricChip label={t('metrics.employees')} value={listing.employee_count ? t(`employeeValues.${listing.employee_count}`) : '—'} />
+              <MetricChip label={t('metrics.timeline')} value={listing.timeline ? t(`timelineValues.${listing.timeline}`) : '—'} />
+              <MetricChip label={t('metrics.ownerInvolvement')} value={listing.owner_involvement ? t(`ownerInvolvementValues.${listing.owner_involvement}`) : '—'} />
             </div>
 
             {(listing.about ?? listing.business_description) && (
@@ -149,7 +148,7 @@ export default async function DealDetailPage({
             {/* Mobile: sidebar content below main */}
             <div className="mt-10 flex flex-col gap-6 lg:hidden">
               <EnquiryForm listingId={listing.id} />
-              <DealBasicsCard listing={listing as Listing} labels={dealBasicsLabels} />
+              <DealBasicsCard listing={listing as Listing} labels={dealBasicsLabels} values={dealBasicsValues} />
             </div>
           </article>
 
@@ -157,7 +156,7 @@ export default async function DealDetailPage({
           <aside className="hidden w-[300px] flex-shrink-0 lg:block">
             <div className="sticky top-8 flex flex-col gap-6">
               <EnquiryForm listingId={listing.id} />
-              <DealBasicsCard listing={listing as Listing} labels={dealBasicsLabels} />
+              <DealBasicsCard listing={listing as Listing} labels={dealBasicsLabels} values={dealBasicsValues} />
             </div>
           </aside>
 

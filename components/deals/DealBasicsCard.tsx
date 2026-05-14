@@ -1,8 +1,7 @@
-import { formatPartialSale, formatReasons } from '@/lib/format';
 import type { Listing } from '@/types';
 
 interface DealBasicsCardProps {
-  listing: Pick<Listing, 'country' | 'region' | 'year_founded' | 'partial_sale' | 'reasons_for_sale'>;
+  listing: Pick<Listing, 'region' | 'year_founded'>;
   labels: {
     title: string;
     country: string;
@@ -11,18 +10,20 @@ interface DealBasicsCardProps {
     saleStructure: string;
     reasonsForSale: string;
   };
+  values: {
+    country: string;
+    saleStructure: string;
+    reasonsForSale: string;
+  };
 }
 
-export function DealBasicsCard({ listing, labels }: DealBasicsCardProps) {
-  const countryName =
-    listing.country === 'IT' ? 'Italy' : listing.country === 'PT' ? 'Portugal' : (listing.country ?? '—');
-
+export function DealBasicsCard({ listing, labels, values }: DealBasicsCardProps) {
   const rows = [
-    { label: labels.country, value: countryName },
+    { label: labels.country, value: values.country },
     { label: labels.region, value: listing.region ?? '—' },
     { label: labels.yearFounded, value: listing.year_founded?.toString() ?? '—' },
-    { label: labels.saleStructure, value: formatPartialSale(listing.partial_sale) },
-    { label: labels.reasonsForSale, value: formatReasons(listing.reasons_for_sale) },
+    { label: labels.saleStructure, value: values.saleStructure },
+    { label: labels.reasonsForSale, value: values.reasonsForSale },
   ];
 
   return (
