@@ -6,36 +6,10 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { createClient } from '@/lib/supabase/client';
 
-const REVENUE_OPTIONS = [
-  { value: 'under_500k', label: 'Under €500k' },
-  { value: '500k_1m', label: '€500k – €1M' },
-  { value: '1m_2_5m', label: '€1M – €2.5M' },
-  { value: '2_5m_5m', label: '€2.5M – €5M' },
-  { value: 'over_5m', label: 'Over €5M' },
-];
-
-const EBITDA_OPTIONS = [
-  { value: 'below_10', label: 'Below 10%' },
-  { value: '10_20', label: '10 – 20%' },
-  { value: '20_35', label: '20 – 35%' },
-  { value: 'above_35', label: 'Above 35%' },
-  { value: 'not_sure', label: 'Not sure' },
-];
-
-const EMPLOYEE_OPTIONS = [
-  { value: 'just_me', label: 'Just me' },
-  { value: '2_5', label: '2 – 5' },
-  { value: '6_15', label: '6 – 15' },
-  { value: '16_30', label: '16 – 30' },
-  { value: '30_plus', label: '30+' },
-];
-
-const INVOLVEMENT_OPTIONS = [
-  { value: 'full_time', label: 'Full-time (40+ hrs/wk)' },
-  { value: 'part_time', label: 'Part-time (20–40 hrs/wk)' },
-  { value: 'advisory', label: 'Advisory (5–20 hrs/wk)' },
-  { value: 'minimal', label: 'Minimal (<5 hrs/wk)' },
-];
+const REVENUE_VALUES = ['under_500k', '500k_1m', '1m_2_5m', '2_5m_5m', 'over_5m'] as const;
+const EBITDA_VALUES = ['below_10', '10_20', '20_35', 'above_35', 'not_sure'] as const;
+const EMPLOYEE_VALUES = ['just_me', '2_5', '6_15', '16_30', '30_plus'] as const;
+const INVOLVEMENT_VALUES = ['full_time', 'part_time', 'advisory', 'minimal'] as const;
 
 interface Step2Data {
   revenue_range: string;
@@ -51,6 +25,12 @@ interface Step2SizeTeamProps {
 
 export function Step2SizeTeam({ listingId, onComplete }: Step2SizeTeamProps) {
   const t = useTranslations('seller.step2');
+  const tDeals = useTranslations('deals');
+
+  const REVENUE_OPTIONS = REVENUE_VALUES.map((v) => ({ value: v, label: t(`revenueOptions.${v}`) }));
+  const EBITDA_OPTIONS = EBITDA_VALUES.map((v) => ({ value: v, label: t(`ebitdaOptions.${v}`) }));
+  const EMPLOYEE_OPTIONS = EMPLOYEE_VALUES.map((v) => ({ value: v, label: t(`employeeOptions.${v}`) }));
+  const INVOLVEMENT_OPTIONS = INVOLVEMENT_VALUES.map((v) => ({ value: v, label: tDeals(`ownerInvolvementValues.${v}`) }));
 
   const [data, setData] = useState<Step2Data>({
     revenue_range: '',

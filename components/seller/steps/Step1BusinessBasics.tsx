@@ -10,21 +10,11 @@ import { REGIONS } from '@/lib/regions';
 import { createClient } from '@/lib/supabase/client';
 import type { Step1Data } from '@/types';
 
-const SECTORS = [
-  { value: 'manufacturing', label: 'Manufacturing' },
-  { value: 'food_beverage', label: 'Food & Beverage' },
-  { value: 'hospitality_tourism', label: 'Hospitality & Tourism' },
-  { value: 'leisure_entertainment', label: 'Leisure & Entertainment' },
-  { value: 'retail_artisan', label: 'Retail & Artisan' },
-  { value: 'health_wellness', label: 'Health & Wellness' },
-  { value: 'automotive_transport', label: 'Automotive & Transport' },
-  { value: 'construction', label: 'Construction & Engineering' },
-  { value: 'professional_services', label: 'Professional Services' },
-  { value: 'agriculture_land', label: 'Agriculture & Land' },
-  { value: 'wholesale', label: 'Wholesale & Distribution' },
-  { value: 'technology', label: 'Technology' },
-  { value: 'other', label: 'Other' },
-];
+const SECTOR_VALUES = [
+  'manufacturing', 'food_beverage', 'hospitality_tourism', 'leisure_entertainment',
+  'retail_artisan', 'health_wellness', 'automotive_transport', 'construction',
+  'professional_services', 'agriculture_land', 'wholesale', 'technology', 'other',
+] as const;
 
 interface Step1BusinessBasicsProps {
   onComplete: (listingId: string, photos: File[]) => void;
@@ -32,6 +22,13 @@ interface Step1BusinessBasicsProps {
 
 export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
   const t = useTranslations('seller.step1');
+  const tDeals = useTranslations('deals');
+
+  const SECTORS = SECTOR_VALUES.map((v) => ({ value: v, label: tDeals(`sectors.${v}`) }));
+  const COUNTRIES = [
+    { value: 'IT', label: tDeals('countries.IT') },
+    { value: 'PT', label: tDeals('countries.PT') },
+  ];
 
   const [data, setData] = useState<Step1Data>({
     business_name: '',
@@ -131,10 +128,7 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
             onChange={(v) => set('country', v)}
             placeholder={t('country.placeholder')}
             hasError={!!errors.country}
-            options={[
-              { value: 'IT', label: 'Italy' },
-              { value: 'PT', label: 'Portugal' },
-            ]}
+            options={COUNTRIES}
           />
         </Field>
 

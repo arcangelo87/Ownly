@@ -559,6 +559,27 @@
         "placeholder": "Seleziona livello di coinvolgimento",
         "helper": "Quante ore alla settimana lavori nell'azienda?"
       },
+      "revenueOptions": {
+        "under_500k": "Sotto €500k",
+        "500k_1m": "€500k – €1M",
+        "1m_2_5m": "€1M – €2,5M",
+        "2_5m_5m": "€2,5M – €5M",
+        "over_5m": "Oltre €5M"
+      },
+      "ebitdaOptions": {
+        "below_10": "Sotto il 10%",
+        "10_20": "10 – 20%",
+        "20_35": "20 – 35%",
+        "above_35": "Oltre il 35%",
+        "not_sure": "Non so"
+      },
+      "employeeOptions": {
+        "just_me": "Solo io",
+        "2_5": "2 – 5",
+        "6_15": "6 – 15",
+        "16_30": "16 – 30",
+        "30_plus": "30+"
+      },
       "continue": "Salva e continua →",
       "errors": {
         "revenueRequired": "Seleziona una fascia di fatturato.",
@@ -586,6 +607,20 @@
         "label": "Tempistica",
         "placeholder": "Seleziona tempistica",
         "helper": "Entro quanto tempo desideri completare una transazione?"
+      },
+      "priceOptions": {
+        "under_500k": "Sotto €500k",
+        "500k_1m": "€500k – €1M",
+        "1m_2_5m": "€1M – €2,5M",
+        "2_5m_5m": "€2,5M – €5M",
+        "5m_10m": "€5M – €10M",
+        "over_10m": "Oltre €10M"
+      },
+      "timelineOptions": {
+        "ready_now": "Pronto ora / entro 6 mesi",
+        "6_12_months": "6 – 12 mesi",
+        "1_2_years": "1 – 2 anni",
+        "exploring": "Solo esplorando"
       },
       "continue": "Salva e continua →",
       "errors": {

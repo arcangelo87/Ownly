@@ -6,21 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { createClient } from '@/lib/supabase/client';
 
-const PRICE_OPTIONS = [
-  { value: 'under_500k', label: 'Under €500k' },
-  { value: '500k_1m', label: '€500k – €1M' },
-  { value: '1m_2_5m', label: '€1M – €2.5M' },
-  { value: '2_5m_5m', label: '€2.5M – €5M' },
-  { value: '5m_10m', label: '€5M – €10M' },
-  { value: 'over_10m', label: 'Over €10M' },
-];
-
-const TIMELINE_OPTIONS = [
-  { value: 'ready_now', label: 'Ready now / under 6 months' },
-  { value: '6_12_months', label: '6 – 12 months' },
-  { value: '1_2_years', label: '1 – 2 years' },
-  { value: 'exploring', label: 'Just exploring' },
-];
+const PRICE_VALUES = ['under_500k', '500k_1m', '1m_2_5m', '2_5m_5m', '5m_10m', 'over_10m'] as const;
+const TIMELINE_VALUES = ['ready_now', '6_12_months', '1_2_years', 'exploring'] as const;
 
 interface Step3Data {
   asking_price: string;
@@ -35,6 +22,9 @@ interface Step3TheDealProps {
 
 export function Step3TheDeal({ listingId, onComplete }: Step3TheDealProps) {
   const t = useTranslations('seller.step3');
+
+  const PRICE_OPTIONS = PRICE_VALUES.map((v) => ({ value: v, label: t(`priceOptions.${v}`) }));
+  const TIMELINE_OPTIONS = TIMELINE_VALUES.map((v) => ({ value: v, label: t(`timelineOptions.${v}`) }));
 
   const [data, setData] = useState<Step3Data>({
     asking_price: '',
