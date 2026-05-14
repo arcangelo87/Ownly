@@ -35,8 +35,8 @@ export function PricingCard({
         'flex flex-col rounded-[8px] border p-8',
         highlight
           ? 'border-[var(--color-accent)] bg-white'
-          : 'border-[var(--color-border)] bg-[var(--color-surface)]',
-        muted ? 'opacity-70' : '',
+          : 'border-[var(--color-border)] bg-[var(--color-bg)]',
+        muted ? 'opacity-90' : '',
       ].join(' ')}
     >
       <div className="flex items-center gap-3 mb-1">
