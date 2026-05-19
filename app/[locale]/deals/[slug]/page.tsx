@@ -172,12 +172,12 @@ export default async function DealDetailPage({
 
       {listing.source !== 'seller_form' && (
         <p className="px-6 pb-10 text-center text-[11px] text-[var(--color-muted)]">
-          This listing was sourced from publicly available information.{' '}
+          {t('disclaimer')}{' '}
           <a
             href={`/claim/${listing.slug}`}
             className="underline underline-offset-2 hover:opacity-70"
           >
-            Claim this listing
+            {t('claimListing')}
           </a>
         </p>
       )}

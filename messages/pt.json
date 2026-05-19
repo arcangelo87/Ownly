@@ -118,7 +118,9 @@
       "title": "Anúncio não encontrado",
       "body": "Este anúncio pode ter sido removido ou já não está disponível.",
       "cta": "Ver todos os anúncios →"
-    }
+    },
+    "disclaimer": "Este anúncio foi obtido a partir de informações publicamente disponíveis.",
+    "claimListing": "Reivindicar este anúncio"
   },
   "nav": {
     "sell": "Vender o seu negócio",

@@ -118,7 +118,9 @@
       "title": "Listing not found",
       "body": "This deal may have been removed or is no longer available.",
       "cta": "Browse all deals →"
-    }
+    },
+    "disclaimer": "This listing was sourced from publicly available information.",
+    "claimListing": "Claim this listing"
   },
   "nav": {
     "sell": "Sell your business",
