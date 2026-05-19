@@ -292,7 +292,7 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
 
       {activeLocale === 'it' && (
         <>
-          {listing.status === 'live' && !titleIt && !aboutIt && (
+          {(title || about) && !titleIt && !aboutIt && (
             <div className="flex items-center justify-between rounded-md bg-amber-50 px-4 py-3">
               <p className="text-[12px] text-amber-700">Italian translation not yet generated.</p>
               <button
@@ -355,7 +355,7 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
 
       {activeLocale === 'pt' && (
         <>
-          {listing.status === 'live' && !titlePt && !aboutPt && (
+          {(title || about) && !titlePt && !aboutPt && (
             <div className="flex items-center justify-between rounded-md bg-amber-50 px-4 py-3">
               <p className="text-[12px] text-amber-700">Portuguese translation not yet generated.</p>
               <button
