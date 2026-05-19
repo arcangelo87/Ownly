@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useTransition, useEffect, useRef } from 'react';
-import { updateListingContent, deleteListingPhoto, getListingPhotos, updateListingSector } from '@/app/actions/admin';
+import { updateListingContent, deleteListingPhoto, getListingPhotos, updateListingSector, generateTranslations } from '@/app/actions/admin';
 import { createPhotoUploadUrl } from '@/app/actions/deals';
 import { createClient } from '@/lib/supabase/client';
 import { SECTOR_LABELS } from '@/lib/format';
@@ -34,6 +34,8 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
 
   const [pending, startTransition] = useTransition();
   const [saved, setSaved] = useState(false);
+  const [translating, setTranslating] = useState(false);
+  const [translateError, setTranslateError] = useState<string | null>(null);
 
   const [sector, setSector] = useState(listing.sector ?? '');
   const [sectorSaving, setSectorSaving] = useState(false);
@@ -97,6 +99,27 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
   function parseLines(text: string) {
     const arr = text.split('\n').map((s) => s.trim()).filter(Boolean);
     return arr.length > 0 ? arr : null;
+  }
+
+  async function handleGenerateTranslations() {
+    setTranslating(true);
+    setTranslateError(null);
+    try {
+      const result = await generateTranslations(listing.id);
+      setTitleIt(result.title_it ?? '');
+      setAboutIt(result.about_it ?? '');
+      setHighlightsItText((result.highlights_it ?? []).join('\n'));
+      setBuyerTagsItText((result.buyer_tags_it ?? []).join('\n'));
+      setTitlePt(result.title_pt ?? '');
+      setAboutPt(result.about_pt ?? '');
+      setHighlightsPtText((result.highlights_pt ?? []).join('\n'));
+      setBuyerTagsPtText((result.buyer_tags_pt ?? []).join('\n'));
+      onSave(result);
+    } catch (e) {
+      setTranslateError(e instanceof Error ? e.message : 'Translation failed.');
+    } finally {
+      setTranslating(false);
+    }
   }
 
   function handleSave() {
@@ -269,6 +292,21 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
 
       {activeLocale === 'it' && (
         <>
+          {listing.status === 'live' && !titleIt && !aboutIt && (
+            <div className="flex items-center justify-between rounded-md bg-amber-50 px-4 py-3">
+              <p className="text-[12px] text-amber-700">Italian translation not yet generated.</p>
+              <button
+                onClick={handleGenerateTranslations}
+                disabled={translating}
+                className="ml-4 shrink-0 rounded-md bg-amber-600 px-3 py-1.5 text-[11px] font-semibold text-white transition-opacity hover:opacity-[0.88] disabled:opacity-50"
+              >
+                {translating ? 'Generating…' : 'Generate translations'}
+              </button>
+            </div>
+          )}
+          {translateError && (
+            <p className="text-[12px] text-red-600">{translateError}</p>
+          )}
           <div>
             <label className="mb-1 block text-[11px] font-semibold text-[var(--color-muted)]">Titolo (IT)</label>
             <input
@@ -317,6 +355,21 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
 
       {activeLocale === 'pt' && (
         <>
+          {listing.status === 'live' && !titlePt && !aboutPt && (
+            <div className="flex items-center justify-between rounded-md bg-amber-50 px-4 py-3">
+              <p className="text-[12px] text-amber-700">Portuguese translation not yet generated.</p>
+              <button
+                onClick={handleGenerateTranslations}
+                disabled={translating}
+                className="ml-4 shrink-0 rounded-md bg-amber-600 px-3 py-1.5 text-[11px] font-semibold text-white transition-opacity hover:opacity-[0.88] disabled:opacity-50"
+              >
+                {translating ? 'Generating…' : 'Generate translations'}
+              </button>
+            </div>
+          )}
+          {translateError && (
+            <p className="text-[12px] text-red-600">{translateError}</p>
+          )}
           <div>
             <label className="mb-1 block text-[11px] font-semibold text-[var(--color-muted)]">Titulo (PT)</label>
             <input

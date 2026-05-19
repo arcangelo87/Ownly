@@ -78,7 +78,7 @@ export async function publishListing(listingId: string) {
 
   if (error) throw error;
 
-  translateListing(listingId, admin).catch(() => {});
+  translateListing(listingId, admin).catch((e) => console.error('[translate-on-publish]', listingId, e));
   return slug;
 }
 

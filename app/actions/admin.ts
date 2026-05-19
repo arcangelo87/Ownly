@@ -283,6 +283,72 @@ export async function ingestListingWithAI(
   return { id: data.id, slug, title: (x.title as string | null) ?? null };
 }
 
+export async function generateTranslations(listingId: string): Promise<{
+  title_it: string | null; about_it: string | null; highlights_it: string[] | null; buyer_tags_it: string[] | null;
+  title_pt: string | null; about_pt: string | null; highlights_pt: string[] | null; buyer_tags_pt: string[] | null;
+}> {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) throw new Error('Unauthorized');
+
+  const admin = createAdminClient();
+  const { data } = await admin
+    .from('listings')
+    .select('title, about, highlights, buyer_tags')
+    .eq('id', listingId)
+    .single();
+
+  if (!data || (!data.title && !data.about)) throw new Error('No English content to translate.');
+
+  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const response = await anthropic.messages.create({
+    model: 'claude-sonnet-4-5',
+    max_tokens: 1024,
+    tools: [{
+      name: 'translate_listing',
+      description: 'Translate listing content into Italian and European Portuguese.',
+      input_schema: {
+        type: 'object' as const,
+        properties: {
+          title_it:      { type: ['string', 'null'] },
+          about_it:      { type: ['string', 'null'] },
+          highlights_it: { type: ['array', 'null'], items: { type: 'string' } },
+          buyer_tags_it: { type: ['array', 'null'], items: { type: 'string' } },
+          title_pt:      { type: ['string', 'null'] },
+          about_pt:      { type: ['string', 'null'] },
+          highlights_pt: { type: ['array', 'null'], items: { type: 'string' } },
+          buyer_tags_pt: { type: ['array', 'null'], items: { type: 'string' } },
+        },
+        required: ['title_it','about_it','highlights_it','buyer_tags_it','title_pt','about_pt','highlights_pt','buyer_tags_pt'],
+      },
+    }],
+    tool_choice: { type: 'tool', name: 'translate_listing' },
+    system: 'Translate business listing content into Italian and European Portuguese. Rewrite naturally in each language, do not translate word-for-word. Maintain a professional, financially-literate tone. Use null for any field where the source is null.',
+    messages: [{
+      role: 'user',
+      content: `Translate this listing content:\n\nTitle: ${data.title ?? 'null'}\nAbout: ${data.about ?? 'null'}\nHighlights: ${JSON.stringify(data.highlights ?? null)}\nBuyer tags: ${JSON.stringify(data.buyer_tags ?? null)}`,
+    }],
+  });
+
+  const toolBlock = response.content.find((b) => b.type === 'tool_use');
+  if (!toolBlock || toolBlock.type !== 'tool_use') throw new Error('Translation failed: no structured output returned.');
+  const t = toolBlock.input as Record<string, unknown>;
+
+  const result = {
+    title_it:      (t.title_it      as string | null) ?? null,
+    about_it:      (t.about_it      as string | null) ?? null,
+    highlights_it: (t.highlights_it as string[] | null) ?? null,
+    buyer_tags_it: (t.buyer_tags_it as string[] | null) ?? null,
+    title_pt:      (t.title_pt      as string | null) ?? null,
+    about_pt:      (t.about_pt      as string | null) ?? null,
+    highlights_pt: (t.highlights_pt as string[] | null) ?? null,
+    buyer_tags_pt: (t.buyer_tags_pt as string[] | null) ?? null,
+  };
+
+  await admin.from('listings').update(result).eq('id', listingId);
+  return result;
+}
+
 export type ManualIngestData = {
   business_name: string;
   country: string;
