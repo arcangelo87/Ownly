@@ -212,44 +212,6 @@ const EXTRACT_TOOL = {
         items: { type: 'string' },
         description: '2–5 short buyer-type or deal-thesis tags.',
       },
-      // Italian locale
-      title_it: {
-        type: ['string', 'null'],
-        description: 'Italian SEO title. Same structure as title but fully in Italian. E.g. "Azienda di Ristorazione in Vendita, Toscana, Italia". 8–12 words.',
-      },
-      about_it: {
-        type: ['string', 'null'],
-        description: 'Italian version of about. Fully rewritten in professional Italian for a sophisticated buyer audience. 4–6 sentences. Not a direct translation — adapt phrasing naturally.',
-      },
-      highlights_it: {
-        type: ['array', 'null'],
-        items: { type: 'string' },
-        description: '3–5 highlights in Italian. Naturally phrased, not word-for-word translations.',
-      },
-      buyer_tags_it: {
-        type: ['array', 'null'],
-        items: { type: 'string' },
-        description: '2–5 buyer tags in Italian. E.g. "Acquirente operativo", "Opportunita di successione".',
-      },
-      // Portuguese locale
-      title_pt: {
-        type: ['string', 'null'],
-        description: 'Portuguese SEO title. Same structure as title but fully in Portuguese. E.g. "Empresa de Restauracao a Venda, Alentejo, Portugal". 8–12 words.',
-      },
-      about_pt: {
-        type: ['string', 'null'],
-        description: 'Portuguese version of about. Fully rewritten in professional European Portuguese for a sophisticated buyer audience. 4–6 sentences. Not a direct translation — adapt phrasing naturally.',
-      },
-      highlights_pt: {
-        type: ['array', 'null'],
-        items: { type: 'string' },
-        description: '3–5 highlights in European Portuguese. Naturally phrased.',
-      },
-      buyer_tags_pt: {
-        type: ['array', 'null'],
-        items: { type: 'string' },
-        description: '2–5 buyer tags in European Portuguese. E.g. "Comprador operacional", "Oportunidade de sucessao".',
-      },
     },
     required: [
       'business_name', 'country', 'region', 'sector', 'year_founded',
@@ -258,8 +220,6 @@ const EXTRACT_TOOL = {
       'asking_price', 'partial_sale', 'timeline',
       'reasons_for_sale', 'business_description', 'strongest_point', 'buyer_disclosure',
       'title', 'about', 'highlights', 'buyer_tags',
-      'title_it', 'about_it', 'highlights_it', 'buyer_tags_it',
-      'title_pt', 'about_pt', 'highlights_pt', 'buyer_tags_pt',
     ],
   },
 };
@@ -412,14 +372,6 @@ async function main() {
     about:                extracted.about                ?? null,
     highlights:           extracted.highlights           ?? null,
     buyer_tags:           extracted.buyer_tags           ?? null,
-    title_it:             extracted.title_it             ?? null,
-    about_it:             extracted.about_it             ?? null,
-    highlights_it:        extracted.highlights_it        ?? null,
-    buyer_tags_it:        extracted.buyer_tags_it        ?? null,
-    title_pt:             extracted.title_pt             ?? null,
-    about_pt:             extracted.about_pt             ?? null,
-    highlights_pt:        extracted.highlights_pt        ?? null,
-    buyer_tags_pt:        extracted.buyer_tags_pt        ?? null,
     slug,
   };
 

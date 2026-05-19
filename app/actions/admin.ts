@@ -125,8 +125,7 @@ Rules:
 - buyer_tags: 2–5 short deal-thesis tags. E.g. "Owner-operator", "Succession opportunity", "Passive income".
 - strongest_point: one sentence, the single most compelling reason to buy.
 - buyer_disclosure: one sentence covering material risks. Null if none stated.
-- Do not invent seller_email or seller_phone.
-- For IT/PT locale fields: rewrite naturally in that language, do not translate word-for-word.`;
+- Do not invent seller_email or seller_phone.`;
 
 const INGEST_TOOL = {
   name: 'extract_listing',
@@ -156,14 +155,6 @@ const INGEST_TOOL = {
       about:                { type: ['string', 'null'], description: '4–6 sentence buyer-facing description.' },
       highlights:           { type: ['array', 'null'], items: { type: 'string' } },
       buyer_tags:           { type: ['array', 'null'], items: { type: 'string' } },
-      title_it:             { type: ['string', 'null'], description: 'Italian SEO title.' },
-      about_it:             { type: ['string', 'null'], description: 'Italian buyer-facing description, 4–6 sentences.' },
-      highlights_it:        { type: ['array', 'null'], items: { type: 'string' } },
-      buyer_tags_it:        { type: ['array', 'null'], items: { type: 'string' } },
-      title_pt:             { type: ['string', 'null'], description: 'Portuguese SEO title.' },
-      about_pt:             { type: ['string', 'null'], description: 'European Portuguese buyer-facing description, 4–6 sentences.' },
-      highlights_pt:        { type: ['array', 'null'], items: { type: 'string' } },
-      buyer_tags_pt:        { type: ['array', 'null'], items: { type: 'string' } },
     },
     required: [
       'business_name','country','region','sector','year_founded','seller_email','seller_phone',
@@ -171,8 +162,6 @@ const INGEST_TOOL = {
       'asking_price','partial_sale','timeline','reasons_for_sale',
       'business_description','strongest_point','buyer_disclosure',
       'title','about','highlights','buyer_tags',
-      'title_it','about_it','highlights_it','buyer_tags_it',
-      'title_pt','about_pt','highlights_pt','buyer_tags_pt',
     ],
   },
 };
@@ -254,14 +243,6 @@ export async function ingestListingWithAI(
     about: x.about ?? null,
     highlights: x.highlights ?? null,
     buyer_tags: x.buyer_tags ?? null,
-    title_it: x.title_it ?? null,
-    about_it: x.about_it ?? null,
-    highlights_it: x.highlights_it ?? null,
-    buyer_tags_it: x.buyer_tags_it ?? null,
-    title_pt: x.title_pt ?? null,
-    about_pt: x.about_pt ?? null,
-    highlights_pt: x.highlights_pt ?? null,
-    buyer_tags_pt: x.buyer_tags_pt ?? null,
     slug,
   }).select('id').single();
 
@@ -292,14 +273,6 @@ export async function ingestListingWithAI(
         about: x.about ?? null,
         highlights: x.highlights ?? null,
         buyer_tags: x.buyer_tags ?? null,
-        title_it: x.title_it ?? null,
-        about_it: x.about_it ?? null,
-        highlights_it: x.highlights_it ?? null,
-        buyer_tags_it: x.buyer_tags_it ?? null,
-        title_pt: x.title_pt ?? null,
-        about_pt: x.about_pt ?? null,
-        highlights_pt: x.highlights_pt ?? null,
-        buyer_tags_pt: x.buyer_tags_pt ?? null,
         slug: fallbackSlug,
       }).select('id').single();
       if (retryError) throw retryError;
