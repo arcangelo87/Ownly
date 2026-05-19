@@ -667,5 +667,25 @@
         "saveFailed": "Algo correu mal. Tente novamente."
       }
     }
+  },
+  "claim": {
+    "title": "Reivindicar este anúncio",
+    "intro": "Este negócio é seu? Entre em contacto e verificaremos a sua propriedade para lhe transferir o controlo do anúncio.",
+    "name": "O seu nome",
+    "namePlaceholder": "Nome completo",
+    "email": "Endereço de email",
+    "emailPlaceholder": "voce@exemplo.com",
+    "message": "Mensagem",
+    "messagePlaceholder": "Descreva a sua ligação a este negócio",
+    "submit": "Enviar pedido",
+    "submitting": "A enviar…",
+    "successTitle": "Pedido recebido",
+    "successBody": "Entraremos em contacto brevemente para verificar a sua propriedade.",
+    "errors": {
+      "nameRequired": "Introduza o seu nome.",
+      "emailRequired": "Introduza o seu endereço de email.",
+      "emailInvalid": "Introduza um endereço de email válido.",
+      "submitFailed": "Algo correu mal. Tente novamente."
+    }
   }
 }

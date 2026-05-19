@@ -667,5 +667,25 @@
         "saveFailed": "Qualcosa è andato storto. Riprova."
       }
     }
+  },
+  "claim": {
+    "title": "Rivendica questo annuncio",
+    "intro": "È questa la tua azienda? Contattaci e verificheremo la tua proprietà per trasferirti il controllo dell'annuncio.",
+    "name": "Il tuo nome",
+    "namePlaceholder": "Nome completo",
+    "email": "Indirizzo email",
+    "emailPlaceholder": "tu@esempio.com",
+    "message": "Messaggio",
+    "messagePlaceholder": "Descrivi il tuo legame con questa azienda",
+    "submit": "Invia richiesta",
+    "submitting": "Invio in corso…",
+    "successTitle": "Richiesta ricevuta",
+    "successBody": "Ti contatteremo a breve per verificare la tua proprietà.",
+    "errors": {
+      "nameRequired": "Inserisci il tuo nome.",
+      "emailRequired": "Inserisci il tuo indirizzo email.",
+      "emailInvalid": "Inserisci un indirizzo email valido.",
+      "submitFailed": "Qualcosa è andato storto. Riprova."
+    }
   }
 }
