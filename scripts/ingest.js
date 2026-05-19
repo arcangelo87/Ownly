@@ -268,7 +268,7 @@ async function extractListing(inputText) {
   const client = new AnthropicClass({ apiKey: process.env.ANTHROPIC_API_KEY });
 
   const response = await client.messages.create({
-    model: 'claude-sonnet-4-20250514',
+    model: 'claude-sonnet-4-5',
     max_tokens: 2048,
     tools: [EXTRACT_TOOL],
     tool_choice: { type: 'tool', name: 'extract_listing' },
