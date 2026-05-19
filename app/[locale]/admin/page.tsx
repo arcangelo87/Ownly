@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { ListingsTable } from '@/components/admin/ListingsTable';
+import { IngestPanel } from '@/components/admin/IngestPanel';
 import { SignOutButton } from '@/components/admin/SignOutButton';
 import { Logo } from '@/components/ui/Logo';
 import type { Listing } from '@/types';
@@ -43,6 +44,9 @@ export default async function AdminPage({
           <span className="text-sm text-[var(--color-muted)]">
             {listings?.length ?? 0} total
           </span>
+        </div>
+        <div className="mb-6">
+          <IngestPanel />
         </div>
         <ListingsTable initialListings={(listings ?? []) as Listing[]} />
       </main>
