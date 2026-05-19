@@ -34,7 +34,7 @@ export default async function DealDetailPage({
   const { data: listing, error } = await admin
     .from('listings')
     .select(
-      'id, slug, title, about, highlights, buyer_tags, title_it, about_it, highlights_it, buyer_tags_it, title_pt, about_pt, highlights_pt, buyer_tags_pt, owner_involvement, business_name, business_description, strongest_point, sector, region, country, year_founded, revenue_range, ebitda_margin, employee_count, asking_price, partial_sale, timeline, reasons_for_sale, created_at',
+      'id, slug, source, title, about, highlights, buyer_tags, title_it, about_it, highlights_it, buyer_tags_it, title_pt, about_pt, highlights_pt, buyer_tags_pt, owner_involvement, business_name, business_description, strongest_point, sector, region, country, year_founded, revenue_range, ebitda_margin, employee_count, asking_price, partial_sale, timeline, reasons_for_sale, created_at',
     )
     .eq('slug', slug)
     .eq('status', 'live')
@@ -169,6 +169,18 @@ export default async function DealDetailPage({
 
         </div>
       </main>
+
+      {listing.source !== 'seller_form' && (
+        <p className="px-6 pb-10 text-center text-[11px] text-[var(--color-muted)]">
+          This listing was sourced from publicly available information.{' '}
+          <a
+            href={`/claim/${listing.slug}`}
+            className="underline underline-offset-2 hover:opacity-70"
+          >
+            Claim this listing
+          </a>
+        </p>
+      )}
     </div>
   );
 }

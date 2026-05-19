@@ -221,6 +221,7 @@ export async function ingestListingWithAI(
   const admin = createAdminClient();
   const { data, error } = await admin.from('listings').insert({
     status: 'draft',
+    source: 'operator_ingest',
     business_name: x.business_name ?? null,
     country: x.country ?? null,
     region: x.region ?? null,
@@ -251,6 +252,7 @@ export async function ingestListingWithAI(
       const fallbackSlug = `${slug}-${Math.random().toString(36).slice(2, 6)}`;
       const { data: retryData, error: retryError } = await admin.from('listings').insert({
         status: 'draft',
+        source: 'operator_ingest',
         business_name: x.business_name ?? null,
         country: x.country ?? null,
         region: x.region ?? null,
@@ -377,6 +379,7 @@ export async function ingestListingManual(
   const admin = createAdminClient();
   const { data: row, error } = await admin.from('listings').insert({
     status: 'draft',
+    source: 'operator_ingest',
     business_name:        data.business_name        || null,
     country:              data.country              || null,
     region:               data.region               || null,

@@ -40,6 +40,9 @@ export interface Listing {
   highlights: string[] | null;
   buyer_tags: string[] | null;
 
+  // Listing source
+  source: string | null;
+
   // Locale-specific content (IT + PT)
   title_it: string | null;
   about_it: string | null;

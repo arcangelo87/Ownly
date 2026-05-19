@@ -350,6 +350,7 @@ async function main() {
   // 4. Build insert payload
   const payload = {
     status: 'draft',
+    source: 'operator_ingest',
     business_name:        extracted.business_name        ?? null,
     country:              extracted.country              ?? null,
     region:               extracted.region               ?? null,
