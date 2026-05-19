@@ -118,7 +118,9 @@
       "title": "Listing not found",
       "body": "This deal may have been removed or is no longer available.",
       "cta": "Browse all deals →"
-    }
+    },
+    "disclaimer": "This listing was sourced from publicly available information.",
+    "claimListing": "Claim this listing"
   },
   "nav": {
     "sell": "Sell your business",
@@ -664,6 +666,26 @@
         "descriptionRequired": "Please describe your business.",
         "saveFailed": "Something went wrong. Please try again."
       }
+    }
+  },
+  "claim": {
+    "title": "Claim this listing",
+    "intro": "Is this your business? Get in touch and we will verify your ownership and transfer control to you.",
+    "name": "Your name",
+    "namePlaceholder": "Full name",
+    "email": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your connection to this business",
+    "submit": "Send claim request",
+    "submitting": "Sending...",
+    "successTitle": "Request received",
+    "successBody": "We will be in touch shortly to verify your ownership.",
+    "errors": {
+      "nameRequired": "Please enter your name.",
+      "emailRequired": "Please enter your email address.",
+      "emailInvalid": "Please enter a valid email address.",
+      "submitFailed": "Something went wrong. Please try again."
     }
   }
 }

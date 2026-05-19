@@ -34,7 +34,7 @@ export default async function DealDetailPage({
   const { data: listing, error } = await admin
     .from('listings')
     .select(
-      'id, slug, title, about, highlights, buyer_tags, owner_involvement, business_name, business_description, strongest_point, sector, region, country, year_founded, revenue_range, ebitda_margin, employee_count, asking_price, partial_sale, timeline, reasons_for_sale, created_at',
+      'id, slug, source, title, about, highlights, buyer_tags, title_it, about_it, highlights_it, buyer_tags_it, title_pt, about_pt, highlights_pt, buyer_tags_pt, owner_involvement, business_name, business_description, strongest_point, sector, region, country, year_founded, revenue_range, ebitda_margin, employee_count, asking_price, partial_sale, timeline, reasons_for_sale, created_at',
     )
     .eq('slug', slug)
     .eq('status', 'live')
@@ -43,6 +43,12 @@ export default async function DealDetailPage({
 
   if (error) console.error('[deal-page] supabase error:', JSON.stringify(error));
   if (!listing) notFound();
+
+  const lc = locale === 'it'
+    ? { title: listing.title_it ?? listing.title, about: listing.about_it ?? listing.about, highlights: listing.highlights_it ?? listing.highlights, buyer_tags: listing.buyer_tags_it ?? listing.buyer_tags }
+    : locale === 'pt'
+    ? { title: listing.title_pt ?? listing.title, about: listing.about_pt ?? listing.about, highlights: listing.highlights_pt ?? listing.highlights, buyer_tags: listing.buyer_tags_pt ?? listing.buyer_tags }
+    : { title: listing.title, about: listing.about, highlights: listing.highlights, buyer_tags: listing.buyer_tags };
 
   const { data: storageFiles } = await admin.storage
     .from('listing-photos')
@@ -88,7 +94,7 @@ export default async function DealDetailPage({
             </div>
 
             <h1 className="mt-3 font-serif text-[28px] font-medium leading-[1.2] tracking-[-0.02em]">
-              {listing.title ?? listing.business_name ?? (SECTOR_LABELS[listing.sector ?? ''] ?? listing.sector)}
+              {lc.title ?? listing.business_name ?? (SECTOR_LABELS[listing.sector ?? ''] ?? listing.sector)}
             </h1>
 
             <div className="mt-6 grid grid-cols-3 gap-2.5 sm:grid-cols-6">
@@ -100,31 +106,31 @@ export default async function DealDetailPage({
               <MetricChip label={t('metrics.ownerInvolvement')} value={formatOwnerInvolvement(listing.owner_involvement)} />
             </div>
 
-            {(listing.about ?? listing.business_description) && (
+            {(lc.about ?? listing.business_description) && (
               <section className="mt-10">
                 <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)]">
                   {t('sections.about')}
                 </p>
-                <p className="text-[14px] leading-[1.75] text-[var(--color-text)]">{listing.about ?? listing.business_description}</p>
+                <p className="text-[14px] leading-[1.75] text-[var(--color-text)]">{lc.about ?? listing.business_description}</p>
               </section>
             )}
 
-            {(listing.highlights?.length || listing.strongest_point) && (
+            {(lc.highlights?.length || listing.strongest_point) && (
               <section className="mt-8">
                 <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)]">
                   {t('sections.highlights')}
                 </p>
-                <HighlightsList items={listing.highlights?.length ? listing.highlights : [listing.strongest_point!]} />
+                <HighlightsList items={lc.highlights?.length ? lc.highlights : [listing.strongest_point!]} />
               </section>
             )}
 
-            {listing.buyer_tags && listing.buyer_tags.length > 0 && (
+            {lc.buyer_tags && lc.buyer_tags.length > 0 && (
               <section className="mt-8">
                 <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)]">
                   {t('browse.card.bestFor')}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {listing.buyer_tags.map((tag: string) => (
+                  {lc.buyer_tags.map((tag: string) => (
                     <span
                       key={tag}
                       className="rounded bg-[var(--color-surface)] px-2.5 py-1 text-[13px] text-[var(--color-text)]"
@@ -163,6 +169,18 @@ export default async function DealDetailPage({
 
         </div>
       </main>
+
+      {listing.source !== 'seller_form' && (
+        <p className="px-6 pb-10 text-center text-[11px] text-[var(--color-muted)]">
+          {t('disclaimer')}{' '}
+          <a
+            href={`/claim/${listing.slug}`}
+            className="underline underline-offset-2 hover:opacity-70"
+          >
+            {t('claimListing')}
+          </a>
+        </p>
+      )}
     </div>
   );
 }

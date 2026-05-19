@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
-    "start": "next start"
+    "start": "next start",
+    "ingest": "node scripts/ingest.js"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.97.0",
     "@supabase/ssr": "^0.10.2",
     "@supabase/supabase-js": "^2.103.0",
     "@tailwindcss/postcss": "^4.2.2",
@@ -26,6 +28,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.4.2",
     "typescript": "^5"
   }
 }

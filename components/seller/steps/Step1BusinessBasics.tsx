@@ -88,6 +88,7 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
           year_founded: parseInt(data.year_founded),
           seller_email: data.seller_email.trim(),
           seller_phone: data.seller_phone.trim() || null,
+          source: 'seller_form',
         })
         .select('id')
         .single();
