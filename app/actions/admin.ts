@@ -265,7 +265,48 @@ export async function ingestListingWithAI(
     slug,
   }).select('id').single();
 
-  if (error) throw error;
+  if (error) {
+    if (error.code === '23505') {
+      const fallbackSlug = `${slug}-${Math.random().toString(36).slice(2, 6)}`;
+      const { data: retryData, error: retryError } = await admin.from('listings').insert({
+        status: 'draft',
+        business_name: x.business_name ?? null,
+        country: x.country ?? null,
+        region: x.region ?? null,
+        sector: x.sector ?? null,
+        year_founded: x.year_founded ?? null,
+        seller_email: x.seller_email ?? null,
+        seller_phone: x.seller_phone ?? null,
+        revenue_range: x.revenue_range ?? null,
+        ebitda_margin: x.ebitda_margin ?? null,
+        employee_count: x.employee_count ?? null,
+        owner_involvement: x.owner_involvement ?? null,
+        asking_price: x.asking_price ?? null,
+        partial_sale: x.partial_sale ?? null,
+        timeline: x.timeline ?? null,
+        reasons_for_sale: x.reasons_for_sale ?? null,
+        business_description: x.business_description ?? null,
+        strongest_point: x.strongest_point ?? null,
+        buyer_disclosure: x.buyer_disclosure ?? null,
+        title: x.title ?? null,
+        about: x.about ?? null,
+        highlights: x.highlights ?? null,
+        buyer_tags: x.buyer_tags ?? null,
+        title_it: x.title_it ?? null,
+        about_it: x.about_it ?? null,
+        highlights_it: x.highlights_it ?? null,
+        buyer_tags_it: x.buyer_tags_it ?? null,
+        title_pt: x.title_pt ?? null,
+        about_pt: x.about_pt ?? null,
+        highlights_pt: x.highlights_pt ?? null,
+        buyer_tags_pt: x.buyer_tags_pt ?? null,
+        slug: fallbackSlug,
+      }).select('id').single();
+      if (retryError) throw retryError;
+      return { id: retryData.id, slug: fallbackSlug, title: (x.title as string | null) ?? null };
+    }
+    throw error;
+  }
   return { id: data.id, slug, title: (x.title as string | null) ?? null };
 }
 
