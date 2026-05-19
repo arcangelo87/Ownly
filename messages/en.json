@@ -665,5 +665,25 @@
         "saveFailed": "Something went wrong. Please try again."
       }
     }
+  },
+  "claim": {
+    "title": "Claim this listing",
+    "intro": "Is this your business? Get in touch and we will verify your ownership and transfer control to you.",
+    "name": "Your name",
+    "namePlaceholder": "Full name",
+    "email": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your connection to this business",
+    "submit": "Send claim request",
+    "submitting": "Sending...",
+    "successTitle": "Request received",
+    "successBody": "We will be in touch shortly to verify your ownership.",
+    "errors": {
+      "nameRequired": "Please enter your name.",
+      "emailRequired": "Please enter your email address.",
+      "emailInvalid": "Please enter a valid email address.",
+      "submitFailed": "Something went wrong. Please try again."
+    }
   }
 }
