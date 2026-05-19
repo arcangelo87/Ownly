@@ -22,10 +22,25 @@ export async function updateListingStatus(listingId: string, status: ListingStat
   if (error) throw error;
 }
 
-export async function updateListingContent(
-  listingId: string,
-  content: { title: string | null; about: string | null; highlights: string[] | null; buyer_tags: string[] | null },
-) {
+type LocaleContent = {
+  title: string | null;
+  about: string | null;
+  highlights: string[] | null;
+  buyer_tags: string[] | null;
+};
+
+type AllLocaleContent = LocaleContent & {
+  title_it: string | null;
+  about_it: string | null;
+  highlights_it: string[] | null;
+  buyer_tags_it: string[] | null;
+  title_pt: string | null;
+  about_pt: string | null;
+  highlights_pt: string[] | null;
+  buyer_tags_pt: string[] | null;
+};
+
+export async function updateListingContent(listingId: string, content: AllLocaleContent) {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) throw new Error('Unauthorized');
@@ -33,7 +48,7 @@ export async function updateListingContent(
   const admin = createAdminClient();
   const { error } = await admin
     .from('listings')
-    .update({ title: content.title, about: content.about, highlights: content.highlights, buyer_tags: content.buyer_tags })
+    .update(content)
     .eq('id', listingId);
 
   if (error) throw error;
