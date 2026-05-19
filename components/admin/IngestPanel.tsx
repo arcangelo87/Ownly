@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useTransition } from 'react';
+import { useRef, useState, useTransition } from 'react';
 import { ingestListingWithAI, ingestListingManual } from '@/app/actions/admin';
 import { SECTOR_LABELS } from '@/lib/format';
 
@@ -8,6 +8,7 @@ type Mode = 'ai' | 'manual';
 type AiInputMode = 'url' | 'text';
 
 type Result = { id: string; slug: string; title?: string | null };
+type BatchEntry = { url: string; status: 'ok' | 'error'; slug?: string; title?: string | null; message?: string };
 
 export function IngestPanel() {
   const [mode, setMode] = useState<Mode>('ai');
@@ -17,6 +18,13 @@ export function IngestPanel() {
   const [error, setError] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
 
+  // Batch state (URL mode only)
+  const [running, setRunning] = useState(false);
+  const [batchLog, setBatchLog] = useState<BatchEntry[]>([]);
+  const [progress, setProgress] = useState<{ current: number; total: number } | null>(null);
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
   // Manual form state
   const [manual, setManual] = useState({
     business_name: '', country: '', region: '', sector: '', year_founded: '',
@@ -24,16 +32,83 @@ export function IngestPanel() {
     asking_price: '', partial_sale: '', timeline: '', business_description: '',
   });
 
-  function reset() { setResult(null); setError(null); setAiInput(''); setManual({ business_name: '', country: '', region: '', sector: '', year_founded: '', revenue_range: '', ebitda_margin: '', employee_count: '', owner_involvement: '', asking_price: '', partial_sale: '', timeline: '', business_description: '' }); }
+  function reset() {
+    setResult(null); setError(null); setAiInput('');
+    setManual({ business_name: '', country: '', region: '', sector: '', year_founded: '', revenue_range: '', ebitda_margin: '', employee_count: '', owner_involvement: '', asking_price: '', partial_sale: '', timeline: '', business_description: '' });
+  }
 
-  function handleAiSubmit() {
+  function parseUrls(raw: string): string[] {
+    return raw.split('\n').map((s) => s.trim()).filter((s) => s.startsWith('http'));
+  }
+
+  function handleCsvUpload(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      const text = ev.target?.result as string;
+      const urls = text
+        .split('\n')
+        .map((line) => line.split(',')[0].trim())
+        .filter((val) => val.startsWith('http'));
+      setAiInput((prev) => {
+        const existing = prev.trim();
+        return existing ? `${existing}\n${urls.join('\n')}` : urls.join('\n');
+      });
+    };
+    reader.readAsText(file);
+    // Reset so same file can be re-uploaded
+    e.target.value = '';
+  }
+
+  async function handleAiSubmit() {
     setError(null);
     setResult(null);
+
+    if (aiInputMode === 'url') {
+      const urls = parseUrls(aiInput);
+      if (urls.length === 0) { setError('No valid URLs found. Add one URL per line.'); return; }
+
+      if (urls.length === 1) {
+        // Single URL — use existing transition path for cleaner success state
+        startTransition(async () => {
+          try {
+            const res = await ingestListingWithAI({ mode: 'url', url: urls[0] });
+            setResult(res);
+            setAiInput('');
+          } catch (e) {
+            setError(e instanceof Error ? e.message : 'Something went wrong.');
+          }
+        });
+        return;
+      }
+
+      // Multiple URLs — sequential batch
+      setRunning(true);
+      setBatchLog([]);
+      setProgress({ current: 0, total: urls.length });
+
+      for (let i = 0; i < urls.length; i++) {
+        const url = urls[i];
+        setProgress({ current: i + 1, total: urls.length });
+        try {
+          const res = await ingestListingWithAI({ mode: 'url', url });
+          setBatchLog((prev) => [...prev, { url, status: 'ok', slug: res.slug, title: res.title }]);
+        } catch (e) {
+          setBatchLog((prev) => [...prev, { url, status: 'error', message: e instanceof Error ? e.message : 'Unknown error' }]);
+        }
+      }
+
+      setRunning(false);
+      setProgress(null);
+      setAiInput('');
+      return;
+    }
+
+    // Text mode — single call
     startTransition(async () => {
       try {
-        const res = await ingestListingWithAI(
-          aiInputMode === 'url' ? { mode: 'url', url: aiInput.trim() } : { mode: 'text', text: aiInput.trim() }
-        );
+        const res = await ingestListingWithAI({ mode: 'text', text: aiInput.trim() });
         setResult(res);
         setAiInput('');
       } catch (e) {
@@ -55,6 +130,11 @@ export function IngestPanel() {
       }
     });
   }
+
+  const isBusy = pending || running;
+  const batchDone = !running && batchLog.length > 0;
+  const batchOk = batchLog.filter((e) => e.status === 'ok').length;
+  const batchFail = batchLog.filter((e) => e.status === 'error').length;
 
   return (
     <div className="rounded-lg border border-[var(--color-border)] bg-white">
@@ -79,7 +159,7 @@ export function IngestPanel() {
       </div>
 
       <div className="px-5 py-4">
-        {/* Success state */}
+        {/* Single-result success state */}
         {result && (
           <div className="flex items-center justify-between rounded-md bg-[#EBF1ED] px-4 py-3">
             <div>
@@ -107,7 +187,7 @@ export function IngestPanel() {
               {(['url', 'text'] as AiInputMode[]).map((m) => (
                 <button
                   key={m}
-                  onClick={() => setAiInputMode(m)}
+                  onClick={() => { setAiInputMode(m); setBatchLog([]); setProgress(null); }}
                   className={`rounded-full px-3 py-1 text-[11px] font-semibold transition-colors ${
                     aiInputMode === m
                       ? 'bg-[var(--color-surface)] text-[var(--color-text)]'
@@ -120,20 +200,41 @@ export function IngestPanel() {
             </div>
 
             {aiInputMode === 'url' ? (
-              <input
-                value={aiInput}
-                onChange={(e) => setAiInput(e.target.value)}
-                placeholder="https://example.com/business-for-sale"
-                disabled={pending}
-                className="w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-text)] disabled:opacity-50"
-              />
+              <div className="flex flex-col gap-2">
+                <textarea
+                  value={aiInput}
+                  onChange={(e) => setAiInput(e.target.value)}
+                  placeholder={"https://example.com/listing-one\nhttps://example.com/listing-two"}
+                  rows={3}
+                  disabled={isBusy}
+                  className="w-full resize-none rounded-md border border-[var(--color-border)] bg-white px-3 py-2 font-mono text-[12px] outline-none focus:border-[var(--color-text)] disabled:opacity-50 placeholder:text-[var(--color-muted)] placeholder:font-sans"
+                />
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    disabled={isBusy}
+                    className="rounded-md border border-[var(--color-border)] px-3 py-1.5 text-[11px] font-semibold text-[var(--color-muted)] transition-colors hover:border-[var(--color-text)] hover:text-[var(--color-text)] disabled:opacity-40"
+                  >
+                    Upload CSV
+                  </button>
+                  <span className="text-[11px] text-[var(--color-muted)]">First column must be URLs</span>
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept=".csv,text/csv"
+                    className="hidden"
+                    onChange={handleCsvUpload}
+                  />
+                </div>
+              </div>
             ) : (
               <textarea
                 value={aiInput}
                 onChange={(e) => setAiInput(e.target.value)}
                 placeholder="Paste any description, listing text, or broker summary here..."
                 rows={5}
-                disabled={pending}
+                disabled={isBusy}
                 className="w-full resize-none rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-text)] disabled:opacity-50 placeholder:text-[var(--color-muted)]"
               />
             )}
@@ -141,15 +242,75 @@ export function IngestPanel() {
             <div className="flex items-center gap-3">
               <button
                 onClick={handleAiSubmit}
-                disabled={pending || !aiInput.trim()}
+                disabled={isBusy || !aiInput.trim()}
                 className="rounded-md bg-[var(--color-accent)] px-5 py-2 text-[13px] font-semibold text-white transition-opacity hover:opacity-[0.88] disabled:opacity-40"
               >
-                {pending ? 'Claude is extracting…' : 'Extract with AI'}
+                {running ? 'Processing…' : pending ? 'Claude is extracting…' : 'Extract with AI'}
               </button>
-              {pending && (
-                <span className="text-[11px] text-[var(--color-muted)]">This takes 10–20 seconds</span>
+              {(pending || running) && (
+                <span className="text-[11px] text-[var(--color-muted)]">
+                  {running && progress
+                    ? `Processing ${progress.current} of ${progress.total}…`
+                    : 'This takes 10–20 seconds'}
+                </span>
               )}
             </div>
+
+            {/* Batch log */}
+            {(running || batchDone) && (
+              <div className="mt-1 flex flex-col gap-1">
+                {/* Progress bar */}
+                {running && progress && (
+                  <div className="h-1 w-full overflow-hidden rounded-full bg-[var(--color-surface)]">
+                    <div
+                      className="h-full rounded-full bg-[var(--color-accent)] transition-all"
+                      style={{ width: `${(progress.current / progress.total) * 100}%` }}
+                    />
+                  </div>
+                )}
+
+                {/* Per-URL rows */}
+                <div className="flex flex-col gap-0.5 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] p-2">
+                  {batchLog.map((entry, i) => (
+                    <div key={i} className="flex items-baseline gap-1.5 font-mono text-[11px]">
+                      {entry.status === 'ok' ? (
+                        <>
+                          <span className="text-[var(--color-accent)]">✓</span>
+                          <span className="text-[var(--color-accent)] opacity-80">{entry.slug}</span>
+                          {entry.title && <span className="truncate text-[var(--color-muted)]">{entry.title}</span>}
+                        </>
+                      ) : (
+                        <>
+                          <span className="text-red-500">✗</span>
+                          <span className="truncate text-[var(--color-muted)]">{entry.url}</span>
+                          <span className="text-red-500">{entry.message}</span>
+                        </>
+                      )}
+                    </div>
+                  ))}
+                  {running && progress && (
+                    <div className="font-mono text-[11px] text-[var(--color-muted)] opacity-60">
+                      {progress.current < progress.total ? 'Fetching next…' : ''}
+                    </div>
+                  )}
+                </div>
+
+                {/* Summary + clear */}
+                {batchDone && (
+                  <div className="flex items-center justify-between pt-1">
+                    <p className="text-[11px] text-[var(--color-muted)]">
+                      {batchLog.length} processed — {batchOk} succeeded{batchFail > 0 ? `, ${batchFail} failed` : ''}
+                    </p>
+                    <button
+                      onClick={() => setBatchLog([])}
+                      className="text-[11px] text-[var(--color-muted)] underline underline-offset-2 hover:opacity-70"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         )}
 

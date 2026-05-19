@@ -2,6 +2,7 @@
 
 require('dotenv').config({ path: require('path').resolve(__dirname, '../.env.local') });
 
+const fs = require('fs');
 const { createClient } = require('@supabase/supabase-js');
 const Anthropic = require('@anthropic-ai/sdk');
 
@@ -15,17 +16,20 @@ function parseArgs() {
   const args = process.argv.slice(2);
   let url = null;
   let text = null;
+  let file = null;
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--url' && args[i + 1]) { url = args[++i]; }
     else if (args[i] === '--text' && args[i + 1]) { text = args[++i]; }
+    else if (args[i] === '--file' && args[i + 1]) { file = args[++i]; }
   }
-  if (!url && !text) {
+  if (!url && !text && !file) {
     console.error('Usage:');
     console.error('  node scripts/ingest.js --url <url>');
     console.error('  node scripts/ingest.js --text "<pasted text>"');
+    console.error('  node scripts/ingest.js --file <path-to-csv>   (first column = URLs)');
     process.exit(1);
   }
-  return { url, text };
+  return { url, text, file };
 }
 
 // ---------------------------------------------------------------------------
@@ -326,10 +330,78 @@ async function insertListing(payload) {
 // Main
 // ---------------------------------------------------------------------------
 
-async function main() {
-  const { url, text } = parseArgs();
+async function ingestUrl(url) {
+  const inputText = await fetchUrl(url);
+  const extracted = await extractListing(inputText);
+  const slug = generateSlug(extracted);
+  const payload = {
+    status: 'draft',
+    source: 'operator_ingest',
+    business_name:        extracted.business_name        ?? null,
+    country:              extracted.country              ?? null,
+    region:               extracted.region               ?? null,
+    sector:               extracted.sector               ?? null,
+    year_founded:         extracted.year_founded         ?? null,
+    seller_email:         extracted.seller_email         ?? null,
+    seller_phone:         extracted.seller_phone         ?? null,
+    revenue_range:        extracted.revenue_range        ?? null,
+    ebitda_margin:        extracted.ebitda_margin        ?? null,
+    employee_count:       extracted.employee_count       ?? null,
+    owner_involvement:    extracted.owner_involvement    ?? null,
+    asking_price:         extracted.asking_price         ?? null,
+    partial_sale:         extracted.partial_sale         ?? null,
+    timeline:             extracted.timeline             ?? null,
+    reasons_for_sale:     extracted.reasons_for_sale     ?? null,
+    business_description: extracted.business_description ?? null,
+    strongest_point:      extracted.strongest_point      ?? null,
+    buyer_disclosure:     extracted.buyer_disclosure     ?? null,
+    title:                extracted.title                ?? null,
+    about:                extracted.about                ?? null,
+    highlights:           extracted.highlights           ?? null,
+    buyer_tags:           extracted.buyer_tags           ?? null,
+    slug,
+  };
+  const { id, slug: finalSlug } = await insertListing(payload);
+  return { id, slug: finalSlug, title: extracted.title };
+}
 
-  // 1. Acquire input text
+async function main() {
+  const { url, text, file } = parseArgs();
+
+  // --file: batch mode from CSV
+  if (file) {
+    const lines = fs.readFileSync(file, 'utf8')
+      .split('\n')
+      .map((l) => l.split(',')[0].trim())
+      .filter((l) => l.startsWith('http'));
+
+    if (lines.length === 0) {
+      console.error('No URLs found in file (first column must start with http).');
+      process.exit(1);
+    }
+
+    console.log(`Found ${lines.length} URL${lines.length === 1 ? '' : 's'} in ${file}\n`);
+    let ok = 0;
+    let fail = 0;
+
+    for (let i = 0; i < lines.length; i++) {
+      const u = lines[i];
+      process.stdout.write(`[${i + 1}/${lines.length}] ${u} ... `);
+      try {
+        const { slug: finalSlug, title } = await ingestUrl(u);
+        console.log(`✓ ${finalSlug}${title ? ` — ${title}` : ''}`);
+        ok++;
+      } catch (e) {
+        console.log(`✗ ${e.message}`);
+        fail++;
+      }
+    }
+
+    console.log(`\nDone. ${ok} succeeded, ${fail} failed.`);
+    return;
+  }
+
+  // --url or --text: single listing
   let inputText;
   if (url) {
     console.log(`Fetching ${url} ...`);
@@ -340,14 +412,9 @@ async function main() {
     console.log(`Using provided text (${inputText.length.toLocaleString()} characters).`);
   }
 
-  // 2. Extract + rewrite with Claude
   console.log('Extracting and rewriting listing with Claude...');
   const extracted = await extractListing(inputText);
-
-  // 3. Generate slug
   const slug = generateSlug(extracted);
-
-  // 4. Build insert payload
   const payload = {
     status: 'draft',
     source: 'operator_ingest',
@@ -376,7 +443,6 @@ async function main() {
     slug,
   };
 
-  // 5. Insert
   console.log('Inserting into Supabase...');
   const { id, slug: finalSlug } = await insertListing(payload);
 
