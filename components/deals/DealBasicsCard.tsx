@@ -1,4 +1,6 @@
-import { formatPartialSale, formatReasons } from '@/lib/format';
+'use client';
+
+import { useTranslations } from 'next-intl';
 import type { Listing } from '@/types';
 
 interface DealBasicsCardProps {
@@ -14,15 +16,22 @@ interface DealBasicsCardProps {
 }
 
 export function DealBasicsCard({ listing, labels }: DealBasicsCardProps) {
+  const t = useTranslations('deals');
+
   const countryName =
-    listing.country === 'IT' ? 'Italy' : listing.country === 'PT' ? 'Portugal' : (listing.country ?? '—');
+    listing.country === 'IT' ? t('countries.IT') : listing.country === 'PT' ? t('countries.PT') : (listing.country ?? '—');
+
+  const partialSaleValue = listing.partial_sale ? t(`partialSaleValues.${listing.partial_sale}`) : '—';
+  const reasonsValue = listing.reasons_for_sale && listing.reasons_for_sale.length > 0
+    ? listing.reasons_for_sale.map((r: string) => t(`reasonsValues.${r}`)).join(', ')
+    : '—';
 
   const rows = [
     { label: labels.country, value: countryName },
     { label: labels.region, value: listing.region ?? '—' },
     { label: labels.yearFounded, value: listing.year_founded?.toString() ?? '—' },
-    { label: labels.saleStructure, value: formatPartialSale(listing.partial_sale) },
-    { label: labels.reasonsForSale, value: formatReasons(listing.reasons_for_sale) },
+    { label: labels.saleStructure, value: partialSaleValue },
+    { label: labels.reasonsForSale, value: reasonsValue },
   ];
 
   return (

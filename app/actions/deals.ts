@@ -4,6 +4,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { generateSlug } from '@/lib/format';
+import { translateTags } from '@/lib/tags';
 
 export async function submitEnquiry(data: {
   listing_id: string;
@@ -106,20 +107,18 @@ async function translateListing(listingId: string, admin: ReturnType<typeof crea
           title_it:      { type: ['string', 'null'] },
           about_it:      { type: ['string', 'null'] },
           highlights_it: { type: ['array', 'null'], items: { type: 'string' } },
-          buyer_tags_it: { type: ['array', 'null'], items: { type: 'string' } },
           title_pt:      { type: ['string', 'null'] },
           about_pt:      { type: ['string', 'null'] },
           highlights_pt: { type: ['array', 'null'], items: { type: 'string' } },
-          buyer_tags_pt: { type: ['array', 'null'], items: { type: 'string' } },
         },
-        required: ['title_it','about_it','highlights_it','buyer_tags_it','title_pt','about_pt','highlights_pt','buyer_tags_pt'],
+        required: ['title_it','about_it','highlights_it','title_pt','about_pt','highlights_pt'],
       },
     }],
     tool_choice: { type: 'tool', name: 'translate_listing' },
     system: 'Translate business listing content into Italian and European Portuguese. Rewrite naturally in each language — do not translate word-for-word. Maintain a professional, financially-literate tone. Use null for any field where the source is null.',
     messages: [{
       role: 'user',
-      content: `Translate this listing content:\n\nTitle: ${data.title ?? 'null'}\nAbout: ${data.about ?? 'null'}\nHighlights: ${JSON.stringify(data.highlights ?? null)}\nBuyer tags: ${JSON.stringify(data.buyer_tags ?? null)}`,
+      content: `Translate this listing content:\n\nTitle: ${data.title ?? 'null'}\nAbout: ${data.about ?? 'null'}\nHighlights: ${JSON.stringify(data.highlights ?? null)}`,
     }],
   });
 
@@ -131,10 +130,10 @@ async function translateListing(listingId: string, admin: ReturnType<typeof crea
     title_it:      t.title_it      ?? null,
     about_it:      t.about_it      ?? null,
     highlights_it: t.highlights_it ?? null,
-    buyer_tags_it: t.buyer_tags_it ?? null,
+    buyer_tags_it: translateTags(data.buyer_tags as string[] | null, 'it'),
     title_pt:      t.title_pt      ?? null,
     about_pt:      t.about_pt      ?? null,
     highlights_pt: t.highlights_pt ?? null,
-    buyer_tags_pt: t.buyer_tags_pt ?? null,
+    buyer_tags_pt: translateTags(data.buyer_tags as string[] | null, 'pt'),
   }).eq('id', listingId);
 }

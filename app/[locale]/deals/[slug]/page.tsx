@@ -14,9 +14,6 @@ import {
   formatRevenue,
   formatEbitda,
   formatPrice,
-  formatEmployees,
-  formatTimeline,
-  formatOwnerInvolvement,
 } from '@/lib/format';
 import type { Listing } from '@/types';
 
@@ -101,9 +98,9 @@ export default async function DealDetailPage({
               <MetricChip label={t('metrics.revenue')} value={formatRevenue(listing.revenue_range)} />
               <MetricChip label={t('metrics.ebitda')} value={formatEbitda(listing.ebitda_margin)} />
               <MetricChip label={t('metrics.askingPrice')} value={formatPrice(listing.asking_price)} />
-              <MetricChip label={t('metrics.employees')} value={formatEmployees(listing.employee_count)} />
-              <MetricChip label={t('metrics.timeline')} value={formatTimeline(listing.timeline)} />
-              <MetricChip label={t('metrics.ownerInvolvement')} value={formatOwnerInvolvement(listing.owner_involvement)} />
+              <MetricChip label={t('metrics.employees')} value={listing.employee_count ? t(`employeeValues.${listing.employee_count}`) : '—'} />
+              <MetricChip label={t('metrics.timeline')} value={listing.timeline ? t(`timelineValues.${listing.timeline}`) : '—'} />
+              <MetricChip label={t('metrics.ownerInvolvement')} value={listing.owner_involvement ? t(`ownerInvolvementValues.${listing.owner_involvement}`) : '—'} />
             </div>
 
             {(lc.about ?? listing.business_description) && (
@@ -130,7 +127,7 @@ export default async function DealDetailPage({
                   {t('browse.card.bestFor')}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {lc.buyer_tags.map((tag: string) => (
+                  {lc.buyer_tags.slice(0, 3).map((tag: string) => (
                     <span
                       key={tag}
                       className="rounded bg-[var(--color-surface)] px-2.5 py-1 text-[13px] text-[var(--color-text)]"

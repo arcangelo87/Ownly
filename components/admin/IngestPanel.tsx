@@ -357,7 +357,7 @@ export function IngestPanel() {
                   <option value="10_20">10–20%</option>
                   <option value="20_35">20–35%</option>
                   <option value="above_35">&gt;35%</option>
-                  <option value="not_sure">Not sure</option>
+                  <option value="not_sure">Unknown</option>
                 </select>
               </Field>
               <Field label="Employees">

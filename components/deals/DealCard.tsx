@@ -99,7 +99,7 @@ export function DealCard({ listing, photoHeight = 'h-40' }: DealCardProps) {
               <span className="text-[11px] uppercase tracking-[0.08em] text-[var(--color-muted)]">
                 {tCard('bestFor')}:
               </span>
-              {listing.buyer_tags.map((tag) => (
+              {listing.buyer_tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
                   className="rounded bg-[var(--color-surface)] px-1.5 py-0.5 text-[11px] text-[var(--color-text)]"

@@ -83,7 +83,7 @@ Rules:
 - about: rewrite as 4–6 sentences. Cover: what the business does, how it makes money, its customer base, trading history, and what makes it attractive to a buyer. British English. Financially precise. No filler phrases. Must be entirely original prose.
 - business_description: a shorter 2–3 sentence factual summary for internal use. Different wording from about.
 - highlights: 3–5 bullet-point strings. Each is a standalone fact or metric. E.g. "Established 2008, 16 years of continuous trading". Start each with a capital letter. No bullet symbols.
-- buyer_tags: 2–5 short tags relevant to buyer type or deal thesis. E.g. "Owner-operator", "Lifestyle acquisition", "Portfolio add-on", "Passive income", "Turnaround", "Succession opportunity".
+- buyer_tags: pick up to 3 tags from the allowed list only. Do not invent new tags.
 - strongest_point: one sentence naming the single most compelling reason a buyer should be interested.
 - buyer_disclosure: one sentence covering material risks, dependencies, or caveats. Null if none are stated or inferable.
 - Do not include seller_email or seller_phone unless they appear explicitly in the source text.`;
@@ -213,8 +213,17 @@ const EXTRACT_TOOL = {
       },
       buyer_tags: {
         type: ['array', 'null'],
-        items: { type: 'string' },
-        description: '2–5 short buyer-type or deal-thesis tags.',
+        items: {
+          type: 'string',
+          enum: [
+            'Owner-operator', 'Passive income', 'Lifestyle acquisition',
+            'Succession opportunity', 'Bolt-on acquisition', 'Portfolio add-on',
+            'Turnaround', 'Growth capital', 'First acquisition',
+            'Recurring revenue', 'Asset-light', 'Family business',
+          ],
+        },
+        maxItems: 3,
+        description: 'Up to 3 tags from the allowed list only.',
       },
     },
     required: [

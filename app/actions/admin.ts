@@ -4,6 +4,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { createClient } from '@/lib/supabase/server';
 import { SECTOR_LABELS, generateSlug } from '@/lib/format';
+import { translateTags } from '@/lib/tags';
 
 const VALID_STATUSES = ['draft', 'in_review', 'live', 'rejected'] as const;
 type ListingStatus = (typeof VALID_STATUSES)[number];
@@ -122,7 +123,7 @@ Rules:
 - about: 4–6 sentences. What it does, how it makes money, customer base, trading history, buyer appeal. British English.
 - business_description: 2–3 sentence factual internal summary. Different wording from about.
 - highlights: 3–5 standalone fact or metric strings. Start with a capital letter.
-- buyer_tags: 2–5 short deal-thesis tags. E.g. "Owner-operator", "Succession opportunity", "Passive income".
+- buyer_tags: pick up to 3 tags from the allowed list only. Do not invent new tags.
 - strongest_point: one sentence, the single most compelling reason to buy.
 - buyer_disclosure: one sentence covering material risks. Null if none stated.
 - Do not invent seller_email or seller_phone.`;
@@ -154,7 +155,7 @@ const INGEST_TOOL = {
       title:                { type: ['string', 'null'], description: 'SEO title, 8–12 words.' },
       about:                { type: ['string', 'null'], description: '4–6 sentence buyer-facing description.' },
       highlights:           { type: ['array', 'null'], items: { type: 'string' } },
-      buyer_tags:           { type: ['array', 'null'], items: { type: 'string' } },
+      buyer_tags:           { type: ['array', 'null'], items: { type: 'string', enum: ['Owner-operator','Passive income','Lifestyle acquisition','Succession opportunity','Bolt-on acquisition','Portfolio add-on','Turnaround','Growth capital','First acquisition','Recurring revenue','Asset-light','Family business'] }, maxItems: 3 },
     },
     required: [
       'business_name','country','region','sector','year_founded','seller_email','seller_phone',
@@ -315,20 +316,18 @@ export async function generateTranslations(listingId: string): Promise<{
           title_it:      { type: ['string', 'null'] },
           about_it:      { type: ['string', 'null'] },
           highlights_it: { type: ['array', 'null'], items: { type: 'string' } },
-          buyer_tags_it: { type: ['array', 'null'], items: { type: 'string' } },
           title_pt:      { type: ['string', 'null'] },
           about_pt:      { type: ['string', 'null'] },
           highlights_pt: { type: ['array', 'null'], items: { type: 'string' } },
-          buyer_tags_pt: { type: ['array', 'null'], items: { type: 'string' } },
         },
-        required: ['title_it','about_it','highlights_it','buyer_tags_it','title_pt','about_pt','highlights_pt','buyer_tags_pt'],
+        required: ['title_it','about_it','highlights_it','title_pt','about_pt','highlights_pt'],
       },
     }],
     tool_choice: { type: 'tool', name: 'translate_listing' },
     system: 'Translate business listing content into Italian and European Portuguese. Rewrite naturally in each language, do not translate word-for-word. Maintain a professional, financially-literate tone. Use null for any field where the source is null.',
     messages: [{
       role: 'user',
-      content: `Translate this listing content:\n\nTitle: ${data.title ?? 'null'}\nAbout: ${data.about ?? 'null'}\nHighlights: ${JSON.stringify(data.highlights ?? null)}\nBuyer tags: ${JSON.stringify(data.buyer_tags ?? null)}`,
+      content: `Translate this listing content:\n\nTitle: ${data.title ?? 'null'}\nAbout: ${data.about ?? 'null'}\nHighlights: ${JSON.stringify(data.highlights ?? null)}`,
     }],
   });
 
@@ -340,11 +339,11 @@ export async function generateTranslations(listingId: string): Promise<{
     title_it:      (t.title_it      as string | null) ?? null,
     about_it:      (t.about_it      as string | null) ?? null,
     highlights_it: (t.highlights_it as string[] | null) ?? null,
-    buyer_tags_it: (t.buyer_tags_it as string[] | null) ?? null,
+    buyer_tags_it: translateTags(data.buyer_tags as string[] | null, 'it'),
     title_pt:      (t.title_pt      as string | null) ?? null,
     about_pt:      (t.about_pt      as string | null) ?? null,
     highlights_pt: (t.highlights_pt as string[] | null) ?? null,
-    buyer_tags_pt: (t.buyer_tags_pt as string[] | null) ?? null,
+    buyer_tags_pt: translateTags(data.buyer_tags as string[] | null, 'pt'),
   };
 
   await admin.from('listings').update(result).eq('id', listingId);
