@@ -1,7 +1,6 @@
 import { redirect } from 'next/navigation';
 
-type Props = { params: { locale: string } };
-
-export default function SellersPage({ params }: Props) {
-  redirect(`/${params.locale}`);
+export default async function SellersPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  redirect(`/${locale}`);
 }

@@ -14,7 +14,8 @@ export const SECTOR_LABELS: Record<string, string> = {
   other: 'Other',
 };
 
-export function formatRevenue(val: string | null): string {
+export function formatRevenue(val: string | null, note?: string | null): string {
+  if (note) return note;
   const map: Record<string, string> = {
     under_500k: '<€500k', '500k_1m': '€500k–1M', '1m_2_5m': '€1–2.5M',
     '2_5m_5m': '€2.5–5M', over_5m: '>€5M',
@@ -39,14 +40,16 @@ export function formatEmployees(val: string | null): string {
   return val ? (map[val] ?? val) : '—';
 }
 
-export function formatEbitda(val: string | null): string {
+export function formatEbitda(val: string | null, note?: string | null): string {
+  if (note) return note;
   const map: Record<string, string> = {
     below_10: '<10%', '10_20': '10–20%', '20_35': '20–35%', above_35: '>35%', not_sure: 'Not sure',
   };
   return val ? (map[val] ?? val) : '—';
 }
 
-export function formatPrice(val: string | null): string {
+export function formatPrice(val: string | null, note?: string | null): string {
+  if (note) return note;
   const map: Record<string, string> = {
     under_500k: '<€500k', '500k_1m': '€500k–€1M', '1m_2_5m': '€1M–€2.5M',
     '2_5m_5m': '€2.5M–€5M', '5m_10m': '€5M–€10M', over_10m: '>€10M',

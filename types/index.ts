@@ -18,12 +18,15 @@ export interface Listing {
 
   // Step 2
   revenue_range: string | null;
+  revenue_note: string | null;
   ebitda_margin: string | null;
+  ebitda_note: string | null;
   employee_count: string | null;
   owner_involvement: string | null;
 
   // Step 3
   asking_price: string | null;
+  price_note: string | null;
   partial_sale: string | null;
   timeline: string | null;
 

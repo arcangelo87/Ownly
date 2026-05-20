@@ -125,7 +125,8 @@ Rules:
 - buyer_tags: 2–5 short deal-thesis tags. E.g. "Owner-operator", "Succession opportunity", "Passive income".
 - strongest_point: one sentence, the single most compelling reason to buy.
 - buyer_disclosure: one sentence covering material risks. Null if none stated.
-- Do not invent seller_email or seller_phone.`;
+- Do not invent seller_email or seller_phone.
+- revenue_note / ebitda_note / price_note: if the source states a specific figure (not just vague language), capture it as a short English string. E.g. "Ricavi 2024: range tra i 35M ed € 40M" → revenue_note: "€35M–40M (2024)". Null if no specific figure is stated.`;
 
 const INGEST_TOOL = {
   name: 'extract_listing',
@@ -141,10 +142,13 @@ const INGEST_TOOL = {
       seller_email:         { type: ['string', 'null'], description: 'Only if explicit in source.' },
       seller_phone:         { type: ['string', 'null'], description: 'Only if explicit in source.' },
       revenue_range:        { type: ['string', 'null'], enum: ['under_500k','500k_1m','1m_2_5m','2_5m_5m','over_5m', null] },
+      revenue_note:         { type: ['string', 'null'], description: 'Verbatim revenue figure from source, in English. E.g. "€35M–40M (2024)". Null if not stated.' },
       ebitda_margin:        { type: ['string', 'null'], enum: ['below_10','10_20','20_35','above_35','not_sure', null] },
+      ebitda_note:          { type: ['string', 'null'], description: 'Verbatim EBITDA or margin figure from source. Null if not stated.' },
       employee_count:       { type: ['string', 'null'], enum: ['just_me','2_5','6_15','16_30','30_plus', null] },
       owner_involvement:    { type: ['string', 'null'], enum: ['full_time','part_time','advisory','minimal', null] },
       asking_price:         { type: ['string', 'null'], enum: ['under_500k','500k_1m','1m_2_5m','2_5m_5m','5m_10m','over_10m', null] },
+      price_note:           { type: ['string', 'null'], description: 'Verbatim asking price from source. Null if not stated.' },
       partial_sale:         { type: ['string', 'null'], enum: ['open_to_minority','full_sale_only', null] },
       timeline:             { type: ['string', 'null'], enum: ['ready_now','6_12_months','1_2_years','exploring', null] },
       reasons_for_sale:     { type: ['array', 'null'], items: { type: 'string', enum: ['retirement','growth_capital','no_succession','health_personal','market_opportunity','other'] } },
@@ -158,8 +162,8 @@ const INGEST_TOOL = {
     },
     required: [
       'business_name','country','region','sector','year_founded','seller_email','seller_phone',
-      'revenue_range','ebitda_margin','employee_count','owner_involvement',
-      'asking_price','partial_sale','timeline','reasons_for_sale',
+      'revenue_range','revenue_note','ebitda_margin','ebitda_note','employee_count','owner_involvement',
+      'asking_price','price_note','partial_sale','timeline','reasons_for_sale',
       'business_description','strongest_point','buyer_disclosure',
       'title','about','highlights','buyer_tags',
     ],
@@ -230,10 +234,13 @@ export async function ingestListingWithAI(
     seller_email: x.seller_email ?? null,
     seller_phone: x.seller_phone ?? null,
     revenue_range: x.revenue_range ?? null,
+    revenue_note: x.revenue_note ?? null,
     ebitda_margin: x.ebitda_margin ?? null,
+    ebitda_note: x.ebitda_note ?? null,
     employee_count: x.employee_count ?? null,
     owner_involvement: x.owner_involvement ?? null,
     asking_price: x.asking_price ?? null,
+    price_note: x.price_note ?? null,
     partial_sale: x.partial_sale ?? null,
     timeline: x.timeline ?? null,
     reasons_for_sale: x.reasons_for_sale ?? null,
