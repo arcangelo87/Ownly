@@ -394,6 +394,7 @@ export async function backfillMissingTranslations(): Promise<{ translated: numbe
   const { data: listings, error } = await admin
     .from('listings')
     .select('id, title, about, highlights, buyer_tags')
+    .eq('status', 'live')
     .not('title', 'is', null)
     .is('deleted_at', null)
     .or('title_it.is.null,title_pt.is.null');
