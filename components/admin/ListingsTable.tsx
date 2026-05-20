@@ -146,7 +146,7 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
                     {listing.sector ? (SECTOR_LABELS[listing.sector] ?? listing.sector) : '—'}
                   </td>
                   <td className="px-4 py-3 text-[var(--color-muted)]">
-                    {formatRevenue(listing.revenue_range, listing.revenue_note)}
+                    {formatRevenue(listing.revenue_range)}
                   </td>
                   <td className="px-4 py-3 text-[var(--color-muted)]">
                     {formatEmployees(listing.employee_count)}
@@ -204,8 +204,8 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
                         <DetailField label="Year Founded" value={listing.year_founded?.toString()} />
                         <DetailField label="Email" value={listing.seller_email} link={listing.seller_email ? `mailto:${listing.seller_email}` : undefined} />
                         <DetailField label="Phone" value={listing.seller_phone} />
-                        <DetailField label="EBITDA Margin" value={formatEbitda(listing.ebitda_margin, listing.ebitda_note)} />
-                        <DetailField label="Asking Price" value={formatPrice(listing.asking_price, listing.price_note)} />
+                        <DetailField label="EBITDA Margin" value={formatEbitda(listing.ebitda_margin)} />
+                        <DetailField label="Asking Price" value={formatPrice(listing.asking_price)} />
                         <DetailField label="Partial Sale" value={formatPartialSale(listing.partial_sale)} />
                         <DetailField label="Timeline" value={formatTimeline(listing.timeline)} />
                         <DetailField label="Reasons for Sale" value={formatReasons(listing.reasons_for_sale)} />

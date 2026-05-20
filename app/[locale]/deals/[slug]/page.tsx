@@ -34,7 +34,7 @@ export default async function DealDetailPage({
   const { data: listing, error } = await admin
     .from('listings')
     .select(
-      'id, slug, source, title, about, highlights, buyer_tags, title_it, about_it, highlights_it, buyer_tags_it, title_pt, about_pt, highlights_pt, buyer_tags_pt, owner_involvement, business_name, business_description, strongest_point, sector, region, country, year_founded, revenue_range, revenue_note, ebitda_margin, ebitda_note, employee_count, asking_price, price_note, partial_sale, timeline, reasons_for_sale, created_at',
+      'id, slug, source, title, about, highlights, buyer_tags, title_it, about_it, highlights_it, buyer_tags_it, title_pt, about_pt, highlights_pt, buyer_tags_pt, owner_involvement, business_name, business_description, strongest_point, sector, region, country, year_founded, revenue_range, ebitda_margin, employee_count, asking_price, partial_sale, timeline, reasons_for_sale, created_at',
     )
     .eq('slug', slug)
     .eq('status', 'live')
@@ -98,9 +98,9 @@ export default async function DealDetailPage({
             </h1>
 
             <div className="mt-6 grid grid-cols-3 gap-2.5 sm:grid-cols-6">
-              <MetricChip label={t('metrics.revenue')} value={formatRevenue(listing.revenue_range, listing.revenue_note)} />
-              <MetricChip label={t('metrics.ebitda')} value={formatEbitda(listing.ebitda_margin, listing.ebitda_note)} />
-              <MetricChip label={t('metrics.askingPrice')} value={formatPrice(listing.asking_price, listing.price_note)} />
+              <MetricChip label={t('metrics.revenue')} value={formatRevenue(listing.revenue_range)} />
+              <MetricChip label={t('metrics.ebitda')} value={formatEbitda(listing.ebitda_margin)} />
+              <MetricChip label={t('metrics.askingPrice')} value={formatPrice(listing.asking_price)} />
               <MetricChip label={t('metrics.employees')} value={formatEmployees(listing.employee_count)} />
               <MetricChip label={t('metrics.timeline')} value={formatTimeline(listing.timeline)} />
               <MetricChip label={t('metrics.ownerInvolvement')} value={formatOwnerInvolvement(listing.owner_involvement)} />
