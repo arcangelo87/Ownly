@@ -9,6 +9,12 @@ import { translateTags } from '@/lib/tags';
 const VALID_STATUSES = ['draft', 'in_review', 'live', 'rejected'] as const;
 type ListingStatus = (typeof VALID_STATUSES)[number];
 
+function coerceEnum(val: unknown, allowed: readonly (string | null)[]): string | null {
+  if (val === null || val === undefined) return null;
+  if (typeof val === 'string' && (allowed as (string | null)[]).includes(val)) return val;
+  return null;
+}
+
 export async function updateListingStatus(listingId: string, status: ListingStatus) {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
@@ -219,6 +225,26 @@ export async function ingestListingWithAI(
 
   const slug = buildSlug(x.business_name as string | null, x.sector as string | null, x.region as string | null, x.country as string | null);
 
+  const SECTORS = ['manufacturing','food_beverage','hospitality_tourism','leisure_entertainment','retail_artisan','health_wellness','automotive_transport','construction','professional_services','agriculture_land','wholesale','technology','other',null] as const;
+  const REVENUES = ['under_500k','500k_1m','1m_2_5m','2_5m_5m','over_5m',null] as const;
+  const EBITDAS = ['below_10','10_20','20_35','above_35','not_sure',null] as const;
+  const EMPLOYEES = ['just_me','2_5','6_15','16_30','30_plus',null] as const;
+  const INVOLVEMENTS = ['full_time','part_time','advisory','minimal',null] as const;
+  const PRICES = ['under_500k','500k_1m','1m_2_5m','2_5m_5m','5m_10m','over_10m',null] as const;
+  const PARTIALS = ['open_to_minority','full_sale_only',null] as const;
+  const TIMELINES = ['ready_now','6_12_months','1_2_years','exploring',null] as const;
+
+  const sanitized = {
+    sector:           coerceEnum(x.sector, SECTORS),
+    revenue_range:    coerceEnum(x.revenue_range, REVENUES),
+    ebitda_margin:    coerceEnum(x.ebitda_margin, EBITDAS),
+    employee_count:   coerceEnum(x.employee_count, EMPLOYEES),
+    owner_involvement:coerceEnum(x.owner_involvement, INVOLVEMENTS),
+    asking_price:     coerceEnum(x.asking_price, PRICES),
+    partial_sale:     coerceEnum(x.partial_sale, PARTIALS),
+    timeline:         coerceEnum(x.timeline, TIMELINES),
+  };
+
   const admin = createAdminClient();
   const { data, error } = await admin.from('listings').insert({
     status: 'draft',
@@ -226,17 +252,10 @@ export async function ingestListingWithAI(
     business_name: x.business_name ?? null,
     country: x.country ?? null,
     region: x.region ?? null,
-    sector: x.sector ?? null,
+    ...sanitized,
     year_founded: x.year_founded ?? null,
     seller_email: x.seller_email ?? null,
     seller_phone: x.seller_phone ?? null,
-    revenue_range: x.revenue_range ?? null,
-    ebitda_margin: x.ebitda_margin ?? null,
-    employee_count: x.employee_count ?? null,
-    owner_involvement: x.owner_involvement ?? null,
-    asking_price: x.asking_price ?? null,
-    partial_sale: x.partial_sale ?? null,
-    timeline: x.timeline ?? null,
     reasons_for_sale: x.reasons_for_sale ?? null,
     business_description: x.business_description ?? null,
     strongest_point: x.strongest_point ?? null,
@@ -257,17 +276,10 @@ export async function ingestListingWithAI(
         business_name: x.business_name ?? null,
         country: x.country ?? null,
         region: x.region ?? null,
-        sector: x.sector ?? null,
+        ...sanitized,
         year_founded: x.year_founded ?? null,
         seller_email: x.seller_email ?? null,
         seller_phone: x.seller_phone ?? null,
-        revenue_range: x.revenue_range ?? null,
-        ebitda_margin: x.ebitda_margin ?? null,
-        employee_count: x.employee_count ?? null,
-        owner_involvement: x.owner_involvement ?? null,
-        asking_price: x.asking_price ?? null,
-        partial_sale: x.partial_sale ?? null,
-        timeline: x.timeline ?? null,
         reasons_for_sale: x.reasons_for_sale ?? null,
         business_description: x.business_description ?? null,
         strongest_point: x.strongest_point ?? null,
@@ -348,6 +360,12 @@ export async function generateTranslations(listingId: string): Promise<{
 
   await admin.from('listings').update(result).eq('id', listingId);
   return result;
+}
+
+export async function fixBadEnumValues() {
+  const admin = createAdminClient();
+  await admin.from('listings').update({ ebitda_margin: 'not_sure' }).eq('ebitda_margin', 'Not sure');
+  await admin.from('listings').update({ ebitda_margin: 'not_sure' }).eq('ebitda_margin', 'not sure');
 }
 
 export type ManualIngestData = {

@@ -5,6 +5,7 @@ import { ListingsTable } from '@/components/admin/ListingsTable';
 import { IngestPanel } from '@/components/admin/IngestPanel';
 import { SignOutButton } from '@/components/admin/SignOutButton';
 import { Logo } from '@/components/ui/Logo';
+import { fixBadEnumValues } from '@/app/actions/admin';
 import type { Listing } from '@/types';
 
 export default async function AdminPage({
@@ -18,6 +19,8 @@ export default async function AdminPage({
   const { data: { user } } = await supabase.auth.getUser();
 
   if (!user) redirect(`/${locale}/admin/login`);
+
+  await fixBadEnumValues();
 
   const admin = createAdminClient();
   const { data: listings } = await admin
