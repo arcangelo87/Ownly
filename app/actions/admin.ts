@@ -125,7 +125,8 @@ Rules:
 - buyer_tags: 2–5 short deal-thesis tags. E.g. "Owner-operator", "Succession opportunity", "Passive income".
 - strongest_point: one sentence, the single most compelling reason to buy.
 - buyer_disclosure: one sentence covering material risks. Null if none stated.
-- Do not invent seller_email or seller_phone.`;
+- Do not invent seller_email or seller_phone.
+- revenue_note / ebitda_note / price_note: if the source states a specific figure (not just vague language), capture it as a short English string. E.g. "Ricavi 2024: range tra i 35M ed € 40M" → revenue_note: "€35M–40M (2024)". Null if no specific figure is stated.`;
 
 const INGEST_TOOL = {
   name: 'extract_listing',
