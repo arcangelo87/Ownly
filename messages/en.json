@@ -197,14 +197,17 @@
     },
     "buyers": {
       "hero": {
-        "h1": "The right business for you is out there. We'll help you find it and buy it.",
+        "h1": "The right business for you is out there.",
         "sub": "Bottega is a curated space for acquiring real, cash-flowing businesses in Europe. Browse our listings or tell us what you're looking for and we'll find it.",
         "ctaBrowse": "Browse listings",
         "ctaSearch": "Start your search"
       },
       "whoFor": {
         "heading": "Who it's for",
-        "body": "Independent entrepreneurs and first-time acquirers who want to buy a real, cash-flowing business, without having to pay expensive fees."
+        "item1Label": "Independent entrepreneurs",
+        "item1Desc": "You want to own a real, cash-flowing business. You're ready to move beyond the corporate track and bet on yourself.",
+        "item2Label": "First-time acquirers",
+        "item2Desc": "You've never bought a business before. You want honest guidance without paying expensive broker or advisor fees upfront."
       },
       "whatYouGet": {
         "heading": "What you get",

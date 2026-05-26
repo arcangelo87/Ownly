@@ -31,7 +31,7 @@ export default async function HomePage({
     .eq('status', 'live')
     .is('deleted_at', null)
     .order('created_at', { ascending: false })
-    .limit(6);
+    .limit(4);
 
   const listings: ListingCard[] = await Promise.all(
     (raw ?? []).map(async (listing: RawListing) => {
@@ -48,6 +48,21 @@ export default async function HomePage({
       return { ...listing, coverPhotoUrl, photoCount: photoFiles.length };
     }),
   );
+
+  const whoForIcons = [
+    /* person — independent entrepreneur */
+    <svg key="person" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="16" cy="10" r="5" />
+      <path d="M5 28 C5 20 11 17 16 17 C21 17 27 20 27 28" />
+    </svg>,
+    /* key — first-time acquirer, gaining access */
+    <svg key="key" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="11" cy="16" r="7" />
+      <line x1="17" y1="16" x2="29" y2="16" />
+      <line x1="25" y1="16" x2="25" y2="20" />
+      <line x1="29" y1="16" x2="29" y2="20" />
+    </svg>,
+  ];
 
   const whatYouGetIcons = [
     /* document with checkmark — structured, verified listing */
@@ -79,6 +94,21 @@ export default async function HomePage({
       <line x1="16" y1="24" x2="16" y2="30" />
       <line x1="2" y1="16" x2="8" y2="16" />
       <line x1="24" y1="16" x2="30" y2="16" />
+    </svg>,
+  ];
+
+  const nudgeIcons = [
+    /* building — business owner / seller */
+    <svg key="building" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="5" y="13" width="22" height="16" />
+      <polyline points="2,13 16,4 30,13" />
+      <rect x="13" y="21" width="6" height="8" />
+    </svg>,
+    /* briefcase — broker / deal placer */
+    <svg key="briefcase" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="4" y="12" width="24" height="16" rx="2" />
+      <path d="M12 12V9c0-1.7 1.7-3 4-3s4 1.3 4 3v3" />
+      <line x1="4" y1="20" x2="28" y2="20" />
     </svg>,
   ];
 
@@ -118,35 +148,21 @@ export default async function HomePage({
       </section>
 
       {/* ── Who it's for ── */}
-      <section className="py-16 px-6 bg-[var(--color-surface)]">
-        <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          <h2 className="font-[family-name:var(--font-serif)] text-[24px] md:text-[28px] font-semibold tracking-[-0.02em] text-[var(--color-text)]">
-            {t('whoFor.heading')}
-          </h2>
-          <p className="text-[16px] text-[var(--color-muted)] leading-[1.7]">
-            {t('whoFor.body')}
-          </p>
-        </div>
-      </section>
-
-      {/* ── What you get ── */}
-      <section className="py-20 px-6 bg-[var(--color-bg)]">
+      <section className="py-20 px-6 bg-[var(--color-surface)]">
         <div className="mx-auto max-w-6xl">
           <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
-            {t('whatYouGet.heading')}
+            {t('whoFor.heading')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {([
-              [t('whatYouGet.item1Label'), t('whatYouGet.item1Desc')],
-              [t('whatYouGet.item2Label'), t('whatYouGet.item2Desc')],
-              [t('whatYouGet.item3Label'), t('whatYouGet.item3Desc')],
-              [t('whatYouGet.item4Label'), t('whatYouGet.item4Desc')],
+              [t('whoFor.item1Label'), t('whoFor.item1Desc')],
+              [t('whoFor.item2Label'), t('whoFor.item2Desc')],
             ] as [string, string][]).map(([title, body], i) => (
               <div
                 key={title}
-                className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[8px] p-6"
+                className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-[8px] p-6"
               >
-                <div className="text-[var(--color-accent)] mb-4">{whatYouGetIcons[i]}</div>
+                <div className="text-[var(--color-accent)] mb-4">{whoForIcons[i]}</div>
                 <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)] mb-3">
                   {title}
                 </h3>
@@ -157,32 +173,21 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ── Tell us what you're looking for ── */}
-      <section id="cta" className="py-20 px-6 bg-[var(--color-surface)]">
-        <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
-          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)]">
-            {t('ctaSection.heading')}
-          </h2>
-          <div>
-            <FoundingForm
-              type="buyer"
-              namePlaceholder={tForm('namePlaceholder')}
-              emailPlaceholder={tForm('emailPlaceholder')}
-              phonePlaceholder={tForm('phonePlaceholder')}
-              messagePlaceholder={tForm('messagePlaceholder')}
-              submitLabel={tForm('submit')}
-            />
-          </div>
-        </div>
-      </section>
-
       {/* ── Listings ── */}
       {listings.length > 0 && (
         <section className="py-20 px-6 bg-[var(--color-bg)]">
           <div className="mx-auto max-w-6xl">
-            <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
-              {t('listings.heading')}
-            </h2>
+            <div className="flex items-baseline justify-between mb-12">
+              <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)]">
+                {t('listings.heading')}
+              </h2>
+              <Link
+                href={`/${locale}/deals`}
+                className="text-[14px] font-medium text-[var(--color-accent)] hover:opacity-80 transition-opacity underline underline-offset-4 shrink-0"
+              >
+                {t('listings.viewAll')}
+              </Link>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
               {listings.map((listing) => (
                 <DealCard key={listing.id} listing={listing} />
@@ -200,27 +205,76 @@ export default async function HomePage({
         </section>
       )}
 
+      {/* ── What you get ── */}
+      <section className="py-20 px-6 bg-[var(--color-surface)]">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
+            {t('whatYouGet.heading')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {([
+              [t('whatYouGet.item1Label'), t('whatYouGet.item1Desc')],
+              [t('whatYouGet.item2Label'), t('whatYouGet.item2Desc')],
+              [t('whatYouGet.item3Label'), t('whatYouGet.item3Desc')],
+              [t('whatYouGet.item4Label'), t('whatYouGet.item4Desc')],
+            ] as [string, string][]).map(([title, body], i) => (
+              <div
+                key={title}
+                className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-[8px] p-6"
+              >
+                <div className="text-[var(--color-accent)] mb-4">{whatYouGetIcons[i]}</div>
+                <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)] mb-3">
+                  {title}
+                </h3>
+                <p className="text-[14px] text-[var(--color-muted)] leading-[1.65]">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Tell us what you're looking for ── */}
+      <section id="cta" className="py-20 px-6 bg-[var(--color-bg)]">
+        <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)]">
+            {t('ctaSection.heading')}
+          </h2>
+          <div>
+            <FoundingForm
+              type="buyer"
+              namePlaceholder={tForm('namePlaceholder')}
+              emailPlaceholder={tForm('emailPlaceholder')}
+              phonePlaceholder={tForm('phonePlaceholder')}
+              messagePlaceholder={tForm('messagePlaceholder')}
+              submitLabel={tForm('submit')}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* ── Seller / broker nudge ── */}
-      <section className="py-16 px-6 bg-[var(--color-surface)]">
+      <section className="py-20 px-6 bg-[var(--color-surface)]">
         <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8">
-          <p className="text-[15px] text-[var(--color-muted)] leading-[1.7]">
-            {t('nudge.sellerText')}{' '}
-            <Link
-              href={`/${locale}/sell`}
-              className="text-[var(--color-accent)] underline underline-offset-4 hover:opacity-80 transition-opacity"
+          {([
+            [t('nudge.sellerText'), t('nudge.sellerCta'), `/${locale}/sell`],
+            [t('nudge.brokerText'), t('nudge.brokerCta'), `/${locale}/brokers`],
+          ] as [string, string, string][]).map(([question, cta, href], i) => (
+            <div
+              key={question}
+              className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-[8px] p-6"
             >
-              {t('nudge.sellerCta')}
-            </Link>
-          </p>
-          <p className="text-[15px] text-[var(--color-muted)] leading-[1.7]">
-            {t('nudge.brokerText')}{' '}
-            <Link
-              href={`/${locale}/brokers`}
-              className="text-[var(--color-accent)] underline underline-offset-4 hover:opacity-80 transition-opacity"
-            >
-              {t('nudge.brokerCta')}
-            </Link>
-          </p>
+              <div className="text-[var(--color-accent)] mb-4">{nudgeIcons[i]}</div>
+              <h3 className="font-[family-name:var(--font-serif)] text-[17px] font-semibold text-[var(--color-text)] mb-3 leading-[1.4]">
+                {question}
+              </h3>
+              <Link
+                href={href}
+                className="text-[14px] text-[var(--color-accent)] underline underline-offset-4 hover:opacity-80 transition-opacity"
+              >
+                {cta}
+              </Link>
+            </div>
+          ))}
         </div>
       </section>
     </>
