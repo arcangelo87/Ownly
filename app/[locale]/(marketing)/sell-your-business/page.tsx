@@ -73,12 +73,6 @@ export default function SellYourBusinessPage() {
               >
                 {t('hero.cta')}
               </Link>
-              <Link
-                href={`/${locale}/deals`}
-                className="text-[15px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors underline underline-offset-4"
-              >
-                {t('hero.browseCta')}
-              </Link>
             </div>
           </div>
           <div className="flex justify-center">
