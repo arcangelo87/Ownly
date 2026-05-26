@@ -194,6 +194,32 @@
       "heading": "Your business deserves a proper presentation. Start here.",
       "sub": "Free to start. No broker fees. No exclusivity.",
       "button": "Get started →"
+    },
+    "buyers": {
+      "hero": {
+        "h1": "The right business for you is out there.",
+        "sub": "Bottega is a curated marketplace for acquiring cash-flowing businesses in Southern Europe. Browse our listings or tell us what you're looking for and we'll find it.",
+        "ctaBrowse": "Browse listings",
+        "ctaSearch": "Start your search"
+      },
+      "features": {
+        "card1Title": "Deals you won't find elsewhere",
+        "card1Body": "We source and curate businesses that never reach generic directories. Every listing is vetted, financially presented, and ready for serious buyers.",
+        "card2Title": "Support at every stage",
+        "card2Body": "From evaluating a deal to connecting you with financing and legal advisors, we're with you from first look to final signature.",
+        "card3Title": "Can't find what you're looking for?",
+        "card3Body": "Tell us your criteria and we'll go source it, anywhere."
+      },
+      "listings": {
+        "heading": "Currently available",
+        "viewAll": "View all listings"
+      },
+      "nudge": {
+        "sellerText": "Are you a business owner looking to sell?",
+        "sellerCta": "We'd love to hear your story.",
+        "brokerText": "Are you a broker with quality deals to place?",
+        "brokerCta": "Let's talk."
+      }
     }
   },
   "sellers": {
