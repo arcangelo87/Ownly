@@ -197,18 +197,28 @@
     },
     "buyers": {
       "hero": {
-        "h1": "The right business for you is out there.",
-        "sub": "Bottega is a curated marketplace for acquiring cash-flowing businesses in Southern Europe. Browse our listings or tell us what you're looking for and we'll find it.",
+        "h1": "The right business for you is out there. We'll help you find it and buy it.",
+        "sub": "Bottega is a curated space for acquiring real, cash-flowing businesses in Europe. Browse our listings or tell us what you're looking for and we'll find it.",
         "ctaBrowse": "Browse listings",
         "ctaSearch": "Start your search"
       },
-      "features": {
-        "card1Title": "Deals you won't find elsewhere",
-        "card1Body": "We source and curate businesses that never reach generic directories. Every listing is vetted, financially presented, and ready for serious buyers.",
-        "card2Title": "Support at every stage",
-        "card2Body": "From evaluating a deal to connecting you with financing and legal advisors, we're with you from first look to final signature.",
-        "card3Title": "Can't find what you're looking for?",
-        "card3Body": "Tell us your criteria and we'll go source it, anywhere."
+      "whoFor": {
+        "heading": "Who it's for",
+        "body": "Independent entrepreneurs and first-time acquirers who want to buy a real, cash-flowing business, without having to pay expensive fees."
+      },
+      "whatYouGet": {
+        "heading": "What you get",
+        "item1Label": "Curated listings selection",
+        "item1Desc": "Every listing page on our marketplace is financially structured and independently presented.",
+        "item2Label": "Evaluation support",
+        "item2Desc": "We help you get the info from sellers, read the numbers, understand the market, and identify red flags before you commit time.",
+        "item3Label": "Deal execution",
+        "item3Desc": "We connect you with specialist financing brokers, legal advisors, and due diligence support at every stage of closing.",
+        "item4Label": "Bespoke search, anywhere",
+        "item4Desc": "Nothing on our platform fits? Tell us your criteria and we'll go source opportunities for you, wherever they are. Most deals worth buying never reach a public directory."
+      },
+      "ctaSection": {
+        "heading": "Tell us what you're looking for."
       },
       "listings": {
         "heading": "Currently available",
