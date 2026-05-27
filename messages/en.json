@@ -197,17 +197,10 @@
     },
     "buyers": {
       "hero": {
-        "h1": "The right business for you is out there.",
-        "sub": "Bottega is a curated space for acquiring real, cash-flowing businesses in Europe. Browse our listings or tell us what you're looking for and we'll find it.",
+        "h1": "Buy a real business in Europe.",
+        "sub": "Bottega helps you acquire cash-flowing, small businesses in Europe. Browse our listings or tell us what you're looking for and we'll find it.",
         "ctaBrowse": "Browse listings",
         "ctaSearch": "Start your search"
-      },
-      "whoFor": {
-        "heading": "Who it's for",
-        "item1Label": "Independent entrepreneurs",
-        "item1Desc": "You want to own a real, cash-flowing business. You're ready to move beyond the corporate track and bet on yourself.",
-        "item2Label": "First-time acquirers",
-        "item2Desc": "You've never bought a business before. You want honest guidance without paying expensive broker or advisor fees upfront."
       },
       "whatYouGet": {
         "heading": "What you get",
@@ -220,18 +213,24 @@
         "item4Label": "Bespoke search, anywhere",
         "item4Desc": "Nothing on our platform fits? Tell us your criteria and we'll go source opportunities for you, wherever they are. Most deals worth buying never reach a public directory."
       },
-      "ctaSection": {
-        "heading": "Tell us what you're looking for."
-      },
       "listings": {
         "heading": "Currently available",
         "viewAll": "View all listings"
       },
-      "nudge": {
-        "sellerText": "Are you a business owner looking to sell?",
-        "sellerCta": "We'd love to hear your story.",
-        "brokerText": "Are you a broker with quality deals to place?",
-        "brokerCta": "Let's talk."
+      "personas": {
+        "heading": "Who it's for",
+        "buyersLabel": "Buyers",
+        "item1Label": "Independent entrepreneurs",
+        "item1Desc": "You want to own a real, cash-flowing business. You're ready to move beyond the corporate track and bet on yourself.",
+        "item2Label": "First-time acquirers",
+        "item2Desc": "You've never bought a business before. You want honest guidance without paying expensive broker or advisor fees upfront.",
+        "othersLabel": "Sellers and brokers",
+        "item3Label": "Business owners",
+        "item3Desc": "You have a business to sell. We structure your deal and present it to serious buyers, without disrupting your day-to-day.",
+        "item3Cta": "List your business",
+        "item4Label": "Brokers and advisors",
+        "item4Desc": "You have quality deals to place. We give you a curated platform to list and present them to an active buyer pool.",
+        "item4Cta": "List a deal"
       }
     }
   },
