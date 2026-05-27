@@ -6,13 +6,29 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
+const SECTOR_VALUES = [
+  'manufacturing', 'food_beverage', 'hospitality_tourism', 'leisure_entertainment',
+  'retail_artisan', 'health_wellness', 'automotive_transport', 'construction',
+  'professional_services', 'agriculture_land', 'wholesale', 'technology',
+] as const;
+
+const FEATURED_LOCATIONS = ['italy', 'portugal', 'spain'] as const;
+
+const OTHER_COUNTRY_CODES = [
+  'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR',
+  'DE', 'GR', 'HU', 'IE', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL',
+  'RO', 'SK', 'SI', 'SE', 'GB',
+] as const;
+
 const BUDGET_VALUES = ['under_500k', '500k_1m', '1m_2_5m', '2_5m_5m', '5m_10m', 'over_10m'] as const;
-const LOCATION_VALUES = ['italy', 'portugal'] as const;
+const FINANCING_VALUES = ['yes', 'no', 'notSure'] as const;
 
 export interface Step1Data {
-  industry: string;
+  sectors: string[];
+  industry_other: string;
   locations: string[];
   budget_range: string;
+  needs_financing: string;
 }
 
 interface BuyerStep1Props {
@@ -21,36 +37,50 @@ interface BuyerStep1Props {
 
 export function BuyerStep1({ onComplete }: BuyerStep1Props) {
   const t = useTranslations('buyerSearch.step1');
+  const tSectors = useTranslations('deals.sectors');
 
-  const BUDGET_OPTIONS = BUDGET_VALUES.map((v) => ({ value: v, label: t(`budgetOptions.${v}`) }));
+  const [sectors, setSectors] = useState<string[]>([]);
+  const [otherSectorChecked, setOtherSectorChecked] = useState(false);
+  const [industryOther, setIndustryOther] = useState('');
+  const [locations, setLocations] = useState<string[]>([]);
+  const [otherCountry, setOtherCountry] = useState('');
+  const [budgetRange, setBudgetRange] = useState('');
+  const [needsFinancing, setNeedsFinancing] = useState('');
+  const [errors, setErrors] = useState<{ locations?: string; budget_range?: string; needs_financing?: string }>({});
 
-  const [data, setData] = useState<Step1Data>({
-    industry: '',
-    locations: [],
-    budget_range: '',
-  });
-
-  const [errors, setErrors] = useState<{ locations?: string; budget_range?: string }>({});
+  function toggleSector(value: string) {
+    setSectors((prev) =>
+      prev.includes(value) ? prev.filter((s) => s !== value) : [...prev, value],
+    );
+  }
 
   function toggleLocation(loc: string) {
-    setData((prev) => ({
-      ...prev,
-      locations: prev.locations.includes(loc)
-        ? prev.locations.filter((l) => l !== loc)
-        : [...prev.locations, loc],
-    }));
+    setLocations((prev) =>
+      prev.includes(loc) ? prev.filter((l) => l !== loc) : [...prev, loc],
+    );
     if (errors.locations) setErrors((prev) => ({ ...prev, locations: undefined }));
   }
 
-  function setBudget(value: string) {
-    setData((prev) => ({ ...prev, budget_range: value }));
+  function handleOtherCountry(value: string) {
+    setOtherCountry(value);
+    if (errors.locations) setErrors((prev) => ({ ...prev, locations: undefined }));
+  }
+
+  function handleBudget(value: string) {
+    setBudgetRange(value);
     if (errors.budget_range) setErrors((prev) => ({ ...prev, budget_range: undefined }));
   }
 
+  function handleFinancing(value: string) {
+    setNeedsFinancing(value);
+    if (errors.needs_financing) setErrors((prev) => ({ ...prev, needs_financing: undefined }));
+  }
+
   function validate(): boolean {
-    const next: { locations?: string; budget_range?: string } = {};
-    if (data.locations.length === 0) next.locations = t('errors.locationRequired');
-    if (!data.budget_range) next.budget_range = t('errors.budgetRequired');
+    const next: { locations?: string; budget_range?: string; needs_financing?: string } = {};
+    if (locations.length === 0 && !otherCountry) next.locations = t('errors.locationRequired');
+    if (!budgetRange) next.budget_range = t('errors.budgetRequired');
+    if (!needsFinancing) next.needs_financing = t('errors.financingRequired');
     setErrors(next);
     return Object.keys(next).length === 0;
   }
@@ -58,76 +88,194 @@ export function BuyerStep1({ onComplete }: BuyerStep1Props) {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!validate()) return;
-    onComplete(data);
+    onComplete({
+      sectors,
+      industry_other: industryOther,
+      locations: [...locations, ...(otherCountry ? [otherCountry] : [])],
+      budget_range: budgetRange,
+      needs_financing: needsFinancing,
+    });
   }
 
   return (
     <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-6">
 
-      <Field label={t('industry.label')} helper={t('industry.helper')}>
-        <Input
-          type="text"
-          value={data.industry}
-          onChange={(e) => setData((prev) => ({ ...prev, industry: e.target.value }))}
-          placeholder={t('industry.placeholder')}
-        />
+      {/* Sector */}
+      <Field label={t('sectors.label')} helper={t('sectors.helper')}>
+        <div className="grid grid-cols-2 gap-2">
+          {SECTOR_VALUES.map((key) => {
+            const selected = sectors.includes(key);
+            return (
+              <CheckboxCard
+                key={key}
+                label={tSectors(key)}
+                checked={selected}
+                onChange={() => toggleSector(key)}
+              />
+            );
+          })}
+          <CheckboxCard
+            label={tSectors('other')}
+            checked={otherSectorChecked}
+            onChange={() => setOtherSectorChecked((v) => !v)}
+          />
+        </div>
+        {otherSectorChecked && (
+          <Input
+            type="text"
+            value={industryOther}
+            onChange={(e) => setIndustryOther(e.target.value)}
+            placeholder={t('sectorOther.placeholder')}
+            className="mt-2"
+          />
+        )}
       </Field>
 
+      {/* Locations */}
       <Field label={t('locations.label')} helper={t('locations.helper')} error={errors.locations}>
         <div className="flex flex-col gap-3">
-          {LOCATION_VALUES.map((loc) => {
-            const selected = data.locations.includes(loc);
+          {FEATURED_LOCATIONS.map((loc) => {
+            const selected = locations.includes(loc);
             return (
-              <label
+              <CheckboxCard
                 key={loc}
-                className={[
-                  'flex cursor-pointer items-center gap-3 rounded-md border px-4 py-3 text-sm transition-colors',
-                  selected
-                    ? 'border-[var(--color-accent)] bg-[#EBF1ED] text-[var(--color-text)]'
-                    : 'border-[var(--color-border)] bg-white text-[var(--color-text)] hover:border-[var(--color-accent)]',
-                  errors.locations ? 'border-red-600' : '',
-                ].join(' ')}
-              >
-                <span
-                  className={[
-                    'flex h-4 w-4 flex-shrink-0 items-center justify-center rounded border-[1.5px] transition-colors',
-                    selected ? 'border-[var(--color-accent)] bg-[var(--color-accent)]' : 'border-[var(--color-border)]',
-                  ].join(' ')}
-                >
-                  {selected && (
-                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-                      <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  )}
-                </span>
-                <input
-                  type="checkbox"
-                  checked={selected}
-                  onChange={() => toggleLocation(loc)}
-                  className="sr-only"
-                />
-                {t(`locations.${loc}`)}
-              </label>
+                label={t(`locations.${loc}`)}
+                checked={selected}
+                hasError={!!errors.locations}
+                onChange={() => toggleLocation(loc)}
+              />
             );
           })}
         </div>
+        <div className="mt-3">
+          <Label className="mb-1.5 block text-xs text-[var(--color-muted)]">
+            {t('locations.otherCountry.label')}
+          </Label>
+          <NativeSelect
+            id="otherCountry"
+            value={otherCountry}
+            onChange={handleOtherCountry}
+            placeholder={t('locations.otherCountry.placeholder')}
+            hasError={!!errors.locations && locations.length === 0 && !otherCountry}
+            options={OTHER_COUNTRY_CODES.map((code) => ({ value: code, label: t(`countries.${code}`) }))}
+          />
+        </div>
       </Field>
 
+      {/* Budget */}
       <Field label={t('budget.label')} helper={t('budget.helper')} error={errors.budget_range}>
         <NativeSelect
           id="budget"
-          value={data.budget_range}
-          onChange={setBudget}
+          value={budgetRange}
+          onChange={handleBudget}
           placeholder={t('budget.placeholder')}
           hasError={!!errors.budget_range}
-          options={BUDGET_OPTIONS}
+          options={BUDGET_VALUES.map((v) => ({ value: v, label: t(`budgetOptions.${v}`) }))}
         />
+      </Field>
+
+      {/* Financing */}
+      <Field label={t('financing.label')} error={errors.needs_financing}>
+        <div className="flex flex-col gap-3">
+          {FINANCING_VALUES.map((key) => (
+            <RadioCard
+              key={key}
+              label={t(`financing.${key}`)}
+              name="needs_financing"
+              selected={needsFinancing === key}
+              hasError={!!errors.needs_financing}
+              onChange={() => handleFinancing(key)}
+            />
+          ))}
+        </div>
       </Field>
 
       <div className="mt-4 flex justify-end border-t border-[var(--color-border)] pt-8">
         <Button type="submit">{t('continue')}</Button>
       </div>
     </form>
+  );
+}
+
+function CheckboxCard({
+  label,
+  checked,
+  hasError,
+  onChange,
+}: {
+  label: string;
+  checked: boolean;
+  hasError?: boolean;
+  onChange: () => void;
+}) {
+  return (
+    <label
+      className={[
+        'flex cursor-pointer items-center gap-3 rounded-md border px-4 py-3 text-sm transition-colors',
+        checked
+          ? 'border-[var(--color-accent)] bg-[#EBF1ED] text-[var(--color-text)]'
+          : 'border-[var(--color-border)] bg-white text-[var(--color-text)] hover:border-[var(--color-accent)]',
+        hasError && !checked ? 'border-red-600' : '',
+      ].join(' ')}
+    >
+      <span
+        className={[
+          'flex h-4 w-4 flex-shrink-0 items-center justify-center rounded border-[1.5px] transition-colors',
+          checked ? 'border-[var(--color-accent)] bg-[var(--color-accent)]' : 'border-[var(--color-border)]',
+        ].join(' ')}
+      >
+        {checked && (
+          <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+            <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        )}
+      </span>
+      <input type="checkbox" checked={checked} onChange={onChange} className="sr-only" />
+      {label}
+    </label>
+  );
+}
+
+function RadioCard({
+  label,
+  name,
+  selected,
+  hasError,
+  onChange,
+}: {
+  label: string;
+  name: string;
+  selected: boolean;
+  hasError: boolean;
+  onChange: () => void;
+}) {
+  return (
+    <label
+      className={[
+        'flex cursor-pointer items-center gap-3 rounded-md border px-4 py-3 text-sm transition-colors',
+        selected
+          ? 'border-[var(--color-accent)] bg-[#EBF1ED] text-[var(--color-text)]'
+          : 'border-[var(--color-border)] bg-white text-[var(--color-text)] hover:border-[var(--color-accent)]',
+        hasError && !selected ? 'border-red-600' : '',
+      ].join(' ')}
+    >
+      <span
+        className={[
+          'flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full border-[1.5px] transition-colors',
+          selected ? 'border-[var(--color-accent)]' : 'border-[var(--color-border)]',
+        ].join(' ')}
+      >
+        {selected && <span className="h-2 w-2 rounded-full bg-[var(--color-accent)]" />}
+      </span>
+      <input
+        type="radio"
+        name={name}
+        checked={selected}
+        onChange={onChange}
+        className="sr-only"
+      />
+      {label}
+    </label>
   );
 }
 
@@ -138,7 +286,7 @@ function Field({
   children,
 }: {
   label: string;
-  helper: string;
+  helper?: string;
   error?: string;
   children: React.ReactNode;
 }) {
@@ -148,9 +296,9 @@ function Field({
       {children}
       {error ? (
         <p className="text-xs text-red-600">{error}</p>
-      ) : (
+      ) : helper ? (
         <p className="text-xs leading-[1.5] text-[var(--color-muted)]">{helper}</p>
-      )}
+      ) : null}
     </div>
   );
 }

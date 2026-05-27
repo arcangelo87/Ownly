@@ -81,7 +81,8 @@ export interface Step1Data {
 export interface BuyerSearch {
   id: string;
   created_at: string;
-  industry: string | null;
+  sectors: string[] | null;
+  industry_other: string | null;
   locations: string[];
   budget_range: string | null;
   primary_goal: string | null;
@@ -89,6 +90,7 @@ export interface BuyerSearch {
   search_timeline: string | null;
   has_acquired_before: boolean | null;
   background: string | null;
+  needs_financing: string | null;
   name: string | null;
   email: string;
   phone: string | null;

@@ -60,7 +60,8 @@ export function BuyerStep3({ step1, step2, onComplete }: BuyerStep3Props) {
     setSaving(true);
     try {
       await submitBuyerSearch({
-        industry: step1.industry || null,
+        sectors: step1.sectors.length ? step1.sectors : null,
+        industry_other: step1.industry_other || null,
         locations: step1.locations,
         budget_range: step1.budget_range || null,
         primary_goal: step2.primary_goal || null,
@@ -68,6 +69,7 @@ export function BuyerStep3({ step1, step2, onComplete }: BuyerStep3Props) {
         search_timeline: step2.search_timeline || null,
         has_acquired_before: data.has_acquired_before,
         background: data.background || null,
+        needs_financing: step1.needs_financing || null,
         name: data.name.trim() || null,
         email: data.email.trim(),
         phone: data.phone.trim() || null,

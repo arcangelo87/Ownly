@@ -699,16 +699,50 @@
     "step1": {
       "title": "What are you looking for?",
       "subtitle": "Let's start with the basics.",
-      "industry": {
+      "sectors": {
         "label": "Industry or sector",
-        "placeholder": "e.g. Manufacturing, hospitality, SaaS",
-        "helper": "Leave blank if you are open to any sector."
+        "helper": "Select all that apply. Leave blank if you are open to any sector."
+      },
+      "sectorOther": {
+        "placeholder": "Describe the sector..."
       },
       "locations": {
         "label": "Where are you looking?",
         "helper": "Select all that apply.",
         "italy": "Italy",
-        "portugal": "Portugal"
+        "portugal": "Portugal",
+        "spain": "Spain",
+        "otherCountry": {
+          "label": "Other EU country or UK",
+          "placeholder": "Select a country"
+        }
+      },
+      "countries": {
+        "AT": "Austria",
+        "BE": "Belgium",
+        "BG": "Bulgaria",
+        "HR": "Croatia",
+        "CY": "Cyprus",
+        "CZ": "Czech Republic",
+        "DK": "Denmark",
+        "EE": "Estonia",
+        "FI": "Finland",
+        "FR": "France",
+        "DE": "Germany",
+        "GR": "Greece",
+        "HU": "Hungary",
+        "IE": "Ireland",
+        "LV": "Latvia",
+        "LT": "Lithuania",
+        "LU": "Luxembourg",
+        "MT": "Malta",
+        "NL": "Netherlands",
+        "PL": "Poland",
+        "RO": "Romania",
+        "SK": "Slovakia",
+        "SI": "Slovenia",
+        "SE": "Sweden",
+        "GB": "United Kingdom"
       },
       "budget": {
         "label": "Acquisition budget",
@@ -723,10 +757,17 @@
         "5m_10m": "€5M – €10M",
         "over_10m": "Over €10M"
       },
+      "financing": {
+        "label": "Do you need financing?",
+        "yes": "Yes",
+        "no": "No",
+        "notSure": "Not sure"
+      },
       "continue": "Continue →",
       "errors": {
         "locationRequired": "Please select at least one location.",
-        "budgetRequired": "Please select a budget range."
+        "budgetRequired": "Please select a budget range.",
+        "financingRequired": "Please select an option."
       }
     },
     "step2": {
