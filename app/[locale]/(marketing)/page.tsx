@@ -76,7 +76,7 @@ export default async function HomePage({
     </svg>,
   ];
 
-  const personaIcons = [
+  const buyerIcons = [
     /* person — independent entrepreneur */
     <svg key="person" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <circle cx="16" cy="10" r="5" />
@@ -88,18 +88,6 @@ export default async function HomePage({
       <line x1="17" y1="16" x2="29" y2="16" />
       <line x1="25" y1="16" x2="25" y2="20" />
       <line x1="29" y1="16" x2="29" y2="20" />
-    </svg>,
-    /* building — business owner / seller */
-    <svg key="building" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect x="5" y="13" width="22" height="16" />
-      <polyline points="2,13 16,4 30,13" />
-      <rect x="13" y="21" width="6" height="8" />
-    </svg>,
-    /* briefcase — broker */
-    <svg key="briefcase" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect x="4" y="12" width="24" height="16" rx="2" />
-      <path d="M12 12V9c0-1.7 1.7-3 4-3s4 1.3 4 3v3" />
-      <line x1="4" y1="20" x2="28" y2="20" />
     </svg>,
   ];
 
@@ -198,65 +186,55 @@ export default async function HomePage({
         </section>
       )}
 
-      {/* ── Who it's for — all personas ── */}
+      {/* ── Who it's for ── */}
       <section id="who" className="py-20 px-6 bg-[var(--color-surface)]">
         <div className="mx-auto max-w-6xl">
-          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)]">
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-12">
             {t('personas.heading')}
           </h2>
 
-          {/* Buyers group */}
-          <div className="mt-12">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--color-muted)] pb-3 border-b border-[var(--color-border)] mb-8">
-              {t('personas.buyersLabel')}
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {([
-                [t('personas.item1Label'), t('personas.item1Desc'), null, null],
-                [t('personas.item2Label'), t('personas.item2Desc'), null, null],
-              ] as [string, string, null, null][]).map(([title, body], i) => (
-                <div
-                  key={title}
-                  className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-[8px] p-6"
-                >
-                  <div className="text-[var(--color-accent)] mb-4">{personaIcons[i]}</div>
-                  <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)] mb-3">
-                    {title}
-                  </h3>
-                  <p className="text-[14px] text-[var(--color-muted)] leading-[1.65]">{body}</p>
-                </div>
-              ))}
-            </div>
+          {/* Buyer cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+            {([
+              [t('personas.item1Label'), t('personas.item1Desc')],
+              [t('personas.item2Label'), t('personas.item2Desc')],
+            ] as [string, string][]).map(([title, body], i) => (
+              <div
+                key={title}
+                className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-[8px] p-6"
+              >
+                <div className="text-[var(--color-accent)] mb-4">{buyerIcons[i]}</div>
+                <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)] mb-3">
+                  {title}
+                </h3>
+                <p className="text-[14px] text-[var(--color-muted)] leading-[1.65]">{body}</p>
+              </div>
+            ))}
           </div>
 
-          {/* Sellers and brokers group */}
-          <div className="mt-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--color-muted)] pb-3 border-b border-[var(--color-border)] mb-8">
-              {t('personas.othersLabel')}
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {([
-                [t('personas.item3Label'), t('personas.item3Desc'), t('personas.item3Cta'), `/${locale}/sell`],
-                [t('personas.item4Label'), t('personas.item4Desc'), t('personas.item4Cta'), `/${locale}/brokers`],
-              ] as [string, string, string, string][]).map(([title, body, cta, href], i) => (
-                <div
-                  key={title}
-                  className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-[8px] p-6"
-                >
-                  <div className="text-[var(--color-accent)] mb-4">{personaIcons[i + 2]}</div>
-                  <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)] mb-3">
-                    {title}
-                  </h3>
-                  <p className="text-[14px] text-[var(--color-muted)] leading-[1.65] mb-4">{body}</p>
-                  <Link
-                    href={href}
-                    className="text-[14px] text-[var(--color-accent)] underline underline-offset-4 hover:opacity-80 transition-opacity"
-                  >
-                    {cta}
-                  </Link>
-                </div>
-              ))}
-            </div>
+          {/* Seller + broker footer strip */}
+          <div className="border-t border-[var(--color-border)] pt-5 flex items-center gap-6 flex-wrap">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--color-muted)] shrink-0">
+              {t('personas.footerLabel')}
+            </span>
+            <span className="text-[13px] text-[var(--color-muted)]">
+              {t('personas.sellerPrompt')}{' '}
+              <Link
+                href={`/${locale}/sell`}
+                className="text-[var(--color-accent)] font-medium underline underline-offset-4 hover:opacity-80 transition-opacity"
+              >
+                {t('personas.sellerCta')} →
+              </Link>
+            </span>
+            <span className="text-[13px] text-[var(--color-muted)]">
+              {t('personas.brokerPrompt')}{' '}
+              <Link
+                href={`/${locale}/brokers`}
+                className="text-[var(--color-accent)] font-medium underline underline-offset-4 hover:opacity-80 transition-opacity"
+              >
+                {t('personas.brokerCta')} →
+              </Link>
+            </span>
           </div>
         </div>
       </section>
