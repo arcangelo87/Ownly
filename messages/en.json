@@ -200,7 +200,7 @@
         "h1": "Buy a real business in Europe.",
         "sub": "Bottega helps you acquire cash-flowing, small businesses in Europe. Browse our listings or tell us what you're looking for and we'll find it.",
         "ctaBrowse": "Browse listings",
-        "ctaSearch": "Start your search"
+        "ctaSearch": "Tell us what you're looking for"
       },
       "whatYouGet": {
         "heading": "What you get",
@@ -215,7 +215,8 @@
       },
       "listings": {
         "heading": "Currently available",
-        "viewAll": "View all listings"
+        "viewAll": "View all listings",
+        "searchNudge": "Not seeing the right fit? Tell us what you're looking for"
       },
       "personas": {
         "heading": "Who it's for",
@@ -223,6 +224,8 @@
         "item1Desc": "You've never acquired a business before. You want to own something real and generate income: a physical business with customers, revenue and a track record. You want clear numbers and guidance to understand what you're buying before committing.",
         "item2Label": "Business owners",
         "item2Desc": "You already own a small business or investment. Now you want to grow by acquisition: adding revenue, a new market or a complementary operation, without having to go through a formal M&A process.",
+        "item1Cta": "Tell us what you're looking for",
+        "item2Cta": "Browse current listings",
         "footerLabel": "Also on Bottega",
         "sellerPrompt": "Selling a business?",
         "sellerCta": "List it with us",
@@ -439,14 +442,13 @@
       "row6Value": "Coming soon"
     },
     "founding": {
-      "heading": "Helping us build what buyers actually need.",
-      "prose1": "We're at an early stage, and we'd rather talk to serious buyers than guess what to build. If you're actively looking for acquisition opportunities in Italy or Portugal, we'd like to understand your process, your pain, and what would actually help.",
-      "prose2": "In exchange, you'll shape what Bottega builds for buyers and get early access to features as they launch.",
+      "heading": "Tell us what you're looking for",
+      "sub": "We actively search for deals that match your criteria and reach out directly. No broker fees, no upfront commitment.",
       "namePlaceholder": "Name",
       "emailPlaceholder": "Email",
       "phonePlaceholder": "Phone (optional)",
-      "messagePlaceholder": "What are you looking for? (optional)",
-      "submit": "Send →",
+      "messagePlaceholder": "What kind of business are you looking for? Sector, size, country, any preferences...",
+      "submit": "Send my criteria →",
       "after": "We'll respond within 48 hours."
     },
     "cta": {

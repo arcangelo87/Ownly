@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import { DealCardStack } from '@/components/marketing/DealCardStack';
 import { DealCardStackLoader } from '@/components/marketing/DealCardStackLoader';
 import { DealCard } from '@/components/deals/DealCard';
+import { FoundingForm } from '@/components/marketing/FoundingForm';
 import { createAdminClient } from '@/lib/supabase/admin';
 import type { ListingCard } from '@/app/[locale]/deals/page';
 
@@ -18,6 +19,7 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   const t = await getTranslations('home.buyers');
+  const tFounding = await getTranslations('home.buyers.founding');
 
   const admin = createAdminClient();
 
@@ -77,12 +79,10 @@ export default async function HomePage({
   ];
 
   const buyerIcons = [
-    /* person — independent entrepreneur */
     <svg key="person" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <circle cx="16" cy="10" r="5" />
       <path d="M5 28 C5 20 11 17 16 17 C21 17 27 20 27 28" />
     </svg>,
-    /* key — first-time acquirer */
     <svg key="key" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <circle cx="11" cy="16" r="7" />
       <line x1="17" y1="16" x2="29" y2="16" />
@@ -111,7 +111,7 @@ export default async function HomePage({
                 {t('hero.ctaBrowse')}
               </Link>
               <a
-                href="#who"
+                href="#search"
                 className="text-[15px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors underline underline-offset-4"
               >
                 {t('hero.ctaSearch')}
@@ -169,10 +169,18 @@ export default async function HomePage({
                 {t('listings.viewAll')}
               </Link>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {listings.map((listing) => (
                 <DealCard key={listing.id} listing={listing} />
               ))}
+            </div>
+            <div className="mt-8 mb-4 text-center">
+              <a
+                href="#search"
+                className="text-[14px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors"
+              >
+                {t('listings.searchNudge')} →
+              </a>
             </div>
             <div className="text-center">
               <Link
@@ -193,23 +201,40 @@ export default async function HomePage({
             {t('personas.heading')}
           </h2>
 
-          {/* Buyer cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-            {([
-              [t('personas.item1Label'), t('personas.item1Desc')],
-              [t('personas.item2Label'), t('personas.item2Desc')],
-            ] as [string, string][]).map(([title, body], i) => (
-              <div
-                key={title}
-                className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-[8px] p-6"
+            {/* First-time buyers */}
+            <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-[8px] p-6 flex flex-col">
+              <div className="text-[var(--color-accent)] mb-4">{buyerIcons[0]}</div>
+              <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)] mb-3">
+                {t('personas.item1Label')}
+              </h3>
+              <p className="text-[14px] text-[var(--color-muted)] leading-[1.65] flex-1">
+                {t('personas.item1Desc')}
+              </p>
+              <a
+                href="#search"
+                className="mt-5 inline-block text-[13px] font-medium text-[var(--color-accent)] hover:opacity-80 transition-opacity"
               >
-                <div className="text-[var(--color-accent)] mb-4">{buyerIcons[i]}</div>
-                <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)] mb-3">
-                  {title}
-                </h3>
-                <p className="text-[14px] text-[var(--color-muted)] leading-[1.65]">{body}</p>
-              </div>
-            ))}
+                {t('personas.item1Cta')} →
+              </a>
+            </div>
+
+            {/* Business owners */}
+            <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-[8px] p-6 flex flex-col">
+              <div className="text-[var(--color-accent)] mb-4">{buyerIcons[1]}</div>
+              <h3 className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)] mb-3">
+                {t('personas.item2Label')}
+              </h3>
+              <p className="text-[14px] text-[var(--color-muted)] leading-[1.65] flex-1">
+                {t('personas.item2Desc')}
+              </p>
+              <Link
+                href={`/${locale}/deals`}
+                className="mt-5 inline-block text-[13px] font-medium text-[var(--color-accent)] hover:opacity-80 transition-opacity"
+              >
+                {t('personas.item2Cta')} →
+              </Link>
+            </div>
           </div>
 
           {/* Seller + broker footer strip */}
@@ -236,6 +261,29 @@ export default async function HomePage({
               </Link>
             </span>
           </div>
+        </div>
+      </section>
+
+      {/* ── Tell us what you're looking for ── */}
+      <section id="search" className="py-20 px-6 bg-[var(--color-bg)]">
+        <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-4">
+              {tFounding('heading')}
+            </h2>
+            <p className="text-[16px] text-[var(--color-muted)] leading-[1.65] mb-3">
+              {tFounding('sub')}
+            </p>
+            <p className="text-[13px] text-[var(--color-muted)]">{tFounding('after')}</p>
+          </div>
+          <FoundingForm
+            type="buyer"
+            namePlaceholder={tFounding('namePlaceholder')}
+            emailPlaceholder={tFounding('emailPlaceholder')}
+            phonePlaceholder={tFounding('phonePlaceholder')}
+            messagePlaceholder={tFounding('messagePlaceholder')}
+            submitLabel={tFounding('submit')}
+          />
         </div>
       </section>
     </>
