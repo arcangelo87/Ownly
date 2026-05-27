@@ -35,6 +35,7 @@ export function BuyerStep3({ step1, step2, onComplete }: BuyerStep3Props) {
     email: '',
     phone: '',
   });
+  const [backgroundOther, setBackgroundOther] = useState('');
 
   const [errors, setErrors] = useState<Partial<Record<keyof Step3Data, string>>>({});
   const [saving, setSaving] = useState(false);
@@ -68,7 +69,9 @@ export function BuyerStep3({ step1, step2, onComplete }: BuyerStep3Props) {
         target_return: step2.target_return || null,
         search_timeline: step2.search_timeline || null,
         has_acquired_before: data.has_acquired_before,
-        background: data.background || null,
+        background: data.background === 'other' && backgroundOther.trim()
+          ? `other: ${backgroundOther.trim()}`
+          : data.background || null,
         needs_financing: step1.needs_financing || null,
         name: data.name.trim() || null,
         email: data.email.trim(),
@@ -113,6 +116,15 @@ export function BuyerStep3({ step1, step2, onComplete }: BuyerStep3Props) {
             />
           ))}
         </div>
+        {data.background === 'other' && (
+          <Input
+            type="text"
+            value={backgroundOther}
+            onChange={(e) => setBackgroundOther(e.target.value)}
+            placeholder={t('background.otherPlaceholder')}
+            className="mt-2"
+          />
+        )}
       </Field>
 
       <div className="border-t border-[var(--color-border)] pt-6 flex flex-col gap-6">

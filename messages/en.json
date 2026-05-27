@@ -820,7 +820,8 @@
         "operator": "Operator",
         "investor": "Investor",
         "professional": "Professional",
-        "other": "Other"
+        "other": "Other",
+        "otherPlaceholder": "Tell us a bit more..."
       },
       "name": {
         "label": "Name",
