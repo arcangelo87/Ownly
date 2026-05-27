@@ -94,6 +94,7 @@ export interface BuyerSearch {
   name: string | null;
   email: string;
   phone: string | null;
+  message: string | null;
 }
 
 export type BuyerSearchInsert = Omit<BuyerSearch, 'id' | 'created_at'>;

@@ -19,6 +19,7 @@ export async function submitBuyerSearch(data: BuyerSearchInsert) {
     name: data.name?.trim() || null,
     email: data.email.trim().toLowerCase(),
     phone: data.phone?.trim() || null,
+    message: data.message?.trim() || null,
   });
   if (error) throw error;
 }

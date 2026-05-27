@@ -835,6 +835,11 @@
         "label": "Phone",
         "placeholder": "+39 or +351..."
       },
+      "message": {
+        "label": "Anything else you want to share?",
+        "placeholder": "Tell us more about what you are looking for, your timeline, or any specific requirements.",
+        "helper": "Optional. The more context you give, the better we can match you."
+      },
       "submit": "Submit →",
       "errors": {
         "acquiredRequired": "Please select an option.",

@@ -17,6 +17,7 @@ export interface Step3Data {
   name: string;
   email: string;
   phone: string;
+  message: string;
 }
 
 interface BuyerStep3Props {
@@ -34,6 +35,7 @@ export function BuyerStep3({ step1, step2, onComplete }: BuyerStep3Props) {
     name: '',
     email: '',
     phone: '',
+    message: '',
   });
   const [backgroundOther, setBackgroundOther] = useState('');
 
@@ -76,6 +78,7 @@ export function BuyerStep3({ step1, step2, onComplete }: BuyerStep3Props) {
         name: data.name.trim() || null,
         email: data.email.trim(),
         phone: data.phone.trim() || null,
+        message: data.message.trim() || null,
       });
       onComplete();
     } catch {
@@ -152,6 +155,16 @@ export function BuyerStep3({ step1, step2, onComplete }: BuyerStep3Props) {
             value={data.phone}
             onChange={(e) => set('phone', e.target.value)}
             placeholder={t('phone.placeholder')}
+          />
+        </Field>
+
+        <Field label={t('message.label')} helper={t('message.helper')} optional>
+          <textarea
+            value={data.message}
+            onChange={(e) => set('message', e.target.value)}
+            placeholder={t('message.placeholder')}
+            rows={4}
+            className="w-full resize-none rounded-md border border-[var(--color-border)] bg-white px-3 py-[10px] text-sm text-[var(--color-text)] outline-none transition-colors placeholder:text-[var(--color-muted)] focus:border-[var(--color-text)]"
           />
         </Field>
       </div>
