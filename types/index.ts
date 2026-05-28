@@ -77,3 +77,24 @@ export interface Step1Data {
   seller_phone: string;
   photos: File[];
 }
+
+export interface BuyerSearch {
+  id: string;
+  created_at: string;
+  sectors: string[] | null;
+  industry_other: string | null;
+  locations: string[];
+  budget_range: string | null;
+  primary_goal: string | null;
+  target_return: string | null;
+  search_timeline: string | null;
+  has_acquired_before: boolean | null;
+  background: string | null;
+  needs_financing: string | null;
+  name: string | null;
+  email: string;
+  phone: string | null;
+  message: string | null;
+}
+
+export type BuyerSearchInsert = Omit<BuyerSearch, 'id' | 'created_at'>;
