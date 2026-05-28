@@ -128,7 +128,8 @@
     "buyers": "For buyers",
     "browse": "Browse deals",
     "getStarted": "Get started →",
-    "about": "About"
+    "about": "About",
+    "home": "Homepage"
   },
   "footer": {
     "tagline": "Curated SME deals in Italy and Portugal.",
@@ -140,7 +141,8 @@
     "contact": "Contact",
     "privacy": "Privacy Policy",
     "terms": "Terms",
-    "copyright": "© 2026 Bottega"
+    "copyright": "© 2026 Bottega",
+    "home": "Homepage"
   },
   "home": {
     "hero": {
