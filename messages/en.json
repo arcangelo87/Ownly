@@ -687,5 +687,171 @@
       "emailInvalid": "Please enter a valid email address.",
       "submitFailed": "Something went wrong. Please try again."
     }
+  },
+  "buyerSearch": {
+    "steps": {
+      "stepPrefix": "Step",
+      "stepOf": "of",
+      "step1": "What you need",
+      "step2": "Your thesis",
+      "step3": "About you"
+    },
+    "step1": {
+      "title": "What are you looking for?",
+      "subtitle": "Let's start with the basics.",
+      "sectors": {
+        "label": "Industry or sector",
+        "helper": "Select all that apply. Leave blank if you are open to any sector."
+      },
+      "sectorOther": {
+        "placeholder": "Describe the sector..."
+      },
+      "locations": {
+        "label": "Where are you looking?",
+        "helper": "Select all that apply.",
+        "italy": "Italy",
+        "portugal": "Portugal",
+        "spain": "Spain",
+        "otherCountry": {
+          "label": "Other EU country or UK",
+          "placeholder": "Select a country"
+        }
+      },
+      "countries": {
+        "AT": "Austria",
+        "BE": "Belgium",
+        "BG": "Bulgaria",
+        "HR": "Croatia",
+        "CY": "Cyprus",
+        "CZ": "Czech Republic",
+        "DK": "Denmark",
+        "EE": "Estonia",
+        "FI": "Finland",
+        "FR": "France",
+        "DE": "Germany",
+        "GR": "Greece",
+        "HU": "Hungary",
+        "IE": "Ireland",
+        "LV": "Latvia",
+        "LT": "Lithuania",
+        "LU": "Luxembourg",
+        "MT": "Malta",
+        "NL": "Netherlands",
+        "PL": "Poland",
+        "RO": "Romania",
+        "SK": "Slovakia",
+        "SI": "Slovenia",
+        "SE": "Sweden",
+        "GB": "United Kingdom"
+      },
+      "budget": {
+        "label": "Acquisition budget",
+        "placeholder": "Select a range",
+        "helper": "Indicative range is fine."
+      },
+      "budgetOptions": {
+        "under_500k": "Under €500k",
+        "500k_1m": "€500k – €1M",
+        "1m_2_5m": "€1M – €2.5M",
+        "2_5m_5m": "€2.5M – €5M",
+        "5m_10m": "€5M – €10M",
+        "over_10m": "Over €10M"
+      },
+      "financing": {
+        "label": "Do you need financing?",
+        "yes": "Yes",
+        "no": "No",
+        "notSure": "Not sure"
+      },
+      "continue": "Continue →",
+      "errors": {
+        "locationRequired": "Please select at least one location.",
+        "budgetRequired": "Please select a budget range.",
+        "financingRequired": "Please select an option."
+      }
+    },
+    "step2": {
+      "title": "Your investment thesis",
+      "subtitle": "Tell us what success looks like for you.",
+      "goal": {
+        "label": "Primary goal",
+        "helper": "Choose the one that best describes what you are after.",
+        "passiveIncome": "Passive income",
+        "capitalAppreciation": "Capital appreciation",
+        "lifestyle": "Hands-on lifestyle business",
+        "strategicBoltOn": "Strategic bolt-on"
+      },
+      "targetReturn": {
+        "label": "Target return",
+        "placeholder": "Select a range",
+        "helper": "Your expected annual return on investment."
+      },
+      "targetReturnOptions": {
+        "r10_15": "10–15%",
+        "r15_20": "15–20%",
+        "r20_30": "20–30%",
+        "r30plus": "30%+"
+      },
+      "searchTimeline": {
+        "label": "How quickly are you looking to move?",
+        "helper": "This helps us prioritise your outreach.",
+        "activeNow": "Actively searching now",
+        "within6months": "Within 6 months",
+        "exploring": "Exploring"
+      },
+      "continue": "Continue →",
+      "errors": {
+        "goalRequired": "Please select a primary goal.",
+        "returnRequired": "Please select a target return.",
+        "timelineRequired": "Please select a timeline."
+      }
+    },
+    "step3": {
+      "title": "About you",
+      "subtitle": "Last step, so we can reach you.",
+      "hasAcquired": {
+        "label": "Have you acquired a business before?",
+        "yes": "Yes",
+        "no": "No"
+      },
+      "background": {
+        "label": "What is your background?",
+        "helper": "This helps us match you to the right deals.",
+        "operator": "Operator",
+        "investor": "Investor",
+        "professional": "Professional",
+        "other": "Other",
+        "otherPlaceholder": "Tell us a bit more..."
+      },
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "label": "Email address",
+        "placeholder": "you@example.com"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "+39 or +351..."
+      },
+      "message": {
+        "label": "Anything else you want to share?",
+        "placeholder": "Tell us more about what you are looking for, your timeline, or any specific requirements.",
+        "helper": "Optional. The more context you give, the better we can match you."
+      },
+      "submit": "Submit →",
+      "errors": {
+        "acquiredRequired": "Please select an option.",
+        "backgroundRequired": "Please select your background.",
+        "emailRequired": "Please enter your email address.",
+        "emailInvalid": "Please enter a valid email address.",
+        "saveFailed": "Something went wrong. Please try again."
+      }
+    },
+    "success": {
+      "heading": "We will be in touch.",
+      "body": "Your criteria have been saved. We will reach out when we find a match."
+    }
   }
 }
