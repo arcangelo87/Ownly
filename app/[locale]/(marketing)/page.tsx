@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 import { DealCardStack } from '@/components/marketing/DealCardStack';
 import { DealCardStackLoader } from '@/components/marketing/DealCardStackLoader';
 import { DealCard } from '@/components/deals/DealCard';
-import { FoundingForm } from '@/components/marketing/FoundingForm';
+import { BuyerSearchFormEmbed } from '@/components/buyer/BuyerSearchFormEmbed';
 import { createAdminClient } from '@/lib/supabase/admin';
 import type { ListingCard } from '@/app/[locale]/deals/page';
 
@@ -19,8 +19,6 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   const t = await getTranslations('home.buyers');
-  const tFounding = await getTranslations('home.buyers.founding');
-
   const admin = createAdminClient();
 
   const { data: raw } = await admin
@@ -103,16 +101,16 @@ export default async function HomePage({
             <p className="text-[18px] text-[var(--color-muted)] leading-[1.65] mb-8">
               {t('hero.sub')}
             </p>
-            <div className="flex items-center gap-5 flex-wrap">
+            <div className="flex items-center gap-4 flex-wrap">
               <Link
                 href={`/${locale}/deals`}
-                className="inline-flex items-center px-7 py-3.5 bg-[var(--color-accent)] text-white text-[15px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
+                className="inline-flex items-center px-9 py-5 bg-[var(--color-accent)] text-white text-[16px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
               >
                 {t('hero.ctaBrowse')}
               </Link>
               <a
                 href="#search"
-                className="text-[15px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors underline underline-offset-4"
+                className="inline-flex items-center px-9 py-5 border border-[var(--color-text)] text-[16px] font-medium rounded-[4px] text-[var(--color-text)] hover:bg-[var(--color-surface)] transition-colors"
               >
                 {t('hero.ctaSearch')}
               </a>
@@ -264,26 +262,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ── Tell us what you're looking for ── */}
+      {/* ── Buyer search form ── */}
       <section id="search" className="py-20 px-6 bg-[var(--color-bg)]">
-        <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div>
-            <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-4">
-              {tFounding('heading')}
-            </h2>
-            <p className="text-[16px] text-[var(--color-muted)] leading-[1.65] mb-3">
-              {tFounding('sub')}
-            </p>
-            <p className="text-[13px] text-[var(--color-muted)]">{tFounding('after')}</p>
-          </div>
-          <FoundingForm
-            type="buyer"
-            namePlaceholder={tFounding('namePlaceholder')}
-            emailPlaceholder={tFounding('emailPlaceholder')}
-            phonePlaceholder={tFounding('phonePlaceholder')}
-            messagePlaceholder={tFounding('messagePlaceholder')}
-            submitLabel={tFounding('submit')}
-          />
+        <div className="mx-auto max-w-2xl">
+          <BuyerSearchFormEmbed />
         </div>
       </section>
     </>
