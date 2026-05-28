@@ -194,6 +194,53 @@
       "heading": "Your business deserves a proper presentation. Start here.",
       "sub": "Free to start. No broker fees. No exclusivity.",
       "button": "Get started →"
+    },
+    "buyers": {
+      "hero": {
+        "h1": "Own a business that's right for you.",
+        "sub": "Bottega helps you acquire cash-flowing, small businesses in Europe. Browse our listings or tell us what you're looking for and we'll find it.",
+        "ctaBrowse": "Browse listings",
+        "ctaSearch": "Tell us what you're looking for"
+      },
+      "whatYouGet": {
+        "heading": "What you get",
+        "item1Label": "Curated listings selection",
+        "item1Desc": "Every listing page on our marketplace is financially structured and independently presented.",
+        "item2Label": "Evaluation support",
+        "item2Desc": "We help you get the info from sellers, read the numbers, understand the market, and identify red flags before you commit time.",
+        "item3Label": "Deal execution",
+        "item3Desc": "We connect you with specialist financing brokers, legal advisors, and due diligence support at every stage of closing.",
+        "item4Label": "Bespoke search, anywhere",
+        "item4Desc": "Nothing on our platform fits? Tell us your criteria and we'll go source opportunities for you, wherever they are. Most deals worth buying never reach a public directory."
+      },
+      "listings": {
+        "heading": "Currently available",
+        "viewAll": "View all listings",
+        "searchNudge": "Not seeing the right fit?",
+        "searchNudgeSub": "Most deals worth buying never reach a public listing. Tell us your criteria and we search for you.",
+        "searchNudgeCta": "Tell us what you're looking for"
+      },
+      "personas": {
+        "heading": "Who it's for",
+        "item1Label": "First-time buyers",
+        "item1Desc": "You've never acquired a business before. You want to own something real and generate income: a physical business with customers, revenue and a track record. You want clear numbers and guidance to understand what you're buying before committing.",
+        "item2Label": "Business owners",
+        "item2Desc": "You already own a small business or investment. Now you want to grow by acquisition: adding revenue, a new market or a complementary operation, without having to go through a formal M&A process.",
+        "item1Cta": "Tell us what you're looking for",
+        "item2Cta": "Start your search",
+        "footerLabel": "Also on Bottega",
+        "sellerPrompt": "Are you selling your business?",
+        "sellerCta": "List it with us",
+        "brokerPrompt": "Are you a broker?",
+        "brokerCta": "Place your deals here"
+      },
+      "searchHook": {
+        "heading": "Tell us what you're looking for.",
+        "sub": "We search the market for you and send matching deals directly to your inbox. Most opportunities never reach a public listing.",
+        "cta": "Start your search",
+        "supporting": "Takes 5 minutes. No broker fees. No commitment.",
+        "andMore": "And more..."
+      }
     }
   },
   "sellers": {
@@ -404,14 +451,13 @@
       "row6Value": "Coming soon"
     },
     "founding": {
-      "heading": "Helping us build what buyers actually need.",
-      "prose1": "We're at an early stage, and we'd rather talk to serious buyers than guess what to build. If you're actively looking for acquisition opportunities in Italy or Portugal, we'd like to understand your process, your pain, and what would actually help.",
-      "prose2": "In exchange, you'll shape what Bottega builds for buyers and get early access to features as they launch.",
+      "heading": "Tell us what you're looking for",
+      "sub": "We actively search for deals that match your criteria and reach out directly. No broker fees, no upfront commitment.",
       "namePlaceholder": "Name",
       "emailPlaceholder": "Email",
       "phonePlaceholder": "Phone (optional)",
-      "messagePlaceholder": "What are you looking for? (optional)",
-      "submit": "Send →",
+      "messagePlaceholder": "What kind of business are you looking for? Sector, size, country, any preferences...",
+      "submit": "Send my criteria →",
       "after": "We'll respond within 48 hours."
     },
     "cta": {
