@@ -12,10 +12,8 @@ export function SiteNav() {
   const [open, setOpen] = useState(false);
 
   const links = [
-    { href: `/${locale}/brokers`, label: t('brokers') },
-    { href: `/${locale}/buyers`, label: t('buyers') },
+    { href: `/${locale}`, label: t('home') },
     { href: `/${locale}/deals`, label: t('browse') },
-    { href: `/${locale}/about`, label: t('about') },
   ];
 
   return (
@@ -57,7 +55,7 @@ export function SiteNav() {
       {/* Mobile dropdown */}
       {open && (
         <div className="md:hidden border-t border-[var(--color-border)] bg-[var(--color-bg)] px-6 pb-6 pt-4 flex flex-col gap-1">
-          {links.filter(l => !l.href.endsWith('/about')).map(({ href, label }) => (
+          {links.map(({ href, label }) => (
             <Link
               key={href}
               href={href}

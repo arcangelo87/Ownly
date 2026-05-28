@@ -20,14 +20,8 @@ export function SiteFooter() {
           </div>
 
           <div className="flex flex-wrap gap-x-8 gap-y-3 text-[13px]">
-            <Link href={`/${locale}/sellers`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
-              {t('sell')}
-            </Link>
-            <Link href={`/${locale}/brokers`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
-              {t('brokers')}
-            </Link>
-            <Link href={`/${locale}/buyers`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
-              {t('buyers')}
+            <Link href={`/${locale}`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
+              {t('home')}
             </Link>
             <Link href={`/${locale}/deals`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
               {t('browse')}
