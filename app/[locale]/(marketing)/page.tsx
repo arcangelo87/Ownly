@@ -262,7 +262,7 @@ export default async function HomePage({
             <span className="text-[13px] text-[var(--color-muted)]">
               {t('personas.brokerPrompt')}{' '}
               <Link
-                href={`/${locale}/brokers`}
+                href={`/${locale}/sell`}
                 className="text-[var(--color-accent)] font-medium underline underline-offset-4 hover:opacity-80 transition-opacity"
               >
                 {t('personas.brokerCta')} →
