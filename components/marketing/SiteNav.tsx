@@ -12,7 +12,6 @@ export function SiteNav() {
   const [open, setOpen] = useState(false);
 
   const links = [
-    { href: `/${locale}/brokers`, label: t('brokers') },
     { href: `/${locale}/buyers`, label: t('buyers') },
     { href: `/${locale}/deals`, label: t('browse') },
     { href: `/${locale}/about`, label: t('about') },
