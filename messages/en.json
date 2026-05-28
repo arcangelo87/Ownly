@@ -216,7 +216,9 @@
       "listings": {
         "heading": "Currently available",
         "viewAll": "View all listings",
-        "searchNudge": "Not seeing the right fit? Tell us what you're looking for"
+        "searchNudge": "Not seeing the right fit?",
+        "searchNudgeSub": "Most deals worth buying never reach a public listing. Tell us your criteria and we search for you.",
+        "searchNudgeCta": "Tell us what you're looking for"
       },
       "personas": {
         "heading": "Who it's for",
@@ -231,6 +233,13 @@
         "sellerCta": "List it with us",
         "brokerPrompt": "Broker with a deal?",
         "brokerCta": "Place it here"
+      },
+      "searchHook": {
+        "heading": "Tell us what you're looking for.",
+        "sub": "We search the market for you and send matching deals directly to your inbox. Most opportunities never reach a public listing.",
+        "cta": "Start your search",
+        "supporting": "Takes 5 minutes. No broker fees. No commitment.",
+        "andMore": "And more..."
       }
     }
   },

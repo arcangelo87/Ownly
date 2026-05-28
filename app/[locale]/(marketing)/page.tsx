@@ -4,7 +4,6 @@ import { Suspense } from 'react';
 import { DealCardStack } from '@/components/marketing/DealCardStack';
 import { DealCardStackLoader } from '@/components/marketing/DealCardStackLoader';
 import { DealCard } from '@/components/deals/DealCard';
-import { BuyerSearchFormEmbed } from '@/components/buyer/BuyerSearchFormEmbed';
 import { createAdminClient } from '@/lib/supabase/admin';
 import type { ListingCard } from '@/app/[locale]/deals/page';
 
@@ -19,6 +18,7 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   const t = await getTranslations('home.buyers');
+  const tSectors = await getTranslations('deals.sectors');
   const admin = createAdminClient();
 
   const { data: raw } = await admin
@@ -172,15 +172,26 @@ export default async function HomePage({
                 <DealCard key={listing.id} listing={listing} />
               ))}
             </div>
-            <div className="mt-8 mb-4 text-center">
-              <a
-                href="#search"
-                className="text-[14px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors"
+
+            {/* Mid-page search nudge */}
+            <div className="mt-10 border border-[var(--color-border)] rounded-[8px] bg-[var(--color-surface)] px-8 py-7 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+              <div>
+                <p className="font-[family-name:var(--font-serif)] text-[18px] font-semibold text-[var(--color-text)] mb-1">
+                  {t('listings.searchNudge')}
+                </p>
+                <p className="text-[14px] text-[var(--color-muted)] leading-[1.6]">
+                  {t('listings.searchNudgeSub')}
+                </p>
+              </div>
+              <Link
+                href={`/${locale}/buy`}
+                className="inline-flex items-center shrink-0 px-7 py-3.5 bg-[var(--color-accent)] text-white text-[15px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
               >
-                {t('listings.searchNudge')} →
-              </a>
+                {t('listings.searchNudgeCta')} →
+              </Link>
             </div>
-            <div className="text-center">
+
+            <div className="mt-6 text-center">
               <Link
                 href={`/${locale}/deals`}
                 className="text-[14px] font-medium text-[var(--color-accent)] hover:opacity-80 transition-opacity underline underline-offset-4"
@@ -262,10 +273,36 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ── Buyer search form ── */}
-      <section id="search" className="py-20 px-6 bg-[var(--color-bg)]">
-        <div className="mx-auto max-w-2xl">
-          <BuyerSearchFormEmbed />
+      {/* ── Search hook ── */}
+      <section id="search" className="py-20 px-6 bg-[var(--color-surface)]">
+        <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="font-[family-name:var(--font-serif)] text-[32px] md:text-[40px] font-semibold tracking-[-0.02em] leading-[1.15] text-[var(--color-text)] mb-4">
+              {t('searchHook.heading')}
+            </h2>
+            <p className="text-[16px] text-[var(--color-muted)] leading-[1.65] mb-6">
+              {t('searchHook.sub')}
+            </p>
+            <Link
+              href={`/${locale}/buy`}
+              className="inline-flex items-center px-9 py-5 bg-[var(--color-accent)] text-white text-[16px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
+            >
+              {t('searchHook.cta')} →
+            </Link>
+            <p className="mt-4 text-[13px] text-[var(--color-muted)]">{t('searchHook.supporting')}</p>
+          </div>
+          <div className="hidden lg:flex flex-col gap-3 text-[14px] text-[var(--color-muted)]">
+            {(['manufacturing', 'food_beverage', 'hospitality_tourism', 'retail_artisan', 'professional_services', 'health_wellness'] as const).map((key) => (
+              <div key={key} className="flex items-center gap-3">
+                <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] shrink-0" />
+                {tSectors(key)}
+              </div>
+            ))}
+            <div className="flex items-center gap-3 opacity-50">
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-border)] shrink-0" />
+              {t('searchHook.andMore')}
+            </div>
+          </div>
         </div>
       </section>
     </>
