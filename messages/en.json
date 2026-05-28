@@ -197,7 +197,7 @@
     },
     "buyers": {
       "hero": {
-        "h1": "Buy a real business in Europe.",
+        "h1": "Own a business that's right for you.",
         "sub": "Bottega helps you acquire cash-flowing, small businesses in Europe. Browse our listings or tell us what you're looking for and we'll find it.",
         "ctaBrowse": "Browse listings",
         "ctaSearch": "Tell us what you're looking for"
@@ -227,7 +227,7 @@
         "item2Label": "Business owners",
         "item2Desc": "You already own a small business or investment. Now you want to grow by acquisition: adding revenue, a new market or a complementary operation, without having to go through a formal M&A process.",
         "item1Cta": "Tell us what you're looking for",
-        "item2Cta": "Browse current listings",
+        "item2Cta": "Start your search",
         "footerLabel": "Also on Bottega",
         "sellerPrompt": "Selling a business?",
         "sellerCta": "List it with us",
