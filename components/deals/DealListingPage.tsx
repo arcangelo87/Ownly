@@ -114,6 +114,20 @@ export function DealListingPage({ listings, locale }: DealListingPageProps) {
         {filtersOpen && (
           <div className="mt-4 rounded-md border border-[var(--color-border)] bg-white p-5">
             <DealFilters filters={filters} onChange={setFilters} />
+            <div className="mt-5 border-t border-[var(--color-border)] pt-5">
+              <p className="text-[13px] font-semibold text-[var(--color-text)] leading-[1.4] mb-1.5">
+                {t('buyerCtaSidebar.heading')}
+              </p>
+              <p className="text-[12px] text-[var(--color-muted)] leading-[1.6] mb-3">
+                {t('buyerCtaSidebar.body')}
+              </p>
+              <a
+                href={`/${locale}/buyers#founding`}
+                className="block w-full rounded-[4px] bg-[var(--color-accent)] px-4 py-2.5 text-center text-[13px] font-medium text-white hover:opacity-90 transition-opacity"
+              >
+                {t('buyerCtaSidebar.cta')}
+              </a>
+            </div>
           </div>
         )}
       </div>
