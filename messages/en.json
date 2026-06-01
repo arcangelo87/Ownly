@@ -23,6 +23,11 @@
         "body": "Most of the best deals never go public. Share your acquisition criteria and we will match you to opportunities before they are listed.",
         "cta": "Share your criteria"
       },
+      "buyerStickyBar": {
+        "heading": "Not seeing the right deal?",
+        "body": "Share your criteria and we will match you to off-market opportunities.",
+        "cta": "Submit your criteria"
+      },
       "showFilters": "Filters",
       "filters": {
         "heading": "Filters",

@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { DealCard } from '@/components/deals/DealCard';
 import { DealFilters, type Filters } from '@/components/deals/DealFilters';
 import { DealSort, type SortOption } from '@/components/deals/DealSort';
+import { BuyerStickyBar } from '@/components/deals/BuyerStickyBar';
 import type { ListingCard } from '@/app/[locale]/deals/page';
 
 const PRICE_FILTER_MAP: Record<string, string[]> = {
@@ -219,6 +220,7 @@ export function DealListingPage({ listings, locale }: DealListingPageProps) {
           )}
         </div>
       </div>
+      <BuyerStickyBar locale={locale} />
     </>
   );
 }
