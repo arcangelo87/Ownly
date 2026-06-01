@@ -902,6 +902,15 @@
       "body": "Your criteria have been saved. We will reach out when we find a match."
     }
   },
+  "sellPage": {
+    "trustHeading": "Free to list. No exclusivity. Full control.",
+    "trust1Label": "Always free to list",
+    "trust1Body": "Creating your deal page costs nothing. No setup fees, no monthly charges, no commission on sale.",
+    "trust2Label": "No broker exclusivity",
+    "trust2Body": "Listing with us does not lock you in. You stay free to work with whoever you want, however you want.",
+    "trust3Label": "You control what goes public",
+    "trust3Body": "Nothing is published without your approval. Sensitive information stays private until you choose to share it with a specific buyer."
+  },
   "contact": {
     "heading": "Get in touch",
     "sub": "Tell us what you need and we will get back to you shortly.",
