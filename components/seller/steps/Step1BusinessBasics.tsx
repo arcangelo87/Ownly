@@ -22,6 +22,7 @@ interface Step1BusinessBasicsProps {
 
 export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
   const t = useTranslations('seller.step1');
+  const tSeller = useTranslations('seller');
   const tDeals = useTranslations('deals');
 
   const SECTORS = SECTOR_VALUES.map((v) => ({ value: v, label: tDeals(`sectors.${v}`) }));
@@ -97,7 +98,7 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
       onComplete(row.id, data.photos);
     } catch (err) {
       console.error('[Step1] Supabase insert failed:', err);
-      setErrors({ sector: 'Something went wrong. Please try again.' });
+      setErrors({ sector: t('errors.saveFailed') });
     } finally {
       setSaving(false);
     }
@@ -111,7 +112,7 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
 
         {/* Business name — full width */}
         <div className="sm:col-span-2">
-          <Field label={t('businessName.label')} helper={t('businessName.helper')} optional>
+          <Field label={t('businessName.label')} helper={t('businessName.helper')} optionalLabel={tSeller('ui.optional')}>
             <Input
               id="businessName"
               value={data.business_name}
@@ -193,7 +194,7 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
         </div>
 
         {/* Phone — half width */}
-        <Field label={t('phone.label')} helper={t('phone.helper')} optional>
+        <Field label={t('phone.label')} helper={t('phone.helper')} optionalLabel={tSeller('ui.optional')}>
           <Input
             id="sellerPhone"
             type="tel"
@@ -219,7 +220,7 @@ export function Step1BusinessBasics({ onComplete }: Step1BusinessBasicsProps) {
 
       <div className="mt-10 flex justify-end border-t border-[var(--color-border)] pt-8">
         <Button type="submit" disabled={saving}>
-          {saving ? 'Saving…' : t('continue')}
+          {saving ? tSeller('ui.saving') : t('continue')}
         </Button>
       </div>
     </form>
@@ -232,21 +233,21 @@ function Field({
   label,
   helper,
   error,
-  optional,
+  optionalLabel,
   children,
 }: {
   label: string;
   helper: string;
   error?: string;
-  optional?: boolean;
+  optionalLabel?: string;
   children: React.ReactNode;
 }) {
   return (
     <div className="flex flex-col gap-1.5">
       <Label>
         {label}
-        {optional && (
-          <span className="font-normal text-[var(--color-muted)]"> (optional)</span>
+        {optionalLabel && (
+          <span className="font-normal text-[var(--color-muted)]"> {optionalLabel}</span>
         )}
       </Label>
       {children}

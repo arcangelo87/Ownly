@@ -270,7 +270,7 @@
       "step3Desc": "Publicado na Bottega, visível a compradores que procuram em Itália e Portugal.",
       "step4Label": "As consultas chegam através de nós",
       "step4Desc": "Os compradores contactam através da Bottega. Revemos e encaminhamos para si. É você quem decide com quem se envolver.",
-      "reassurance": "Sem mediadores. Sem exclusividade. Sem custos iniciais no plano gratuito. Pode retirar o seu anúncio a qualquer momento."
+      "reassurance": "Sem exclusividade. Sem custos iniciais no plano gratuito. Pode retirar o seu anúncio a qualquer momento."
     },
     "pricing": {
       "heading": "Preços simples e transparentes."
@@ -687,5 +687,14 @@
       "emailInvalid": "Introduza um endereço de email válido.",
       "submitFailed": "Algo correu mal. Tente novamente."
     }
+  },
+  "sellPage": {
+    "trustHeading": "Simples, transparente e nos seus termos.",
+    "trust1Label": "Gratuito para começar",
+    "trust1Body": "Criar a sua página de negócio não custa nada. Sem taxas, sem comissões.",
+    "trust2Label": "Sem exclusividade",
+    "trust2Body": "Já trabalha com um consultor ou mediador? Complementamos, não competimos.",
+    "trust3Label": "Discrição garantida",
+    "trust3Body": "Nada é publicado sem a sua aprovação. Você controla quem vê o quê."
   }
 }

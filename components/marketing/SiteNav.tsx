@@ -14,6 +14,7 @@ export function SiteNav() {
   const links = [
     { href: `/${locale}`, label: t('home') },
     { href: `/${locale}/deals`, label: t('browse') },
+    { href: `/${locale}/sell`, label: t('sell') },
   ];
 
   return (

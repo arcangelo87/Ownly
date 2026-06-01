@@ -270,7 +270,7 @@
       "step3Desc": "Pubblicato su Bottega, visibile agli acquirenti che cercano in Italia e Portogallo.",
       "step4Label": "Le richieste arrivano tramite noi",
       "step4Desc": "Gli acquirenti contattano Bottega. Noi revisioniamo e inoltriamo a te. Sei tu a decidere con chi impegnarti.",
-      "reassurance": "Nessun mediatore. Nessuna esclusiva. Nessun costo iniziale sul piano gratuito. Puoi ritirare il tuo annuncio in qualsiasi momento."
+      "reassurance": "Nessuna esclusiva. Nessun costo iniziale sul piano gratuito. Puoi ritirare il tuo annuncio in qualsiasi momento."
     },
     "pricing": {
       "heading": "Prezzi semplici e trasparenti."
@@ -687,5 +687,14 @@
       "emailInvalid": "Inserisci un indirizzo email valido.",
       "submitFailed": "Qualcosa è andato storto. Riprova."
     }
+  },
+  "sellPage": {
+    "trustHeading": "Semplice, trasparente e alle tue condizioni.",
+    "trust1Label": "Gratuito per iniziare",
+    "trust1Body": "Creare la tua pagina non costa nulla. Nessuna commissione, nessun costo.",
+    "trust2Label": "Nessuna esclusiva richiesta",
+    "trust2Body": "Lavori già con un consulente o mediatore? Siamo complementari, non in competizione.",
+    "trust3Label": "Riservatezza garantita",
+    "trust3Body": "Nulla viene pubblicato senza la tua approvazione. Sei tu a decidere chi vede cosa."
   }
 }
