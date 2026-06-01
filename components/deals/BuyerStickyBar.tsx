@@ -10,7 +10,9 @@ interface BuyerStickyBarProps {
 export function BuyerStickyBar({ locale }: BuyerStickyBarProps) {
   const t = useTranslations('deals.browse.buyerStickyBar');
   const [visible, setVisible] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
+  const [dismissed, setDismissed] = useState(
+    () => typeof window !== 'undefined' && sessionStorage.getItem('buyerBarDismissed') === '1',
+  );
 
   useEffect(() => {
     const onScroll = () => {
@@ -19,6 +21,11 @@ export function BuyerStickyBar({ locale }: BuyerStickyBarProps) {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, [dismissed]);
+
+  const dismiss = () => {
+    sessionStorage.setItem('buyerBarDismissed', '1');
+    setDismissed(true);
+  };
 
   if (dismissed || !visible) return null;
 
@@ -41,7 +48,7 @@ export function BuyerStickyBar({ locale }: BuyerStickyBarProps) {
             {t('cta')}
           </a>
           <button
-            onClick={() => setDismissed(true)}
+            onClick={dismiss}
             aria-label="Dismiss"
             className="flex h-7 w-7 items-center justify-center rounded-full text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors"
           >

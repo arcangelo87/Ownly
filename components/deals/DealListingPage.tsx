@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState, Fragment } from 'react';
+import { useMemo, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { DealCard } from '@/components/deals/DealCard';
 import { DealFilters, type Filters } from '@/components/deals/DealFilters';
@@ -159,64 +159,13 @@ export function DealListingPage({ listings, locale }: DealListingPageProps) {
                   {t('clearFilters')}
                 </button>
               )}
-              <div className="mt-8 rounded-[6px] border border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-6 text-left">
-                <p className="text-[14px] font-semibold text-[var(--color-text)] mb-2">
-                  {t('buyerCtaInline.heading')}
-                </p>
-                <p className="text-[13px] text-[var(--color-muted)] leading-[1.6] mb-4">
-                  {t('buyerCtaInline.body')}
-                </p>
-                <a
-                  href={`/${locale}/buyers#founding`}
-                  className="inline-flex items-center rounded-[4px] bg-[var(--color-accent)] px-5 py-2.5 text-[13px] font-medium text-white hover:opacity-90 transition-opacity"
-                >
-                  {t('buyerCtaInline.cta')}
-                </a>
-              </div>
             </div>
           ) : (
-            <>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {sorted.map((listing: ListingCard, index: number) => (
-                  <Fragment key={listing.id}>
-                    <DealCard listing={listing} />
-                    {index === 3 && sorted.length > 4 && (
-                      <div
-                        key="inline-cta"
-                        className="col-span-1 sm:col-span-2 rounded-[6px] border border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-6"
-                      >
-                        <p className="text-[14px] font-semibold text-[var(--color-text)] mb-1.5">
-                          {t('buyerCtaInline.heading')}
-                        </p>
-                        <p className="text-[13px] text-[var(--color-muted)] leading-[1.6] mb-4 max-w-[480px]">
-                          {t('buyerCtaInline.body')}
-                        </p>
-                        <a
-                          href={`/${locale}/buyers#founding`}
-                          className="inline-flex items-center rounded-[4px] bg-[var(--color-accent)] px-5 py-2.5 text-[13px] font-medium text-white hover:opacity-90 transition-opacity"
-                        >
-                          {t('buyerCtaInline.cta')}
-                        </a>
-                      </div>
-                    )}
-                  </Fragment>
-                ))}
-              </div>
-              <div className="mt-8 rounded-[6px] border border-[var(--color-border)] bg-[var(--color-surface)] px-8 py-8">
-                <p className="font-serif text-[20px] font-semibold text-[var(--color-text)] leading-[1.3] mb-2">
-                  {t('buyerCtaBottom.heading')}
-                </p>
-                <p className="text-[14px] text-[var(--color-muted)] leading-[1.7] mb-5 max-w-[520px]">
-                  {t('buyerCtaBottom.body')}
-                </p>
-                <a
-                  href={`/${locale}/buyers#founding`}
-                  className="inline-flex items-center rounded-[4px] bg-[var(--color-accent)] px-6 py-3 text-[14px] font-medium text-white hover:opacity-90 transition-opacity"
-                >
-                  {t('buyerCtaBottom.cta')}
-                </a>
-              </div>
-            </>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {sorted.map((listing: ListingCard) => (
+                <DealCard key={listing.id} listing={listing} />
+              ))}
+            </div>
           )}
         </div>
       </div>
