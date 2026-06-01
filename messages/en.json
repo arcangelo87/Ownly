@@ -8,6 +8,21 @@
       "noResults": "No deals match your filters.",
       "noResultsHint": "Try removing some filters to see more listings.",
       "clearFilters": "Clear filters",
+      "buyerCtaSidebar": {
+        "heading": "Not finding the right fit?",
+        "body": "Tell us what you are looking for. We source off-market opportunities and match them to buyers with specific criteria.",
+        "cta": "Submit your criteria"
+      },
+      "buyerCtaInline": {
+        "heading": "Looking for something specific?",
+        "body": "Our pipeline goes beyond what is listed here. Share your criteria and we will reach out when a match comes up.",
+        "cta": "Tell us what you need"
+      },
+      "buyerCtaBottom": {
+        "heading": "Seen enough to know what you want?",
+        "body": "Most of the best deals never go public. Share your acquisition criteria and we will match you to opportunities before they are listed.",
+        "cta": "Share your criteria"
+      },
       "showFilters": "Filters",
       "filters": {
         "heading": "Filters",
