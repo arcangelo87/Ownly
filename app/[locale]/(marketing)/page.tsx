@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import { DealCardStack } from '@/components/marketing/DealCardStack';
 import { DealCardStackLoader } from '@/components/marketing/DealCardStackLoader';
+import { HeroBuyerCTA } from '@/components/marketing/HeroBuyerCTA';
 import { DealCard } from '@/components/deals/DealCard';
 import { createAdminClient } from '@/lib/supabase/admin';
 import type { ListingCard } from '@/app/[locale]/deals/page';
@@ -107,12 +108,7 @@ export default async function HomePage({
               >
                 {t('hero.ctaBrowse')}
               </Link>
-              <a
-                href="#search"
-                className="inline-flex items-center px-9 py-5 border border-[var(--color-text)] text-[16px] font-medium rounded-[4px] text-[var(--color-text)] hover:bg-[var(--color-surface)] transition-colors"
-              >
-                {t('hero.ctaSearch')}
-              </a>
+              <HeroBuyerCTA />
             </div>
           </div>
           <div className="flex justify-center">
