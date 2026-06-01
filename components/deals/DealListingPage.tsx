@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { DealCard } from '@/components/deals/DealCard';
 import { DealFilters, type Filters } from '@/components/deals/DealFilters';
 import { DealSort, type SortOption } from '@/components/deals/DealSort';
+import { BuyerStickyBar } from '@/components/deals/BuyerStickyBar';
 import type { ListingCard } from '@/app/[locale]/deals/page';
 
 const PRICE_FILTER_MAP: Record<string, string[]> = {
@@ -45,7 +46,7 @@ function hasActiveFilters(filters: Filters): boolean {
   );
 }
 
-export function DealListingPage({ listings }: DealListingPageProps) {
+export function DealListingPage({ listings, locale }: DealListingPageProps) {
   const t = useTranslations('deals.browse');
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
   const [sort, setSort] = useState<SortOption>('recent');
@@ -113,6 +114,20 @@ export function DealListingPage({ listings }: DealListingPageProps) {
         {filtersOpen && (
           <div className="mt-4 rounded-md border border-[var(--color-border)] bg-white p-5">
             <DealFilters filters={filters} onChange={setFilters} />
+            <div className="mt-5 border-t border-[var(--color-border)] pt-5">
+              <p className="text-[15px] font-semibold text-[var(--color-text)] leading-[1.4] mb-2">
+                {t('buyerCtaSidebar.heading')}
+              </p>
+              <p className="text-[13px] text-[var(--color-muted)] leading-[1.6] mb-4">
+                {t('buyerCtaSidebar.body')}
+              </p>
+              <a
+                href={`/${locale}/buy`}
+                className="block w-full rounded-[4px] bg-[var(--color-accent)] px-4 py-3 text-center text-[14px] font-medium text-white hover:opacity-90 transition-opacity"
+              >
+                {t('buyerCtaSidebar.cta')}
+              </a>
+            </div>
           </div>
         )}
       </div>
@@ -121,8 +136,22 @@ export function DealListingPage({ listings }: DealListingPageProps) {
       <div className="grid grid-cols-1 gap-8 md:grid-cols-[240px_1fr]">
         {/* Sidebar — hidden on mobile */}
         <aside className="hidden md:block">
-          <div className="sticky top-8">
+          <div className="sticky top-8 flex flex-col gap-6">
             <DealFilters filters={filters} onChange={setFilters} />
+            <div className="rounded-[6px] border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-6">
+              <p className="text-[15px] font-semibold text-[var(--color-text)] leading-[1.4] mb-2">
+                {t('buyerCtaSidebar.heading')}
+              </p>
+              <p className="text-[13px] text-[var(--color-muted)] leading-[1.6] mb-4">
+                {t('buyerCtaSidebar.body')}
+              </p>
+              <a
+                href={`/${locale}/buy`}
+                className="block w-full rounded-[4px] bg-[var(--color-accent)] px-4 py-3 text-center text-[14px] font-medium text-white hover:opacity-90 transition-opacity"
+              >
+                {t('buyerCtaSidebar.cta')}
+              </a>
+            </div>
           </div>
         </aside>
 
@@ -154,6 +183,7 @@ export function DealListingPage({ listings }: DealListingPageProps) {
           )}
         </div>
       </div>
+      <BuyerStickyBar locale={locale} />
     </>
   );
 }
