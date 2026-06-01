@@ -687,5 +687,14 @@
       "emailInvalid": "Inserisci un indirizzo email valido.",
       "submitFailed": "Qualcosa è andato storto. Riprova."
     }
+  },
+  "sellPage": {
+    "trustHeading": "Semplice, trasparente e alle tue condizioni.",
+    "trust1Label": "Gratuito per iniziare",
+    "trust1Body": "Creare la tua pagina non costa nulla. Nessuna commissione, nessun costo.",
+    "trust2Label": "Nessuna esclusiva richiesta",
+    "trust2Body": "Lavori già con un consulente o mediatore? Siamo complementari, non in competizione.",
+    "trust3Label": "Riservatezza garantita",
+    "trust3Body": "Nulla viene pubblicato senza la tua approvazione. Sei tu a decidere chi vede cosa."
   }
 }
