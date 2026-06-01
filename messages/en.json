@@ -123,7 +123,7 @@
     "claimListing": "Claim this listing"
   },
   "nav": {
-    "sell": "Sell your business",
+    "sell": "Sell a business",
     "brokers": "For brokers",
     "buyers": "For buyers",
     "browse": "Browse deals",
@@ -133,7 +133,7 @@
   },
   "footer": {
     "tagline": "Find your next SME deal in Europe.",
-    "sell": "Sell your business",
+    "sell": "Sell a business",
     "brokers": "For brokers",
     "buyers": "For buyers",
     "browse": "Browse deals",
@@ -519,6 +519,11 @@
     "s7Body": "These terms are governed by the laws of Portugal. Any disputes shall be subject to the exclusive jurisdiction of the courts of Lisbon, Portugal."
   },
   "seller": {
+    "ui": {
+      "saving": "Saving...",
+      "submitting": "Submitting...",
+      "optional": "(optional)"
+    },
     "steps": {
       "step1": "Business basics",
       "step2": "Size & team",
@@ -572,7 +577,9 @@
       "photos": {
         "label": "Photos",
         "helper": "Listings with photos receive significantly more buyer interest. Up to 10 photos, 5 MB each.",
-        "dragText": "Drag photos here, or click to browse",
+        "dragText": "Drag photos here, or",
+        "clickToBrowse": "click to browse",
+        "removePhoto": "Remove photo",
         "dragLimit": "Up to 10 photos · 5 MB each · JPG, PNG, WebP"
       },
       "continue": "Save and continue →",
@@ -582,7 +589,8 @@
         "sectorRequired": "Please select a sector.",
         "yearRequired": "Please enter a valid year (e.g. 1998).",
         "emailRequired": "Please enter your email address.",
-        "emailInvalid": "Please enter a valid email address."
+        "emailInvalid": "Please enter a valid email address.",
+        "saveFailed": "Something went wrong. Please try again."
       }
     },
     "step2": {
@@ -903,13 +911,13 @@
     }
   },
   "sellPage": {
-    "trustHeading": "Free to list. No exclusivity. Full control.",
-    "trust1Label": "Always free to list",
-    "trust1Body": "Creating your deal page costs nothing. No setup fees, no monthly charges, no commission on sale.",
-    "trust2Label": "No broker exclusivity",
-    "trust2Body": "Listing with us does not lock you in. You stay free to work with whoever you want, however you want.",
-    "trust3Label": "You control what goes public",
-    "trust3Body": "Nothing is published without your approval. Sensitive information stays private until you choose to share it with a specific buyer."
+    "trustHeading": "Simple, transparent, and on your terms.",
+    "trust1Label": "Free to start",
+    "trust1Body": "Creating your deal page costs nothing. No fees, no commission.",
+    "trust2Label": "No exclusivity required",
+    "trust2Body": "Already working with an advisor or broker? We complement, we don't compete.",
+    "trust3Label": "Discretion guaranteed",
+    "trust3Body": "Nothing is published without your approval. You control who sees what."
   },
   "contact": {
     "heading": "Get in touch",

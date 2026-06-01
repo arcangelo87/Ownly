@@ -60,9 +60,9 @@ export function PhotoUpload({ files, onChange }: PhotoUploadProps) {
       >
         <UploadCloud className="h-9 w-9 text-[var(--color-muted)]" />
         <p className="text-sm text-[var(--color-muted)]">
-          {t('dragText').split(', or ')[0]}, or{' '}
+          {t('dragText')}{' '}
           <span className="font-medium text-[var(--color-accent)]">
-            click to browse
+            {t('clickToBrowse')}
           </span>
         </p>
         <p className="text-xs text-[var(--color-muted)]">{t('dragLimit')}</p>
@@ -93,7 +93,7 @@ export function PhotoUpload({ files, onChange }: PhotoUploadProps) {
                 type="button"
                 onClick={(e) => { e.stopPropagation(); removeFile(i); }}
                 className="absolute top-1 right-1 flex h-5 w-5 items-center justify-center rounded-full bg-black/60 text-white hover:bg-black/80"
-                aria-label="Remove photo"
+                aria-label={t('removePhoto')}
               >
                 <X className="h-3 w-3" />
               </button>

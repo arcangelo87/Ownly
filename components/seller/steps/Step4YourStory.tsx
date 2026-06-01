@@ -31,6 +31,7 @@ interface Step4YourStoryProps {
 
 export function Step4YourStory({ listingId, photos, onComplete }: Step4YourStoryProps) {
   const t = useTranslations('seller.step4');
+  const tSeller = useTranslations('seller');
 
   const [data, setData] = useState<Step4Data>({
     reasons_for_sale: [],
@@ -189,7 +190,7 @@ export function Step4YourStory({ listingId, photos, onComplete }: Step4YourStory
       <div className="flex flex-col gap-1.5">
         <Label>
           {t('strongestPoint.label')}
-          <span className="ml-1 font-normal text-[var(--color-muted)]">(optional)</span>
+          <span className="ml-1 font-normal text-[var(--color-muted)]">{tSeller('ui.optional')}</span>
         </Label>
         <textarea
           value={data.strongest_point}
@@ -205,7 +206,7 @@ export function Step4YourStory({ listingId, photos, onComplete }: Step4YourStory
       <div className="flex flex-col gap-1.5">
         <Label>
           {t('buyerDisclosure.label')}
-          <span className="ml-1 font-normal text-[var(--color-muted)]">(optional)</span>
+          <span className="ml-1 font-normal text-[var(--color-muted)]">{tSeller('ui.optional')}</span>
         </Label>
         <textarea
           value={data.buyer_disclosure}
@@ -219,7 +220,7 @@ export function Step4YourStory({ listingId, photos, onComplete }: Step4YourStory
 
       <div className="mt-4 flex justify-end border-t border-[var(--color-border)] pt-8">
         <Button type="submit" disabled={saving}>
-          {saving ? 'Submitting…' : t('submit')}
+          {saving ? tSeller('ui.submitting') : t('submit')}
         </Button>
       </div>
     </form>

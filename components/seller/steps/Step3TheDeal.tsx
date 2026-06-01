@@ -22,6 +22,7 @@ interface Step3TheDealProps {
 
 export function Step3TheDeal({ listingId, onComplete }: Step3TheDealProps) {
   const t = useTranslations('seller.step3');
+  const tSeller = useTranslations('seller');
 
   const PRICE_OPTIONS = PRICE_VALUES.map((v) => ({ value: v, label: t(`priceOptions.${v}`) }));
   const TIMELINE_OPTIONS = TIMELINE_VALUES.map((v) => ({ value: v, label: t(`timelineOptions.${v}`) }));
@@ -144,7 +145,7 @@ export function Step3TheDeal({ listingId, onComplete }: Step3TheDealProps) {
 
       <div className="mt-4 flex justify-end border-t border-[var(--color-border)] pt-8">
         <Button type="submit" disabled={saving}>
-          {saving ? 'Saving…' : t('continue')}
+          {saving ? tSeller('ui.saving') : t('continue')}
         </Button>
       </div>
     </form>

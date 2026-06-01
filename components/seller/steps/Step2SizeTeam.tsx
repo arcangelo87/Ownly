@@ -25,6 +25,7 @@ interface Step2SizeTeamProps {
 
 export function Step2SizeTeam({ listingId, onComplete }: Step2SizeTeamProps) {
   const t = useTranslations('seller.step2');
+  const tSeller = useTranslations('seller');
   const tDeals = useTranslations('deals');
 
   const REVENUE_OPTIONS = REVENUE_VALUES.map((v) => ({ value: v, label: t(`revenueOptions.${v}`) }));
@@ -134,7 +135,7 @@ export function Step2SizeTeam({ listingId, onComplete }: Step2SizeTeamProps) {
 
       <div className="mt-4 flex justify-end border-t border-[var(--color-border)] pt-8">
         <Button type="submit" disabled={saving}>
-          {saving ? 'Saving…' : t('continue')}
+          {saving ? tSeller('ui.saving') : t('continue')}
         </Button>
       </div>
     </form>
