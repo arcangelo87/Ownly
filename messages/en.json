@@ -901,5 +901,15 @@
       "heading": "We will be in touch.",
       "body": "Your criteria have been saved. We will reach out when we find a match."
     }
+  },
+  "contact": {
+    "heading": "Get in touch",
+    "sub": "Tell us what you need and we will get back to you shortly.",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone number (optional)",
+    "messageLabel": "Message",
+    "cta": "Send message",
+    "success": "Thank you. We will be in touch shortly."
   }
 }
