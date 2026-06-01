@@ -3,7 +3,7 @@
   "deals": {
     "browse": {
       "pageTitle": "Browse deals",
-      "pageSubtitle": "Curated acquisition opportunities in Italy and Portugal.",
+      "pageSubtitle": "Curated acquisition opportunities in Southern Europe.",
       "resultCount": "{count} deals",
       "noResults": "No deals match your filters.",
       "noResultsHint": "Try removing some filters to see more listings.",
@@ -24,9 +24,9 @@
         "cta": "Share your criteria"
       },
       "buyerStickyBar": {
-        "heading": "Not seeing the right deal?",
+        "heading": "Looking for something specific?",
         "body": "Share your criteria and we will match you to off-market opportunities.",
-        "cta": "Submit your criteria"
+        "cta": "Tell us what you need"
       },
       "showFilters": "Filters",
       "filters": {
