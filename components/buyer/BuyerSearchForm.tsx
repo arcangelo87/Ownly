@@ -17,7 +17,7 @@ const STEP_HEADERS = [
   { titleKey: 'step3.title', subtitleKey: 'step3.subtitle' },
 ] as const;
 
-export function BuyerSearchForm() {
+export function BuyerSearchForm({ onComplete, modal = false }: { onComplete?: () => void; modal?: boolean } = {}) {
   const t = useTranslations('buyerSearch');
 
   const [currentStep, setCurrentStep] = useState(1);
@@ -37,6 +37,7 @@ export function BuyerSearchForm() {
 
   function handleStep3Complete() {
     setCompleted(true);
+    onComplete?.();
   }
 
   if (completed) {
@@ -46,7 +47,7 @@ export function BuyerSearchForm() {
   const { titleKey, subtitleKey } = STEP_HEADERS[currentStep - 1];
 
   return (
-    <div className="flex min-h-screen flex-col md:flex-row">
+    <div className={`flex flex-col md:flex-row${modal ? '' : ' min-h-screen'}`}>
       <BuyerStepIndicator currentStep={currentStep} />
 
       <main className="flex-1 px-5 py-10 md:px-16 md:py-14" style={{ maxWidth: '680px' }}>
