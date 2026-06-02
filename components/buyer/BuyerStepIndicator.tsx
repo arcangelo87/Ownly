@@ -1,6 +1,7 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
 import { Check } from 'lucide-react';
 import { Logo } from '@/components/ui/Logo';
 
@@ -12,12 +13,13 @@ interface BuyerStepIndicatorProps {
 
 export function BuyerStepIndicator({ currentStep }: BuyerStepIndicatorProps) {
   const t = useTranslations('buyerSearch.steps');
+  const locale = useLocale();
 
   return (
     <>
       {/* Desktop sidebar */}
       <aside className="hidden md:flex w-60 flex-shrink-0 flex-col border-r border-[var(--color-border)] px-8 py-12 sticky top-0 h-screen">
-        <Logo width={96} className="mb-[52px]" />
+        <Link href={`/${locale}`}><Logo width={96} className="mb-[52px]" /></Link>
         <ol className="flex flex-col">
           {STEPS.map((key, i) => {
             const step = i + 1;
