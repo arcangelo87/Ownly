@@ -8,6 +8,12 @@ const intlMiddleware = createIntlMiddleware(routing);
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Redirect unsupported locales to English equivalent
+  if (/^\/(pt|it)(\/|$)/.test(pathname)) {
+    const rest = pathname.replace(/^\/(pt|it)/, '') || '/';
+    return NextResponse.redirect(new URL(`/en${rest}`, request.url), 301);
+  }
+
   // Refresh Supabase auth session on every request
   let response = NextResponse.next({ request });
 
