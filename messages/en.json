@@ -167,6 +167,27 @@
   "betaBanner": {
     "text": "Bottega is in private beta. Access is free while we build."
   },
+  "waitlist": {
+    "badge": "Early Access",
+    "h1": "Find your next business in Europe.",
+    "sub": "Curated SME acquisitions in Italy and Portugal. Verified listings, structured deal pages, direct broker access. Join the list and get in first.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email address",
+    "roleLabel": "I am a",
+    "rolePlaceholder": "Select one",
+    "roleBuyer": "Buyer looking for acquisitions",
+    "roleSeller": "Seller looking to exit",
+    "roleBroker": "Broker or M&A advisor",
+    "submit": "Request early access →",
+    "formNote": "No spam. We will reach out when your access slot opens.",
+    "trust1Title": "Curated listings",
+    "trust1Desc": "Every listing is financially structured and independently reviewed before it goes live.",
+    "trust2Title": "Advanced search",
+    "trust2Desc": "Filter by sector, revenue, margin, country, and involvement level. Find what fits you.",
+    "trust3Title": "Deal insights",
+    "trust3Desc": "Understand each opportunity quickly. Key metrics, risks, and context on every page."
+  },
   "home": {
     "hero": {
       "eyebrow": "Italy & Portugal",
