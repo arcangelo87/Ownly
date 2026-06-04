@@ -164,6 +164,9 @@
     "copyright": "© 2026 Bottega",
     "home": "Homepage"
   },
+  "betaBanner": {
+    "text": "Bottega is in private beta. Access is free while we build."
+  },
   "home": {
     "hero": {
       "eyebrow": "Italy & Portugal",
@@ -219,6 +222,7 @@
     },
     "buyers": {
       "hero": {
+        "betaBadge": "Private Beta",
         "h1": "Own a business that's right for you.",
         "sub": "Bottega helps you acquire cash-flowing, small businesses in Europe. Browse our listings or tell us what you're looking for and we'll find it.",
         "ctaBrowse": "Browse listings",

@@ -95,6 +95,9 @@ export default async function HomePage({
       <section className="py-20 md:py-28 px-6 bg-[var(--color-bg)]">
         <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
+            <div className="inline-flex items-center px-3 py-1 mb-4 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--color-muted)]">
+              {t('hero.betaBadge')}
+            </div>
             <h1 className="font-[family-name:var(--font-serif)] text-[44px] md:text-[56px] font-semibold leading-[1.15] tracking-[-0.02em] text-[var(--color-text)] mb-5">
               {t('hero.h1')}
             </h1>
