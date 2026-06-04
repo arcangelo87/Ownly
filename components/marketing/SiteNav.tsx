@@ -29,12 +29,21 @@ export function SiteNav() {
 
         <div className="hidden md:flex items-center gap-4 ml-auto shrink-0">
           {!isHome && <LocaleSwitcher />}
-          <Link
-            href={`/${locale}/sell`}
-            className="inline-flex items-center px-4 py-2 bg-[var(--color-accent)] text-white text-[13px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
-          >
-            {t('getStarted')}
-          </Link>
+          {isHome ? (
+            <a
+              href="#waitlist"
+              className="inline-flex items-center px-5 py-2 border border-[var(--color-border)] text-[var(--color-text)] text-[13px] font-medium rounded-full hover:bg-[var(--color-surface)] transition-colors"
+            >
+              {t('joinWaitlist')}
+            </a>
+          ) : (
+            <Link
+              href={`/${locale}/sell`}
+              className="inline-flex items-center px-4 py-2 bg-[var(--color-accent)] text-white text-[13px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
+            >
+              {t('getStarted')}
+            </Link>
+          )}
         </div>
 
         {/* Mobile hamburger */}
