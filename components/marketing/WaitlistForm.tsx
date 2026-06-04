@@ -11,17 +11,16 @@ export function WaitlistForm() {
   const [formError, setFormError] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [role, setRole] = useState('');
+  const [budget, setBudget] = useState('');
+  const [region, setRegion] = useState('');
 
   function validate() {
     const errors: Record<string, string> = {};
-    if (!firstName.trim()) errors.firstName = 'First name is required';
+    if (!name.trim()) errors.name = 'Name is required';
     if (!email.trim()) errors.email = 'Email is required';
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.email = 'Enter a valid email';
-    if (!role) errors.role = 'Please select one';
     return errors;
   }
 
@@ -36,7 +35,8 @@ export function WaitlistForm() {
     setFormError(null);
 
     startTransition(async () => {
-      const { error } = await submitWaitlist({ firstName, lastName, email, role });
+      const role = [budget, region].filter(Boolean).join(', ');
+      const { error } = await submitWaitlist({ firstName: name, lastName: '', email, role });
       if (error) {
         setFormError(error);
       } else {
@@ -47,92 +47,76 @@ export function WaitlistForm() {
 
   if (submitted) {
     return (
-      <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[8px] p-8 text-center">
+      <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[8px] p-8 text-center max-w-[540px] mx-auto">
         <p className="font-[family-name:var(--font-serif)] text-[22px] font-semibold text-[var(--color-text)] mb-2">
           You are on the list.
         </p>
         <p className="text-[14px] text-[var(--color-muted)] leading-[1.65]">
-          We will reach out when your access slot opens. No spam.
+          We will reach out when your access slot opens.
         </p>
       </div>
     );
   }
 
+  const inputClass = "w-full border border-[var(--color-border)] bg-[var(--color-bg)] rounded-[4px] px-3.5 py-3 text-[15px] text-[var(--color-text)] placeholder:text-[var(--color-border)] focus:outline-none focus:border-[var(--color-accent)]";
+  const labelClass = "block text-[13px] font-medium text-[var(--color-text)] mb-1.5";
+
   return (
-    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4 w-full">
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label className="block text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)] mb-1.5">
-            {t('firstName')}
-          </label>
-          <input
-            type="text"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            autoComplete="given-name"
-            className="w-full border border-[var(--color-border)] bg-[var(--color-bg)] rounded-[4px] px-3.5 py-3 text-[15px] text-[var(--color-text)] placeholder:text-[var(--color-border)] focus:outline-none focus:border-[var(--color-accent)]"
-          />
-          {fieldErrors.firstName && (
-            <p className="mt-1 text-[12px] text-red-600">{fieldErrors.firstName}</p>
-          )}
-        </div>
-        <div>
-          <label className="block text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)] mb-1.5">
-            {t('lastName')}
-          </label>
-          <input
-            type="text"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            autoComplete="family-name"
-            className="w-full border border-[var(--color-border)] bg-[var(--color-bg)] rounded-[4px] px-3.5 py-3 text-[15px] text-[var(--color-text)] placeholder:text-[var(--color-border)] focus:outline-none focus:border-[var(--color-accent)]"
-          />
-        </div>
+    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4 w-full max-w-[540px] mx-auto">
+      <div>
+        <label className={labelClass}>{t('name')}</label>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Jane Doe"
+          autoComplete="name"
+          className={inputClass}
+        />
+        {fieldErrors.name && <p className="mt-1 text-[12px] text-[var(--color-terracotta)]">{fieldErrors.name}</p>}
       </div>
 
       <div>
-        <label className="block text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)] mb-1.5">
-          {t('email')}
-        </label>
+        <label className={labelClass}>{t('email')}</label>
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          placeholder="you@example.com"
           autoComplete="email"
-          className="w-full border border-[var(--color-border)] bg-[var(--color-bg)] rounded-[4px] px-3.5 py-3 text-[15px] text-[var(--color-text)] placeholder:text-[var(--color-border)] focus:outline-none focus:border-[var(--color-accent)]"
+          className={inputClass}
         />
-        {fieldErrors.email && (
-          <p className="mt-1 text-[12px] text-red-600">{fieldErrors.email}</p>
-        )}
+        {fieldErrors.email && <p className="mt-1 text-[12px] text-[var(--color-terracotta)]">{fieldErrors.email}</p>}
       </div>
 
-      <div>
-        <label className="block text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)] mb-1.5">
-          {t('roleLabel')}
-        </label>
-        <select
-          value={role}
-          onChange={(e) => setRole(e.target.value)}
-          className="w-full border border-[var(--color-border)] bg-[var(--color-bg)] rounded-[4px] px-3.5 py-3 text-[15px] text-[var(--color-text)] focus:outline-none focus:border-[var(--color-accent)]"
-        >
-          <option value="">{t('rolePlaceholder')}</option>
-          <option value="buyer">{t('roleBuyer')}</option>
-          <option value="seller">{t('roleSeller')}</option>
-          <option value="broker">{t('roleBroker')}</option>
-        </select>
-        {fieldErrors.role && (
-          <p className="mt-1 text-[12px] text-red-600">{fieldErrors.role}</p>
-        )}
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label className={labelClass}>{t('budget')}</label>
+          <select value={budget} onChange={(e) => setBudget(e.target.value)} className={inputClass}>
+            <option value="">{t('budgetPlaceholder')}</option>
+            <option value="under-500k">{t('budgetOpt1')}</option>
+            <option value="500k-2m">{t('budgetOpt2')}</option>
+            <option value="2m-5m">{t('budgetOpt3')}</option>
+            <option value="over-5m">{t('budgetOpt4')}</option>
+          </select>
+        </div>
+        <div>
+          <label className={labelClass}>{t('region')}</label>
+          <select value={region} onChange={(e) => setRegion(e.target.value)} className={inputClass}>
+            <option value="">{t('regionPlaceholder')}</option>
+            <option value="italy">{t('regionOpt1')}</option>
+            <option value="portugal">{t('regionOpt2')}</option>
+            <option value="both">{t('regionOpt3')}</option>
+          </select>
+        </div>
       </div>
 
-      {formError && (
-        <p className="text-[13px] text-red-600">{formError}</p>
-      )}
+      {formError && <p className="text-[13px] text-[var(--color-terracotta)]">{formError}</p>}
 
       <button
         type="submit"
         disabled={isPending}
-        className="w-full py-4 bg-[var(--color-accent)] text-white text-[15px] font-medium rounded-[4px] hover:opacity-90 transition-opacity disabled:opacity-60 mt-1"
+        className="w-full py-4 bg-[var(--color-text)] text-white text-[15px] font-medium rounded-full hover:opacity-85 transition-opacity disabled:opacity-60 mt-1"
       >
         {isPending ? 'Sending…' : t('submit')}
       </button>
