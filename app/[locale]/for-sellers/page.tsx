@@ -33,15 +33,15 @@ export default async function ForSellersPage() {
     <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)]">
 
       {/* ── Hero ─────────────────────────────────────────────────── */}
-      <section className="min-h-screen flex flex-col px-8 md:px-16 pt-10 pb-20">
+      <section className="min-h-screen flex flex-col px-6 md:px-16 pt-8 md:pt-10 pb-14 md:pb-20">
         <div className="mb-auto">
           <Logo width={96} className="text-[var(--color-text)]" />
         </div>
-        <div className="max-w-2xl mt-20">
-          <h1 className="font-[family-name:var(--font-serif)] text-[48px] md:text-[64px] font-semibold leading-[1.1] tracking-[-0.02em] mb-8">
+        <div className="max-w-2xl mt-12 md:mt-20">
+          <h1 className="font-[family-name:var(--font-serif)] text-[36px] sm:text-[48px] md:text-[64px] font-semibold leading-[1.1] tracking-[-0.02em] mb-6 md:mb-8">
             {t('hero.h1')}
           </h1>
-          <p className="text-[17px] text-[var(--color-muted)] leading-[1.7] mb-10 max-w-lg">
+          <p className="text-[16px] md:text-[17px] text-[var(--color-muted)] leading-[1.7] mb-8 md:mb-10 max-w-lg">
             {t('hero.sub')}
           </p>
           <a
@@ -55,15 +55,15 @@ export default async function ForSellersPage() {
       </section>
 
       {/* ── Who we work with ─────────────────────────────────────── */}
-      <section className="px-8 md:px-16 py-20 border-t border-[var(--color-border)]">
+      <section className="px-6 md:px-16 py-14 md:py-20 border-t border-[var(--color-border)]">
         <div className="max-w-3xl">
           <p className="text-[11px] font-semibold tracking-widest uppercase text-[var(--color-muted)] mb-4">
             {t('focus.eyebrow')}
           </p>
-          <h2 className="font-[family-name:var(--font-serif)] text-[36px] md:text-[48px] font-semibold leading-[1.15] tracking-[-0.02em] mb-14">
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] sm:text-[36px] md:text-[48px] font-semibold leading-[1.15] tracking-[-0.02em] mb-10 md:mb-14">
             {t('focus.heading')}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {/* Col 1 */}
             <div>
               <div className="mb-3 text-[var(--color-accent)]">
@@ -99,15 +99,15 @@ export default async function ForSellersPage() {
       </section>
 
       {/* ── How it works ─────────────────────────────────────────── */}
-      <section className="px-8 md:px-16 py-20 border-t border-[var(--color-border)]">
+      <section className="px-6 md:px-16 py-14 md:py-20 border-t border-[var(--color-border)]">
         <div className="max-w-3xl">
           <p className="text-[11px] font-semibold tracking-widest uppercase text-[var(--color-muted)] mb-4">
             {t('process.eyebrow')}
           </p>
-          <h2 className="font-[family-name:var(--font-serif)] text-[36px] md:text-[48px] font-semibold leading-[1.15] tracking-[-0.02em] mb-14">
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] sm:text-[36px] md:text-[48px] font-semibold leading-[1.15] tracking-[-0.02em] mb-10 md:mb-14">
             {t('process.heading')}
           </h2>
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-10 md:gap-12">
             {[
               {
                 num: '01',
@@ -140,18 +140,18 @@ export default async function ForSellersPage() {
                 body: t('process.step3Body'),
               },
             ].map(({ num, icon, label, body }) => (
-              <div key={num} className="grid grid-cols-[48px_1fr] gap-6 items-start">
-                <span className="font-[family-name:var(--font-mono)] text-[22px] text-[var(--color-muted)] opacity-60 pt-0.5">
+              <div key={num} className="grid grid-cols-[40px_1fr] md:grid-cols-[48px_1fr] gap-5 md:gap-6 items-start">
+                <span className="font-[family-name:var(--font-mono)] text-[18px] md:text-[22px] text-[var(--color-muted)] opacity-60 pt-0.5">
                   {num}
                 </span>
                 <div>
                   <div className="flex items-center gap-2 mb-2 text-[var(--color-accent)]">
                     {icon}
-                    <p className="font-[family-name:var(--font-serif)] text-[20px] font-semibold text-[var(--color-text)]">
+                    <p className="font-[family-name:var(--font-serif)] text-[18px] md:text-[20px] font-semibold text-[var(--color-text)]">
                       {label}
                     </p>
                   </div>
-                  <p className="text-[15px] text-[var(--color-muted)] leading-[1.7]">{body}</p>
+                  <p className="text-[14px] md:text-[15px] text-[var(--color-muted)] leading-[1.7]">{body}</p>
                 </div>
               </div>
             ))}
@@ -160,12 +160,12 @@ export default async function ForSellersPage() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
-      <section className="px-8 md:px-16 py-20 border-t border-[var(--color-border)]">
+      <section className="px-6 md:px-16 py-14 md:py-20 border-t border-[var(--color-border)]">
         <div className="max-w-2xl">
           <p className="text-[11px] font-semibold tracking-widest uppercase text-[var(--color-muted)] mb-4">
             {t('faq.eyebrow')}
           </p>
-          <h2 className="font-[family-name:var(--font-serif)] text-[36px] md:text-[48px] font-semibold leading-[1.15] tracking-[-0.02em] mb-12">
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] sm:text-[36px] md:text-[48px] font-semibold leading-[1.15] tracking-[-0.02em] mb-8 md:mb-12">
             {t('faq.heading')}
           </h2>
           <SellerLandingFaq items={faqItems} />
@@ -173,15 +173,15 @@ export default async function ForSellersPage() {
       </section>
 
       {/* ── Contact ──────────────────────────────────────────────── */}
-      <section id="contact" className="px-8 md:px-16 py-20 border-t border-[var(--color-border)]">
-        <div className="max-w-lg">
+      <section id="contact" className="px-6 md:px-16 py-14 md:py-20 border-t border-[var(--color-border)]">
+        <div className="w-full max-w-lg">
           <p className="text-[11px] font-semibold tracking-widest uppercase text-[var(--color-muted)] mb-4">
             {t('contact.eyebrow')}
           </p>
-          <h2 className="font-[family-name:var(--font-serif)] text-[36px] md:text-[48px] font-semibold leading-[1.15] tracking-[-0.02em] mb-4">
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] sm:text-[36px] md:text-[48px] font-semibold leading-[1.15] tracking-[-0.02em] mb-4">
             {t('contact.heading')}
           </h2>
-          <p className="text-[15px] text-[var(--color-muted)] leading-[1.7] mb-10">
+          <p className="text-[15px] text-[var(--color-muted)] leading-[1.7] mb-8 md:mb-10">
             {t('contact.sub')}
           </p>
           <SellerLandingForm labels={contactLabels} />

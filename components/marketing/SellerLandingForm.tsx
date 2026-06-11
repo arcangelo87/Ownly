@@ -86,7 +86,7 @@ export function SellerLandingForm({ labels }: Props) {
       <button
         type="submit"
         disabled={loading}
-        className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-accent)] text-white text-[14px] font-medium rounded-[4px] hover:opacity-90 transition-opacity disabled:opacity-60 w-fit"
+        className="w-full sm:w-fit inline-flex justify-center items-center gap-2 px-6 py-3 bg-[var(--color-accent)] text-white text-[14px] font-medium rounded-[4px] hover:opacity-90 transition-opacity disabled:opacity-60"
       >
         {loading ? '...' : labels.cta}
       </button>
