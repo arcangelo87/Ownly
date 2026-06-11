@@ -38,7 +38,7 @@ export default async function ForSellersPage() {
           <Logo width={96} className="text-[var(--color-text)]" />
         </div>
         <div className="max-w-2xl mt-20">
-          <h1 className="font-[family-name:var(--font-serif)] text-[48px] md:text-[64px] font-semibold leading-[1.1] tracking-[-0.5px] mb-8">
+          <h1 className="font-[family-name:var(--font-serif)] text-[48px] md:text-[64px] font-semibold leading-[1.1] tracking-[-0.02em] mb-8">
             {t('hero.h1')}
           </h1>
           <p className="text-[17px] text-[var(--color-muted)] leading-[1.7] mb-10 max-w-lg">
@@ -46,7 +46,7 @@ export default async function ForSellersPage() {
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-text)] text-[var(--color-bg)] text-[15px] font-medium rounded-[4px] hover:opacity-80 transition-opacity"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-accent)] text-white text-[15px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
           >
             {t('hero.cta')}
           </a>
@@ -60,7 +60,7 @@ export default async function ForSellersPage() {
           <p className="text-[11px] font-semibold tracking-widest uppercase text-[var(--color-muted)] mb-4">
             {t('focus.eyebrow')}
           </p>
-          <h2 className="font-[family-name:var(--font-serif)] text-[36px] md:text-[48px] font-semibold leading-[1.15] mb-14">
+          <h2 className="font-[family-name:var(--font-serif)] text-[36px] md:text-[48px] font-semibold leading-[1.15] tracking-[-0.02em] mb-14">
             {t('focus.heading')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -104,7 +104,7 @@ export default async function ForSellersPage() {
           <p className="text-[11px] font-semibold tracking-widest uppercase text-[var(--color-muted)] mb-4">
             {t('process.eyebrow')}
           </p>
-          <h2 className="font-[family-name:var(--font-serif)] text-[36px] md:text-[48px] font-semibold leading-[1.15] mb-14">
+          <h2 className="font-[family-name:var(--font-serif)] text-[36px] md:text-[48px] font-semibold leading-[1.15] tracking-[-0.02em] mb-14">
             {t('process.heading')}
           </h2>
           <div className="flex flex-col gap-12">
@@ -165,7 +165,7 @@ export default async function ForSellersPage() {
           <p className="text-[11px] font-semibold tracking-widest uppercase text-[var(--color-muted)] mb-4">
             {t('faq.eyebrow')}
           </p>
-          <h2 className="font-[family-name:var(--font-serif)] text-[36px] md:text-[48px] font-semibold leading-[1.15] mb-12">
+          <h2 className="font-[family-name:var(--font-serif)] text-[36px] md:text-[48px] font-semibold leading-[1.15] tracking-[-0.02em] mb-12">
             {t('faq.heading')}
           </h2>
           <SellerLandingFaq items={faqItems} />
@@ -178,7 +178,7 @@ export default async function ForSellersPage() {
           <p className="text-[11px] font-semibold tracking-widest uppercase text-[var(--color-muted)] mb-4">
             {t('contact.eyebrow')}
           </p>
-          <h2 className="font-[family-name:var(--font-serif)] text-[36px] md:text-[48px] font-semibold leading-[1.15] mb-4">
+          <h2 className="font-[family-name:var(--font-serif)] text-[36px] md:text-[48px] font-semibold leading-[1.15] tracking-[-0.02em] mb-4">
             {t('contact.heading')}
           </h2>
           <p className="text-[15px] text-[var(--color-muted)] leading-[1.7] mb-10">
