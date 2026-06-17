@@ -248,6 +248,13 @@ export async function ingestListingWithAI(
     slug,
   }).select('id').single();
 
+  const translationContent = {
+    title: (x.title as string | null) ?? null,
+    about: (x.about as string | null) ?? null,
+    highlights: (x.highlights as string[] | null) ?? null,
+    buyer_tags: (x.buyer_tags as string[] | null) ?? null,
+  };
+
   if (error) {
     if (error.code === '23505') {
       const fallbackSlug = `${slug}-${Math.random().toString(36).slice(2, 6)}`;
@@ -279,31 +286,39 @@ export async function ingestListingWithAI(
         slug: fallbackSlug,
       }).select('id').single();
       if (retryError) throw retryError;
-      return { id: retryData.id, slug: fallbackSlug, title: (x.title as string | null) ?? null };
+      if (translationContent.title || translationContent.about) {
+        const translations = await callTranslationApi(anthropic, translationContent);
+        await admin.from('listings').update(translations).eq('id', retryData.id);
+      }
+      return { id: retryData.id, slug: fallbackSlug, title: translationContent.title };
     }
     throw error;
   }
-  return { id: data.id, slug, title: (x.title as string | null) ?? null };
+
+  if (translationContent.title || translationContent.about) {
+    const translations = await callTranslationApi(anthropic, translationContent);
+    await admin.from('listings').update(translations).eq('id', data.id);
+  }
+  return { id: data.id, slug, title: translationContent.title };
 }
 
-export async function generateTranslations(listingId: string): Promise<{
+// ---------------------------------------------------------------------------
+// Shared translation helper — no auth check, takes content directly
+// ---------------------------------------------------------------------------
+
+type TranslationContent = {
+  title: string | null;
+  about: string | null;
+  highlights: string[] | null;
+  buyer_tags: string[] | null;
+};
+
+type TranslationResult = {
   title_it: string | null; about_it: string | null; highlights_it: string[] | null; buyer_tags_it: string[] | null;
   title_pt: string | null; about_pt: string | null; highlights_pt: string[] | null; buyer_tags_pt: string[] | null;
-}> {
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) throw new Error('Unauthorized');
+};
 
-  const admin = createAdminClient();
-  const { data } = await admin
-    .from('listings')
-    .select('title, about, highlights, buyer_tags')
-    .eq('id', listingId)
-    .single();
-
-  if (!data || (!data.title && !data.about)) throw new Error('No English content to translate.');
-
-  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+async function callTranslationApi(anthropic: Anthropic, content: TranslationContent): Promise<TranslationResult> {
   const response = await anthropic.messages.create({
     model: 'claude-sonnet-4-5',
     max_tokens: 2048,
@@ -329,7 +344,7 @@ export async function generateTranslations(listingId: string): Promise<{
     system: 'Translate business listing content into Italian and European Portuguese. Rewrite naturally in each language, do not translate word-for-word. Maintain a professional, financially-literate tone. Use null for any field where the source is null.',
     messages: [{
       role: 'user',
-      content: `Translate this listing content:\n\nTitle: ${data.title ?? 'null'}\nAbout: ${data.about ?? 'null'}\nHighlights: ${JSON.stringify(data.highlights ?? null)}\nBuyer tags: ${JSON.stringify(data.buyer_tags ?? null)}`,
+      content: `Translate this listing content:\n\nTitle: ${content.title ?? 'null'}\nAbout: ${content.about ?? 'null'}\nHighlights: ${JSON.stringify(content.highlights ?? null)}\nBuyer tags: ${JSON.stringify(content.buyer_tags ?? null)}`,
     }],
   });
 
@@ -337,7 +352,7 @@ export async function generateTranslations(listingId: string): Promise<{
   if (!toolBlock || toolBlock.type !== 'tool_use') throw new Error('Translation failed: no structured output returned.');
   const t = toolBlock.input as Record<string, unknown>;
 
-  const result = {
+  return {
     title_it:      (t.title_it      as string | null) ?? null,
     about_it:      (t.about_it      as string | null) ?? null,
     highlights_it: (t.highlights_it as string[] | null) ?? null,
@@ -347,9 +362,62 @@ export async function generateTranslations(listingId: string): Promise<{
     highlights_pt: (t.highlights_pt as string[] | null) ?? null,
     buyer_tags_pt: (t.buyer_tags_pt as string[] | null) ?? null,
   };
+}
+
+export async function generateTranslations(listingId: string): Promise<TranslationResult> {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) throw new Error('Unauthorized');
+
+  const admin = createAdminClient();
+  const { data } = await admin
+    .from('listings')
+    .select('title, about, highlights, buyer_tags')
+    .eq('id', listingId)
+    .single();
+
+  if (!data || (!data.title && !data.about)) throw new Error('No English content to translate.');
+
+  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const result = await callTranslationApi(anthropic, data);
 
   await admin.from('listings').update(result).eq('id', listingId);
   return result;
+}
+
+export async function backfillMissingTranslations(): Promise<{ translated: number; failed: number }> {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) throw new Error('Unauthorized');
+
+  const admin = createAdminClient();
+  const { data: listings, error } = await admin
+    .from('listings')
+    .select('id, title, about, highlights, buyer_tags')
+    .eq('status', 'live')
+    .not('title', 'is', null)
+    .is('deleted_at', null)
+    .or('title_it.is.null,title_pt.is.null');
+
+  if (error) throw error;
+  if (!listings || listings.length === 0) return { translated: 0, failed: 0 };
+
+  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  let translated = 0;
+  let failed = 0;
+
+  for (const listing of listings) {
+    try {
+      const result = await callTranslationApi(anthropic, listing);
+      await admin.from('listings').update(result).eq('id', listing.id);
+      translated++;
+    } catch (e) {
+      console.error('[backfill-translations] listing', listing.id, e);
+      failed++;
+    }
+  }
+
+  return { translated, failed };
 }
 
 export type ManualIngestData = {

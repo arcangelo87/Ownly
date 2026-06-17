@@ -3,6 +3,7 @@ import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { ListingsTable } from '@/components/admin/ListingsTable';
 import { IngestPanel } from '@/components/admin/IngestPanel';
+import { BackfillTranslationsButton } from '@/components/admin/BackfillTranslationsButton';
 import { SignOutButton } from '@/components/admin/SignOutButton';
 import { Logo } from '@/components/ui/Logo';
 import type { Listing } from '@/types';
@@ -39,11 +40,14 @@ export default async function AdminPage({
       </header>
 
       <main className="px-8 py-8" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <div className="mb-6 flex items-baseline justify-between">
+        <div className="mb-6 flex items-center justify-between">
           <h1 className="font-serif text-[24px] font-medium tracking-[-0.02em]">Listings</h1>
-          <span className="text-sm text-[var(--color-muted)]">
-            {listings?.length ?? 0} total
-          </span>
+          <div className="flex items-center gap-4">
+            <BackfillTranslationsButton />
+            <span className="text-sm text-[var(--color-muted)]">
+              {listings?.length ?? 0} total
+            </span>
+          </div>
         </div>
         <div className="mb-6">
           <IngestPanel />

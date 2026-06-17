@@ -9,15 +9,7 @@ import { FinancialsLock } from '@/components/deals/FinancialsLock';
 import { DealBasicsCard } from '@/components/deals/DealBasicsCard';
 import { EnquiryForm } from '@/components/deals/EnquiryForm';
 import { PhotoStrip } from '@/components/deals/PhotoStrip';
-import {
-  SECTOR_LABELS,
-  formatRevenue,
-  formatEbitda,
-  formatPrice,
-  formatEmployees,
-  formatTimeline,
-  formatOwnerInvolvement,
-} from '@/lib/format';
+import { formatRevenue, formatPrice } from '@/lib/format';
 import type { Listing } from '@/types';
 
 export const dynamic = 'force-dynamic';
@@ -29,6 +21,7 @@ export default async function DealDetailPage({
 }) {
   const { locale, slug } = await params;
   const t = await getTranslations('deals');
+  const tSeller = await getTranslations('seller');
 
   const admin = createAdminClient();
   const { data: listing, error } = await admin
@@ -75,6 +68,30 @@ export default async function DealDetailPage({
     reasonsForSale: t('dealBasics.reasonsForSale'),
   };
 
+  const reasonKeyMap: Record<string, 'step4.reasons.retirement' | 'step4.reasons.growthCapital' | 'step4.reasons.noSuccession' | 'step4.reasons.healthPersonal' | 'step4.reasons.marketOpportunity' | 'step4.reasons.other'> = {
+    retirement: 'step4.reasons.retirement',
+    growth_capital: 'step4.reasons.growthCapital',
+    no_succession: 'step4.reasons.noSuccession',
+    health_personal: 'step4.reasons.healthPersonal',
+    market_opportunity: 'step4.reasons.marketOpportunity',
+    other: 'step4.reasons.other',
+  };
+
+  const dealBasicsValues = {
+    country: listing.country ? t(`countries.${listing.country}`) : '—',
+    saleStructure: listing.partial_sale === 'open_to_minority'
+      ? tSeller('step3.partialSale.openToMinority')
+      : listing.partial_sale === 'full_sale_only'
+      ? tSeller('step3.partialSale.fullSaleOnly')
+      : '—',
+    reasonsForSale: listing.reasons_for_sale?.length
+      ? listing.reasons_for_sale.map((r: string) => {
+          const key = reasonKeyMap[r];
+          return key ? tSeller(key) : r;
+        }).join(', ')
+      : '—',
+  };
+
   return (
     <div className="min-h-screen bg-[var(--color-bg)]">
       <SiteNav />
@@ -88,22 +105,22 @@ export default async function DealDetailPage({
 
             <div className="mt-5 flex items-center justify-between">
               <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--color-accent)]">
-                {SECTOR_LABELS[listing.sector ?? ''] ?? listing.sector}
+                {listing.sector ? t(`sectors.${listing.sector}`) : listing.sector}
               </span>
               <span className="text-[12px] text-[var(--color-muted)]">{dateLabel}</span>
             </div>
 
             <h1 className="mt-3 font-serif text-[28px] font-medium leading-[1.2] tracking-[-0.02em]">
-              {lc.title ?? listing.business_name ?? (SECTOR_LABELS[listing.sector ?? ''] ?? listing.sector)}
+              {lc.title ?? listing.business_name ?? (listing.sector ? t(`sectors.${listing.sector}`) : listing.sector)}
             </h1>
 
             <div className="mt-6 grid grid-cols-3 gap-2.5 sm:grid-cols-6">
               <MetricChip label={t('metrics.revenue')} value={formatRevenue(listing.revenue_range)} />
-              <MetricChip label={t('metrics.ebitda')} value={formatEbitda(listing.ebitda_margin)} />
+              <MetricChip label={t('metrics.ebitda')} value={listing.ebitda_margin ? tSeller(`step2.ebitdaOptions.${listing.ebitda_margin}`) : '—'} />
               <MetricChip label={t('metrics.askingPrice')} value={formatPrice(listing.asking_price)} />
-              <MetricChip label={t('metrics.employees')} value={formatEmployees(listing.employee_count)} />
-              <MetricChip label={t('metrics.timeline')} value={formatTimeline(listing.timeline)} />
-              <MetricChip label={t('metrics.ownerInvolvement')} value={formatOwnerInvolvement(listing.owner_involvement)} />
+              <MetricChip label={t('metrics.employees')} value={listing.employee_count ? tSeller(`step2.employeeOptions.${listing.employee_count}`) : '—'} />
+              <MetricChip label={t('metrics.timeline')} value={listing.timeline ? tSeller(`step3.timelineOptions.${listing.timeline}`) : '—'} />
+              <MetricChip label={t('metrics.ownerInvolvement')} value={listing.owner_involvement ? t(`ownerInvolvementValues.${listing.owner_involvement}`) : '—'} />
             </div>
 
             {(lc.about ?? listing.business_description) && (
@@ -155,7 +172,7 @@ export default async function DealDetailPage({
             {/* Mobile: sidebar content below main */}
             <div className="mt-10 flex flex-col gap-6 lg:hidden">
               <EnquiryForm listingId={listing.id} />
-              <DealBasicsCard listing={listing as Listing} labels={dealBasicsLabels} />
+              <DealBasicsCard listing={listing as Listing} labels={dealBasicsLabels} values={dealBasicsValues} />
             </div>
           </article>
 
@@ -163,7 +180,7 @@ export default async function DealDetailPage({
           <aside className="hidden w-[300px] flex-shrink-0 lg:block">
             <div className="sticky top-8 flex flex-col gap-6">
               <EnquiryForm listingId={listing.id} />
-              <DealBasicsCard listing={listing as Listing} labels={dealBasicsLabels} />
+              <DealBasicsCard listing={listing as Listing} labels={dealBasicsLabels} values={dealBasicsValues} />
             </div>
           </aside>
 
