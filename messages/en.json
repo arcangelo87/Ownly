@@ -948,5 +948,79 @@
     "messageLabel": "Message",
     "cta": "Send message",
     "success": "Thank you. We will be in touch shortly."
+  },
+  "buyerWaitlist": {
+    "nav": {
+      "requestAccess": "Request access"
+    },
+    "hero": {
+      "eyebrow": "Private beta, by invitation",
+      "h1Pre": "Buying a business in Portugal shouldn't require knowing ",
+      "h1Accent": "the right people.",
+      "sub": "Most help here is a broker pushing their own listings, or nothing at all. Bottega sources what's not listed and connects you to people who've actually closed these deals.",
+      "cta": "Request early access",
+      "microcopy": "By invitation only. We respond personally within days."
+    },
+    "whyInvest": {
+      "heading": "Why invest in a small business?",
+      "card1Title": "Real returns",
+      "card1Desc": "A tangible asset that produces real income, not promises.",
+      "card2Title": "Run it your way",
+      "card2Desc": "Hands-on for a job you want, or light-touch with a team in place.",
+      "card3Title": "Built to last",
+      "card3Desc": "Proven, already profitable, resilient through downturns."
+    },
+    "problem": {
+      "heading": "The problem",
+      "item1Title": "Prices don't add up",
+      "item1Desc": "Listed prices rarely reflect the real numbers.",
+      "item2Title": "Hidden inventory",
+      "item2Desc": "The best opportunities are never listed.",
+      "item3Title": "Diligence drags on",
+      "item3Desc": "Scattered documents, no one to explain them.",
+      "item4Title": "No financing path",
+      "item4Desc": "Nothing built for first-time buyers in Portugal.",
+      "item5Title": "Spreadsheet blind spots",
+      "item5Desc": "The risks that kill deals don't show up in the numbers."
+    },
+    "howItWorks": {
+      "heading": "How it works",
+      "badge": "concierge mode",
+      "step1Title": "Tell us your mandate",
+      "step1Desc": "Budget, sector, how hands-on. No cost, no obligation.",
+      "step2Title": "We source it",
+      "step2Desc": "Off-market opportunities, not just what's listed.",
+      "step3Title": "You get backup",
+      "step3Desc": "Financing, diligence, and a vetted network, on better terms."
+    },
+    "faq": {
+      "heading": "Questions",
+      "q1": "Who is this for?",
+      "a1": "People seriously looking to buy a business in Portugal, not just curious. If you don't have a budget range and a rough idea of what you want yet, this isn't the right time.",
+      "q2": "Why not just use ChatGPT or Claude for this?",
+      "a2": "AI can explain how a deal works. It can't call a seller, walk a property, negotiate a price, or tell you that the lease on a specific business doesn't transfer to a new owner. Bottega does the work AI can't: sourcing deals that aren't listed anywhere, vetting the parts of a business that don't show up in a spreadsheet, and putting you in front of people who've actually closed these deals before. Use AI for the general education. Use Bottega for the part that requires someone on the ground, doing the work on your behalf.",
+      "q3": "What does Bottega actually do?",
+      "a3": "You tell us what you're looking for: budget, sector, region, how involved you want to be day to day. From there, we go find matching opportunities, including ones not listed publicly, walk you through financing and due diligence, and connect you to a small group of vetted lawyers, accountants, and financing experts, often on better terms than you'd get on your own.",
+      "q4": "What kind of businesses do you look at?",
+      "a4": "Profitable, real-world businesses that solve an everyday need: accounting firms, HVAC, dental practices, repair shops, condo management, vending machines, light manufacturing, boutique hotels, food retail, office space. No startups, no crypto, no SaaS pitch decks. If it doesn't already make money doing something tangible, it's not a fit.",
+      "q5": "What does it cost?",
+      "a5": "Free. You only pay the advisors you choose to work with, at the rates we've arranged for you. Bottega doesn't charge you directly.",
+      "q6": "What happens after I request access?",
+      "a6": "We'll reach out personally within a few days to understand what you're looking for. Right now this runs by email and phone, not a self-serve platform.",
+      "q7": "What stage is this at?",
+      "a7": "This is hands-on today, one buyer at a time. The longer-term goal is to build the parts of this that can scale, so this kind of guidance doesn't only exist for people who already know the right advisor. Early access means seeing that evolve.",
+      "q8": "Is my search confidential?",
+      "a8": "Yes. We don't share who you are or what you're looking for with sellers, advisors, or anyone else without your sign-off."
+    },
+    "access": {
+      "h2Pre": "Join as one of the first buyers in ",
+      "h2Accent": "Portugal.",
+      "cta": "Request early access",
+      "microcopy": "We'll follow up personally within days.",
+      "namePlaceholder": "Full name",
+      "emailPlaceholder": "you@email.com",
+      "phonePlaceholder": "Phone (optional)",
+      "messagePlaceholder": "Budget range, sector, how hands-on you want to be (optional)"
+    }
   }
 }
