@@ -34,9 +34,10 @@ export function SiteNav() {
           {!isHome && <LocaleSwitcher />}
           <Link
             href={ctaHref}
-            className="inline-flex items-center px-4 py-2 bg-[var(--color-accent)] text-white text-[13px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
+            className="group relative inline-flex items-center overflow-hidden rounded-[4px] border border-[var(--color-accent)] px-6 py-3 text-[14px] font-semibold text-[var(--color-accent)] transition-colors duration-300 hover:text-white"
           >
-            {t('getStarted')}
+            <span className="absolute inset-0 origin-left scale-x-0 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-terracotta)] transition-transform duration-300 group-hover:scale-x-100" />
+            <span className="relative">{t('getStarted')}</span>
           </Link>
         </div>
 

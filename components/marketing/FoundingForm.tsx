@@ -141,7 +141,7 @@ export function FoundingForm({
       <button
         type="submit"
         disabled={isPending}
-        className="self-start px-8 py-4 bg-[var(--color-accent)] text-white text-[16px] font-bold rounded-[4px] hover:opacity-90 transition-opacity disabled:opacity-60"
+        className="w-full px-8 py-4 bg-[var(--color-accent)] text-white text-[16px] font-bold rounded-[4px] hover:opacity-90 transition-opacity disabled:opacity-60"
       >
         {isPending ? 'Sending…' : (submitLabel ?? t('nameLabel'))}
       </button>
