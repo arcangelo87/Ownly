@@ -357,67 +357,67 @@
   },
   "buyers": {
     "hero": {
-      "h1": "Deal PMI selezionati in Italia e Portogallo.",
-      "sub": "Bottega elenca opportunità di acquisizione curate: manifattura, servizi professionali, food & beverage, aziende specializzate. Ogni deal revisionato. Ogni annuncio curato per aiutarti a valutare rapidamente.",
-      "cta": "Sfoglia annunci →",
-      "ctaSecondary": "Parlaci di cosa stai cercando →"
+      "eyebrow": "Beta privata, su invito",
+      "h1Lead": "Comprare un'azienda in Portogallo non dovrebbe richiedere di conoscere",
+      "h1Emphasis": "le persone giuste.",
+      "sub": "Qui la maggior parte dell'aiuto è un broker che spinge i propri annunci, oppure niente. Bottega trova quello che non è in vendita pubblicamente.",
+      "cta": "Richiedi accesso anticipato",
+      "note": "Solo su invito. Rispondiamo personalmente in pochi giorni."
+    },
+    "whyInvest": {
+      "heading": "Perché investire in una piccola azienda?",
+      "item1Label": "Rendimenti reali",
+      "item1Desc": "Un bene tangibile che produce reddito reale, non promesse.",
+      "item2Label": "Gestiscila a modo tuo",
+      "item2Desc": "Coinvolgimento totale se vuoi un lavoro, oppure leggero con un team già presente.",
+      "item3Label": "Fatta per durare",
+      "item3Desc": "Comprovata, già profittevole, resiliente nelle fasi di recessione."
     },
     "problem": {
-      "heading": "Comprare una piccola azienda richiede più tempo del dovuto.",
-      "prose1": "Trovare un deal di qualità è già difficile. Quando lo trovi, passi settimane a inseguire il venditore per la documentazione. Poi altre settimane a trovare il giusto avvocato, il giusto commercialista. Professionisti che conoscano davvero le transazioni PMI in questo mercato.",
-      "prose2": "E a volte, dopo mesi di sforzi e soldi veri spesi, l'azienda semplicemente non valeva l'acquisto.",
-      "prose3": "Questa è la realtà che la maggior parte degli acquirenti affronta nell'Europa meridionale. Bottega è costruita per cambiarla.",
-      "pain1Quote": "Tre mesi e niente da mostrare.",
-      "pain1Desc": "Tempo perso a inseguire documentazione, assemblare professionisti, condurre due diligence, solo per poi ritirarsi.",
-      "pain2Quote": "L'annuncio aveva tre righe e un numero di telefono.",
-      "pain2Desc": "La maggior parte degli annunci pubblici in Italia e Portogallo sono mal presentati. Cifre di fatturato senza contesto. Mediatori che non rispondono.",
-      "pain3Quote": "Non sapevo nemmeno cosa non sapevo.",
-      "pain3Desc": "Trovare i giusti professionisti legali e finanziari per un'acquisizione PMI in un mercato straniero è di per sé un progetto."
+      "heading": "Il problema",
+      "item1Label": "I prezzi non corrispondono",
+      "item1Desc": "I prezzi pubblicati raramente riflettono i numeri reali.",
+      "item2Label": "Inventario nascosto",
+      "item2Desc": "Le migliori opportunità non sono mai pubblicate.",
+      "item3Label": "La due diligence si dilata",
+      "item3Desc": "Documenti sparsi, nessuno che li spieghi.",
+      "item4Label": "Nessun percorso di finanziamento",
+      "item4Desc": "Niente pensato per chi acquista per la prima volta in Portogallo.",
+      "item5Label": "Punti ciechi del foglio di calcolo",
+      "item5Desc": "I rischi che fanno fallire gli affari non emergono dai numeri."
     },
-    "features": {
-      "heading": "Deal che puoi valutare rapidamente, prima di impegnare il tuo tempo.",
-      "feat1Label": "Pagine di deal strutturate",
-      "feat1Desc": "Ogni annuncio ha una descrizione scritta, metriche finanziarie principali e contesto chiaro, redatti da Bottega, non copiati dal venditore. Puoi auto-qualificarti in minuti, non settimane.",
-      "feat2Label": "Dati finanziari NDA-first",
-      "feat2Desc": "I dettagli finanziari completi sono disponibili dopo una conversazione iniziale. Proteggiamo i venditori, il che significa che i numeri che alla fine vedi sono reali, non sanificati.",
-      "feat3Label": "Processo di richiesta semplice",
-      "feat3Desc": "Esprimi interesse attraverso la piattaforma. Nessuna chiamata a freddo, nessun gatekeeper del mediatore. Bottega instrada la tua richiesta e segue direttamente.",
-      "feat4Label": "Focus su Italia e Portogallo",
-      "feat4Desc": "Acquistiamo deal direttamente dai fondatori: cluster manifatturieri nel nord Italia, aziende di servizi a Lisbona e Porto, produttori alimentari in entrambi i paesi. Mercati che la maggior parte delle piattaforme serve poco."
+    "howItWorks": {
+      "heading": "Come funziona",
+      "badge": "Modalità concierge",
+      "step1Label": "Dicci il tuo mandato",
+      "step1Desc": "Budget, settore, quanto coinvolgimento. Senza costi, senza impegno.",
+      "step2Label": "Lo troviamo noi",
+      "step2Desc": "Opportunità fuori mercato, non solo ciò che è già pubblicato.",
+      "step3Label": "Hai supporto garantito",
+      "step3Desc": "Finanziamento, due diligence e una rete selezionata, a condizioni migliori."
     },
-    "access": {
-      "heading": "Gratuito per sfogliare. Gratuito per chiedere.",
-      "prose": "Nessun paywall. Nessun account richiesto per sfogliare. Registrati con nome ed email quando sei pronto per chiedere. Tutto qui.",
-      "col1": "Funzionalità",
-      "col2": "Disponibile ora",
-      "row1Feature": "Sfoglia tutti gli annunci",
-      "row1Value": "✓ Gratuito",
-      "row2Feature": "Visualizza le pagine complete dei deal",
-      "row2Value": "✓ Gratuito",
-      "row3Feature": "Invia richieste",
-      "row3Value": "✓ Gratuito",
-      "row4Feature": "Avvisi per deal salvati",
-      "row4Value": "Prossimamente",
-      "row5Feature": "Strumenti di due diligence",
-      "row5Value": "Prossimamente",
-      "row6Feature": "Matching AI dei deal",
-      "row6Value": "Prossimamente"
-    },
-    "founding": {
-      "heading": "Aiutaci a costruire ciò di cui gli acquirenti hanno davvero bisogno.",
-      "prose1": "Siamo in una fase iniziale, e preferiamo parlare con acquirenti seri piuttosto che indovinare cosa costruire. Se stai cercando attivamente opportunità di acquisizione in Italia o Portogallo, vorremmo capire il tuo processo, le tue difficoltà e cosa ti aiuterebbe davvero.",
-      "prose2": "In cambio, plasmerai ciò che Bottega costruisce per gli acquirenti e avrai accesso anticipato alle funzionalità man mano che vengono lanciate.",
-      "namePlaceholder": "Nome",
-      "emailPlaceholder": "Email",
-      "phonePlaceholder": "Telefono (opzionale)",
-      "messagePlaceholder": "Cosa stai cercando? (opzionale)",
-      "submit": "Invia →",
-      "after": "Risponderemo entro 48 ore."
+    "faq": {
+      "heading": "Domande",
+      "q1": "A chi si rivolge?",
+      "a1": "A chi cerca seriamente di comprare un'azienda in Portogallo, non solo per curiosità. Se non hai ancora un budget indicativo e un'idea approssimativa di cosa cerchi, non è il momento giusto.",
+      "q2": "Perché non usare semplicemente ChatGPT o Claude per questo?",
+      "a2": "Gli strumenti di IA generici possono riassumere informazioni pubbliche, ma non possono contattare i venditori, negoziare l'accesso a numeri privati, o garantire per te con la propria rete. Bottega fa il lavoro sul campo che richiede di essere presenti in Portogallo.",
+      "q3": "Cosa fa esattamente Bottega?",
+      "a3": "Prendiamo il tuo mandato, cerchiamo aziende che lo soddisfino, molte mai pubblicate, e ti portiamo opportunità con numeri reali. Ti collegiamo anche a supporto per finanziamento e due diligence quando sei pronto ad agire.",
+      "q4": "Quanto costa?",
+      "a4": "Niente per iniziare. Dirci cosa cerchi ed essere abbinato è gratuito. Saremo trasparenti su eventuali commissioni prima che qualsiasi affare proceda.",
+      "q5": "Cosa succede dopo aver richiesto l'accesso?",
+      "a5": "Ti contatteremo personalmente in pochi giorni per capire meglio il tuo mandato prima di darti accesso alla piattaforma.",
+      "q6": "A che punto siete?",
+      "a6": "Siamo in beta privata, lavoriamo a stretto contatto con un piccolo gruppo di acquirenti iniziali per perfezionare il modello prima di aprire ulteriormente.",
+      "q7": "La mia ricerca è confidenziale?",
+      "a7": "Sì. Non riveliamo che stai cercando, né cosa stai valutando, senza il tuo permesso."
     },
     "cta": {
-      "heading": "Inizia a sfogliare. Nessun account necessario.",
-      "button": "Esplora deal →",
-      "supporting": "Registrati solo quando sei pronto per chiedere."
+      "headingLead": "Unisciti come uno dei primi acquirenti in",
+      "headingEmphasis": "Portogallo.",
+      "button": "Richiedi accesso anticipato",
+      "note": "Risponderemo personalmente in pochi giorni."
     }
   },
   "founding": {

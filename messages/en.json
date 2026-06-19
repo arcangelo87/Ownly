@@ -426,66 +426,67 @@
   },
   "buyers": {
     "hero": {
-      "h1": "Curated SME deals in Italy and Portugal.",
-      "sub": "Bottega lists curated acquisition opportunities: manufacturing, professional services, food & beverage, specialty businesses. Every deal reviewed. Every listing curated to help you evaluate quickly.",
-      "cta": "Browse deals →",
-      "ctaSecondary": "Talk to us about what you're looking for →"
+      "eyebrow": "Private beta, by invitation",
+      "h1Lead": "Buying a business in Portugal shouldn't require knowing",
+      "h1Emphasis": "the right people.",
+      "sub": "Most help here is a broker pushing their own listings, or nothing at all. Bottega sources what's not listed.",
+      "cta": "Request early access",
+      "note": "By invitation only. We respond personally within days."
+    },
+    "whyInvest": {
+      "heading": "Why invest in a small business?",
+      "item1Label": "Real returns",
+      "item1Desc": "A tangible asset that produces real income, not promises.",
+      "item2Label": "Run it your way",
+      "item2Desc": "Hands-on for a job you want, or light touch with a team in place.",
+      "item3Label": "Built to last",
+      "item3Desc": "Proven, already profitable, resilient through downturns."
     },
     "problem": {
-      "heading": "Buying a small business takes longer than it should.",
-      "prose1": "Finding a quality deal is hard enough. When you do find one, you spend weeks chasing the seller for documentation. Then more weeks finding the right lawyer, the right accountant. Professionals who actually know SME transactions in this market.",
-      "prose2": "And sometimes, after months of effort and real money spent, the business simply wasn't worth buying.",
-      "prose3": "That's the reality most buyers face in Southern Europe. Bottega is built to change it.",
-      "pain1Quote": "Three months and nothing to show for it.",
-      "pain1Desc": "Time lost chasing documentation, assembling professionals, running due diligence, only to walk away.",
-      "pain2Quote": "The listing had three lines and a phone number.",
-      "pain2Desc": "Most publicly listed deals in Italy and Portugal are poorly presented. Revenue figures with no context. Brokers who don't respond.",
-      "pain3Quote": "I didn't even know what I didn't know.",
-      "pain3Desc": "Finding the right legal and financial professionals for an SME acquisition in a foreign market is its own project."
+      "heading": "The problem",
+      "item1Label": "Prices don't add up",
+      "item1Desc": "Listed prices rarely reflect the real numbers.",
+      "item2Label": "Hidden inventory",
+      "item2Desc": "The best opportunities are never listed.",
+      "item3Label": "Diligence drags on",
+      "item3Desc": "Scattered documents, no one to explain them.",
+      "item4Label": "No financing path",
+      "item4Desc": "Nothing built for first time buyers in Portugal.",
+      "item5Label": "Spreadsheet blind spots",
+      "item5Desc": "The risks that kill deals don't show up in the numbers."
     },
-    "features": {
-      "heading": "Deals you can evaluate quickly, before you commit your time.",
-      "feat1Label": "Structured deal pages",
-      "feat1Desc": "Every listing has a written description, headline financial metrics, and clear context, authored by Bottega, not copy-pasted from the seller. You can self-qualify in minutes, not weeks.",
-      "feat2Label": "NDA-first financials",
-      "feat2Desc": "Full financial detail is available after an initial conversation. We protect sellers, which means the numbers you eventually see are real, not sanitised.",
-      "feat3Label": "Simple enquiry process",
-      "feat3Desc": "Express interest through the platform. No cold calls, no broker gatekeeping. Bottega routes your enquiry and follows up directly.",
-      "feat4Label": "Italy and Portugal focus",
-      "feat4Desc": "We source deals directly from founders: manufacturing clusters in northern Italy, service businesses in Lisbon and Porto, food producers across both countries. Markets most platforms underserve."
+    "howItWorks": {
+      "heading": "How it works",
+      "badge": "Concierge mode",
+      "step1Label": "Tell us your mandate",
+      "step1Desc": "Budget, sector, how hands on. No cost, no obligation.",
+      "step2Label": "We source it",
+      "step2Desc": "Off market opportunities, not just what's listed.",
+      "step3Label": "You get backup",
+      "step3Desc": "Financing, diligence, and a vetted network, on better terms."
     },
-    "access": {
-      "heading": "Free to browse. Free to enquire.",
-      "prose": "No paywalls. No account required to browse. Register with your name and email when you're ready to enquire. That's it.",
-      "col1": "Feature",
-      "col2": "Available now",
-      "row1Feature": "Browse all listings",
-      "row1Value": "✓ Free",
-      "row2Feature": "View full deal pages",
-      "row2Value": "✓ Free",
-      "row3Feature": "Submit enquiries",
-      "row3Value": "✓ Free",
-      "row4Feature": "Saved deal alerts",
-      "row4Value": "Coming soon",
-      "row5Feature": "Due diligence tools",
-      "row5Value": "Coming soon",
-      "row6Feature": "AI deal matching",
-      "row6Value": "Coming soon"
-    },
-    "founding": {
-      "heading": "Tell us what you're looking for",
-      "sub": "We actively search for deals that match your criteria and reach out directly. No broker fees, no upfront commitment.",
-      "namePlaceholder": "Name",
-      "emailPlaceholder": "Email",
-      "phonePlaceholder": "Phone (optional)",
-      "messagePlaceholder": "What kind of business are you looking for? Sector, size, country, any preferences...",
-      "submit": "Send my criteria →",
-      "after": "We'll respond within 48 hours."
+    "faq": {
+      "heading": "Questions",
+      "q1": "Who is this for?",
+      "a1": "People seriously looking to buy a business in Portugal, not just curious. If you don't have a budget range and a rough idea of what you want yet, this isn't the right time.",
+      "q2": "Why not just use ChatGPT or Claude for this?",
+      "a2": "General AI tools can summarise public information, but they can't call sellers, negotiate access to private numbers, or vouch for you with their network. Bottega does the legwork that requires being on the ground in Portugal.",
+      "q3": "What does Bottega actually do?",
+      "a3": "We take your mandate, go find businesses that match it, many of which are never publicly listed, and bring you opportunities with real numbers attached. We also connect you with financing and diligence support when you're ready to move.",
+      "q4": "What does it cost?",
+      "a4": "Nothing to get started. Telling us what you're looking for and getting matched is free. We'll be upfront about fees before any deal moves forward.",
+      "q5": "What happens after I request access?",
+      "a5": "We'll reach out personally within a few days to understand your mandate in more detail before giving you access to the platform.",
+      "q6": "What stage is this at?",
+      "a6": "We're in private beta, working closely with a small group of early buyers to get the model right before opening up further.",
+      "q7": "Is my search confidential?",
+      "a7": "Yes. We don't disclose that you're looking, or what you're looking at, without your permission."
     },
     "cta": {
-      "heading": "Start browsing. No account needed.",
-      "button": "Explore deals →",
-      "supporting": "Register only when you're ready to enquire."
+      "headingLead": "Join as one of the first buyers in",
+      "headingEmphasis": "Portugal.",
+      "button": "Request early access",
+      "note": "We'll follow up personally within days."
     }
   },
   "founding": {
