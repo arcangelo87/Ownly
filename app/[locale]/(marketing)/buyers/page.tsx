@@ -68,7 +68,7 @@ export default function BuyersPage() {
           </p>
           <Link
             href="#founding"
-            className="inline-flex items-center px-7 py-3.5 bg-[var(--color-text)] text-white text-[15px] font-medium rounded-full hover:opacity-90 transition-opacity"
+            className="inline-flex items-center px-9 py-4.5 bg-[var(--color-text)] text-white text-[17px] font-bold rounded-full hover:opacity-90 transition-opacity"
           >
             {t('hero.cta')}
           </Link>
