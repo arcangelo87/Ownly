@@ -397,7 +397,7 @@
       "step3Desc": "Finanziamento, due diligence e una rete selezionata, a condizioni migliori."
     },
     "faq": {
-      "heading": "Domande",
+      "heading": "FAQ",
       "q1": "A chi si rivolge?",
       "a1": "A chi cerca seriamente di comprare un'azienda in Portogallo, non solo per curiosità. Se non hai ancora un budget indicativo e un'idea approssimativa di cosa cerchi, non è il momento giusto.",
       "q2": "Perché non usare semplicemente ChatGPT o Claude per questo?",
@@ -420,6 +420,12 @@
       "headingEmphasis": "Portogallo.",
       "button": "Richiedi accesso anticipato",
       "note": "Risponderemo personalmente in pochi giorni."
+    },
+    "foundingForm": {
+      "namePlaceholder": "Nome",
+      "emailPlaceholder": "Email",
+      "phonePlaceholder": "Telefono (opzionale)",
+      "messagePlaceholder": "Che tipo di azienda stai cercando? Settore, dimensione, regione, eventuali preferenze..."
     }
   },
   "founding": {

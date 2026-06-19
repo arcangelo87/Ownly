@@ -12,6 +12,7 @@ export function SiteNav() {
   const locale = useLocale();
   const pathname = usePathname();
   const isHome = pathname === '/';
+  const isBuyers = pathname === '/buyers';
   const [open, setOpen] = useState(false);
 
   const links = [
@@ -19,6 +20,8 @@ export function SiteNav() {
     { href: `/${locale}/deals`, label: t('browse') },
     { href: `/${locale}/sell`, label: t('sell') },
   ];
+
+  const ctaHref = isBuyers ? '#founding' : `/${locale}/sell`;
 
   return (
     <nav className="border-b border-[var(--color-border)] bg-[var(--color-bg)] relative z-50">
@@ -30,7 +33,7 @@ export function SiteNav() {
         <div className="hidden md:flex items-center gap-4 ml-auto shrink-0">
           {!isHome && <LocaleSwitcher />}
           <Link
-            href={`/${locale}/sell`}
+            href={ctaHref}
             className="inline-flex items-center px-4 py-2 bg-[var(--color-accent)] text-white text-[13px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
           >
             {t('getStarted')}
@@ -70,7 +73,7 @@ export function SiteNav() {
             </Link>
           ))}
           <Link
-            href={`/${locale}/sell`}
+            href={ctaHref}
             onClick={() => setOpen(false)}
             className="mt-4 inline-flex justify-center items-center px-4 py-3 bg-[var(--color-accent)] text-white text-[15px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
           >

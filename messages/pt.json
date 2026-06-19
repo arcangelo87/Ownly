@@ -397,7 +397,7 @@
       "step3Desc": "Financiamento, diligência e uma rede validada, em melhores condições."
     },
     "faq": {
-      "heading": "Perguntas",
+      "heading": "FAQ",
       "q1": "Para quem é isto?",
       "a1": "Pessoas que procuram seriamente comprar um negócio em Portugal, não apenas curiosas. Se ainda não tem um intervalo de orçamento e uma ideia aproximada do que procura, ainda não é a altura certa.",
       "q2": "Porque não usar simplesmente o ChatGPT ou o Claude para isto?",
@@ -420,6 +420,12 @@
       "headingEmphasis": "Portugal.",
       "button": "Pedir acesso antecipado",
       "note": "Respondemos pessoalmente em poucos dias."
+    },
+    "foundingForm": {
+      "namePlaceholder": "Nome",
+      "emailPlaceholder": "Email",
+      "phonePlaceholder": "Telefone (opcional)",
+      "messagePlaceholder": "Que tipo de negócio procura? Setor, dimensão, região, preferências..."
     }
   },
   "founding": {

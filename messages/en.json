@@ -466,7 +466,7 @@
       "step3Desc": "Financing, diligence, and a vetted network, on better terms."
     },
     "faq": {
-      "heading": "Questions",
+      "heading": "FAQs",
       "q1": "Who is this for?",
       "a1": "People seriously looking to buy a business in Portugal, not just curious. If you don't have a budget range and a rough idea of what you want yet, this isn't the right time.",
       "q2": "Why not just use ChatGPT or Claude for this?",
@@ -489,6 +489,12 @@
       "headingEmphasis": "Portugal.",
       "button": "Request early access",
       "note": "We'll follow up personally within days."
+    },
+    "foundingForm": {
+      "namePlaceholder": "Name",
+      "emailPlaceholder": "Email",
+      "phonePlaceholder": "Phone (optional)",
+      "messagePlaceholder": "What kind of business are you looking for? Sector, size, region, any preferences..."
     }
   },
   "founding": {

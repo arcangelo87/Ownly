@@ -54,7 +54,7 @@ export default function BuyersPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="py-20 md:py-28 px-6 text-center">
+      <section className="py-20 md:py-28 px-6 text-center bg-[var(--color-surface)]">
         <div className="mx-auto max-w-2xl">
           <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-[var(--color-muted)] mb-5">
             {t('hero.eyebrow')}
@@ -168,10 +168,10 @@ export default function BuyersPage() {
           <div className="mt-10 text-left">
             <FoundingForm
               type="buyer"
-              namePlaceholder={t('founding.namePlaceholder')}
-              emailPlaceholder={t('founding.emailPlaceholder')}
-              phonePlaceholder={t('founding.phonePlaceholder')}
-              messagePlaceholder={t('founding.messagePlaceholder')}
+              namePlaceholder={t('foundingForm.namePlaceholder')}
+              emailPlaceholder={t('foundingForm.emailPlaceholder')}
+              phonePlaceholder={t('foundingForm.phonePlaceholder')}
+              messagePlaceholder={t('foundingForm.messagePlaceholder')}
               submitLabel={t('cta.button')}
             />
           </div>
