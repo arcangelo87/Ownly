@@ -401,17 +401,17 @@
       "q1": "A chi si rivolge?",
       "a1": "A chi cerca seriamente di comprare un'azienda in Portogallo, non solo per curiosità. Se non hai ancora un budget indicativo e un'idea approssimativa di cosa cerchi, non è il momento giusto.",
       "q2": "Perché non usare semplicemente ChatGPT o Claude per questo?",
-      "a2": "Gli strumenti di IA generici possono riassumere informazioni pubbliche, ma non possono contattare i venditori, negoziare l'accesso a numeri privati, o garantire per te con la propria rete. Bottega fa il lavoro sul campo che richiede di essere presenti in Portogallo.",
+      "a2": "L'IA può spiegare come funziona un affare. Non può chiamare un venditore, visitare un immobile, negoziare un prezzo, o dirti che il contratto di affitto di una specifica azienda non si trasferisce a un nuovo proprietario. Bottega fa il lavoro che l'IA non può fare: cercare affari che non sono pubblicati da nessuna parte, verificare le parti di un'azienda che non emergono da un foglio di calcolo, e metterti in contatto con persone che hanno già chiuso questo tipo di affari. Usa l'IA per la formazione generale. Usa Bottega per la parte che richiede qualcuno sul campo, che lavora per tuo conto.",
       "q3": "Cosa fa esattamente Bottega?",
-      "a3": "Prendiamo il tuo mandato, cerchiamo aziende che lo soddisfino, molte mai pubblicate, e ti portiamo opportunità con numeri reali. Ti collegiamo anche a supporto per finanziamento e due diligence quando sei pronto ad agire.",
+      "a3": "Ci dici cosa cerchi: budget, settore, regione, quanto coinvolgimento vuoi avere giorno per giorno. Da lì, troviamo opportunità corrispondenti, incluse quelle non pubblicate pubblicamente, ti accompagniamo nel finanziamento e nella due diligence, e ti colleghiamo a un piccolo gruppo di avvocati, contabili e contatti di finanziamento selezionati, spesso a condizioni migliori di quelle che otterresti da solo.",
       "q4": "Quanto costa?",
-      "a4": "Niente per iniziare. Dirci cosa cerchi ed essere abbinato è gratuito. Saremo trasparenti su eventuali commissioni prima che qualsiasi affare proceda.",
+      "a4": "Gratis. Paghi solo i consulenti con cui scegli di lavorare, alle condizioni che abbiamo negoziato per te. Bottega non ti fa pagare direttamente.",
       "q5": "Cosa succede dopo aver richiesto l'accesso?",
-      "a5": "Ti contatteremo personalmente in pochi giorni per capire meglio il tuo mandato prima di darti accesso alla piattaforma.",
+      "a5": "Ti contatteremo personalmente in pochi giorni per capire cosa cerchi. Per ora questo funziona tramite email e telefono, non è una piattaforma self-service.",
       "q6": "A che punto siete?",
-      "a6": "Siamo in beta privata, lavoriamo a stretto contatto con un piccolo gruppo di acquirenti iniziali per perfezionare il modello prima di aprire ulteriormente.",
+      "a6": "Oggi questo è un lavoro artigianale, un acquirente alla volta. L'obiettivo a lungo termine è costruire le parti di questo processo che possono scalare, affinché questo tipo di supporto non esista solo per chi conosce già il consulente giusto. L'accesso anticipato significa vedere quell'evoluzione.",
       "q7": "La mia ricerca è confidenziale?",
-      "a7": "Sì. Non riveliamo che stai cercando, né cosa stai valutando, senza il tuo permesso."
+      "a7": "Sì. Non condividiamo chi sei o cosa stai cercando con venditori, consulenti o chiunque altro senza il tuo consenso."
     },
     "cta": {
       "headingLead": "Unisciti come uno dei primi acquirenti in",
