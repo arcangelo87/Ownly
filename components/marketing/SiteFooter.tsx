@@ -18,18 +18,6 @@ export function SiteFooter() {
               {t('tagline')}
             </p>
           </div>
-
-          <div className="flex flex-wrap gap-x-8 gap-y-3 text-[13px]">
-            <Link href={`/${locale}`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
-              {t('home')}
-            </Link>
-            <Link href={`/${locale}/deals`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
-              {t('browse')}
-            </Link>
-            <Link href={`/${locale}/sell`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
-              {t('sell')}
-            </Link>
-          </div>
         </div>
 
         <div className="mt-10 pt-6 border-t border-[var(--color-border)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-[12px] text-[var(--color-muted)]">

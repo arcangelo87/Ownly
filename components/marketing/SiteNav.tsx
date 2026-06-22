@@ -5,13 +5,11 @@ import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname } from '@/i18n/navigation';
 import { Logo } from '@/components/ui/Logo';
-import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher';
 
 export function SiteNav() {
   const t = useTranslations('nav');
   const locale = useLocale();
   const pathname = usePathname();
-  const isHome = pathname === '/';
   const isBuyers = pathname === '/buyers';
   const [open, setOpen] = useState(false);
 
@@ -31,7 +29,6 @@ export function SiteNav() {
         </Link>
 
         <div className="hidden md:flex items-center gap-4 ml-auto shrink-0">
-          {!isHome && <LocaleSwitcher />}
           <Link
             href={ctaHref}
             className="group relative inline-flex items-center overflow-hidden rounded-[4px] border border-[var(--color-accent)] px-6 py-3 text-[14px] font-semibold text-[var(--color-accent)] transition-colors duration-300 hover:text-white"
@@ -80,11 +77,6 @@ export function SiteNav() {
           >
             {t('getStarted')}
           </Link>
-          {!isHome && (
-            <div className="mt-4 flex justify-center">
-              <LocaleSwitcher />
-            </div>
-          )}
         </div>
       )}
     </nav>
