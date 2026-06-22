@@ -399,21 +399,15 @@
     "faq": {
       "heading": "FAQ",
       "q1": "A chi si rivolge?",
-      "a1": "A chi cerca seriamente di comprare un'azienda in Portogallo, non solo per curiosità. Se non hai ancora un budget indicativo e un'idea approssimativa di cosa cerchi, non è il momento giusto.",
+      "a1": "Acquirenti alle prime armi, operatori indipendenti e persone in cambio di carriera che vogliono possedere un'attività in Portogallo.",
       "q2": "Perché non usare semplicemente ChatGPT o Claude per questo?",
-      "a2": "L'IA può spiegare come funziona un affare. Non può chiamare un venditore, visitare un immobile, negoziare un prezzo, o dirti che il contratto di affitto di una specifica azienda non si trasferisce a un nuovo proprietario. Bottega fa il lavoro che l'IA non può fare: cercare affari che non sono pubblicati da nessuna parte, verificare le parti di un'azienda che non emergono da un foglio di calcolo, e metterti in contatto con persone che hanno già chiuso questo tipo di affari. Usa l'IA per la formazione generale. Usa Bottega per la parte che richiede qualcuno sul campo, che lavora per tuo conto.",
-      "q3": "Che tipo di aziende considerate?",
-      "a3": "Aziende reali e profittevoli che soddisfano un bisogno quotidiano: studi di contabilità, climatizzazione, studi dentistici, officine di riparazione, gestione di condomini, spazi fitness, piccola manifattura, hotel boutique, vendita al dettaglio alimentare, uffici. Niente startup, niente cripto, niente pitch deck SaaS. Se non genera già denaro facendo qualcosa di tangibile, non è adatta.",
-      "q4": "Cosa fa esattamente Bottega?",
-      "a4": "Ci dici cosa cerchi: budget, settore, regione, quanto coinvolgimento vuoi avere giorno per giorno. Da lì, troviamo opportunità corrispondenti, incluse quelle non pubblicate pubblicamente, ti accompagniamo nel finanziamento e nella due diligence, e ti colleghiamo a un piccolo gruppo di avvocati, contabili e contatti di finanziamento selezionati, spesso a condizioni migliori di quelle che otterresti da solo.",
+      "a2": "Gli strumenti di IA possono dirti come appare un buon affare, ma non possono trovare opportunità fuori mercato per te, raccomandare l'avvocato giusto per la tua struttura specifica, metterti in contatto con un commercialista che ha già gestito questo tipo di attività, o negoziare condizioni di finanziamento migliori per tuo conto. Bottega unisce il lavoro sul campo a una rete curata di persone che hanno chiuso affari come il tuo, in base ai tuoi criteri e budget. Usa l'IA per la formazione generale. Usa Bottega per le persone e il lavoro che fanno davvero chiudere un affare.",
+      "q3": "Cosa fa esattamente Bottega?",
+      "a3": "Ci dici cosa stai cercando: budget, settore, quanto vuoi essere coinvolto nella gestione quotidiana. Da lì, troviamo opportunità corrispondenti, incluse quelle non pubblicamente in vendita, ti accompagniamo nel finanziamento e nella due diligence, e ti mettiamo in contatto con un piccolo gruppo di avvocati, commercialisti ed esperti di finanziamento selezionati, spesso a condizioni migliori di quelle che otterresti da solo.",
+      "q4": "Che tipo di attività può trovarmi Bottega?",
+      "a4": "Attività reali e profittevoli che rispondono a un bisogno quotidiano: studi di contabilità, climatizzazione, studi dentistici, negozi di riparazione, gestione di condomini, distributori automatici, piccola manifattura, hotel boutique, retail alimentare, spazi ufficio. Niente startup, niente crypto, niente pitch deck SaaS. Se non genera già soldi facendo qualcosa di tangibile, non è un fit.",
       "q5": "Quanto costa?",
-      "a5": "Gratis. Paghi solo i consulenti con cui scegli di lavorare, alle condizioni che abbiamo negoziato per te. Bottega non ti fa pagare direttamente.",
-      "q6": "Cosa succede dopo aver richiesto l'accesso?",
-      "a6": "Ti contatteremo personalmente in pochi giorni per capire cosa cerchi. Per ora questo funziona tramite email e telefono, non è una piattaforma self-service.",
-      "q7": "A che punto siete?",
-      "a7": "Oggi questo è un lavoro artigianale, un acquirente alla volta. L'obiettivo a lungo termine è costruire le parti di questo processo che possono scalare, affinché questo tipo di supporto non esista solo per chi conosce già il consulente giusto. L'accesso anticipato significa vedere quell'evoluzione.",
-      "q8": "La mia ricerca è confidenziale?",
-      "a8": "Sì. Non condividiamo chi sei o cosa stai cercando con venditori, consulenti o chiunque altro senza il tuo consenso."
+      "a5": "Bottega non fa pagare gli acquirenti. Siamo in fase di accesso anticipato, concentrati a creare valore reale prima di definire come questo si sostiene. Se cambiasse, lo saprai prima che accada."
     },
     "cta": {
       "headingLead": "Unisciti come uno dei primi acquirenti in",
