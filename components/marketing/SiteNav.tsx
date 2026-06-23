@@ -10,7 +10,7 @@ export function SiteNav() {
   const t = useTranslations('nav');
   const locale = useLocale();
   const pathname = usePathname();
-  const isBuyers = pathname === '/buyers';
+  const isBuyers = pathname === '/buyers' || pathname === '/';
   const [open, setOpen] = useState(false);
 
   const links = [

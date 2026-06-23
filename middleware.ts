@@ -8,9 +8,9 @@ const intlMiddleware = createIntlMiddleware(routing);
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Root domain shows the buyers landing page
+  // Root domain shows the buyers landing page directly, no redirect
   if (pathname === '/') {
-    return NextResponse.redirect(new URL('/en/buyers', request.url), 308);
+    return NextResponse.rewrite(new URL('/en/buyers', request.url));
   }
 
   // Redirect unsupported locales to English equivalent
