@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-const SECTIONS = ['s1', 's2', 's3', 's4', 's5', 's6', 's7'] as const;
+const SECTIONS = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9'] as const;
 
 export default function PrivacyPage() {
   const t = useTranslations('privacyPage');
