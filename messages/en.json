@@ -678,6 +678,11 @@
         "placeholder": "Select range",
         "helper": "Indicative range. You can refine this later."
       },
+      "priceExact": {
+        "label": "Exact asking price (€), optional",
+        "placeholder": "e.g. 1850000",
+        "helper": "If you'd rather share a precise figure than a range, enter it here."
+      },
       "partialSale": {
         "label": "Open to partial sale?",
         "helper": "Let buyers know if you'd consider keeping a stake.",
@@ -706,6 +711,7 @@
       "continue": "Save and continue →",
       "errors": {
         "priceRequired": "Please select a price range.",
+        "priceExactRequired": "Please enter a valid amount.",
         "partialRequired": "Please select an option.",
         "timelineRequired": "Please select a timeline.",
         "saveFailed": "Something went wrong. Please try again."

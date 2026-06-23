@@ -41,7 +41,7 @@ export function formatEmployees(val: string | null): string {
 
 export function formatEbitda(val: string | null): string {
   const map: Record<string, string> = {
-    below_10: '<10%', '10_20': '10–20%', '20_35': '20–35%', above_35: '>35%', not_sure: 'Not sure',
+    below_10: '<10%', '10_20': '10–20%', '20_35': '20–35%', above_35: '>35%', not_sure: '-',
   };
   return val ? (map[val] ?? val) : '—';
 }
@@ -52,6 +52,18 @@ export function formatPrice(val: string | null): string {
     '2_5m_5m': '€2.5M–€5M', '5m_10m': '€5M–€10M', over_10m: '>€10M',
   };
   return val ? (map[val] ?? val) : '—';
+}
+
+export function formatExactPrice(exact: number | null, bucket: string | null): string {
+  if (exact == null) return formatPrice(bucket);
+  if (exact >= 1_000_000) {
+    const millions = exact / 1_000_000;
+    return `€${(Math.round(millions * 100) / 100).toString()}M`;
+  }
+  if (exact >= 1_000) {
+    return `€${Math.round(exact / 1_000)}k`;
+  }
+  return `€${exact}`;
 }
 
 export function formatPartialSale(val: string | null): string {

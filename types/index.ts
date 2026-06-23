@@ -24,6 +24,7 @@ export interface Listing {
 
   // Step 3
   asking_price: string | null;
+  asking_price_exact: number | null;
   partial_sale: string | null;
   timeline: string | null;
 
