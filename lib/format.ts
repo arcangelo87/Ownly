@@ -54,6 +54,18 @@ export function formatPrice(val: string | null): string {
   return val ? (map[val] ?? val) : '—';
 }
 
+export function formatExactPrice(exact: number | null, bucket: string | null): string {
+  if (exact == null) return formatPrice(bucket);
+  if (exact >= 1_000_000) {
+    const millions = exact / 1_000_000;
+    return `€${(Math.round(millions * 100) / 100).toString()}M`;
+  }
+  if (exact >= 1_000) {
+    return `€${Math.round(exact / 1_000)}k`;
+  }
+  return `€${exact}`;
+}
+
 export function formatPartialSale(val: string | null): string {
   if (!val) return '—';
   return val === 'open_to_minority' ? 'Open to partial sale' : 'Full sale only';

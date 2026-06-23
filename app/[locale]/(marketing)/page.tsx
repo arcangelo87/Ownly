@@ -24,7 +24,7 @@ export default async function HomePage({
   const { data: raw } = await admin
     .from('listings')
     .select(
-      'id, slug, title, sector, region, country, revenue_range, ebitda_margin, asking_price, employee_count, timeline, created_at, buyer_tags, owner_involvement',
+      'id, slug, title, sector, region, country, revenue_range, ebitda_margin, asking_price, asking_price_exact, employee_count, timeline, created_at, buyer_tags, owner_involvement',
     )
     .eq('status', 'live')
     .is('deleted_at', null)

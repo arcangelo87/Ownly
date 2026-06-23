@@ -56,6 +56,23 @@ export async function updateListingContent(listingId: string, content: AllLocale
   if (error) throw error;
 }
 
+export async function updateListingPrice(
+  listingId: string,
+  price: { asking_price: string | null; asking_price_exact: number | null },
+) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) throw new Error('Unauthorized');
+
+  const admin = createAdminClient();
+  const { error } = await admin
+    .from('listings')
+    .update(price)
+    .eq('id', listingId);
+
+  if (error) throw error;
+}
+
 export async function updateListingSector(listingId: string, sector: string) {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
@@ -363,6 +380,7 @@ export type ManualIngestData = {
   employee_count: string;
   owner_involvement: string;
   asking_price: string;
+  asking_price_exact: string;
   partial_sale: string;
   timeline: string;
   business_description: string;
@@ -391,6 +409,7 @@ export async function ingestListingManual(
     employee_count:       data.employee_count       || null,
     owner_involvement:    data.owner_involvement    || null,
     asking_price:         data.asking_price         || null,
+    asking_price_exact:   data.asking_price_exact ? Number(data.asking_price_exact) : null,
     partial_sale:         data.partial_sale         || null,
     timeline:             data.timeline             || null,
     business_description: data.business_description || null,

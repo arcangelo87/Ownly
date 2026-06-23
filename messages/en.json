@@ -675,6 +675,11 @@
         "placeholder": "Select range",
         "helper": "Indicative range. You can refine this later."
       },
+      "priceExact": {
+        "label": "Exact asking price (€)",
+        "placeholder": "e.g. 1850000",
+        "helper": "The precise figure you're asking for the business."
+      },
       "partialSale": {
         "label": "Open to partial sale?",
         "helper": "Let buyers know if you'd consider keeping a stake.",
@@ -703,6 +708,7 @@
       "continue": "Save and continue →",
       "errors": {
         "priceRequired": "Please select a price range.",
+        "priceExactRequired": "Please enter the exact asking price.",
         "partialRequired": "Please select an option.",
         "timelineRequired": "Please select a timeline.",
         "saveFailed": "Something went wrong. Please try again."

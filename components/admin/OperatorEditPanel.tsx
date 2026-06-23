@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useTransition, useEffect, useRef } from 'react';
-import { updateListingContent, deleteListingPhoto, getListingPhotos, updateListingSector, generateTranslations } from '@/app/actions/admin';
+import { updateListingContent, deleteListingPhoto, getListingPhotos, updateListingSector, updateListingPrice, generateTranslations } from '@/app/actions/admin';
 import { createPhotoUploadUrl } from '@/app/actions/deals';
 import { createClient } from '@/lib/supabase/client';
 import { SECTOR_LABELS } from '@/lib/format';
@@ -40,6 +40,12 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
   const [sector, setSector] = useState(listing.sector ?? '');
   const [sectorSaving, setSectorSaving] = useState(false);
 
+  const [askingPrice, setAskingPrice] = useState(listing.asking_price ?? '');
+  const [askingPriceExact, setAskingPriceExact] = useState(
+    listing.asking_price_exact != null ? String(listing.asking_price_exact) : '',
+  );
+  const [priceSaving, setPriceSaving] = useState(false);
+
   const [photos, setPhotos] = useState<{ name: string; url: string }[]>([]);
   const [photosLoading, setPhotosLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
@@ -60,6 +66,17 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
       onSave({ sector: value });
     } finally {
       setSectorSaving(false);
+    }
+  }
+
+  async function handlePriceSave() {
+    setPriceSaving(true);
+    try {
+      const exact = askingPriceExact ? Number(askingPriceExact) : null;
+      await updateListingPrice(listing.id, { asking_price: askingPrice || null, asking_price_exact: exact });
+      onSave({ asking_price: askingPrice || null, asking_price_exact: exact });
+    } finally {
+      setPriceSaving(false);
     }
   }
 
@@ -184,6 +201,46 @@ export function OperatorEditPanel({ listing, onSave }: Props) {
             <option key={value} value={value}>{label}</option>
           ))}
         </select>
+      </div>
+
+      <div className="flex gap-3">
+        <div className="flex-1">
+          <label className="mb-1 block text-[11px] font-semibold text-[var(--color-muted)]">
+            Asking price range {priceSaving && <span className="font-normal normal-case tracking-normal">Saving…</span>}
+          </label>
+          <select
+            value={askingPrice}
+            onChange={(e) => setAskingPrice(e.target.value)}
+            className="w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-text)]"
+          >
+            <option value="">Select</option>
+            <option value="under_500k">&lt;€500k</option>
+            <option value="500k_1m">€500k–1M</option>
+            <option value="1m_2_5m">€1–2.5M</option>
+            <option value="2_5m_5m">€2.5–5M</option>
+            <option value="5m_10m">€5–10M</option>
+            <option value="over_10m">&gt;€10M</option>
+          </select>
+        </div>
+        <div className="flex-1">
+          <label className="mb-1 block text-[11px] font-semibold text-[var(--color-muted)]">Exact asking price (€)</label>
+          <input
+            type="number"
+            min="0"
+            step="1"
+            value={askingPriceExact}
+            onChange={(e) => setAskingPriceExact(e.target.value)}
+            placeholder="e.g. 1850000"
+            className="w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-text)]"
+          />
+        </div>
+        <button
+          onClick={handlePriceSave}
+          disabled={priceSaving}
+          className="self-end rounded-md bg-[var(--color-accent)] px-4 py-2 text-[12px] font-semibold text-white transition-opacity hover:opacity-[0.88] disabled:opacity-50"
+        >
+          Save price
+        </button>
       </div>
 
       <div>

@@ -7,7 +7,7 @@ import { MetricChip } from '@/components/deals/MetricChip';
 import {
   formatRevenue,
   formatEbitda,
-  formatPrice,
+  formatExactPrice,
 } from '@/lib/format';
 import type { ListingCard } from '@/app/[locale]/deals/page';
 
@@ -77,7 +77,7 @@ export function DealCard({ listing, photoHeight = 'h-40' }: DealCardProps) {
         <div className="grid grid-cols-3 gap-1.5">
           <MetricChip label={tMetrics('revenue')} value={formatRevenue(listing.revenue_range)} />
           <MetricChip label={tMetrics('ebitda')} value={formatEbitda(listing.ebitda_margin)} />
-          <MetricChip label={tMetrics('askingPrice')} value={formatPrice(listing.asking_price)} />
+          <MetricChip label={tMetrics('askingPrice')} value={formatExactPrice(listing.asking_price_exact, listing.asking_price)} />
         </div>
 
         {/* Owner involvement */}

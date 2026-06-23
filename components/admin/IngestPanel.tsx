@@ -29,12 +29,12 @@ export function IngestPanel() {
   const [manual, setManual] = useState({
     business_name: '', country: '', region: '', sector: '', year_founded: '',
     revenue_range: '', ebitda_margin: '', employee_count: '', owner_involvement: '',
-    asking_price: '', partial_sale: '', timeline: '', business_description: '',
+    asking_price: '', asking_price_exact: '', partial_sale: '', timeline: '', business_description: '',
   });
 
   function reset() {
     setResult(null); setError(null); setAiInput('');
-    setManual({ business_name: '', country: '', region: '', sector: '', year_founded: '', revenue_range: '', ebitda_margin: '', employee_count: '', owner_involvement: '', asking_price: '', partial_sale: '', timeline: '', business_description: '' });
+    setManual({ business_name: '', country: '', region: '', sector: '', year_founded: '', revenue_range: '', ebitda_margin: '', employee_count: '', owner_involvement: '', asking_price: '', asking_price_exact: '', partial_sale: '', timeline: '', business_description: '' });
   }
 
   function parseUrls(raw: string): string[] {
@@ -389,6 +389,17 @@ export function IngestPanel() {
                   <option value="5m_10m">€5–10M</option>
                   <option value="over_10m">&gt;€10M</option>
                 </select>
+              </Field>
+              <Field label="Exact asking price (€)">
+                <input
+                  type="number"
+                  min="0"
+                  step="1"
+                  value={manual.asking_price_exact}
+                  onChange={(e) => setManual((p) => ({ ...p, asking_price_exact: e.target.value }))}
+                  placeholder="e.g. 1850000"
+                  className={inputCls}
+                />
               </Field>
               <Field label="Sale structure">
                 <select value={manual.partial_sale} onChange={(e) => setManual((p) => ({ ...p, partial_sale: e.target.value }))} className={inputCls}>

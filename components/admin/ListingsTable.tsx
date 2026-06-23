@@ -10,7 +10,7 @@ import {
   formatRevenue,
   formatEmployees,
   formatEbitda,
-  formatPrice,
+  formatExactPrice,
   formatPartialSale,
   formatTimeline,
   formatReasons,
@@ -205,7 +205,7 @@ export function ListingsTable({ initialListings }: { initialListings: Listing[] 
                         <DetailField label="Email" value={listing.seller_email} link={listing.seller_email ? `mailto:${listing.seller_email}` : undefined} />
                         <DetailField label="Phone" value={listing.seller_phone} />
                         <DetailField label="EBITDA Margin" value={formatEbitda(listing.ebitda_margin)} />
-                        <DetailField label="Asking Price" value={formatPrice(listing.asking_price)} />
+                        <DetailField label="Asking Price" value={formatExactPrice(listing.asking_price_exact, listing.asking_price)} />
                         <DetailField label="Partial Sale" value={formatPartialSale(listing.partial_sale)} />
                         <DetailField label="Timeline" value={formatTimeline(listing.timeline)} />
                         <DetailField label="Reasons for Sale" value={formatReasons(listing.reasons_for_sale)} />

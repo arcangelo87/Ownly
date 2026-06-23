@@ -11,6 +11,7 @@ const TIMELINE_VALUES = ['ready_now', '6_12_months', '1_2_years', 'exploring'] a
 
 interface Step3Data {
   asking_price: string;
+  asking_price_exact: string;
   partial_sale: string;
   timeline: string;
 }
@@ -29,6 +30,7 @@ export function Step3TheDeal({ listingId, onComplete }: Step3TheDealProps) {
 
   const [data, setData] = useState<Step3Data>({
     asking_price: '',
+    asking_price_exact: '',
     partial_sale: '',
     timeline: '',
   });
@@ -44,6 +46,9 @@ export function Step3TheDeal({ listingId, onComplete }: Step3TheDealProps) {
   function validate(): boolean {
     const next: Partial<Record<keyof Step3Data, string>> = {};
     if (!data.asking_price) next.asking_price = t('errors.priceRequired');
+    if (!data.asking_price_exact || Number(data.asking_price_exact) <= 0) {
+      next.asking_price_exact = t('errors.priceExactRequired');
+    }
     if (!data.partial_sale) next.partial_sale = t('errors.partialRequired');
     if (!data.timeline) next.timeline = t('errors.timelineRequired');
     setErrors(next);
@@ -61,6 +66,7 @@ export function Step3TheDeal({ listingId, onComplete }: Step3TheDealProps) {
         .from('listings')
         .update({
           asking_price: data.asking_price,
+          asking_price_exact: Number(data.asking_price_exact),
           partial_sale: data.partial_sale,
           timeline: data.timeline,
         })
@@ -87,6 +93,25 @@ export function Step3TheDeal({ listingId, onComplete }: Step3TheDealProps) {
           placeholder={t('price.placeholder')}
           hasError={!!errors.asking_price}
           options={PRICE_OPTIONS}
+        />
+      </Field>
+
+      <Field label={t('priceExact.label')} helper={t('priceExact.helper')} error={errors.asking_price_exact}>
+        <input
+          id="askingPriceExact"
+          type="number"
+          min="0"
+          step="1"
+          inputMode="numeric"
+          value={data.asking_price_exact}
+          onChange={(e) => set('asking_price_exact', e.target.value)}
+          placeholder={t('priceExact.placeholder')}
+          className={[
+            'w-full rounded-md border bg-white px-3 py-[10px] text-sm outline-none transition-colors',
+            errors.asking_price_exact
+              ? 'border-red-600'
+              : 'border-[var(--color-border)] focus:border-[var(--color-text)]',
+          ].join(' ')}
         />
       </Field>
 
