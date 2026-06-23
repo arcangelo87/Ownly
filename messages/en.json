@@ -676,9 +676,9 @@
         "helper": "Indicative range. You can refine this later."
       },
       "priceExact": {
-        "label": "Exact asking price (€)",
+        "label": "Exact asking price (€), optional",
         "placeholder": "e.g. 1850000",
-        "helper": "The precise figure you're asking for the business."
+        "helper": "If you'd rather share a precise figure than a range, enter it here."
       },
       "partialSale": {
         "label": "Open to partial sale?",
@@ -708,7 +708,7 @@
       "continue": "Save and continue →",
       "errors": {
         "priceRequired": "Please select a price range.",
-        "priceExactRequired": "Please enter the exact asking price.",
+        "priceExactRequired": "Please enter a valid amount.",
         "partialRequired": "Please select an option.",
         "timelineRequired": "Please select a timeline.",
         "saveFailed": "Something went wrong. Please try again."

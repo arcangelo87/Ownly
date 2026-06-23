@@ -46,7 +46,7 @@ export function Step3TheDeal({ listingId, onComplete }: Step3TheDealProps) {
   function validate(): boolean {
     const next: Partial<Record<keyof Step3Data, string>> = {};
     if (!data.asking_price) next.asking_price = t('errors.priceRequired');
-    if (!data.asking_price_exact || Number(data.asking_price_exact) <= 0) {
+    if (data.asking_price_exact && Number(data.asking_price_exact) <= 0) {
       next.asking_price_exact = t('errors.priceExactRequired');
     }
     if (!data.partial_sale) next.partial_sale = t('errors.partialRequired');
@@ -66,7 +66,7 @@ export function Step3TheDeal({ listingId, onComplete }: Step3TheDealProps) {
         .from('listings')
         .update({
           asking_price: data.asking_price,
-          asking_price_exact: Number(data.asking_price_exact),
+          asking_price_exact: data.asking_price_exact ? Number(data.asking_price_exact) : null,
           partial_sale: data.partial_sale,
           timeline: data.timeline,
         })
@@ -86,16 +86,7 @@ export function Step3TheDeal({ listingId, onComplete }: Step3TheDealProps) {
     <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-6">
 
       <Field label={t('price.label')} helper={t('price.helper')} error={errors.asking_price}>
-        <NativeSelect
-          id="askingPrice"
-          value={data.asking_price}
-          onChange={(v) => set('asking_price', v)}
-          placeholder={t('price.placeholder')}
-          hasError={!!errors.asking_price}
-          options={PRICE_OPTIONS}
-        />
-
-        <div className="mt-3 flex flex-col gap-1.5">
+        <div className="mb-4 flex flex-col gap-1.5">
           <Label className="text-[13px] font-normal text-[var(--color-muted)]">
             {t('priceExact.label')}
           </Label>
@@ -119,6 +110,13 @@ export function Step3TheDeal({ listingId, onComplete }: Step3TheDealProps) {
             <p className="text-xs text-red-600">{errors.asking_price_exact}</p>
           )}
         </div>
+
+        <PriceRangeBoxes
+          value={data.asking_price}
+          onChange={(v) => set('asking_price', v)}
+          options={PRICE_OPTIONS}
+          hasError={!!errors.asking_price}
+        />
       </Field>
 
       <Field label={t('partialSale.label')} helper={t('partialSale.helper')} error={errors.partial_sale}>
@@ -203,6 +201,41 @@ function Field({
       ) : (
         <p className="text-xs leading-[1.5] text-[var(--color-muted)]">{helper}</p>
       )}
+    </div>
+  );
+}
+
+function PriceRangeBoxes({
+  value,
+  onChange,
+  options,
+  hasError,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+  options: { value: string; label: string }[];
+  hasError?: boolean;
+}) {
+  return (
+    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+      {options.map((opt) => (
+        <button
+          key={opt.value}
+          type="button"
+          onClick={() => onChange(opt.value)}
+          aria-pressed={value === opt.value}
+          className={[
+            'rounded-md border px-3 py-2.5 text-center text-sm transition-colors',
+            value === opt.value
+              ? 'border-[var(--color-accent)] bg-[#EBF1ED] text-[var(--color-text)]'
+              : hasError
+              ? 'border-red-600 bg-white text-[var(--color-text)] hover:border-[var(--color-accent)]'
+              : 'border-[var(--color-border)] bg-white text-[var(--color-text)] hover:border-[var(--color-accent)]',
+          ].join(' ')}
+        >
+          {opt.label}
+        </button>
+      ))}
     </div>
   );
 }
