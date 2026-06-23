@@ -41,7 +41,7 @@ export function formatEmployees(val: string | null): string {
 
 export function formatEbitda(val: string | null): string {
   const map: Record<string, string> = {
-    below_10: '<10%', '10_20': '10–20%', '20_35': '20–35%', above_35: '>35%', not_sure: 'Not sure',
+    below_10: '<10%', '10_20': '10–20%', '20_35': '20–35%', above_35: '>35%', not_sure: '-',
   };
   return val ? (map[val] ?? val) : '—';
 }
