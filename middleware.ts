@@ -8,6 +8,11 @@ const intlMiddleware = createIntlMiddleware(routing);
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Root domain shows the buyers landing page
+  if (pathname === '/') {
+    return NextResponse.redirect(new URL('/en/buyers', request.url), 308);
+  }
+
   // Redirect unsupported locales to English equivalent
   if (/^\/(pt|it)(\/|$)/.test(pathname)) {
     const rest = pathname.replace(/^\/(pt|it)/, '') || '/';
