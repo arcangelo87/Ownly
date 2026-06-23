@@ -5,13 +5,12 @@ import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname } from '@/i18n/navigation';
 import { Logo } from '@/components/ui/Logo';
-import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher';
 
 export function SiteNav() {
   const t = useTranslations('nav');
   const locale = useLocale();
   const pathname = usePathname();
-  const isHome = pathname === '/';
+  const isBuyers = pathname === '/buyers';
   const [open, setOpen] = useState(false);
 
   const links = [
@@ -19,6 +18,8 @@ export function SiteNav() {
     { href: `/${locale}/deals`, label: t('browse') },
     { href: `/${locale}/sell`, label: t('sell') },
   ];
+
+  const ctaHref = isBuyers ? '#founding' : `/${locale}/sell`;
 
   return (
     <nav className="border-b border-[var(--color-border)] bg-[var(--color-bg)] relative z-50">
@@ -28,12 +29,12 @@ export function SiteNav() {
         </Link>
 
         <div className="hidden md:flex items-center gap-4 ml-auto shrink-0">
-          {!isHome && <LocaleSwitcher />}
           <Link
-            href={`/${locale}/sell`}
-            className="inline-flex items-center px-4 py-2 bg-[var(--color-accent)] text-white text-[13px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
+            href={ctaHref}
+            className="group relative inline-flex items-center overflow-hidden rounded-[4px] border border-[var(--color-accent)] px-6 py-3 text-[14px] font-semibold text-[var(--color-accent)] transition-colors duration-300 hover:text-white"
           >
-            {t('getStarted')}
+            <span className="absolute inset-0 origin-left scale-x-0 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-terracotta)] transition-transform duration-300 group-hover:scale-x-100" />
+            <span className="relative">{t('getStarted')}</span>
           </Link>
         </div>
 
@@ -70,17 +71,12 @@ export function SiteNav() {
             </Link>
           ))}
           <Link
-            href={`/${locale}/sell`}
+            href={ctaHref}
             onClick={() => setOpen(false)}
             className="mt-4 inline-flex justify-center items-center px-4 py-3 bg-[var(--color-accent)] text-white text-[15px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
           >
             {t('getStarted')}
           </Link>
-          {!isHome && (
-            <div className="mt-4 flex justify-center">
-              <LocaleSwitcher />
-            </div>
-          )}
         </div>
       )}
     </nav>

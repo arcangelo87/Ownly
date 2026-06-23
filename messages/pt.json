@@ -131,7 +131,7 @@
     "about": "Sobre nós"
   },
   "footer": {
-    "tagline": "Negócios PME selecionados em Itália e Portugal.",
+    "tagline": "A comprar negócios reais em Portugal.",
     "sell": "Vender o seu negócio",
     "brokers": "Para mediadores",
     "buyers": "Para compradores",
@@ -357,67 +357,69 @@
   },
   "buyers": {
     "hero": {
-      "h1": "Negócios PME selecionados em Itália e Portugal.",
-      "sub": "A Bottega lista oportunidades de aquisição curadas: indústria, serviços profissionais, alimentação e bebidas, negócios de especialidade. Cada anúncio revisto. Cada listagem curada para o ajudar a avaliar rapidamente.",
-      "cta": "Ver anúncios →",
-      "ctaSecondary": "Fale connosco sobre o que procura →"
+      "eyebrow": "Beta privada, por convite",
+      "h1Lead": "Comprar um negócio em Portugal não devia exigir conhecer",
+      "h1Emphasis": "as pessoas certas.",
+      "sub": "Encontrar um bom negócio para comprar em Portugal exige meses de becos sem saída, anúncios sobrevalorizados e tentativa e erro. Não tem de ser assim.",
+      "cta": "Pedir acesso antecipado",
+      "note": "Apenas por convite. Respondemos pessoalmente em poucos dias."
+    },
+    "whyInvest": {
+      "heading": "Porquê investir num pequeno negócio?",
+      "item1Label": "Retornos reais",
+      "item1Desc": "Um ativo tangível que produz rendimento real, não promessas.",
+      "item2Label": "Geste à sua maneira",
+      "item2Desc": "Envolvimento total se quiser um trabalho, ou leve, com uma equipa já no lugar.",
+      "item3Label": "Feito para durar",
+      "item3Desc": "Comprovado, já rentável, resiliente em períodos de recessão."
     },
     "problem": {
-      "heading": "Comprar um pequeno negócio demora mais do que devia.",
-      "prose1": "Encontrar um bom anúncio já é difícil. Quando o encontra, passa semanas a perseguir o vendedor para obter documentação. Depois mais semanas a encontrar o advogado certo, o contabilista certo. Profissionais que realmente conhecem as transações de PME neste mercado.",
-      "prose2": "E às vezes, após meses de esforço e dinheiro real gasto, o negócio simplesmente não valia a pena comprar.",
-      "prose3": "Esta é a realidade que a maioria dos compradores enfrenta no Sul da Europa. A Bottega foi criada para mudar isso.",
-      "pain1Quote": "Três meses e nada para mostrar.",
-      "pain1Desc": "Tempo perdido a perseguir documentação, a reunir profissionais, a fazer due diligence, apenas para desistir.",
-      "pain2Quote": "O anúncio tinha três linhas e um número de telefone.",
-      "pain2Desc": "A maioria dos anúncios públicos em Itália e Portugal são mal apresentados. Números de faturação sem contexto. Mediadores que não respondem.",
-      "pain3Quote": "Nem sabia o que não sabia.",
-      "pain3Desc": "Encontrar os profissionais legais e financeiros certos para uma aquisição de PME num mercado estrangeiro é um projeto por si só."
+      "heading": "O problema",
+      "item1Label": "Os preços não fazem sentido",
+      "item1Desc": "Os preços anunciados raramente refletem os números reais.",
+      "item2Label": "Inventário escondido",
+      "item2Desc": "As melhores oportunidades nunca são anunciadas.",
+      "item3Label": "A diligência arrasta-se",
+      "item3Desc": "Documentos dispersos, ninguém para os explicar.",
+      "item4Label": "Sem via de financiamento",
+      "item4Desc": "Nada pensado para compradores de primeira vez em Portugal.",
+      "item5Label": "Pontos cegos da folha de cálculo",
+      "item5Desc": "Os riscos que matam negócios não aparecem nos números."
     },
-    "features": {
-      "heading": "Anúncios que pode avaliar rapidamente, antes de comprometer o seu tempo.",
-      "feat1Label": "Páginas de anúncio estruturadas",
-      "feat1Desc": "Cada listagem tem uma descrição escrita, métricas financeiras principais e contexto claro, criado pela Bottega, não copiado do vendedor. Pode auto-qualificar-se em minutos, não semanas.",
-      "feat2Label": "Finanças NDA-first",
-      "feat2Desc": "Os detalhes financeiros completos estão disponíveis após uma conversa inicial. Protegemos os vendedores, o que significa que os números que acaba por ver são reais, não sanitizados.",
-      "feat3Label": "Processo de consulta simples",
-      "feat3Desc": "Expresse interesse através da plataforma. Sem chamadas a frio, sem intermediação do mediador. A Bottega encaminha a sua consulta e faz acompanhamento diretamente.",
-      "feat4Label": "Foco em Itália e Portugal",
-      "feat4Desc": "Angariamos anúncios diretamente de fundadores: clusters industriais no norte de Itália, empresas de serviços em Lisboa e Porto, produtores alimentares em ambos os países. Mercados que a maioria das plataformas serve pouco."
+    "howItWorks": {
+      "heading": "Como funciona",
+      "badge": "Modo concierge",
+      "step1Label": "Compartilhe os seus critérios.",
+      "step1Desc": "Orçamento, setor, quanto envolvimento. Sem custo, sem compromisso.",
+      "step2Label": "Nós procuramos",
+      "step2Desc": "Oportunidades que não encontraria facilmente por conta própria.",
+      "step3Label": "Tem apoio garantido",
+      "step3Desc": "Financiamento, diligência e uma rede validada, em melhores condições."
     },
-    "access": {
-      "heading": "Gratuito para navegar. Gratuito para consultar.",
-      "prose": "Sem paywalls. Sem conta necessária para navegar. Registe-se com o seu nome e email quando estiver pronto para consultar. Só isso.",
-      "col1": "Funcionalidade",
-      "col2": "Disponível agora",
-      "row1Feature": "Ver todos os anúncios",
-      "row1Value": "✓ Gratuito",
-      "row2Feature": "Ver páginas completas dos anúncios",
-      "row2Value": "✓ Gratuito",
-      "row3Feature": "Enviar consultas",
-      "row3Value": "✓ Gratuito",
-      "row4Feature": "Alertas de anúncios guardados",
-      "row4Value": "Em breve",
-      "row5Feature": "Ferramentas de due diligence",
-      "row5Value": "Em breve",
-      "row6Feature": "Correspondência AI de anúncios",
-      "row6Value": "Em breve"
+    "faq": {
+      "heading": "FAQ",
+      "q1": "O que faz a Bottega exatamente?",
+      "a1": "Diz nos o que procura: orçamento, setor, quão envolvido quer estar no dia a dia. A partir daí, encontramos oportunidades correspondentes, incluindo as que não estão publicamente anunciadas, acompanhamos o financiamento e a due diligence, e ligamo lo a um pequeno grupo de advogados, contabilistas e especialistas em financiamento, muitas vezes em melhores condições do que conseguiria por conta própria.",
+      "q2": "Para quem é isto?",
+      "a2": "Compradores de primeira viagem, operadores independentes e pessoas em mudança de carreira que querem ter um negócio em Portugal.",
+      "q3": "Porque não usar apenas o ChatGPT ou o Claude para isto?",
+      "a3": "As ferramentas de IA podem dizer como é um bom negócio, mas não conseguem encontrar oportunidades fora do mercado por si, recomendar o advogado certo para a sua estrutura específica, ligá lo a um contabilista que já tenha lidado com este tipo de negócio, ou negociar melhores condições de financiamento em seu nome. A Bottega combina trabalho no terreno com uma rede curada de pessoas que já fecharam negócios como o seu, ajustada ao seu critério e orçamento. Use a IA para a educação geral. Use a Bottega para as pessoas e o trabalho que realmente fecham um negócio.",
+      "q4": "Que tipo de negócios a Bottega pode ajudar a encontrar?",
+      "a4": "Negócios reais e rentáveis que respondem a uma necessidade do dia a dia: empresas de contabilidade, climatização, clínicas dentárias, lojas de reparação, gestão de condomínios, máquinas de vending, fabricação ligeira, hotéis boutique, retalho alimentar, espaços de escritório. Sem startups, sem cripto, sem pitch decks de SaaS. Se ainda não gera dinheiro a fazer algo tangível, não é um bom encaixe.",
+      "q5": "Quanto custa?",
+      "a5": "A Bottega não cobra aos compradores. Estamos em fase de acesso antecipado, focados em criar valor real antes de definir como isto se sustenta. Se isso mudar, ficará a saber antes de acontecer."
     },
-    "founding": {
-      "heading": "Ajude-nos a construir o que os compradores realmente precisam.",
-      "prose1": "Estamos numa fase inicial, e preferimos falar com compradores sérios a adivinhar o que construir. Se procura ativamente oportunidades de aquisição em Itália ou Portugal, gostaríamos de perceber o seu processo, as suas dificuldades e o que realmente o ajudaria.",
-      "prose2": "Em troca, moldará o que a Bottega constrói para compradores e terá acesso antecipado a funcionalidades à medida que são lançadas.",
+    "cta": {
+      "headingLead": "Junte-se como um dos primeiros compradores em",
+      "headingEmphasis": "Portugal.",
+      "button": "Pedir acesso antecipado",
+      "note": "Respondemos pessoalmente em poucos dias."
+    },
+    "foundingForm": {
       "namePlaceholder": "Nome",
       "emailPlaceholder": "Email",
       "phonePlaceholder": "Telefone (opcional)",
-      "messagePlaceholder": "O que procura? (opcional)",
-      "submit": "Enviar →",
-      "after": "Responderemos em 48 horas."
-    },
-    "cta": {
-      "heading": "Comece a navegar. Sem necessidade de conta.",
-      "button": "Explorar anúncios →",
-      "supporting": "Registe-se apenas quando estiver pronto para consultar."
+      "messagePlaceholder": "Que tipo de negócio procura? Setor, dimensão, região, preferências..."
     }
   },
   "founding": {
