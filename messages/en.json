@@ -529,21 +529,21 @@
   },
   "termsPage": {
     "title": "Terms of Service",
-    "lastUpdated": "Last updated: May 2026",
+    "lastUpdated": "Last updated: June 2026",
     "s1Heading": "About Bottega",
-    "s1Body": "Bottega is a deal presentation platform. We help business owners create structured listing pages and put them in front of qualified buyers. We are not a broker, agent, or financial advisor. We do not take success fees, hold client funds, or represent either party in a transaction.",
+    "s1Body": "Bottega Ventures Ltd (Company number 11114051), 167-169 Great Portland Street, 5th Floor, London, England, W1W 5PF, operates this platform. Bottega helps individuals find and acquire businesses in Portugal. We are not a broker, agent, or financial advisor. We do not take success fees, hold client funds, or represent either party in a transaction.",
     "s2Heading": "Seller responsibilities",
-    "s2Body": "By submitting a listing, you confirm that the information provided is accurate and not misleading. You are responsible for the content of your listing. Bottega may edit listings for clarity and presentation, but the underlying facts remain your responsibility. Do not include information that is confidential, defamatory, or legally restricted.",
+    "s2Body": "If you submit a listing or your business information appears on Bottega, you confirm that the information provided is accurate and not misleading. Bottega may source listings from publicly available third-party platforms and will edit them for clarity and presentation. If you are the business owner and wish to update or remove your listing, contact us at privacy@bottegaventures.com. Do not submit information that is confidential, defamatory, or legally restricted.",
     "s3Heading": "Buyer responsibilities",
-    "s3Body": "By submitting an enquiry, you confirm that you are a genuine prospective buyer with the financial capacity to complete an acquisition. You agree not to contact sellers outside the Bottega platform or to share listing information with third parties without prior written consent.",
+    "s3Body": "By requesting access, you confirm that you have a genuine interest in acquiring a business in Portugal. You agree not to share listing information or seller details with third parties.",
     "s4Heading": "No transaction guarantee",
-    "s4Body": "Bottega does not guarantee that any listing will result in a completed transaction. We do not verify the accuracy of seller-provided financials. All buyers are advised to conduct independent due diligence before making any acquisition decision.",
+    "s4Body": "Bottega does not guarantee that any introduction or listing will result in a completed transaction. We do not verify the accuracy of seller-provided financials. All buyers are advised to conduct independent due diligence before making any acquisition decision.",
     "s5Heading": "Listing removal",
-    "s5Body": "Bottega reserves the right to remove any listing that contains inaccurate, misleading, or inappropriate content, or that violates these terms. Sellers may withdraw their listing at any time by contacting us.",
+    "s5Body": "Bottega reserves the right to remove any listing that contains inaccurate, misleading, or inappropriate content, or that violates these terms. Business owners may request removal of their listing at any time by contacting privacy@bottegaventures.com.",
     "s6Heading": "Limitation of liability",
     "s6Body": "To the fullest extent permitted by law, Bottega is not liable for any loss or damage arising from the use of this platform, reliance on listing content, or the outcome of any transaction. Our total liability to any user shall not exceed the fees paid by that user in the 12 months preceding the claim.",
     "s7Heading": "Governing law",
-    "s7Body": "These terms are governed by the laws of Portugal. Any disputes shall be subject to the exclusive jurisdiction of the courts of Lisbon, Portugal."
+    "s7Body": "These terms are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales."
   },
   "seller": {
     "ui": {
