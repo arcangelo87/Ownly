@@ -63,10 +63,9 @@ export function FoundingForm({
   if (submitted) {
     return (
       <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[8px] p-8 text-center">
-        <p className="font-[family-name:var(--font-serif)] text-[20px] font-semibold text-[var(--color-text)] mb-2">
+        <p className="font-[family-name:var(--font-serif)] text-[20px] font-semibold text-[var(--color-text)]">
           {t('successHeading')}
         </p>
-        <p className="text-[14px] text-[var(--color-muted)]">{t('successBody')}</p>
       </div>
     );
   }
