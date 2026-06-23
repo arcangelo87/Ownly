@@ -94,25 +94,31 @@ export function Step3TheDeal({ listingId, onComplete }: Step3TheDealProps) {
           hasError={!!errors.asking_price}
           options={PRICE_OPTIONS}
         />
-      </Field>
 
-      <Field label={t('priceExact.label')} helper={t('priceExact.helper')} error={errors.asking_price_exact}>
-        <input
-          id="askingPriceExact"
-          type="number"
-          min="0"
-          step="1"
-          inputMode="numeric"
-          value={data.asking_price_exact}
-          onChange={(e) => set('asking_price_exact', e.target.value)}
-          placeholder={t('priceExact.placeholder')}
-          className={[
-            'w-full rounded-md border bg-white px-3 py-[10px] text-sm outline-none transition-colors',
-            errors.asking_price_exact
-              ? 'border-red-600'
-              : 'border-[var(--color-border)] focus:border-[var(--color-text)]',
-          ].join(' ')}
-        />
+        <div className="mt-3 flex flex-col gap-1.5">
+          <Label className="text-[13px] font-normal text-[var(--color-muted)]">
+            {t('priceExact.label')}
+          </Label>
+          <input
+            id="askingPriceExact"
+            type="number"
+            min="0"
+            step="1"
+            inputMode="numeric"
+            value={data.asking_price_exact}
+            onChange={(e) => set('asking_price_exact', e.target.value)}
+            placeholder={t('priceExact.placeholder')}
+            className={[
+              'w-full rounded-md border bg-white px-3 py-[10px] text-sm outline-none transition-colors',
+              errors.asking_price_exact
+                ? 'border-red-600'
+                : 'border-[var(--color-border)] focus:border-[var(--color-text)]',
+            ].join(' ')}
+          />
+          {errors.asking_price_exact && (
+            <p className="text-xs text-red-600">{errors.asking_price_exact}</p>
+          )}
+        </div>
       </Field>
 
       <Field label={t('partialSale.label')} helper={t('partialSale.helper')} error={errors.partial_sale}>
