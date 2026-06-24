@@ -24,8 +24,7 @@ export async function submitFoundingEnquiry(input: FoundingEnquiryInput): Promis
   });
 
   if (error) {
-    console.error('[founding-enquiry]', error.code, error.message);
-    return { error: 'Something went wrong. Please try again.' };
+    return { error: `[debug] ${error.code}: ${error.message}` };
   }
 
   return { error: null };
