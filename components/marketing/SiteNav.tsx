@@ -19,6 +19,8 @@ export function SiteNav() {
     { href: `/${locale}/sell`, label: t('sell') },
   ];
 
+  const mobileLinks = links.filter(({ href }) => !href.endsWith('/sell'));
+
   const ctaHref = isBuyers ? '#founding' : `/${locale}/sell`;
 
   return (
@@ -60,7 +62,7 @@ export function SiteNav() {
       {/* Mobile dropdown */}
       {open && (
         <div className="md:hidden border-t border-[var(--color-border)] bg-[var(--color-bg)] px-6 pb-6 pt-4 flex flex-col gap-1">
-          {links.map(({ href, label }) => (
+          {mobileLinks.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
