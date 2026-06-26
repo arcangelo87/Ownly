@@ -15,7 +15,7 @@ export interface FoundingEnquiryInput {
 export async function submitFoundingEnquiry(input: FoundingEnquiryInput): Promise<{ error: string | null }> {
   const supabase = await createClient();
 
-  const { error } = await supabase.from('founding_enquiries').insert({
+  const { error } = await supabase.from('general_buyer_enquiries').insert({
     type: input.type,
     name: input.name.trim(),
     email: input.email.trim().toLowerCase(),
