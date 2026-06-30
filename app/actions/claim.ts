@@ -7,6 +7,10 @@ export async function submitClaim(data: {
   name: string;
   email: string;
   message?: string;
+  referrer?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
 }) {
   const admin = createAdminClient();
 
@@ -22,6 +26,10 @@ export async function submitClaim(data: {
     name: data.name.trim(),
     email: data.email.trim().toLowerCase(),
     message: data.message?.trim() || null,
+    referrer: data.referrer || null,
+    utm_source: data.utmSource || null,
+    utm_medium: data.utmMedium || null,
+    utm_campaign: data.utmCampaign || null,
   });
 
   if (error) throw error;

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -17,6 +17,25 @@ export function ClaimForm({ slug }: { slug: string }) {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  const attribution = useRef<{
+    referrer?: string;
+    utmSource?: string;
+    utmMedium?: string;
+    utmCampaign?: string;
+  }>(
+    typeof window === 'undefined'
+      ? {}
+      : (() => {
+          const params = new URLSearchParams(window.location.search);
+          return {
+            referrer: document.referrer || undefined,
+            utmSource: params.get('utm_source') || undefined,
+            utmMedium: params.get('utm_medium') || undefined,
+            utmCampaign: params.get('utm_campaign') || undefined,
+          };
+        })()
+  ).current;
+
   function validate() {
     const next: Record<string, string> = {};
     if (!name.trim()) next.name = t('errors.nameRequired');
@@ -31,7 +50,16 @@ export function ClaimForm({ slug }: { slug: string }) {
     if (!validate()) return;
     setSubmitting(true);
     try {
-      await submitClaim({ slug, name, email, message: message || undefined });
+      await submitClaim({
+        slug,
+        name,
+        email,
+        message: message || undefined,
+        referrer: attribution.referrer,
+        utmSource: attribution.utmSource,
+        utmMedium: attribution.utmMedium,
+        utmCampaign: attribution.utmCampaign,
+      });
       setSuccess(true);
     } catch {
       setErrors({ submit: t('errors.submitFailed') });
