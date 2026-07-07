@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { SITE_URL } from '@/lib/site';
 
+export const revalidate = 3600;
+
 const STATIC_PATHS = [
   { path: '', priority: 1 },
   { path: '/deals', priority: 0.9 },
