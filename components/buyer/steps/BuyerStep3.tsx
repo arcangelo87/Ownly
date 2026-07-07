@@ -67,8 +67,7 @@ export function BuyerStep3({ step1, step2, onComplete }: BuyerStep3Props) {
         industry_other: step1.industry_other || null,
         locations: step1.locations,
         budget_range: step1.budget_range || null,
-        primary_goal: step2.primary_goal || null,
-        target_return: step2.target_return || null,
+        primary_goals: step2.primary_goals.length ? step2.primary_goals : null,
         search_timeline: step2.search_timeline || null,
         has_acquired_before: data.has_acquired_before,
         background: data.background === 'other' && backgroundOther.trim()

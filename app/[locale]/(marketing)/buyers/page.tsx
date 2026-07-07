@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import { IconCircle } from '@/components/marketing/IconCircle';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
-import { FoundingForm } from '@/components/marketing/FoundingForm';
+import { ExpandableBuyerForm } from '@/components/marketing/ExpandableBuyerForm';
 
 export default function BuyersPage() {
   const t = useTranslations('buyers');
@@ -155,25 +155,15 @@ export default function BuyersPage() {
         </div>
       </section>
 
-      {/* ── Footer CTA / Founding form ── */}
+      {/* ── Footer CTA / Buyer search form ── */}
       <section id="founding" className="py-20 md:py-24 px-6 bg-[var(--color-surface)] text-center">
-        <div className="mx-auto max-w-md">
+        <div className="mx-auto max-w-md mb-10">
           <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold leading-[1.2] tracking-[-0.02em] text-[var(--color-text)] mb-2">
             {t('cta.headingLead')}{' '}
             <span className="italic text-[var(--color-terracotta)]">{t('cta.headingEmphasis')}</span>
           </h2>
-          <div className="mt-10 text-left">
-            <FoundingForm
-              type="buyer"
-              namePlaceholder={t('foundingForm.namePlaceholder')}
-              emailPlaceholder={t('foundingForm.emailPlaceholder')}
-              phonePlaceholder={t('foundingForm.phonePlaceholder')}
-              messagePlaceholder={t('foundingForm.messagePlaceholder')}
-              submitLabel={t('cta.button')}
-            />
-          </div>
-          <p className="mt-4 text-[13px] text-[var(--color-muted)]">{t('cta.note')}</p>
         </div>
+        <ExpandableBuyerForm ctaLabel={t('cta.button')} note={t('cta.note')} />
       </section>
     </>
   );
