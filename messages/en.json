@@ -799,9 +799,7 @@
       "locations": {
         "label": "Where are you looking?",
         "helper": "Select all that apply.",
-        "italy": "Italy",
         "portugal": "Portugal",
-        "spain": "Spain",
         "otherCountry": {
           "label": "Other EU country or UK",
           "placeholder": "Select a country"
@@ -822,6 +820,7 @@
         "GR": "Greece",
         "HU": "Hungary",
         "IE": "Ireland",
+        "IT": "Italy",
         "LV": "Latvia",
         "LT": "Lithuania",
         "LU": "Luxembourg",
@@ -831,6 +830,7 @@
         "RO": "Romania",
         "SK": "Slovakia",
         "SI": "Slovenia",
+        "ES": "Spain",
         "SE": "Sweden",
         "GB": "United Kingdom"
       },
@@ -864,23 +864,12 @@
       "title": "Your investment thesis",
       "subtitle": "Tell us what success looks like for you.",
       "goal": {
-        "label": "Primary goal",
-        "helper": "Choose the one that best describes what you are after.",
+        "label": "Investment goals",
+        "helper": "Select all that apply.",
         "passiveIncome": "Passive income",
         "capitalAppreciation": "Capital appreciation",
         "lifestyle": "Hands-on lifestyle business",
         "strategicBoltOn": "Strategic bolt-on"
-      },
-      "targetReturn": {
-        "label": "Target return",
-        "placeholder": "Select a range",
-        "helper": "Your expected annual return on investment."
-      },
-      "targetReturnOptions": {
-        "r10_15": "10–15%",
-        "r15_20": "15–20%",
-        "r20_30": "20–30%",
-        "r30plus": "30%+"
       },
       "searchTimeline": {
         "label": "How quickly are you looking to move?",
@@ -891,8 +880,7 @@
       },
       "continue": "Continue →",
       "errors": {
-        "goalRequired": "Please select a primary goal.",
-        "returnRequired": "Please select a target return.",
+        "goalRequired": "Please select at least one goal.",
         "timelineRequired": "Please select a timeline."
       }
     },

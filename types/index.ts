@@ -86,8 +86,7 @@ export interface BuyerSearch {
   industry_other: string | null;
   locations: string[];
   budget_range: string | null;
-  primary_goal: string | null;
-  target_return: string | null;
+  primary_goals: string[] | null;
   search_timeline: string | null;
   has_acquired_before: boolean | null;
   background: string | null;

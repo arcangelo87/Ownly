@@ -12,12 +12,12 @@ const SECTOR_VALUES = [
   'professional_services', 'agriculture_land', 'wholesale', 'technology',
 ] as const;
 
-const FEATURED_LOCATIONS = ['italy', 'portugal', 'spain'] as const;
+const FEATURED_LOCATIONS = ['portugal'] as const;
 
 const OTHER_COUNTRY_CODES = [
   'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR',
-  'DE', 'GR', 'HU', 'IE', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL',
-  'RO', 'SK', 'SI', 'SE', 'GB',
+  'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL',
+  'RO', 'SK', 'SI', 'ES', 'SE', 'GB',
 ] as const;
 
 const BUDGET_VALUES = ['under_500k', '500k_1m', '1m_2_5m', '2_5m_5m', '5m_10m', 'over_10m'] as const;
