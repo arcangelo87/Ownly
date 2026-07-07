@@ -5,6 +5,7 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { Playfair_Display, DM_Sans, IBM_Plex_Mono } from 'next/font/google';
 import { routing } from '@/i18n/routing';
+import { SITE_URL } from '@/lib/site';
 import '@/app/globals.css';
 
 const playfair = Playfair_Display({
@@ -26,6 +27,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Bottega',
     template: '%s | Bottega',
