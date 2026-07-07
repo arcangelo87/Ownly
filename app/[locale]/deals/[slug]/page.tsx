@@ -1,5 +1,7 @@
+import { cache } from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { SiteNav } from '@/components/marketing/SiteNav';
 import { createAdminClient } from '@/lib/supabase/admin';
@@ -22,6 +24,55 @@ import type { Listing } from '@/types';
 
 export const dynamic = 'force-dynamic';
 
+const LISTING_COLUMNS =
+  'id, slug, source, title, about, highlights, buyer_tags, title_it, about_it, highlights_it, buyer_tags_it, title_pt, about_pt, highlights_pt, buyer_tags_pt, owner_involvement, business_name, business_description, strongest_point, sector, region, country, year_founded, revenue_range, ebitda_margin, employee_count, asking_price, asking_price_exact, partial_sale, timeline, reasons_for_sale, created_at';
+
+const getListing = cache(async (slug: string) => {
+  const admin = createAdminClient();
+  const { data: listing, error } = await admin
+    .from('listings')
+    .select(LISTING_COLUMNS)
+    .eq('slug', slug)
+    .eq('status', 'live')
+    .is('deleted_at', null)
+    .single();
+
+  if (error) console.error('[deal-page] supabase error:', JSON.stringify(error));
+  return listing;
+});
+
+function localizedCopy(listing: NonNullable<Awaited<ReturnType<typeof getListing>>>, locale: string) {
+  return locale === 'it'
+    ? { title: listing.title_it ?? listing.title, about: listing.about_it ?? listing.about, highlights: listing.highlights_it ?? listing.highlights, buyer_tags: listing.buyer_tags_it ?? listing.buyer_tags }
+    : locale === 'pt'
+    ? { title: listing.title_pt ?? listing.title, about: listing.about_pt ?? listing.about, highlights: listing.highlights_pt ?? listing.highlights, buyer_tags: listing.buyer_tags_pt ?? listing.buyer_tags }
+    : { title: listing.title, about: listing.about, highlights: listing.highlights, buyer_tags: listing.buyer_tags };
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const listing = await getListing(slug);
+  if (!listing) return { title: 'Deal not found' };
+
+  const lc = localizedCopy(listing, locale);
+  const sectorLabel = SECTOR_LABELS[listing.sector ?? ''] ?? listing.sector ?? undefined;
+  const title = lc.title ?? listing.business_name ?? sectorLabel ?? 'Business for sale';
+  const rawDescription = lc.about ?? listing.business_description ?? listing.strongest_point ?? '';
+  const description = rawDescription.length > 160 ? `${rawDescription.slice(0, 157).trimEnd()}...` : rawDescription || undefined;
+  const url = `/${locale}/deals/${slug}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url, type: 'website' },
+  };
+}
+
 export default async function DealDetailPage({
   params,
 }: {
@@ -30,25 +81,11 @@ export default async function DealDetailPage({
   const { locale, slug } = await params;
   const t = await getTranslations('deals');
 
-  const admin = createAdminClient();
-  const { data: listing, error } = await admin
-    .from('listings')
-    .select(
-      'id, slug, source, title, about, highlights, buyer_tags, title_it, about_it, highlights_it, buyer_tags_it, title_pt, about_pt, highlights_pt, buyer_tags_pt, owner_involvement, business_name, business_description, strongest_point, sector, region, country, year_founded, revenue_range, ebitda_margin, employee_count, asking_price, asking_price_exact, partial_sale, timeline, reasons_for_sale, created_at',
-    )
-    .eq('slug', slug)
-    .eq('status', 'live')
-    .is('deleted_at', null)
-    .single();
-
-  if (error) console.error('[deal-page] supabase error:', JSON.stringify(error));
+  const listing = await getListing(slug);
   if (!listing) notFound();
 
-  const lc = locale === 'it'
-    ? { title: listing.title_it ?? listing.title, about: listing.about_it ?? listing.about, highlights: listing.highlights_it ?? listing.highlights, buyer_tags: listing.buyer_tags_it ?? listing.buyer_tags }
-    : locale === 'pt'
-    ? { title: listing.title_pt ?? listing.title, about: listing.about_pt ?? listing.about, highlights: listing.highlights_pt ?? listing.highlights, buyer_tags: listing.buyer_tags_pt ?? listing.buyer_tags }
-    : { title: listing.title, about: listing.about, highlights: listing.highlights, buyer_tags: listing.buyer_tags };
+  const admin = createAdminClient();
+  const lc = localizedCopy(listing, locale);
 
   const { data: storageFiles } = await admin.storage
     .from('listing-photos')
