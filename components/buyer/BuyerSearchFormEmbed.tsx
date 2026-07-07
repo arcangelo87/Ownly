@@ -60,6 +60,12 @@ export function BuyerSearchFormEmbed() {
 
   return (
     <div>
+      <div className="mb-5 h-[3px] w-full overflow-hidden rounded-full bg-[var(--color-border)]">
+        <div
+          className="h-full rounded-full bg-[var(--color-accent)] transition-all duration-300"
+          style={{ width: `${(currentStep / TOTAL_STEPS) * 100}%` }}
+        />
+      </div>
       <p className="mb-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-[var(--color-accent)]">
         {t('steps.stepPrefix')} {currentStep} {t('steps.stepOf')} {TOTAL_STEPS}
       </p>
