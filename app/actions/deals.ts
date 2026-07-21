@@ -13,7 +13,7 @@ export async function submitEnquiry(data: {
   message?: string;
 }) {
   const supabase = createAdminClient();
-  const { error } = await supabase.from('enquiries').insert({
+  const { error } = await supabase.from('Listings enquiries').insert({
     listing_id: data.listing_id,
     name: data.name.trim(),
     email: data.email.trim().toLowerCase(),
