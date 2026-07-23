@@ -1,0 +1,1 @@
+ALTER TABLE buyer_searches ALTER COLUMN sectors DROP NOT NULL;
