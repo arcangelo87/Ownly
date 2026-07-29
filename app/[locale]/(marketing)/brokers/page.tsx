@@ -20,7 +20,7 @@ export default function BrokersPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <Link
-              href={`/${locale}/sell`}
+              href={`/${locale}/sellers`}
               className="inline-flex items-center px-7 py-3.5 bg-[var(--color-accent)] text-white text-[15px] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
             >
               {t('hero.cta')}

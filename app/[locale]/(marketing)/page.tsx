@@ -249,7 +249,7 @@ export default async function HomePage({
             <span className="text-[13px] text-[var(--color-muted)]">
               {t('personas.sellerPrompt')}{' '}
               <Link
-                href={`/${locale}/sell`}
+                href={`/${locale}/sellers`}
                 className="text-[var(--color-accent)] font-medium underline underline-offset-4 hover:opacity-80 transition-opacity"
               >
                 {t('personas.sellerCta')} →
@@ -258,7 +258,7 @@ export default async function HomePage({
             <span className="text-[13px] text-[var(--color-muted)]">
               {t('personas.brokerPrompt')}{' '}
               <Link
-                href={`/${locale}/sell`}
+                href={`/${locale}/sellers`}
                 className="text-[var(--color-accent)] font-medium underline underline-offset-4 hover:opacity-80 transition-opacity"
               >
                 {t('personas.brokerCta')} →
