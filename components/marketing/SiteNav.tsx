@@ -16,12 +16,12 @@ export function SiteNav() {
   const links = [
     { href: `/${locale}`, label: t('home') },
     { href: `/${locale}/deals`, label: t('browse') },
-    { href: `/${locale}/sell`, label: t('sell') },
+    { href: `/${locale}/sellers`, label: t('sell') },
   ];
 
-  const mobileLinks = links.filter(({ href }) => !href.endsWith('/sell'));
+  const mobileLinks = links.filter(({ href }) => !href.endsWith('/sellers'));
 
-  const ctaHref = isBuyers ? '#founding' : `/${locale}/sell`;
+  const ctaHref = isBuyers ? '#founding' : `/${locale}/sellers`;
 
   return (
     <nav className="border-b border-[var(--color-border)] bg-[var(--color-bg)] relative z-50">
