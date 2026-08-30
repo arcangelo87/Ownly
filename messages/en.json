@@ -948,5 +948,70 @@
     "messageLabel": "Message",
     "cta": "Send message",
     "success": "Thank you. We will be in touch shortly."
+  },
+  "sellerLanding": {
+    "hero": {
+      "h1": "Your business, the right buyer, the right price.",
+      "sub": "We work with a small number of owners at a time. No upfront cost. No exclusivity. A fee paid only when the deal closes.",
+      "cta": "Book a 20 minute call →",
+      "supporting": "Twenty minutes. No commitment."
+    },
+    "focus": {
+      "eyebrow": "Who we work with",
+      "heading": "A narrow focus, by design.",
+      "col1Label": "Owner-operated",
+      "col1Body": "Businesses run by their founder or a single owner, where the next chapter is a real decision.",
+      "col2Label": "EBITDA €50K to €500K",
+      "col2Body": "The range we know best. Large enough to attract serious buyers, small enough to keep the process personal.",
+      "col3Label": "Selected sectors",
+      "col3Body": "Services, light industry, specialty retail, and trade businesses with a record of stable cash flow."
+    },
+    "process": {
+      "eyebrow": "How it works",
+      "heading": "Three conversations, then a plan.",
+      "step1Label": "Introduction",
+      "step1Body": "A twenty minute call to understand the business, your timing, and what a good outcome looks like for you.",
+      "step2Label": "Read of the business",
+      "step2Body": "We review the numbers, the operations, and the market, and share a realistic view of value and likely buyers.",
+      "step3Label": "Quiet introductions",
+      "step3Body": "We approach the small set of buyers we already represent and run a discreet process through to closing."
+    },
+    "faq": {
+      "eyebrow": "Common questions",
+      "heading": "What sellers ask us.",
+      "q1": "What exactly does Bottega do?",
+      "a1": "Our primary role is to find you the right buyer. We also connect sellers with our professional network including lawyers, accountants, and valuation specialists when needed.",
+      "q2": "Who are your buyers?",
+      "a2": "We work with individual buyers and small investment groups looking for established, profitable businesses to acquire and operate. We qualify buyers before making any introduction.",
+      "q3": "Do I need a formal valuation before talking to you?",
+      "a3": "No. We can have an initial conversation based on what you know about your business. If a valuation becomes relevant, we can connect you with specialists in our network.",
+      "q4": "Is my information kept confidential?",
+      "a4": "Every buyer signs a non-disclosure agreement before we share any details about your business. Nothing is disclosed without your explicit consent at each step.",
+      "q5": "How much does it cost?",
+      "a5": "Nothing upfront. Bottega charges 1% of the deal value, paid only if and when a transaction completes. If no deal is done, you owe nothing.",
+      "q6": "Why work with Bottega instead of a traditional broker?",
+      "a6": "Traditional brokers charge 3 to 5% plus a retainer fee and require exclusivity. We charge 1% and require no exclusivity, and only get paid when you do. We use AI to match your business to the right buyer faster, which means less time on the market and lower cost to you.",
+      "q7": "How long does the process take?",
+      "a7": "It varies by business and buyer. We do not rush deals. Our focus is on finding the right buyer at the right price, not the fastest close. Because we act in the seller's interest, we will not recommend accepting an offer that undervalues your business.",
+      "q8": "Am I committing to anything by getting in touch?",
+      "a8": "No. The first conversation is exploratory and there is no obligation to proceed at any stage.",
+      "q9": "I already work with a broker. Is that a problem?",
+      "a9": "No. We do not require exclusivity. If we have a buyer that fits, we are happy to work alongside your existing advisor.",
+      "q10": "I already have someone interested in buying my business. Can you still help?",
+      "a10": "Yes. We can help you structure the process, connect you with legal and financial advisors, and make sure you are protected throughout.",
+      "q11": "Will my staff find out?",
+      "a11": "Not unless you decide to tell them. We run a quiet process and approach only the buyers we already represent. No public listings, no wide email blasts."
+    },
+    "contact": {
+      "eyebrow": "Get in touch",
+      "heading": "Reach out directly.",
+      "sub": "Write a few lines about your business and your timing. We reply within two business days.",
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "messageLabel": "Message",
+      "cta": "Request a call →",
+      "success": "Thank you. We will be in touch within two business days."
+    }
   }
 }
