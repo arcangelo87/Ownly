@@ -971,50 +971,61 @@
   },
   "sellSide": {
     "hero": {
-      "eyebrow": "Sell side",
-      "h1": "Thinking about succession, not just a sale.",
-      "sub": "We work with owners of accounting, insurance and lending firms in Portugal who are weighing an exit. Confidential from the first conversation, and we are not paid unless a transaction closes.",
+      "eyebrow": "Confidential, no upfront cost",
+      "h1Lead": "Selling your accounting, insurance or lending firm shouldn't mean",
+      "h1Emphasis": "going in blind.",
+      "sub": "Most owners get one shot at this. We normalize your numbers properly, find real buyers quietly, and stay with you through close. No fee unless it closes.",
       "cta": "Start a confidential conversation",
-      "note": "No cost unless it closes. Nothing goes to a buyer without your say so."
+      "note": "Confidential from the first call. No cost unless we close."
     },
-    "verticals": {
-      "heading": "Who we work with",
-      "accountingLabel": "Accounting and compliance",
-      "accountingDesc": "Portugal's OCC rules require every incorporated company to work with a certified accountant. The real risk to a buyer is a client switching accountants, not a client leaving accounting altogether, which makes this a genuinely defensible business to acquire.",
-      "insuranceLabel": "Insurance",
-      "insuranceDesc": "Brokerage and claims businesses with renewal and annuity revenue. That structure gives some durability, though we are still stress testing how strong it is in practice and we say so plainly to buyers.",
-      "lendingLabel": "Lending and mortgage brokerage",
-      "lendingDesc": "Value here sits in referral relationships with real estate agents and developers, not in the borrower relationship itself. It is the weakest moat of the three, and we tell you that before we take a mandate."
+    "whyUs": {
+      "heading": "Why sell with Bottega?",
+      "item1Label": "Confidential",
+      "item1Desc": "Nothing goes to a buyer, a competitor or your own staff without your say so.",
+      "item2Label": "Sector specialist",
+      "item2Desc": "We know accounting, insurance and lending economics, not just generic business sale mechanics.",
+      "item3Label": "No cost unless it closes",
+      "item3Desc": "We are paid for the outcome. No retainers, no upfront fees."
     },
-    "process": {
-      "heading": "How a sell side mandate works",
-      "step1Label": "Confidential conversation",
-      "step1Desc": "We start with a private discussion about your business, your goals and your timeline. Nothing is shared externally at this stage.",
-      "step2Label": "Valuation and positioning",
-      "step2Desc": "We work from your real financials, not a rule of thumb multiple, and build a position buyers can actually evaluate.",
-      "step3Label": "Curated buyer outreach",
-      "step3Desc": "We approach a small, qualified list of buyers who fit your business. This is not a public listing.",
-      "step4Label": "Negotiation and structuring",
-      "step4Desc": "We negotiate terms and structure on your behalf, so you are not doing it alone across the table from a buyer's advisor.",
-      "step5Label": "Closing and transition support",
-      "step5Desc": "We stay involved through signing and the handover, so the transition holds up after the deal is done."
+    "problem": {
+      "heading": "The problem",
+      "item1Label": "Confidentiality risk",
+      "item1Desc": "Staff, clients and competitors finding out before you are ready to tell them.",
+      "item2Label": "No rule of thumb",
+      "item2Desc": "Generic multiples do not capture what your business is actually worth.",
+      "item3Label": "Wrong buyers",
+      "item3Desc": "Most inbound interest is unqualified and wastes your time.",
+      "item4Label": "Generic advisors",
+      "item4Desc": "Few advisors understand accounting, insurance or lending economics well enough to represent you properly.",
+      "item5Label": "Fees before results",
+      "item5Desc": "Retainers and upfront fees before anything is proven to work."
     },
-    "credibility": {
-      "heading": "How we work",
-      "item1Label": "Financials, verified properly",
-      "item1Desc": "EBITDA normalization done properly, including FSE adjustments, owner compensation, personal expenses and group allocations, verified against your IES filings.",
-      "item2Label": "Key person risk, screened not ignored",
-      "item2Desc": "We look directly at how dependent the business is on you before a buyer does.",
-      "item3Label": "Declared financials only",
-      "item3Desc": "We never underwrite undeclared revenue. Pricing is built on your declared financials only.",
-      "item4Label": "One side per deal",
-      "item4Desc": "No dual side fees. We represent either the buyer or the seller on a transaction, never both.",
-      "item5Label": "Fees first",
-      "item5Desc": "A concierge model with no platform fees yet. We are paid for the outcome, not for access."
+    "howItWorks": {
+      "heading": "How it works",
+      "badge": "Concierge mode",
+      "step1Label": "Share your situation",
+      "step1Desc": "Your business, your goals, your timeline. No cost, no obligation.",
+      "step2Label": "We position and find buyers",
+      "step2Desc": "Real financials, a small qualified buyer list, not a public listing.",
+      "step3Label": "You get support to close",
+      "step3Desc": "Negotiation, structuring and transition, all the way through."
     },
-    "formSection": {
-      "heading": "Tell us about your business",
-      "sub": "A short message is enough to start. We will follow up to set up a confidential call."
+    "faq": {
+      "heading": "FAQs",
+      "q1": "What does Bottega actually do for sellers?",
+      "a1": "You tell us about your business and what you want from an exit. We normalize your financials properly, position the business for the right buyers, run a small confidential outreach, and support you through negotiation, structuring and the handover, so you are not doing any of it alone.",
+      "q2": "Who is this for?",
+      "a2": "Owners of accounting, insurance or lending and mortgage brokerage firms in Portugal who are weighing succession or a sale.",
+      "q3": "What kind of businesses can Bottega help me sell?",
+      "a3": "Accounting and compliance firms, insurance brokerages and claims businesses, and lending or mortgage brokerages. These three have different levels of durability, accounting the strongest, lending the weakest, and we will tell you honestly where yours sits.",
+      "q4": "What does it cost?",
+      "a4": "Nothing unless we close. No dual side fees either, we represent you only, never the buyer on the same deal."
+    },
+    "cta": {
+      "headingLead": "Join the first sellers we're working with in",
+      "headingEmphasis": "Portugal.",
+      "button": "Start a confidential conversation",
+      "note": "We'll follow up personally within days."
     }
   },
   "buySide": {
