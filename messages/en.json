@@ -152,11 +152,14 @@
     "home": "Homepage"
   },
   "footer": {
-    "tagline": "Buying real businesses in Portugal.",
+    "tagline": "Buy and sell real businesses in Portugal.",
     "sell": "Sell a business",
     "brokers": "For brokers",
     "buyers": "For buyers",
     "browse": "Browse deals",
+    "buySide": "Individual buyers",
+    "institutionalBuySide": "Strategic buyers",
+    "sellSide": "Business owners",
     "about": "About",
     "contact": "Contact",
     "privacy": "Privacy Policy",
@@ -948,5 +951,429 @@
     "messageLabel": "Message",
     "cta": "Send message",
     "success": "Thank you. We will be in touch shortly."
+  },
+  "mandateForm": {
+    "nameLabel": "Full name",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone (optional)",
+    "verticalLabel": "Which sector applies",
+    "verticalPlaceholder": "Select a sector",
+    "verticalAccounting": "Accounting and compliance",
+    "verticalInsurance": "Insurance",
+    "verticalLending": "Lending and mortgage brokerage",
+    "verticalOther": "Other",
+    "messageLabel": "Anything else we should know (optional)",
+    "successHeading": "Thank you. We will be in touch within 48 hours.",
+    "errors": {
+      "nameRequired": "Please enter your name.",
+      "emailRequired": "Please enter your email address.",
+      "emailInvalid": "Please enter a valid email address.",
+      "verticalRequired": "Please select a sector.",
+      "submitFailed": "Something went wrong. Please try again."
+    }
+  },
+  "sellSide": {
+    "hero": {
+      "eyebrow": "Confidential, sector specialist",
+      "h1Lead": "Thinking about selling your business?",
+      "h1Emphasis": "We can help.",
+      "sub": "Most owners get one shot at this. We normalize your numbers properly, find real buyers quietly, and stay with you through close.",
+      "cta": "Start a confidential conversation",
+      "note": "Confidential from the first call. No obligation to proceed."
+    },
+    "whyUs": {
+      "heading": "Why sell with Bottega?",
+      "item1Label": "Confidential",
+      "item1Desc": "Nothing goes to a buyer, a competitor or your own staff without your say so.",
+      "item2Label": "Sector specialist",
+      "item2Desc": "We know accounting, insurance and lending economics, not just generic business sale mechanics.",
+      "item3Label": "No conflicts of interest",
+      "item3Desc": "We represent you only, never the buyer on the same deal."
+    },
+    "problem": {
+      "heading": "The problem",
+      "item1Label": "Confidentiality risk",
+      "item1Desc": "Staff, clients and competitors finding out before you are ready to tell them.",
+      "item2Label": "No rule of thumb",
+      "item2Desc": "Generic multiples do not capture what your business is actually worth.",
+      "item3Label": "Wrong buyers",
+      "item3Desc": "Most inbound interest is unqualified and wastes your time.",
+      "item4Label": "Generic advisors",
+      "item4Desc": "Few advisors understand accounting, insurance or lending economics well enough to represent you properly.",
+      "item5Label": "No time to spare",
+      "item5Desc": "You are still running the business while trying to sell it."
+    },
+    "howItWorks": {
+      "heading": "How it works",
+      "badge": "Concierge mode",
+      "step1Label": "Share your situation",
+      "step1Desc": "Your business, your goals, your timeline. No obligation to proceed.",
+      "step2Label": "We position and find buyers",
+      "step2Desc": "Real financials, a small qualified buyer list, not a public listing.",
+      "step3Label": "You get support to close",
+      "step3Desc": "Negotiation, structuring and transition, all the way through."
+    },
+    "faq": {
+      "heading": "FAQs",
+      "q1": "What does Bottega actually do for sellers?",
+      "a1": "You tell us about your business and what you want from an exit. We normalize your financials properly, position the business for the right buyers, run a small confidential outreach, and support you through negotiation, structuring and the handover, so you are not doing any of it alone.",
+      "q2": "Who is this for?",
+      "a2": "Owners of accounting, insurance or lending and mortgage brokerage firms in Portugal who are weighing succession or a sale.",
+      "q3": "What kind of businesses can Bottega help me sell?",
+      "a3": "Accounting and compliance firms, insurance brokerages and claims businesses, and lending or mortgage brokerages. These three have different levels of durability, accounting the strongest, lending the weakest, and we will tell you honestly where yours sits.",
+      "q4": "What does it cost?",
+      "a4": "It depends on the mandate. We agree fees with you upfront, before any work begins. What we will not do is charge a fee to both sides of the same deal, we represent you only."
+    },
+    "cta": {
+      "headingLead": "Join the first sellers we're working with in",
+      "headingEmphasis": "Portugal.",
+      "button": "Start a confidential conversation",
+      "note": "We'll follow up personally within days."
+    }
+  },
+  "buySide": {
+    "hero": {
+      "eyebrow": "Buy side",
+      "h1": "Sector specific screening, not a generic checklist.",
+      "sub": "We run buy side mandates for investors acquiring accounting, insurance and lending firms in Portugal. Real diligence rigor, and we only ever represent one side of a transaction.",
+      "cta": "Tell us about your mandate",
+      "note": "No conflicts of interest. We never represent both sides of a deal."
+    },
+    "verticals": {
+      "heading": "Where we source deals",
+      "accountingLabel": "Accounting and compliance",
+      "accountingDesc": "Portugal's OCC rules require every incorporated company to work with a certified accountant. Churn risk is a client switching accountants, not a client leaving accounting altogether, which is what makes this defensible.",
+      "insuranceLabel": "Insurance",
+      "insuranceDesc": "Brokerage and claims businesses with renewal and annuity revenue. We are still stress testing how durable that structure is, and we will tell you what we find.",
+      "lendingLabel": "Lending and mortgage brokerage",
+      "lendingDesc": "Value sits in referral relationships with real estate agents and developers, not in borrower stickiness. The weakest moat of the three, and we screen for that honestly."
+    },
+    "process": {
+      "heading": "How a buy side mandate works",
+      "step1Label": "Mandate and criteria",
+      "step1Desc": "We start by understanding what you are trying to acquire: sector, size, geography and the criteria that matter most to you.",
+      "step2Label": "Curated, off market deal flow",
+      "step2Desc": "We source opportunities directly, many of them off market, and bring you only what fits your mandate.",
+      "step3Label": "Diligence support",
+      "step3Desc": "EBITDA normalization, key person and lease risk, and filing verification, so you know what you are actually buying.",
+      "step4Label": "Negotiation and structuring",
+      "step4Desc": "We negotiate and structure the deal on your behalf, working only for you at the table.",
+      "step5Label": "Close",
+      "step5Desc": "We stay involved through signing to keep the transaction on track."
+    },
+    "credibility": {
+      "heading": "How we work",
+      "item1Label": "Financials, verified properly",
+      "item1Desc": "EBITDA normalization done properly, including FSE adjustments, owner compensation, personal expenses and group allocations, verified against IES filings.",
+      "item2Label": "Key person risk, screened not ignored",
+      "item2Desc": "We screen for dependency on the current owner before you ever sign an offer.",
+      "item3Label": "Declared financials only",
+      "item3Desc": "We never underwrite undeclared revenue. Pricing is built on declared financials only.",
+      "item4Label": "One side per deal",
+      "item4Desc": "No dual side fees. We represent either the buyer or the seller on a transaction, never both, so there is no conflict on your deal.",
+      "item5Label": "Concierge, fees first",
+      "item5Desc": "A fees first advisory model with no platform fees yet. We are paid for the outcome we deliver you."
+    },
+    "formSection": {
+      "heading": "Tell us about your mandate",
+      "sub": "Share what you are looking for and we will follow up to set up a call."
+    }
+  },
+  "sellerSearch": {
+    "steps": {
+      "stepPrefix": "Step",
+      "stepOf": "of",
+      "step1": "Your business",
+      "step2": "Your priorities",
+      "step3": "About you"
+    },
+    "step1": {
+      "title": "Tell us about your business",
+      "subtitle": "Let's start with the basics.",
+      "vertical": {
+        "label": "Which sector is your business in?",
+        "helper": "Select the one that fits best.",
+        "accounting": "Accounting and compliance",
+        "insurance": "Insurance",
+        "lending": "Lending and mortgage brokerage",
+        "other": "Other"
+      },
+      "verticalOther": {
+        "placeholder": "Describe your sector..."
+      },
+      "revenue": {
+        "label": "Approximate annual revenue",
+        "placeholder": "Select a range",
+        "helper": "Indicative range is fine."
+      },
+      "revenueOptions": {
+        "under_250k": "Under €250k",
+        "250k_1m": "€250k – €1M",
+        "1m_2_5m": "€1M – €2.5M",
+        "2_5m_5m": "€2.5M – €5M",
+        "over_5m": "Over €5M"
+      },
+      "hadValuation": {
+        "label": "Have you had a valuation or offer before?",
+        "yes": "Yes",
+        "no": "No",
+        "notSure": "Not sure"
+      },
+      "continue": "Continue →",
+      "errors": {
+        "verticalRequired": "Please select a sector.",
+        "revenueRequired": "Please select a revenue range.",
+        "valuationRequired": "Please select an option."
+      }
+    },
+    "step2": {
+      "title": "What matters most to you",
+      "subtitle": "Tell us what a good outcome looks like.",
+      "priorities": {
+        "label": "Priorities in a sale",
+        "helper": "Select all that apply.",
+        "maxPrice": "Maximizing price",
+        "cleanExit": "A clean, quick exit",
+        "staffContinuity": "Continuity for staff and clients",
+        "confidentiality": "Absolute confidentiality",
+        "stayInvolved": "Staying involved for a transition period"
+      },
+      "timeline": {
+        "label": "How soon are you thinking about this?",
+        "helper": "This helps us prioritise.",
+        "readyNow": "Ready to talk now",
+        "within6to12": "Within 6 to 12 months",
+        "exploring": "Just exploring"
+      },
+      "continue": "Continue →",
+      "errors": {
+        "prioritiesRequired": "Please select at least one priority.",
+        "timelineRequired": "Please select a timeline."
+      }
+    },
+    "step3": {
+      "title": "About you",
+      "subtitle": "Last step, so we can reach you.",
+      "hadAdvisor": {
+        "label": "Have you worked with an advisor or broker before?",
+        "yes": "Yes",
+        "no": "No"
+      },
+      "role": {
+        "label": "What is your role?",
+        "helper": "This helps us understand who we are speaking with.",
+        "owner": "Sole owner",
+        "coOwner": "Co-owner or partner",
+        "other": "Other",
+        "otherPlaceholder": "Tell us a bit more..."
+      },
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "label": "Email address",
+        "placeholder": "you@example.com"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "+351..."
+      },
+      "message": {
+        "label": "Anything else you want to share?",
+        "placeholder": "Tell us more about your business, your timeline, or any specific concerns.",
+        "helper": "Optional. The more context you give, the better we can help."
+      },
+      "submit": "Submit →",
+      "errors": {
+        "advisorRequired": "Please select an option.",
+        "roleRequired": "Please select your role.",
+        "emailRequired": "Please enter your email address.",
+        "emailInvalid": "Please enter a valid email address.",
+        "saveFailed": "Something went wrong. Please try again."
+      }
+    },
+    "success": {
+      "heading": "We will be in touch.",
+      "body": "Your details have been saved. We will reach out to set up a confidential call."
+    }
+  },
+  "institutionalBuySide": {
+    "hero": {
+      "eyebrow": "For PE firms, family offices and strategic acquirers",
+      "h1Lead": "Growing by acquisition in Portugal?",
+      "h1Emphasis": "We build your pipeline.",
+      "sub": "Off-market opportunities in accounting, insurance and lending rarely reach outside buyers. We build you a recurring, screened pipeline instead of running a one-off search.",
+      "cta": "Talk to us about your mandate",
+      "note": "Confidential. No obligation to proceed."
+    },
+    "whyUs": {
+      "heading": "Why work with Bottega?",
+      "item1Label": "Recurring pipeline",
+      "item1Desc": "Not a one-off search. Ongoing, off-market deal flow matched to your mandate.",
+      "item2Label": "Sector specialist",
+      "item2Desc": "We know accounting, insurance and lending economics, not just generic M&A mechanics.",
+      "item3Label": "One side per deal",
+      "item3Desc": "We represent your mandate only, never the seller on the same transaction."
+    },
+    "problem": {
+      "heading": "The problem",
+      "item1Label": "Too small for the banks",
+      "item1Desc": "Deals this size rarely reach traditional M&A advisors or investment banks.",
+      "item2Label": "Noisy inbound",
+      "item2Desc": "Most inbound opportunities are unqualified or not seriously for sale.",
+      "item3Label": "One-off searches",
+      "item3Desc": "Most advisors run a single mandate, not a repeatable pipeline.",
+      "item4Label": "Generic diligence",
+      "item4Desc": "Few advisors understand accounting, insurance or lending economics well enough to screen properly.",
+      "item5Label": "Confidentiality risk",
+      "item5Desc": "Competitors and the market finding out before a deal is ready to announce."
+    },
+    "howItWorks": {
+      "heading": "How it works",
+      "badge": "Concierge mode",
+      "step1Label": "Define your mandate",
+      "step1Desc": "Criteria, size, pace and the verticals you want to grow in.",
+      "step2Label": "We build your pipeline",
+      "step2Desc": "Recurring, off-market opportunities matched to your mandate, not a one-off search.",
+      "step3Label": "You get diligence-ready targets",
+      "step3Desc": "EBITDA normalized, key-person risk screened, ready to move quickly."
+    },
+    "faq": {
+      "heading": "FAQs",
+      "q1": "What does Bottega do for institutional buyers?",
+      "a1": "You define your acquisition mandate: sectors, size, pace and geography. We build you a recurring pipeline of off-market opportunities in accounting, insurance and lending, each one screened and diligence-ready before it reaches you.",
+      "q2": "Who is this for?",
+      "a2": "Private equity firms, family offices, and established companies in accounting, insurance or lending looking to grow by acquisition in Portugal.",
+      "q3": "How is this different from a traditional M&A advisor?",
+      "a3": "Most advisors run one mandate at a time and skip deals below their minimum size. We specialize in the smaller end of these three sectors and build ongoing pipelines, not single searches.",
+      "q4": "What does it cost?",
+      "a4": "It depends on the mandate. We agree fees with you upfront, before any work begins. What we will not do is charge a fee to both sides of the same deal, we represent you only."
+    },
+    "cta": {
+      "headingLead": "Build a pipeline with Bottega in",
+      "headingEmphasis": "Portugal.",
+      "button": "Talk to us about your mandate",
+      "note": "We'll follow up personally within days."
+    }
+  },
+  "institutionalSearch": {
+    "steps": {
+      "stepPrefix": "Step",
+      "stepOf": "of",
+      "step1": "Your mandate",
+      "step2": "Your strategy",
+      "step3": "About your firm"
+    },
+    "step1": {
+      "title": "Tell us about your mandate",
+      "subtitle": "Let's start with the basics.",
+      "sectors": {
+        "label": "Sectors of interest",
+        "helper": "Select all that apply.",
+        "accounting": "Accounting and compliance",
+        "insurance": "Insurance",
+        "lending": "Lending and mortgage brokerage",
+        "other": "Other"
+      },
+      "sectorOther": {
+        "placeholder": "Describe the sector..."
+      },
+      "ticketSize": {
+        "label": "Target acquisition size",
+        "placeholder": "Select a range",
+        "helper": "Indicative range is fine."
+      },
+      "ticketSizeOptions": {
+        "under_1m": "Under €1M",
+        "1m_3m": "€1M – €3M",
+        "3m_7m": "€3M – €7M",
+        "7m_15m": "€7M – €15M",
+        "over_15m": "Over €15M"
+      },
+      "hasCommittedCapital": {
+        "label": "Do you have capital committed for this mandate?",
+        "yes": "Yes",
+        "no": "No",
+        "notSure": "Not sure"
+      },
+      "continue": "Continue →",
+      "errors": {
+        "sectorsRequired": "Please select at least one sector.",
+        "ticketSizeRequired": "Please select a range.",
+        "capitalRequired": "Please select an option."
+      }
+    },
+    "step2": {
+      "title": "Your acquisition strategy",
+      "subtitle": "Tell us what you are trying to build.",
+      "strategy": {
+        "label": "Strategy",
+        "helper": "Select all that apply.",
+        "platformBuild": "Platform build or roll-up",
+        "boltOn": "Bolt-on to an existing business",
+        "marketEntry": "New market entry",
+        "recurringRevenue": "Recurring revenue focus"
+      },
+      "timeline": {
+        "label": "How quickly are you looking to move?",
+        "helper": "This helps us prioritise your pipeline.",
+        "activeNow": "Actively acquiring now",
+        "within6months": "Within 6 months",
+        "exploring": "Exploring"
+      },
+      "continue": "Continue →",
+      "errors": {
+        "strategyRequired": "Please select at least one option.",
+        "timelineRequired": "Please select a timeline."
+      }
+    },
+    "step3": {
+      "title": "About your firm",
+      "subtitle": "Last step, so we can reach you.",
+      "hasAcquired": {
+        "label": "Have you acquired a business in Portugal before?",
+        "yes": "Yes",
+        "no": "No"
+      },
+      "buyerType": {
+        "label": "What type of buyer are you?",
+        "helper": "This helps us match you to the right opportunities.",
+        "privateEquity": "Private equity firm",
+        "familyOffice": "Family office",
+        "strategicAcquirer": "Strategic acquirer",
+        "other": "Other",
+        "otherPlaceholder": "Tell us a bit more..."
+      },
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "label": "Email address",
+        "placeholder": "you@example.com"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "+351..."
+      },
+      "message": {
+        "label": "Anything else you want to share?",
+        "placeholder": "Tell us more about your mandate, your timeline, or any specific requirements.",
+        "helper": "Optional. The more context you give, the better we can match you."
+      },
+      "submit": "Submit →",
+      "errors": {
+        "acquiredRequired": "Please select an option.",
+        "buyerTypeRequired": "Please select your buyer type.",
+        "emailRequired": "Please enter your email address.",
+        "emailInvalid": "Please enter a valid email address.",
+        "saveFailed": "Something went wrong. Please try again."
+      }
+    },
+    "success": {
+      "heading": "We will be in touch.",
+      "body": "Your mandate has been saved. We will reach out when we find a match."
+    }
   }
 }

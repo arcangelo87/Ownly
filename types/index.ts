@@ -98,3 +98,41 @@ export interface BuyerSearch {
 }
 
 export type BuyerSearchInsert = Omit<BuyerSearch, 'id' | 'created_at'>;
+
+export interface SellerSearch {
+  id: string;
+  created_at: string;
+  vertical: string | null;
+  vertical_other: string | null;
+  revenue_range: string | null;
+  had_valuation: string | null;
+  priorities: string[] | null;
+  timeline: string | null;
+  had_advisor_before: boolean | null;
+  role: string | null;
+  name: string | null;
+  email: string;
+  phone: string | null;
+  message: string | null;
+}
+
+export type SellerSearchInsert = Omit<SellerSearch, 'id' | 'created_at'>;
+
+export interface InstitutionalSearch {
+  id: string;
+  created_at: string;
+  sectors: string[] | null;
+  sector_other: string | null;
+  ticket_size: string | null;
+  has_committed_capital: string | null;
+  strategy: string[] | null;
+  timeline: string | null;
+  has_acquired_before: boolean | null;
+  buyer_type: string | null;
+  name: string | null;
+  email: string;
+  phone: string | null;
+  message: string | null;
+}
+
+export type InstitutionalSearchInsert = Omit<InstitutionalSearch, 'id' | 'created_at'>;
