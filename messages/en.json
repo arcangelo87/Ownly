@@ -971,12 +971,12 @@
   },
   "sellSide": {
     "hero": {
-      "eyebrow": "Confidential, no upfront cost",
-      "h1Lead": "Selling your accounting, insurance or lending firm shouldn't mean",
-      "h1Emphasis": "going in blind.",
-      "sub": "Most owners get one shot at this. We normalize your numbers properly, find real buyers quietly, and stay with you through close. No fee unless it closes.",
+      "eyebrow": "Confidential, sector specialist",
+      "h1Lead": "Thinking about selling your business?",
+      "h1Emphasis": "We can help.",
+      "sub": "Most owners get one shot at this. We normalize your numbers properly, find real buyers quietly, and stay with you through close.",
       "cta": "Start a confidential conversation",
-      "note": "Confidential from the first call. No cost unless we close."
+      "note": "Confidential from the first call. No obligation to proceed."
     },
     "whyUs": {
       "heading": "Why sell with Bottega?",
@@ -984,8 +984,8 @@
       "item1Desc": "Nothing goes to a buyer, a competitor or your own staff without your say so.",
       "item2Label": "Sector specialist",
       "item2Desc": "We know accounting, insurance and lending economics, not just generic business sale mechanics.",
-      "item3Label": "No cost unless it closes",
-      "item3Desc": "We are paid for the outcome. No retainers, no upfront fees."
+      "item3Label": "No conflicts of interest",
+      "item3Desc": "We represent you only, never the buyer on the same deal."
     },
     "problem": {
       "heading": "The problem",
@@ -997,14 +997,14 @@
       "item3Desc": "Most inbound interest is unqualified and wastes your time.",
       "item4Label": "Generic advisors",
       "item4Desc": "Few advisors understand accounting, insurance or lending economics well enough to represent you properly.",
-      "item5Label": "Fees before results",
-      "item5Desc": "Retainers and upfront fees before anything is proven to work."
+      "item5Label": "No time to spare",
+      "item5Desc": "You are still running the business while trying to sell it."
     },
     "howItWorks": {
       "heading": "How it works",
       "badge": "Concierge mode",
       "step1Label": "Share your situation",
-      "step1Desc": "Your business, your goals, your timeline. No cost, no obligation.",
+      "step1Desc": "Your business, your goals, your timeline. No obligation to proceed.",
       "step2Label": "We position and find buyers",
       "step2Desc": "Real financials, a small qualified buyer list, not a public listing.",
       "step3Label": "You get support to close",
@@ -1019,7 +1019,7 @@
       "q3": "What kind of businesses can Bottega help me sell?",
       "a3": "Accounting and compliance firms, insurance brokerages and claims businesses, and lending or mortgage brokerages. These three have different levels of durability, accounting the strongest, lending the weakest, and we will tell you honestly where yours sits.",
       "q4": "What does it cost?",
-      "a4": "Nothing unless we close. No dual side fees either, we represent you only, never the buyer on the same deal."
+      "a4": "It depends on the mandate. We agree fees with you upfront, before any work begins. What we will not do is charge a fee to both sides of the same deal, we represent you only."
     },
     "cta": {
       "headingLead": "Join the first sellers we're working with in",

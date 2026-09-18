@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { Lock, Target, Handshake, EyeOff, Calculator, Users, GraduationCap, Wallet, ClipboardList, Search, LifeBuoy } from 'lucide-react';
+import { Lock, Target, Handshake, EyeOff, Calculator, Users, GraduationCap, Clock, ClipboardList, Search, LifeBuoy } from 'lucide-react';
 import { IconCircle } from '@/components/marketing/IconCircle';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
 import { MandateEnquiryForm } from '@/components/marketing/MandateEnquiryForm';
@@ -19,7 +19,7 @@ export default function SellSidePage() {
     { icon: Calculator, label: t('problem.item2Label'), desc: t('problem.item2Desc') },
     { icon: Users, label: t('problem.item3Label'), desc: t('problem.item3Desc') },
     { icon: GraduationCap, label: t('problem.item4Label'), desc: t('problem.item4Desc') },
-    { icon: Wallet, label: t('problem.item5Label'), desc: t('problem.item5Desc') },
+    { icon: Clock, label: t('problem.item5Label'), desc: t('problem.item5Desc') },
   ];
 
   const steps = [
