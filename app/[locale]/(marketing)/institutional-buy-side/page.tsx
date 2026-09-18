@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Repeat, Target, Handshake, Building2, Inbox, RefreshCw, GraduationCap, EyeOff, ClipboardList, Search, ShieldCheck } from 'lucide-react';
 import { IconCircle } from '@/components/marketing/IconCircle';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
-import { MandateEnquiryForm } from '@/components/marketing/MandateEnquiryForm';
+import { ExpandableInstitutionalForm } from '@/components/marketing/ExpandableInstitutionalForm';
 
 export default function InstitutionalBuySidePage() {
   const t = useTranslations('institutionalBuySide');
@@ -150,10 +150,7 @@ export default function InstitutionalBuySidePage() {
             <span className="italic text-[var(--color-terracotta)]">{t('cta.headingEmphasis')}</span>
           </h2>
         </div>
-        <div className="mx-auto max-w-md">
-          <MandateEnquiryForm side="institutional" submitLabel={t('cta.button')} />
-          <p className="mt-4 text-[13px] text-[var(--color-muted)]">{t('cta.note')}</p>
-        </div>
+        <ExpandableInstitutionalForm ctaLabel={t('cta.button')} note={t('cta.note')} />
       </section>
     </>
   );

@@ -117,3 +117,22 @@ export interface SellerSearch {
 }
 
 export type SellerSearchInsert = Omit<SellerSearch, 'id' | 'created_at'>;
+
+export interface InstitutionalSearch {
+  id: string;
+  created_at: string;
+  sectors: string[] | null;
+  sector_other: string | null;
+  ticket_size: string | null;
+  has_committed_capital: string | null;
+  strategy: string[] | null;
+  timeline: string | null;
+  has_acquired_before: boolean | null;
+  buyer_type: string | null;
+  name: string | null;
+  email: string;
+  phone: string | null;
+  message: string | null;
+}
+
+export type InstitutionalSearchInsert = Omit<InstitutionalSearch, 'id' | 'created_at'>;

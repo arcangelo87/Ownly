@@ -1253,5 +1253,124 @@
       "button": "Talk to us about your mandate",
       "note": "We'll follow up personally within days."
     }
+  },
+  "institutionalSearch": {
+    "steps": {
+      "stepPrefix": "Step",
+      "stepOf": "of",
+      "step1": "Your mandate",
+      "step2": "Your strategy",
+      "step3": "About your firm"
+    },
+    "step1": {
+      "title": "Tell us about your mandate",
+      "subtitle": "Let's start with the basics.",
+      "sectors": {
+        "label": "Sectors of interest",
+        "helper": "Select all that apply.",
+        "accounting": "Accounting and compliance",
+        "insurance": "Insurance",
+        "lending": "Lending and mortgage brokerage",
+        "other": "Other"
+      },
+      "sectorOther": {
+        "placeholder": "Describe the sector..."
+      },
+      "ticketSize": {
+        "label": "Target acquisition size",
+        "placeholder": "Select a range",
+        "helper": "Indicative range is fine."
+      },
+      "ticketSizeOptions": {
+        "under_1m": "Under €1M",
+        "1m_3m": "€1M – €3M",
+        "3m_7m": "€3M – €7M",
+        "7m_15m": "€7M – €15M",
+        "over_15m": "Over €15M"
+      },
+      "hasCommittedCapital": {
+        "label": "Do you have capital committed for this mandate?",
+        "yes": "Yes",
+        "no": "No",
+        "notSure": "Not sure"
+      },
+      "continue": "Continue →",
+      "errors": {
+        "sectorsRequired": "Please select at least one sector.",
+        "ticketSizeRequired": "Please select a range.",
+        "capitalRequired": "Please select an option."
+      }
+    },
+    "step2": {
+      "title": "Your acquisition strategy",
+      "subtitle": "Tell us what you are trying to build.",
+      "strategy": {
+        "label": "Strategy",
+        "helper": "Select all that apply.",
+        "platformBuild": "Platform build or roll-up",
+        "boltOn": "Bolt-on to an existing business",
+        "marketEntry": "New market entry",
+        "recurringRevenue": "Recurring revenue focus"
+      },
+      "timeline": {
+        "label": "How quickly are you looking to move?",
+        "helper": "This helps us prioritise your pipeline.",
+        "activeNow": "Actively acquiring now",
+        "within6months": "Within 6 months",
+        "exploring": "Exploring"
+      },
+      "continue": "Continue →",
+      "errors": {
+        "strategyRequired": "Please select at least one option.",
+        "timelineRequired": "Please select a timeline."
+      }
+    },
+    "step3": {
+      "title": "About your firm",
+      "subtitle": "Last step, so we can reach you.",
+      "hasAcquired": {
+        "label": "Have you acquired a business in Portugal before?",
+        "yes": "Yes",
+        "no": "No"
+      },
+      "buyerType": {
+        "label": "What type of buyer are you?",
+        "helper": "This helps us match you to the right opportunities.",
+        "privateEquity": "Private equity firm",
+        "familyOffice": "Family office",
+        "strategicAcquirer": "Strategic acquirer",
+        "other": "Other",
+        "otherPlaceholder": "Tell us a bit more..."
+      },
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "label": "Email address",
+        "placeholder": "you@example.com"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "+351..."
+      },
+      "message": {
+        "label": "Anything else you want to share?",
+        "placeholder": "Tell us more about your mandate, your timeline, or any specific requirements.",
+        "helper": "Optional. The more context you give, the better we can match you."
+      },
+      "submit": "Submit →",
+      "errors": {
+        "acquiredRequired": "Please select an option.",
+        "buyerTypeRequired": "Please select your buyer type.",
+        "emailRequired": "Please enter your email address.",
+        "emailInvalid": "Please enter a valid email address.",
+        "saveFailed": "Something went wrong. Please try again."
+      }
+    },
+    "success": {
+      "heading": "We will be in touch.",
+      "body": "Your mandate has been saved. We will reach out when we find a match."
+    }
   }
 }
