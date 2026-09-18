@@ -23,11 +23,11 @@ export function SiteFooter() {
             <Link href={`/${locale}`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
               {t('buySide')}
             </Link>
-            <Link href={`/${locale}/sell-side`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
-              {t('sellSide')}
-            </Link>
             <Link href={`/${locale}/institutional-buy-side`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
               {t('institutionalBuySide')}
+            </Link>
+            <Link href={`/${locale}/sell-side`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
+              {t('sellSide')}
             </Link>
             <Link href={`/${locale}/deals`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
               {t('browse')}
