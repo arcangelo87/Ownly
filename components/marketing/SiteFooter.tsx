@@ -1,15 +1,28 @@
+'use client';
+
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
+import { usePathname } from '@/i18n/navigation';
 import { Logo } from '@/components/ui/Logo';
 
 export function SiteFooter() {
   const t = useTranslations('footer');
   const locale = useLocale();
+  const pathname = usePathname();
+
+  const isBuySide = pathname === '/' || pathname === '/buyers';
+
+  const navLinks = [
+    { href: `/${locale}`, label: t('buySide'), isCurrent: isBuySide },
+    { href: `/${locale}/institutional-buy-side`, label: t('institutionalBuySide'), isCurrent: pathname === '/institutional-buy-side' },
+    { href: `/${locale}/sell-side`, label: t('sellSide'), isCurrent: pathname === '/sell-side' },
+    { href: `/${locale}/deals`, label: t('browse'), isCurrent: pathname === '/deals' },
+  ].filter(({ isCurrent }) => !isCurrent);
 
   return (
     <footer className="border-t border-[var(--color-border)] bg-[var(--color-bg)] mt-auto">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-16">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-16">
           <div className="shrink-0">
             <Link href={`/${locale}`}>
               <Logo width={100} />
@@ -19,19 +32,12 @@ export function SiteFooter() {
             </p>
           </div>
 
-          <nav className="flex flex-col gap-2 text-[13px]">
-            <Link href={`/${locale}`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
-              {t('buySide')}
-            </Link>
-            <Link href={`/${locale}/institutional-buy-side`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
-              {t('institutionalBuySide')}
-            </Link>
-            <Link href={`/${locale}/sell-side`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
-              {t('sellSide')}
-            </Link>
-            <Link href={`/${locale}/deals`} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
-              {t('browse')}
-            </Link>
+          <nav className="flex flex-col gap-2 text-[13px] md:items-end md:text-right">
+            {navLinks.map(({ href, label }) => (
+              <Link key={href} href={href} className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
+                {label}
+              </Link>
+            ))}
           </nav>
         </div>
 
