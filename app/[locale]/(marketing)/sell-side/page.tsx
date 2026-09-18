@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Lock, Target, Handshake, EyeOff, Calculator, Users, GraduationCap, Clock, ClipboardList, Search, LifeBuoy } from 'lucide-react';
 import { IconCircle } from '@/components/marketing/IconCircle';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
-import { MandateEnquiryForm } from '@/components/marketing/MandateEnquiryForm';
+import { ExpandableSellerForm } from '@/components/marketing/ExpandableSellerForm';
 
 export default function SellSidePage() {
   const t = useTranslations('sellSide');
@@ -150,10 +150,7 @@ export default function SellSidePage() {
             <span className="italic text-[var(--color-terracotta)]">{t('cta.headingEmphasis')}</span>
           </h2>
         </div>
-        <div className="mx-auto max-w-md">
-          <MandateEnquiryForm side="sell" submitLabel={t('cta.button')} />
-          <p className="mt-4 text-[13px] text-[var(--color-muted)]">{t('cta.note')}</p>
-        </div>
+        <ExpandableSellerForm ctaLabel={t('cta.button')} note={t('cta.note')} />
       </section>
     </>
   );

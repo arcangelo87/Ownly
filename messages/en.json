@@ -1075,5 +1075,124 @@
       "heading": "Tell us about your mandate",
       "sub": "Share what you are looking for and we will follow up to set up a call."
     }
+  },
+  "sellerSearch": {
+    "steps": {
+      "stepPrefix": "Step",
+      "stepOf": "of",
+      "step1": "Your business",
+      "step2": "Your priorities",
+      "step3": "About you"
+    },
+    "step1": {
+      "title": "Tell us about your business",
+      "subtitle": "Let's start with the basics.",
+      "vertical": {
+        "label": "Which sector is your business in?",
+        "helper": "Select the one that fits best.",
+        "accounting": "Accounting and compliance",
+        "insurance": "Insurance",
+        "lending": "Lending and mortgage brokerage",
+        "other": "Other"
+      },
+      "verticalOther": {
+        "placeholder": "Describe your sector..."
+      },
+      "revenue": {
+        "label": "Approximate annual revenue",
+        "placeholder": "Select a range",
+        "helper": "Indicative range is fine."
+      },
+      "revenueOptions": {
+        "under_250k": "Under €250k",
+        "250k_1m": "€250k – €1M",
+        "1m_2_5m": "€1M – €2.5M",
+        "2_5m_5m": "€2.5M – €5M",
+        "over_5m": "Over €5M"
+      },
+      "hadValuation": {
+        "label": "Have you had a valuation or offer before?",
+        "yes": "Yes",
+        "no": "No",
+        "notSure": "Not sure"
+      },
+      "continue": "Continue →",
+      "errors": {
+        "verticalRequired": "Please select a sector.",
+        "revenueRequired": "Please select a revenue range.",
+        "valuationRequired": "Please select an option."
+      }
+    },
+    "step2": {
+      "title": "What matters most to you",
+      "subtitle": "Tell us what a good outcome looks like.",
+      "priorities": {
+        "label": "Priorities in a sale",
+        "helper": "Select all that apply.",
+        "maxPrice": "Maximizing price",
+        "cleanExit": "A clean, quick exit",
+        "staffContinuity": "Continuity for staff and clients",
+        "confidentiality": "Absolute confidentiality",
+        "stayInvolved": "Staying involved for a transition period"
+      },
+      "timeline": {
+        "label": "How soon are you thinking about this?",
+        "helper": "This helps us prioritise.",
+        "readyNow": "Ready to talk now",
+        "within6to12": "Within 6 to 12 months",
+        "exploring": "Just exploring"
+      },
+      "continue": "Continue →",
+      "errors": {
+        "prioritiesRequired": "Please select at least one priority.",
+        "timelineRequired": "Please select a timeline."
+      }
+    },
+    "step3": {
+      "title": "About you",
+      "subtitle": "Last step, so we can reach you.",
+      "hadAdvisor": {
+        "label": "Have you worked with an advisor or broker before?",
+        "yes": "Yes",
+        "no": "No"
+      },
+      "role": {
+        "label": "What is your role?",
+        "helper": "This helps us understand who we are speaking with.",
+        "owner": "Sole owner",
+        "coOwner": "Co-owner or partner",
+        "other": "Other",
+        "otherPlaceholder": "Tell us a bit more..."
+      },
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "label": "Email address",
+        "placeholder": "you@example.com"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "+351..."
+      },
+      "message": {
+        "label": "Anything else you want to share?",
+        "placeholder": "Tell us more about your business, your timeline, or any specific concerns.",
+        "helper": "Optional. The more context you give, the better we can help."
+      },
+      "submit": "Submit →",
+      "errors": {
+        "advisorRequired": "Please select an option.",
+        "roleRequired": "Please select your role.",
+        "emailRequired": "Please enter your email address.",
+        "emailInvalid": "Please enter a valid email address.",
+        "saveFailed": "Something went wrong. Please try again."
+      }
+    },
+    "success": {
+      "heading": "We will be in touch.",
+      "body": "Your details have been saved. We will reach out to set up a confidential call."
+    }
   }
 }

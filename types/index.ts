@@ -98,3 +98,22 @@ export interface BuyerSearch {
 }
 
 export type BuyerSearchInsert = Omit<BuyerSearch, 'id' | 'created_at'>;
+
+export interface SellerSearch {
+  id: string;
+  created_at: string;
+  vertical: string | null;
+  vertical_other: string | null;
+  revenue_range: string | null;
+  had_valuation: string | null;
+  priorities: string[] | null;
+  timeline: string | null;
+  had_advisor_before: boolean | null;
+  role: string | null;
+  name: string | null;
+  email: string;
+  phone: string | null;
+  message: string | null;
+}
+
+export type SellerSearchInsert = Omit<SellerSearch, 'id' | 'created_at'>;
