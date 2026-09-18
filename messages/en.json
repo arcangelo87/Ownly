@@ -1194,5 +1194,64 @@
       "heading": "We will be in touch.",
       "body": "Your details have been saved. We will reach out to set up a confidential call."
     }
+  },
+  "institutionalBuySide": {
+    "hero": {
+      "eyebrow": "For PE firms, family offices and strategic acquirers",
+      "h1Lead": "Growing by acquisition in Portugal?",
+      "h1Emphasis": "We build your pipeline.",
+      "sub": "Off-market opportunities in accounting, insurance and lending rarely reach outside buyers. We build you a recurring, screened pipeline instead of running a one-off search.",
+      "cta": "Talk to us about your mandate",
+      "note": "Confidential. No obligation to proceed."
+    },
+    "whyUs": {
+      "heading": "Why work with Bottega?",
+      "item1Label": "Recurring pipeline",
+      "item1Desc": "Not a one-off search. Ongoing, off-market deal flow matched to your mandate.",
+      "item2Label": "Sector specialist",
+      "item2Desc": "We know accounting, insurance and lending economics, not just generic M&A mechanics.",
+      "item3Label": "One side per deal",
+      "item3Desc": "We represent your mandate only, never the seller on the same transaction."
+    },
+    "problem": {
+      "heading": "The problem",
+      "item1Label": "Too small for the banks",
+      "item1Desc": "Deals this size rarely reach traditional M&A advisors or investment banks.",
+      "item2Label": "Noisy inbound",
+      "item2Desc": "Most inbound opportunities are unqualified or not seriously for sale.",
+      "item3Label": "One-off searches",
+      "item3Desc": "Most advisors run a single mandate, not a repeatable pipeline.",
+      "item4Label": "Generic diligence",
+      "item4Desc": "Few advisors understand accounting, insurance or lending economics well enough to screen properly.",
+      "item5Label": "Confidentiality risk",
+      "item5Desc": "Competitors and the market finding out before a deal is ready to announce."
+    },
+    "howItWorks": {
+      "heading": "How it works",
+      "badge": "Concierge mode",
+      "step1Label": "Define your mandate",
+      "step1Desc": "Criteria, size, pace and the verticals you want to grow in.",
+      "step2Label": "We build your pipeline",
+      "step2Desc": "Recurring, off-market opportunities matched to your mandate, not a one-off search.",
+      "step3Label": "You get diligence-ready targets",
+      "step3Desc": "EBITDA normalized, key-person risk screened, ready to move quickly."
+    },
+    "faq": {
+      "heading": "FAQs",
+      "q1": "What does Bottega do for institutional buyers?",
+      "a1": "You define your acquisition mandate: sectors, size, pace and geography. We build you a recurring pipeline of off-market opportunities in accounting, insurance and lending, each one screened and diligence-ready before it reaches you.",
+      "q2": "Who is this for?",
+      "a2": "Private equity firms, family offices, and established companies in accounting, insurance or lending looking to grow by acquisition in Portugal.",
+      "q3": "How is this different from a traditional M&A advisor?",
+      "a3": "Most advisors run one mandate at a time and skip deals below their minimum size. We specialize in the smaller end of these three sectors and build ongoing pipelines, not single searches.",
+      "q4": "What does it cost?",
+      "a4": "It depends on the mandate. We agree fees with you upfront, before any work begins. What we will not do is charge a fee to both sides of the same deal, we represent you only."
+    },
+    "cta": {
+      "headingLead": "Build a pipeline with Bottega in",
+      "headingEmphasis": "Portugal.",
+      "button": "Talk to us about your mandate",
+      "note": "We'll follow up personally within days."
+    }
   }
 }

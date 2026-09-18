@@ -2,7 +2,7 @@
 
 import { createClient } from '@/lib/supabase/server';
 
-export type MandateSide = 'sell' | 'buy';
+export type MandateSide = 'sell' | 'buy' | 'institutional';
 export type MandateVertical = 'accounting' | 'insurance' | 'lending' | 'other';
 
 export interface MandateEnquiryInput {
