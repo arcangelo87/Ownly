@@ -10,7 +10,6 @@ export function SiteNav() {
   const t = useTranslations('nav');
   const locale = useLocale();
   const pathname = usePathname();
-  const isBuyers = pathname === '/buyers' || pathname === '/' || pathname === '';
   const [open, setOpen] = useState(false);
 
   const links = [
@@ -21,7 +20,15 @@ export function SiteNav() {
 
   const mobileLinks = links.filter(({ href }) => !href.endsWith('/sell'));
 
-  const ctaHref = isBuyers ? '#founding' : `/${locale}/sell`;
+  const anchorCtaPages: Record<string, string> = {
+    '/buyers': '#founding',
+    '/brokers': '#founding',
+    '/buy-side': '#enquiry',
+    '/institutional-buy-side': '#enquiry',
+  };
+
+  const isHome = pathname === '' || pathname === '/';
+  const ctaHref = isHome ? `/${locale}/buyers#founding` : (anchorCtaPages[pathname] ?? `/${locale}/sell`);
 
   return (
     <nav className="border-b border-[var(--color-border)] bg-[var(--color-bg)] relative z-50">
