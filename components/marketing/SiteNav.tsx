@@ -25,7 +25,6 @@ export function SiteNav() {
     '/buyers': '#founding',
     '/brokers': '#founding',
     '/buy-side': '#enquiry',
-    '/sell-side': '#enquiry',
     '/institutional-buy-side': '#enquiry',
   };
 
