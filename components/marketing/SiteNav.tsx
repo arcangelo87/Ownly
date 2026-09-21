@@ -21,14 +21,14 @@ export function SiteNav() {
   const mobileLinks = links.filter(({ href }) => !href.endsWith('/sell'));
 
   const anchorCtaPages: Record<string, string> = {
-    '': '#founding',
     '/buyers': '#founding',
     '/brokers': '#founding',
     '/buy-side': '#enquiry',
     '/institutional-buy-side': '#enquiry',
   };
 
-  const ctaHref = anchorCtaPages[pathname] ?? `/${locale}/sell`;
+  const isHome = pathname === '' || pathname === '/';
+  const ctaHref = isHome ? `/${locale}/buyers#founding` : (anchorCtaPages[pathname] ?? `/${locale}/sell`);
 
   return (
     <nav className="border-b border-[var(--color-border)] bg-[var(--color-bg)] relative z-50">
