@@ -1,12 +1,14 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { Lock, Target, Handshake, EyeOff, Calculator, Users, GraduationCap, Clock, ClipboardList, Search, LifeBuoy } from 'lucide-react';
 import { IconCircle } from '@/components/marketing/IconCircle';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
 import { ExpandableSellerForm } from '@/components/marketing/ExpandableSellerForm';
+import { LocaleSwitch } from '@/components/marketing/LocaleSwitch';
 
-export default function SellSidePage() {
-  const t = useTranslations('sellSide');
+export default async function SellSidePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations('sellSide');
 
   const whyUs = [
     { icon: Lock, label: t('whyUs.item1Label'), desc: t('whyUs.item1Desc') },
@@ -38,7 +40,8 @@ export default function SellSidePage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="py-20 md:py-28 px-6 text-center bg-[var(--color-surface)]">
+      <section className="pt-6 md:pt-8 pb-20 md:pb-28 px-6 text-center bg-[var(--color-surface)]">
+        <LocaleSwitch locale={locale} href="/sell-side" />
         <div className="mx-auto max-w-2xl">
           <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-[var(--color-muted)] mb-5">
             {t('hero.eyebrow')}
