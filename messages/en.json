@@ -1185,6 +1185,7 @@
         "helper": "Optional. The more context you give, the better we can help."
       },
       "submit": "Submit →",
+      "submitting": "Submitting…",
       "errors": {
         "advisorRequired": "Please select an option.",
         "roleRequired": "Please select your role.",

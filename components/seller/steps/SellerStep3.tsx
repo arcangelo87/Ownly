@@ -169,7 +169,7 @@ export function SellerStep3({ step1, step2, onComplete }: SellerStep3Props) {
 
       <div className="mt-4 flex justify-end border-t border-[var(--color-border)] pt-8">
         <Button type="submit" disabled={saving}>
-          {saving ? 'Submitting…' : t('submit')}
+          {saving ? t('submitting') : t('submit')}
         </Button>
       </div>
     </form>

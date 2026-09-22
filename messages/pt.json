@@ -703,5 +703,184 @@
     "trust2Body": "Já trabalha com um consultor ou mediador? Complementamos, não competimos.",
     "trust3Label": "Discrição garantida",
     "trust3Body": "Nada é publicado sem a sua aprovação. Você controla quem vê o quê."
+  },
+  "sellSide": {
+    "hero": {
+      "eyebrow": "Confidencial, especialista no setor",
+      "h1Lead": "A pensar em vender o seu negócio?",
+      "h1Emphasis": "Podemos ajudar.",
+      "sub": "A maioria dos proprietários só tem uma oportunidade para isto. Normalizamos corretamente os seus números, encontramos compradores reais com discrição, e acompanhamo-lo até ao fecho.",
+      "cta": "Iniciar uma conversa confidencial",
+      "note": "Confidencial desde a primeira chamada. Sem compromisso de avançar."
+    },
+    "whyUs": {
+      "heading": "Porquê vender com a Bottega?",
+      "item1Label": "Confidencial",
+      "item1Desc": "Nada chega a um comprador, a um concorrente ou à sua própria equipa sem a sua autorização.",
+      "item2Label": "Especialista no setor",
+      "item2Desc": "Conhecemos a economia da contabilidade, dos seguros e do crédito, não apenas os mecanismos genéricos de venda de negócios.",
+      "item3Label": "Sem conflitos de interesse",
+      "item3Desc": "Representamo-lo apenas a si, nunca o comprador no mesmo negócio."
+    },
+    "problem": {
+      "heading": "O problema",
+      "item1Label": "Risco de confidencialidade",
+      "item1Desc": "Colaboradores, clientes e concorrentes a descobrir antes de estar pronto para lhes contar.",
+      "item2Label": "Sem regra geral",
+      "item2Desc": "Múltiplos genéricos não captam o verdadeiro valor do seu negócio.",
+      "item3Label": "Compradores errados",
+      "item3Desc": "A maioria do interesse recebido não é qualificado e desperdiça o seu tempo.",
+      "item4Label": "Consultores generalistas",
+      "item4Desc": "Poucos consultores conhecem a economia da contabilidade, dos seguros ou do crédito o suficiente para o representar corretamente.",
+      "item5Label": "Sem tempo a perder",
+      "item5Desc": "Continua a gerir o negócio enquanto tenta vendê-lo."
+    },
+    "howItWorks": {
+      "heading": "Como funciona",
+      "badge": "Modo concierge",
+      "step1Label": "Partilhe a sua situação",
+      "step1Desc": "O seu negócio, os seus objetivos, o seu prazo. Sem compromisso de avançar.",
+      "step2Label": "Posicionamos e encontramos compradores",
+      "step2Desc": "Finanças reais, uma pequena lista de compradores qualificados, não um anúncio público.",
+      "step3Label": "Tem apoio até ao fecho",
+      "step3Desc": "Negociação, estruturação e transição, do início ao fim."
+    },
+    "faq": {
+      "heading": "Perguntas frequentes",
+      "q1": "O que faz a Bottega exatamente pelos vendedores?",
+      "a1": "Conta-nos sobre o seu negócio e o que pretende da saída. Normalizamos corretamente as suas finanças, posicionamos o negócio para os compradores certos, conduzimos uma pequena divulgação confidencial, e apoiamo-lo durante a negociação, a estruturação e a transição, para que não faça nada disto sozinho.",
+      "q2": "Para quem é isto?",
+      "a2": "Proprietários de empresas de contabilidade, seguros ou crédito e intermediação de crédito à habitação em Portugal que estão a ponderar uma sucessão ou uma venda.",
+      "q3": "Que tipo de negócios a Bottega pode ajudar a vender?",
+      "a3": "Empresas de contabilidade e compliance, corretoras de seguros e empresas de sinistros, e intermediários de crédito ou crédito à habitação. Estes três setores têm níveis diferentes de durabilidade, a contabilidade é o mais forte, o crédito o mais fraco, e diremos honestamente onde o seu se situa.",
+      "q4": "Quanto custa?",
+      "a4": "Depende do mandato. Acordamos os honorários consigo antecipadamente, antes de qualquer trabalho começar. O que não fazemos é cobrar honorários aos dois lados do mesmo negócio, representamo-lo apenas a si."
+    },
+    "cta": {
+      "headingLead": "Junte-se aos primeiros vendedores com quem estamos a trabalhar em",
+      "headingEmphasis": "Portugal.",
+      "button": "Iniciar uma conversa confidencial",
+      "note": "Entraremos em contacto pessoalmente dentro de dias."
+    }
+  },
+  "sellerSearch": {
+    "steps": {
+      "stepPrefix": "Passo",
+      "stepOf": "de",
+      "step1": "O seu negócio",
+      "step2": "As suas prioridades",
+      "step3": "Sobre si"
+    },
+    "step1": {
+      "title": "Fale-nos sobre o seu negócio",
+      "subtitle": "Vamos começar pelo básico.",
+      "vertical": {
+        "label": "Em que setor está o seu negócio?",
+        "helper": "Selecione o que melhor se aplica.",
+        "accounting": "Contabilidade e compliance",
+        "insurance": "Seguros",
+        "lending": "Crédito e intermediação de crédito à habitação",
+        "other": "Outro"
+      },
+      "verticalOther": {
+        "placeholder": "Descreva o seu setor..."
+      },
+      "revenue": {
+        "label": "Faturação anual aproximada",
+        "placeholder": "Selecione um intervalo",
+        "helper": "Um intervalo indicativo é suficiente."
+      },
+      "revenueOptions": {
+        "under_250k": "Abaixo de €250k",
+        "250k_1m": "€250k – €1M",
+        "1m_2_5m": "€1M – €2,5M",
+        "2_5m_5m": "€2,5M – €5M",
+        "over_5m": "Acima de €5M"
+      },
+      "hadValuation": {
+        "label": "Já teve uma avaliação ou proposta antes?",
+        "yes": "Sim",
+        "no": "Não",
+        "notSure": "Não tenho a certeza"
+      },
+      "continue": "Continuar →",
+      "errors": {
+        "verticalRequired": "Selecione um setor.",
+        "revenueRequired": "Selecione um intervalo de faturação.",
+        "valuationRequired": "Selecione uma opção."
+      }
+    },
+    "step2": {
+      "title": "O que é mais importante para si",
+      "subtitle": "Diga-nos como é um bom resultado.",
+      "priorities": {
+        "label": "Prioridades numa venda",
+        "helper": "Selecione todas as que se aplicam.",
+        "maxPrice": "Maximizar o preço",
+        "cleanExit": "Uma saída limpa e rápida",
+        "staffContinuity": "Continuidade para a equipa e clientes",
+        "confidentiality": "Confidencialidade absoluta",
+        "stayInvolved": "Manter-se envolvido durante um período de transição"
+      },
+      "timeline": {
+        "label": "Em quanto tempo está a pensar nisto?",
+        "helper": "Isto ajuda-nos a priorizar.",
+        "readyNow": "Pronto para falar agora",
+        "within6to12": "Entre 6 a 12 meses",
+        "exploring": "Apenas a explorar"
+      },
+      "continue": "Continuar →",
+      "errors": {
+        "prioritiesRequired": "Selecione pelo menos uma prioridade.",
+        "timelineRequired": "Selecione um prazo."
+      }
+    },
+    "step3": {
+      "title": "Sobre si",
+      "subtitle": "Último passo, para o podermos contactar.",
+      "hadAdvisor": {
+        "label": "Já trabalhou com um consultor ou mediador antes?",
+        "yes": "Sim",
+        "no": "Não"
+      },
+      "role": {
+        "label": "Qual é o seu papel?",
+        "helper": "Isto ajuda-nos a perceber com quem estamos a falar.",
+        "owner": "Único proprietário",
+        "coOwner": "Coproprietário ou sócio",
+        "other": "Outro",
+        "otherPlaceholder": "Conte-nos um pouco mais..."
+      },
+      "name": {
+        "label": "Nome",
+        "placeholder": "O seu nome"
+      },
+      "email": {
+        "label": "Endereço de email",
+        "placeholder": "voce@exemplo.com"
+      },
+      "phone": {
+        "label": "Telefone",
+        "placeholder": "+351..."
+      },
+      "message": {
+        "label": "Há mais alguma coisa que queira partilhar?",
+        "placeholder": "Conte-nos mais sobre o seu negócio, o seu prazo, ou qualquer preocupação específica.",
+        "helper": "Opcional. Quanto mais contexto nos der, melhor o podemos ajudar."
+      },
+      "submit": "Submeter →",
+      "submitting": "A submeter…",
+      "errors": {
+        "advisorRequired": "Selecione uma opção.",
+        "roleRequired": "Selecione o seu papel.",
+        "emailRequired": "Introduza o seu endereço de email.",
+        "emailInvalid": "Introduza um endereço de email válido.",
+        "saveFailed": "Algo correu mal. Tente novamente."
+      }
+    },
+    "success": {
+      "heading": "Entraremos em contacto.",
+      "body": "Os seus dados foram guardados. Entraremos em contacto para marcar uma chamada confidencial."
+    }
   }
 }

@@ -13,8 +13,10 @@ export async function middleware(request: NextRequest) {
     return NextResponse.rewrite(new URL('/en/buyers', request.url));
   }
 
-  // Redirect unsupported locales to English equivalent
-  if (/^\/(pt|it)(\/|$)/.test(pathname)) {
+  // The sell-side page is fully translated into Portuguese; other pt/it routes
+  // are not translated yet, so redirect those to English.
+  const isTranslatedPtRoute = /^\/pt\/sell-side\/?$/.test(pathname);
+  if (/^\/(pt|it)(\/|$)/.test(pathname) && !isTranslatedPtRoute) {
     const rest = pathname.replace(/^\/(pt|it)/, '') || '/';
     return NextResponse.redirect(new URL(`/en${rest}`, request.url), 301);
   }
