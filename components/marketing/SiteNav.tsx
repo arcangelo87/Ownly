@@ -8,17 +8,17 @@ import { Logo } from '@/components/ui/Logo';
 
 export function SiteNav() {
   const t = useTranslations('nav');
+  const tFooter = useTranslations('footer');
   const locale = useLocale();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const links = [
-    { href: `/${locale}`, label: t('home') },
-    { href: `/${locale}/deals`, label: t('browse') },
-    { href: `/${locale}/sell`, label: t('sell') },
+  const mobileLinks = [
+    { href: `/${locale}`, label: tFooter('buySide') },
+    { href: `/${locale}/institutional-buy-side`, label: tFooter('institutionalBuySide') },
+    { href: `/${locale}/sell-side`, label: tFooter('sellSide') },
+    { href: `/${locale}/deals`, label: tFooter('browse') },
   ];
-
-  const mobileLinks = links.filter(({ href }) => !href.endsWith('/sell'));
 
   const anchorCtaPages: Record<string, string> = {
     '/buyers': '#founding',
