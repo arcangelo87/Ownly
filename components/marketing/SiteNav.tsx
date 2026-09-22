@@ -14,11 +14,11 @@ export function SiteNav() {
   const [open, setOpen] = useState(false);
 
   const mobileLinks = [
-    { href: `/${locale}`, label: tFooter('buySide') },
-    { href: `/${locale}/institutional-buy-side`, label: tFooter('institutionalBuySide') },
-    { href: `/${locale}/sell-side`, label: tFooter('sellSide') },
-    { href: `/${locale}/deals`, label: tFooter('browse') },
-  ];
+    { href: `/${locale}`, label: tFooter('buySide'), isCurrent: pathname === '/' },
+    { href: `/${locale}/institutional-buy-side`, label: tFooter('institutionalBuySide'), isCurrent: pathname === '/institutional-buy-side' },
+    { href: `/${locale}/sell-side`, label: tFooter('sellSide'), isCurrent: pathname === '/sell-side' },
+    { href: `/${locale}/deals`, label: tFooter('browse'), isCurrent: pathname === '/deals' },
+  ].filter(({ isCurrent }) => !isCurrent);
 
   const anchorCtaPages: Record<string, string> = {
     '/buyers': '#founding',
