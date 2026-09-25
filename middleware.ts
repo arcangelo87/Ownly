@@ -8,9 +8,9 @@ const intlMiddleware = createIntlMiddleware(routing);
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Root domain and /en both show the buyers landing page directly
+  // Root domain and /en both show the strategic buyers landing page directly
   if (pathname === '/' || pathname === '/en' || pathname === '/en/') {
-    return NextResponse.rewrite(new URL('/en/buyers', request.url));
+    return NextResponse.rewrite(new URL('/en/institutional-buy-side', request.url));
   }
 
   // The sell-side page is fully translated into Portuguese; other pt/it routes

@@ -10,11 +10,11 @@ export function SiteFooter() {
   const locale = useLocale();
   const pathname = usePathname();
 
-  const isBuySide = pathname === '/' || pathname === '/buyers';
+  const isHome = pathname === '' || pathname === '/';
 
   const navLinks = [
-    { href: `/${locale}`, label: t('buySide'), isCurrent: isBuySide },
-    { href: `/${locale}/institutional-buy-side`, label: t('institutionalBuySide'), isCurrent: pathname === '/institutional-buy-side' },
+    { href: `/${locale}/buyers`, label: t('buySide'), isCurrent: pathname === '/buyers' },
+    { href: `/${locale}/institutional-buy-side`, label: t('institutionalBuySide'), isCurrent: isHome || pathname === '/institutional-buy-side' },
     { href: `/${locale}/sell-side`, label: t('sellSide'), isCurrent: pathname === '/sell-side' },
     { href: `/${locale}/deals`, label: t('browse'), isCurrent: pathname === '/deals' },
   ].filter(({ isCurrent }) => !isCurrent);
