@@ -26,7 +26,6 @@ export default function BuySidePage() {
     { label: t('credibility.item1Label'), description: t('credibility.item1Desc') },
     { label: t('credibility.item2Label'), description: t('credibility.item2Desc') },
     { label: t('credibility.item3Label'), description: t('credibility.item3Desc') },
-    { label: t('credibility.item4Label'), description: t('credibility.item4Desc') },
     { label: t('credibility.item5Label'), description: t('credibility.item5Desc') },
   ];
 

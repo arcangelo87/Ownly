@@ -1057,7 +1057,7 @@
       "step3Label": "Diligence support",
       "step3Desc": "EBITDA normalization, key person and lease risk, and filing verification, so you know what you are actually buying.",
       "step4Label": "Negotiation and structuring",
-      "step4Desc": "We negotiate and structure the deal on your behalf, working only for you at the table.",
+      "step4Desc": "We negotiate and structure the deal on your behalf.",
       "step5Label": "Close",
       "step5Desc": "We stay involved through signing to keep the transaction on track."
     },
@@ -1069,8 +1069,6 @@
       "item2Desc": "We screen for dependency on the current owner before you ever sign an offer.",
       "item3Label": "Declared financials only",
       "item3Desc": "We never underwrite undeclared revenue. Pricing is built on declared financials only.",
-      "item4Label": "One side per deal",
-      "item4Desc": "No dual side fees. We represent either the buyer or the seller on a transaction, never both, so there is no conflict on your deal.",
       "item5Label": "Concierge, fees first",
       "item5Desc": "A fees first advisory model with no platform fees yet. We are paid for the outcome we deliver you."
     },
@@ -1214,8 +1212,8 @@
       "item1Desc": "Not a one-off search. Ongoing, off-market deal flow matched to your mandate.",
       "item2Label": "Sector specialist",
       "item2Desc": "We know accounting, insurance and lending economics, not just generic M&A mechanics.",
-      "item3Label": "One side per deal",
-      "item3Desc": "We represent your mandate only, never the seller on the same transaction."
+      "item3Label": "Screened before you see it",
+      "item3Desc": "Every deal is checked against your mandate before it reaches you."
     },
     "problem": {
       "heading": "The problem",
