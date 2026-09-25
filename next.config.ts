@@ -7,6 +7,17 @@ const nextConfig: NextConfig = {
   experimental: {
     serverActions: { bodySizeLimit: '52mb' },
   },
+  // bottega.fyi is the only domain that should appear in search. Keep the
+  // *.vercel.app production and preview URLs out of the index.
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: '(?<host>.*)\\.vercel\\.app' }],
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

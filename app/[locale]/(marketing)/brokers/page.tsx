@@ -2,6 +2,9 @@ import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { FeatureRow } from '@/components/marketing/FeatureRow';
 import { FoundingForm } from '@/components/marketing/FoundingForm';
+import { NOINDEX } from '@/lib/seo/pages';
+
+export const metadata = NOINDEX;
 
 export default function BrokersPage() {
   const t = useTranslations('brokers');

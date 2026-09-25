@@ -1,6 +1,9 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { CtaBanner } from '@/components/marketing/CtaBanner';
+import { NOINDEX } from '@/lib/seo/pages';
+
+export const metadata = NOINDEX;
 
 export default function AboutPage() {
   const t = useTranslations('home');
