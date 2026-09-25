@@ -987,8 +987,8 @@
       "item1Desc": "Nothing goes to a buyer, a competitor or your own staff without your say so.",
       "item2Label": "Sector specialist",
       "item2Desc": "We know accounting, insurance and lending economics, not just generic business sale mechanics.",
-      "item3Label": "No conflicts of interest",
-      "item3Desc": "We represent you only, never the buyer on the same deal."
+      "item3Label": "You deal with me",
+      "item3Desc": "Not a junior, not a call centre. The person you first speak to runs your sale."
     },
     "problem": {
       "heading": "The problem",
@@ -1022,7 +1022,7 @@
       "q3": "What kind of businesses can Bottega help me sell?",
       "a3": "Accounting and compliance firms, insurance brokerages and claims businesses, and lending or mortgage brokerages. These three have different levels of durability, accounting the strongest, lending the weakest, and we will tell you honestly where yours sits.",
       "q4": "What does it cost?",
-      "a4": "It depends on the mandate. We agree fees with you upfront, before any work begins. What we will not do is charge a fee to both sides of the same deal, we represent you only."
+      "a4": "It depends on the mandate. We agree fees with you upfront, before any work begins."
     },
     "cta": {
       "headingLead": "Join the first sellers we're working with in",
@@ -1035,9 +1035,9 @@
     "hero": {
       "eyebrow": "Buy side",
       "h1": "Sector specific screening, not a generic checklist.",
-      "sub": "We run buy side mandates for investors acquiring accounting, insurance and lending firms in Portugal. Real diligence rigor, and we only ever represent one side of a transaction.",
+      "sub": "We run buy side mandates for investors acquiring accounting, insurance and lending firms in Portugal. Real diligence rigor.",
       "cta": "Tell us about your mandate",
-      "note": "No conflicts of interest. We never represent both sides of a deal."
+      "note": "Many of our deals never reach the open market."
     },
     "verticals": {
       "heading": "Where we source deals",
@@ -1057,7 +1057,7 @@
       "step3Label": "Diligence support",
       "step3Desc": "EBITDA normalization, key person and lease risk, and filing verification, so you know what you are actually buying.",
       "step4Label": "Negotiation and structuring",
-      "step4Desc": "We negotiate and structure the deal on your behalf, working only for you at the table.",
+      "step4Desc": "We negotiate and structure the deal on your behalf.",
       "step5Label": "Close",
       "step5Desc": "We stay involved through signing to keep the transaction on track."
     },
@@ -1069,8 +1069,6 @@
       "item2Desc": "We screen for dependency on the current owner before you ever sign an offer.",
       "item3Label": "Declared financials only",
       "item3Desc": "We never underwrite undeclared revenue. Pricing is built on declared financials only.",
-      "item4Label": "One side per deal",
-      "item4Desc": "No dual side fees. We represent either the buyer or the seller on a transaction, never both, so there is no conflict on your deal.",
       "item5Label": "Concierge, fees first",
       "item5Desc": "A fees first advisory model with no platform fees yet. We are paid for the outcome we deliver you."
     },
@@ -1212,10 +1210,10 @@
       "heading": "Why work with Bottega?",
       "item1Label": "Recurring pipeline",
       "item1Desc": "Not a one-off search. Ongoing, off-market deal flow matched to your mandate.",
-      "item2Label": "Sector specialist",
-      "item2Desc": "We know accounting, insurance and lending economics, not just generic M&A mechanics.",
-      "item3Label": "One side per deal",
-      "item3Desc": "We represent your mandate only, never the seller on the same transaction."
+      "item2Label": "Specialist, not generic",
+      "item2Desc": "We learn a sector's economics before we screen a single deal. We started with accounting, insurance and lending. Tell us where you're looking.",
+      "item3Label": "Screened before you see it",
+      "item3Desc": "Every deal is checked against your mandate before it reaches you."
     },
     "problem": {
       "heading": "The problem",
@@ -1245,11 +1243,11 @@
       "q1": "What does Bottega do for institutional buyers?",
       "a1": "You define your acquisition mandate: sectors, size, pace and geography. We build you a recurring pipeline of off-market opportunities in accounting, insurance and lending, each one screened and diligence-ready before it reaches you.",
       "q2": "Who is this for?",
-      "a2": "Private equity firms, family offices, and established companies in accounting, insurance or lending looking to grow by acquisition in Portugal.",
+      "a2": "Private equity firms, family offices and established companies growing by acquisition in Portugal. Our deepest coverage today is accounting, insurance and lending, but if your mandate is elsewhere, talk to us.",
       "q3": "How is this different from a traditional M&A advisor?",
-      "a3": "Most advisors run one mandate at a time and skip deals below their minimum size. We specialize in the smaller end of these three sectors and build ongoing pipelines, not single searches.",
+      "a3": "Most advisors run one mandate at a time and skip deals below their minimum size. We specialize in the smaller end of the market and build ongoing pipelines, not single searches.",
       "q4": "What does it cost?",
-      "a4": "It depends on the mandate. We agree fees with you upfront, before any work begins. What we will not do is charge a fee to both sides of the same deal, we represent you only."
+      "a4": "It depends on the mandate. We agree fees with you upfront, before any work begins."
     },
     "cta": {
       "headingLead": "Build a pipeline with Bottega in",

@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { Repeat, Target, Handshake, Building2, Inbox, RefreshCw, GraduationCap, EyeOff, ClipboardList, Search, ShieldCheck } from 'lucide-react';
+import { Repeat, Target, Building2, Inbox, RefreshCw, GraduationCap, EyeOff, ClipboardList, Search, ShieldCheck } from 'lucide-react';
 import { IconCircle } from '@/components/marketing/IconCircle';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
 import { ExpandableInstitutionalForm } from '@/components/marketing/ExpandableInstitutionalForm';
@@ -13,7 +13,7 @@ export default function InstitutionalBuySidePage() {
   const whyUs = [
     { icon: Repeat, label: t('whyUs.item1Label'), desc: t('whyUs.item1Desc') },
     { icon: Target, label: t('whyUs.item2Label'), desc: t('whyUs.item2Desc') },
-    { icon: Handshake, label: t('whyUs.item3Label'), desc: t('whyUs.item3Desc') },
+    { icon: Search, label: t('whyUs.item3Label'), desc: t('whyUs.item3Desc') },
   ];
 
   const problems = [
