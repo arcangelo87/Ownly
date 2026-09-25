@@ -5,6 +5,8 @@ import { IconCircle } from '@/components/marketing/IconCircle';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
 import { ExpandableInstitutionalForm } from '@/components/marketing/ExpandableInstitutionalForm';
 
+// Public URL shared with investors: do not rename or move this route.
+// If it must change, 301 redirect /en/institutional-buy-side to https://bottega.fyi.
 export default function InstitutionalBuySidePage() {
   const t = useTranslations('institutionalBuySide');
 

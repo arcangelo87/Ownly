@@ -59,6 +59,7 @@ Full requirements for each epic are in bottega-product-doc.md.
 - No `any` TypeScript types
 - Never hard delete user data — use `deleted_at` soft delete
 - RLS enabled on all Supabase tables from day one
+- `/en/institutional-buy-side` is a public URL shared with investors. Never rename, move or delete it, and never add middleware that redirects or rewrites it. If it must change, add a 301 redirect from `/en/institutional-buy-side` to `https://bottega.fyi` in the same change
 
 ---
 
