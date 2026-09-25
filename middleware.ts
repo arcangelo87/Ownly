@@ -8,6 +8,9 @@ const intlMiddleware = createIntlMiddleware(routing);
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // /en/institutional-buy-side is a public URL shared with investors: never
+  // redirect or rewrite it here (see CLAUDE.md hard rules).
+
   // Root domain and /en both show the strategic buyers landing page directly
   if (pathname === '/' || pathname === '/en' || pathname === '/en/') {
     return NextResponse.rewrite(new URL('/en/institutional-buy-side', request.url));
