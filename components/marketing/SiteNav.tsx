@@ -13,9 +13,11 @@ export function SiteNav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
+  const isHome = pathname === '' || pathname === '/';
+
   const mobileLinks = [
-    { href: `/${locale}`, label: tFooter('buySide'), isCurrent: pathname === '/' },
-    { href: `/${locale}/institutional-buy-side`, label: tFooter('institutionalBuySide'), isCurrent: pathname === '/institutional-buy-side' },
+    { href: `/${locale}/buyers`, label: tFooter('buySide'), isCurrent: pathname === '/buyers' },
+    { href: `/${locale}/institutional-buy-side`, label: tFooter('institutionalBuySide'), isCurrent: isHome || pathname === '/institutional-buy-side' },
     { href: `/${locale}/sell-side`, label: tFooter('sellSide'), isCurrent: pathname === '/sell-side' },
     { href: `/${locale}/deals`, label: tFooter('browse'), isCurrent: pathname === '/deals' },
   ].filter(({ isCurrent }) => !isCurrent);
@@ -27,8 +29,7 @@ export function SiteNav() {
     '/institutional-buy-side': '#enquiry',
   };
 
-  const isHome = pathname === '' || pathname === '/';
-  const ctaHref = isHome ? `/${locale}/buyers#founding` : (anchorCtaPages[pathname] ?? `/${locale}/sell`);
+  const ctaHref = isHome ? '#enquiry' : (anchorCtaPages[pathname] ?? `/${locale}/sell`);
 
   return (
     <nav className="border-b border-[var(--color-border)] bg-[var(--color-bg)] relative z-50">
