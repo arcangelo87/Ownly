@@ -987,8 +987,8 @@
       "item1Desc": "Nothing goes to a buyer, a competitor or your own staff without your say so.",
       "item2Label": "Sector specialist",
       "item2Desc": "We know accounting, insurance and lending economics, not just generic business sale mechanics.",
-      "item3Label": "No conflicts of interest",
-      "item3Desc": "We represent you only, never the buyer on the same deal."
+      "item3Label": "You deal with me",
+      "item3Desc": "Not a junior, not a call centre. The person you first speak to runs your sale."
     },
     "problem": {
       "heading": "The problem",
@@ -1035,9 +1035,9 @@
     "hero": {
       "eyebrow": "Buy side",
       "h1": "Sector specific screening, not a generic checklist.",
-      "sub": "We run buy side mandates for investors acquiring accounting, insurance and lending firms in Portugal. Real diligence rigor, and we only ever represent one side of a transaction.",
+      "sub": "We run buy side mandates for investors acquiring accounting, insurance and lending firms in Portugal. Real diligence rigor.",
       "cta": "Tell us about your mandate",
-      "note": "No conflicts of interest. We never represent both sides of a deal."
+      "note": "Many of our deals never reach the open market."
     },
     "verticals": {
       "heading": "Where we source deals",
