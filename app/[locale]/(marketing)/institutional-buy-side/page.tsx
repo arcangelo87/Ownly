@@ -1,9 +1,15 @@
+import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Repeat, Target, Building2, Inbox, RefreshCw, GraduationCap, EyeOff, ClipboardList, Search, ShieldCheck } from 'lucide-react';
 import { IconCircle } from '@/components/marketing/IconCircle';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
 import { ExpandableInstitutionalForm } from '@/components/marketing/ExpandableInstitutionalForm';
+
+// Served at /, /en and /en/institutional-buy-side: rank one URL, the bare domain
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 // Public URL shared with investors: do not rename or move this route.
 // If it must change, 301 redirect /en/institutional-buy-side to https://bottega.fyi.

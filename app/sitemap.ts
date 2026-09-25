@@ -1,20 +1,9 @@
 import type { MetadataRoute } from 'next';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { SITE_URL } from '@/lib/site';
+import { INDEXED_PAGES } from '@/lib/seo/pages';
 
 export const revalidate = 3600;
-
-const STATIC_PATHS = [
-  { path: '', priority: 1 },
-  { path: '/deals', priority: 0.9 },
-  { path: '/buy', priority: 0.7 },
-  { path: '/sell', priority: 0.7 },
-  { path: '/about', priority: 0.5 },
-  { path: '/contact', priority: 0.5 },
-  { path: '/brokers', priority: 0.5 },
-  { path: '/privacy', priority: 0.2 },
-  { path: '/terms', priority: 0.2 },
-];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const admin = createAdminClient();
@@ -26,11 +15,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .is('deleted_at', null)
     .not('slug', 'is', null);
 
-  const staticEntries: MetadataRoute.Sitemap = STATIC_PATHS.map(({ path, priority }) => ({
-    url: `${SITE_URL}/en${path}`,
-    changeFrequency: path === '/deals' ? 'daily' : 'monthly',
-    priority,
-  }));
+  const staticEntries: MetadataRoute.Sitemap = INDEXED_PAGES.map(
+    ({ path, priority, changeFrequency, locales }) => {
+      const url = path === '' ? `${SITE_URL}/` : `${SITE_URL}/en${path}`;
+      const languages =
+        locales.length > 1
+          ? Object.fromEntries(locales.map((l) => [l, `${SITE_URL}/${l}${path}`]))
+          : undefined;
+      return { url, changeFrequency, priority, alternates: languages && { languages } };
+    },
+  );
 
   const dealEntries: MetadataRoute.Sitemap = (listings ?? []).map((listing) => ({
     url: `${SITE_URL}/en/deals/${listing.slug}`,

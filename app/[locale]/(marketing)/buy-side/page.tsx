@@ -4,6 +4,9 @@ import { StepList } from '@/components/marketing/StepList';
 import { FeatureRow } from '@/components/marketing/FeatureRow';
 import { MandateEnquiryForm } from '@/components/marketing/MandateEnquiryForm';
 import { Landmark, ShieldCheck, Percent } from 'lucide-react';
+import { NOINDEX } from '@/lib/seo/pages';
+
+export const metadata = NOINDEX;
 
 export default function BuySidePage() {
   const t = useTranslations('buySide');

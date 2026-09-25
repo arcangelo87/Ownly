@@ -1,5 +1,8 @@
 import { useTranslations } from 'next-intl';
 import { ContactForm } from '@/components/marketing/ContactForm';
+import { NOINDEX } from '@/lib/seo/pages';
+
+export const metadata = NOINDEX;
 
 export default function ContactPage() {
   const t = useTranslations('contact');
