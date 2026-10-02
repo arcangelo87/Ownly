@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: '%s | Manto',
   },
   description:
-    'Curated SME deals in Europe, starting with Portugal. Buy or sell an established business with real trading history.',
+    'Curated SME deals in Europe, starting with Portugal and Italy. Buy or sell an established business with real trading history.',
   openGraph: {
     siteName: 'Manto',
     type: 'website',
