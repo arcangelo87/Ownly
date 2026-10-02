@@ -1,4 +1,4 @@
-# CLAUDE.md — Bottega
+# CLAUDE.md — Manto
 
 Read this at the start of every session. These rules are non-negotiable unless explicitly overridden.
 
@@ -6,7 +6,7 @@ Read this at the start of every session. These rules are non-negotiable unless e
 
 ## What we're building
 
-Bottega is a curated SME deal platform for Italy and Portugal. Business owners list their businesses for sale. Buyers browse structured deal pages. The product must feel like a trusted financial tool — not a startup, not a marketplace, not a real estate website.
+Manto is a curated SME deal platform for Italy and Portugal. Business owners list their businesses for sale. Buyers browse structured deal pages. The product must feel like a trusted financial tool — not a startup, not a marketplace, not a real estate website.
 
 Solo-operated, bootstrapped. Keep the codebase simple. No unnecessary abstractions.
 
@@ -59,7 +59,7 @@ Full requirements for each epic are in bottega-product-doc.md.
 - No `any` TypeScript types
 - Never hard delete user data — use `deleted_at` soft delete
 - RLS enabled on all Supabase tables from day one
-- `/en/institutional-buy-side` is a public URL shared with investors. Never rename, move or delete it, and never add middleware that redirects or rewrites it. If it must change, add a 301 redirect from `/en/institutional-buy-side` to `https://bottega.fyi` in the same change
+- `/en/institutional-buy-side` is a public URL shared with investors. Never rename, move or delete it, and never add middleware that redirects or rewrites it. If it must change, add a 301 redirect from `/en/institutional-buy-side` to `https://onmanto.com` in the same change
 
 ---
 

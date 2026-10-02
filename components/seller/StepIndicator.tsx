@@ -19,7 +19,7 @@ export function StepIndicator({ currentStep }: StepIndicatorProps) {
     <>
       {/* Desktop sidebar */}
       <aside className="hidden md:flex w-60 flex-shrink-0 flex-col border-r border-[var(--color-border)] px-8 py-12 sticky top-0 h-screen">
-        <Link href={`/${locale}`}><Logo width={96} className="mb-[52px]" /></Link>
+        <Link href={`/${locale}`}><Logo width={120} className="mb-[52px]" /></Link>
         <ol className="flex flex-col">
           {STEPS.map((key, i) => {
             const step = i + 1;

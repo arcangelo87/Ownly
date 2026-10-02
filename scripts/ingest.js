@@ -68,7 +68,7 @@ async function fetchUrl(url) {
 // Anthropic extraction
 // ---------------------------------------------------------------------------
 
-const SYSTEM_PROMPT = `You are a specialist M&A copywriter and analyst for Bottega, a curated deal platform for SME acquisitions in Italy and Portugal.
+const SYSTEM_PROMPT = `You are a specialist M&A copywriter and analyst for Manto, a curated deal platform for SME acquisitions in Italy and Portugal.
 
 Your job is to extract raw facts from source text and rewrite them into a structured listing for sophisticated international buyers. You must NEVER copy source text verbatim — all prose fields must be fully rewritten.
 

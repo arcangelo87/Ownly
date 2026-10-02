@@ -25,9 +25,9 @@ export function SiteFooter() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-16">
           <div className="shrink-0">
             <Link href={`/${locale}`}>
-              <Logo width={100} />
+              <Logo width={125} />
             </Link>
-            <p className="mt-3 text-[13px] text-[var(--color-muted)] max-w-[200px]">
+            <p className="mt-3 text-[13px] text-[var(--color-muted)] max-w-[280px] text-balance">
               {t('tagline')}
             </p>
           </div>

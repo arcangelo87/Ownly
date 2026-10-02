@@ -131,7 +131,7 @@
     "about": "Chi siamo"
   },
   "footer": {
-    "tagline": "L'acquisto di aziende reali in Portogallo.",
+    "tagline": "Compra e vendi aziende reali in Portogallo e Italia.",
     "sell": "Vendi la tua azienda",
     "brokers": "Per i mediatori",
     "buyers": "Per gli acquirenti",
@@ -140,8 +140,11 @@
     "contact": "Contatti",
     "privacy": "Privacy Policy",
     "terms": "Termini",
-    "copyright": "© 2026 Bottega",
-    "linkedin": "LinkedIn"
+    "copyright": "© 2026 Manto",
+    "linkedin": "LinkedIn",
+    "buySide": "Acquirenti individuali",
+    "institutionalBuySide": "Acquirenti strategici",
+    "sellSide": "Titolari d'azienda"
   },
   "home": {
     "hero": {
@@ -155,30 +158,30 @@
     "problem": {
       "sellersLabel": "Venditori",
       "sellersQuote": "Conosco ogni angolo di questa azienda. Non so da dove cominciare per venderla.",
-      "response1": "Le aziende che Bottega presenta non sono speculative.",
+      "response1": "Le aziende che Manto presenta non sono speculative.",
       "response2": "Hanno flusso di cassa, sono consolidate e gestite dai fondatori.",
       "response3": "La loro sfida non è la fattibilità: è la transizione.",
       "brokersLabel": "Mediatori",
       "brokersQuote": "Passo più tempo a spiegare l'azienda che a venderla.",
       "buyersLabel": "Acquirenti",
       "buyersQuote": "Metà degli annunci che guardo non hanno abbastanza informazioni per fare un primo passo.",
-      "closer": "Bottega è costruita per questo."
+      "closer": "Manto è costruito per questo."
     },
     "how": {
       "heading": "Come funziona",
       "step1Label": "Invia i tuoi dati",
       "step1Desc": "Raccontaci la tua azienda in 4 brevi passaggi. Nessun gergo. Nessun commercialista richiesto.",
       "step2Label": "Noi la strutturiamo",
-      "step2Desc": "Bottega scrive la tua pagina di annuncio: chiara, professionale, pronta per gli acquirenti.",
+      "step2Desc": "Manto scrive la tua pagina di annuncio: chiara, professionale, pronta per gli acquirenti.",
       "step3Label": "Gli acquirenti ti contattano",
-      "step3Desc": "Le richieste serie arrivano tramite Bottega. Sei tu a decidere con chi impegnarti.",
+      "step3Desc": "Le richieste serie arrivano tramite Manto. Sei tu a decidere con chi impegnarti.",
       "reassurance": "Gratuito per iniziare. Nessun impegno finché non sei pronto.",
       "cta": "Metti in vendita la tua azienda →"
     },
     "why": {
       "heading": "Costruita per aziende che non hanno bisogno di un pitch deck.",
-      "prose1": "La maggior parte delle piattaforme di deal è progettata per le startup: aziende ad alta crescita che raccolgono capitali, bruciano liquidità, scommettendo su un futuro. Bottega è costruita per l'opposto: aziende con flusso di cassa, clienti reali e anni di storia.",
-      "prose2": "Queste aziende non hanno bisogno di hype. Hanno bisogno di una presentazione chiara: i bilanci inquadrati correttamente, la storia raccontata bene, così l'acquirente giusto può capire cosa sta guardando. Questo fa Bottega.",
+      "prose1": "La maggior parte delle piattaforme di deal è progettata per le startup: aziende ad alta crescita che raccolgono capitali, bruciano liquidità, scommettendo su un futuro. Manto è costruito per l'opposto: aziende con flusso di cassa, clienti reali e anni di storia.",
+      "prose2": "Queste aziende non hanno bisogno di hype. Hanno bisogno di una presentazione chiara: i bilanci inquadrati correttamente, la storia raccontata bene, così l'acquirente giusto può capire cosa sta guardando. Questo fa Manto.",
       "stat1Value": "Italia e Portogallo",
       "stat1Label": "L'unica piattaforma focalizzata su questi due mercati",
       "stat2Value": "Selettiva",
@@ -188,7 +191,7 @@
     },
     "brokers": {
       "heading": "Per mediatori e advisor M&A",
-      "body": "Se rappresenti venditori, Bottega offre ai tuoi annunci una casa migliore.",
+      "body": "Se rappresenti venditori, Manto offre ai tuoi annunci una casa migliore.",
       "cta": "Scopri di più →"
     },
     "cta": {
@@ -200,7 +203,7 @@
   "sellers": {
     "hero": {
       "h1": "La tua azienda merita un acquirente serio. Ti aiutiamo a trovarlo.",
-      "sub": "Bottega trasforma le informazioni sulla tua azienda in una pagina di annuncio strutturata e la presenta agli acquirenti che cercano attivamente in Italia e Portogallo. Gratuito per iniziare, nessuna commissione di mediazione.",
+      "sub": "Manto trasforma le informazioni sulla tua azienda in una pagina di annuncio strutturata e la presenta agli acquirenti che cercano attivamente in Italia e Portogallo. Gratuito per iniziare, nessuna commissione di mediazione.",
       "cta": "Metti in vendita la tua azienda →",
       "browseCta": "Sfoglia le aziende",
       "supporting": "Richiede 10 minuti. Nessun impegno finché non sei pronto."
@@ -219,7 +222,7 @@
       "freeHeading": "Gratuito",
       "freeTagline": "Pubblica il tuo annuncio e inizia a ricevere richieste.",
       "freePrice": "€0. Nessun impegno.",
-      "free1": "Annuncio su Bottega",
+      "free1": "Annuncio su Manto",
       "free2": "Pagina pubblica del deal",
       "free5": "Fino a 10 richieste in entrata",
       "freeCta": "Metti in vendita la tua azienda gratis →",
@@ -266,11 +269,11 @@
       "step1Label": "Compila i tuoi dati",
       "step1Desc": "Un modulo guidato in 4 passaggi. Nessun gergo. Richiede circa 10 minuti.",
       "step2Label": "Noi revisioniamo e scriviamo il tuo annuncio",
-      "step2Desc": "Bottega scrive la descrizione dell'annuncio sulla base dei tuoi input. Potremmo contattarti con una breve chiamata per colmare le lacune.",
+      "step2Desc": "Manto scrive la descrizione dell'annuncio sulla base dei tuoi input. Potremmo contattarti con una breve chiamata per colmare le lacune.",
       "step3Label": "Il tuo annuncio va online",
-      "step3Desc": "Pubblicato su Bottega, visibile agli acquirenti che cercano in Italia e Portogallo.",
+      "step3Desc": "Pubblicato su Manto, visibile agli acquirenti che cercano in Italia e Portogallo.",
       "step4Label": "Le richieste arrivano tramite noi",
-      "step4Desc": "Gli acquirenti contattano Bottega. Noi revisioniamo e inoltriamo a te. Sei tu a decidere con chi impegnarti.",
+      "step4Desc": "Gli acquirenti contattano Manto. Noi revisioniamo e inoltriamo a te. Sei tu a decidere con chi impegnarti.",
       "reassurance": "Nessuna esclusiva. Nessun costo iniziale sul piano gratuito. Puoi ritirare il tuo annuncio in qualsiasi momento."
     },
     "pricing": {
@@ -278,7 +281,7 @@
     },
     "quotes": {
       "heading": "Cosa dicono i venditori",
-      "quote1Text": "Ero preoccupato per chi avrebbe visto i miei dati finanziari. Bottega mi ha dato il pieno controllo su cosa veniva condiviso e quando.",
+      "quote1Text": "Ero preoccupato per chi avrebbe visto i miei dati finanziari. Manto mi ha dato il pieno controllo su cosa veniva condiviso e quando.",
       "quote1Name": "Francesca",
       "quote1Meta": "Manifattura, Italia",
       "quote2Text": "Mi aspettavo un processo lungo. Il modulo mi ha richiesto meno di 20 minuti e l'annuncio era attivo in pochi giorni.",
@@ -300,13 +303,13 @@
   "brokers": {
     "hero": {
       "h1": "Annunci migliori. Richieste più qualificate.",
-      "sub": "Bottega offre ai tuoi deal una casa strutturata: una pagina professionale che gli acquirenti possono valutare correttamente. Mantieni il rapporto con il cliente. Noi gestiamo la presentazione e le richieste in entrata.",
+      "sub": "Manto offre ai tuoi deal una casa strutturata: una pagina professionale che gli acquirenti possono valutare correttamente. Mantieni il rapporto con il cliente. Noi gestiamo la presentazione e le richieste in entrata.",
       "cta": "Pubblica il tuo primo deal gratis →",
       "ctaSecondary": "Contattaci →"
     },
     "problem": {
       "heading": "La maggior parte delle presentazioni di deal non rende giustizia all'azienda.",
-      "prose": "Un PDF inviato a freddo. Un link Dropbox con dati finanziari non strutturati. Un annuncio su un sito di classificati con tre righe di descrizione. Gli acquirenti scorrono oltre. Le conversazioni non iniziano mai.\n\nHai fatto il lavoro per rappresentare il venditore. Bottega fa in modo che gli acquirenti possano vederlo."
+      "prose": "Un PDF inviato a freddo. Un link Dropbox con dati finanziari non strutturati. Un annuncio su un sito di classificati con tre righe di descrizione. Gli acquirenti scorrono oltre. Le conversazioni non iniziano mai.\n\nHai fatto il lavoro per rappresentare il venditore. Manto fa in modo che gli acquirenti possano vederlo."
     },
     "features": {
       "heading": "Una pagina di deal di cui i tuoi clienti saranno orgogliosi.",
@@ -315,13 +318,13 @@
       "feat2Label": "Dati finanziari protetti da NDA",
       "feat2Desc": "I dettagli finanziari completi restano protetti. Gli acquirenti che vogliono andare avanti inviano una richiesta. Tu ricevi notifica e hai il controllo su ciò che viene condiviso.",
       "feat3Label": "Instradamento delle richieste degli acquirenti",
-      "feat3Desc": "Le richieste degli acquirenti interessati arrivano tramite Bottega e vengono instradate direttamente a te. Nessuna chiamata a freddo al tuo cliente. Nessun bypass del mediatore.",
+      "feat3Desc": "Le richieste degli acquirenti interessati arrivano tramite Manto e vengono instradate direttamente a te. Nessuna chiamata a freddo al tuo cliente. Nessun bypass del mediatore.",
       "feat4Label": "Link condivisibile del deal",
       "feat4Desc": "Ogni deal ottiene un URL pulito che puoi condividere nel tuo outreach. Funziona come riepilogo del tuo deal, non come sostituto del tuo processo."
     },
     "notABroker": {
       "heading": "Presentiamo i deal. Non facciamo concorrenza per essi.",
-      "prose1": "Bottega non prende commissioni di successo sui deal presentati dai mediatori. Non siamo un advisor concorrente. Siamo infrastruttura di presentazione: il front-end professionale che i tuoi annunci meritano.",
+      "prose1": "Manto non prende commissioni di successo sui deal presentati dai mediatori. Non siamo un advisor concorrente. Siamo infrastruttura di presentazione: il front-end professionale che i tuoi annunci meritano.",
       "prose2": "Tu gestisci il rapporto con il cliente. Tu gestisci il processo. Noi facciamo sì che il tuo annuncio sembri meritare seria attenzione."
     },
     "pricing": {
@@ -329,7 +332,7 @@
       "freeHeading": "Gratuito",
       "freePrice": "€0. Nessun impegno.",
       "free1": "Fino a 5 annunci attivi",
-      "free2": "Pagina completa del deal per annuncio, scritta da Bottega",
+      "free2": "Pagina completa del deal per annuncio, scritta da Manto",
       "free3": "Instradamento delle richieste degli acquirenti a te",
       "free4": "Link condivisibile del deal per annuncio",
       "freeCta": "Pubblica il tuo primo deal →",
@@ -346,7 +349,7 @@
       "reassurance": "Il piano gratuito copre tutto ciò di cui hai bisogno per iniziare. Nessuna carta di credito. Nessuna chiamata da prenotare. Pubblica il tuo deal."
     },
     "founding": {
-      "heading": "Aiuta a definire ciò che Bottega costruisce per i consulenti.",
+      "heading": "Aiuta a definire ciò che Manto costruisce per i consulenti.",
       "prose": "Stiamo collaborando con un piccolo gruppo di mediatori in Italia e Portogallo per capire cosa conta davvero, prima di costruirlo. Se lavori su deal in questo mercato, vorremmo parlare con te.",
       "namePlaceholder": "Nome",
       "emailPlaceholder": "Email",
@@ -399,16 +402,16 @@
     },
     "faq": {
       "heading": "FAQ",
-      "q1": "Cosa fa esattamente Bottega?",
+      "q1": "Cosa fa esattamente Manto?",
       "a1": "Ci dici cosa stai cercando: budget, settore, quanto vuoi essere coinvolto nella gestione quotidiana. Da lì, troviamo opportunità corrispondenti, incluse quelle non pubblicamente in vendita, ti accompagniamo nel finanziamento e nella due diligence, e ti mettiamo in contatto con un piccolo gruppo di avvocati, commercialisti ed esperti di finanziamento selezionati, spesso a condizioni migliori di quelle che otterresti da solo.",
       "q2": "A chi si rivolge?",
       "a2": "Acquirenti alle prime armi, operatori indipendenti e persone in cambio di carriera che vogliono possedere un'attività in Portogallo.",
       "q3": "Perché non usare semplicemente ChatGPT o Claude per questo?",
-      "a3": "Gli strumenti di IA possono dirti come appare un buon affare, ma non possono trovare opportunità fuori mercato per te, raccomandare l'avvocato giusto per la tua struttura specifica, metterti in contatto con un commercialista che ha già gestito questo tipo di attività, o negoziare condizioni di finanziamento migliori per tuo conto. Bottega unisce il lavoro sul campo a una rete curata di persone che hanno chiuso affari come il tuo, in base ai tuoi criteri e budget. Usa l'IA per la formazione generale. Usa Bottega per le persone e il lavoro che fanno davvero chiudere un affare.",
-      "q4": "Che tipo di attività Bottega può aiutarmi a trovare?",
+      "a3": "Gli strumenti di IA possono dirti come appare un buon affare, ma non possono trovare opportunità fuori mercato per te, raccomandare l'avvocato giusto per la tua struttura specifica, metterti in contatto con un commercialista che ha già gestito questo tipo di attività, o negoziare condizioni di finanziamento migliori per tuo conto. Manto unisce il lavoro sul campo a una rete curata di persone che hanno chiuso affari come il tuo, in base ai tuoi criteri e budget. Usa l'IA per la formazione generale. Usa Manto per le persone e il lavoro che fanno davvero chiudere un affare.",
+      "q4": "Che tipo di attività Manto può aiutarmi a trovare?",
       "a4": "Attività reali e profittevoli che rispondono a un bisogno quotidiano: studi di contabilità, climatizzazione, studi dentistici, negozi di riparazione, gestione di condomini, distributori automatici, piccola manifattura, hotel boutique, retail alimentare, spazi ufficio. Niente startup, niente crypto, niente pitch deck SaaS. Se non genera già soldi facendo qualcosa di tangibile, non è un fit.",
       "q5": "Quanto costa?",
-      "a5": "Bottega non fa pagare gli acquirenti. Siamo in fase di accesso anticipato, concentrati a creare valore reale prima di definire come questo si sostiene. Se cambiasse, lo saprai prima che accada."
+      "a5": "Manto non fa pagare gli acquirenti. Siamo in fase di accesso anticipato, concentrati a creare valore reale prima di definire come questo si sostiene. Se cambiasse, lo saprai prima che accada."
     },
     "cta": {
       "headingLead": "Unisciti come uno dei primi acquirenti in",
@@ -449,7 +452,7 @@
     "s4Heading": "Con chi le condividiamo",
     "s4Body": "Le tue informazioni possono essere condivise con consulenti selezionati (avvocati, commercialisti, esperti di finanziamento) qualora pertinenti alla tua ricerca, e solo con il tuo consenso. Non condividiamo i tuoi dati con terzi senza il tuo consenso. Utilizziamo Supabase (ospitato nell'UE) per l'archiviazione dei dati e potremmo utilizzare Resend per le email transazionali.",
     "s5Heading": "Venditori di aziende",
-    "s5Body": "Se sei un imprenditore il cui annuncio appare su Bottega, sia esso inviato direttamente o reperito da una piattaforma terza pubblica, i tuoi dati sono gestiti con cura. Le informazioni utilizzate per descrivere la tua azienda servono esclusivamente a presentarla agli acquirenti rilevanti. I dati di contatto del venditore e le informazioni sensibili vengono condivisi solo con acquirenti che hanno firmato un accordo di riservatezza. Se desideri aggiornare i tuoi dati, contatta privacy@bottegaventures.com e provvederemo prontamente.",
+    "s5Body": "Se sei un imprenditore il cui annuncio appare su Manto, sia esso inviato direttamente o reperito da una piattaforma terza pubblica, i tuoi dati sono gestiti con cura. Le informazioni utilizzate per descrivere la tua azienda servono esclusivamente a presentarla agli acquirenti rilevanti. I dati di contatto del venditore e le informazioni sensibili vengono condivisi solo con acquirenti che hanno firmato un accordo di riservatezza. Se desideri aggiornare i tuoi dati, contatta privacy@bottegaventures.com e provvederemo prontamente.",
     "s6Heading": "Conservazione dei dati",
     "s6Body": "I dati degli acquirenti vengono conservati per 24 mesi dall'ultima interazione con noi. Puoi richiedere la cancellazione in qualsiasi momento inviando un'email a privacy@bottegaventures.com.",
     "s7Heading": "I tuoi diritti",
@@ -462,18 +465,18 @@
   "termsPage": {
     "title": "Termini di Servizio",
     "lastUpdated": "Ultimo aggiornamento: giugno 2026",
-    "s1Heading": "Informazioni su Bottega",
-    "s1Body": "Bottega Ventures Ltd (numero di società 11114051), 167-169 Great Portland Street, 5th Floor, Londra, Inghilterra, W1W 5PF, gestisce questa piattaforma. Bottega aiuta privati a trovare e acquisire aziende in Portogallo. Non siamo un mediatore, agente o consulente finanziario. Non percepiamo commissioni di successo, non gestiamo fondi dei clienti e non rappresentiamo nessuna delle parti in una transazione.",
+    "s1Heading": "Informazioni su Manto",
+    "s1Body": "Bottega Ventures Ltd (numero di società 11114051), 167-169 Great Portland Street, 5th Floor, Londra, Inghilterra, W1W 5PF, gestisce questa piattaforma. Manto aiuta privati a trovare e acquisire aziende in Portogallo. Non siamo un mediatore, agente o consulente finanziario. Non percepiamo commissioni di successo, non gestiamo fondi dei clienti e non rappresentiamo nessuna delle parti in una transazione.",
     "s2Heading": "Responsabilità del venditore",
-    "s2Body": "Inviando un annuncio, confermi che le informazioni fornite sono accurate e non fuorvianti. Sei responsabile del contenuto del tuo annuncio. Bottega può modificare gli annunci per chiarezza e presentazione, ma i fatti sottostanti rimangono di tua responsabilità. Non includere informazioni riservate, diffamatorie o legalmente limitate.",
+    "s2Body": "Inviando un annuncio, confermi che le informazioni fornite sono accurate e non fuorvianti. Sei responsabile del contenuto del tuo annuncio. Manto può modificare gli annunci per chiarezza e presentazione, ma i fatti sottostanti rimangono di tua responsabilità. Non includere informazioni riservate, diffamatorie o legalmente limitate.",
     "s3Heading": "Responsabilità dell'acquirente",
     "s3Body": "Richiedendo l'accesso, confermi di avere un interesse genuino nell'acquisire un'azienda in Portogallo. Accetti di non condividere le informazioni degli annunci o i dettagli del venditore con terzi.",
     "s4Heading": "Nessuna garanzia di transazione",
-    "s4Body": "Bottega non garantisce che un'introduzione o un annuncio si traduca in una transazione completata. Non verifichiamo l'accuratezza dei dati finanziari forniti dai venditori. Si consiglia a tutti gli acquirenti di condurre una due diligence indipendente prima di prendere qualsiasi decisione di acquisizione.",
+    "s4Body": "Manto non garantisce che un'introduzione o un annuncio si traduca in una transazione completata. Non verifichiamo l'accuratezza dei dati finanziari forniti dai venditori. Si consiglia a tutti gli acquirenti di condurre una due diligence indipendente prima di prendere qualsiasi decisione di acquisizione.",
     "s5Heading": "Rimozione degli annunci",
-    "s5Body": "Bottega si riserva il diritto di rimuovere qualsiasi annuncio che contenga contenuti inaccurati, fuorvianti o inappropriati, o che violi questi termini. I proprietari delle aziende possono richiedere la rimozione del proprio annuncio in qualsiasi momento contattando privacy@bottegaventures.com.",
+    "s5Body": "Manto si riserva il diritto di rimuovere qualsiasi annuncio che contenga contenuti inaccurati, fuorvianti o inappropriati, o che violi questi termini. I proprietari delle aziende possono richiedere la rimozione del proprio annuncio in qualsiasi momento contattando privacy@bottegaventures.com.",
     "s6Heading": "Limitazione di responsabilità",
-    "s6Body": "Nella misura massima consentita dalla legge, Bottega non è responsabile per perdite o danni derivanti dall'uso di questa piattaforma, dall'affidamento sul contenuto degli annunci o dall'esito di qualsiasi transazione. La nostra responsabilità totale nei confronti di qualsiasi utente non supererà le commissioni pagate da tale utente nei 12 mesi precedenti la richiesta.",
+    "s6Body": "Nella misura massima consentita dalla legge, Manto non è responsabile per perdite o danni derivanti dall'uso di questa piattaforma, dall'affidamento sul contenuto degli annunci o dall'esito di qualsiasi transazione. La nostra responsabilità totale nei confronti di qualsiasi utente non supererà le commissioni pagate da tale utente nei 12 mesi precedenti la richiesta.",
     "s7Heading": "Legge applicabile",
     "s7Body": "Questi termini sono regolati dalle leggi dell'Inghilterra e del Galles. Qualsiasi controversia sarà soggetta alla giurisdizione esclusiva dei tribunali dell'Inghilterra e del Galles."
   },
