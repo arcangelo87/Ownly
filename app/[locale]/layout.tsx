@@ -29,13 +29,13 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Bottega',
-    template: '%s | Bottega',
+    default: 'Manto',
+    template: '%s | Manto',
   },
   description:
     'Curated SME deals in Italy and Portugal. Browse structured deal pages, review financials, and connect with business owners looking to sell.',
   openGraph: {
-    siteName: 'Bottega',
+    siteName: 'Manto',
     type: 'website',
   },
 };

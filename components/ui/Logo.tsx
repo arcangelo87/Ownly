@@ -13,7 +13,7 @@ export function Logo({ className, width = 108 }: LogoProps) {
       height={height}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="Bottega"
+      aria-label="Manto"
       role="img"
       className={className}
     >
@@ -26,7 +26,7 @@ export function Logo({ className, width = 108 }: LogoProps) {
         letterSpacing="-0.5"
         fill="currentColor"
       >
-        Bottega
+        Manto
       </text>
     </svg>
   );

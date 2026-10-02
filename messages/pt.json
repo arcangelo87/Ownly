@@ -140,7 +140,7 @@
     "contact": "Contacto",
     "privacy": "Política de Privacidade",
     "terms": "Termos",
-    "copyright": "© 2026 Bottega",
+    "copyright": "© 2026 Manto",
     "linkedin": "LinkedIn"
   },
   "home": {
@@ -155,30 +155,30 @@
     "problem": {
       "sellersLabel": "Vendedores",
       "sellersQuote": "Conheço cada canto deste negócio. Não sei por onde começar quando se trata de o vender.",
-      "response1": "Os negócios que a Bottega lista não são especulativos.",
+      "response1": "Os negócios que o Manto lista não são especulativos.",
       "response2": "Têm fluxo de caixa, são comprovados e geridos pelos fundadores.",
       "response3": "O desafio não é a viabilidade: é a transição.",
       "brokersLabel": "Mediadores",
       "brokersQuote": "Passo mais tempo a explicar o negócio do que a vendê-lo.",
       "buyersLabel": "Compradores",
       "buyersQuote": "Metade dos anúncios que analiso não têm informação suficiente para dar um primeiro passo.",
-      "closer": "A Bottega foi criada para isto."
+      "closer": "O Manto foi criado para isto."
     },
     "how": {
       "heading": "Como funciona",
       "step1Label": "Envie os seus dados",
       "step1Desc": "Conte-nos sobre o seu negócio em 4 passos curtos. Sem jargão. Sem necessidade de contabilista.",
       "step2Label": "Nós estruturamos",
-      "step2Desc": "A Bottega escreve a sua página de anúncio: clara, profissional, pronta para compradores.",
+      "step2Desc": "O Manto escreve a sua página de anúncio: clara, profissional, pronta para compradores.",
       "step3Label": "Os compradores entram em contacto",
-      "step3Desc": "As consultas sérias chegam através da Bottega. É você quem decide com quem se envolver.",
+      "step3Desc": "As consultas sérias chegam através do Manto. É você quem decide com quem se envolver.",
       "reassurance": "Gratuito para começar. Sem compromisso até estar pronto.",
       "cta": "Anunciar o seu negócio →"
     },
     "why": {
       "heading": "Criada para negócios que não precisam de um pitch deck.",
-      "prose1": "A maioria das plataformas de negócios é projetada para startups: empresas de alto crescimento que angariaram capital, a consumir dinheiro, a apostar num futuro. A Bottega foi criada para o oposto: negócios com fluxo de caixa, clientes reais e anos de história.",
-      "prose2": "Estes negócios não precisam de hype. Precisam de uma apresentação clara: finanças bem enquadradas, história bem contada, para que o comprador certo reconheça o que está a ver. É isso que a Bottega faz.",
+      "prose1": "A maioria das plataformas de negócios é projetada para startups: empresas de alto crescimento que angariaram capital, a consumir dinheiro, a apostar num futuro. O Manto foi criado para o oposto: negócios com fluxo de caixa, clientes reais e anos de história.",
+      "prose2": "Estes negócios não precisam de hype. Precisam de uma apresentação clara: finanças bem enquadradas, história bem contada, para que o comprador certo reconheça o que está a ver. É isso que o Manto faz.",
       "stat1Value": "Itália e Portugal",
       "stat1Label": "A única plataforma focada nestes dois mercados",
       "stat2Value": "Seletiva",
@@ -188,7 +188,7 @@
     },
     "brokers": {
       "heading": "Para mediadores e consultores M&A",
-      "body": "Se representa vendedores, a Bottega dá aos seus anúncios uma melhor casa.",
+      "body": "Se representa vendedores, o Manto dá aos seus anúncios uma melhor casa.",
       "cta": "Saiba mais →"
     },
     "cta": {
@@ -200,7 +200,7 @@
   "sellers": {
     "hero": {
       "h1": "O seu negócio merece um comprador sério. Ajudamo-lo a encontrá-lo.",
-      "sub": "A Bottega transforma as informações do seu negócio numa página de anúncio estruturada e coloca-a à frente de compradores que procuram ativamente em Itália e Portugal. Gratuito para começar, sem comissões de mediação.",
+      "sub": "O Manto transforma as informações do seu negócio numa página de anúncio estruturada e coloca-a à frente de compradores que procuram ativamente em Itália e Portugal. Gratuito para começar, sem comissões de mediação.",
       "cta": "Anunciar o seu negócio →",
       "browseCta": "Ver negócios",
       "supporting": "Demora 10 minutos. Sem compromisso até estar pronto."
@@ -219,7 +219,7 @@
       "freeHeading": "Gratuito",
       "freeTagline": "Publique o seu anúncio e comece a receber consultas.",
       "freePrice": "€0. Sem compromisso.",
-      "free1": "Anúncio na Bottega",
+      "free1": "Anúncio no Manto",
       "free2": "Página pública do anúncio",
       "free5": "Até 10 consultas de entrada",
       "freeCta": "Anunciar o seu negócio gratuitamente →",
@@ -266,11 +266,11 @@
       "step1Label": "Preencha os seus dados",
       "step1Desc": "Um formulário guiado em 4 passos. Sem jargão. Demora cerca de 10 minutos.",
       "step2Label": "Revemos e escrevemos o seu anúncio",
-      "step2Desc": "A Bottega escreve a descrição do anúncio com base nas suas informações. Podemos fazer um breve acompanhamento para preencher lacunas.",
+      "step2Desc": "O Manto escreve a descrição do anúncio com base nas suas informações. Podemos fazer um breve acompanhamento para preencher lacunas.",
       "step3Label": "O seu anúncio fica ativo",
-      "step3Desc": "Publicado na Bottega, visível a compradores que procuram em Itália e Portugal.",
+      "step3Desc": "Publicado no Manto, visível a compradores que procuram em Itália e Portugal.",
       "step4Label": "As consultas chegam através de nós",
-      "step4Desc": "Os compradores contactam através da Bottega. Revemos e encaminhamos para si. É você quem decide com quem se envolver.",
+      "step4Desc": "Os compradores contactam através do Manto. Revemos e encaminhamos para si. É você quem decide com quem se envolver.",
       "reassurance": "Sem exclusividade. Sem custos iniciais no plano gratuito. Pode retirar o seu anúncio a qualquer momento."
     },
     "pricing": {
@@ -278,7 +278,7 @@
     },
     "quotes": {
       "heading": "O que dizem os vendedores",
-      "quote1Text": "Estava preocupado com quem veria as minhas finanças. A Bottega deu-me controlo total sobre o que era partilhado e quando.",
+      "quote1Text": "Estava preocupado com quem veria as minhas finanças. O Manto deu-me controlo total sobre o que era partilhado e quando.",
       "quote1Name": "Francesca",
       "quote1Meta": "Indústria, Itália",
       "quote2Text": "Esperava um processo longo. O formulário demorou menos de 20 minutos e o anúncio ficou ativo em poucos dias.",
@@ -300,13 +300,13 @@
   "brokers": {
     "hero": {
       "h1": "Melhores anúncios. Consultas mais qualificadas.",
-      "sub": "A Bottega dá aos seus negócios uma casa estruturada: uma página profissional que os compradores podem avaliar corretamente. Mantém a relação com o cliente. Nós tratamos da apresentação e das consultas de entrada.",
+      "sub": "O Manto dá aos seus negócios uma casa estruturada: uma página profissional que os compradores podem avaliar corretamente. Mantém a relação com o cliente. Nós tratamos da apresentação e das consultas de entrada.",
       "cta": "Publicar o seu primeiro anúncio gratuitamente →",
       "ctaSecondary": "Falar connosco →"
     },
     "problem": {
       "heading": "A maioria das apresentações de negócios não faz justiça à empresa.",
-      "prose": "Um PDF enviado a frio. Uma ligação Dropbox com finanças não estruturadas. Um anúncio num site de classificados com três linhas de descrição. Os compradores passam adiante. As conversas nunca começam.\n\nFez o trabalho para representar o vendedor. A Bottega garante que os compradores o possam ver."
+      "prose": "Um PDF enviado a frio. Uma ligação Dropbox com finanças não estruturadas. Um anúncio num site de classificados com três linhas de descrição. Os compradores passam adiante. As conversas nunca começam.\n\nFez o trabalho para representar o vendedor. O Manto garante que os compradores o possam ver."
     },
     "features": {
       "heading": "Uma página de anúncio de que os seus clientes se orgulharão.",
@@ -315,13 +315,13 @@
       "feat2Label": "Finanças protegidas por NDA",
       "feat2Desc": "Os detalhes financeiros completos ficam protegidos. Os compradores que quiserem avançar submetem uma consulta. Recebe notificação e tem controlo sobre o que é partilhado.",
       "feat3Label": "Encaminhamento de consultas de compradores",
-      "feat3Desc": "As consultas de compradores interessados chegam através da Bottega e são encaminhadas diretamente para si. Sem chamadas a frio para o seu cliente. Sem contorno do mediador.",
+      "feat3Desc": "As consultas de compradores interessados chegam através do Manto e são encaminhadas diretamente para si. Sem chamadas a frio para o seu cliente. Sem contorno do mediador.",
       "feat4Label": "Ligação partilhável do anúncio",
       "feat4Desc": "Cada anúncio tem um URL limpo que pode partilhar no seu outreach. Funciona como resumo do seu anúncio, não como substituição do seu processo."
     },
     "notABroker": {
       "heading": "Apresentamos anúncios. Não competimos por eles.",
-      "prose1": "A Bottega não cobra comissões de sucesso em anúncios submetidos por mediadores. Não somos um consultor concorrente. Somos infraestrutura de apresentação: o front-end profissional que os seus anúncios merecem.",
+      "prose1": "O Manto não cobra comissões de sucesso em anúncios submetidos por mediadores. Não somos um consultor concorrente. Somos infraestrutura de apresentação: o front-end profissional que os seus anúncios merecem.",
       "prose2": "Você gere a relação com o cliente. Você gere o processo. Nós garantimos que o seu anúncio pareça merecer atenção séria."
     },
     "pricing": {
@@ -329,7 +329,7 @@
       "freeHeading": "Gratuito",
       "freePrice": "€0. Sem compromisso.",
       "free1": "Até 5 anúncios ativos",
-      "free2": "Página completa do anúncio por listagem, escrita pela Bottega",
+      "free2": "Página completa do anúncio por listagem, escrita pelo Manto",
       "free3": "Encaminhamento de consultas de compradores para si",
       "free4": "Ligação partilhável do anúncio por listagem",
       "freeCta": "Publicar o seu primeiro anúncio →",
@@ -346,7 +346,7 @@
       "reassurance": "O plano gratuito cobre tudo o que precisa para começar. Sem cartão de crédito. Sem chamadas a agendar. Publique o seu anúncio."
     },
     "founding": {
-      "heading": "Ajude a moldar o que a Bottega constrói para consultores.",
+      "heading": "Ajude a moldar o que o Manto constrói para consultores.",
       "prose": "Estamos a trabalhar com um pequeno grupo de mediadores em Itália e Portugal para perceber o que realmente importa, antes de o construirmos. Se trabalha com anúncios neste mercado, gostaríamos de falar consigo.",
       "namePlaceholder": "Nome",
       "emailPlaceholder": "Email",
@@ -399,16 +399,16 @@
     },
     "faq": {
       "heading": "FAQ",
-      "q1": "O que faz a Bottega exatamente?",
+      "q1": "O que faz o Manto exatamente?",
       "a1": "Diz nos o que procura: orçamento, setor, quão envolvido quer estar no dia a dia. A partir daí, encontramos oportunidades correspondentes, incluindo as que não estão publicamente anunciadas, acompanhamos o financiamento e a due diligence, e ligamo lo a um pequeno grupo de advogados, contabilistas e especialistas em financiamento, muitas vezes em melhores condições do que conseguiria por conta própria.",
       "q2": "Para quem é isto?",
       "a2": "Compradores de primeira viagem, operadores independentes e pessoas em mudança de carreira que querem ter um negócio em Portugal.",
       "q3": "Porque não usar apenas o ChatGPT ou o Claude para isto?",
-      "a3": "As ferramentas de IA podem dizer como é um bom negócio, mas não conseguem encontrar oportunidades fora do mercado por si, recomendar o advogado certo para a sua estrutura específica, ligá lo a um contabilista que já tenha lidado com este tipo de negócio, ou negociar melhores condições de financiamento em seu nome. A Bottega combina trabalho no terreno com uma rede curada de pessoas que já fecharam negócios como o seu, ajustada ao seu critério e orçamento. Use a IA para a educação geral. Use a Bottega para as pessoas e o trabalho que realmente fecham um negócio.",
-      "q4": "Que tipo de negócios a Bottega pode ajudar a encontrar?",
+      "a3": "As ferramentas de IA podem dizer como é um bom negócio, mas não conseguem encontrar oportunidades fora do mercado por si, recomendar o advogado certo para a sua estrutura específica, ligá lo a um contabilista que já tenha lidado com este tipo de negócio, ou negociar melhores condições de financiamento em seu nome. O Manto combina trabalho no terreno com uma rede curada de pessoas que já fecharam negócios como o seu, ajustada ao seu critério e orçamento. Use a IA para a educação geral. Use o Manto para as pessoas e o trabalho que realmente fecham um negócio.",
+      "q4": "Que tipo de negócios o Manto pode ajudar a encontrar?",
       "a4": "Negócios reais e rentáveis que respondem a uma necessidade do dia a dia: empresas de contabilidade, climatização, clínicas dentárias, lojas de reparação, gestão de condomínios, máquinas de vending, fabricação ligeira, hotéis boutique, retalho alimentar, espaços de escritório. Sem startups, sem cripto, sem pitch decks de SaaS. Se ainda não gera dinheiro a fazer algo tangível, não é um bom encaixe.",
       "q5": "Quanto custa?",
-      "a5": "A Bottega não cobra aos compradores. Estamos em fase de acesso antecipado, focados em criar valor real antes de definir como isto se sustenta. Se isso mudar, ficará a saber antes de acontecer."
+      "a5": "O Manto não cobra aos compradores. Estamos em fase de acesso antecipado, focados em criar valor real antes de definir como isto se sustenta. Se isso mudar, ficará a saber antes de acontecer."
     },
     "cta": {
       "headingLead": "Junte-se como um dos primeiros compradores em",
@@ -449,7 +449,7 @@
     "s4Heading": "Com quem as partilhamos",
     "s4Body": "As suas informações podem ser partilhadas com consultores selecionados (advogados, contabilistas, especialistas em financiamento) quando relevante para a sua procura, e apenas com o seu conhecimento. Não partilhamos os seus dados com terceiros sem o seu consentimento. Utilizamos o Supabase (alojado na UE) para armazenamento de dados e podemos utilizar o Resend para email transacional.",
     "s5Heading": "Vendedores de negócios",
-    "s5Body": "Se é um proprietário de negócio cujo anúncio aparece na Bottega, quer tenha sido submetido diretamente ou obtido de uma plataforma pública de terceiros, os seus dados são tratados com cuidado. As informações utilizadas para descrever o seu negócio servem apenas para o apresentar a compradores relevantes. Os dados de contacto do vendedor e as informações sensíveis são partilhados apenas com compradores que assinaram um acordo de confidencialidade. Se desejar atualizar os seus dados, contacte privacy@bottegaventures.com e trataremos do assunto prontamente.",
+    "s5Body": "Se é um proprietário de negócio cujo anúncio aparece no Manto, quer tenha sido submetido diretamente ou obtido de uma plataforma pública de terceiros, os seus dados são tratados com cuidado. As informações utilizadas para descrever o seu negócio servem apenas para o apresentar a compradores relevantes. Os dados de contacto do vendedor e as informações sensíveis são partilhados apenas com compradores que assinaram um acordo de confidencialidade. Se desejar atualizar os seus dados, contacte privacy@bottegaventures.com e trataremos do assunto prontamente.",
     "s6Heading": "Retenção de dados",
     "s6Body": "Os dados dos compradores são retidos por 24 meses a partir da sua última interação connosco. Pode solicitar a eliminação a qualquer momento enviando um email para privacy@bottegaventures.com.",
     "s7Heading": "Os seus direitos",
@@ -462,18 +462,18 @@
   "termsPage": {
     "title": "Termos de Serviço",
     "lastUpdated": "Última atualização: junho de 2026",
-    "s1Heading": "Sobre a Bottega",
-    "s1Body": "A Bottega Ventures Ltd (número de empresa 11114051), 167-169 Great Portland Street, 5th Floor, Londres, Inglaterra, W1W 5PF, opera esta plataforma. A Bottega ajuda particulares a encontrar e adquirir negócios em Portugal. Não somos um mediador, agente ou consultor financeiro. Não cobramos comissões de sucesso, não gerimos fundos de clientes nem representamos nenhuma das partes numa transação.",
+    "s1Heading": "Sobre o Manto",
+    "s1Body": "A Bottega Ventures Ltd (número de empresa 11114051), 167-169 Great Portland Street, 5th Floor, Londres, Inglaterra, W1W 5PF, opera esta plataforma. O Manto ajuda particulares a encontrar e adquirir negócios em Portugal. Não somos um mediador, agente ou consultor financeiro. Não cobramos comissões de sucesso, não gerimos fundos de clientes nem representamos nenhuma das partes numa transação.",
     "s2Heading": "Responsabilidades do vendedor",
-    "s2Body": "Ao submeter um anúncio, confirma que as informações fornecidas são precisas e não enganosas. É responsável pelo conteúdo do seu anúncio. A Bottega pode editar anúncios para clareza e apresentação, mas os factos subjacentes continuam a ser da sua responsabilidade. Não inclua informações confidenciais, difamatórias ou legalmente restritas.",
+    "s2Body": "Ao submeter um anúncio, confirma que as informações fornecidas são precisas e não enganosas. É responsável pelo conteúdo do seu anúncio. O Manto pode editar anúncios para clareza e apresentação, mas os factos subjacentes continuam a ser da sua responsabilidade. Não inclua informações confidenciais, difamatórias ou legalmente restritas.",
     "s3Heading": "Responsabilidades do comprador",
     "s3Body": "Ao solicitar acesso, confirma que tem um interesse genuíno em adquirir um negócio em Portugal. Concorda em não partilhar informações dos anúncios ou dados do vendedor com terceiros.",
     "s4Heading": "Sem garantia de transação",
-    "s4Body": "A Bottega não garante que qualquer apresentação ou anúncio resulte numa transação concluída. Não verificamos a exatidão dos dados financeiros fornecidos pelos vendedores. Todos os compradores são aconselhados a realizar due diligence independente antes de tomar qualquer decisão de aquisição.",
+    "s4Body": "O Manto não garante que qualquer apresentação ou anúncio resulte numa transação concluída. Não verificamos a exatidão dos dados financeiros fornecidos pelos vendedores. Todos os compradores são aconselhados a realizar due diligence independente antes de tomar qualquer decisão de aquisição.",
     "s5Heading": "Remoção de anúncios",
-    "s5Body": "A Bottega reserva-se o direito de remover qualquer anúncio que contenha conteúdo impreciso, enganoso ou inadequado, ou que viole estes termos. Os proprietários de negócios podem solicitar a remoção do seu anúncio a qualquer momento contactando privacy@bottegaventures.com.",
+    "s5Body": "O Manto reserva-se o direito de remover qualquer anúncio que contenha conteúdo impreciso, enganoso ou inadequado, ou que viole estes termos. Os proprietários de negócios podem solicitar a remoção do seu anúncio a qualquer momento contactando privacy@bottegaventures.com.",
     "s6Heading": "Limitação de responsabilidade",
-    "s6Body": "Na máxima extensão permitida por lei, a Bottega não é responsável por quaisquer perdas ou danos decorrentes da utilização desta plataforma, da confiança no conteúdo dos anúncios ou do resultado de qualquer transação. A nossa responsabilidade total perante qualquer utilizador não excederá as comissões pagas por esse utilizador nos 12 meses anteriores à reclamação.",
+    "s6Body": "Na máxima extensão permitida por lei, o Manto não é responsável por quaisquer perdas ou danos decorrentes da utilização desta plataforma, da confiança no conteúdo dos anúncios ou do resultado de qualquer transação. A nossa responsabilidade total perante qualquer utilizador não excederá as comissões pagas por esse utilizador nos 12 meses anteriores à reclamação.",
     "s7Heading": "Lei aplicável",
     "s7Body": "Estes termos são regidos pelas leis da Inglaterra e do País de Gales. Quaisquer litígios estarão sujeitos à jurisdição exclusiva dos tribunais da Inglaterra e do País de Gales."
   },
@@ -714,7 +714,7 @@
       "note": "Confidencial desde a primeira chamada. Sem compromisso de avançar."
     },
     "whyUs": {
-      "heading": "Porquê vender com a Bottega?",
+      "heading": "Porquê vender com o Manto?",
       "item1Label": "Confidencial",
       "item1Desc": "Nada chega a um comprador, a um concorrente ou à sua própria equipa sem a sua autorização.",
       "item2Label": "Especialista no setor",
@@ -747,11 +747,11 @@
     },
     "faq": {
       "heading": "Perguntas frequentes",
-      "q1": "O que faz a Bottega exatamente pelos vendedores?",
+      "q1": "O que faz o Manto exatamente pelos vendedores?",
       "a1": "Conta-nos sobre o seu negócio e o que pretende da saída. Normalizamos corretamente as suas finanças, posicionamos o negócio para os compradores certos, conduzimos uma pequena divulgação confidencial, e apoiamo-lo durante a negociação, a estruturação e a transição, para que não faça nada disto sozinho.",
       "q2": "Para quem é isto?",
       "a2": "Proprietários de empresas de contabilidade, seguros ou crédito e intermediação de crédito à habitação em Portugal que estão a ponderar uma sucessão ou uma venda.",
-      "q3": "Que tipo de negócios a Bottega pode ajudar a vender?",
+      "q3": "Que tipo de negócios o Manto pode ajudar a vender?",
       "a3": "Empresas de contabilidade e compliance, corretoras de seguros e empresas de sinistros, e intermediários de crédito ou crédito à habitação. Estes três setores têm níveis diferentes de durabilidade, a contabilidade é o mais forte, o crédito o mais fraco, e diremos honestamente onde o seu se situa.",
       "q4": "Quanto custa?",
       "a4": "Depende do mandato. Acordamos os honorários consigo antecipadamente, antes de qualquer trabalho começar."

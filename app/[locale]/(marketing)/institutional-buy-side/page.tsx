@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 // Public URL shared with investors: do not rename or move this route.
-// If it must change, 301 redirect /en/institutional-buy-side to https://bottega.fyi.
+// If it must change, 301 redirect /en/institutional-buy-side to https://onmanto.com.
 export default function InstitutionalBuySidePage() {
   const t = useTranslations('institutionalBuySide');
 
@@ -68,7 +68,7 @@ export default function InstitutionalBuySidePage() {
         </div>
       </section>
 
-      {/* ── Why work with Bottega ── */}
+      {/* ── Why work with Manto ── */}
       <section className="py-16 md:py-20 px-6">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="font-[family-name:var(--font-serif)] text-[26px] md:text-[30px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-1">

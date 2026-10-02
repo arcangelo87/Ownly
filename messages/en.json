@@ -164,7 +164,7 @@
     "contact": "Contact",
     "privacy": "Privacy Policy",
     "terms": "Terms",
-    "copyright": "© 2026 Bottega",
+    "copyright": "© 2026 Manto",
     "home": "Homepage",
     "linkedin": "LinkedIn"
   },
@@ -180,30 +180,30 @@
     "problem": {
       "sellersLabel": "Sellers",
       "sellersQuote": "I know every corner of this business. I just don't know where to start when it comes to selling it.",
-      "response1": "The businesses Bottega lists aren't speculative.",
+      "response1": "The businesses Manto lists aren't speculative.",
       "response2": "They have cash flow, they're proven, and they're founder-run.",
       "response3": "Their challenge isn't viability: it's transition.",
       "brokersLabel": "Brokers",
       "brokersQuote": "I spend more time explaining the business than selling it.",
       "buyersLabel": "Buyers",
       "buyersQuote": "Half the listings I look at don't have enough information to take a first step.",
-      "closer": "Bottega is built for this."
+      "closer": "Manto is built for this."
     },
     "how": {
       "heading": "How it works",
       "step1Label": "Submit your details",
       "step1Desc": "Tell us about your business in 4 short steps. No jargon. No accountant required.",
       "step2Label": "We structure it",
-      "step2Desc": "Bottega writes your deal page: clear, professional, buyer-ready.",
+      "step2Desc": "Manto writes your deal page: clear, professional, buyer-ready.",
       "step3Label": "Buyers reach out",
-      "step3Desc": "Serious enquiries come through Bottega. You decide who to engage.",
+      "step3Desc": "Serious enquiries come through Manto. You decide who to engage.",
       "reassurance": "Free to start. No commitment until you're ready.",
       "cta": "List your business →"
     },
     "why": {
       "heading": "Built for businesses that don't need a pitch deck.",
-      "prose1": "Most deal platforms are designed for startups: high-growth companies raising money, burning cash, betting on a future. Bottega is built for the opposite: businesses with cash flow, real clients, and years behind them.",
-      "prose2": "These businesses don't need hype. They need a clear presentation: financials framed properly, story told well, so the right buyer can recognise what they're looking at. That's what Bottega does.",
+      "prose1": "Most deal platforms are designed for startups: high-growth companies raising money, burning cash, betting on a future. Manto is built for the opposite: businesses with cash flow, real clients, and years behind them.",
+      "prose2": "These businesses don't need hype. They need a clear presentation: financials framed properly, story told well, so the right buyer can recognise what they're looking at. That's what Manto does.",
       "stat1Value": "Italy & Portugal",
       "stat1Label": "The only platform focused on these two markets",
       "stat2Value": "Selective",
@@ -213,7 +213,7 @@
     },
     "brokers": {
       "heading": "For brokers and M&A advisors",
-      "body": "If you represent sellers, Bottega gives your deals a better home.",
+      "body": "If you represent sellers, Manto gives your deals a better home.",
       "cta": "Learn more →"
     },
     "cta": {
@@ -224,7 +224,7 @@
     "buyers": {
       "hero": {
         "h1": "Own a business that's right for you.",
-        "sub": "Bottega helps you acquire cash-flowing, small businesses in Europe. Browse our listings or tell us what you're looking for and we'll find it.",
+        "sub": "Manto helps you acquire cash-flowing, small businesses in Europe. Browse our listings or tell us what you're looking for and we'll find it.",
         "ctaBrowse": "Browse listings",
         "ctaSearch": "Tell us what you're looking for"
       },
@@ -254,7 +254,7 @@
         "item2Desc": "You already own a small business or investment. Now you want to grow by acquisition: adding revenue, a new market or a complementary operation, without having to go through a formal M&A process.",
         "item1Cta": "Tell us what you're looking for",
         "item2Cta": "Start your search",
-        "footerLabel": "Also on Bottega",
+        "footerLabel": "Also on Manto",
         "sellerPrompt": "Are you selling your business?",
         "sellerCta": "List it with us",
         "brokerPrompt": "Are you a broker?",
@@ -272,7 +272,7 @@
   "sellers": {
     "hero": {
       "h1": "Your business deserves a serious buyer. We'll help you find one.",
-      "sub": "Bottega turns your business information into a structured deal page and puts it in front of buyers actively looking in Italy and Portugal. Free to start, no broker fees.",
+      "sub": "Manto turns your business information into a structured deal page and puts it in front of buyers actively looking in Italy and Portugal. Free to start, no broker fees.",
       "cta": "List your business →",
       "browseCta": "Browse deals",
       "supporting": "Takes 10 minutes. No commitment until you're ready."
@@ -291,7 +291,7 @@
       "freeHeading": "Free",
       "freeTagline": "Get listed and start receiving enquiries.",
       "freePrice": "€0. No commitment.",
-      "free1": "Listed on Bottega",
+      "free1": "Listed on Manto",
       "free2": "Public deal page",
       "free5": "Up to 10 inbound enquiries",
       "freeCta": "List your business for free →",
@@ -338,11 +338,11 @@
       "step1Label": "Fill in your details",
       "step1Desc": "A 4-step guided form. No jargon. Takes about 10 minutes.",
       "step2Label": "We review and write your listing",
-      "step2Desc": "Bottega writes the deal description based on your inputs. We may follow up with a short call to fill gaps.",
+      "step2Desc": "Manto writes the deal description based on your inputs. We may follow up with a short call to fill gaps.",
       "step3Label": "Your listing goes live",
-      "step3Desc": "Published on Bottega, visible to buyers browsing Italy and Portugal.",
+      "step3Desc": "Published on Manto, visible to buyers browsing Italy and Portugal.",
       "step4Label": "Enquiries come through us",
-      "step4Desc": "Buyers reach out via Bottega. We review and route to you. You decide who to engage.",
+      "step4Desc": "Buyers reach out via Manto. We review and route to you. You decide who to engage.",
       "reassurance": "No exclusivity. No upfront costs on the free plan. You can withdraw your listing at any time."
     },
     "pricing": {
@@ -350,7 +350,7 @@
     },
     "quotes": {
       "heading": "What sellers say",
-      "quote1Text": "I was worried about who would see my financials. Bottega gave me full control over what was shared and when.",
+      "quote1Text": "I was worried about who would see my financials. Manto gave me full control over what was shared and when.",
       "quote1Name": "Francesca",
       "quote1Meta": "Manufacturing, Italy",
       "quote2Text": "I expected a long process. The form took me less than 20 minutes and the listing was live within days.",
@@ -372,13 +372,13 @@
   "brokers": {
     "hero": {
       "h1": "Better listings. More qualified enquiries.",
-      "sub": "Bottega gives your deals a structured home: a professional deal page that buyers can evaluate properly. You keep the client relationship. We handle presentation and inbound.",
+      "sub": "Manto gives your deals a structured home: a professional deal page that buyers can evaluate properly. You keep the client relationship. We handle presentation and inbound.",
       "cta": "List your first deal free →",
       "ctaSecondary": "Talk to us →"
     },
     "problem": {
       "heading": "Most deal presentations don't do justice to the business.",
-      "prose": "A PDF sent cold. A Dropbox link with unstructured financials. A listing on a classifieds site with three lines of description. Buyers scroll past. Conversations never start.\n\nYou've done the work to represent the seller. Bottega makes sure buyers can see it."
+      "prose": "A PDF sent cold. A Dropbox link with unstructured financials. A listing on a classifieds site with three lines of description. Buyers scroll past. Conversations never start.\n\nYou've done the work to represent the seller. Manto makes sure buyers can see it."
     },
     "features": {
       "heading": "A deal page your clients will be proud of.",
@@ -387,13 +387,13 @@
       "feat2Label": "NDA-gated financials",
       "feat2Desc": "Full financial detail stays protected. Buyers who want to go further submit an enquiry. You're notified and in control of what gets shared.",
       "feat3Label": "Buyer enquiry routing",
-      "feat3Desc": "Enquiries from interested buyers come through Bottega and route directly to you. No cold calls to your client. No broker bypassing.",
+      "feat3Desc": "Enquiries from interested buyers come through Manto and route directly to you. No cold calls to your client. No broker bypassing.",
       "feat4Label": "Shareable deal link",
       "feat4Desc": "Each deal gets a clean URL you can share in your own outreach. Works as your deal summary, not a replacement for your process."
     },
     "notABroker": {
       "heading": "We present deals. We don't compete for them.",
-      "prose1": "Bottega doesn't take success fees on broker-submitted deals. We're not a competing advisor. We're presentation infrastructure: the professional front-end your listings deserve.",
+      "prose1": "Manto doesn't take success fees on broker-submitted deals. We're not a competing advisor. We're presentation infrastructure: the professional front-end your listings deserve.",
       "prose2": "You own the client relationship. You manage the process. We make your listing look like it deserves serious attention."
     },
     "pricing": {
@@ -401,7 +401,7 @@
       "freeHeading": "Free",
       "freePrice": "€0. No commitment.",
       "free1": "Up to 5 active listings",
-      "free2": "Full deal page per listing written by Bottega",
+      "free2": "Full deal page per listing written by Manto",
       "free3": "Buyer enquiry routing to you",
       "free4": "Shareable deal link per listing",
       "freeCta": "Post your first deal →",
@@ -418,7 +418,7 @@
       "reassurance": "Free tier covers everything you need to get started. No credit card. No calls to book. Just post your deal."
     },
     "founding": {
-      "heading": "Helping shape what Bottega builds for advisors.",
+      "heading": "Helping shape what Manto builds for advisors.",
       "prose": "We're working with a small group of brokers in Italy and Portugal to understand what actually matters, before we build it. If you work deals in this market, we'd like to talk.",
       "namePlaceholder": "Name",
       "emailPlaceholder": "Email",
@@ -471,11 +471,11 @@
     },
     "faq": {
       "heading": "FAQs",
-      "q1": "What does Bottega actually do?",
+      "q1": "What does Manto actually do?",
       "a1": "You tell us what you're looking for: budget, sector, how involved you want to be day to day. From there, we find matching opportunities, including ones not listed publicly, walk you through financing and due diligence, and connect you to a small group of vetted lawyers, accountants, and financing experts, often on better terms than you'd get on your own.",
       "q2": "Who is this for?",
       "a2": "First-time buyers, solo operators and career changers looking to own a business in Portugal.",
-      "q4": "What kind of businesses can Bottega help me find?",
+      "q4": "What kind of businesses can Manto help me find?",
       "a4": "Profitable, real-world businesses that solve an everyday need: accounting firms, HVAC, dental practices, repair shops, condo management, vending machines, light manufacturing, boutique hotels, food retail, office space. No startups, no crypto, no SaaS pitch decks. If it doesn't already make money doing something tangible, it's not a fit.",
       "q5": "What does it cost?",
       "a5": "It depends on the level of support you're looking for. Get in touch and we'll put together a quote for you."
@@ -519,7 +519,7 @@
     "s4Heading": "Who we share it with",
     "s4Body": "Your information may be shared with vetted advisors (lawyers, accountants, financing experts) where relevant to your search, and only with your knowledge. We do not share your data with third parties without your consent. We use Supabase (EU-hosted) for data storage and may use Resend for transactional email.",
     "s5Heading": "Business sellers",
-    "s5Body": "If you are a business owner whose listing appears on Bottega, whether submitted directly or sourced from a public third-party platform, your data is handled with care. Information used to describe your business is used solely to present your business to relevant buyers. Seller contact details and sensitive information are shared only with buyers who have signed a confidentiality agreement. If you would like your data updated, contact privacy@bottegaventures.com and we will action it promptly.",
+    "s5Body": "If you are a business owner whose listing appears on Manto, whether submitted directly or sourced from a public third-party platform, your data is handled with care. Information used to describe your business is used solely to present your business to relevant buyers. Seller contact details and sensitive information are shared only with buyers who have signed a confidentiality agreement. If you would like your data updated, contact privacy@bottegaventures.com and we will action it promptly.",
     "s6Heading": "Data retention",
     "s6Body": "Buyer data is retained for 24 months from your last interaction with us. You may request deletion at any time by emailing privacy@bottegaventures.com.",
     "s7Heading": "Your rights",
@@ -532,18 +532,18 @@
   "termsPage": {
     "title": "Terms of Service",
     "lastUpdated": "Last updated: June 2026",
-    "s1Heading": "About Bottega",
-    "s1Body": "Bottega Ventures Ltd (Company number 11114051), 167-169 Great Portland Street, 5th Floor, London, England, W1W 5PF, operates this platform. Bottega helps individuals find and acquire businesses in Portugal. We are not a broker, agent, or financial advisor. We do not take success fees, hold client funds, or represent either party in a transaction.",
+    "s1Heading": "About Manto",
+    "s1Body": "Bottega Ventures Ltd (Company number 11114051), 167-169 Great Portland Street, 5th Floor, London, England, W1W 5PF, operates this platform. Manto helps individuals find and acquire businesses in Portugal. We are not a broker, agent, or financial advisor. We do not take success fees, hold client funds, or represent either party in a transaction.",
     "s2Heading": "Seller responsibilities",
-    "s2Body": "By submitting a listing, you confirm that the information provided is accurate and not misleading. You are responsible for the content of your listing. Bottega may edit listings for clarity and presentation, but the underlying facts remain your responsibility. Do not include information that is confidential, defamatory, or legally restricted.",
+    "s2Body": "By submitting a listing, you confirm that the information provided is accurate and not misleading. You are responsible for the content of your listing. Manto may edit listings for clarity and presentation, but the underlying facts remain your responsibility. Do not include information that is confidential, defamatory, or legally restricted.",
     "s3Heading": "Buyer responsibilities",
     "s3Body": "By requesting access, you confirm that you have a genuine interest in acquiring a business in Portugal. You agree not to share listing information or seller details with third parties.",
     "s4Heading": "No transaction guarantee",
-    "s4Body": "Bottega does not guarantee that any introduction or listing will result in a completed transaction. We do not verify the accuracy of seller-provided financials. All buyers are advised to conduct independent due diligence before making any acquisition decision.",
+    "s4Body": "Manto does not guarantee that any introduction or listing will result in a completed transaction. We do not verify the accuracy of seller-provided financials. All buyers are advised to conduct independent due diligence before making any acquisition decision.",
     "s5Heading": "Listing removal",
-    "s5Body": "Bottega reserves the right to remove any listing that contains inaccurate, misleading, or inappropriate content, or that violates these terms. Business owners may request removal of their listing at any time by contacting privacy@bottegaventures.com.",
+    "s5Body": "Manto reserves the right to remove any listing that contains inaccurate, misleading, or inappropriate content, or that violates these terms. Business owners may request removal of their listing at any time by contacting privacy@bottegaventures.com.",
     "s6Heading": "Limitation of liability",
-    "s6Body": "To the fullest extent permitted by law, Bottega is not liable for any loss or damage arising from the use of this platform, reliance on listing content, or the outcome of any transaction. Our total liability to any user shall not exceed the fees paid by that user in the 12 months preceding the claim.",
+    "s6Body": "To the fullest extent permitted by law, Manto is not liable for any loss or damage arising from the use of this platform, reliance on listing content, or the outcome of any transaction. Our total liability to any user shall not exceed the fees paid by that user in the 12 months preceding the claim.",
     "s7Heading": "Governing law",
     "s7Body": "These terms are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales."
   },
@@ -982,7 +982,7 @@
       "note": "Confidential from the first call. No obligation to proceed."
     },
     "whyUs": {
-      "heading": "Why sell with Bottega?",
+      "heading": "Why sell with Manto?",
       "item1Label": "Confidential",
       "item1Desc": "Nothing goes to a buyer, a competitor or your own staff without your say so.",
       "item2Label": "Sector specialist",
@@ -1015,11 +1015,11 @@
     },
     "faq": {
       "heading": "FAQs",
-      "q1": "What does Bottega actually do for sellers?",
+      "q1": "What does Manto actually do for sellers?",
       "a1": "You tell us about your business and what you want from an exit. We normalize your financials properly, position the business for the right buyers, run a small confidential outreach, and support you through negotiation, structuring and the handover, so you are not doing any of it alone.",
       "q2": "Who is this for?",
       "a2": "Owners of accounting, insurance or lending and mortgage brokerage firms in Portugal who are weighing succession or a sale.",
-      "q3": "What kind of businesses can Bottega help me sell?",
+      "q3": "What kind of businesses can Manto help me sell?",
       "a3": "Accounting and compliance firms, insurance brokerages and claims businesses, and lending or mortgage brokerages. These three have different levels of durability, accounting the strongest, lending the weakest, and we will tell you honestly where yours sits.",
       "q4": "What does it cost?",
       "a4": "It depends on the mandate. We agree fees with you upfront, before any work begins."
@@ -1207,7 +1207,7 @@
       "note": "Confidential. No obligation to proceed."
     },
     "whyUs": {
-      "heading": "Why work with Bottega?",
+      "heading": "Why work with Manto?",
       "item1Label": "Recurring pipeline",
       "item1Desc": "Not a one-off search. Ongoing, off-market deal flow matched to your mandate.",
       "item2Label": "Specialist, not generic",
@@ -1240,7 +1240,7 @@
     },
     "faq": {
       "heading": "FAQs",
-      "q1": "What does Bottega do for institutional buyers?",
+      "q1": "What does Manto do for institutional buyers?",
       "a1": "You define your acquisition mandate: sectors, size, pace and geography. We build you a recurring pipeline of off-market opportunities in accounting, insurance and lending, each one screened and diligence-ready before it reaches you.",
       "q2": "Who is this for?",
       "a2": "Private equity firms, family offices and established companies growing by acquisition in Portugal. Our deepest coverage today is accounting, insurance and lending, but if your mandate is elsewhere, talk to us.",
@@ -1250,7 +1250,7 @@
       "a4": "It depends on the mandate. We agree fees with you upfront, before any work begins."
     },
     "cta": {
-      "headingLead": "Build a pipeline with Bottega in",
+      "headingLead": "Build a pipeline with Manto in",
       "headingEmphasis": "Portugal.",
       "button": "Talk to us about your mandate",
       "note": "We'll follow up personally within days."

@@ -63,7 +63,7 @@ export default async function SellSidePage({ params }: { params: Promise<{ local
         </div>
       </section>
 
-      {/* ── Why sell with Bottega ── */}
+      {/* ── Why sell with Manto ── */}
       <section className="py-16 md:py-20 px-6">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="font-[family-name:var(--font-serif)] text-[26px] md:text-[30px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-1">

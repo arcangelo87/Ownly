@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   experimental: {
     serverActions: { bodySizeLimit: '52mb' },
   },
-  // bottega.fyi is the only domain that should appear in search. Keep the
+  // onmanto.com is the only domain that should appear in search. Keep the
   // *.vercel.app production and preview URLs out of the index.
   async headers() {
     return [

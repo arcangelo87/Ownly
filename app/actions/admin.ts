@@ -126,7 +126,7 @@ export async function deleteListingPhoto(listingId: string, filename: string) {
 // Ingest actions
 // ---------------------------------------------------------------------------
 
-const INGEST_SYSTEM_PROMPT = `You are a specialist M&A copywriter for Bottega, a curated SME acquisition platform for Italy and Portugal.
+const INGEST_SYSTEM_PROMPT = `You are a specialist M&A copywriter for Manto, a curated SME acquisition platform for Italy and Portugal.
 Extract raw facts from source text and rewrite them into a structured listing for sophisticated international buyers.
 Never copy source text verbatim. All prose must be fully rewritten.
 Tone: direct, financially literate, active voice. No hype or filler.

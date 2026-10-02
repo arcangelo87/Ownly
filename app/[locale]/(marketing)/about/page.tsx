@@ -27,7 +27,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Why Bottega ── */}
+      {/* ── Why Manto ── */}
       <section className="py-20 md:py-24 px-6 bg-[var(--color-surface)]">
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
