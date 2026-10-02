@@ -35,7 +35,7 @@ export function SiteNav() {
     <nav className="border-b border-[var(--color-border)] bg-[var(--color-bg)] relative z-50">
       <div className="mx-auto max-w-6xl px-6 py-4 flex items-center gap-8">
         <Link href={`/${locale}`} className="shrink-0" onClick={() => setOpen(false)}>
-          <Logo width={108} />
+          <Logo width={135} />
         </Link>
 
         <div className="hidden md:flex items-center gap-4 ml-auto shrink-0">
