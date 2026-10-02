@@ -131,7 +131,7 @@
     "about": "Sobre nós"
   },
   "footer": {
-    "tagline": "A comprar negócios reais em Portugal.",
+    "tagline": "Compre e venda negócios reais em Portugal e Itália.",
     "sell": "Vender o seu negócio",
     "brokers": "Para mediadores",
     "buyers": "Para compradores",
@@ -141,7 +141,10 @@
     "privacy": "Política de Privacidade",
     "terms": "Termos",
     "copyright": "© 2026 Manto",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "buySide": "Compradores individuais",
+    "institutionalBuySide": "Compradores estratégicos",
+    "sellSide": "Proprietários de negócios"
   },
   "home": {
     "hero": {

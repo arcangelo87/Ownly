@@ -131,7 +131,7 @@
     "about": "Chi siamo"
   },
   "footer": {
-    "tagline": "L'acquisto di aziende reali in Portogallo.",
+    "tagline": "Compra e vendi aziende reali in Portogallo e Italia.",
     "sell": "Vendi la tua azienda",
     "brokers": "Per i mediatori",
     "buyers": "Per gli acquirenti",
@@ -141,7 +141,10 @@
     "privacy": "Privacy Policy",
     "terms": "Termini",
     "copyright": "© 2026 Manto",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "buySide": "Acquirenti individuali",
+    "institutionalBuySide": "Acquirenti strategici",
+    "sellSide": "Titolari d'azienda"
   },
   "home": {
     "hero": {

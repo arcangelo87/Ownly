@@ -27,7 +27,7 @@ export function SiteFooter() {
             <Link href={`/${locale}`}>
               <Logo width={125} />
             </Link>
-            <p className="mt-3 text-[13px] text-[var(--color-muted)] max-w-[200px]">
+            <p className="mt-3 text-[13px] text-[var(--color-muted)] max-w-[280px] text-balance">
               {t('tagline')}
             </p>
           </div>
