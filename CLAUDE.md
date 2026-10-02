@@ -15,7 +15,7 @@ Solo-operated, bootstrapped. Keep the codebase simple. No unnecessary abstractio
 ## Infrastructure
 
 - **GitHub:** github.com/angelo87/Ownly
-- **Live URL:** https://ownly-iota.vercel.app/en
+- **Live URL:** https://onmanto.com
 - **Vercel:** auto-deploys on every push
 - **Supabase:** project URL in environment variables
 - **Resend:** deferred — add when first email feature is needed
