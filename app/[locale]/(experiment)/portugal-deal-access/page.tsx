@@ -124,29 +124,12 @@ export default function DealAccessPage() {
       </section>
 
       {/* ── Managed service ── */}
-      <section className="py-16 md:py-20 px-6 border-t border-[var(--color-border)]">
+      <section className="py-20 md:py-24 px-6 bg-[var(--color-surface)]">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className={headingClass}>{t('managed.heading')}</h2>
           <div className="w-8 h-[3px] bg-[var(--color-terracotta)] mx-auto mb-6" />
           <p className="text-[15px] text-[var(--color-muted)] leading-[1.7] mb-8">{t('managed.body')}</p>
           <AccessCta tier="managed" label={t('managed.cta')} variant="outline" />
-        </div>
-      </section>
-
-      {/* ── Closing CTA ── */}
-      <section className="py-20 md:py-24 px-6 bg-[var(--color-surface)] text-center">
-        <div className="mx-auto max-w-md">
-          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold leading-[1.2] tracking-[-0.02em] text-[var(--color-text)] mb-8">
-            {t('cta.headingLead')}{' '}
-            <span className="italic text-[var(--color-terracotta)]">{t('cta.headingEmphasis')}</span>
-          </h2>
-          <a
-            href="#pricing"
-            className="inline-flex items-center px-9 py-4.5 bg-[var(--color-text)] text-white text-[17px] font-bold rounded-full hover:opacity-90 transition-opacity"
-          >
-            {t('cta.button')}
-          </a>
-          <p className="mt-4 text-[13px] text-[var(--color-muted)]">{t('cta.note')}</p>
         </div>
       </section>
     </>
