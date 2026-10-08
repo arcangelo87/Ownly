@@ -1374,5 +1374,84 @@
       "heading": "We will be in touch.",
       "body": "Your mandate has been saved. We will reach out when we find a match."
     }
+  },
+  "dealAccess": {
+    "metaTitle": "Off-market businesses in Portugal",
+    "hero": {
+      "eyebrow": "For buyers acquiring in Portugal",
+      "h1Lead": "Off-market businesses in Portugal,",
+      "h1Emphasis": "pre-screened for you.",
+      "sub": "Get access to a curated stream of acquisition opportunities that already fit your criteria: screened, profiled, and priced in your range. Stop sifting through listings. Start talking to the right owners.",
+      "cta": "Get access",
+      "note": "Twelve-month access from €299."
+    },
+    "problem": {
+      "heading": "The problem",
+      "item1Label": "Slow and opaque",
+      "item1Desc": "You spend weeks filtering before you ever reach a real conversation.",
+      "item2Label": "Off-market by default",
+      "item2Desc": "The best businesses never make it onto a listing site.",
+      "item3Label": "Unreliable data",
+      "item3Desc": "The numbers you can find are incomplete, out of date, or both.",
+      "item4Label": "Unrealistic prices",
+      "item4Desc": "Most owners’ price expectations are nowhere near yours."
+    },
+    "benefits": {
+      "heading": "What you get",
+      "intro": "Every opportunity is screened before it reaches you. For each one you see:",
+      "item1Label": "The numbers that matter",
+      "item1Desc": "Revenue, EBITDA, team size, years in business.",
+      "item2Label": "The real profile",
+      "item2Desc": "Client base, concentration, and why the owner is selling.",
+      "item3Label": "A checked price",
+      "item3Desc": "A price expectation checked against your range, so you only see realistic deals.",
+      "item4Label": "A warm introduction",
+      "item4Desc": "An introduction to the owner when you want to take it further.",
+      "outro": "New opportunities are added across your access period, so you get first look as they surface."
+    },
+    "pricing": {
+      "heading": "Pricing",
+      "period": "12 months",
+      "cta": "Get access",
+      "singleName": "Single sector",
+      "singlePrice": "€299",
+      "singleDesc": "Curated, pre-screened deals in one sector of your choice (e.g. accounting). Full profiles, price-checked against your range, warm introductions.",
+      "singleBest": "Best if you know exactly the kind of business you want.",
+      "allName": "All sectors",
+      "allPrice": "€499",
+      "allDesc": "Everything in single sector, across every traditional SME sector we cover (accounting, insurance, financing, tourism and more). The widest view of what’s available, and the most flexibility as your thesis evolves.",
+      "allBest": "Best value if you’re open across sectors.",
+      "note": "Both are twelve-month access. You engage with the owners directly after the introduction."
+    },
+    "managed": {
+      "heading": "Want us to run the end to end process for you?",
+      "body": "For buyers who want an exclusive, dedicated search and a deal taken all the way to close, covering origination, outreach, diligence and negotiation, we offer a managed service on a success-fee basis.",
+      "cta": "Talk to us"
+    },
+    "form": {
+      "singleHeading": "Single sector access",
+      "allHeading": "All sectors access",
+      "managedHeading": "Managed search",
+      "singleSub": "€299 for 12 months. Leave your email and we’ll set up your access.",
+      "allSub": "€499 for 12 months. Leave your email and we’ll set up your access.",
+      "managedSub": "Success fee basis. Leave your email and we’ll arrange a call.",
+      "emailLabel": "Email",
+      "criteriaLabelSingle": "Which sector and price range? (optional)",
+      "criteriaLabelAll": "What are you looking for? (optional)",
+      "criteriaLabelManaged": "What are you looking to acquire? (optional)",
+      "submit": "Request access",
+      "submitManaged": "Request a call",
+      "submitting": "Sending…",
+      "successHeading": "Thank you. You’re on the list.",
+      "successBody": "We’ll be in touch shortly by email.",
+      "errors": {
+        "emailRequired": "Please enter your email.",
+        "emailInvalid": "Please enter a valid email.",
+        "submitFailed": "Something went wrong. Please try again."
+      }
+    },
+    "nav": {
+      "cta": "Get access"
+    }
   }
 }
