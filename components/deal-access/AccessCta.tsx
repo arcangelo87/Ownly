@@ -47,8 +47,8 @@ export function AccessCta({ tier, label, variant = 'primary' }: AccessCtaProps) 
 
   const triggerClass =
     variant === 'primary'
-      ? 'w-full inline-flex justify-center items-center px-6 py-3.5 bg-[var(--color-accent)] text-white text-[15px] font-semibold rounded-[4px] hover:opacity-90 transition-opacity'
-      : 'inline-flex justify-center items-center px-6 py-3.5 border border-[var(--color-accent)] text-[var(--color-accent)] text-[15px] font-semibold rounded-[4px] hover:bg-[var(--color-accent)] hover:text-white transition-colors';
+      ? 'w-full inline-flex justify-center items-center px-8 py-4 bg-[var(--color-text)] text-white text-[16px] font-bold rounded-full hover:opacity-90 transition-opacity'
+      : 'inline-flex justify-center items-center px-9 py-4 border border-[var(--color-text)] text-[var(--color-text)] text-[16px] font-bold rounded-full hover:bg-[var(--color-text)] hover:text-white transition-colors';
 
   const inputId = `deal-access-${tier}`;
 
@@ -104,7 +104,7 @@ export function AccessCta({ tier, label, variant = 'primary' }: AccessCtaProps) 
               <button
                 type="submit"
                 disabled={isPending}
-                className="mt-2 inline-flex justify-center items-center px-6 py-3.5 bg-[var(--color-accent)] text-white text-[15px] font-semibold rounded-[4px] hover:opacity-90 transition-opacity disabled:opacity-60"
+                className="mt-2 inline-flex justify-center items-center px-8 py-4 bg-[var(--color-text)] text-white text-[16px] font-bold rounded-full hover:opacity-90 transition-opacity disabled:opacity-60"
               >
                 {isPending ? t('submitting') : tier === 'managed' ? t('submitManaged') : t('submit')}
               </button>

@@ -1378,13 +1378,23 @@
   "dealAccess": {
     "metaTitle": "Off-market businesses in Portugal",
     "hero": {
-      "h1": "Off-market businesses in Portugal, pre-screened for you.",
+      "eyebrow": "For buyers acquiring in Portugal",
+      "h1Lead": "Off-market businesses in Portugal,",
+      "h1Emphasis": "pre-screened for you.",
       "sub": "Get access to a curated stream of acquisition opportunities that already fit your criteria: screened, profiled, and priced in your range. Stop sifting through listings. Start talking to the right owners.",
-      "cta": "Get access"
+      "cta": "Get access",
+      "note": "Twelve-month access from €299."
     },
     "problem": {
       "heading": "The problem",
-      "body": "Finding a good business to buy in Portugal is slow and opaque. The best deals are off-market, the data is unreliable, and most owners’ price expectations are nowhere near yours. You spend weeks filtering before you ever reach a real conversation."
+      "item1Label": "Slow and opaque",
+      "item1Desc": "You spend weeks filtering before you ever reach a real conversation.",
+      "item2Label": "Off-market by default",
+      "item2Desc": "The best businesses never make it onto a listing site.",
+      "item3Label": "Unreliable data",
+      "item3Desc": "The numbers you can find are incomplete, out of date, or both.",
+      "item4Label": "Unrealistic prices",
+      "item4Desc": "Most owners’ price expectations are nowhere near yours."
     },
     "benefits": {
       "heading": "What you get",
@@ -1439,6 +1449,15 @@
         "emailInvalid": "Please enter a valid email.",
         "submitFailed": "Something went wrong. Please try again."
       }
+    },
+    "nav": {
+      "cta": "Get access"
+    },
+    "cta": {
+      "headingLead": "Your next acquisition in Portugal,",
+      "headingEmphasis": "pre-screened.",
+      "button": "See pricing",
+      "note": "Twelve-month access. You engage with owners directly."
     }
   }
 }
