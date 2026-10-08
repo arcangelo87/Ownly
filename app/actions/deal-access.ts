@@ -9,7 +9,8 @@ const TIERS: readonly DealAccessTier[] = ['single', 'all', 'managed'];
 export async function recordDealAccessClick(tier: DealAccessTier): Promise<void> {
   if (!TIERS.includes(tier)) return;
   const supabase = await createClient();
-  await supabase.from('deal_access_interest').insert({ tier, event: 'click' });
+  const { error } = await supabase.from('deal_access_interest').insert({ tier, event: 'click' });
+  if (error) console.error('deal_access_interest click insert failed', error);
 }
 
 export interface DealAccessSubmitInput {
@@ -30,6 +31,7 @@ export async function submitDealAccess(input: DealAccessSubmitInput): Promise<{ 
   });
 
   if (error) {
+    console.error('deal_access_interest submit insert failed', error);
     return { error: 'Something went wrong. Please try again.' };
   }
 
