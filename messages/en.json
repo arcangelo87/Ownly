@@ -1415,22 +1415,20 @@
       "cta": "Get access",
       "singleName": "Single sector",
       "singlePrice": "€299",
-      "allName": "All sectors",
-      "allPrice": "€499",
+      "allName": "Multi sector",
+      "allPrice": "€599",
       "note": "Both are twelve-month access. You engage with the owners directly after the introduction.",
       "singleTagline": "For buyers who know exactly the kind of business they want.",
       "allTagline": "For buyers open across sectors, or with a thesis that is still evolving.",
-      "volumeLabel": "pre-screened opportunities against your criteria",
-      "singleVolume": "Up to 30",
-      "singleVolumeNote": "per year, depending on sector",
-      "allVolume": "Up to 100",
-      "allVolumeNote": "per year, across all sectors",
+      "volumeLabel": "pre-screened opportunities against your criteria, per year",
+      "singleVolume": "Up to 10",
+      "allVolume": "Up to 50",
       "includedLabel": "What’s included",
-      "allIncludedLabel": "Everything in Single sector, plus",
+      "allIncludedLabel": "Everything in Single sector, plus:",
       "singleItems": {
         "item1": "One sector of your choice, e.g. accounting",
         "item2": "Each deal emailed as a full profile",
-        "item3": "Your own Manto dashboard to follow every deal and ask questions",
+        "item3": "Your own Manto dashboard to follow progress",
         "item4": "Revenue, EBITDA, team size and years in business",
         "item5": "Client base, concentration and why the owner is selling",
         "item6": "Price expectation checked against your range",
@@ -1438,9 +1436,8 @@
         "item8": "Twelve months of access"
       },
       "allItems": {
-        "item1": "Every sector we cover: accounting, insurance, financing, tourism and more",
-        "item2": "Change your focus at any time as your thesis evolves",
-        "item3": "The widest view of what is available in Portugal"
+        "item1": "Up to 5 sectors, e.g. accounting, insurance, tourism, hospitality, retail",
+        "item2": "Change your focus at any time as your thesis evolves"
       }
     },
     "managed": {
@@ -1450,10 +1447,10 @@
     },
     "form": {
       "singleHeading": "Single sector access",
-      "allHeading": "All sectors access",
+      "allHeading": "Multi sector access",
       "managedHeading": "Managed search",
       "singleSub": "€299 for 12 months. Leave your email and we’ll set up your access.",
-      "allSub": "€499 for 12 months. Leave your email and we’ll set up your access.",
+      "allSub": "€599 for 12 months. Leave your email and we’ll set up your access.",
       "managedSub": "Success fee basis. Leave your email and we’ll arrange a call.",
       "emailLabel": "Email",
       "criteriaLabelSingle": "Which sector and price range? (optional)",
@@ -1476,7 +1473,7 @@
     "howItWorks": {
       "heading": "How it works",
       "step1Label": "Choose your plan",
-      "step1Desc": "One sector or all sectors, with twelve months of access.",
+      "step1Desc": "One sector or up to five, with twelve months of access.",
       "step2Label": "Set your criteria",
       "step2Desc": "Tell us the sector, size, location and price range you are looking for.",
       "step3Label": "Receive profiles",

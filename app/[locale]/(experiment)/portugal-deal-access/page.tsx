@@ -43,7 +43,6 @@ export default function DealAccessPage() {
       price: t('pricing.singlePrice'),
       tagline: t('pricing.singleTagline'),
       volume: t('pricing.singleVolume'),
-      volumeNote: t('pricing.singleVolumeNote'),
       includedLabel: t('pricing.includedLabel'),
       items: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => t(`pricing.singleItems.item${n}`)),
     },
@@ -53,9 +52,8 @@ export default function DealAccessPage() {
       price: t('pricing.allPrice'),
       tagline: t('pricing.allTagline'),
       volume: t('pricing.allVolume'),
-      volumeNote: t('pricing.allVolumeNote'),
       includedLabel: t('pricing.allIncludedLabel'),
-      items: [1, 2, 3].map((n) => t(`pricing.allItems.item${n}`)),
+      items: [1, 2].map((n) => t(`pricing.allItems.item${n}`)),
     },
   ] as const;
 
@@ -149,7 +147,7 @@ export default function DealAccessPage() {
             <div className="w-8 h-[3px] bg-[var(--color-terracotta)] mx-auto" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {tiers.map(({ tier, name, price, tagline, volume, volumeNote, includedLabel, items }) => (
+            {tiers.map(({ tier, name, price, tagline, volume, includedLabel, items }) => (
               <div key={tier} className="flex flex-col bg-white border border-[var(--color-border)] rounded-[8px] p-8">
                 <h3 className="text-[11px] font-bold tracking-[0.12em] uppercase text-[var(--color-muted)] mb-3">{name}</h3>
                 <p className="mb-2">
@@ -162,7 +160,6 @@ export default function DealAccessPage() {
                 <div className="rounded-[6px] bg-[var(--color-surface)] px-5 py-4 mb-6">
                   <p className="font-[family-name:var(--font-serif)] text-[26px] font-semibold leading-[1.2] text-[var(--color-text)]">{volume}</p>
                   <p className="text-[14px] font-medium text-[var(--color-text)] mt-1">{t('pricing.volumeLabel')}</p>
-                  <p className="text-[12px] text-[var(--color-muted)] mt-0.5">{volumeNote}</p>
                 </div>
                 <p className="text-[13px] font-semibold text-[var(--color-text)] mb-3">{includedLabel}</p>
                 <ul className="flex flex-col gap-2.5 mb-8">
