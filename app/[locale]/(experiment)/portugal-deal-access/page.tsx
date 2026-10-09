@@ -1,7 +1,8 @@
 import { useTranslations } from 'next-intl';
-import { Clock, EyeOff, FileWarning, Scale, BarChart3, Users, BadgeCheck, Handshake } from 'lucide-react';
+import { Clock, EyeOff, FileWarning, Scale, BarChart3, Users, BadgeCheck, Handshake, SlidersHorizontal, Mail, Check } from 'lucide-react';
 import { IconCircle } from '@/components/marketing/IconCircle';
 import { AccessCta } from '@/components/deal-access/AccessCta';
+import { FaqAccordion } from '@/components/marketing/FaqAccordion';
 import { NOINDEX } from '@/lib/seo/pages';
 
 export const metadata = { ...NOINDEX, title: 'Off-market businesses in Portugal' };
@@ -26,9 +27,33 @@ export default function DealAccessPage() {
     { icon: Handshake, label: t('benefits.item4Label'), desc: t('benefits.item4Desc') },
   ];
 
+  const steps = [
+    { icon: SlidersHorizontal, label: t('howItWorks.step1Label'), desc: t('howItWorks.step1Desc') },
+    { icon: Mail, label: t('howItWorks.step2Label'), desc: t('howItWorks.step2Desc') },
+    { icon: Handshake, label: t('howItWorks.step3Label'), desc: t('howItWorks.step3Desc') },
+  ];
+
+  const faqs = [1, 2, 3, 4, 5].map((n) => ({ question: t(`faq.q${n}`), answer: t(`faq.a${n}`) }));
+
   const tiers = [
-    { tier: 'single', name: t('pricing.singleName'), price: t('pricing.singlePrice'), desc: t('pricing.singleDesc'), best: t('pricing.singleBest') },
-    { tier: 'all', name: t('pricing.allName'), price: t('pricing.allPrice'), desc: t('pricing.allDesc'), best: t('pricing.allBest') },
+    {
+      tier: 'single',
+      name: t('pricing.singleName'),
+      price: t('pricing.singlePrice'),
+      tagline: t('pricing.singleTagline'),
+      volume: t('pricing.singleVolume'),
+      includedLabel: t('pricing.includedLabel'),
+      items: [1, 2, 3, 4, 5].map((n) => t(`pricing.singleItems.item${n}`)),
+    },
+    {
+      tier: 'all',
+      name: t('pricing.allName'),
+      price: t('pricing.allPrice'),
+      tagline: t('pricing.allTagline'),
+      volume: t('pricing.allVolume'),
+      includedLabel: t('pricing.allIncludedLabel'),
+      items: [1, 2].map((n) => t(`pricing.allItems.item${n}`)),
+    },
   ] as const;
 
   return (
@@ -59,7 +84,7 @@ export default function DealAccessPage() {
       {/* ── The problem ── */}
       <section className="py-16 md:py-20 px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className={headingClass}>{t('problem.heading')}</h2>
+          <h2 className={`${headingClass} max-w-[560px] mx-auto leading-[1.25]`}>{t('problem.heading')}</h2>
           <div className="w-8 h-[3px] bg-[var(--color-terracotta)] mx-auto mb-12" />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10 max-w-[600px] mx-auto">
             {problems.map(({ icon, label, desc }) => (
@@ -94,25 +119,56 @@ export default function DealAccessPage() {
         </div>
       </section>
 
+      {/* ── How it works ── */}
+      <section className="py-16 md:py-20 px-6">
+        <div className="mx-auto max-w-5xl text-center">
+          <h2 className={headingClass}>{t('howItWorks.heading')}</h2>
+          <div className="w-8 h-[3px] bg-[var(--color-terracotta)] mx-auto mb-12" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {steps.map(({ icon, label, desc }, i) => (
+              <div key={label} className="flex flex-col items-center gap-4">
+                <IconCircle icon={icon} variant="surface" />
+                <span className="text-[15px] font-semibold text-[var(--color-text)]">
+                  {i + 1}. {label}
+                </span>
+                <p className="text-[14px] text-[var(--color-muted)] leading-[1.6] max-w-[220px]">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Pricing ── */}
-      <section id="pricing" className="py-16 md:py-20 px-6 scroll-mt-4">
+      <section id="pricing" className="py-16 md:py-20 px-6 scroll-mt-4 bg-[var(--color-surface)]">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className={headingClass}>{t('pricing.heading')}</h2>
             <div className="w-8 h-[3px] bg-[var(--color-terracotta)] mx-auto" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {tiers.map(({ tier, name, price, desc, best }) => (
+            {tiers.map(({ tier, name, price, tagline, volume, includedLabel, items }) => (
               <div key={tier} className="flex flex-col bg-white border border-[var(--color-border)] rounded-[8px] p-8">
                 <h3 className="text-[11px] font-bold tracking-[0.12em] uppercase text-[var(--color-muted)] mb-3">{name}</h3>
-                <p className="mb-5">
+                <p className="mb-2">
                   <span className="font-[family-name:var(--font-serif)] text-[44px] font-semibold tracking-[-0.02em] text-[var(--color-text)]">
                     {price}
                   </span>
                   <span className="ml-2 text-[14px] text-[var(--color-muted)]">/ {t('pricing.period')}</span>
                 </p>
-                <p className="text-[14px] text-[var(--color-muted)] leading-[1.6] mb-4">{desc}</p>
-                <p className="text-[14px] font-medium text-[var(--color-text)] leading-[1.6] mb-8">{best}</p>
+                <p className="text-[14px] text-[var(--color-muted)] leading-[1.6] mb-6">{tagline}</p>
+                <div className="rounded-[6px] bg-[var(--color-surface)] px-5 py-4 mb-6">
+                  <p className="font-[family-name:var(--font-serif)] text-[26px] font-semibold leading-[1.2] text-[var(--color-text)]">{volume}</p>
+                  <p className="text-[14px] font-medium text-[var(--color-text)] mt-1">{t('pricing.volumeLabel')}</p>
+                </div>
+                <p className="text-[13px] font-semibold text-[var(--color-text)] mb-3">{includedLabel}</p>
+                <ul className="flex flex-col gap-2.5 mb-8">
+                  {items.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-[14px] text-[var(--color-muted)] leading-[1.5]">
+                      <Check size={16} strokeWidth={2} className="shrink-0 mt-[2px] text-[var(--color-accent)]" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
                 <div className="mt-auto">
                   <AccessCta tier={tier} label={t('pricing.cta')} />
                 </div>
@@ -120,6 +176,17 @@ export default function DealAccessPage() {
             ))}
           </div>
           <p className="mt-8 text-center text-[13px] text-[var(--color-muted)]">{t('pricing.note')}</p>
+        </div>
+      </section>
+
+      {/* ── FAQs ── */}
+      <section className="py-16 md:py-20 px-6">
+        <div className="mx-auto max-w-2xl">
+          <div className="text-center mb-12">
+            <h2 className={headingClass}>{t('faq.heading')}</h2>
+            <div className="w-8 h-[3px] bg-[var(--color-terracotta)] mx-auto" />
+          </div>
+          <FaqAccordion items={faqs} />
         </div>
       </section>
 

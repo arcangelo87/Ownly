@@ -1379,15 +1379,15 @@
     "metaTitle": "Off-market businesses in Portugal",
     "hero": {
       "eyebrow": "For buyers acquiring in Portugal",
-      "h1Lead": "Off-market businesses in Portugal,",
-      "h1Emphasis": "pre-screened for you.",
-      "sub": "Get access to a curated stream of acquisition opportunities that already fit your criteria: screened, profiled, and priced in your range. Stop sifting through listings. Start talking to the right owners.",
+      "h1Lead": "The businesses for sale in Portugal",
+      "h1Emphasis": "you won’t find online.",
+      "sub": "Pre-screened acquisition opportunities that fit your criteria and budget. Skip the listings, talk to the right owners.",
       "cta": "Get access",
       "note": "Twelve-month access from €299."
     },
     "problem": {
-      "heading": "The problem",
-      "item1Label": "Slow and opaque",
+      "heading": "Buying a business in Portugal is slow, opaque and overpriced",
+      "item1Label": "Weeks of filtering",
       "item1Desc": "You spend weeks filtering before you ever reach a real conversation.",
       "item2Label": "Off-market by default",
       "item2Desc": "The best businesses never make it onto a listing site.",
@@ -1415,13 +1415,27 @@
       "cta": "Get access",
       "singleName": "Single sector",
       "singlePrice": "€299",
-      "singleDesc": "Curated, pre-screened deals in one sector of your choice (e.g. accounting). Full profiles, price-checked against your range, warm introductions.",
-      "singleBest": "Best if you know exactly the kind of business you want.",
-      "allName": "All sectors",
-      "allPrice": "€499",
-      "allDesc": "Everything in single sector, across every traditional SME sector we cover (accounting, insurance, financing, tourism and more). The widest view of what’s available, and the most flexibility as your thesis evolves.",
-      "allBest": "Best value if you’re open across sectors.",
-      "note": "Both are twelve-month access. You engage with the owners directly after the introduction."
+      "allName": "Multi sector",
+      "allPrice": "€599",
+      "note": "Both are twelve-month access. You engage with the owners directly after the introduction.",
+      "singleTagline": "For buyers who know exactly the kind of business they want.",
+      "allTagline": "For buyers open across sectors, or with a thesis that is still evolving.",
+      "volumeLabel": "pre-screened opportunities against your criteria, per year",
+      "singleVolume": "Up to 10",
+      "allVolume": "Up to 50",
+      "includedLabel": "What’s included",
+      "allIncludedLabel": "Everything in Single sector, plus:",
+      "singleItems": {
+        "item1": "One sector of your choice, e.g. accounting",
+        "item2": "Every deal by email and in your Manto dashboard",
+        "item3": "Full profile: financials, clients and why the owner is selling",
+        "item4": "Price checked against your range",
+        "item5": "Unlimited warm introductions to owners"
+      },
+      "allItems": {
+        "item1": "Up to 5 sectors, e.g. accounting, insurance, tourism, hospitality, retail",
+        "item2": "Change your focus at any time as your thesis evolves"
+      }
     },
     "managed": {
       "heading": "Want us to run the end to end process for you?",
@@ -1430,10 +1444,10 @@
     },
     "form": {
       "singleHeading": "Single sector access",
-      "allHeading": "All sectors access",
+      "allHeading": "Multi sector access",
       "managedHeading": "Managed search",
       "singleSub": "€299 for 12 months. Leave your email and we’ll set up your access.",
-      "allSub": "€499 for 12 months. Leave your email and we’ll set up your access.",
+      "allSub": "€599 for 12 months. Leave your email and we’ll set up your access.",
       "managedSub": "Success fee basis. Leave your email and we’ll arrange a call.",
       "emailLabel": "Email",
       "criteriaLabelSingle": "Which sector and price range? (optional)",
@@ -1452,6 +1466,28 @@
     },
     "nav": {
       "cta": "Get access"
+    },
+    "howItWorks": {
+      "heading": "How it works",
+      "step1Label": "Tell us what you’re looking for",
+      "step1Desc": "Share your sector, size, location and budget, and we start searching for you.",
+      "step2Label": "Get curated opportunities",
+      "step2Desc": "We send you every business we’ve vetted, by email and in your Manto dashboard.",
+      "step3Label": "Meet the owner",
+      "step3Desc": "When one feels right, we introduce you personally. You take it from there."
+    },
+    "faq": {
+      "heading": "FAQs",
+      "q1": "Where do the opportunities come from?",
+      "a1": "We talk directly to owners open to selling, most of whom aren’t advertised anywhere. We reach out without naming you, and before you see a business we’ve already met the owner, reviewed the numbers and asked their price. That saves you months of dead-end calls.",
+      "q2": "What does “pre-screened” mean?",
+      "a2": "We’ve checked the basics for you: revenue, profit, team size, customers and why the owner is selling, and that the asking price fits your budget. You’ll still do your own detailed checks before buying, usually with an accountant or lawyer.",
+      "q3": "How do I receive the opportunities?",
+      "a3": "We email you each new business as soon as we’ve checked it. You’ll also have your own Manto dashboard, where you can see every business in one place, follow our progress, ask questions and request to meet the owner. Be as involved as you like.",
+      "q4": "How many opportunities will I receive?",
+      "a4": "It depends on the sector and on how many owners are ready to sell. You see everything we already have from day one, then new businesses as we find them over twelve months. We only share businesses that pass our checks.",
+      "q5": "What happens after you introduce me?",
+      "a5": "We put you in touch with the owner, who will already know who you are and why you’re interested. From there you talk to them directly. If you’d like help negotiating and completing the purchase, we offer that as a separate service, paid only if the deal goes through."
     }
   }
 }
