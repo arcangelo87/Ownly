@@ -1483,6 +1483,19 @@
       "step3Desc": "Each screened opportunity arrives by email as a full profile.",
       "step4Label": "Meet the owner",
       "step4Desc": "Ask for an introduction whenever a deal fits. We make it warm, you take it from there."
+    },
+    "faq": {
+      "heading": "FAQs",
+      "q1": "Where do the opportunities come from?",
+      "a1": "We find them by talking directly to business owners who are open to selling. Most of these businesses aren’t advertised anywhere. Tell us what you’re looking for and we’ll contact businesses that match, without mentioning your name until you decide to meet an owner. Before we show you a business, we’ve already spoken with the owner several times, looked at the numbers and asked what price they have in mind. That saves you weeks, or even months, of calls and in-person meetings with owners who aren’t a good fit.",
+      "q2": "What does “pre-screened” mean?",
+      "a2": "It means we’ve checked the basics for you: how much the business earns, how profitable it is, how many people work there, who its customers are, and why the owner wants to sell. We also make sure the owner’s asking price is realistic for what you want to pay. Before buying, you’ll still check everything in detail yourself, usually with an accountant or lawyer.",
+      "q3": "How do I receive the opportunities?",
+      "a3": "We email you each new business as soon as we’ve checked it. You’ll also have your own Manto dashboard, where you can see every business in one place, follow our progress, ask questions and request to meet the owner. Be as involved as you like.",
+      "q4": "How many opportunities will I receive?",
+      "a4": "It depends on the sector and on how many owners are ready to sell. You see everything we already have from day one, then new businesses as we find them over twelve months. We only share businesses that pass our checks.",
+      "q5": "What happens after you introduce me?",
+      "a5": "We put you in touch with the owner, who will already know who you are and why you’re interested. From there you talk to them directly. If you’d like help negotiating and completing the purchase, we offer that as a separate service, paid only if the deal goes through."
     }
   }
 }

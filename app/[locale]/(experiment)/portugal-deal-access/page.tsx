@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import { Clock, EyeOff, FileWarning, Scale, BarChart3, Users, BadgeCheck, Handshake, ListChecks, SlidersHorizontal, Mail, Check } from 'lucide-react';
 import { IconCircle } from '@/components/marketing/IconCircle';
 import { AccessCta } from '@/components/deal-access/AccessCta';
+import { FaqAccordion } from '@/components/marketing/FaqAccordion';
 import { NOINDEX } from '@/lib/seo/pages';
 
 export const metadata = { ...NOINDEX, title: 'Off-market businesses in Portugal' };
@@ -32,6 +33,8 @@ export default function DealAccessPage() {
     { icon: Mail, label: t('howItWorks.step3Label'), desc: t('howItWorks.step3Desc') },
     { icon: Handshake, label: t('howItWorks.step4Label'), desc: t('howItWorks.step4Desc') },
   ];
+
+  const faqs = [1, 2, 3, 4, 5].map((n) => ({ question: t(`faq.q${n}`), answer: t(`faq.a${n}`) }));
 
   const tiers = [
     {
@@ -180,8 +183,19 @@ export default function DealAccessPage() {
         </div>
       </section>
 
+      {/* ── FAQs ── */}
+      <section className="py-16 md:py-20 px-6">
+        <div className="mx-auto max-w-2xl">
+          <div className="text-center mb-12">
+            <h2 className={headingClass}>{t('faq.heading')}</h2>
+            <div className="w-8 h-[3px] bg-[var(--color-terracotta)] mx-auto" />
+          </div>
+          <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
       {/* ── Managed service ── */}
-      <section className="py-20 md:py-24 px-6">
+      <section className="py-20 md:py-24 px-6 bg-[var(--color-surface)]">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className={headingClass}>{t('managed.heading')}</h2>
           <div className="w-8 h-[3px] bg-[var(--color-terracotta)] mx-auto mb-6" />
