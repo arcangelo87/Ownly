@@ -1415,13 +1415,33 @@
       "cta": "Get access",
       "singleName": "Single sector",
       "singlePrice": "€299",
-      "singleDesc": "Curated, pre-screened deals in one sector of your choice (e.g. accounting). Full profiles, price-checked against your range, warm introductions.",
-      "singleBest": "Best if you know exactly the kind of business you want.",
       "allName": "All sectors",
       "allPrice": "€499",
-      "allDesc": "Everything in single sector, across every traditional SME sector we cover (accounting, insurance, financing, tourism and more). The widest view of what’s available, and the most flexibility as your thesis evolves.",
-      "allBest": "Best value if you’re open across sectors.",
-      "note": "Both are twelve-month access. You engage with the owners directly after the introduction."
+      "note": "Both are twelve-month access. You engage with the owners directly after the introduction.",
+      "singleTagline": "For buyers who know exactly the kind of business they want.",
+      "allTagline": "For buyers open across sectors, or with a thesis that is still evolving.",
+      "volumeLabel": "opportunities per year",
+      "singleVolume": "10–50",
+      "singleVolumeNote": "depending on sector",
+      "allVolume": "40–100",
+      "allVolumeNote": "across all sectors",
+      "includedLabel": "What’s included",
+      "allIncludedLabel": "Everything in Single sector, plus",
+      "singleItems": {
+        "item1": "One sector of your choice, e.g. accounting",
+        "item2": "Each deal emailed as a full profile",
+        "item3": "Revenue, EBITDA, team size and years in business",
+        "item4": "Client base, concentration and why the owner is selling",
+        "item5": "Price expectation checked against your range",
+        "item6": "Unlimited warm introductions to owners",
+        "item7": "Twelve months of access"
+      },
+      "allItems": {
+        "item1": "Every sector we cover: accounting, insurance, financing, tourism and more",
+        "item2": "New sectors added during your access at no extra cost",
+        "item3": "Change your focus at any time as your thesis evolves",
+        "item4": "The widest view of what is available in Portugal"
+      }
     },
     "managed": {
       "heading": "Want us to run the end to end process for you?",
@@ -1452,6 +1472,17 @@
     },
     "nav": {
       "cta": "Get access"
+    },
+    "howItWorks": {
+      "heading": "How it works",
+      "step1Label": "Choose your plan",
+      "step1Desc": "One sector or all sectors, with twelve months of access.",
+      "step2Label": "Set your criteria",
+      "step2Desc": "Tell us the sector, size, location and price range you are looking for.",
+      "step3Label": "Receive profiles",
+      "step3Desc": "Each screened opportunity arrives by email as a full profile.",
+      "step4Label": "Meet the owner",
+      "step4Desc": "Ask for an introduction whenever a deal fits. We make it warm, you take it from there."
     }
   }
 }
