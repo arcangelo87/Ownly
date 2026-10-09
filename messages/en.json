@@ -1381,12 +1381,12 @@
       "eyebrow": "For buyers acquiring in Portugal",
       "h1Lead": "The businesses for sale in Portugal",
       "h1Emphasis": "you won’t find online.",
-      "sub": "Get access to a curated stream of acquisition opportunities that already fit your criteria: screened, profiled, and priced in your range. Stop sifting through listings. Start talking to the right owners.",
+      "sub": "Pre-screened acquisition opportunities that fit your criteria and budget. Skip the listings, talk to the right owners.",
       "cta": "Get access",
       "note": "Twelve-month access from €299."
     },
     "problem": {
-      "heading": "The problem",
+      "heading": "Buying a business in Portugal is slow, opaque and overpriced",
       "item1Label": "Slow and opaque",
       "item1Desc": "You spend weeks filtering before you ever reach a real conversation.",
       "item2Label": "Off-market by default",
@@ -1427,13 +1427,10 @@
       "allIncludedLabel": "Everything in Single sector, plus:",
       "singleItems": {
         "item1": "One sector of your choice, e.g. accounting",
-        "item2": "Each deal emailed as a full profile",
-        "item3": "Your own Manto dashboard to follow progress",
-        "item4": "Revenue, EBITDA, team size and years in business",
-        "item5": "Client base, concentration and why the owner is selling",
-        "item6": "Price expectation checked against your range",
-        "item7": "Unlimited warm introductions to owners",
-        "item8": "Twelve months of access"
+        "item2": "Every deal by email and in your Manto dashboard",
+        "item3": "Full profile: financials, clients and why the owner is selling",
+        "item4": "Price checked against your range",
+        "item5": "Unlimited warm introductions to owners"
       },
       "allItems": {
         "item1": "Up to 5 sectors, e.g. accounting, insurance, tourism, hospitality, retail",
@@ -1472,21 +1469,19 @@
     },
     "howItWorks": {
       "heading": "How it works",
-      "step1Label": "Choose your plan",
-      "step1Desc": "One sector or up to five, with twelve months of access.",
-      "step2Label": "Set your criteria",
-      "step2Desc": "Tell us the sector, size, location and price range you are looking for.",
-      "step3Label": "Receive profiles",
-      "step3Desc": "Each screened opportunity arrives by email and in your own Manto dashboard.",
-      "step4Label": "Meet the owner",
-      "step4Desc": "Ask for an introduction whenever a deal fits. We make it warm, you take it from there."
+      "step1Label": "Tell us what you’re looking for",
+      "step1Desc": "Share your sector, size, location and budget, and we start searching for you.",
+      "step2Label": "Get curated opportunities",
+      "step2Desc": "We send you every business we’ve vetted, by email and in your Manto dashboard.",
+      "step3Label": "Meet the owner",
+      "step3Desc": "When one feels right, we introduce you personally. You take it from there."
     },
     "faq": {
       "heading": "FAQs",
       "q1": "Where do the opportunities come from?",
-      "a1": "We find them by talking directly to business owners who are open to selling. Most of these businesses aren’t advertised anywhere. Tell us what you’re looking for and we’ll contact businesses that match, without mentioning your name until you decide to meet an owner. Before we show you a business, we’ve already spoken with the owner several times, looked at the numbers and asked what price they have in mind. That saves you weeks, or even months, of calls and in-person meetings with owners who aren’t a good fit.",
+      "a1": "We talk directly to owners open to selling, most of whom aren’t advertised anywhere. We reach out without naming you, and before you see a business we’ve already met the owner, reviewed the numbers and asked their price. That saves you months of dead-end calls.",
       "q2": "What does “pre-screened” mean?",
-      "a2": "It means we’ve checked the basics for you: how much the business earns, how profitable it is, how many people work there, who its customers are, and why the owner wants to sell. We also make sure the owner’s asking price is realistic for what you want to pay. Before buying, you’ll still check everything in detail yourself, usually with an accountant or lawyer.",
+      "a2": "We’ve checked the basics for you: revenue, profit, team size, customers and why the owner is selling, and that the asking price fits your budget. You’ll still do your own detailed checks before buying, usually with an accountant or lawyer.",
       "q3": "How do I receive the opportunities?",
       "a3": "We email you each new business as soon as we’ve checked it. You’ll also have your own Manto dashboard, where you can see every business in one place, follow our progress, ask questions and request to meet the owner. Be as involved as you like.",
       "q4": "How many opportunities will I receive?",

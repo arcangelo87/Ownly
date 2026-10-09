@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import { Clock, EyeOff, FileWarning, Scale, BarChart3, Users, BadgeCheck, Handshake, ListChecks, SlidersHorizontal, Mail, Check } from 'lucide-react';
+import { Clock, EyeOff, FileWarning, Scale, BarChart3, Users, BadgeCheck, Handshake, SlidersHorizontal, Mail, Check } from 'lucide-react';
 import { IconCircle } from '@/components/marketing/IconCircle';
 import { AccessCta } from '@/components/deal-access/AccessCta';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
@@ -28,10 +28,9 @@ export default function DealAccessPage() {
   ];
 
   const steps = [
-    { icon: ListChecks, label: t('howItWorks.step1Label'), desc: t('howItWorks.step1Desc') },
-    { icon: SlidersHorizontal, label: t('howItWorks.step2Label'), desc: t('howItWorks.step2Desc') },
-    { icon: Mail, label: t('howItWorks.step3Label'), desc: t('howItWorks.step3Desc') },
-    { icon: Handshake, label: t('howItWorks.step4Label'), desc: t('howItWorks.step4Desc') },
+    { icon: SlidersHorizontal, label: t('howItWorks.step1Label'), desc: t('howItWorks.step1Desc') },
+    { icon: Mail, label: t('howItWorks.step2Label'), desc: t('howItWorks.step2Desc') },
+    { icon: Handshake, label: t('howItWorks.step3Label'), desc: t('howItWorks.step3Desc') },
   ];
 
   const faqs = [1, 2, 3, 4, 5].map((n) => ({ question: t(`faq.q${n}`), answer: t(`faq.a${n}`) }));
@@ -44,7 +43,7 @@ export default function DealAccessPage() {
       tagline: t('pricing.singleTagline'),
       volume: t('pricing.singleVolume'),
       includedLabel: t('pricing.includedLabel'),
-      items: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => t(`pricing.singleItems.item${n}`)),
+      items: [1, 2, 3, 4, 5].map((n) => t(`pricing.singleItems.item${n}`)),
     },
     {
       tier: 'all',
@@ -85,7 +84,7 @@ export default function DealAccessPage() {
       {/* ── The problem ── */}
       <section className="py-16 md:py-20 px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className={headingClass}>{t('problem.heading')}</h2>
+          <h2 className={`${headingClass} max-w-[560px] mx-auto leading-[1.25]`}>{t('problem.heading')}</h2>
           <div className="w-8 h-[3px] bg-[var(--color-terracotta)] mx-auto mb-12" />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10 max-w-[600px] mx-auto">
             {problems.map(({ icon, label, desc }) => (
@@ -125,7 +124,7 @@ export default function DealAccessPage() {
         <div className="mx-auto max-w-5xl text-center">
           <h2 className={headingClass}>{t('howItWorks.heading')}</h2>
           <div className="w-8 h-[3px] bg-[var(--color-terracotta)] mx-auto mb-12" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {steps.map(({ icon, label, desc }, i) => (
               <div key={label} className="flex flex-col items-center gap-4">
                 <IconCircle icon={icon} variant="surface" />
