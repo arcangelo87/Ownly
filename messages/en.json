@@ -1379,8 +1379,8 @@
     "metaTitle": "Off-market businesses in Portugal",
     "hero": {
       "eyebrow": "For buyers acquiring in Portugal",
-      "h1Lead": "Off-market businesses in Portugal,",
-      "h1Emphasis": "pre-screened for you.",
+      "h1Lead": "The businesses for sale in Portugal",
+      "h1Emphasis": "you won’t find online.",
       "sub": "Get access to a curated stream of acquisition opportunities that already fit your criteria: screened, profiled, and priced in your range. Stop sifting through listings. Start talking to the right owners.",
       "cta": "Get access",
       "note": "Twelve-month access from €299."
@@ -1420,27 +1420,27 @@
       "note": "Both are twelve-month access. You engage with the owners directly after the introduction.",
       "singleTagline": "For buyers who know exactly the kind of business they want.",
       "allTagline": "For buyers open across sectors, or with a thesis that is still evolving.",
-      "volumeLabel": "opportunities per year",
-      "singleVolume": "10–50",
-      "singleVolumeNote": "depending on sector",
-      "allVolume": "40–100",
-      "allVolumeNote": "across all sectors",
+      "volumeLabel": "pre-screened opportunities against your criteria",
+      "singleVolume": "Up to 50",
+      "singleVolumeNote": "per year, depending on sector",
+      "allVolume": "Up to 100",
+      "allVolumeNote": "per year, across all sectors",
       "includedLabel": "What’s included",
       "allIncludedLabel": "Everything in Single sector, plus",
       "singleItems": {
         "item1": "One sector of your choice, e.g. accounting",
         "item2": "Each deal emailed as a full profile",
-        "item3": "Revenue, EBITDA, team size and years in business",
-        "item4": "Client base, concentration and why the owner is selling",
-        "item5": "Price expectation checked against your range",
-        "item6": "Unlimited warm introductions to owners",
-        "item7": "Twelve months of access"
+        "item3": "Your own Manto dashboard to follow every deal and ask questions",
+        "item4": "Revenue, EBITDA, team size and years in business",
+        "item5": "Client base, concentration and why the owner is selling",
+        "item6": "Price expectation checked against your range",
+        "item7": "Unlimited warm introductions to owners",
+        "item8": "Twelve months of access"
       },
       "allItems": {
         "item1": "Every sector we cover: accounting, insurance, financing, tourism and more",
-        "item2": "New sectors added during your access at no extra cost",
-        "item3": "Change your focus at any time as your thesis evolves",
-        "item4": "The widest view of what is available in Portugal"
+        "item2": "Change your focus at any time as your thesis evolves",
+        "item3": "The widest view of what is available in Portugal"
       }
     },
     "managed": {
@@ -1480,7 +1480,7 @@
       "step2Label": "Set your criteria",
       "step2Desc": "Tell us the sector, size, location and price range you are looking for.",
       "step3Label": "Receive profiles",
-      "step3Desc": "Each screened opportunity arrives by email as a full profile.",
+      "step3Desc": "Each screened opportunity arrives by email and in your own Manto dashboard.",
       "step4Label": "Meet the owner",
       "step4Desc": "Ask for an introduction whenever a deal fits. We make it warm, you take it from there."
     },

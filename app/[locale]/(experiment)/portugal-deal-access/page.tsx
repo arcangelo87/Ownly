@@ -45,7 +45,7 @@ export default function DealAccessPage() {
       volume: t('pricing.singleVolume'),
       volumeNote: t('pricing.singleVolumeNote'),
       includedLabel: t('pricing.includedLabel'),
-      items: [1, 2, 3, 4, 5, 6, 7].map((n) => t(`pricing.singleItems.item${n}`)),
+      items: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => t(`pricing.singleItems.item${n}`)),
     },
     {
       tier: 'all',
@@ -55,7 +55,7 @@ export default function DealAccessPage() {
       volume: t('pricing.allVolume'),
       volumeNote: t('pricing.allVolumeNote'),
       includedLabel: t('pricing.allIncludedLabel'),
-      items: [1, 2, 3, 4].map((n) => t(`pricing.allItems.item${n}`)),
+      items: [1, 2, 3].map((n) => t(`pricing.allItems.item${n}`)),
     },
   ] as const;
 
@@ -160,8 +160,8 @@ export default function DealAccessPage() {
                 </p>
                 <p className="text-[14px] text-[var(--color-muted)] leading-[1.6] mb-6">{tagline}</p>
                 <div className="rounded-[6px] bg-[var(--color-surface)] px-5 py-4 mb-6">
-                  <span className="font-[family-name:var(--font-serif)] text-[26px] font-semibold text-[var(--color-text)]">{volume}</span>
-                  <span className="ml-2 text-[14px] font-medium text-[var(--color-text)]">{t('pricing.volumeLabel')}</span>
+                  <p className="font-[family-name:var(--font-serif)] text-[26px] font-semibold leading-[1.2] text-[var(--color-text)]">{volume}</p>
+                  <p className="text-[14px] font-medium text-[var(--color-text)] mt-1">{t('pricing.volumeLabel')}</p>
                   <p className="text-[12px] text-[var(--color-muted)] mt-0.5">{volumeNote}</p>
                 </div>
                 <p className="text-[13px] font-semibold text-[var(--color-text)] mb-3">{includedLabel}</p>
