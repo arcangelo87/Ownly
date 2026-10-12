@@ -7,14 +7,14 @@ import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { recordDealAccessClick, submitDealAccess, type DealAccessTier } from '@/app/actions/deal-access';
 
 interface AccessCtaProps {
-  tier: DealAccessTier;
+  tier: Exclude<DealAccessTier, 'all'>;
   label: string;
   variant?: 'primary' | 'outline';
 }
 
-const headingKey = { single: 'singleHeading', all: 'allHeading', managed: 'managedHeading' } as const;
-const subKey = { single: 'singleSub', all: 'allSub', managed: 'managedSub' } as const;
-const criteriaKey = { single: 'criteriaLabelSingle', all: 'criteriaLabelAll', managed: 'criteriaLabelManaged' } as const;
+const headingKey = { single: 'singleHeading', managed: 'managedHeading' } as const;
+const subKey = { single: 'singleSub', managed: 'managedSub' } as const;
+const criteriaKey = { single: 'criteriaLabelSingle', managed: 'criteriaLabelManaged' } as const;
 
 export function AccessCta({ tier, label, variant = 'primary' }: AccessCtaProps) {
   const t = useTranslations('dealAccess.form');
