@@ -35,26 +35,7 @@ export default function DealAccessPage() {
 
   const faqs = [1, 2, 3, 4, 5].map((n) => ({ question: t(`faq.q${n}`), answer: t(`faq.a${n}`) }));
 
-  const tiers = [
-    {
-      tier: 'single',
-      name: t('pricing.singleName'),
-      price: t('pricing.singlePrice'),
-      tagline: t('pricing.singleTagline'),
-      volume: t('pricing.singleVolume'),
-      includedLabel: t('pricing.includedLabel'),
-      items: [1, 2, 3, 4, 5].map((n) => t(`pricing.singleItems.item${n}`)),
-    },
-    {
-      tier: 'all',
-      name: t('pricing.allName'),
-      price: t('pricing.allPrice'),
-      tagline: t('pricing.allTagline'),
-      volume: t('pricing.allVolume'),
-      includedLabel: t('pricing.allIncludedLabel'),
-      items: [1, 2].map((n) => t(`pricing.allItems.item${n}`)),
-    },
-  ] as const;
+  const items = [1, 2, 3, 4, 5].map((n) => t(`pricing.items.item${n}`));
 
   return (
     <>
@@ -145,35 +126,30 @@ export default function DealAccessPage() {
             <h2 className={headingClass}>{t('pricing.heading')}</h2>
             <div className="w-8 h-[3px] bg-[var(--color-terracotta)] mx-auto" />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {tiers.map(({ tier, name, price, tagline, volume, includedLabel, items }) => (
-              <div key={tier} className="flex flex-col bg-white border border-[var(--color-border)] rounded-[8px] p-8">
-                <h3 className="text-[11px] font-bold tracking-[0.12em] uppercase text-[var(--color-muted)] mb-3">{name}</h3>
-                <p className="mb-2">
-                  <span className="font-[family-name:var(--font-serif)] text-[44px] font-semibold tracking-[-0.02em] text-[var(--color-text)]">
-                    {price}
-                  </span>
-                  <span className="ml-2 text-[14px] text-[var(--color-muted)]">/ {t('pricing.period')}</span>
-                </p>
-                <p className="text-[14px] text-[var(--color-muted)] leading-[1.6] mb-6">{tagline}</p>
-                <div className="rounded-[6px] bg-[var(--color-surface)] px-5 py-4 mb-6">
-                  <p className="font-[family-name:var(--font-serif)] text-[26px] font-semibold leading-[1.2] text-[var(--color-text)]">{volume}</p>
-                  <p className="text-[14px] font-medium text-[var(--color-text)] mt-1">{t('pricing.volumeLabel')}</p>
-                </div>
-                <p className="text-[13px] font-semibold text-[var(--color-text)] mb-3">{includedLabel}</p>
-                <ul className="flex flex-col gap-2.5 mb-8">
-                  {items.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-[14px] text-[var(--color-muted)] leading-[1.5]">
-                      <Check size={16} strokeWidth={2} className="shrink-0 mt-[2px] text-[var(--color-accent)]" aria-hidden="true" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto">
-                  <AccessCta tier={tier} label={t('pricing.cta')} />
-                </div>
-              </div>
-            ))}
+          <div className="mx-auto max-w-md flex flex-col bg-white border border-[var(--color-border)] rounded-[8px] p-8">
+            <h3 className="text-[11px] font-bold tracking-[0.12em] uppercase text-[var(--color-muted)] mb-3">{t('pricing.name')}</h3>
+            <p className="mb-2">
+              <span className="font-[family-name:var(--font-serif)] text-[44px] font-semibold tracking-[-0.02em] text-[var(--color-text)]">
+                {t('pricing.price')}
+              </span>
+              <span className="ml-2 text-[14px] text-[var(--color-muted)]">{t('pricing.period')}</span>
+            </p>
+            <p className="text-[14px] text-[var(--color-muted)] leading-[1.6] mb-6">{t('pricing.tagline')}</p>
+            <div className="rounded-[6px] bg-[var(--color-surface)] px-5 py-4 mb-6">
+              <p className="font-[family-name:var(--font-serif)] text-[26px] font-semibold leading-[1.2] text-[var(--color-text)]">{t('pricing.guaranteeNumber')}</p>
+              <p className="text-[14px] font-medium text-[var(--color-text)] mt-1">{t('pricing.guaranteeLabel')}</p>
+              <p className="text-[12px] text-[var(--color-muted)] mt-2">{t('pricing.guaranteeExtra')}</p>
+            </div>
+            <p className="text-[13px] font-semibold text-[var(--color-text)] mb-3">{t('pricing.includedLabel')}</p>
+            <ul className="flex flex-col gap-2.5 mb-8">
+              {items.map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-[14px] text-[var(--color-muted)] leading-[1.5]">
+                  <Check size={16} strokeWidth={2} className="shrink-0 mt-[2px] text-[var(--color-accent)]" aria-hidden="true" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <AccessCta tier="single" label={t('pricing.cta')} />
           </div>
           <p className="mt-8 text-center text-[13px] text-[var(--color-muted)]">{t('pricing.note')}</p>
         </div>
