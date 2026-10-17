@@ -53,7 +53,7 @@ export function FoundingForm({
     startTransition(async () => {
       const { error } = await submitFoundingEnquiry({ type, name, email, phone: phone || undefined, message: message || undefined });
       if (error) {
-        setFormError(t('errors.submitFailed'));
+        setFormError(error);
       } else {
         setSubmitted(true);
       }
