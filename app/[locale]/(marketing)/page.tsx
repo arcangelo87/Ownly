@@ -215,12 +215,12 @@ export default async function HomePage({
               <p className="text-[14px] text-[var(--color-muted)] leading-[1.65] flex-1">
                 {t('personas.item1Desc')}
               </p>
-              <a
-                href="#search"
+              <Link
+                href={`/${locale}/buy`}
                 className="mt-5 inline-block text-[13px] font-medium text-[var(--color-accent)] hover:opacity-80 transition-opacity"
               >
                 {t('personas.item1Cta')} →
-              </a>
+              </Link>
             </div>
 
             {/* Business owners */}
