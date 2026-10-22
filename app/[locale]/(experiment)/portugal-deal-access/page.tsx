@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import { Clock, EyeOff, FileWarning, Scale, BarChart3, Users, BadgeCheck, Handshake, SlidersHorizontal, Mail, Check } from 'lucide-react';
 import { IconCircle } from '@/components/marketing/IconCircle';
 import { AccessCta } from '@/components/deal-access/AccessCta';
+import { ManagedSearchLink } from '@/components/deal-access/ManagedSearchLink';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
 import { NOINDEX } from '@/lib/seo/pages';
 
@@ -35,7 +36,7 @@ export default function DealAccessPage() {
 
   const faqs = [1, 2, 3, 4, 5].map((n) => ({ question: t(`faq.q${n}`), answer: t(`faq.a${n}`) }));
 
-  const items = [1, 2, 3, 4, 5].map((n) => t(`pricing.items.item${n}`));
+  const items = [1, 2, 3, 4].map((n) => t(`pricing.items.item${n}`));
 
   return (
     <>
@@ -172,7 +173,7 @@ export default function DealAccessPage() {
           <h2 className={headingClass}>{t('managed.heading')}</h2>
           <div className="w-8 h-[3px] bg-[var(--color-terracotta)] mx-auto mb-6" />
           <p className="text-[15px] text-[var(--color-muted)] leading-[1.7] mb-8">{t('managed.body')}</p>
-          <AccessCta tier="managed" label={t('managed.cta')} variant="outline" />
+          <ManagedSearchLink label={t('managed.cta')} />
         </div>
       </section>
     </>

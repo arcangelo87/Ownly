@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { InstitutionalSearchFormEmbed } from '@/components/institutional/InstitutionalSearchFormEmbed';
 
 interface ExpandableInstitutionalFormProps {
@@ -10,6 +10,11 @@ interface ExpandableInstitutionalFormProps {
 
 export function ExpandableInstitutionalForm({ ctaLabel, note }: ExpandableInstitutionalFormProps) {
   const [open, setOpen] = useState(false);
+
+  // Arriving from another page via #enquiry opens the form straight away
+  useEffect(() => {
+    if (window.location.hash === '#enquiry') setOpen(true);
+  }, []);
 
   if (!open) {
     return (

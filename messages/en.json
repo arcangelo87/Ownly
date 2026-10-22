@@ -1273,6 +1273,15 @@
         "accounting": "Accounting and compliance",
         "insurance": "Insurance",
         "lending": "Lending and mortgage brokerage",
+        "tourism": "Tourism and hospitality",
+        "retail": "Retail and e-commerce",
+        "healthcare": "Healthcare and clinics",
+        "it_services": "IT and software services",
+        "logistics": "Logistics and distribution",
+        "manufacturing": "Manufacturing",
+        "education": "Education and training",
+        "food_beverage": "Food and beverage",
+        "professional_services": "Professional services",
         "other": "Other"
       },
       "sectorOther": {
@@ -1424,8 +1433,7 @@
         "item1": "Each company sent as soon as it’s screened",
         "item2": "Anonymised profile: revenue, EBITDA, team, clients and reason for sale",
         "item3": "Owner confirmed open to selling, at a price that fits your range",
-        "item4": "Warm introductions to any company you choose",
-        "item5": "Owner identity shared once you sign the introduction agreement"
+        "item4": "Warm introductions to any company you choose"
       },
       "note": "One-off payment, no subscription. You engage with the owners directly after the introduction."
     },
@@ -1436,14 +1444,10 @@
     },
     "form": {
       "singleHeading": "Three-month search",
-      "managedHeading": "Managed search",
       "singleSub": "€499 one-off, with at least 5 matches in 3 months or a full refund. Leave your email and we’ll be in touch.",
-      "managedSub": "Success fee basis. Leave your email and we’ll arrange a call.",
       "emailLabel": "Email",
       "criteriaLabelSingle": "What are you looking for? Sector, size and price range (optional)",
-      "criteriaLabelManaged": "What are you looking to acquire? (optional)",
       "submit": "Request access",
-      "submitManaged": "Request a call",
       "submitting": "Sending…",
       "successHeading": "Thank you. You’re on the list.",
       "successBody": "We’ll be in touch shortly by email.",
@@ -1461,7 +1465,7 @@
       "step1Label": "Tell us what you’re looking for",
       "step1Desc": "Share your sector, size, location and budget, and we start searching for you.",
       "step2Label": "Get curated opportunities",
-      "step2Desc": "We send you every business we’ve vetted, by email and in your Manto dashboard.",
+      "step2Desc": "We email you every business we’ve vetted, as soon as it’s checked.",
       "step3Label": "Meet the owner",
       "step3Desc": "When one feels right, we introduce you personally. You take it from there."
     },
@@ -1472,7 +1476,7 @@
       "q2": "What does “pre-screened” mean?",
       "a2": "We’ve checked the basics for you: revenue, profit, team size, customers and why the owner is selling, and that the asking price fits your budget. You’ll still do your own detailed checks before buying, usually with an accountant or lawyer.",
       "q3": "How do I receive the opportunities?",
-      "a3": "We email you each new business as soon as we’ve checked it. You’ll also have your own Manto dashboard, where you can see every business in one place, follow our progress, ask questions and request to meet the owner. Be as involved as you like.",
+      "a3": "We email you each new business as soon as we’ve checked it, with a short anonymised profile. Ask us anything about it, and request an introduction whenever one fits.",
       "q4": "How many opportunities will I receive?",
       "a4": "At least five screened companies matching your criteria within three months, or a full refund. Any extra matches we find in that time are included at no cost. We only share businesses that pass our checks.",
       "q5": "What happens after you introduce me?",

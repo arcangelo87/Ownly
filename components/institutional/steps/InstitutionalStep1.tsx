@@ -6,7 +6,21 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 
-const SECTOR_VALUES = ['accounting', 'insurance', 'lending', 'other'] as const;
+const SECTOR_VALUES = [
+  'accounting',
+  'insurance',
+  'lending',
+  'tourism',
+  'retail',
+  'healthcare',
+  'it_services',
+  'logistics',
+  'manufacturing',
+  'education',
+  'food_beverage',
+  'professional_services',
+  'other',
+] as const;
 const TICKET_SIZE_VALUES = ['under_1m', '1m_3m', '3m_7m', '7m_15m', 'over_15m'] as const;
 const CAPITAL_VALUES = ['yes', 'no', 'notSure'] as const;
 

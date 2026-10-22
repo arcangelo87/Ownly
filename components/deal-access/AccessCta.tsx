@@ -7,16 +7,15 @@ import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { recordDealAccessClick, submitDealAccess, type DealAccessTier } from '@/app/actions/deal-access';
 
 interface AccessCtaProps {
-  tier: Exclude<DealAccessTier, 'all'>;
+  tier: Exclude<DealAccessTier, 'all' | 'managed'>;
   label: string;
-  variant?: 'primary' | 'outline';
 }
 
-const headingKey = { single: 'singleHeading', managed: 'managedHeading' } as const;
-const subKey = { single: 'singleSub', managed: 'managedSub' } as const;
-const criteriaKey = { single: 'criteriaLabelSingle', managed: 'criteriaLabelManaged' } as const;
+const headingKey = { single: 'singleHeading' } as const;
+const subKey = { single: 'singleSub' } as const;
+const criteriaKey = { single: 'criteriaLabelSingle' } as const;
 
-export function AccessCta({ tier, label, variant = 'primary' }: AccessCtaProps) {
+export function AccessCta({ tier, label }: AccessCtaProps) {
   const t = useTranslations('dealAccess.form');
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
@@ -46,9 +45,7 @@ export function AccessCta({ tier, label, variant = 'primary' }: AccessCtaProps) 
   }
 
   const triggerClass =
-    variant === 'primary'
-      ? 'w-full inline-flex justify-center items-center px-8 py-4 bg-[var(--color-text)] text-white text-[16px] font-bold rounded-full hover:opacity-90 transition-opacity'
-      : 'inline-flex justify-center items-center px-9 py-4 border border-[var(--color-text)] text-[var(--color-text)] text-[16px] font-bold rounded-full hover:bg-[var(--color-text)] hover:text-white transition-colors';
+    'w-full inline-flex justify-center items-center px-8 py-4 bg-[var(--color-text)] text-white text-[16px] font-bold rounded-full hover:opacity-90 transition-opacity';
 
   const inputId = `deal-access-${tier}`;
 
@@ -106,7 +103,7 @@ export function AccessCta({ tier, label, variant = 'primary' }: AccessCtaProps) 
                 disabled={isPending}
                 className="mt-2 inline-flex justify-center items-center px-8 py-4 bg-[var(--color-text)] text-white text-[16px] font-bold rounded-full hover:opacity-90 transition-opacity disabled:opacity-60"
               >
-                {isPending ? t('submitting') : tier === 'managed' ? t('submitManaged') : t('submit')}
+                {isPending ? t('submitting') : t('submit')}
               </button>
             </form>
           </>
