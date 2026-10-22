@@ -74,16 +74,13 @@ export default async function BlogPostPage({ params }: { params: Params }) {
 
         <div className="post-body mt-10" dangerouslySetInnerHTML={{ __html: post.html }} />
 
-        <aside className="mt-14 rounded-[6px] border border-[var(--color-border)] bg-[var(--color-surface)] p-8 text-center">
-          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--color-muted)] mb-5">{t('ctaEyebrow')}</p>
-          <a
-            href={post.ctaUrl}
-            {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-            className="inline-flex items-center rounded-[4px] bg-[var(--color-accent)] px-6 py-3 text-[15px] font-semibold text-white hover:opacity-90 transition-opacity"
-          >
-            {post.ctaLabel} →
-          </a>
-        </aside>
+        <a
+          href={post.ctaUrl}
+          {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          className="mt-10 inline-flex items-center rounded-[4px] bg-[var(--color-accent)] px-6 py-3 text-[15px] font-semibold text-white hover:opacity-90 transition-opacity"
+        >
+          {post.ctaLabel} →
+        </a>
       </div>
     </article>
   );

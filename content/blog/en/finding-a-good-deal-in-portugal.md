@@ -40,7 +40,3 @@ Pre-screened access suits investors who already know what they want to buy and w
 ## A simple way to choose
 
 If you have time and the language, do it yourself. If you have a complex deal and budget, hire a broker. If you have a clear thesis and want to skip straight to the shortlist, this is where we come in.
-
-## See how it works
-
-Tell us what you are looking for, and we will show you what a screened shortlist looks like.
