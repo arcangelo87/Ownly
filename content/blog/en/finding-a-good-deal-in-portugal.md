@@ -5,7 +5,7 @@ slug: finding-a-good-deal-in-portugal
 lang: en
 date: 2026-10-27
 author: Arcangelo Passaro
-cta_label: "See how Portugal deal access works"
+cta_label: "See how pre-screened deal access works"
 cta_url: /en/portugal-deal-access
 ---
 
