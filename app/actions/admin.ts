@@ -4,6 +4,8 @@ import Anthropic from '@anthropic-ai/sdk';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { createClient } from '@/lib/supabase/server';
 import { SECTOR_LABELS, generateSlug } from '@/lib/format';
+import { notifyIndexNow } from '@/lib/indexnow';
+import { pageUrl } from '@/lib/seo/metadata';
 
 const VALID_STATUSES = ['draft', 'in_review', 'live', 'rejected'] as const;
 type ListingStatus = (typeof VALID_STATUSES)[number];
@@ -16,12 +18,15 @@ export async function updateListingStatus(listingId: string, status: ListingStat
   if (!VALID_STATUSES.includes(status)) throw new Error('Invalid status');
 
   const admin = createAdminClient();
-  const { error } = await admin
+  const { data, error } = await admin
     .from('listings')
     .update({ status })
-    .eq('id', listingId);
+    .eq('id', listingId)
+    .select('slug')
+    .single();
 
   if (error) throw error;
+  if (data.slug) notifyIndexNow([pageUrl('en', `/deals/${data.slug}`)]);
 }
 
 type LocaleContent = {

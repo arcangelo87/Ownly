@@ -4,6 +4,8 @@ import Anthropic from '@anthropic-ai/sdk';
 import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { generateSlug } from '@/lib/format';
+import { notifyIndexNow } from '@/lib/indexnow';
+import { pageUrl } from '@/lib/seo/metadata';
 
 export async function submitEnquiry(data: {
   listing_id: string;
@@ -57,6 +59,7 @@ export async function publishListing(listingId: string) {
       .update({ status: 'live' })
       .eq('id', listingId);
     if (error) throw error;
+    notifyIndexNow([pageUrl('en', `/deals/${listing.slug}`)]);
     return listing.slug as string;
   }
 
@@ -79,6 +82,7 @@ export async function publishListing(listingId: string) {
   if (error) throw error;
 
   translateListing(listingId, admin).catch((e) => console.error('[translate-on-publish]', listingId, e));
+  notifyIndexNow([pageUrl('en', `/deals/${slug}`)]);
   return slug;
 }
 
