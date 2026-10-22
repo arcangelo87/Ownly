@@ -4,6 +4,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { SiteNav } from '@/components/marketing/SiteNav';
+import { buildMetadata } from '@/lib/seo/metadata';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { MetricChip } from '@/components/deals/MetricChip';
 import { HighlightsList } from '@/components/deals/HighlightsList';
@@ -63,14 +64,8 @@ export async function generateMetadata({
   const title = lc.title ?? listing.business_name ?? sectorLabel ?? 'Business for sale';
   const rawDescription = lc.about ?? listing.business_description ?? listing.strongest_point ?? '';
   const description = rawDescription.length > 160 ? `${rawDescription.slice(0, 157).trimEnd()}...` : rawDescription || undefined;
-  const url = `/${locale}/deals/${slug}`;
-
-  return {
-    title,
-    description,
-    alternates: { canonical: url },
-    openGraph: { title, description, url, type: 'website' },
-  };
+  // Deal pages exist in English only; /pt/deals/... redirects to /en
+  return buildMetadata({ locale: 'en', path: `/deals/${slug}`, locales: ['en'], title, description });
 }
 
 export default async function DealDetailPage({

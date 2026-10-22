@@ -4,6 +4,10 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 const nextConfig: NextConfig = {
+  // Blog posts are read from disk at request time too (sitemap, nav, deals)
+  outputFileTracingIncludes: {
+    '/**/*': ['./content/blog/**/*'],
+  },
   experimental: {
     serverActions: { bodySizeLimit: '52mb' },
   },

@@ -57,7 +57,7 @@ export default async function LocaleLayout({
 
   return (
     <html
-      lang={locale}
+      lang={locale === 'pt' ? 'pt-PT' : locale}
       className={`${playfair.variable} ${dmSans.variable} ${ibmPlexMono.variable}`}
     >
       <body>

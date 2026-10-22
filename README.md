@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Manto
 
-## Getting Started
-
-First, run the development server:
+Next.js 15 (App Router), next-intl (`en`, `pt`), Supabase, deployed on Vercel. See CLAUDE.md for project rules.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev     # local dev server
+npm run build   # production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Sitemap, robots.txt and new pages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `app/sitemap.ts` generates https://onmanto.com/sitemap.xml (revalidated hourly) from three sources, with hreflang alternates for every URL:
+  1. `SITE_PAGES` in `lib/seo/pages.ts` (static pages, one URL per language listed in `locales`)
+  2. markdown posts in `content/blog/` (plus a `/blog` index per language that has posts)
+  3. live deals from Supabase
+- `app/robots.ts` generates robots.txt: allow all except `/admin` and `/claim`, plus the Sitemap line.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**New page:** add an entry to `SITE_PAGES` and export `generateMetadata` returning `pageMetadata('<path>', locale)`. Add `meta.<metaKey>.title` and `.description` to each language's messages file. Add `'pt'` to `locales` only when Portuguese copy exists. Pages marked `experiment: true` stay noindex and out of the sitemap.
 
-## Learn More
+**New blog post:** add one file to `content/blog/pt/` or `content/blog/en/`. It appears in the sitemap, the blog index and the language switcher on the next deploy, with no other edits.
 
-To learn more about Next.js, take a look at the following resources:
+```markdown
+---
+title: "Post title"
+description: "One or two sentences for search results."
+slug: post-slug
+lang: en            # en or pt-PT, must match the folder
+date: 2026-10-27    # YYYY-MM-DD; future dates are published as is
+author: Arcangelo Passaro
+cta_label: "Button text"
+cta_url: /en/portugal-deal-access
+noindex: false      # optional
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Markdown body.
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+A post in the other language with the same slug is treated as its counterpart (hreflang and switcher). Without one, the switcher links to the other language's home page.

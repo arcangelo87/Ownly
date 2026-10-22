@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { DealListingPage } from '@/components/deals/DealListingPage';
 import { SiteNav } from '@/components/marketing/SiteNav';
+import { pageMetadata } from '@/lib/seo/metadata';
 
 export const dynamic = 'force-dynamic';
 
@@ -12,17 +13,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const title = 'Business Listings for Sale in Italy and Portugal';
-  const description =
-    'Browse curated SME deals for sale across Italy and Portugal. Structured listings with revenue, EBITDA, and asking price for every business.';
-  const url = `/${locale}/deals`;
-
-  return {
-    title,
-    description,
-    alternates: { canonical: url },
-    openGraph: { title, description, url, type: 'website' },
-  };
+  return pageMetadata('/deals', locale);
 }
 
 export type ListingCard = {

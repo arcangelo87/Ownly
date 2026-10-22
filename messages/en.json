@@ -149,7 +149,8 @@
     "browse": "Browse deals",
     "getStarted": "Get started →",
     "about": "About",
-    "home": "Homepage"
+    "home": "Homepage",
+    "language": "Language"
   },
   "footer": {
     "tagline": "Buy and sell real businesses in Portugal and Italy.",
@@ -166,7 +167,8 @@
     "terms": "Terms",
     "copyright": "© 2026 Manto",
     "home": "Homepage",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "blog": "Insights"
   },
   "home": {
     "hero": {
@@ -1489,5 +1491,54 @@
       "q5": "What happens after you introduce me?",
       "a5": "We put you in touch with the owner, who will already know who you are and why you’re interested. From there you talk to them directly. If you’d like help negotiating and completing the purchase, we offer that as a separate service, paid only if the deal goes through."
     }
+  },
+  "meta": {
+    "home": {
+      "title": "Off-market acquisitions in Portugal for PE firms and strategic buyers",
+      "description": "A recurring, screened pipeline of off-market businesses in accounting, insurance and lending in Portugal. For PE firms, family offices and strategic acquirers."
+    },
+    "sellSide": {
+      "title": "Sell your business confidentially",
+      "description": "Thinking about selling your business? We normalise your numbers, find real buyers quietly and stay with you through close. Confidential from the first call."
+    },
+    "buyers": {
+      "title": "Buy a business in Portugal",
+      "description": "Find a good business to buy in Portugal without months of dead ends and overpriced listings. Private beta, by invitation."
+    },
+    "deals": {
+      "title": "Business Listings for Sale in Italy and Portugal",
+      "description": "Browse curated SME deals for sale across Italy and Portugal. Structured listings with revenue, EBITDA, and asking price for every business."
+    },
+    "dealAccess": {
+      "title": "Off-market businesses in Portugal",
+      "description": "Pre-screened acquisition opportunities in Portugal that fit your criteria and budget. Skip the listings and talk to the right owners."
+    },
+    "buy": {
+      "title": "Tell us what you want to buy",
+      "description": "Share your acquisition criteria for Italy and Portugal and we will match you with businesses that fit."
+    },
+    "sell": {
+      "title": "List your business for sale",
+      "description": "Turn your business information into a structured deal page in front of buyers looking in Italy and Portugal. Free to start, no broker fees."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "How Manto collects, uses and protects your personal data."
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "description": "The terms that govern your use of Manto."
+    },
+    "blog": {
+      "title": "Insights for buyers acquiring in Portugal",
+      "description": "Practical guides on finding, screening and buying businesses in Portugal."
+    }
+  },
+  "blog": {
+    "heading": "Insights",
+    "sub": "Practical guides for buyers acquiring in Portugal.",
+    "by": "By",
+    "ctaEyebrow": "Next step",
+    "back": "All articles"
   }
 }

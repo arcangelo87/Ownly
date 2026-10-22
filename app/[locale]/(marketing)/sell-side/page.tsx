@@ -4,10 +4,15 @@ import { Lock, Target, Handshake, EyeOff, Calculator, Users, GraduationCap, Cloc
 import { IconCircle } from '@/components/marketing/IconCircle';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
 import { ExpandableSellerForm } from '@/components/marketing/ExpandableSellerForm';
-import { LocaleSwitch } from '@/components/marketing/LocaleSwitch';
+import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo/metadata';
 
-export default async function SellSidePage({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  return pageMetadata('/sell-side', locale);
+}
+
+export default async function SellSidePage() {
   const t = await getTranslations('sellSide');
 
   const whyUs = [
@@ -40,8 +45,7 @@ export default async function SellSidePage({ params }: { params: Promise<{ local
   return (
     <>
       {/* ── Hero ── */}
-      <section className="pt-6 md:pt-8 pb-20 md:pb-28 px-6 text-center bg-[var(--color-surface)]">
-        <LocaleSwitch locale={locale} href="/sell-side" />
+      <section className="py-20 md:py-28 px-6 text-center bg-[var(--color-surface)]">
         <div className="mx-auto max-w-2xl">
           <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-[var(--color-muted)] mb-5">
             {t('hero.eyebrow')}

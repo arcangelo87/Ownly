@@ -1,5 +1,12 @@
 import { getTranslations } from 'next-intl/server';
 import { SellerForm } from '@/components/seller/SellerForm';
+import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo/metadata';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata('/sell', locale);
+}
 
 export default async function SellPage() {
   const t = await getTranslations('sellers');
