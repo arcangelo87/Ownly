@@ -3,7 +3,7 @@ title: "Buying a business in Portugal: why finding a good deal takes longer than
 description: "The good businesses in Portugal rarely get listed. What it takes to find and screen a target, your options (DIY, a broker on mandate, or pre-screened deal access) and how to choose."
 slug: finding-a-good-deal-in-portugal
 lang: en
-date: 2026-10-27
+date: 2026-10-22
 author: Arcangelo Passaro
 cta_label: "See how pre-screened deal access works"
 cta_url: /en/portugal-deal-access

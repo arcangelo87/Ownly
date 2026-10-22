@@ -6,6 +6,11 @@ import { SITE_PAGES } from '@/lib/seo/pages';
 
 export const revalidate = 3600;
 
+// Never publish a lastModified in the future.
+function notAfterNow(date: Date): Date {
+  return new Date(Math.min(date.getTime(), Date.now()));
+}
+
 // Built from SITE_PAGES, the markdown posts in content/blog and live deals.
 // Nothing to edit here when a page or post is added.
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -32,7 +37,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       const path = `/blog/${post.slug}`;
       return {
         url: pageUrl(post.locale, path),
-        lastModified: new Date(`${post.date}T00:00:00Z`),
+        lastModified: notAfterNow(new Date(`${post.date}T00:00:00Z`)),
         changeFrequency: 'monthly',
         priority: 0.7,
         alternates: { languages: hreflangs(path, postLocales(post.slug)) },
@@ -49,7 +54,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const dealEntries: MetadataRoute.Sitemap = (listings ?? []).map((listing) => ({
     url: pageUrl('en', `/deals/${listing.slug}`),
-    lastModified: listing.created_at ? new Date(listing.created_at) : undefined,
+    lastModified: listing.created_at ? notAfterNow(new Date(listing.created_at)) : undefined,
     changeFrequency: 'weekly',
     priority: 0.8,
     alternates: { languages: hreflangs(`/deals/${listing.slug}`, ['en']) },

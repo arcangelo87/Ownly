@@ -25,7 +25,7 @@ title: "Post title"
 description: "One or two sentences for search results."
 slug: post-slug
 lang: en            # en or pt-PT, must match the folder
-date: 2026-10-27    # YYYY-MM-DD; future dates are published as is
+date: 2026-10-22    # YYYY-MM-DD; a future date shows in the sitemap as the current time
 author: Arcangelo Passaro
 cta_label: "Button text"
 cta_url: /en/portugal-deal-access

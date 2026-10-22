@@ -3,7 +3,7 @@ title: "Quanto vale o meu gabinete de contabilidade?"
 description: "O que determina o valor de um gabinete de contabilidade em Portugal: receita recorrente, dependência do dono, margem e transição. Guia para quem pensa vender."
 slug: quanto-vale-o-meu-gabinete-de-contabilidade
 lang: pt-PT
-date: 2026-10-27
+date: 2026-10-22
 author: Arcangelo Passaro
 cta_label: "Marcar uma conversa de 30 minutos"
 cta_url: https://calendar.app.google/wBZoYmtS88ymrF6p8
