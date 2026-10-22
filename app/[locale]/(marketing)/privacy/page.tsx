@@ -1,4 +1,11 @@
 import { useTranslations } from 'next-intl';
+import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo/metadata';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata('/privacy', locale);
+}
 
 const SECTIONS = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9'] as const;
 

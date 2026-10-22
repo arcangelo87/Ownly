@@ -5,11 +5,13 @@ import { Repeat, Target, Building2, Inbox, RefreshCw, GraduationCap, EyeOff, Cli
 import { IconCircle } from '@/components/marketing/IconCircle';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
 import { ExpandableInstitutionalForm } from '@/components/marketing/ExpandableInstitutionalForm';
+import { pageMetadata } from '@/lib/seo/metadata';
 
-// Served at /, /en and /en/institutional-buy-side: rank one URL, the bare domain
-export const metadata: Metadata = {
-  alternates: { canonical: '/' },
-};
+// Served at /, /en and /en/institutional-buy-side; all canonicalise to the bare domain
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata('', locale);
+}
 
 // Public URL shared with investors: do not rename or move this route.
 // If it must change, 301 redirect /en/institutional-buy-side to https://onmanto.com.

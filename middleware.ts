@@ -2,8 +2,11 @@ import { createServerClient } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
 import createIntlMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
+import { SITE_PAGES } from './lib/seo/pages';
 
 const intlMiddleware = createIntlMiddleware(routing);
+
+const PT_PATHS = new Set(SITE_PAGES.filter((p) => p.locales.includes('pt')).map((p) => p.path));
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -16,12 +19,20 @@ export async function middleware(request: NextRequest) {
     return NextResponse.rewrite(new URL('/en/institutional-buy-side', request.url));
   }
 
-  // The sell-side page is fully translated into Portuguese; other pt/it routes
-  // are not translated yet, so redirect those to English.
-  const isTranslatedPtRoute = /^\/pt\/sell-side\/?$/.test(pathname);
-  if (/^\/(pt|it)(\/|$)/.test(pathname) && !isTranslatedPtRoute) {
-    const rest = pathname.replace(/^\/(pt|it)/, '') || '/';
-    return NextResponse.redirect(new URL(`/en${rest}`, request.url), 301);
+  // The PT home is the PT sell-side page
+  if (pathname === '/pt' || pathname === '/pt/') {
+    return NextResponse.redirect(new URL('/pt/sell-side', request.url), 308);
+  }
+
+  // Only pages with Portuguese copy (SITE_PAGES) and PT blog posts are served
+  // under /pt. Everything else, and any old /it URL, goes to the English page.
+  const localeMatch = pathname.match(/^\/(pt|it)(\/.*)?$/);
+  if (localeMatch) {
+    const rest = (localeMatch[2] ?? '').replace(/\/$/, '');
+    const servedInPt = localeMatch[1] === 'pt' && (PT_PATHS.has(rest) || rest.startsWith('/blog'));
+    if (!servedInPt) {
+      return NextResponse.redirect(new URL(`/en${rest}`, request.url), 308);
+    }
   }
 
   // Refresh Supabase auth session on every request

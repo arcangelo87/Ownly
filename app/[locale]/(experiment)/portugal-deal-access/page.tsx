@@ -4,9 +4,13 @@ import { IconCircle } from '@/components/marketing/IconCircle';
 import { AccessCta } from '@/components/deal-access/AccessCta';
 import { ManagedSearchLink } from '@/components/deal-access/ManagedSearchLink';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
-import { NOINDEX } from '@/lib/seo/pages';
+import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo/metadata';
 
-export const metadata = { ...NOINDEX, title: 'Off-market businesses in Portugal' };
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata('/portugal-deal-access', locale);
+}
 
 const headingClass =
   'font-[family-name:var(--font-serif)] text-[26px] md:text-[30px] font-semibold tracking-[-0.02em] text-[var(--color-text)] mb-1';

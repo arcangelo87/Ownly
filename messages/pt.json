@@ -128,7 +128,8 @@
     "buyers": "Para compradores",
     "browse": "Ver anúncios",
     "getStarted": "Começar →",
-    "about": "Sobre nós"
+    "about": "Sobre nós",
+    "language": "Idioma"
   },
   "footer": {
     "tagline": "Compre e venda negócios reais em Portugal e Itália.",
@@ -144,7 +145,8 @@
     "linkedin": "LinkedIn",
     "buySide": "Compradores individuais",
     "institutionalBuySide": "Compradores estratégicos",
-    "sellSide": "Proprietários de negócios"
+    "sellSide": "Proprietários de negócios",
+    "blog": "Artigos"
   },
   "home": {
     "hero": {
@@ -393,7 +395,7 @@
     "howItWorks": {
       "heading": "Como funciona",
       "badge": "Modo concierge",
-      "step1Label": "Compartilhe os seus critérios.",
+      "step1Label": "Partilhe os seus critérios.",
       "step1Desc": "Orçamento, setor, quanto envolvimento. Sem custo, sem compromisso.",
       "step2Label": "Nós procuramos",
       "step2Desc": "Oportunidades que não encontraria facilmente por conta própria.",
@@ -885,5 +887,33 @@
       "heading": "Entraremos em contacto.",
       "body": "Os seus dados foram guardados. Entraremos em contacto para marcar uma chamada confidencial."
     }
+  },
+  "meta": {
+    "sellSide": {
+      "title": "Vender o seu negócio com confidencialidade",
+      "description": "A pensar em vender o seu negócio? Normalizamos os seus números, encontramos compradores reais com discrição e acompanhamo-lo até ao fecho. Confidencial desde a primeira chamada."
+    },
+    "buyers": {
+      "title": "Comprar um negócio em Portugal",
+      "description": "Encontre um bom negócio para comprar em Portugal sem meses de becos sem saída e anúncios sobrevalorizados. Beta privada, por convite."
+    },
+    "privacy": {
+      "title": "Política de Privacidade",
+      "description": "Como o Manto recolhe, utiliza e protege os seus dados pessoais."
+    },
+    "terms": {
+      "title": "Termos de Serviço",
+      "description": "Os termos que regem a utilização do Manto."
+    },
+    "blog": {
+      "title": "Artigos para quem pensa vender o seu negócio",
+      "description": "Guias práticos sobre como avaliar, preparar e vender o seu negócio em Portugal."
+    }
+  },
+  "blog": {
+    "heading": "Artigos",
+    "sub": "Guias práticos para quem pensa vender o seu negócio.",
+    "by": "Por",
+    "back": "Todos os artigos"
   }
 }

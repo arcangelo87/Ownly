@@ -1,6 +1,8 @@
 import { useTranslations } from 'next-intl';
 import { Logo } from '@/components/ui/Logo';
 import { SiteFooter } from '@/components/marketing/SiteFooter';
+import { LanguageSwitcher } from '@/components/marketing/LanguageSwitcher';
+import { availablePaths } from '@/lib/seo/metadata';
 
 // Standalone experiment pages: own header, shared site footer.
 export default function ExperimentLayout({ children }: { children: React.ReactNode }) {
@@ -11,6 +13,9 @@ export default function ExperimentLayout({ children }: { children: React.ReactNo
       <header className="border-b border-[var(--color-border)] bg-[var(--color-bg)] relative z-40">
         <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between gap-8">
           <Logo width={135} />
+          <div className="ml-auto">
+            <LanguageSwitcher available={availablePaths()} />
+          </div>
           <a
             href="#pricing"
             className="group relative inline-flex items-center overflow-hidden rounded-[4px] border border-[var(--color-accent)] px-4 py-2.5 md:px-6 md:py-3 text-[14px] font-semibold text-[var(--color-accent)] transition-colors duration-300 hover:text-white"

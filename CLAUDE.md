@@ -29,7 +29,7 @@ Solo-operated, bootstrapped. Keep the codebase simple. No unnecessary abstractio
 - shadcn/ui — always restyle to match design tokens, never use defaults unstyled
 - Supabase (Postgres + Auth + Storage)
 - Anthropic Claude API — claude-sonnet-4-20250514
-- next-intl (en live, pt + it empty placeholders)
+- next-intl (en and pt)
 - Vercel
 
 ---
@@ -73,7 +73,20 @@ Full requirements for each epic are in bottega-product-doc.md.
 
 ## i18n
 
-Use `useTranslations('namespace')` in every component. Locale files in `/messages/`. Only `en.json` populated — `pt.json` and `it.json` are empty placeholders.
+Use `useTranslations('namespace')` in every component. Locale files in `/messages/`: `en.json` and `pt.json` (pt-PT). No other locales, no empty placeholders.
+
+- The URL alone decides the language. No geo, cookie or Accept-Language redirects.
+- A page is served under `/pt` only when it has real Portuguese copy and lists `'pt'` in `SITE_PAGES` (`lib/seo/pages.ts`). Other `/pt/...` URLs 308 to `/en/...`. `/pt` 308s to `/pt/sell-side`, the PT home.
+- Never auto-translate copy. If a page exists in one language only, flag it.
+
+---
+
+## SEO and discoverability (default for every new or changed page)
+
+- Every public page has an entry in `SITE_PAGES` in `lib/seo/pages.ts` and uses `generateMetadata` with `pageMetadata(path, locale)`. Its title and description go in `messages/<locale>.json` under `meta.<metaKey>`. That one entry puts the page in the sitemap, hreflang, canonical URLs, the language switcher and the `/pt` routing. Do this in the same change that adds the page; don't wait to be asked.
+- Pages are indexable by default. The only exception is a page marked `experiment: true` (noindex, out of the sitemap).
+- When an experiment page ships its final version, remove `experiment: true` in that same change so it becomes indexable automatically. Don't ask first. This applies to `/en/portugal-deal-access`: it is noindex until its final version ships, then indexable.
+- Blog posts: one markdown file in `content/blog/<locale>/`. See README.
 
 ---
 

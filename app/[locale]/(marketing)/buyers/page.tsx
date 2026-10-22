@@ -16,6 +16,13 @@ import {
 import { IconCircle } from '@/components/marketing/IconCircle';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
 import { ExpandableBuyerForm } from '@/components/marketing/ExpandableBuyerForm';
+import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo/metadata';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata('/buyers', locale);
+}
 
 export default function BuyersPage() {
   const t = useTranslations('buyers');
