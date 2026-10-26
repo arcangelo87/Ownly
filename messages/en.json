@@ -1257,7 +1257,10 @@
     },
     "cta": {
       "headingLead": "Build a pipeline with Manto in",
-      "headingEmphasis": "Portugal.",
+      "headingCountry1": "Portugal",
+      "headingCountry2": "Italy",
+      "headingCountry3": "Spain",
+      "headingAfter": ".",
       "button": "Talk to us about your mandate",
       "note": "We'll follow up personally within days."
     }

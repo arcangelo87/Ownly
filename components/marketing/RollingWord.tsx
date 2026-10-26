@@ -24,7 +24,8 @@ export function RollingWord({ words, interval = 2500 }: RollingWordProps) {
   }, [words.length, interval]);
 
   // Measure each word once rendered, so the box can ease between their widths
-  // and the text after it stays snug.
+  // and the text after it stays snug. The padding, offset by the negative
+  // margin, keeps italic overhangs from being clipped.
   useEffect(() => {
     if (!animated) return;
     setWidths(wordRefs.current.map((el) => el?.offsetWidth ?? 0));
@@ -34,7 +35,7 @@ export function RollingWord({ words, interval = 2500 }: RollingWordProps) {
 
   return (
     <span
-      className="inline-grid justify-items-start overflow-hidden transition-[width] duration-500 ease-out"
+      className="-mx-[0.1em] inline-grid justify-items-start overflow-hidden transition-[width] duration-500 ease-out"
       style={widths[index] ? { width: widths[index] } : undefined}
     >
       {words.map((word, i) => {
@@ -52,7 +53,7 @@ export function RollingWord({ words, interval = 2500 }: RollingWordProps) {
               wordRefs.current[i] = el;
             }}
             aria-hidden={i !== 0}
-            className={`[grid-area:1/1] whitespace-nowrap transition-[translate,opacity] duration-500 ease-out ${position}`}
+            className={`[grid-area:1/1] whitespace-nowrap px-[0.1em] transition-[translate,opacity] duration-500 ease-out ${position}`}
           >
             {word}
           </span>

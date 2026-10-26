@@ -160,9 +160,12 @@ export default function InstitutionalBuySidePage() {
       {/* ── Footer CTA / enquiry form ── */}
       <section id="enquiry" className="py-20 md:py-24 px-6 bg-[var(--color-surface)] text-center">
         <div className="mx-auto max-w-md mb-10">
-          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold leading-[1.2] tracking-[-0.02em] text-[var(--color-text)] mb-2">
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold leading-[1.2] tracking-[-0.02em] text-balance text-[var(--color-text)] mb-2">
             {t('cta.headingLead')}{' '}
-            <span className="italic text-[var(--color-terracotta)]">{t('cta.headingEmphasis')}</span>
+            <span className="block italic text-[var(--color-terracotta)]">
+              <RollingWord words={[t('cta.headingCountry1'), t('cta.headingCountry2'), t('cta.headingCountry3')]} />
+              {t('cta.headingAfter')}
+            </span>
           </h2>
         </div>
         <ExpandableInstitutionalForm ctaLabel={t('cta.button')} note={t('cta.note')} />
