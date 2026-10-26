@@ -1296,6 +1296,14 @@
       "sectorOther": {
         "placeholder": "Describe the sector..."
       },
+      "countries": {
+        "label": "Countries of interest",
+        "helper": "Select all that apply.",
+        "portugal": "Portugal",
+        "italy": "Italy",
+        "spain": "Spain",
+        "otherEurope": "Open to other European countries"
+      },
       "ticketSize": {
         "label": "Target acquisition size",
         "placeholder": "Select a range",
@@ -1317,6 +1325,7 @@
       "continue": "Continue →",
       "errors": {
         "sectorsRequired": "Please select at least one sector.",
+        "countriesRequired": "Please select at least one country.",
         "ticketSizeRequired": "Please select a range.",
         "capitalRequired": "Please select an option."
       }

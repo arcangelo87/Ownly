@@ -123,6 +123,7 @@ export interface InstitutionalSearch {
   created_at: string;
   sectors: string[] | null;
   sector_other: string | null;
+  countries: string[] | null;
   ticket_size: string | null;
   has_committed_capital: string | null;
   strategy: string[] | null;

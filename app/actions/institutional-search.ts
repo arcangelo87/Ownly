@@ -8,6 +8,7 @@ export async function submitInstitutionalSearch(data: InstitutionalSearchInsert)
   const { error } = await supabase.from('institutional_searches').insert({
     sectors: data.sectors?.length ? data.sectors : null,
     sector_other: data.sector_other || null,
+    countries: data.countries?.length ? data.countries : null,
     ticket_size: data.ticket_size || null,
     has_committed_capital: data.has_committed_capital || null,
     strategy: data.strategy?.length ? data.strategy : null,

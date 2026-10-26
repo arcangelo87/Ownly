@@ -65,6 +65,7 @@ export function InstitutionalStep3({ step1, step2, onComplete }: InstitutionalSt
       await submitInstitutionalSearch({
         sectors: step1.sectors.length ? step1.sectors : null,
         sector_other: step1.sector_other || null,
+        countries: step1.countries.length ? step1.countries : null,
         ticket_size: step1.ticket_size || null,
         has_committed_capital: step1.has_committed_capital || null,
         strategy: step2.strategy.length ? step2.strategy : null,
