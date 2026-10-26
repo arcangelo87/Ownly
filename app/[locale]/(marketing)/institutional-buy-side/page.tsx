@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Repeat, Target, Building2, Inbox, RefreshCw, GraduationCap, EyeOff, ClipboardList, Search, ShieldCheck } from 'lucide-react';
 import { IconCircle } from '@/components/marketing/IconCircle';
+import { RollingWord } from '@/components/marketing/RollingWord';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
 import { ExpandableInstitutionalForm } from '@/components/marketing/ExpandableInstitutionalForm';
 import { pageMetadata } from '@/lib/seo/metadata';
@@ -54,7 +55,11 @@ export default function InstitutionalBuySidePage() {
             {t('hero.eyebrow')}
           </p>
           <h1 className="font-[family-name:var(--font-serif)] text-[36px] md:text-[48px] font-semibold leading-[1.18] tracking-[-0.02em] text-[var(--color-text)] mb-6">
-            {t('hero.h1Lead')}{' '}
+            {t('hero.h1LeadBefore')}{' '}
+            <span className="block">
+              <RollingWord words={[t('hero.h1Country1'), t('hero.h1Country2'), t('hero.h1Country3')]} />
+              {t('hero.h1LeadAfter')}
+            </span>
             <span className="italic text-[var(--color-terracotta)]">{t('hero.h1Emphasis')}</span>
           </h1>
           <p className="text-[16px] md:text-[17px] text-[var(--color-muted)] leading-[1.65] mb-8 max-w-[480px] mx-auto">

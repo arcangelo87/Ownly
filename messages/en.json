@@ -153,7 +153,7 @@
     "language": "Language"
   },
   "footer": {
-    "tagline": "Buy and sell real businesses in Portugal and Italy.",
+    "tagline": "Buy real businesses in Europe.",
     "sell": "Sell a business",
     "brokers": "For brokers",
     "buyers": "For buyers",
@@ -1202,7 +1202,11 @@
   "institutionalBuySide": {
     "hero": {
       "eyebrow": "For PE firms, family offices and strategic acquirers",
-      "h1Lead": "Growing by acquisition in Portugal?",
+      "h1LeadBefore": "Growing by acquisition in",
+      "h1Country1": "Portugal",
+      "h1Country2": "Italy",
+      "h1Country3": "Spain",
+      "h1LeadAfter": "?",
       "h1Emphasis": "We build your pipeline.",
       "sub": "Off-market opportunities in accounting, insurance and lending rarely reach outside buyers. We build you a recurring, screened pipeline instead of running a one-off search.",
       "cta": "Talk to us about your mandate",
