@@ -21,12 +21,14 @@ const SECTOR_VALUES = [
   'professional_services',
   'other',
 ] as const;
+const COUNTRY_VALUES = ['portugal', 'italy', 'spain', 'otherEurope'] as const;
 const TICKET_SIZE_VALUES = ['under_1m', '1m_3m', '3m_7m', '7m_15m', 'over_15m'] as const;
 const CAPITAL_VALUES = ['yes', 'no', 'notSure'] as const;
 
 export interface Step1Data {
   sectors: string[];
   sector_other: string;
+  countries: string[];
   ticket_size: string;
   has_committed_capital: string;
 }
@@ -41,15 +43,23 @@ export function InstitutionalStep1({ onComplete }: InstitutionalStep1Props) {
   const [sectors, setSectors] = useState<string[]>([]);
   const [otherSectorChecked, setOtherSectorChecked] = useState(false);
   const [sectorOther, setSectorOther] = useState('');
+  const [countries, setCountries] = useState<string[]>([]);
   const [ticketSize, setTicketSize] = useState('');
   const [hasCommittedCapital, setHasCommittedCapital] = useState('');
-  const [errors, setErrors] = useState<{ sectors?: string; ticket_size?: string; has_committed_capital?: string }>({});
+  const [errors, setErrors] = useState<{ sectors?: string; countries?: string; ticket_size?: string; has_committed_capital?: string }>({});
 
   function toggleSector(value: string) {
     setSectors((prev) =>
       prev.includes(value) ? prev.filter((s) => s !== value) : [...prev, value],
     );
     if (errors.sectors) setErrors((prev) => ({ ...prev, sectors: undefined }));
+  }
+
+  function toggleCountry(value: string) {
+    setCountries((prev) =>
+      prev.includes(value) ? prev.filter((c) => c !== value) : [...prev, value],
+    );
+    if (errors.countries) setErrors((prev) => ({ ...prev, countries: undefined }));
   }
 
   function handleTicketSize(value: string) {
@@ -63,8 +73,9 @@ export function InstitutionalStep1({ onComplete }: InstitutionalStep1Props) {
   }
 
   function validate(): boolean {
-    const next: { sectors?: string; ticket_size?: string; has_committed_capital?: string } = {};
+    const next: { sectors?: string; countries?: string; ticket_size?: string; has_committed_capital?: string } = {};
     if (sectors.length === 0 && !otherSectorChecked) next.sectors = t('errors.sectorsRequired');
+    if (countries.length === 0) next.countries = t('errors.countriesRequired');
     if (!ticketSize) next.ticket_size = t('errors.ticketSizeRequired');
     if (!hasCommittedCapital) next.has_committed_capital = t('errors.capitalRequired');
     setErrors(next);
@@ -77,6 +88,7 @@ export function InstitutionalStep1({ onComplete }: InstitutionalStep1Props) {
     onComplete({
       sectors: [...sectors, ...(otherSectorChecked ? ['other'] : [])],
       sector_other: sectorOther,
+      countries,
       ticket_size: ticketSize,
       has_committed_capital: hasCommittedCapital,
     });
@@ -116,6 +128,21 @@ export function InstitutionalStep1({ onComplete }: InstitutionalStep1Props) {
             className="mt-2"
           />
         )}
+      </Field>
+
+      {/* Countries */}
+      <Field label={t('countries.label')} helper={t('countries.helper')} error={errors.countries}>
+        <div className="grid grid-cols-2 gap-2">
+          {COUNTRY_VALUES.map((key) => (
+            <CheckboxCard
+              key={key}
+              label={t(`countries.${key}`)}
+              checked={countries.includes(key)}
+              hasError={!!errors.countries}
+              onChange={() => toggleCountry(key)}
+            />
+          ))}
+        </div>
       </Field>
 
       {/* Ticket size */}

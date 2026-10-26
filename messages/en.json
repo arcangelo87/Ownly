@@ -153,7 +153,7 @@
     "language": "Language"
   },
   "footer": {
-    "tagline": "Buy and sell real businesses in Portugal and Italy.",
+    "tagline": "Buy real businesses in Europe.",
     "sell": "Sell a business",
     "brokers": "For brokers",
     "buyers": "For buyers",
@@ -1202,11 +1202,15 @@
   "institutionalBuySide": {
     "hero": {
       "eyebrow": "For PE firms, family offices and strategic acquirers",
-      "h1Lead": "Growing by acquisition in Portugal?",
+      "h1LeadBefore": "Growing by acquisition in",
+      "h1Country1": "Portugal",
+      "h1Country2": "Italy",
+      "h1Country3": "Spain",
+      "h1LeadAfter": "?",
       "h1Emphasis": "We build your pipeline.",
-      "sub": "Off-market opportunities in accounting, insurance and lending rarely reach outside buyers. We build you a recurring, screened pipeline instead of running a one-off search.",
+      "sub": "The best businesses rarely come to market. We find them, screen them and bring them to you as a recurring pipeline, not a one-off search.",
       "cta": "Talk to us about your mandate",
-      "note": "Confidential. No obligation to proceed."
+      "note": "Takes 2 minutes. We reply within 48 hours."
     },
     "whyUs": {
       "heading": "Why work with Manto?",
@@ -1243,9 +1247,9 @@
     "faq": {
       "heading": "FAQs",
       "q1": "What does Manto do for institutional buyers?",
-      "a1": "You define your acquisition mandate: sectors, size, pace and geography. We build you a recurring pipeline of off-market opportunities in accounting, insurance and lending, each one screened and diligence-ready before it reaches you.",
+      "a1": "You define your acquisition mandate: sectors, size, pace and geography. We build you a recurring pipeline of off-market opportunities in accounting, tourism, lending and insurance, each one screened and diligence-ready before it reaches you.",
       "q2": "Who is this for?",
-      "a2": "Private equity firms, family offices and established companies growing by acquisition in Portugal. Our deepest coverage today is accounting, insurance and lending, but if your mandate is elsewhere, talk to us.",
+      "a2": "Private equity firms, family offices and established companies growing by acquisition in Portugal, Italy and Spain. Our deepest coverage today is accounting, tourism, lending and insurance, but if your mandate is elsewhere, talk to us.",
       "q3": "How is this different from a traditional M&A advisor?",
       "a3": "Most advisors run one mandate at a time and skip deals below their minimum size. We specialize in the smaller end of the market and build ongoing pipelines, not single searches.",
       "q4": "What does it cost?",
@@ -1253,7 +1257,10 @@
     },
     "cta": {
       "headingLead": "Build a pipeline with Manto in",
-      "headingEmphasis": "Portugal.",
+      "headingCountry1": "Portugal",
+      "headingCountry2": "Italy",
+      "headingCountry3": "Spain",
+      "headingAfter": ".",
       "button": "Talk to us about your mandate",
       "note": "We'll follow up personally within days."
     }
@@ -1289,6 +1296,14 @@
       "sectorOther": {
         "placeholder": "Describe the sector..."
       },
+      "countries": {
+        "label": "Countries of interest",
+        "helper": "Select all that apply.",
+        "portugal": "Portugal",
+        "italy": "Italy",
+        "spain": "Spain",
+        "otherEurope": "Open to other European countries"
+      },
       "ticketSize": {
         "label": "Target acquisition size",
         "placeholder": "Select a range",
@@ -1310,6 +1325,7 @@
       "continue": "Continue →",
       "errors": {
         "sectorsRequired": "Please select at least one sector.",
+        "countriesRequired": "Please select at least one country.",
         "ticketSizeRequired": "Please select a range.",
         "capitalRequired": "Please select an option."
       }
@@ -1487,8 +1503,8 @@
   },
   "meta": {
     "home": {
-      "title": "Off-market acquisitions in Portugal for PE firms and strategic buyers",
-      "description": "A recurring, screened pipeline of off-market businesses in accounting, insurance and lending in Portugal. For PE firms, family offices and strategic acquirers."
+      "title": "Off-market acquisitions in Portugal, Italy and Spain for PE and strategic buyers",
+      "description": "Screened, off-market businesses in accounting, tourism, lending and insurance across Portugal, Italy and Spain. For PE firms, family offices and strategic acquirers."
     },
     "sellSide": {
       "title": "Sell your business confidentially",

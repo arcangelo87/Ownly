@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Repeat, Target, Building2, Inbox, RefreshCw, GraduationCap, EyeOff, ClipboardList, Search, ShieldCheck } from 'lucide-react';
 import { IconCircle } from '@/components/marketing/IconCircle';
+import { RollingWord } from '@/components/marketing/RollingWord';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
 import { ExpandableInstitutionalForm } from '@/components/marketing/ExpandableInstitutionalForm';
 import { pageMetadata } from '@/lib/seo/metadata';
@@ -54,7 +55,11 @@ export default function InstitutionalBuySidePage() {
             {t('hero.eyebrow')}
           </p>
           <h1 className="font-[family-name:var(--font-serif)] text-[36px] md:text-[48px] font-semibold leading-[1.18] tracking-[-0.02em] text-[var(--color-text)] mb-6">
-            {t('hero.h1Lead')}{' '}
+            {t('hero.h1LeadBefore')}{' '}
+            <span className="block">
+              <RollingWord words={[t('hero.h1Country1'), t('hero.h1Country2'), t('hero.h1Country3')]} />
+              {t('hero.h1LeadAfter')}
+            </span>
             <span className="italic text-[var(--color-terracotta)]">{t('hero.h1Emphasis')}</span>
           </h1>
           <p className="text-[16px] md:text-[17px] text-[var(--color-muted)] leading-[1.65] mb-8 max-w-[480px] mx-auto">
@@ -155,9 +160,12 @@ export default function InstitutionalBuySidePage() {
       {/* ── Footer CTA / enquiry form ── */}
       <section id="enquiry" className="py-20 md:py-24 px-6 bg-[var(--color-surface)] text-center">
         <div className="mx-auto max-w-md mb-10">
-          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold leading-[1.2] tracking-[-0.02em] text-[var(--color-text)] mb-2">
+          <h2 className="font-[family-name:var(--font-serif)] text-[28px] md:text-[34px] font-semibold leading-[1.2] tracking-[-0.02em] text-balance text-[var(--color-text)] mb-2">
             {t('cta.headingLead')}{' '}
-            <span className="italic text-[var(--color-terracotta)]">{t('cta.headingEmphasis')}</span>
+            <span className="block italic text-[var(--color-terracotta)]">
+              <RollingWord words={[t('cta.headingCountry1'), t('cta.headingCountry2'), t('cta.headingCountry3')]} />
+              {t('cta.headingAfter')}
+            </span>
           </h2>
         </div>
         <ExpandableInstitutionalForm ctaLabel={t('cta.button')} note={t('cta.note')} />
