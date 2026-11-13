@@ -14,7 +14,7 @@ export function SiteFooter() {
 
   const navLinks = [
     { href: `/${locale}/buyers`, label: t('buySide'), isCurrent: pathname === '/buyers' },
-    { href: `/${locale}/institutional-buy-side`, label: t('institutionalBuySide'), isCurrent: isHome || pathname === '/institutional-buy-side' },
+    { href: locale === 'en' ? '/en/institutional-buy-side' : `/${locale}`, label: t('institutionalBuySide'), isCurrent: isHome || pathname === '/institutional-buy-side' },
     { href: `/${locale}/sell-side`, label: t('sellSide'), isCurrent: pathname === '/sell-side' },
     { href: `/${locale}/deals`, label: t('browse'), isCurrent: pathname === '/deals' },
     { href: `/${locale}/blog`, label: t('blog'), isCurrent: pathname === '/blog' },

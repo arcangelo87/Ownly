@@ -19,7 +19,7 @@ export function SiteNavClient({ available }: { available: Record<Locale, string[
 
   const mobileLinks = [
     { href: `/${locale}/buyers`, label: tFooter('buySide'), isCurrent: pathname === '/buyers' },
-    { href: `/${locale}/institutional-buy-side`, label: tFooter('institutionalBuySide'), isCurrent: isHome || pathname === '/institutional-buy-side' },
+    { href: locale === 'en' ? '/en/institutional-buy-side' : `/${locale}`, label: tFooter('institutionalBuySide'), isCurrent: isHome || pathname === '/institutional-buy-side' },
     { href: `/${locale}/sell-side`, label: tFooter('sellSide'), isCurrent: pathname === '/sell-side' },
     { href: `/${locale}/deals`, label: tFooter('browse'), isCurrent: pathname === '/deals' },
   ].filter(({ isCurrent }) => !isCurrent);
