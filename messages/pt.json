@@ -889,6 +889,10 @@
     }
   },
   "meta": {
+    "home": {
+      "title": "Aquisições fora de mercado em Portugal, Itália e Espanha para private equity e compradores estratégicos",
+      "description": "Empresas analisadas e fora de mercado em contabilidade, turismo, crédito e seguros em Portugal, Itália e Espanha. Para fundos de private equity, family offices e compradores estratégicos."
+    },
     "sellSide": {
       "title": "Vender o seu negócio com confidencialidade",
       "description": "A pensar em vender o seu negócio? Normalizamos os seus números, encontramos compradores reais com discrição e acompanhamo-lo até ao fecho. Confidencial desde a primeira chamada."
@@ -915,5 +919,208 @@
     "sub": "Guias práticos para quem pensa vender o seu negócio.",
     "by": "Por",
     "back": "Todos os artigos"
+  },
+  "institutionalBuySide": {
+    "hero": {
+      "eyebrow": "Para fundos de private equity, family offices e compradores estratégicos",
+      "h1LeadBefore": "Quer crescer por aquisição em",
+      "h1Country1": "Portugal",
+      "h1Country2": "Itália",
+      "h1Country3": "Espanha",
+      "h1LeadAfter": "?",
+      "h1Emphasis": "Nós construímos o seu pipeline.",
+      "sub": "As melhores empresas raramente chegam ao mercado. Nós encontramo-las, analisamo-las e apresentamo-las como um pipeline recorrente, não como uma pesquisa pontual.",
+      "cta": "Fale connosco sobre o seu mandato",
+      "note": "Demora 2 minutos. Respondemos em 48 horas."
+    },
+    "whyUs": {
+      "heading": "Porquê trabalhar com o Manto?",
+      "item1Label": "Pipeline recorrente",
+      "item1Desc": "Não é uma pesquisa pontual. Um fluxo contínuo de negócios fora de mercado, alinhado com o seu mandato.",
+      "item2Label": "Especialistas, não generalistas",
+      "item2Desc": "Conhecemos a economia de cada setor antes de analisar um único negócio. Começámos pela contabilidade, seguros e crédito. Diga-nos onde está a procurar.",
+      "item3Label": "Analisado antes de chegar a si",
+      "item3Desc": "Cada negócio é verificado face ao seu mandato antes de lhe ser apresentado."
+    },
+    "problem": {
+      "heading": "O problema",
+      "item1Label": "Demasiado pequeno para os bancos",
+      "item1Desc": "Negócios desta dimensão raramente chegam aos assessores de M&A tradicionais ou aos bancos de investimento.",
+      "item2Label": "Oportunidades sem qualidade",
+      "item2Desc": "A maioria das oportunidades que chegam não está qualificada ou não está verdadeiramente à venda.",
+      "item3Label": "Pesquisas pontuais",
+      "item3Desc": "A maioria dos assessores trabalha um mandato de cada vez, não um pipeline repetível.",
+      "item4Label": "Due diligence genérica",
+      "item4Desc": "Poucos assessores conhecem bem a economia da contabilidade, dos seguros ou do crédito para fazer uma análise rigorosa.",
+      "item5Label": "Risco de confidencialidade",
+      "item5Desc": "A concorrência e o mercado saberem do negócio antes de estar pronto para ser anunciado."
+    },
+    "howItWorks": {
+      "heading": "Como funciona",
+      "badge": "Serviço dedicado",
+      "step1Label": "Defina o seu mandato",
+      "step1Desc": "Critérios, dimensão, ritmo e os setores onde quer crescer.",
+      "step2Label": "Construímos o seu pipeline",
+      "step2Desc": "Oportunidades recorrentes e fora de mercado, alinhadas com o seu mandato, não uma pesquisa pontual.",
+      "step3Label": "Recebe alvos prontos para due diligence",
+      "step3Desc": "EBITDA normalizado, risco de dependência de pessoas-chave analisado, prontos para avançar rapidamente."
+    },
+    "faq": {
+      "heading": "Perguntas frequentes",
+      "q1": "O que faz o Manto por investidores institucionais?",
+      "a1": "Define o seu mandato de aquisição: setores, dimensão, ritmo e geografia. Nós construímos um pipeline recorrente de oportunidades fora de mercado em contabilidade, turismo, crédito e seguros, cada uma analisada e pronta para due diligence antes de chegar a si.",
+      "q2": "A quem se destina?",
+      "a2": "A fundos de private equity, family offices e empresas estabelecidas que crescem por aquisição em Portugal, Itália e Espanha. Hoje a nossa cobertura mais profunda é em contabilidade, turismo, crédito e seguros, mas se o seu mandato for noutro setor, fale connosco.",
+      "q3": "Em que se diferencia de um assessor de M&A tradicional?",
+      "a3": "A maioria dos assessores trabalha um mandato de cada vez e ignora negócios abaixo da sua dimensão mínima. Nós especializamo-nos no segmento mais pequeno do mercado e construímos pipelines contínuos, não pesquisas isoladas.",
+      "q4": "Quanto custa?",
+      "a4": "Depende do mandato. Acordamos os honorários consigo à partida, antes de iniciar qualquer trabalho."
+    },
+    "cta": {
+      "headingLead": "Construa um pipeline com o Manto em",
+      "headingCountry1": "Portugal",
+      "headingCountry2": "Itália",
+      "headingCountry3": "Espanha",
+      "headingAfter": ".",
+      "button": "Fale connosco sobre o seu mandato",
+      "note": "Entraremos em contacto pessoalmente dentro de poucos dias."
+    }
+  },
+  "institutionalSearch": {
+    "steps": {
+      "stepPrefix": "Passo",
+      "stepOf": "de",
+      "step1": "O seu mandato",
+      "step2": "A sua estratégia",
+      "step3": "Sobre a sua empresa"
+    },
+    "step1": {
+      "title": "Fale-nos do seu mandato",
+      "subtitle": "Comecemos pelo essencial.",
+      "sectors": {
+        "label": "Setores de interesse",
+        "helper": "Selecione todos os que se aplicam.",
+        "accounting": "Contabilidade e compliance",
+        "insurance": "Seguros",
+        "lending": "Crédito e intermediação de crédito habitação",
+        "tourism": "Turismo e hotelaria",
+        "retail": "Retalho e e-commerce",
+        "healthcare": "Saúde e clínicas",
+        "it_services": "Serviços de TI e software",
+        "logistics": "Logística e distribuição",
+        "manufacturing": "Indústria",
+        "education": "Educação e formação",
+        "food_beverage": "Alimentação e bebidas",
+        "professional_services": "Serviços profissionais",
+        "other": "Outro"
+      },
+      "sectorOther": {
+        "placeholder": "Descreva o setor..."
+      },
+      "countries": {
+        "label": "Países de interesse",
+        "helper": "Selecione todos os que se aplicam.",
+        "portugal": "Portugal",
+        "italy": "Itália",
+        "spain": "Espanha",
+        "otherEurope": "Aberto a outros países europeus"
+      },
+      "ticketSize": {
+        "label": "Dimensão da aquisição pretendida",
+        "placeholder": "Selecione um intervalo",
+        "helper": "Um intervalo indicativo é suficiente."
+      },
+      "ticketSizeOptions": {
+        "under_1m": "Menos de €1M",
+        "1m_3m": "€1M – €3M",
+        "3m_7m": "€3M – €7M",
+        "7m_15m": "€7M – €15M",
+        "over_15m": "Mais de €15M"
+      },
+      "hasCommittedCapital": {
+        "label": "Tem capital comprometido para este mandato?",
+        "yes": "Sim",
+        "no": "Não",
+        "notSure": "Não tenho a certeza"
+      },
+      "continue": "Continuar →",
+      "errors": {
+        "sectorsRequired": "Selecione pelo menos um setor.",
+        "countriesRequired": "Selecione pelo menos um país.",
+        "ticketSizeRequired": "Selecione um intervalo.",
+        "capitalRequired": "Selecione uma opção."
+      }
+    },
+    "step2": {
+      "title": "A sua estratégia de aquisição",
+      "subtitle": "Diga-nos o que pretende construir.",
+      "strategy": {
+        "label": "Estratégia",
+        "helper": "Selecione todas as que se aplicam.",
+        "platformBuild": "Criação de plataforma ou roll-up",
+        "boltOn": "Aquisição complementar a um negócio existente",
+        "marketEntry": "Entrada num novo mercado",
+        "recurringRevenue": "Foco em receita recorrente"
+      },
+      "timeline": {
+        "label": "Com que rapidez pretende avançar?",
+        "helper": "Isto ajuda-nos a dar prioridade ao seu pipeline.",
+        "activeNow": "Estou a adquirir ativamente",
+        "within6months": "Nos próximos 6 meses",
+        "exploring": "Estou a explorar"
+      },
+      "continue": "Continuar →",
+      "errors": {
+        "strategyRequired": "Selecione pelo menos uma opção.",
+        "timelineRequired": "Selecione um prazo."
+      }
+    },
+    "step3": {
+      "title": "Sobre a sua empresa",
+      "subtitle": "Último passo, para podermos contactá-lo.",
+      "hasAcquired": {
+        "label": "Já adquiriu alguma empresa em Portugal?",
+        "yes": "Sim",
+        "no": "Não"
+      },
+      "buyerType": {
+        "label": "Que tipo de comprador é?",
+        "helper": "Isto ajuda-nos a apresentar-lhe as oportunidades certas.",
+        "privateEquity": "Fundo de private equity",
+        "familyOffice": "Family office",
+        "strategicAcquirer": "Comprador estratégico",
+        "other": "Outro",
+        "otherPlaceholder": "Conte-nos um pouco mais..."
+      },
+      "name": {
+        "label": "Nome",
+        "placeholder": "O seu nome"
+      },
+      "email": {
+        "label": "Endereço de email",
+        "placeholder": "nome@exemplo.com"
+      },
+      "phone": {
+        "label": "Telefone",
+        "placeholder": "+351..."
+      },
+      "message": {
+        "label": "Há mais alguma coisa que queira partilhar?",
+        "placeholder": "Fale-nos mais sobre o seu mandato, o seu calendário ou requisitos específicos.",
+        "helper": "Opcional. Quanto mais contexto nos der, melhor conseguimos encontrar oportunidades para si."
+      },
+      "submit": "Enviar →",
+      "errors": {
+        "acquiredRequired": "Selecione uma opção.",
+        "buyerTypeRequired": "Selecione o tipo de comprador.",
+        "emailRequired": "Introduza o seu endereço de email.",
+        "emailInvalid": "Introduza um endereço de email válido.",
+        "saveFailed": "Algo correu mal. Tente novamente."
+      }
+    },
+    "success": {
+      "heading": "Entraremos em contacto.",
+      "body": "O seu mandato foi guardado. Contactamo-lo quando encontrarmos uma oportunidade adequada."
+    }
   }
 }

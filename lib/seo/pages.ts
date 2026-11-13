@@ -23,8 +23,9 @@ export type SitePage = {
 // switcher and the /pt routing in middleware.ts are all built from this list.
 // Blog posts come from content/blog and deal pages from the database.
 export const SITE_PAGES: readonly SitePage[] = [
-  // Also served at /en and /en/institutional-buy-side, which canonicalise here
-  { path: '', metaKey: 'home', locales: ['en'], priority: 1, changeFrequency: 'weekly' },
+  // Also served at /en and /en/institutional-buy-side, which canonicalise here.
+  // The PT version is served at /pt.
+  { path: '', metaKey: 'home', locales: ['en', 'pt'], priority: 1, changeFrequency: 'weekly' },
   { path: '/sell-side', metaKey: 'sellSide', locales: ['en', 'pt'], priority: 0.9, changeFrequency: 'weekly' },
   { path: '/buyers', metaKey: 'buyers', locales: ['en', 'pt'], priority: 0.9, changeFrequency: 'weekly' },
   { path: '/deals', metaKey: 'deals', locales: ['en'], priority: 0.9, changeFrequency: 'daily' },
@@ -35,9 +36,8 @@ export const SITE_PAGES: readonly SitePage[] = [
   { path: '/terms', metaKey: 'terms', locales: ['en', 'pt'], priority: 0.1, changeFrequency: 'yearly' },
 ];
 
-// Where each language's home is. Portuguese visitors are sellers, so the PT
-// home is the PT sell-side page (/pt redirects there).
-export const HOME_URL: Record<Locale, string> = { en: '/', pt: '/pt/sell-side' };
+// Where each language's home is.
+export const HOME_URL: Record<Locale, string> = { en: '/', pt: '/pt' };
 
 export const HREFLANG: Record<Locale, string> = { en: 'en', pt: 'pt-PT' };
 

@@ -19,9 +19,9 @@ export async function middleware(request: NextRequest) {
     return NextResponse.rewrite(new URL('/en/institutional-buy-side', request.url));
   }
 
-  // The PT home is the PT sell-side page
+  // /pt shows the same page in Portuguese
   if (pathname === '/pt' || pathname === '/pt/') {
-    return NextResponse.redirect(new URL('/pt/sell-side', request.url), 308);
+    return NextResponse.rewrite(new URL('/pt/institutional-buy-side', request.url));
   }
 
   // Only pages with Portuguese copy (SITE_PAGES) and PT blog posts are served

@@ -76,7 +76,7 @@ Full requirements for each epic are in bottega-product-doc.md.
 Use `useTranslations('namespace')` in every component. Locale files in `/messages/`: `en.json` and `pt.json` (pt-PT). No other locales, no empty placeholders.
 
 - The URL alone decides the language. No geo, cookie or Accept-Language redirects.
-- A page is served under `/pt` only when it has real Portuguese copy and lists `'pt'` in `SITE_PAGES` (`lib/seo/pages.ts`). Other `/pt/...` URLs 308 to `/en/...`. `/pt` 308s to `/pt/sell-side`, the PT home.
+- A page is served under `/pt` only when it has real Portuguese copy and lists `'pt'` in `SITE_PAGES` (`lib/seo/pages.ts`). Other `/pt/...` URLs 308 to `/en/...`. `/pt` is the PT home: it shows the homepage (institutional buy-side page) in Portuguese.
 - Never auto-translate copy. If a page exists in one language only, flag it.
 
 ---
