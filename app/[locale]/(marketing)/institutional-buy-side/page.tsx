@@ -7,6 +7,8 @@ import { RollingWord } from '@/components/marketing/RollingWord';
 import { FaqAccordion } from '@/components/marketing/FaqAccordion';
 import { ExpandableInstitutionalForm } from '@/components/marketing/ExpandableInstitutionalForm';
 import { pageMetadata } from '@/lib/seo/metadata';
+import { setRequestLocale } from 'next-intl/server';
+import { use } from 'react';
 
 // Served at /, /en and /en/institutional-buy-side; all canonicalise to the bare domain
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -16,7 +18,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 // Public URL shared with investors: do not rename or move this route.
 // If it must change, 301 redirect /en/institutional-buy-side to https://onmanto.com.
-export default function InstitutionalBuySidePage() {
+export default function InstitutionalBuySidePage({ params }: { params: Promise<{ locale: string }> }) {
+  // Served via the / and /pt rewrites, which bypass next-intl's middleware
+  setRequestLocale(use(params).locale);
   const t = useTranslations('institutionalBuySide');
 
   const whyUs = [

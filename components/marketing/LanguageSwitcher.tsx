@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname } from '@/i18n/navigation';
 import { HOME_URL, type Locale } from '@/lib/seo/pages';
@@ -12,6 +11,8 @@ const OPTIONS: { code: Locale; label: string }[] = [
 
 // Plain links to the same page in the other language, or to that language's
 // home when the page has no version there. The URL alone decides the language.
+// A plain <a> forces a full load: / and /pt are rewrites of the same route, and
+// a client-side navigation between them keeps the English content on screen.
 export function LanguageSwitcher({ available }: { available: Record<Locale, string[]> }) {
   const t = useTranslations('nav');
   const locale = useLocale();
@@ -33,14 +34,13 @@ export function LanguageSwitcher({ available }: { available: Record<Locale, stri
           {code === locale ? (
             <span aria-current="true" className="text-[var(--color-text)]">{label}</span>
           ) : (
-            <Link
+            <a
               href={hrefFor(code)}
               hrefLang={code === 'pt' ? 'pt-PT' : 'en'}
-              prefetch={false}
               className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors"
             >
               {label}
-            </Link>
+            </a>
           )}
         </span>
       ))}

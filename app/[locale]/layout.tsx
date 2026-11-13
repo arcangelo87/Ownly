@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { Playfair_Display, DM_Sans, IBM_Plex_Mono } from 'next/font/google';
 import { routing } from '@/i18n/routing';
@@ -53,6 +53,9 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  // / and /pt are middleware rewrites that skip next-intl's middleware, so set
+  // the locale from the URL here or getMessages() falls back to English
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
