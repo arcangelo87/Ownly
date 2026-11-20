@@ -1,5 +1,5 @@
 ---
-title: "Buying a business in Portugal: why finding a good deal takes longer than you think"
+title: "Buying businesses in Portugal: why one-off searches don't scale"
 description: "The good businesses in Portugal rarely get listed. What it takes to find and screen a target, why the effort repeats with every acquisition, and your options: DIY, a broker on mandate, or a recurring off-market pipeline."
 slug: finding-a-good-deal-in-portugal
 lang: en
@@ -39,4 +39,4 @@ A recurring pipeline suits private equity firms, family offices and established 
 
 ## A simple way to choose
 
-If you have time and the language, do it yourself. If you have one complex deal and the budget for it, hire a broker. If acquisitions are part of your growth strategy and you need a steady flow of screened, off-market targets rather than a one-off search, [that is where we come in](/en/institutional-buy-side).
+If you have time and the language, do it yourself. If you have one complex deal and the budget for it, hire a broker. If acquisitions are part of your growth strategy and you need a steady flow of screened, off-market targets rather than a one-off search, that is where we come in. You can [send us your mandate](/en/institutional-buy-side#enquiry), or [book a 30-minute call](https://calendar.app.google/MpZgm1UEaUVWYorD6) to talk it through.
