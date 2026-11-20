@@ -9,7 +9,7 @@ cta_label: "See how Manto works for acquirers"
 cta_url: https://onmanto.com/en/institutional-buy-side
 ---
 
-An accounting practice, an insurance brokerage or a mortgage intermediary has no machines or buildings worth buying. You are buying the *carteira de clientes* and the recurring income that comes with it. And that asset can walk out the door with the owner.
+An accounting practice, an insurance brokerage or a mortgage intermediary has no machines or buildings worth buying. You are buying the *carteira de clientes* (client portfolio) and the recurring income that comes with it. And that asset can walk out the door with the owner.
 
 So good buyers rarely pay everything at closing. They tie part of the price to what stays.
 
@@ -21,19 +21,19 @@ Paying part of the price later lets you pay for the portfolio you keep, not the 
 
 ## What "retention" means in each sector
 
-- **Accounting firms.** The recurring *avenças* paid by clients, and whether the *contabilista certificado* relationship stays with the firm or with the owner.
+- **Accounting firms.** The recurring *avenças* (monthly retainer fees) paid by clients, and whether the *contabilista certificado* (certified accountant) relationship stays with the firm or with the owner.
 - **Insurance brokerages.** Policy renewals (*renovações*) and the relationships with the insurers behind them. A portfolio is only worth what keeps renewing.
 - **Mortgage intermediaries.** Commissions from banks, and the referral partners, such as estate agents (*imobiliárias*), who send the clients. Here the risk is often the referral relationships, not the borrowers.
 
 ## Four ways to share the risk
 
-**Preço diferido.** Part at closing, the rest in instalments over one to three years. Sellers understand it quickly.
+**Preço diferido (deferred price).** Part at closing, the rest in instalments over one to three years. Sellers understand it quickly.
 
 **Complemento de preço (earn-out).** The deferred part depends on a result, usually the recurring revenue still billed to the same clients after 12 months. Good retention, full payment. Clients leave, the price drops.
 
-**Retenção de preço, escrow or garantia bancária.** A slice of the price is held back until the retention period ends, and it also covers warranty claims. A bank guarantee can stand in when the seller wants security.
+**Retenção de preço (holdback), escrow or garantia bancária (bank guarantee).** A slice of the price is held back until the retention period ends, and it also covers warranty claims. A bank guarantee can stand in when the seller wants security.
 
-**Período de transição and pacto de não concorrência.** The seller stays for a set period, introduces you to the key clients and agrees not to take them elsewhere. This often matters more than the price mechanics.
+**Período de transição (transition period) and pacto de não concorrência (non-compete agreement).** The seller stays for a set period, introduces you to the key clients and agrees not to take them elsewhere. This often matters more than the price mechanics.
 
 Most deals mix two or three of these.
 
@@ -60,7 +60,7 @@ Many owners prefer cash at closing and don't like conditions they can't control 
 - The seller carries the retention risk but can't influence it.
 - The measurement is defined after signing, when interests have already split.
 - The buyer changes pricing or service so much that clients leave for reasons the seller didn't cause.
-- Nobody checks the structure of the deal. Buying the company (*cessão de quotas*) is not the same as buying only the portfolio. In a share deal, client contracts stay with the entity. If you buy only the portfolio, each client has to agree to move, so retention risk goes up and the transition matters more.
+- Nobody checks the structure of the deal. Buying the company (*cessão de quotas*, a transfer of shares) is not the same as buying only the portfolio. In a share deal, client contracts stay with the entity. If you buy only the portfolio, each client has to agree to move, so retention risk goes up and the transition matters more.
 
 Before you negotiate a number, decide how much retention risk you will carry and how much the seller should. The price is easier once that is clear. This is general information, not legal or tax advice, so have Portuguese advisors check the contract and the tax treatment.
 
