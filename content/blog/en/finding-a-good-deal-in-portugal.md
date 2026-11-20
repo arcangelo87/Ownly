@@ -1,5 +1,5 @@
 ---
-title: "Buying a business in Portugal: why finding a good deal takes longer than you think"
+title: "Buying businesses in Portugal: why one-off searches don't scale"
 description: "The good businesses in Portugal rarely get listed. What it takes to find and screen a target, why the effort repeats with every acquisition, and your options: DIY, a broker on mandate, or a recurring off-market pipeline."
 slug: finding-a-good-deal-in-portugal
 lang: en
