@@ -39,7 +39,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
   const date = new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(
     new Date(`${post.date}T00:00:00Z`),
   );
-  const external = /^https?:\/\//.test(post.ctaUrl);
+  const external = !!post.ctaUrl && /^https?:\/\//.test(post.ctaUrl);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -74,6 +74,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
 
         <div className="post-body mt-10" dangerouslySetInnerHTML={{ __html: post.html }} />
 
+        {post.ctaUrl && post.ctaLabel && (
         <a
           href={post.ctaUrl}
           {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
@@ -81,6 +82,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
         >
           {post.ctaLabel} →
         </a>
+        )}
       </div>
     </article>
   );

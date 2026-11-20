@@ -15,13 +15,13 @@ export type Post = {
   description: string;
   date: string;
   author: string;
-  ctaLabel: string;
-  ctaUrl: string;
+  ctaLabel?: string;
+  ctaUrl?: string;
   noindex: boolean;
   html: string;
 };
 
-const REQUIRED = ['title', 'description', 'slug', 'lang', 'date', 'author', 'cta_label', 'cta_url'] as const;
+const REQUIRED = ['title', 'description', 'slug', 'lang', 'date', 'author'] as const;
 
 function parse(file: string, locale: Locale): Post {
   const source = fs.readFileSync(file, 'utf8');
@@ -49,8 +49,9 @@ function parse(file: string, locale: Locale): Post {
     description: data.description,
     date: data.date,
     author: data.author,
-    ctaLabel: data.cta_label,
-    ctaUrl: data.cta_url,
+    // Optional: posts without them end on their own copy, with no button.
+    ctaLabel: data.cta_label || undefined,
+    ctaUrl: data.cta_url || undefined,
     noindex: data.noindex === 'true',
     html: marked.parse(match[2], { async: false }),
   };
