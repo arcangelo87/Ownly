@@ -39,4 +39,4 @@ A recurring pipeline suits private equity firms, family offices and established 
 
 ## A simple way to choose
 
-If you have time and the language, do it yourself. If you have one complex deal and the budget for it, hire a broker. If acquisitions are part of your growth strategy and you need a steady flow of screened, off-market targets rather than a one-off search, [that is where we come in](/en/institutional-buy-side).
+If you have time and the language, do it yourself. If you have one complex deal and the budget for it, hire a broker. If acquisitions are part of your growth strategy and you need a steady flow of screened, off-market targets rather than a one-off search, that is where we come in. You can [send us your mandate](/en/institutional-buy-side#enquiry), or [book a 30-minute call](https://calendar.app.google/MpZgm1UEaUVWYorD6) to talk it through.
